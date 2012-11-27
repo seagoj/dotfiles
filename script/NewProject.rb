@@ -42,7 +42,7 @@ else
 	branch=`git branch`
 	puts branch[2..branch.length-1]
 	# puts dotBranch
-	system('git push -u github master')
+	system('git push -u github '+branch)
 end
 
 unless(File.exists?(project))
