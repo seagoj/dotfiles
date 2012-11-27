@@ -56,8 +56,12 @@ unless(cookbook)
 	end
 end
 
-File.delete('.gitattributes')
-File.delete('.gitignore')
+if(File.exists?('.gitattributes'))
+	File.delete('.gitattributes')
+end
+if(File.exists?('.gitignore'))
+	File.delete('.gitignore')
+end
 
 template['dotfiles'].each do |dotfile|
 	unless(File.exists?(dotfile))
