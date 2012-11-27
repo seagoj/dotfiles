@@ -84,12 +84,8 @@ template['genfiles'].each do |gen|
 	end
 end
 
-puts Dir.pwd
 output=`git branch`
 branch= output[2..output.length-1]
-# puts dotBranch
-system('git push -u github '+branch)
-# Dir.chdir('..')
 
 system('git init')
 system('git add *')
