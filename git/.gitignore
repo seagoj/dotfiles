@@ -1,0 +1,20 @@
+config
+.vagrant
+lib/Predis
+cookbooks
+
+############
+## Sublime Text 2
+============
+*.sublime-project
+*.sublime-workspace
+
+############
+## Windows
+############
+
+# Windows image file caches
+Thumbs.db
+
+# Folder config file
+Desktop.ini

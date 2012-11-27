@@ -1,39 +1,79 @@
 # NewRepo
+# Usage: ruby dotfiles/script/NewProject.rb project ?cookbook
 require 'fileutils'
 
-dotfilesPath = 'dotfiles'
+# Config#####
 project = ARGV[0]
-
+cookbook = ARGV[1]
+delete = ['.buildpath','.project','.metadata','nbproject','.settings','CONTRIBUTING.md']
+dotfilesPath = 'dotfiles'
+dotfilesRepo = 'git@github.com:seagoj/dotfiles.git'
+projectRepo = 'git@github.com:seagoj/'+project+'.git'
+if(cookbook)
+	dirs = ''
+else
+	dirs= ['src']
+end
 template = {
-	'dotfiles'=>['LICENSE','.gitattributes','.gitignore'],
-	'dirs'=>['src']
+	'dotfiles'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md'],
+	'dirs'=>dirs,
+	'genfiles'=>['README.md',project+'.sublime-project'],
+	'README.md'=>'## '+project,
+	project+'.sublime-project'=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
 }
+#############
+
+# Clean old project files from directories
+# Remove files recursively from a directory tree
+puts "Deleting old project files from workspace"
+# Delete old metadata
+Dir.entries('.').each do |d|
+	delete.each do |f|
+		if(File.exists?(d+'/'+f))
+			puts d+'/'+f
+			FileUtils.rm_rf(d+'/'+f)
+			# File.delete(d+'/'+f)
+		end
+	end
+end
+
+unless(File.exists?(dotfilesPath))
+	puts "Pulling dotfiles from "+dotfilesRepo
+	system('git clone '+dotfilesRepo+' '+dotfilesPath)
+else
+	puts "Fetching dotfiles updates from "+dotfilesRepo
+	system('cd '+dotfilesPath+' && git add * && git commit -a -m "Update dotfiles from script" && git fetch')
+	system('git remote add github '+dotfilesRepo)
+	system('git push -u github master')
+end
 
 unless(File.exists?(project))
-	unless(File.exists?(dotfilesPath))
-		system('git clone git@github.com:seagoj/dotfiles.git '+dotfilesPath)
-	else
-		system('cd '+dotfilesPath+' && git fetch')
-	end
-
 	Dir.mkdir(project)
-	Dir.chdir Dir.pwd+'/'+project.chomp
-	
-	template['dirs'].each do |dir|
+end
+Dir.chdir Dir.pwd+'/'+project.chomp
+
+template['dirs'].each do |dir|
+	unless(File.exists?(dir))
+		puts "Creating "+dir+" directory"
 		Dir.mkdir(dir)
 	end
-	
-	template['dotfiles'].each do |dotfile|
-		FileUtils.cp('../'+dotfilesPath+'/'+dotfile,'.')
-	end
-	
-	readme = File.new('README.md','wb')
-	readme.write('## '+project)
-	
-	system('git init')
-	system('git add *')
-	system('git commit -m "Commit dotfiles"')
-	system('git remote add github git@github.com:seagoj/'+project+'.git')
-else
-	puts project+' already exists.'
 end
+
+template['dotfiles'].each do |dotfile|
+	unless(File.exists?(dotfile))
+		puts "Copying "+dotfile
+		FileUtils.cp('../'+dotfilesPath+'/git/'+dotfile,'.')
+	end
+end
+
+template['genfiles'].each do |gen|
+	unless(File.exists?(gen))
+		puts "Building "+gen
+		file = File.new(gen,'wb')
+		file.write(template[gen])
+	end
+end
+
+system('git init')
+system('git commit -a -m "Commit dotfiles"')
+system('git remote add github '+projectRepo)
