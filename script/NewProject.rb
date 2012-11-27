@@ -9,14 +9,9 @@ delete = ['.buildpath','.project','.metadata','nbproject','.settings','CONTRIBUT
 dotfilesPath = 'dotfiles'
 dotfilesRepo = 'git@github.com:seagoj/dotfiles.git'
 projectRepo = 'git@github.com:seagoj/'+project+'.git'
-if(cookbook)
-	dirs = ''
-else
-	dirs= ['src']
-end
 template = {
 	'dotfiles'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md'],
-	'dirs'=>dirs,
+	'dirs'=>['src'],
 	'genfiles'=>['README.md',project+'.sublime-project'],
 	'README.md'=>'## '+project,
 	project+'.sublime-project'=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
@@ -52,10 +47,12 @@ unless(File.exists?(project))
 end
 Dir.chdir Dir.pwd+'/'+project.chomp
 
-template['dirs'].each do |dir|
-	unless(File.exists?(dir))
-		puts "Creating "+dir+" directory"
-		Dir.mkdir(dir)
+unless(cookbook)
+	template['dirs'].each do |dir|
+		unless(File.exists?(dir))
+			puts "Creating "+dir+" directory"
+			Dir.mkdir(dir)
+		end
 	end
 end
 
