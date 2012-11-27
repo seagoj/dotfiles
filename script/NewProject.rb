@@ -5,7 +5,7 @@ require 'fileutils'
 # Config#####
 project = ARGV[0]
 cookbook = project[0..8]=='cookbook-'
-delete = ['.buildpath','.project','.metadata','nbproject','.settings','CONTRIBUTING.md']
+delete = ['.buildpath','.project','.metadata','nbproject','.settings']
 dotfilesPath = 'dotfiles'
 dotfilesRepo = 'git@github.com:seagoj/dotfiles.git'
 projectRepo = 'git@github.com:seagoj/'+project+'.git'
@@ -40,7 +40,8 @@ else
 	system('cd '+dotfilesPath+' && git add * && git commit -a -m "Update dotfiles from script" && git fetch')
 	system('git remote add github '+dotfilesRepo)
 	dotBranch=`git branch`
-	dotBranch = dotBranch[2..dotBranch.length]
+	# dotBranch = dotBranch[2..dotBranch.length]
+	puts " "
 	puts dotBranch
 	system('git push -u github master')
 end
