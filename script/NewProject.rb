@@ -49,14 +49,15 @@ Dir.chdir Dir.pwd+'/'+project.chomp
 
 unless(cookbook)
 	template['dirs'].each do |dir|
-		File.delete('.gitattributes')
-		File.delete('.gitignore')
 		unless(File.exists?(dir))
 			puts "Creating "+dir+" directory"
 			Dir.mkdir(dir)
 		end
 	end
 end
+
+File.delete('.gitattributes')
+File.delete('.gitignore')
 
 template['dotfiles'].each do |dotfile|
 	unless(File.exists?(dotfile))
