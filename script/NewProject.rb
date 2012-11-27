@@ -72,5 +72,6 @@ template['genfiles'].each do |gen|
 end
 
 system('git init')
+system('git add *')
 system('git commit -a -m "Commit dotfiles"')
 system('git remote add github '+projectRepo)
