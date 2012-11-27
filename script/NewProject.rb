@@ -39,10 +39,9 @@ else
 	puts "Fetching dotfiles updates from "+dotfilesRepo
 	system('cd '+dotfilesPath+' && git add * && git commit -a -m "Update dotfiles from script" && git fetch')
 	system('git remote add github '+dotfilesRepo)
-	dotBranch=`git branch`
-	# dotBranch = dotBranch[2..dotBranch.length]
-	puts " "
-	puts dotBranch
+	branch=`git branch`
+	puts branch[2..branch.length-1]
+	# puts dotBranch
 	system('git push -u github master')
 end
 
