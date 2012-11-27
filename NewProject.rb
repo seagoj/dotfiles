@@ -6,8 +6,7 @@ project = ARGV[0]
 
 template = {
 	'dotfiles'=>['LICENSE','.gitattributes','.gitignore'],
-	'dirs'=>['src'],
-	'README.md'=>'# '+project
+	'dirs'=>['src']
 }
 
 unless(File.exists?(project))
@@ -29,7 +28,7 @@ unless(File.exists?(project))
 	end
 	
 	readme = File.new('README.md','wb')
-	readme.write('# '+project)
+	readme.write('## '+project)
 	
 	system('git init')
 	system('git add *')
