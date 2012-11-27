@@ -4,7 +4,8 @@ require 'fileutils'
 
 # Config#####
 project = ARGV[0]
-cookbook = ARGV[1]
+puts project[0..9]
+cookbook = project[0..9]=='cookbook-'
 delete = ['.buildpath','.project','.metadata','nbproject','.settings','CONTRIBUTING.md']
 dotfilesPath = 'dotfiles'
 dotfilesRepo = 'git@github.com:seagoj/dotfiles.git'
