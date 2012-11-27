@@ -85,7 +85,6 @@ template['genfiles'].each do |gen|
 end
 
 puts Dir.pwd
-Dir.chdir(project)
 output=`git branch`
 branch= output[2..output.length-1]
 # puts dotBranch
