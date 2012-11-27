@@ -40,6 +40,8 @@ else
 	system('cd '+dotfilesPath+' && git add * && git commit -a -m "Update dotfiles from script" && git fetch')
 	system('git remote add github '+dotfilesRepo)
 	output=`git branch`
+	puts
+	exit
 	branch= output[2..output.length-1]
 	# puts dotBranch
 	system('git push -u github '+branch)
