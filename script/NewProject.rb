@@ -4,7 +4,6 @@ require 'fileutils'
 
 # Config#####
 project = ARGV[0]
-puts project[0..8]
 cookbook = project[0..8]=='cookbook-'
 delete = ['.buildpath','.project','.metadata','nbproject','.settings','CONTRIBUTING.md']
 dotfilesPath = 'dotfiles'
@@ -50,6 +49,8 @@ Dir.chdir Dir.pwd+'/'+project.chomp
 
 unless(cookbook)
 	template['dirs'].each do |dir|
+		File.delete('.gitattributes')
+		File.delete('.gitignore')
 		unless(File.exists?(dir))
 			puts "Creating "+dir+" directory"
 			Dir.mkdir(dir)
