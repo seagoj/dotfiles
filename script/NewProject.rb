@@ -57,6 +57,7 @@ else
 	output = `git commit -m "Update dotfiles from script" 2>&1`; result=$?.success?
 	output = `git fetch 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
+	output = `ls #{project}`
 	output = `git remote add github #{dotfilesRepo} 2>&1`; result=$?.success?
 	puts output
 	exit
