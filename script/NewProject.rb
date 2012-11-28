@@ -16,31 +16,49 @@ template = {
 	'README.md'=>'## '+project,
 	project+'.sublime-project'=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
 }
+logFile = 'NewProject.log'
 #############
+# log = Logger.new(logFile)
+
+unless(File.exists?(logFile))
+	# log.info(logFile)
+end
+# log.info('## '+Time.now.ctime+"\n")
 
 # Clean old project files from directories
 # Remove files recursively from a directory tree
+# log.info("Deleting old project files from workspace")
 puts "Deleting old project files from workspace"
 # Delete old metadata
 Dir.entries('.').each do |d|
 	delete.each do |f|
 		if(File.exists?(d+'/'+f))
+			# log.info(d+'/'+f)
 			puts d+'/'+f
 			FileUtils.rm_rf(d+'/'+f)
-			# File.delete(d+'/'+f)
 		end
 	end
 end
 
 unless(File.exists?(dotfilesPath))
+	# log.info("Pulling dotfiles from "+dotfilesRepo)
 	puts "Pulling dotfiles from "+dotfilesRepo
-	system('git clone '+dotfilesRepo+' '+dotfilesPath)
+	output = `git clone `+dotfilesRepo+` `+dotfilesPath
+	# log.info(output)
 else
+	# log.info("Fetching dotfiles updates from "+dotfilesRepo)
 	puts "Fetching dotfiles updates from "+dotfilesRepo
-	system('cd '+dotfilesPath+' && git add * && git commit -a -m "Update dotfiles from script" && git fetch')
-	system('git remote add github '+dotfilesRepo)
-	
 	Dir.chdir(dotfilesPath)
+	
+	# output=`git add * 2>&1`; result=$?.success?
+	# log.write(output+"\n\n")
+	# exit
+	output = `git commit -a -m "Update dotfiles from script"`
+	output = `git fetch`
+	# log.write(output+"\n\n")
+	output = `git remote add github `+dotfilesRepo
+	# log.write(output+"\n\n")
+
 	output=`git branch`
 	branch= output[2..output.length-1]
 	# puts dotBranch
