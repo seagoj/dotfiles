@@ -47,7 +47,7 @@ unless(File.exists?(dotfilesPath))
 	# log.info(output)
 else
 	# log.info("Fetching dotfiles updates from "+dotfilesRepo)
-	puts "Fetching dotfiles updates from "+dotfilesRepo
+	puts "Fetching dotfiles updates from #{dotfilesRepo}"
 	Dir.chdir(dotfilesPath)
 	
 	output=`git add * 2>&1`; result=$?.success?
