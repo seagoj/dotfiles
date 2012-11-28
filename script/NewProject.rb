@@ -72,9 +72,11 @@ unless(cookbook)
 			puts "Creating #{dir} directory"
 			Dir.mkdir(dir)
 			if(dir=='src')
-				index = File.new("src/index.php","wb")
+				Dir.chdir('src')
+				index = File.new("index.php","wb")
 				index.write("<?php\n\tprint 'It's alive!';\n")
-
+				Dir.chdir('..')
+				puts Dir.pwd
 			end
 		end
 	end
