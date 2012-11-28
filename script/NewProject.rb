@@ -50,11 +50,11 @@ else
 	puts "Fetching dotfiles updates from "+dotfilesRepo
 	Dir.chdir(dotfilesPath)
 	
-	# output=`git add * 2>&1`; result=$?.success?
+	output=`git add * 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
 	# exit
 	# output = `git commit -a`
-	output = `git commit -a -m "Update dotfiles from script"`
+	output = `git commit -m "Update dotfiles from script"`
 	output = `git fetch`
 	# log.write(output+"\n\n")
 	output = `git remote add github `+dotfilesRepo
