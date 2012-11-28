@@ -73,7 +73,7 @@ unless(cookbook)
 			Dir.mkdir(dir)
 		end
 	end
-	Dir.pwd
+	puts Dir.pwd
 	exit
 	unless(File.exists?('src'))
 
