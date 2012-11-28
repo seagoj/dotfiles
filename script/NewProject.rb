@@ -19,11 +19,6 @@ template = {
 log = File.new('NewProject.log','a+')
 output = '## '+Time.now.ctime+"\n"
 #############
-# log = Logger.new(logFile)
-
-# unless(File.exists?(logFile))
-# 	log.info(logFile)
-# end
 
 # Clean old project files from directories
 # Remove files recursively from a directory tree
@@ -33,7 +28,6 @@ puts "Deleting old project files from workspace"
 Dir.entries('.').each do |d|
 	delete.each do |f|
 		if(File.exists?(d+'/'+f))
-			# log.info(d+'/'+f)
 			puts d+'/'+f
 			FileUtils.rm_rf(d+'/'+f)
 		end
@@ -41,10 +35,8 @@ Dir.entries('.').each do |d|
 end
 
 unless(File.exists?(dotfilesPath))
-	# log.info("Pulling dotfiles from "+dotfilesRepo)
 	puts "Pulling dotfiles from #{dotfilesRepo}"
 	output += `git clone #{dotfilesRepo} #{dotfilesPath}`
-	# log.info(output)
 else
 	# log.info("Fetching dotfiles updates from "+dotfilesRepo)
 	puts "Fetching dotfiles updates from #{dotfilesRepo}"
