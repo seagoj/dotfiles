@@ -16,7 +16,7 @@ template = {
 	'README.md'=>"## #{project}",
 	"#{project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
 }
-logFile = 'NewProject.log'
+log = File.new('NewProject.log','a+')
 output = '## '+Time.now.ctime+"\n"
 #############
 # log = Logger.new(logFile)
@@ -113,5 +113,4 @@ output += `git commit -a -m "Commit dotfiles" 2>&1`; result=$?.success?
 output += `git remote add github #{projectRepo} 2>&1`; result=$?.success?
 output += `git push -u github #{branch} 2>&1`; result=$?.success?
 
-log = File.new(logFile, "a+")
 log.write(output)
