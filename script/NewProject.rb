@@ -66,6 +66,7 @@ else
 	# puts dotBranch
 	output=`git push -u github #{branch} 2>&1`; result=$?.success?
 	Dir.chdir('..')
+	exit
 end
 
 unless(File.exists?(project))
