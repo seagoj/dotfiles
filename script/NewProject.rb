@@ -54,18 +54,18 @@ else
 	# log.write(output+"\n\n")
 	
 	# output = `git commit -a`
-	output = `git commit -m "Update dotfiles from script"`
-	exit
-	output = `git fetch`
+	output = `git commit -m "Update dotfiles from script" 2>&1`; result=$?.success?
+	output = `git fetch 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
-	output = `git remote add github `+dotfilesRepo
+	output = `git remote add github `+dotfilesRepo+` 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
 
-	output=`git branch`
+	output=`git branch 2>&1`; result=$?.success?
 	branch= output[2..output.length-1]
 	# puts dotBranch
-	system('git push -u github '+branch)
+	output = `git push -u github `+branch+` 2>&1`; result=$?.success?
 	Dir.chdir('..')
+	exit
 end
 
 unless(File.exists?(project))
