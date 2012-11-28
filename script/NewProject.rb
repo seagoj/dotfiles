@@ -1,9 +1,10 @@
 # NewRepo
-# Usage: ruby dotfiles/script/NewProject.rb project ?cookbook
+# Usage: ruby dotfiles/script/NewProject.rb project ?vagrantfile
 require 'fileutils'
 
 # Config#####
 project = ARGV[0]
+vagrant = ARGV[1]
 cookbook = project[0..8]=='cookbook-'
 delete = ['.buildpath','.project','.metadata','nbproject','.settings']
 dotfilesPath = 'dotfiles'
@@ -93,6 +94,13 @@ template['genfiles'].each do |gen|
 		puts "Building #{gen}"
 		file = File.new(gen,'wb')
 		file.write(template[gen])
+	end
+end
+
+if(vagrant)
+	unless(File.exists?("Vagrantfile"))
+		puts "Copying #{vagrant} Vagrantfile"
+		FileUtils.cp("../#{dotfilesPath}/vagrantfiles/#{vagrant}/Vagrantfile",".")
 	end
 end
 
