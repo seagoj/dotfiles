@@ -74,7 +74,7 @@ unless(cookbook)
 			if(dir=='src')
 				Dir.chdir('src')
 				index = File.new("index.php","wb")
-				index.write("<?php\n\tprint 'It's alive!';\n")
+				index.write("<?php\n\tprint 'It\'s alive!';\n")
 				Dir.chdir('..')
 				puts Dir.pwd
 			end
