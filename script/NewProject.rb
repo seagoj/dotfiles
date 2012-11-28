@@ -52,9 +52,10 @@ else
 	
 	output=`git add * 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
-	# exit
+	
 	# output = `git commit -a`
 	output = `git commit -m "Update dotfiles from script"`
+	exit
 	output = `git fetch`
 	# log.write(output+"\n\n")
 	output = `git remote add github `+dotfilesRepo
