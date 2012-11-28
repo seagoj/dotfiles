@@ -113,5 +113,5 @@ output += `git commit -a -m "Commit dotfiles" 2>&1`; result=$?.success?
 output += `git remote add github #{projectRepo} 2>&1`; result=$?.success?
 output += `git push -u github #{branch} 2>&1`; result=$?.success?
 
-log = File.open(logFile, "a+")
+log = File.new(logFile, "a+")
 log.write(output)
