@@ -21,9 +21,9 @@ output = '## '+Time.now.ctime+"\n"
 #############
 # log = Logger.new(logFile)
 
-unless(File.exists?(logFile))
-	log.info(logFile)
-end
+# unless(File.exists?(logFile))
+# 	log.info(logFile)
+# end
 
 # Clean old project files from directories
 # Remove files recursively from a directory tree
