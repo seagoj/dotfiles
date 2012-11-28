@@ -58,8 +58,8 @@ else
 	output = `git fetch 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
 	puts dotfilesRepo
+	output = `git remote add github #{dotfilesRepo} 2>&1`; result=$?.success?
 	exit
-	output = `git remote add github `+dotfilesRepo+` 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
 
 	output=`git branch 2>&1`; result=$?.success?
