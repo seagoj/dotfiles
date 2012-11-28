@@ -8,13 +8,13 @@ cookbook = project[0..8]=='cookbook-'
 delete = ['.buildpath','.project','.metadata','nbproject','.settings']
 dotfilesPath = 'dotfiles'
 dotfilesRepo = 'git@github.com:seagoj/dotfiles.git'
-projectRepo = 'git@github.com:seagoj/'+project+'.git'
+projectRepo = "git@github.com:seagoj/#{project}.git"
 template = {
 	'dotfiles'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md'],
 	'dirs'=>['src'],
-	'genfiles'=>['README.md',project+'.sublime-project'],
-	'README.md'=>'## '+project,
-	project+'.sublime-project'=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
+	'genfiles'=>['README.md',"#{project}.sublime-project"],
+	'README.md'=>"## #{project}",
+	"#{project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
 }
 logFile = 'NewProject.log'
 output = '## '+Time.now.ctime+"\n"
@@ -42,7 +42,7 @@ end
 
 unless(File.exists?(dotfilesPath))
 	# log.info("Pulling dotfiles from "+dotfilesRepo)
-	puts "Pulling dotfiles from "+dotfilesRepo
+	puts "Pulling dotfiles from #{dotfilesRepo}"
 	output += `git clone #{dotfilesRepo} #{dotfilesPath}`
 	# log.info(output)
 else
@@ -75,7 +75,7 @@ Dir.chdir Dir.pwd+'/'+project.chomp
 unless(cookbook)
 	template['dirs'].each do |dir|
 		unless(File.exists?(dir))
-			puts "Creating "+dir+" directory"
+			puts "Creating #{dir} directory"
 			Dir.mkdir(dir)
 		end
 	end
@@ -90,14 +90,14 @@ end
 
 template['dotfiles'].each do |dotfile|
 	unless(File.exists?(dotfile))
-		puts "Copying "+dotfile
+		puts "Copying #{dotfile}"
 		FileUtils.cp('../'+dotfilesPath+'/git/'+dotfile,'.')
 	end
 end
 
 template['genfiles'].each do |gen|
 	unless(File.exists?(gen))
-		puts "Building "+gen
+		puts "Building #{gen}"
 		file = File.new(gen,'wb')
 		file.write(template[gen])
 	end
