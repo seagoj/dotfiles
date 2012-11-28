@@ -1,6 +1,5 @@
 config
 .vagrant
-lib/Predis
 cookbooks
 
 ############
