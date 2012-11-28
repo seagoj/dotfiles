@@ -71,10 +71,12 @@ unless(cookbook)
 		unless(File.exists?(dir))
 			puts "Creating #{dir} directory"
 			Dir.mkdir(dir)
-
-			index = File.new("src/index.php","wb")
-			index.write("<?php\n\tprint 'It's alive!';\n")
 		end
+	end
+	unless(File.exists?('src'))
+		Dir.chdir('src')
+		index = File.new("index.php","wb")
+		index.write("<?php\n\tprint 'It's alive!';\n")
 	end
 end
 
