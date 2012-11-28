@@ -17,6 +17,7 @@ template = {
 	project+'.sublime-project'=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
 }
 logFile = 'NewProject.log'
+output = ''
 #############
 # log = Logger.new(logFile)
 
@@ -43,29 +44,28 @@ end
 unless(File.exists?(dotfilesPath))
 	# log.info("Pulling dotfiles from "+dotfilesRepo)
 	puts "Pulling dotfiles from "+dotfilesRepo
-	output = `git clone #{dotfilesRepo} #{dotfilesPath}`
+	output += `git clone #{dotfilesRepo} #{dotfilesPath}`
 	# log.info(output)
 else
 	# log.info("Fetching dotfiles updates from "+dotfilesRepo)
 	puts "Fetching dotfiles updates from #{dotfilesRepo}"
 	Dir.chdir(dotfilesPath)
 	
-	output=`git add * 2>&1`; result=$?.success?
+	output += `git add * 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
 	
 	# output = `git commit -a`
-	output = `git commit -m "Update dotfiles from script" 2>&1`; result=$?.success?
-	output = `git fetch 2>&1`; result=$?.success?
+	output += `git commit -m "Update dotfiles from script" 2>&1`; result=$?.success?
+	output += `git fetch 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
-	output = `git remote add github #{dotfilesRepo} 2>&1`; result=$?.success?
-	puts output
+	output += `git remote add github #{dotfilesRepo} 2>&1`; result=$?.success?
 	exit
 	# log.write(output+"\n\n")
 
-	output=`git branch 2>&1`; result=$?.success?
-	branch= output[2..output.length-1]
+	branchOutput = `git branch 2>&1`; result=$?.success?
+	branch= branchOutput[2..branchOutput.length-1]
 	# puts dotBranch
-	output = `git push -u github `+branch+` 2>&1`; result=$?.success?
+	output += `git push -u github `+branch+` 2>&1`; result=$?.success?
 	Dir.chdir('..')
 	exit
 end
