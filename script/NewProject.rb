@@ -74,6 +74,8 @@ unless(cookbook)
 		end
 	end
 	unless(File.exists?('src'))
+		Dir.pwd
+		exit
 		Dir.chdir('src')
 		index = File.new("index.php","wb")
 		index.write("<?php\n\tprint 'It's alive!';\n")
