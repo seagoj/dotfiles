@@ -103,13 +103,13 @@ template['genfiles'].each do |gen|
 	end
 end
 
-branchOutput=`git branch`
+branchOutput=`git branch 2>&1`; result=$?.success?
 branch= branchOutput[2..branchOutput.length-1]
 
-output += `git init`
-output += `git add *`
-output += `git commit -a -m "Commit dotfiles"`
-output += `git remote add github #{projectRepo}`
-output += `git push -u github #{branch}`
+output += `git init 2>&1`; result=$?.success?
+output += `git add * 2>&1`; result=$?.success?
+output += `git commit -a -m "Commit dotfiles" 2>&1`; result=$?.success?
+output += `git remote add github #{projectRepo} 2>&1`; result=$?.success?
+output += `git push -u github #{branch} 2>&1`; result=$?.success?
 
 File.open(logFile, "a+") { |file| file.write(output) }
