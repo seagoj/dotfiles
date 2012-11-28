@@ -59,6 +59,7 @@ else
 	# log.write(output+"\n\n")
 	puts dotfilesRepo
 	output = `git remote add github #{dotfilesRepo} 2>&1`; result=$?.success?
+	puts output
 	exit
 	# log.write(output+"\n\n")
 
