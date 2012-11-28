@@ -17,14 +17,13 @@ template = {
 	project+'.sublime-project'=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
 }
 logFile = 'NewProject.log'
-output = ''
+output = '## '+Time.now.ctime+"\n"
 #############
 # log = Logger.new(logFile)
 
 unless(File.exists?(logFile))
-	# log.info(logFile)
+	log.info(logFile)
 end
-# log.info('## '+Time.now.ctime+"\n")
 
 # Clean old project files from directories
 # Remove files recursively from a directory tree
@@ -67,7 +66,6 @@ else
 	# puts dotBranch
 	output += `git push -u github `+branch+` 2>&1`; result=$?.success?
 	Dir.chdir('..')
-	exit
 end
 
 unless(File.exists?(project))
@@ -106,11 +104,13 @@ template['genfiles'].each do |gen|
 	end
 end
 
-output=`git branch`
-branch= output[2..output.length-1]
+branchOutput=`git branch`
+branch= branchOutput[2..branchOutput.length-1]
 
-system('git init')
-system('git add *')
-system('git commit -a -m "Commit dotfiles"')
-system('git remote add github '+projectRepo)
-system('git push -u github '+branch)
+output += `git init`
+output += `git add *`
+output += `git commit -a -m "Commit dotfiles"`
+output += `git remote add github #{projectRepo}`
+output += `git push -u github #{branch}`
+
+File.open(logFile, "a+") { |file| file.write(output) }
