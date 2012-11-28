@@ -43,7 +43,7 @@ end
 unless(File.exists?(dotfilesPath))
 	# log.info("Pulling dotfiles from "+dotfilesRepo)
 	puts "Pulling dotfiles from "+dotfilesRepo
-	output = `git clone `+dotfilesRepo+` `+dotfilesPath
+	output = `git clone #{dotfilesRepo} #{dotfilesPath}`
 	# log.info(output)
 else
 	# log.info("Fetching dotfiles updates from "+dotfilesRepo)
@@ -57,7 +57,6 @@ else
 	output = `git commit -m "Update dotfiles from script" 2>&1`; result=$?.success?
 	output = `git fetch 2>&1`; result=$?.success?
 	# log.write(output+"\n\n")
-	puts dotfilesRepo
 	output = `git remote add github #{dotfilesRepo} 2>&1`; result=$?.success?
 	puts output
 	exit
