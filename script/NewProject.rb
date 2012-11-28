@@ -63,7 +63,7 @@ else
 	branchOutput = `git branch 2>&1`; result=$?.success?
 	branch= branchOutput[2..branchOutput.length-1]
 	# puts dotBranch
-	output += `git push -u github `+branch+` 2>&1`; result=$?.success?
+	output += `git push -u github #{branch} 2>&1`; result=$?.success?
 	Dir.chdir('..')
 end
 
