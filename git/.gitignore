@@ -1,6 +1,16 @@
 config
+
+############
+## Vagrant
 .vagrant
+
+############
+## Chef
 cookbooks
+
+############
+## SASS
+.sass-cache
 
 ############
 ## Sublime Text 2
