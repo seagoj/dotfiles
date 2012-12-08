@@ -1,6 +1,10 @@
 config
 
 ############
+## Git
+.git
+
+############
 ## Vagrant
 .vagrant
 
