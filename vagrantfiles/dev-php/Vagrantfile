@@ -7,7 +7,8 @@ Vagrant::Config.run do |config|
     'nginx::bootstrap'=>'git@github.com:seagoj/cookbook-nginx.git',
     'redis::php'=>'git@github.com:seagoj/cookbook-redis.git',
     'ruby'=>'git@github.com:seagoj/cookbook-ruby.git',
-    'sass'=>'git@github.com:seagoj/cookbook-sass.git'
+    'sass'=>'git@github.com:seagoj/cookbook-sass.git',
+    'devtools'=>'git@github.com:seagoj/devtools.git'
   }
   
   config.vm.box = "precise64"
