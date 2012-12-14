@@ -4,12 +4,15 @@ Vagrant::Config.run do |config|
     'apt'=>'git@github.com:seagoj/cookbook-apt.git',
     'php5-fpm'=>'git@github.com:seagoj/cookbook-php5-fpm.git',
     'nginx'=>'git@github.com:seagoj/cookbook-nginx.git',
-    'nginx::bootstrap'=>'git@github.com:seagoj/cookbook-nginx.git',
-    'redis::php'=>'git@github.com:seagoj/cookbook-redis.git',
+    # 'nginx::bootstrap'=>'git@github.com:seagoj/cookbook-nginx.git',
+    'redis'=>'git@github.com:seagoj/cookbook-redis.git',
     'ruby'=>'git@github.com:seagoj/cookbook-ruby.git',
     'sass'=>'git@github.com:seagoj/cookbook-sass.git',
-    'mysql'=>'git://github.com/opscode-cookbooks/mysql.git'
-    # 'devtools'=>'git@github.com:seagoj/devtools.git'
+    'mysql'=>'git://github.com/opscode-cookbooks/mysql.git',
+    'lib::bootstrap'=>'git@github.com:seagoj/cookbooks-lib.git',
+    'lib::predis'=>'git@github.com:seagoj/cookbooks-lib.git',
+    'lib::devtools'=>'git@github.com:seagoj/cookbooks-lib.git'
+
   }
   
   config.vm.box = "precise64"
