@@ -11,7 +11,7 @@ export MEDIA=/mnt/media
 ZSH_THEME="gozilla"
 
 # Example aliases
-alias zshconfig="/opt/sublime-text/sublime_text ~/.zshrc"
+alias zshconfig="sublime_text ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
@@ -35,7 +35,7 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitextras sublime ruby gem python archlinux vagrant systemd)
+plugins=(git gitextras sublime ruby gem python archlinux vagrant systemd redis-cli )
 
 source $ZSH/oh-my-zsh.sh
 
