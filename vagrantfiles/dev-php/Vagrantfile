@@ -9,9 +9,9 @@ Vagrant::Config.run do |config|
     'ruby'=>'git@github.com:seagoj/cookbook-ruby.git',
     'sass'=>'git@github.com:seagoj/cookbook-sass.git',
     'mysql'=>'git://github.com/opscode-cookbooks/mysql.git',
-    'lib::bootstrap'=>'git@github.com:seagoj/cookbooks-lib.git',
-    'lib::predis'=>'git@github.com:seagoj/cookbooks-lib.git',
-    'lib::devtools'=>'git@github.com:seagoj/cookbooks-lib.git'
+    'lib::bootstrap'=>'git@github.com:seagoj/cookbook-lib.git',
+    'lib::predis'=>'git@github.com:seagoj/cookbook-lib.git',
+    'lib::devtools'=>'git@github.com:seagoj/cookbook-lib.git'
 
   }
   
