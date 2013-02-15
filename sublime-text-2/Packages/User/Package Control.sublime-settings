@@ -1,0 +1,30 @@
+{
+	"installed_packages":
+	[
+		"BracketHighlighter",
+		"Chef",
+		"Compass",
+		"DetectSyntax",
+		"Follow Function PHP",
+		"Front End Snippets",
+		"Gist",
+		"Git",
+		"Github Tools",
+		"Goto Documentation",
+		"Goto-CSS-Declaration",
+		"Hipster Ipsum",
+		"IndentGuides",
+		"jQuery",
+		"Markdown Preview",
+		"nginx",
+		"Package Control",
+		"phpDocumentor",
+		"Prefixr",
+		"SublimeCodeIntel",
+		"SublimeEvernote",
+		"sublimelint",
+		"Twitter Bootstrap Snippets",
+		"Vagrant",
+		"zenburn"
+	]
+}

@@ -18,24 +18,39 @@
 			},
 			"buffers":
 			[
-				{
-					"file": "script/setLinks.sh",
-					"settings":
-					{
-						"buffer_size": 185,
-						"line_ending": "Unix",
-						"name": "ln -s ../.fonts ~/.fonts"
-					}
-				}
 			],
 			"build_system": "",
 			"command_palette":
 			{
-				"height": 0.0,
+				"height": 72.0,
 				"selected_items":
 				[
+					[
+						"install",
+						"Package Control: Install Package"
+					],
+					[
+						"insta",
+						"Package Control: Install Package"
+					],
+					[
+						"insa",
+						"Package Control: Install Package"
+					],
+					[
+						"brow",
+						"Preferences: Browse Packages"
+					],
+					[
+						"packa",
+						"Preferences: Browse Packages"
+					],
+					[
+						"package",
+						"Preferences: Browse Packages"
+					]
 				],
-				"width": 0.0
+				"width": 494.0
 			},
 			"console":
 			{
@@ -52,6 +67,7 @@
 			},
 			"file_history":
 			[
+				"/root/code/dotfiles/script/setLinks.sh",
 				"/etc/xdg/awesome/rc.lua",
 				"/root/.Xresources",
 				"/root/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
@@ -93,36 +109,8 @@
 			"groups":
 			[
 				{
-					"selected": 0,
 					"sheets":
 					[
-						{
-							"buffer": 0,
-							"file": "script/setLinks.sh",
-							"settings":
-							{
-								"buffer_size": 185,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										185,
-										185
-									]
-								],
-								"settings":
-								{
-									"auto_name": "ln -s ../.fonts ~/.fonts",
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"type": "text"
-						}
 					]
 				}
 			],
@@ -157,7 +145,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,0,0,1918,1078,1920,1080",
+			"position": "0,0,0,0,0,0,19,958,548,1920,1080",
 			"replace":
 			{
 				"height": 0.0
