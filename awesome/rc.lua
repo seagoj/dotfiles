@@ -41,7 +41,8 @@ end
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "xterm"
+terminal = "urxvt"
+--terminal = "SHELL=/bin/zsh urxvt"
 editor = os.getenv("EDITOR") or "nano"
 editor_cmd = terminal .. " -e " .. editor
 
@@ -98,9 +99,9 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "open terminal", terminal },
-                                    { "Sublime Text 2", "sublime_text" },
-                                    { "Chromium", "chromium --user-data-dir=/root/.config/chromium/Default" },
-				    { "Start SABnzbd", "python2 /opt/sabnzbd/SABnzbd.py" },
+                                    { "Sublime Text 2", "sublime-text" },
+                                    { "Chromium", "chromium --enable-plugins --user-data-dir=/root/.config/chromium/Default" },
+				                            { "Start SABnzbd", "python2 /opt/sabnzbd/SABnzbd.py" },
                                     { "Start NFS", "/opt/startnfs" }
                                   }
                         })
