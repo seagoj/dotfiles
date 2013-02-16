@@ -1,0 +1,1 @@
+chromium --enable-plugins --user-data-dir=/root/.config/chromium/Default
