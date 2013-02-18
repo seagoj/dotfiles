@@ -177,6 +177,63 @@
 			},
 			"buffers":
 			[
+				{
+					"file": "/home/seagoj/.zshrc",
+					"settings":
+					{
+						"buffer_size": 1557,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/seagoj/.oh-my-zsh/themes/powerline.zsh-theme",
+					"settings":
+					{
+						"buffer_size": 2034,
+						"line_ending": "Unix",
+						"name": "# FreeAgent puts the powerline style in zsh !"
+					}
+				},
+				{
+					"file": "/home/seagoj/.oh-my-zsh/themes/custom.zsh-theme",
+					"settings":
+					{
+						"buffer_size": 306,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/seagoj/.oh-my-zsh/themes/af-magic-custom.zsh-theme",
+					"settings":
+					{
+						"buffer_size": 981,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/seagoj/.oh-my-zsh/themes/zhann.zsh-theme",
+					"settings":
+					{
+						"buffer_size": 614,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/seagoj/.oh-my-zsh/themes/clean.zsh-theme",
+					"settings":
+					{
+						"buffer_size": 1267,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/seagoj/.Xresources",
+					"settings":
+					{
+						"buffer_size": 613,
+						"line_ending": "Unix"
+					}
+				}
 			],
 			"build_system": "",
 			"command_palette":
@@ -226,10 +283,19 @@
 			},
 			"file_history":
 			[
+				"/home/seagoj/.oh-my-zsh/themes/custom.zsh-theme",
+				"/home/seagoj/.oh-my-zsh/themes/zhann.zsh-theme",
+				"/home/seagoj/.Xresources",
+				"/home/seagoj/colors.sh",
+				"/home/seagoj/.screenrc",
+				"/home/seagoj/code/dotfiles/zsh/.zshrc",
+				"/home/seagoj/.zshrc",
+				"/home/seagoj/.ssh/id_rsa.pub",
+				"/home/seagoj/code/devtools/tests/index.html",
+				"/etc/nginx/nginx.conf",
 				"/home/seagoj/code/dotfiles/nginx/php.ini",
 				"/home/seagoj/code/dotfiles/nginx/default",
 				"/home/seagoj/code/cookbook-nginx/files/default/nginx.conf",
-				"/etc/nginx/nginx.conf",
 				"/home/seagoj/code/dotfiles/awesome/rc.lua",
 				"/home/seagoj/code/dotfiles/script/setLinks.sh",
 				"/root/code/dotfiles/script/setLinks.sh",
@@ -274,8 +340,194 @@
 			"groups":
 			[
 				{
+					"selected": 3,
 					"sheets":
 					[
+						{
+							"buffer": 0,
+							"file": "/home/seagoj/.zshrc",
+							"settings":
+							{
+								"buffer_size": 1557,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										340,
+										340
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/seagoj/.oh-my-zsh/themes/powerline.zsh-theme",
+							"settings":
+							{
+								"buffer_size": 2034,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										2034,
+										2034
+									]
+								],
+								"settings":
+								{
+									"auto_name": "# FreeAgent puts the powerline style in zsh !",
+									"syntax": "Packages/Text/Plain text.tmLanguage",
+									"tab_size": 2,
+									"translate_tabs_to_spaces": true
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 2,
+							"file": "/home/seagoj/.oh-my-zsh/themes/custom.zsh-theme",
+							"settings":
+							{
+								"buffer_size": 306,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										91,
+										91
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 3,
+							"file": "/home/seagoj/.oh-my-zsh/themes/af-magic-custom.zsh-theme",
+							"settings":
+							{
+								"buffer_size": 981,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										543,
+										543
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 4,
+							"file": "/home/seagoj/.oh-my-zsh/themes/zhann.zsh-theme",
+							"settings":
+							{
+								"buffer_size": 614,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										102,
+										102
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 5,
+							"file": "/home/seagoj/.oh-my-zsh/themes/clean.zsh-theme",
+							"settings":
+							{
+								"buffer_size": 1267,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										427,
+										427
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 6,
+							"file": "/home/seagoj/.Xresources",
+							"settings":
+							{
+								"buffer_size": 613,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										286,
+										286
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						}
 					]
 				}
 			],
@@ -310,7 +562,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,960,19,1918,548,1920,1080",
+			"position": "0,0,0,0,0,958,545,1918,1078,1920,1080",
 			"replace":
 			{
 				"height": 0.0

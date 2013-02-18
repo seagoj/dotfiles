@@ -10,8 +10,9 @@ export MEDIA=/mnt/media
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="gozilla"
 #ZSH_THEME="custom"
-ZSH_THEME="af-magic"
-#ZSH_THEME="powerline"
+ZSH_THEME="af-magic-custom"
+#ZSH_THEME="clean"
+#ZSH_THEME="frisk"
 
 # Example aliases
 alias zshconfig="sublime-text ~/.zshrc"
