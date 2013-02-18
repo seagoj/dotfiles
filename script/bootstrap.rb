@@ -105,6 +105,8 @@ template['genfiles'].each do |gen|
 	end
 end
 
+FileUtils.chmod 0755, "#{project}/.git/hooks/post-receive"
+
 if(vagrant)
 	unless(File.exists?("Vagrantfile"))
 		puts "Copying #{vagrant} Vagrantfile"
