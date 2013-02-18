@@ -13,9 +13,10 @@ projectRepo = "git@github.com:seagoj/#{project}.git"
 template = {
 	'dotfiles'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md'],
 	'dirs'=>['src'],
-	'genfiles'=>['README.md',"#{project}.sublime-project"],
+	'genfiles'=>['README.md',"#{project}.sublime-project",'post-receive'],
 	'README.md'=>"## #{project}",
-	"#{project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}'
+	"#{project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+project+'"}]}',
+	'.git/hooks/post-receive'=>"cd ~/code/#{project} && git pull github master"
 }
 log = File.new('NewProject.log','a+')
 output = '## '+Time.now.ctime+"\n"
