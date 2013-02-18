@@ -1,6 +1,7 @@
 {
 	"folder_history":
 	[
+		"/home/seagoj/code/dotfiles",
 		"/root/code/cookbook-nginx/files/default",
 		"/root/code/devtools",
 		"/root/code/dotfiles"
@@ -176,35 +177,11 @@
 			},
 			"buffers":
 			[
-				{
-					"file": "/etc/nginx/nginx.conf",
-					"settings":
-					{
-						"buffer_size": 2716,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/root/code/dotfiles/nginx/default",
-					"settings":
-					{
-						"buffer_size": 2784,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/root/code/dotfiles/nginx/install.sh",
-					"settings":
-					{
-						"buffer_size": 381,
-						"line_ending": "Unix"
-					}
-				}
 			],
 			"build_system": "",
 			"command_palette":
 			{
-				"height": 380.0,
+				"height": 72.0,
 				"selected_items":
 				[
 					[
@@ -249,6 +226,12 @@
 			},
 			"file_history":
 			[
+				"/home/seagoj/code/dotfiles/nginx/php.ini",
+				"/home/seagoj/code/dotfiles/nginx/default",
+				"/home/seagoj/code/cookbook-nginx/files/default/nginx.conf",
+				"/etc/nginx/nginx.conf",
+				"/home/seagoj/code/dotfiles/awesome/rc.lua",
+				"/home/seagoj/code/dotfiles/script/setLinks.sh",
 				"/root/code/dotfiles/script/setLinks.sh",
 				"/etc/xdg/awesome/rc.lua",
 				"/root/.Xresources",
@@ -291,90 +274,8 @@
 			"groups":
 			[
 				{
-					"selected": 0,
 					"sheets":
 					[
-						{
-							"buffer": 0,
-							"file": "/etc/nginx/nginx.conf",
-							"settings":
-							{
-								"buffer_size": 2716,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										2716,
-										2716
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/nginx/nginx.tmLanguage",
-									"tab_size": 4,
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"type": "text"
-						},
-						{
-							"buffer": 1,
-							"file": "/root/code/dotfiles/nginx/default",
-							"settings":
-							{
-								"buffer_size": 2784,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/Text/Plain text.tmLanguage",
-									"translate_tabs_to_spaces": false
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"type": "text"
-						},
-						{
-							"buffer": 2,
-							"file": "/root/code/dotfiles/nginx/install.sh",
-							"settings":
-							{
-								"buffer_size": 381,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										175,
-										175
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/ShellScript/Shell-Unix-Generic.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"type": "text"
-						}
 					]
 				}
 			],
@@ -409,7 +310,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,0,727,958,1078,1920,1080",
+			"position": "0,0,0,0,0,960,19,1918,548,1920,1080",
 			"replace":
 			{
 				"height": 0.0
@@ -438,396 +339,14 @@
 			"side_bar_width": 150.0,
 			"status_bar_visible": true,
 			"window_id": 1,
-			"workspace_name": "/root/code/devtools/devtools.sublime-project"
-		},
-		{
-			"auto_complete":
-			{
-				"selected_items":
-				[
-				]
-			},
-			"buffers":
-			[
-			],
-			"build_system": "",
-			"command_palette":
-			{
-				"height": 380.0,
-				"selected_items":
-				[
-					[
-						"install",
-						"Package Control: Install Package"
-					],
-					[
-						"insta",
-						"Package Control: Install Package"
-					],
-					[
-						"insa",
-						"Package Control: Install Package"
-					],
-					[
-						"brow",
-						"Preferences: Browse Packages"
-					],
-					[
-						"packa",
-						"Preferences: Browse Packages"
-					],
-					[
-						"package",
-						"Preferences: Browse Packages"
-					]
-				],
-				"width": 494.0
-			},
-			"console":
-			{
-				"height": 0.0
-			},
-			"distraction_free":
-			{
-				"menu_visible": true,
-				"show_minimap": false,
-				"show_open_files": false,
-				"show_tabs": false,
-				"side_bar_visible": false,
-				"status_bar_visible": false
-			},
-			"file_history":
-			[
-				"/root/code/dotfiles/script/setLinks.sh",
-				"/etc/xdg/awesome/rc.lua",
-				"/root/.Xresources",
-				"/root/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-				"/root/.zshrc",
-				"/etc/fonts/fonts.conf",
-				"/root/code/.Xresources"
-			],
-			"find":
-			{
-				"height": 34.0
-			},
-			"find_in_files":
-			{
-				"height": 0.0,
-				"where_history":
-				[
-				]
-			},
-			"find_state":
-			{
-				"case_sensitive": false,
-				"find_history":
-				[
-					"terminal"
-				],
-				"highlight": true,
-				"in_selection": false,
-				"preserve_case": false,
-				"regex": false,
-				"replace_history":
-				[
-				],
-				"reverse": false,
-				"show_context": true,
-				"use_buffer2": true,
-				"whole_word": false,
-				"wrap": true
-			},
-			"folders":
-			[
-				{
-					"path": "/root/code/cookbook-nginx/files/default"
-				}
-			],
-			"groups":
-			[
-				{
-					"sheets":
-					[
-					]
-				}
-			],
-			"incremental_find":
-			{
-				"height": 0.0
-			},
-			"input":
-			{
-				"height": 0.0
-			},
-			"layout":
-			{
-				"cells":
-				[
-					[
-						0,
-						0,
-						1,
-						1
-					]
-				],
-				"cols":
-				[
-					0.0,
-					1.0
-				],
-				"rows":
-				[
-					0.0,
-					1.0
-				]
-			},
-			"menu_visible": true,
-			"position": "0,0,0,0,0,0,373,958,725,1920,1080",
-			"replace":
-			{
-				"height": 0.0
-			},
-			"save_all_on_build": true,
-			"select_file":
-			{
-				"height": 0.0,
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"select_project":
-			{
-				"height": 0.0,
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"show_minimap": true,
-			"show_open_files": false,
-			"show_tabs": true,
-			"side_bar_visible": true,
-			"side_bar_width": 150.0,
-			"status_bar_visible": true,
-			"window_id": 2,
-			"workspace_name": ""
-		},
-		{
-			"auto_complete":
-			{
-				"selected_items":
-				[
-				]
-			},
-			"buffers":
-			[
-				{
-					"file": "/root/code/cookbook-nginx/files/default/nginx.conf",
-					"settings":
-					{
-						"buffer_size": 470,
-						"line_ending": "Unix"
-					}
-				}
-			],
-			"build_system": "",
-			"command_palette":
-			{
-				"height": 380.0,
-				"selected_items":
-				[
-					[
-						"install",
-						"Package Control: Install Package"
-					],
-					[
-						"insta",
-						"Package Control: Install Package"
-					],
-					[
-						"insa",
-						"Package Control: Install Package"
-					],
-					[
-						"brow",
-						"Preferences: Browse Packages"
-					],
-					[
-						"packa",
-						"Preferences: Browse Packages"
-					],
-					[
-						"package",
-						"Preferences: Browse Packages"
-					]
-				],
-				"width": 494.0
-			},
-			"console":
-			{
-				"height": 0.0
-			},
-			"distraction_free":
-			{
-				"menu_visible": true,
-				"show_minimap": false,
-				"show_open_files": false,
-				"show_tabs": false,
-				"side_bar_visible": false,
-				"status_bar_visible": false
-			},
-			"file_history":
-			[
-				"/root/code/dotfiles/script/setLinks.sh",
-				"/etc/xdg/awesome/rc.lua",
-				"/root/.Xresources",
-				"/root/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
-				"/root/.zshrc",
-				"/etc/fonts/fonts.conf",
-				"/root/code/.Xresources"
-			],
-			"find":
-			{
-				"height": 34.0
-			},
-			"find_in_files":
-			{
-				"height": 0.0,
-				"where_history":
-				[
-				]
-			},
-			"find_state":
-			{
-				"case_sensitive": false,
-				"find_history":
-				[
-					"terminal"
-				],
-				"highlight": true,
-				"in_selection": false,
-				"preserve_case": false,
-				"regex": false,
-				"replace_history":
-				[
-				],
-				"reverse": false,
-				"show_context": true,
-				"use_buffer2": true,
-				"whole_word": false,
-				"wrap": true
-			},
-			"folders":
-			[
-				{
-					"path": "/root/code/cookbook-nginx/files/default"
-				}
-			],
-			"groups":
-			[
-				{
-					"selected": 0,
-					"sheets":
-					[
-						{
-							"buffer": 0,
-							"file": "/root/code/cookbook-nginx/files/default/nginx.conf",
-							"settings":
-							{
-								"buffer_size": 470,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										0,
-										0
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/nginx/nginx.tmLanguage",
-									"tab_size": 4,
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"type": "text"
-						}
-					]
-				}
-			],
-			"incremental_find":
-			{
-				"height": 0.0
-			},
-			"input":
-			{
-				"height": 0.0
-			},
-			"layout":
-			{
-				"cells":
-				[
-					[
-						0,
-						0,
-						1,
-						1
-					]
-				],
-				"cols":
-				[
-					0.0,
-					1.0
-				],
-				"rows":
-				[
-					0.0,
-					1.0
-				]
-			},
-			"menu_visible": true,
-			"position": "0,0,0,0,0,0,19,958,371,1920,1080",
-			"replace":
-			{
-				"height": 0.0
-			},
-			"save_all_on_build": true,
-			"select_file":
-			{
-				"height": 0.0,
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"select_project":
-			{
-				"height": 0.0,
-				"selected_items":
-				[
-				],
-				"width": 0.0
-			},
-			"show_minimap": true,
-			"show_open_files": false,
-			"show_tabs": true,
-			"side_bar_visible": true,
-			"side_bar_width": 150.0,
-			"status_bar_visible": true,
-			"window_id": 3,
-			"workspace_name": ""
+			"workspace_name": "/home/seagoj/code/dotfiles/dotfiles.sublime-project"
 		}
 	],
 	"workspaces":
 	{
 		"recent_workspaces":
 		[
+			"/home/seagoj/code/dotfiles/dotfiles.sublime-project",
 			"/root/code/devtools/devtools.sublime-project",
 			"/root/code/dotfiles/dotfiles.sublime-project"
 		]
