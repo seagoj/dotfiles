@@ -179,6 +179,14 @@
 			},
 			"buffers":
 			[
+				{
+					"file": "/home/seagoj/code/hook.php",
+					"settings":
+					{
+						"buffer_size": 349,
+						"line_ending": "Unix"
+					}
+				}
 			],
 			"build_system": "",
 			"command_palette":
@@ -228,6 +236,8 @@
 			},
 			"file_history":
 			[
+				"/home/seagoj/code/dotfiles/nginx/php.conf",
+				"/etc/nginx/nginx.conf",
 				"/home/seagoj/code/devtools/Auth.php",
 				"/home/seagoj/code/devtools/tests/authTest.php",
 				"/home/seagoj/code/dotfiles/script/bootstrap.rb",
@@ -277,8 +287,35 @@
 			"groups":
 			[
 				{
+					"selected": 0,
 					"sheets":
 					[
+						{
+							"buffer": 0,
+							"file": "/home/seagoj/code/hook.php",
+							"settings":
+							{
+								"buffer_size": 349,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										148,
+										148
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/PHP/PHP.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						}
 					]
 				}
 			],
@@ -313,7 +350,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,960,549,1918,812,1920,1080",
+			"position": "0,0,0,0,0,958,549,1918,1078,1920,1080",
 			"replace":
 			{
 				"height": 0.0
@@ -342,7 +379,7 @@
 			"side_bar_width": 150.0,
 			"status_bar_visible": true,
 			"window_id": 1,
-			"workspace_name": "/home/seagoj/code/devtools/devtools.sublime-project"
+			"workspace_name": ""
 		}
 	],
 	"workspaces":
