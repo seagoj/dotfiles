@@ -183,7 +183,15 @@
 					"file": "/home/seagoj/code/hook.php",
 					"settings":
 					{
-						"buffer_size": 349,
+						"buffer_size": 340,
+						"line_ending": "Unix"
+					}
+				},
+				{
+					"file": "/home/seagoj/code/hook.log",
+					"settings":
+					{
+						"buffer_size": 833,
 						"line_ending": "Unix"
 					}
 				}
@@ -236,6 +244,7 @@
 			},
 			"file_history":
 			[
+				"/home/seagoj/code/hook.php",
 				"/home/seagoj/code/dotfiles/nginx/php.conf",
 				"/etc/nginx/nginx.conf",
 				"/home/seagoj/code/devtools/Auth.php",
@@ -295,20 +304,46 @@
 							"file": "/home/seagoj/code/hook.php",
 							"settings":
 							{
-								"buffer_size": 349,
+								"buffer_size": 340,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										148,
-										148
+										334,
+										334
 									]
 								],
 								"settings":
 								{
 									"syntax": "Packages/PHP/PHP.tmLanguage"
+								},
+								"translation.x": 0.0,
+								"translation.y": 0.0,
+								"zoom_level": 1.0
+							},
+							"type": "text"
+						},
+						{
+							"buffer": 1,
+							"file": "/home/seagoj/code/hook.log",
+							"settings":
+							{
+								"buffer_size": 833,
+								"regions":
+								{
+								},
+								"selection":
+								[
+									[
+										513,
+										513
+									]
+								],
+								"settings":
+								{
+									"syntax": "Packages/Text/Plain text.tmLanguage"
 								},
 								"translation.x": 0.0,
 								"translation.y": 0.0,
@@ -350,7 +385,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,958,549,1918,1078,1920,1080",
+			"position": "0,0,0,0,0,960,550,1918,1078,1920,1080",
 			"replace":
 			{
 				"height": 0.0
