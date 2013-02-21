@@ -183,15 +183,7 @@
 					"file": "/home/seagoj/code/hook.php",
 					"settings":
 					{
-						"buffer_size": 340,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/home/seagoj/code/hook.log",
-					"settings":
-					{
-						"buffer_size": 833,
+						"buffer_size": 922,
 						"line_ending": "Unix"
 					}
 				}
@@ -199,9 +191,13 @@
 			"build_system": "",
 			"command_palette":
 			{
-				"height": 72.0,
+				"height": 132.0,
 				"selected_items":
 				[
+					[
+						"git gist",
+						"Gist: Add File to Gist"
+					],
 					[
 						"install",
 						"Package Control: Install Package"
@@ -227,7 +223,7 @@
 						"Preferences: Browse Packages"
 					]
 				],
-				"width": 494.0
+				"width": 602.0
 			},
 			"console":
 			{
@@ -244,6 +240,11 @@
 			},
 			"file_history":
 			[
+				"/home/seagoj/code/dotfiles/sublime-text-2/Packages/User/Gist.sublime-settings",
+				"/var/www/hook.log",
+				"/home/seagoj/code/dotfiles/script/prepHook.sh",
+				"/var/www/hook.php",
+				"/home/seagoj/code/hook.log",
 				"/home/seagoj/code/hook.php",
 				"/home/seagoj/code/dotfiles/nginx/php.conf",
 				"/etc/nginx/nginx.conf",
@@ -304,46 +305,20 @@
 							"file": "/home/seagoj/code/hook.php",
 							"settings":
 							{
-								"buffer_size": 340,
+								"buffer_size": 922,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										334,
-										334
+										318,
+										318
 									]
 								],
 								"settings":
 								{
 									"syntax": "Packages/PHP/PHP.tmLanguage"
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"type": "text"
-						},
-						{
-							"buffer": 1,
-							"file": "/home/seagoj/code/hook.log",
-							"settings":
-							{
-								"buffer_size": 833,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										513,
-										513
-									]
-								],
-								"settings":
-								{
-									"syntax": "Packages/Text/Plain text.tmLanguage"
 								},
 								"translation.x": 0.0,
 								"translation.y": 0.0,
@@ -385,7 +360,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,960,550,1918,1078,1920,1080",
+			"position": "0,0,0,0,0,0,19,958,1078,1920,1080",
 			"replace":
 			{
 				"height": 0.0
