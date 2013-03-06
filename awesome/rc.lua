@@ -101,8 +101,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "open terminal", terminal },
                                     { "Sublime Text 2", "sublime-text" },
                                     { "Chromium", "chromium --enable-plugins" },
-			            { "Steam", "steam" },
-	                            { "Start SABnzbd", "python2 /opt/sabnzbd/SABnzbd.py" },
+			                              { "Steam", "steam" },
+	                                  { "Media System", "~/code/launchMedia.sh" },
                                     { "Start NFS", "/opt/startnfs" }
                                   }
                         })
