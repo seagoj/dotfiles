@@ -50,32 +50,32 @@ class Project
                     "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\r\n\r\n"+
                     "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
                 '.gitattributes'=>"* text eol=LF\r\n\r\n"+
-                    "# Standard to msysgit\r\n",
-                    # *.doc  diff=astextplain
-                    # *.DOC  diff=astextplain
-                    # *.docx diff=astextplain
-                    # *.DOCX diff=astextplain
-                    # *.dot  diff=astextplain
-                    # *.DOT  diff=astextplain
-                    # *.pdf  diff=astextplain
-                    # *.PDF  diff=astextplain
-                    # *.rtf  diff=astextplain
-                    # *.RTF  diff=astextplain',
-                '.gitignore'=>'config\n'+
-                    '.git\n'+
-                    '.vagrant\n'+
-                    'cookbooks\n'+
-                    '.sass-cache\n'+
-                    '*.sublime-project\n'+
-                    '*.sublime-workspace\n'+
-                    'Thumbs.db\n'+
-                    'Desktop.ini\n',
-                'CONTRIBUTING.md'=>'## Contributing\n\n'+
-                    '### 1. Create an Issue on GitHub\n\n'+
-                    '### 2. Fork & Create a Feature Branch\n\n'+
-                    '### 3. Get the test suite running\n\n'+
-                    '### 4. Implement your fix or feature\n\n'+
-                    '### 5. Make a pull request',
+                    "# Standard to msysgit\r\n"+
+                    "*.doc  diff=astextplain\r\n"+
+                    "*.DOC  diff=astextplain\r\n"+
+                    "*.docx diff=astextplain\r\n"+
+                    "*.DOCX diff=astextplain\r\n"+
+                    "*.dot  diff=astextplain\r\n"+
+                    "*.DOT  diff=astextplain\r\n"+
+                    "*.pdf  diff=astextplain\r\n"+
+                    "*.PDF  diff=astextplain\r\n"+
+                    "*.rtf  diff=astextplain\r\n"+
+                    "*.RTF  diff=astextplain",
+                '.gitignore'=>"config\n"+
+                    ".git\n"+
+                    ".vagrant\n"+
+                    "cookbooks\n"+
+                    ".sass-cache\n"+
+                    "*.sublime-project\n"+
+                    "*.sublime-workspace\n"+
+                    "Thumbs.db\n"+
+                    "Desktop.ini\n",
+                "CONTRIBUTING.md"=>"## Contributing\n\n"+
+                    "### 1. Create an Issue on GitHub\n\n"+
+                    "### 2. Fork & Create a Feature Branch\n\n"+
+                    "### 3. Get the test suite running\n\n"+
+                    "### 4. Implement your fix or feature\n\n"+
+                    "### 5. Make a pull request",
                 "#{@project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+@project+'"}]}',
                 '.git/hooks/post-receive'=>"cd ~/code/#{@project} && git pull github master"
             },
