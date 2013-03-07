@@ -3,18 +3,18 @@
 require 'fileutils'
 
 class Project
-    attr_accessor :project,
-                  :vagrant,
-                  :docRoot,
-                  :codeRoot,
-                  :delete,
-                  :cookbook,
-                  :dotfilesPath,
-                  :dotfilesRepo,
-                  :projectRepo,
-                  :template,
-                  :log,
-                  :output
+    # attr_accessor :project,
+    #               :vagrant,
+    #               :docRoot,
+    #               :codeRoot,
+    #               :delete,
+    #               :cookbook,
+    #               :dotfilesPath,
+    #               :dotfilesRepo,
+    #               :projectRepo,
+    #               :template,
+    #               :log,
+    #               :output
 
     def initialize(args)
         @project = args[:project] unless args[:project].nil?
@@ -25,10 +25,11 @@ class Project
 
         # Set instance defaults
         defaults = {
+            :server=>false,
             :vagrant=>nil,
             :docRoot=>'/var/www',
             :codeRoot=>`pwd`,
-            :destroy=>[
+            :clean=>[
                 '.buildpath',
                 '.project',
                 '.metadata',
@@ -45,11 +46,11 @@ class Project
                 'dirs'=>['src'],
                 'files'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md','README.md',"#{@project}.sublime-project"],
                 'README.md'=>"## #{@project}",
-                'LICENSE'=>"Copyright (C) 2012 Jeremy Seago\n"+
-                    "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n"+
-                    "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n"+
+                'LICENSE'=>"Copyright (C) 2012 Jeremy Seago\n\n"+
+                    "Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the \"Software\"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\n"+
+                    "The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\n"+
                     "THE SOFTWARE IS PROVIDED \"AS IS\", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.",
-                '.gitattributes'=>"* text eol=LF\n"+
+                '.gitattributes'=>"* text eol=LF\n\n"+
                     "# Standard to msysgit\n"+
                     "*.doc  diff=astextplain\n"+
                     "*.DOC  diff=astextplain\n"+
@@ -86,19 +87,25 @@ class Project
            instance_variable_set("@#{k}", v) unless v.nil?
         end
 
-        self.destroy()
+        self.clean()
         self.update()
-        self.create()
+        self.write()
+        if @server
+            self.configPostRecieveHook()
+            self.configNginx()
+        end
+        self.configVagrant() unless @vagrant.nil?
+        self.githubPush()
     end
 
-    def destroy
+    def clean
         # Clean old project files from directories
         # Remove files recursively from a directory tree
         # log.info("Deleting old project files from workspace")
-        puts "Destroying passed files in #{codeRoot}"
+        puts "Destroying passed files in #{@codeRoot}"
         # Delete files in @destroy hash
         Dir.entries('.').each do |d|
-            @destroy.each do |f|
+            @clean.each do |f|
                 if(File.exists?(d+'/'+f))
                     puts d+'/'+f
                     FileUtils.rm_rf(d+'/'+f)
@@ -135,7 +142,7 @@ class Project
         end
     end
 
-    def create
+    def write
         unless(File.exists?(@project))
             Dir.mkdir(@project)
         end
@@ -167,23 +174,7 @@ class Project
         # FileUtils.chmod 0755, "#{@project}/.git/hooks/post-receive"
     end
 
-    # def genGit()
-    #     if(File.exists?('.gitattributes'))
-    #         File.delete('.gitattributes')
-    #     end
-    #     if(File.exists?('.gitignore'))
-    #         File.delete('.gitignore')
-    #     end
-
-    #     @template['dotfiles'].each do |dotfile|
-    #         unless(File.exists?(dotfile))
-    #             puts "Copying #{dotfile}"
-    #             FileUtils.cp('../'+@dotfilesPath+'/git/'+dotfile,'.')
-    #         end
-    #     end
-    # end
-
-    def setGitHook()
+    def configPostReceiveHook()
         unless(File.exists?(@docRoot+'/hook.php'))
             Fileutils.cp('../'+@dotfilesPath+'/git/hook.php', @docRoot+'/hook.php')
         end
@@ -192,19 +183,11 @@ class Project
         `sudo chown -R http #{@docRoot}/#{@project}`
     end
 
-    # def createFiles()
-    #     @template['files'].each do |gen|
-    #         unless(File.exists?(gen))
-    #             puts "Building #{gen}"
-    #             file = File.new(gen,'wb')
-    #             file.write(@template[gen])
-    #         end
-    #     end
+    def configNginx()
 
-    #     FileUtils.chmod 0755, "#{@project}/.git/hooks/post-receive"
-    # end
+    end
 
-    def genVagrant()
+    def sonfigVagrant()
         if(@vagrant)
           unless(File.exists?("Vagrantfile"))
               puts "Copying #{@vagrant} Vagrantfile"
