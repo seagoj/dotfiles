@@ -166,7 +166,7 @@ class Project
             end
         end
 
-        FileUtils.chmod 0755, "#{@project}/.git/hooks/post-receive"
+        # FileUtils.chmod 0755, "#{@project}/.git/hooks/post-receive"
     end
 
     # def genGit()
