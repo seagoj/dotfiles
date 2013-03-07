@@ -187,7 +187,7 @@ class Project
 
     end
 
-    def sonfigVagrant()
+    def configVagrant()
         if(@vagrant)
           unless(File.exists?("Vagrantfile"))
               puts "Copying #{@vagrant} Vagrantfile"
