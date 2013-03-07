@@ -41,10 +41,41 @@ class Project
             :cookbook=> @project[0..8]=='cookbook-',
             :projectRepo=> "git@github.com:seagoj/#{@project}.git",
             :template => {
-                'dotfiles'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md'],
+                # 'dotfiles'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md'],
                 'dirs'=>['src'],
-                'genfiles'=>['README.md',"#{@project}.sublime-project",'.git/hooks/post-receive'],
+                'files'=>['LICENSE','.gitattributes','.gitignore','CONTRIBUTING.md','README.md',"#{@project}.sublime-project",'.git/hooks/post-receive'],
                 'README.md'=>"## #{@project}",
+                'LICENSE'=>'Copyright (C) 2012 Jeremy Seago\n\n'+
+                    'Permission is hereby granted, free of charge, to any person obtaining a copy of this software and associated documentation files (the "Software"), to deal in the Software without restriction, including without limitation the rights to use, copy, modify, merge, publish, distribute, sublicense, and/or sell copies of the Software, and to permit persons to whom the Software is furnished to do so, subject to the following conditions:\n\n'+
+                    'The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software.\n\n'+
+                    'THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.',
+                '.gitattributes'=>'* text eol=LF\n\n'+
+                    '# Standard to msysgit\n'+
+                    '*.doc  diff=astextplain'+
+                    '*.DOC  diff=astextplain'+
+                    '*.docx diff=astextplain'+
+                    '*.DOCX diff=astextplain'+
+                    '*.dot  diff=astextplain'+
+                    '*.DOT  diff=astextplain'+
+                    '*.pdf  diff=astextplain'+
+                    '*.PDF  diff=astextplain'+
+                    '*.rtf  diff=astextplain'+
+                    '*.RTF  diff=astextplain',
+                '.gitignore'=>'config\n'+
+                    '.git\n'+
+                    '.vagrant\n'+
+                    'cookbooks\n'+
+                    '.sass-cache\n'+
+                    '*.sublime-project\n'+
+                    '*.sublime-workspace\n'+
+                    'Thumbs.db\n'+
+                    'Desktop.ini\n',
+                'CONTRIBUTING.md'=>'## Contributing\n\n'+
+                    '### 1. Create an Issue on GitHub\n\n'+
+                    '### 2. Fork & Create a Feature Branch\n\n'+
+                    '### 3. Get the test suite running\n\n'+
+                    '### 4. Implement your fix or feature\n\n'+
+                    '### 5. Make a pull request',
                 "#{@project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+@project+'"}]}',
                 '.git/hooks/post-receive'=>"cd ~/code/#{@project} && git pull github master"
             },
@@ -57,6 +88,7 @@ class Project
 
         self.destroy()
         self.update()
+        self.create()
     end
 
     def destroy
@@ -107,10 +139,10 @@ class Project
         unless(File.exists?(@project))
             Dir.mkdir(@project)
         end
-            Dir.chdir Dir.pwd+'/'+@project.chomp
+        Dir.chdir Dir.pwd+'/'+@project.chomp
     end
 
-    def genDirs
+    def create
         unless(@cookbook)
             @template['dirs'].each do |dir|
                 unless(File.exists?(dir))
@@ -126,23 +158,32 @@ class Project
                 end
             end
         end
-    end
-
-    def genGit()
-        if(File.exists?('.gitattributes'))
-            File.delete('.gitattributes')
-        end
-        if(File.exists?('.gitignore'))
-            File.delete('.gitignore')
-        end
-
-        @template['dotfiles'].each do |dotfile|
-            unless(File.exists?(dotfile))
-                puts "Copying #{dotfile}"
-                FileUtils.cp('../'+@dotfilesPath+'/git/'+dotfile,'.')
+        @template['files'].each do |gen|
+            unless(File.exists?(gen))
+                puts "Building #{gen}"
+                file = File.new(gen,'wb')
+                file.write(@template[gen])
             end
         end
+
+        FileUtils.chmod 0755, "#{@project}/.git/hooks/post-receive"
     end
+
+    # def genGit()
+    #     if(File.exists?('.gitattributes'))
+    #         File.delete('.gitattributes')
+    #     end
+    #     if(File.exists?('.gitignore'))
+    #         File.delete('.gitignore')
+    #     end
+
+    #     @template['dotfiles'].each do |dotfile|
+    #         unless(File.exists?(dotfile))
+    #             puts "Copying #{dotfile}"
+    #             FileUtils.cp('../'+@dotfilesPath+'/git/'+dotfile,'.')
+    #         end
+    #     end
+    # end
 
     def setGitHook()
         unless(File.exists?(@docRoot+'/hook.php'))
@@ -153,17 +194,17 @@ class Project
         `sudo chown -R http #{@docRoot}/#{@project}`
     end
 
-    def genSublimeText()
-        @template['genfiles'].each do |gen|
-            unless(File.exists?(gen))
-                puts "Building #{gen}"
-                file = File.new(gen,'wb')
-                file.write(@template[gen])
-            end
-        end
+    # def createFiles()
+    #     @template['files'].each do |gen|
+    #         unless(File.exists?(gen))
+    #             puts "Building #{gen}"
+    #             file = File.new(gen,'wb')
+    #             file.write(@template[gen])
+    #         end
+    #     end
 
-        FileUtils.chmod 0755, "#{@project}/.git/hooks/post-receive"
-    end
+    #     FileUtils.chmod 0755, "#{@project}/.git/hooks/post-receive"
+    # end
 
     def genVagrant()
         if(@vagrant)

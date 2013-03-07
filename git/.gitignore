@@ -1,33 +1,9 @@
 config
-
-############
-## Git
 .git
-
-############
-## Vagrant
 .vagrant
-
-############
-## Chef
 cookbooks
-
-############
-## SASS
 .sass-cache
-
-############
-## Sublime Text 2
-============
 *.sublime-project
 *.sublime-workspace
-
-############
-## Windows
-############
-
-# Windows image file caches
 Thumbs.db
-
-# Folder config file
 Desktop.ini
