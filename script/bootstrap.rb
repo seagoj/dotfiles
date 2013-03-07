@@ -175,7 +175,21 @@ class Project
     end
 
     def configNginx()
+        file = File.new('/etc/nginx/nginx.conf', 'w+')
+        contents = file.read
 
+        config = "\tserver {\n"+
+            "\t\tlisten       80;\n"+
+            "\t\tserver_name  #{@project} #{@project}.seagoj.com;\n"+
+            "\t\troot    /var/www/#{@project}/src/;\n\n"+
+            "\t\tlocation / {\n"+
+            "\t\t\tindex index.html index.htm index.php;\n"+
+            "\t\t}\n\n"+
+            "\t\tinclude php.conf;\n"+
+            "\t}\n\n"+
+            "\t#END OF SERVER CONFIG\n";
+
+        puts contents.gsub("\t#END OF SERVER CONFIG\n", config)
     end
 
     def configVagrant()
@@ -200,4 +214,4 @@ class Project
 end
 
 project = Project.new :project => ARGV[0], :vagrant => ARGV[1]
-puts project.output
+project.configNginx()
