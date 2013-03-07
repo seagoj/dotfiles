@@ -3,18 +3,7 @@
 require 'fileutils'
 
 class Project
-    # attr_accessor :project,
-    #               :vagrant,
-    #               :docRoot,
-    #               :codeRoot,
-    #               :delete,
-    #               :cookbook,
-    #               :dotfilesPath,
-    #               :dotfilesRepo,
-    #               :projectRepo,
-    #               :template,
-    #               :log,
-    #               :output
+    attr_reader :output
 
     def initialize(args)
         @project = args[:project] unless args[:project].nil?
@@ -209,3 +198,4 @@ class Project
 end
 
 project = Project.new :project => ARGV[0], :vagrant => ARGV[1]
+puts project.output
