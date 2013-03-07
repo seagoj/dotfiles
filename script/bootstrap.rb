@@ -14,10 +14,12 @@ class Project
                   :log,
                   :output
 
-    def initialize(project, vagrant)
-        @project = project
-        @vagrant = vagrant
+    def initialize(args)
+        # Set instance defaults
+        @project = 'project'
+        @vagrant = nil
         @docRoot = '/var/www'
+        @codeRoot = '`pwd`'
         @delete = ['.buildpath','.project','.metadata','nbproject','.settings']
         @cookbook = @project[0..8]=='cookbook-'
         @dotfilesPath = 'dotfiles'
@@ -33,6 +35,9 @@ class Project
         }
         @log = File.new('NewProject.log','a+')
         @output = '## '+Time.now.ctime+"\n"
+        args.each do |k,v|
+            instance_variable_set("@#{k}", v) unless v.nil?
+        end
     end
 
     def clearOldMetadata
@@ -162,7 +167,7 @@ class Project
     end
 end
 
-project = Project.new(ARGV[0], ARGV[1])
+project = Project.new :project => ARGV[0], :vagrant => ARGV[1]
 project.clearOldMetadata()
 project.pullDotfiles()
 
