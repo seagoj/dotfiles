@@ -143,6 +143,7 @@ class Project
     end
 
     def create
+        puts "cookbook: #{@cookbook}"
         unless(@cookbook)
             @template['dirs'].each do |dir|
                 unless(File.exists?(dir))
