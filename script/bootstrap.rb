@@ -3,7 +3,8 @@
 require 'fileutils'
 
 class Project
-    attr_reader :output
+    attr_reader :output,
+                :debug
 
     def initialize(args)
         @project = args[:project] unless args[:project].nil?
@@ -69,7 +70,8 @@ class Project
                 "#{@project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+@project+'"}]}',
                 '.git/hooks/post-receive'=>"cd ~/code/#{@project} && git pull github master"
             },
-            :output=>'## '+Time.now.ctime+"\n"
+            :debug=>'## '+Time.now.ctime+"\n",
+            :output=>''
         }
 
         defaults.merge(args).each do |k,v|
@@ -91,12 +93,12 @@ class Project
         # Clean old project files from directories
         # Remove files recursively from a directory tree
         # log.info("Deleting old project files from workspace")
-        puts "Destroying passed files in #{@codeRoot}"
+        @output += "Destroying passed files in #{@codeRoot}"
         # Delete files in @destroy hash
         Dir.entries('.').each do |d|
             @clean.each do |f|
                 if(File.exists?(d+'/'+f))
-                    puts d+'/'+f
+                    @output += d+'/'+f
                     FileUtils.rm_rf(d+'/'+f)
                 end
             end
@@ -105,28 +107,28 @@ class Project
 
     def update
         unless(File.exists?(@dotfilesPath))
-            puts "Pulling dotfiles from #{@dotfilesRepo}"
-            @output += `git clone #{@dotfilesRepo} #{@dotfilesPath}`
+            @output += "Pulling dotfiles from #{@dotfilesRepo}"
+            @debug += `git clone #{@dotfilesRepo} #{@dotfilesPath}`
         else
             # log.info("Fetching dotfiles updates from "+dotfilesRepo)
-            puts "Fetching dotfiles updates from #{@dotfilesRepo}"
+            @output += "Fetching dotfiles updates from #{@dotfilesRepo}"
             Dir.chdir(@dotfilesPath)
             
-            @output += `git add * 2>&1`; result=$?.success?
+            @debug += `git add * 2>&1`; result=$?.success?
 
             # log.write(output+"\n\n")
             
             # output = `git commit -a`
-            @output += `git commit -m "Update dotfiles from script" 2>&1`; result=$?.success?
-            @output += `git fetch 2>&1`; result=$?.success?
+            @debug += `git commit -m "Update dotfiles from script" 2>&1`; result=$?.success?
+            @debug += `git fetch 2>&1`; result=$?.success?
             # log.write(output+"\n\n")
-            @output += `git remote add github #{@dotfilesRepo} 2>&1`; result=$?.success?
+            @debug += `git remote add github #{@dotfilesRepo} 2>&1`; result=$?.success?
             # log.write(output+"\n\n")
 
             branchOutput = `git branch 2>&1`; result=$?.success?
             branch= branchOutput[2..branchOutput.length-1]
-            # puts dotBranch
-            @output+=`git push -u github #{branch} 2>&1`; result=$?.success?
+            # @output += dotBranch
+            @debug+=`git push -u github #{branch} 2>&1`; result=$?.success?
             Dir.chdir('..')
         end
     end
@@ -140,21 +142,21 @@ class Project
         unless(@cookbook)
             @template['dirs'].each do |dir|
                 unless(File.exists?(dir))
-                    puts "Creating #{dir} directory"
+                    @output += "Creating #{dir} directory"
                     Dir.mkdir(dir)
                     if(dir=='src')
                         Dir.chdir('src')
                         index = File.new("index.php","wb")
                         index.write("<?php\n\tprint 'It\\'s alive!';\n")
                         Dir.chdir('..')
-                        puts Dir.pwd
+                        @output += Dir.pwd
                     end
                 end
             end
         end
         @template['files'].each do |gen|
             unless(File.exists?(gen))
-                puts "Building #{gen}"
+                @output += "Building #{gen}"
                 file = File.new(gen,'wb')
                 file.write(@template[gen])
             end
@@ -179,7 +181,7 @@ class Project
     def configVagrant()
         if(@vagrant)
           unless(File.exists?("Vagrantfile"))
-              puts "Copying #{@vagrant} Vagrantfile"
+              @output += "Copying #{@vagrant} Vagrantfile"
               FileUtils.cp("../#{@dotfilesPath}/vagrantfiles/#{@vagrant}/Vagrantfile",".")
           end
         end
@@ -189,11 +191,11 @@ class Project
         branchOutput=`git branch 2>&1`; result=$?.success?
         branch= branchOutput[2..branchOutput.length-1]
 
-        @output += `git init 2>&1`; result=$?.success?
-        @output += `git add * 2>&1`; result=$?.success?
-        @output += `git commit -a -m "Commit dotfiles" 2>&1`; result=$?.success?
-        @output += `git remote add github #{@projectRepo} 2>&1`; result=$?.success?
-        @output += `git push -u github #{branch} 2>&1`; result=$?.success?
+        @debug += `git init 2>&1`; result=$?.success?
+        @debug += `git add * 2>&1`; result=$?.success?
+        @debug += `git commit -a -m "Commit dotfiles" 2>&1`; result=$?.success?
+        @debug += `git remote add github #{@projectRepo} 2>&1`; result=$?.success?
+        @debug += `git push -u github #{branch} 2>&1`; result=$?.success?
     end
 end
 
