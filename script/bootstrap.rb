@@ -135,15 +135,12 @@ class Project
         end
     end
 
-    def mkDir
+    def create
         unless(File.exists?(@project))
             Dir.mkdir(@project)
         end
         Dir.chdir Dir.pwd+'/'+@project.chomp
-    end
 
-    def create
-        puts "cookbook: #{@cookbook}"
         unless(@cookbook)
             @template['dirs'].each do |dir|
                 unless(File.exists?(dir))
