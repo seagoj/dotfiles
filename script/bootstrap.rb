@@ -5,6 +5,8 @@ require 'fileutils'
 class Project
     attr_accessor :project,
                   :vagrant,
+                  :docRoot,
+                  :codeRoot,
                   :delete,
                   :cookbook,
                   :dotfilesPath,
@@ -15,8 +17,6 @@ class Project
                   :output
 
     def initialize(args)
-        puts args
-
         @project = args[:project] unless args[:project].nil?
 
         if @project == nil
@@ -27,8 +27,8 @@ class Project
         defaults = {
             :vagrant=>nil,
             :docRoot=>'/var/www',
-            :codeRoot=>'`pwd`',
-            :delete=>[
+            :codeRoot=>`pwd`,
+            :destroy=>[
                 '.buildpath',
                 '.project',
                 '.metadata',
@@ -51,25 +51,22 @@ class Project
             :output=>'## '+Time.now.ctime+"\n"
         }
 
-        defaults.merge(args)
-
-        defaults.each do |k,v|
+        defaults.merge(args).each do |k,v|
            instance_variable_set("@#{k}", v) unless v.nil?
         end
+
+        self.destroy()
+        self.update()
     end
 
-    def project=(project)
-        @project = project
-    end
-
-    def clearOldMetadata
+    def destroy
         # Clean old project files from directories
         # Remove files recursively from a directory tree
         # log.info("Deleting old project files from workspace")
-        puts "Deleting old project files from workspace"
-        # Delete old metadata
+        puts "Destroying passed files in #{codeRoot}"
+        # Delete files in @destroy hash
         Dir.entries('.').each do |d|
-            @delete.each do |f|
+            @destroy.each do |f|
                 if(File.exists?(d+'/'+f))
                     puts d+'/'+f
                     FileUtils.rm_rf(d+'/'+f)
@@ -78,7 +75,7 @@ class Project
         end
     end
 
-    def pullDotfiles
+    def update
         unless(File.exists?(@dotfilesPath))
             puts "Pulling dotfiles from #{@dotfilesRepo}"
             @output += `git clone #{@dotfilesRepo} #{@dotfilesPath}`
@@ -190,5 +187,3 @@ class Project
 end
 
 project = Project.new :project => ARGV[0], :vagrant => ARGV[1]
-project.clearOldMetadata()
-project.pullDotfiles()
