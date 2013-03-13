@@ -180,23 +180,12 @@
 			"buffers":
 			[
 				{
-					"contents": "# jQuery Air: Captain's Log\n* [Level 1: Events](#1)\n* [Level 2: Ajax](#2)\n* [Level 3: Effects](#3)\n* [Level 4: Code Organization](#4)\n\n## <a id='1'></a>[Level 1: Events](http://jquerytwo.codeschool.com/levels/1)\n### Reading from the DOM\n    \n    <section id='tabs'>\n        <ul>\n            <li><a href='#2012-09-27' data-flights=\"6\">Sep 27</a></li>\n            <li><a href='#2012-09-28' data-flights=\"5\">Sep 28</a></li>\n            <li><a href='#2012-09-29' data-flights=\"5\">Sep 29</a></li>\n        </ul>\n    </section>\n\n    $('#tabs ul:first').html();                 // <a href='#2012-09-27' data-flights=\"6\">Sep 27</a>\n    $('#tabs ul:first a').text();               // Sep 27\n    $('#tabs ul li.first a').attr('href');      // #2012-09-27\n    $('#tabs ul li:first a').data('flights');   // 6\n\n\n#### .preventDefault()\n* prevents the browser from performing the default actions on the specified object\n* used frequently for anchor clicks\n\n#### Functions\nFunctions work as expected without the $(this) keyword needing to be passed. Jquery handles that.\n\n#### namespacing the '$' to JQuery\n\n    jQuery(function($) {\n        ...\n    });\n\n* ensures contained code is referring to jQuery\n* replaces $(document).ready()\n\n#### choosing nth li\n\n    $(\"#tabs li:eq(2)\") // refers to 3rd li; index starts at 0\n\n#### .bind()\n\n    $(\"tabs li a\").click(changeTab);\n    $(\"tabs li a\").mouseenter(showNumberOfFlights);\n    $(\"tabs li a\").mouseleave(hidenumberOfFlights);\n\n    // Becomes ...\n\n    $(\"tabs li a\").bind({\n        click: changeTab,\n        mouseenter: showNumberOfFlights,\n        mouseleave: hideNumberOfFlights\n    });\n\n## <a id='2'></a>[Level 2: Ajax](http://jquerytwo.codeschool.com/levels/2)\n### Error handling and callbacks\n\n    // initialize fetchingFlights\n    var fetchingFlights = null;\n\n    function showFlights(activeDiv) {\n        // hide the current data being displayed\n        $(\"#tabs div\").hide();\n\n        // check to see if ajax is currently running; abort if so\n        if(fetchingFlights) {\n            fetchingFlights.abort();\n        }\n\n        fetchingFlights = $.ajax('/flights', {\n                // data: object of values to be passed to the script\n                data: { date: activeDiv },\n                // cache: set to false to keep browsers from caching\n                cache: false,\n                // timeout: time in miliseconds to wait for call to return before error\n                timeout: 8000,\n                // beforeSend: commands to issue prior to sending call to script\n                beforeSend: function(result) {\n                    $('#error').hide();\n                    $('#loading').show();\n                },\n                // complete: commands to issue upon completion\n                complete: function() {\n                    $('#loading').hide();\n                    fetchingFlights = null;\n                },\n                // success: commands to issue upon success\n                success: function(result) {\n                    $(activeDiv).html(result);\n                    $(activeDiv).show();\n                },\n                // error: commands to issue upon failure\n                error: function(result) {\n                    // make sure that error was not due to abort\n                    if(result.statusText != \"abort\") {\n                        $('#error').show();\n                    }\n                }\n            }\n        });\n    }\n\n### Fetching data using JSON\n\n    function selectFlight(e) {\n        e.preventDefault();\n        $(\"#tabs a.selected\").removeClass('selected');\n        $(this).addClass('selected');\n\n        var flight = $(this).data('flight');\n        var flightClass = $(this).data('class');\n\n        $('#confirm').hide();\n\n        $.ajax('/flights/'+flight, {\n            data: { 'class': flightClass },\n            // dataType: defines the scripts return type, in this case json\n            dataType: 'json',\n            success: showTotal\n        });\n    }\n\n    function showTotal(json) {\n        $('#price').text(json.price);\n        $('#fees').text(json.fees);\n        $('#total').text(json.price+json.fees);\n        $('confirm').slideDown();\n    }\n\n### Fetching data using JSONP\n\n    // Use jsonp dataType for json calls to remote servers\n    function remoteJSON(e) {\n        ...\n\n        $.ajax('page', {\n            ...\n            dataType: jsonp,\n            ...\n        });\n    }\n\n### Pulling email and password\n\n    function login(e) {\n        e.preventDefault();\n        $('#login h4').slideUp();\n\n        // serialize: creates an object from the post names and variables\n        var form = $(this).serialize();\n\n        $.ajax('/login', {\n            data: form,\n            // return type set to javascript, so it may be executed upon return\n            dataType: 'script',\n            // specifying a post instead of a get request\n            type: 'post'\n        });\n    }\n\n## <a id='3'></a>[Level 3: Effects](http://jquerytwo.codeschool.com/levels/3)\n### Chaining & Adjusting Speed\n    // effects that are chained together run sequentially; the below would fadeOut and then back in\n    $('#DOMobj').fadeOut().html().fadeIn();\n\n    // callbacks make sure that each step is completed before the next beigins\n    $('#DOMobj').fadeOut('fast', function() {\n        $this.html.fadeIn('slow');\n    });\n\n\n### Animating with CSS\n    // animate a height change\n    $('#DOMobj').css({'background-color':'#2C1F11'})\n                .animate({height:'30'});\n\n    // animate text flash\n    $('#DOMobj').css({'opacity':'0.5'})\n                .animate({opacity:1}, 'slow');\n\n### Effect Easing\n* Easing defines the rate of shange\n* Swing is default: fast then slow\n* Linear is constant speed\n\n### Using a Queue\n    $('#login').queue(function(next) {\n        $(this).html(\"...\").fadIn( function () {\n            $('#confirm .confirm-purchase').slideDown(500, 'linear');\n            $(\"...\").css({'background-color':'#2c1f11', 'oacity':'0.5'})\n                    .animate({ opacity:'1', height:'30'});\n            });\n            next();\n    });\n\n### Adding a Delay\n    function showTooltip(e) {\n        var num_flights = $(this).data('flights');\n        $(this).append(\"<span class='tooltip'>\"+num_flights+\" flights</span>\");\n        $(\"#tabs span.tooltip\").delay(300).fadeIn();\n    }\n\n### Stopping an Effect\n    // stop() stops the animation on the object immediately\n    function hideTooltip(a) {\n        $(\"#tabs span.tooltip\").stop().fadeOut(function(){\n            $(this).remove();\n        });\n    }\n\n## <a id='4'></a>[Level 4: Code Organization](http://jquerytwo.codeschool.com/levels/4)\n### Each & Map Utility Methods\n    fetchingFlights = $.ajax('/flights.json', {\n        data: { date: activeDiv },\n        ...\n        success: function(result) {\n            $(activeDiv + ' tbody td').remove();\n\n            var rows = \"\";\n            $.each(flights, function(index, flight) {\n                rows += \"<tr>\" +\n                    \"<td>\" + flight.depart + \"</td>\" +\n                    \"<td>\" + flight.arrive + \"</td>\" +\n                    ... +\n                    \"</tr>\";\n            });\n\n            $(activeDiv + ' tbody').html(rows);\n\n            // or using $.map\n\n            var flight_rows = $.map(flights, function(flight) {\n                return \"<tr>\" +\n                    \"<td>\" + flight.depart + \"</td>\" +\n                    \"<td>\" + flight.arrive + \"</td>\" +\n                    ... +\n                    \"</tr>\";\n            });\n            $(activeDiv + ' ').html(flight_rows.join(''));\n        }\n    });\n\n### Creating your own utility functions\n    // hello world utility function\n    (function($){\n        $.hello = function() {\n            alert(\"Hello there!\");\n        };\n    })(jQuery)\n\n    // Usage\n    $.hello();\n\n### Creating plugins\n    // sample plugin definition\n    (function($){\n        $.fn.callOut = function(options) {\n            var defaults = {\n                duration: fast\n            }\n            var options = $.extend(defaults, options);\n            this.css({ opacity:0.5}).animate({opacity:1}, options.duration);\n        };\n    })(jQuery)        \n\n    // usage\n    $(activeDiv).callOut();\n    // or\n    $(activeDiv).callOut({'duration': 'fast'});\n\n    // Add tooltip plugin\n    $.fn.addTooltip = function(options) {\n        var defaults = {\n            outDuration: slow,\n            inDuration: fast\n        }\n        var options = $.extend(defaults, options);\n\n        return this.bind({\n            mouseenter: function(e) {\n                var tip = $(this).data('tooltip');\n                $(\"<span class='tooltip'>\" + tip + \"</span>\")\n                    .appendTo(this).delay(100).fadeIn(options.inDuration);\n            },\n            mouseleave: function(e) {\n                $(this).find('span.tooltip').stop().fadeOut(options.outDuration, function() {\n                    $(this).remove();\n                });\n            }\n        });\n    }\n\n    // Usage\n    $(\"#tabs ul li a\").addTooltip();\n    // or\n    $(\"#tabs ul li a\").addTooltip({\"inDuration\": 1000, \"outDuration\": 1000});\n\n\n### Encapsulating your code\n    // example object\n    var selectFlights = {\n        fetchingFlights : null;\n        currentFlights : null;\n\n        // init: loads all jQuery that has to be in place when the page loads\n        init : function() {\n            $(\"#tabs ul li a\").click(selectFlights.changeTab);\n            $(\"#tabs div\").delegate(\"#flights a\", \"click\", selectFlights.selectFlight);\n        },\n        showFlights : function(activeDiv) {...},\n        changeTab : function(e) {...},\n        selectFlight : function(e) {...}\n    };\n\n    var confirmFlight = {\n        showTotal : function(json) {...},\n        login : function(e) {...}\n    };\n\n    selectFlights.init();\n\n### Custom Events\n    // Sample event that switches that selects tabs when the number keys are pressed\n    $(\"#tabs ul li a\").bind({\n        'selectTab': function(e) {\n\n        }\n    });\n\n    $(document).keydown(function(e)) {\n        if(e.keyCode >= 49 && e.keyCode <=53) {\n            var numSelected = e.keyCode-49;\n            var tabSelected = $(\"#tabs ul li:eq(\" + numSelected + \") a\");\n            $(\"#tabs ul li:eq(\"+ tabSelected +\") a\").trigger('selectTab');\n        }\n    }\n\n### jQuery Templates\n    // Defining a template in HTML\n    // must download and pull in the source\n    <script src=\"jquery.tmpl.js\" type=\"text/javascript\"></script>\n    <script id='flightTemplate' type='text/x-jquery-tmpl'>\n        <tr>\n            <td>${depart}</td>\n            <td>${arrive}</td>\n            <td>${flight}</td>\n            <td>\n                {{if (routing == 0)}}\n                    Nonstop\n                {{else (routing ==1)}}\n                    1 Stop\n                {{else}}\n                    ${routing} Stops\n                {{/if}}\n            </td>\n            <td>\n                <a href='#' data-flight-'${flight}' data-class='first_class'>\n                    ${first-class}\n                </a>\n            </td>\n            <td>\n                <a href='#' data-flight-'${flight}' data-class='economy'>\n                    ${economy}\n                </a>\n            </td>\n        </tr>\n    </script>\n\n    // Calling a template in jQuery\n    // flights is a json array\n    $('#flightTemplate').tmpl(flights)\n                        .appendTo(activeDiv+' tbody');\n\n    // Syntax\n    ${<field name>}         // print text\n    ${html <field name>}    // print markup\n    {{each}}                // iterate of data array if json contains an array\n    {{tmpl}}                // include other template\n",
-					"file": "/home/seagoj/code/education/cs-jquery-captains-log.md",
-					"file_size": 11609,
-					"file_write_time": 1362539861000000,
+					"file": "//home/seagoj/code/jabberClient/src/client.rb",
 					"settings":
 					{
-						"buffer_size": 11567,
-						"line_ending": "Unix"
-					}
-				},
-				{
-					"file": "/home/seagoj/code/education/cs-backbone-js.md",
-					"settings":
-					{
-						"buffer_size": 1148,
+						"buffer_size": 375,
 						"line_ending": "Unix",
-						"name": "cs-backbone-js.md"
+						"name": "require 'zmpp4r-simple'"
 					}
 				}
 			],
@@ -264,6 +253,15 @@
 			},
 			"file_history":
 			[
+				"//home/seagoj/code/jabberClient/src/xmpp4r-simple.rb",
+				"//home/seagoj/code/jabberClient/lib/xmpp4r-simple/test/test_xmpp4r_simple.rb",
+				"//home/seagoj/code/jabberClient/lib/xmpp4r-simple/xmpp4r-simple.gemspec",
+				"/home/seagoj/.Xresources",
+				"/home/seagoj/.Xauthority",
+				"/etc/xdg/awesome/rc.lua",
+				"/home/seagoj/code/jabberClient/jabberClient.sublime-project",
+				"/home/seagoj/code/education/cs-jquery-captains-log.md",
+				"/home/seagoj/code/education/cs-backbone-js.md",
 				"/home/seagoj/code/launchMedia.sh",
 				"/home/seagoj/code/dotfiles/awesome/rc.lua",
 				"/home/seagoj/code/hook.php",
@@ -285,7 +283,6 @@
 				"/home/seagoj/code/testDevtools/src/index.php",
 				"/home/seagoj/code/devtools/tests/autoloader.php",
 				"/root/code/dotfiles/script/setLinks.sh",
-				"/etc/xdg/awesome/rc.lua",
 				"/root/.Xresources",
 				"/root/.config/sublime-text-2/Packages/Default/Preferences.sublime-settings",
 				"/root/.zshrc",
@@ -308,6 +305,7 @@
 				"case_sensitive": false,
 				"find_history":
 				[
+					"urxvt",
 					"branch",
 					"terminal"
 				],
@@ -327,57 +325,30 @@
 			"groups":
 			[
 				{
-					"selected": 1,
+					"selected": 0,
 					"sheets":
 					[
 						{
 							"buffer": 0,
-							"file": "/home/seagoj/code/education/cs-jquery-captains-log.md",
+							"file": "//home/seagoj/code/jabberClient/src/client.rb",
 							"settings":
 							{
-								"buffer_size": 11567,
+								"buffer_size": 375,
 								"regions":
 								{
 								},
 								"selection":
 								[
 									[
-										10229,
-										10229
+										375,
+										375
 									]
 								],
 								"settings":
 								{
-									"syntax": "Packages/Markdown/Markdown.tmLanguage",
-									"tab_size": 4,
-									"translate_tabs_to_spaces": true
-								},
-								"translation.x": 0.0,
-								"translation.y": 0.0,
-								"zoom_level": 1.0
-							},
-							"type": "text"
-						},
-						{
-							"buffer": 1,
-							"file": "/home/seagoj/code/education/cs-backbone-js.md",
-							"settings":
-							{
-								"buffer_size": 1148,
-								"regions":
-								{
-								},
-								"selection":
-								[
-									[
-										1148,
-										1148
-									]
-								],
-								"settings":
-								{
-									"auto_name": "cs-backbone-js.md",
-									"syntax": "Packages/Markdown/Markdown.tmLanguage"
+									"auto_name": "require 'zmpp4r-simple'",
+									"syntax": "Packages/Ruby/Ruby.tmLanguage",
+									"translate_tabs_to_spaces": false
 								},
 								"translation.x": 0.0,
 								"translation.y": 0.0,
@@ -419,7 +390,7 @@
 				]
 			},
 			"menu_visible": true,
-			"position": "0,0,0,0,0,960,19,1918,370,1920,1080",
+			"position": "0,0,0,0,0,0,0,960,1057,1920,1080",
 			"replace":
 			{
 				"height": 0.0
@@ -445,16 +416,17 @@
 			"show_open_files": false,
 			"show_tabs": true,
 			"side_bar_visible": true,
-			"side_bar_width": 150.0,
+			"side_bar_width": 200.0,
 			"status_bar_visible": true,
 			"window_id": 1,
-			"workspace_name": ""
+			"workspace_name": "/home/seagoj/code/jabberClient/jabberClient.sublime-project"
 		}
 	],
 	"workspaces":
 	{
 		"recent_workspaces":
 		[
+			"/home/seagoj/code/jabberClient/jabberClient.sublime-project",
 			"/home/seagoj/code/devtools/devtools.sublime-project",
 			"/home/seagoj/code/dotfiles/dotfiles.sublime-project",
 			"/root/code/devtools/devtools.sublime-project",
