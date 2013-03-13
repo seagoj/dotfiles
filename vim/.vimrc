@@ -1,5 +1,14 @@
-call pathogen#helptags()
-call pathogen#runtime_append_all_bundles()
+set no compatible
+filetype off
+
+set rtp+=$HOME/.vim/bundle/vundle/
+call vundle#rc()
+Bundle 'gmarik/vundle'
+
+
+
+"call pathogen#helptags()
+"call pathogen#runtime_append_all_bundles()
 
 let mapleader = ","
 "let G:mapleader = ","
@@ -74,6 +83,7 @@ imap jj <Esc> :w!<CR>
 map <C-T> :tabnew<CR>
 map <C-PageDown> gt
 map <C-PageUp> gt
+inoremap {<CR> {<cr><cr>}<C-o>k<tab>
 "map <C-S> :w!
 
 "noremap <silent> <C-S>          :update<CR>
@@ -92,3 +102,4 @@ map <silent> <D-PageDown> :tabn<CR>
 map <silent> <D-PageUp> :tabp<CR>
 map <silent> <D-1> :tabn 1<cr>
 map <silent> <D-2> :tabN 2<cr>
+
