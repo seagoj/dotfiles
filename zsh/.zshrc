@@ -1,8 +1,8 @@
 # Path to your oh-my-zsh configuration.
 ZSH=$HOME/.oh-my-zsh
-export PROJECTS=~/code
-export CODE=~/code
+export CODE=$HOME/code
 export MEDIA=/mnt/media
+export EDITOR=/usr/bin/vim
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -28,7 +28,7 @@ DISABLE_AUTO_UPDATE="true"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment following line if you want to disable colors in ls
- DISABLE_LS_COLORS="true"
+# DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"

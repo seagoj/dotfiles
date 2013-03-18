@@ -1,14 +1,21 @@
-set no compatible
-filetype off
+set nocompatible
+"filetype off
+
+set guifont=Anonymous\ Pro\ for\ Powerline:h14
 
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-
-
-
-"call pathogen#helptags()
-"call pathogen#runtime_append_all_bundles()
+Bundle 'vim-scripts/closetag.vim'
+Bundle 'Raimondi/delimitMate'
+Bundle 'ervandew/supertab'
+Bundle 'tpope/vim-fugitive'
+Bundle 'majutsushi/tagbar'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'kien/ctrlp.vim'
+Bundle 'airblade/vim-gitgutter'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Lokaltog/powerline'
 
 let mapleader = ","
 "let G:mapleader = ","
@@ -83,7 +90,11 @@ imap jj <Esc> :w!<CR>
 map <C-T> :tabnew<CR>
 map <C-PageDown> gt
 map <C-PageUp> gt
-inoremap {<CR> {<cr><cr>}<C-o>k<tab>
+"inoremap {<CR> {<cr><cr>}<C-o>k<tab>
+"inoremap ( ()<left>
+"inoremap[ []<left>
+"inoremap " ""<left>
+"inoremap ' ''<left>
 "map <C-S> :w!
 
 "noremap <silent> <C-S>          :update<CR>
