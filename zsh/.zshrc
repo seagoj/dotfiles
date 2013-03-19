@@ -3,6 +3,8 @@ ZSH=$HOME/.oh-my-zsh
 export CODE=$HOME/code
 export MEDIA=/mnt/media
 export EDITOR=/usr/bin/vim
+export WWW=/var/www
+export DOCROOT=/var/www
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

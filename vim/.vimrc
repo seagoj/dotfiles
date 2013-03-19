@@ -22,11 +22,12 @@ let mapleader = ","
 nmap <leader>w :w!<cr> "Map <leader>w to force write carriage return
 
 " General
-set number "Enable line numbers
+"set number "Enable line numbers
 set mouse=a "Enable mouse use
 set so=5 "When possible, show 5 lines above and below the cursor
 set wildmenu "Autocomplete and fun stuff
-set ruler "Always show current position
+"set ruler "Always show current position
+set number
 set cmdheight=2 "shortens cmd height
 set backspace=eol,start,indent "backspace configuration
 
@@ -61,7 +62,7 @@ set background=dark
 colorscheme Tomorrow-Night-Eighties
 "colorscheme Tomorrow-Night
 "colorscheme Tomorrow
-set nonu
+"set nonu
 
 " Spaces/Tabs
 set expandtab "Insert spaces whenever <tab> is pressed
@@ -113,4 +114,4 @@ map <silent> <D-PageDown> :tabn<CR>
 map <silent> <D-PageUp> :tabp<CR>
 map <silent> <D-1> :tabn 1<cr>
 map <silent> <D-2> :tabN 2<cr>
-
+"set number

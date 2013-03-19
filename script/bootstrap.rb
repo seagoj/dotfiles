@@ -214,4 +214,4 @@ class Project
 end
 
 project = Project.new :project => ARGV[0], :vagrant => ARGV[1]
-project.configNginx()
+# project.configNginx()
