@@ -2,6 +2,8 @@ config
 .vagrant
 lib/Predis
 cookbooks
+*.log
+
 
 ############
 ## Sublime Text 2
