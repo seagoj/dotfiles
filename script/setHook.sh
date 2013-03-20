@@ -1,3 +1,4 @@
-cd /var/www
-sudo git clone git://github.com/seagoj/$1.git
-sudo chown -R http $1
+sudo -u http mkdir /var/www/$1
+cd /var/www/$1
+sudo -u http git init
+sudo -u http git pull -u git@github.com:seagoj/$1.git master
