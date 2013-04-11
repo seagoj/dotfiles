@@ -16,6 +16,8 @@ Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/powerline'
+Bundle 'motemen/git-vim'
+"Bundle 'kakkyz81/evervim'
 
 let mapleader = ","
 "let G:mapleader = ","
@@ -30,6 +32,7 @@ set wildmenu "Autocomplete and fun stuff
 set number
 set cmdheight=2 "shortens cmd height
 set backspace=eol,start,indent "backspace configuration
+:au FocusLost * :wa "Auto save file when focus is lost
 
 " Searching
 set ignorecase "ignore case when searching
@@ -115,3 +118,9 @@ map <silent> <D-PageUp> :tabp<CR>
 map <silent> <D-1> :tabn 1<cr>
 map <silent> <D-2> :tabN 2<cr>
 "set number
+
+" Code Folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
