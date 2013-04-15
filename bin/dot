@@ -1,0 +1,2 @@
+ln -s ../.fonts ~/.fonts
+ln -s ../zsh/.zshrc ~/.zshrc

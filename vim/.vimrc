@@ -17,6 +17,7 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
 Bundle 'Lokaltog/powerline'
 Bundle 'motemen/git-vim'
+Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'kakkyz81/evervim'
 
 let mapleader = ","
