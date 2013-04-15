@@ -46,7 +46,8 @@ plugins=(git gitextras sublime ruby gem python archlinux vagrant systemd redis-c
 source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl
+export
+PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:$HOME/bin
 
 # START SSH_AGENT
 eval $(ssh-agent)

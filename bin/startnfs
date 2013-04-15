@@ -1,0 +1,8 @@
+systemctl stop rpc-idmapd.service
+systemctl stop rpc-mountd.service
+mount /dev/md0 /mnt/media
+mount --bind /mnt/media /srv/nfs4/media
+systemctl enable rpc-idmapd.service
+systemctl enable rpc-mountd.service
+systemctl start rpc-idmapd.service
+systemctl start rpc-mountd.service

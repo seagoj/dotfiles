@@ -1,0 +1,1 @@
+/home/seagoj/code/dotfiles/bin/../vim/.vim

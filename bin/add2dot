@@ -1,0 +1,4 @@
+dotfiles=~/code/dotfiles
+cp -R ~/$1 $dotfiles/$1
+rm -R ~/$1
+echo Add $1 to listing in bin/dot
