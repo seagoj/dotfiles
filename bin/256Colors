@@ -1,0 +1,9 @@
+#!/bin/sh
+#
+# Displays all 256 colors to test your terminal window
+#
+# USAGE:
+#   $ 256Colors
+#   # => displays all 256 colors one on each line
+
+(x=`tput op` y=`printf %76s`;for i in {0..256};do o=00$i;echo -e ${o:${#o}-3:3} `tput setaf $i;tput setab $i`${y// /=}$x;done)

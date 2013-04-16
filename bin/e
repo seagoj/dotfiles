@@ -1,0 +1,19 @@
+#!/bin/zsh
+# 
+# Aliases e to $EDITOR and provides a default argument of the current directory
+#
+# USAGE:
+#
+#   $ e
+#   # => opens the current directory in $EDITOR
+#
+#   $ e .
+#   $ e /opt
+#   # => opens the specified directory in $EDITOR
+
+if [[ "$1" == "" ]] ; then
+    exec $EDITOR .
+else
+    exec $EDITOR "$1"
+fi
+

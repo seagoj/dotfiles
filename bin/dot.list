@@ -12,7 +12,7 @@
 .zshrc
 antigen.zsh
 bin
-.zsh_history
 .zsh-update
 .zlogin
 .xinitrc
+.zsh_history

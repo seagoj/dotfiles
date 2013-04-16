@@ -1,19 +1,72 @@
 #!/bin/zsh
+#
+# Script to manage dotfiles and linking
+# 
+# Keeps a list of dotfiles to be linked to $HOME from the $DOTFILES directory. This
+# script manages adding and removing from the list as well as rebuilding the
+# links.
+#
+# USAGE:
+#
+#   $ dot
+#   # => rebuilds links based on files in $FNAME
+#
+#   $ dot add <file>
+#   # => adds <file> to $FNAME and rebuilds links
+#
+#   $ dot rm <file>
+#   # => removes <file> from $FNAME and copies $DOTFILES/<file> to $HOME
+#
+#   @TODO:
+#   $ dot <file>
+#   # => toggles <file>'s existance in $FNAME and either rebuilds the links or
+#   #    copies in the static file
+
 zmodload zsh/mapfile
-dots=~/code/dotfiles
-FNAME=$dots/bin/dot.list
-
-if [ "$1" != "" ] ; then
-    cp -R ~/$1 $dots/$1
-    echo "$1" >> $FNAME
-    echo $1 added to $FNAME
-fi
-
+FNAME=$DOTFILES/bin/dot.list
 FLINES=( "${(f)mapfile[$FNAME]}" )
 
-for link in $FLINES
-do
-    rm -R ~/$link
-    ln -s $dots/$link ~/$link
-    ls --color=tty -logh ~/$link
-done
+function add() {
+    cp -R ~/$1 $DOTFILES/$1
+    echo "$1" >> $FNAME
+    echo "$1 added to $FNAME"
+}
+
+function remove() {
+    FLINES=( "${(f)mapfile[$FNAME]}" )
+    rm $FNAME
+
+    for link in $FLINES
+    do
+        if [[ "$1" != "$link" ]] ; then
+            echo "$link" >> $FNAME
+        else
+            rm ~/$link
+            echo "$link removed from $HOME"
+            cp -R $DOTFILES/$link ~/$link
+            echo "Static file copied from $DOTFILES to $HOME"
+        fi
+    done
+}
+
+function link() {
+    FLINES=( "${(f)mapfile[$FNAME]}" )
+
+    for link in $FLINES
+    do
+        rm -R ~/$link
+        ln -s $DOTFILES/$link ~/$link
+        ls --color=tty -logh ~/$link
+    done   
+}
+
+if [[ $# -eq 0 ]]; then
+    link
+elif [[ "$1" == "add" ]] ; then
+    add $2
+    link
+elif [[ "$1" == "remove" ]] ; then
+    remove $2
+else
+    echo "$1 is not a valid action!"
+fi

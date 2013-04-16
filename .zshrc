@@ -5,6 +5,7 @@ export MEDIA=/mnt/media
 export EDITOR=/usr/bin/vim
 export WWW=/var/www
 export DOCROOT=/var/www
+export DOTFILES=$CODE/dotfiles
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/

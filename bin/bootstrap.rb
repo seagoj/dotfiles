@@ -66,9 +66,7 @@ class Project
                     "### 2. Fork & Create a Feature Branch\n\n"+
                     "### 3. Get the test suite running\n\n"+
                     "### 4. Implement your fix or feature\n\n"+
-                    "### 5. Make a pull request",
-                "#{@project}.sublime-project"=>'{"folders":[{"path":"/'+Dir.pwd.gsub(':','')+'/'+@project+'"}]}',
-                '.git/hooks/post-receive'=>"cd ~/code/#{@project} && git pull github master"
+                    "### 5. Make a pull request"
             },
             :debug=>'## '+Time.now.ctime+"\n",
             :output=>''
