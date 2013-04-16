@@ -1,11 +1,19 @@
-dots=~/code/dotfiles/
+#!/bin/zsh
+zmodload zsh/mapfile
+dots=~/code/dotfiles
+FNAME=$dots/bin/dot.list
 
-files=(.vim-temp\ .viminfo\ .screenrc\ .Xresources\ .archey3.cfg\ .antigen\ .vimrc\ .vim\ .fonts\ .gitconfig\ .geeknote\ .zshrc\ antigen.zsh\ bin)
-#echo $files
+if [ "$1" != "" ] ; then
+    cp -R ~/$1 $dots/$1
+    echo "$1" >> $FNAME
+    echo $1 added to $FNAME
+fi
 
-for link in $files
+FLINES=( "${(f)mapfile[$FNAME]}" )
+
+for link in $FLINES
 do
-#    rm -R ~/$link
-#    ln -s $dots$link ~/$link
-    echo $link linked
+    rm -R ~/$link
+    ln -s $dots/$link ~/$link
+    ls --color=tty -logh ~/$link
 done
