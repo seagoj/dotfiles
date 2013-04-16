@@ -1,7 +1,11 @@
 dots=~/code/dotfiles/
 
-for link in .vim-tmp .viminfo .screenrc .Xresources .archey3.cfg .antigen .vimrc .vim .fonts .gitconfig .geeknote .zshrc antigen.zsh bin; do
-    rm -R ~/$link
-    ln -s $dots$link ~/$link
+files=(.vim-temp\ .viminfo\ .screenrc\ .Xresources\ .archey3.cfg\ .antigen\ .vimrc\ .vim\ .fonts\ .gitconfig\ .geeknote\ .zshrc\ antigen.zsh\ bin)
+#echo $files
+
+for link in $files
+do
+#    rm -R ~/$link
+#    ln -s $dots$link ~/$link
     echo $link linked
 done
