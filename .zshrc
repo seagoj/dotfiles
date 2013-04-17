@@ -1,21 +1,12 @@
-# Path to your oh-my-zsh configuration.
-ZSH=$HOME/.oh-my-zsh
+# Path to your oh-my-zsh configuration.i
+export PATH=$PATH:$HOME/bin
 export CODE=$HOME/code
 export MEDIA=/mnt/media
 export EDITOR=/usr/bin/vim
+export BROWSER=$(which google-chrome chromium-browser chromium firefox links2 links lynx | grep -Pm1 '^/')
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=$CODE/dotfiles
-
-# Set name of the theme to load.
-# Look in ~/.oh-my-zsh/themes/
-# Optionally, if you set this to "random", it'll load a random theme each
-# time that oh-my-zsh is loaded.
-#ZSH_THEME="gozilla"
-#ZSH_THEME="custom"
-#ZSH_THEME="af-magic-custom"
-#ZSH_THEME="clean"
-#ZSH_THEME="frisk"
 
 # Example aliases
 # alias zshconfig="$EDITOR ~/.zshrc"
@@ -39,31 +30,29 @@ export UPDATE_ZSH_DAYS=2
 # Uncomment following line if you want red dots to be displayed while waiting for completion
 COMPLETION_WAITING_DOTS="true"
 
-# Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
-# Example format: plugins=(rails git textmate ruby lighthouse)
-#plugins=(git gitextras sublime ruby gem python archlinux vagrant systemd redis-cli )
-
-#source $ZSH/oh-my-zsh.sh
-
-# Customize to your needs...
-export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:$HOME/bin
-
 # START SSH_AGENT
 eval $(ssh-agent)
 ssh-add
 
-export FPATH=$FPATH:$HOME/functions
 autoload $HOME/functions/*(:t)
 
 source $HOME/antigen.zsh
 antigen-use oh-my-zsh
 
-antigen-bundle git
-antigen-bundle github
-antigen-bundle npm
-antigen-bundle screen
-antigen-bundle zsh-users/zsh-syntax-highlighting
+antigen-bundles <<EOBUNDLES
+git
+github
+npm
+screen
+ruby
+gem
+python
+archlinux
+vagrant
+systemd
+redis-cli
+zsh-users/zsh-syntax-highlighting
+EOBUNDLES
 
 antigen-theme af-magic
 
