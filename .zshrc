@@ -54,6 +54,8 @@ redis-cli
 zsh-users/zsh-syntax-highlighting
 EOBUNDLES
 
+#antigen-theme garyblessington
+#antigen-theme theunraveler
 antigen-theme af-magic
 
 antigen-apply
