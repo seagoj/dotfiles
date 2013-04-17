@@ -13,12 +13,12 @@ export DOTFILES=$CODE/dotfiles
 # time that oh-my-zsh is loaded.
 #ZSH_THEME="gozilla"
 #ZSH_THEME="custom"
-ZSH_THEME="af-magic-custom"
+#ZSH_THEME="af-magic-custom"
 #ZSH_THEME="clean"
 #ZSH_THEME="frisk"
 
 # Example aliases
-alias zshconfig="sublime-text ~/.zshrc"
+# alias zshconfig="$EDITOR ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 # Set to this to use case-sensitive completion
@@ -28,7 +28,7 @@ alias zshconfig="sublime-text ~/.zshrc"
 DISABLE_AUTO_UPDATE="true"
 
 # Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-# export UPDATE_ZSH_DAYS=13
+export UPDATE_ZSH_DAYS=2
 
 # Uncomment following line if you want to disable colors in ls
 # DISABLE_LS_COLORS="true"
@@ -42,9 +42,9 @@ COMPLETION_WAITING_DOTS="true"
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git gitextras sublime ruby gem python archlinux vagrant systemd redis-cli )
+#plugins=(git gitextras sublime ruby gem python archlinux vagrant systemd redis-cli )
 
-source $ZSH/oh-my-zsh.sh
+#source $ZSH/oh-my-zsh.sh
 
 # Customize to your needs...
 export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bin/core_perl:$HOME/bin
@@ -55,3 +55,16 @@ ssh-add
 
 export FPATH=$FPATH:$HOME/functions
 autoload $HOME/functions/*(:t)
+
+source $HOME/antigen.zsh
+antigen-use oh-my-zsh
+
+antigen-bundle git
+antigen-bundle github
+antigen-bundle npm
+antigen-bundle screen
+antigen-bundle zsh-users/zsh-syntax-highlighting
+
+antigen-theme af-magic
+
+antigen-apply
