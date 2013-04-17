@@ -1,4 +1,3 @@
-.vim-tmp
 .viminfo
 .screenrc
 .Xresources
@@ -8,12 +7,10 @@
 .vim
 .fonts
 .gitconfig
-.geeknote
 .zshrc
 antigen.zsh
 bin
-.zsh-update
 .zlogin
 .xinitrc
-.zsh_history
 functions
+.geeknote
