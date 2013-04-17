@@ -52,3 +52,6 @@ export PATH=/usr/local/bin:/usr/bin:/bin:/usr/local/sbin:/usr/sbin:/sbin:/usr/bi
 # START SSH_AGENT
 eval $(ssh-agent)
 ssh-add
+
+export FPATH=$FPATH:$HOME/functions
+autoload $HOME/functions/*(:t)

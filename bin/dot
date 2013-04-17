@@ -22,14 +22,74 @@
 #   # => toggles <file>'s existance in $FNAME and either rebuilds the links or
 #   #    copies in the static file
 
+set -e
+source $HOME/functions/alerts.zsh
+
 zmodload zsh/mapfile
 FNAME=$DOTFILES/bin/dot.list
 FLINES=( "${(f)mapfile[$FNAME]}" )
 
 function add() {
-    cp -R ~/$1 $DOTFILES/$1
-    echo "$1" >> $FNAME
-    echo "$1 added to $FNAME"
+    dest=$DOTFILES/$1
+
+    overwrite_all=false
+    backup_all=false
+    skip_all=false
+
+    if [ -f $dest ] || [ -d $dest]]
+        then
+        overwrite=false
+        backup=false
+        skip=false
+
+        if ["$overwrite_all"=="false"] && ["$backup_all"=="false"] && ["$skip_all"=="false"]
+        then
+            user "File already exists: $dest, what do you want to do? [s]kip, [S]kip all, [o]verwrite, [O]verwrite all, [b]ackup, [B]ackup all"
+            read -n 1 action
+
+            case "$action" in
+                o )
+                    overwrite=true;;
+                O )
+                    overwrite_all=true;;
+                b )
+                    backup=true;;
+                B )
+                    backup_all=true;;
+                s )
+                    skip=true;;
+                S )
+                    skip_all=true;;
+                * )
+                    ;;
+            esac
+        fi
+
+        if [["$overwrite" == "true"]] || [["$overwrite_all"=="true"]]
+        then
+            rm -rf $dest
+            success "removed $dest"
+        fi
+
+        if [["$backup"=="true"]] || [["$backup_all"=="true"]]
+        then
+            mv $dest $dest\.backup
+            success "moved $dest to $dest.backup"
+        fi
+
+        if [["$skip"=="false"]] || [["$skip_all"=="false"]]
+        then
+            cp -R ~/$1 $dest
+            echo "$1" >> $FNAME
+            success "$1 added to $FNAME"
+        else
+            success "skipped $source"
+        fi
+    else
+        cp -R ~/$1 $dest
+        echo "$1" >> $FNAME
+        success "$1 added to $FNAME"
+    fi
 }
 
 function remove() {
@@ -42,9 +102,9 @@ function remove() {
             echo "$link" >> $FNAME
         else
             rm ~/$link
-            echo "$link removed from $HOME"
+            success "$link removed from $HOME"
             cp -R $DOTFILES/$link ~/$link
-            echo "Static file copied from $DOTFILES to $HOME"
+            success "Static file copied from $DOTFILES to $HOME"
         fi
     done
 }
@@ -68,5 +128,5 @@ elif [[ "$1" == "add" ]] ; then
 elif [[ "$1" == "remove" ]] ; then
     remove $2
 else
-    echo "$1 is not a valid action!"
+    fail "$1 is not a valid action!"
 fi

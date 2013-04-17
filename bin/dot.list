@@ -16,3 +16,4 @@ bin
 .zlogin
 .xinitrc
 .zsh_history
+functions
