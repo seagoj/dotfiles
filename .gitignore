@@ -4,7 +4,6 @@ lib/Predis
 cookbooks
 *.log
 
-
 ############
 ## Sublime Text 2
 ============
@@ -20,3 +19,6 @@ Thumbs.db
 
 # Folder config file
 Desktop.ini
+
+.antigen/repos
+.vim/bundle
