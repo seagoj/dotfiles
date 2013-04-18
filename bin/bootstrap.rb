@@ -1,6 +1,8 @@
 # NewRepo
 # Usage: ruby dotfiles/script/NewProject.rb project ?vagrantfile
 require 'fileutils'
+require 'rubygems'
+require 'json'
 
 class Project
     attr_reader :output,
