@@ -40,10 +40,7 @@ source $HOME/antigen.zsh
 antigen-use oh-my-zsh
 
 antigen-bundles <<EOBUNDLES
-git
-github
 npm
-screen
 ruby
 gem
 python
@@ -56,6 +53,7 @@ EOBUNDLES
 
 #antigen-theme garyblessington
 #antigen-theme theunraveler
-antigen-theme af-magic
+#antigen-theme af-magic
+antigen-theme af-magic-custom
 
 antigen-apply
