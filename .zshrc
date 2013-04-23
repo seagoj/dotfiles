@@ -54,6 +54,7 @@ EOBUNDLES
 #antigen-theme garyblessington
 #antigen-theme theunraveler
 #antigen-theme af-magic
-antigen-theme af-magic-custom
+#antigen-theme af-magic-custom
+antigen-theme seagoj/af-magic-square af-magic-square
 
 antigen-apply
