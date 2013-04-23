@@ -1,4 +1,4 @@
-# Path to your oh-my-zsh configuration.i
+# Path to your oh-my-zsh configuration.
 export PATH=$PATH:$HOME/bin
 export CODE=$HOME/code
 export MEDIA=/mnt/media
