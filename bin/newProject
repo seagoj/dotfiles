@@ -1,3 +1,5 @@
+#!/usr/bin/env ruby
+
 # NewRepo
 # Usage: ruby dotfiles/script/NewProject.rb project ?vagrantfile
 require 'fileutils'
