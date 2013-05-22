@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+cd ~/code/helloNode
+echo `pwd`
+output=`git status`
+
+length=${#output}
+
+print $length
+start=$length-6
+end=$length-1
+print $start
+print $end
+
+if [ $output[$start,$end]== "clean" ] ; then
+    print "clean"
+else
+    print `pwd`
+fi

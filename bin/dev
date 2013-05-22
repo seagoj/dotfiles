@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+vim -O $1.php tests/$1Test.php

@@ -3,3 +3,5 @@
 [user]
 	name = Jeremy Seago
 	email = seagoj@gmail.com
+[core]
+	autocrlf = input
