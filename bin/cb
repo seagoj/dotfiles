@@ -1,0 +1,8 @@
+#!/usr/bin/env ruby
+
+input = STDIN.isatty ? nil : STDIN.read
+if input
+    IO.popen('xclip', 'i').print(input)
+else
+    print `xclip -o`
+end
