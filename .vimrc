@@ -2,12 +2,13 @@ set nocompatible
 filetype plugin on
 
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
+set tags=~/.vim/tags
 
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 "Bundle 'vim-scripts/closetag.vim'
-Bundle 'Raimondi/delimitMate'
+"Bundle 'Raimondi/delimitMate'
 Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'majutsushi/tagbar'
@@ -15,11 +16,10 @@ Bundle 'scrooloose/nerdcommenter'
 "Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'Lokaltog/powerline'
 "Bundle 'motemen/git-vim'
 Bundle 'terryma/vim-multiple-cursors'
-"Bundle 'kakkyz81/evervim'
 Bundle 'scrooloose/syntastic'
+"Bundle 'vim-scripts/taglist.vim'
 
 let mapleader = ","
 "let G:mapleader = ","
