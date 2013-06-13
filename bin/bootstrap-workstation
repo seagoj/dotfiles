@@ -1,1 +1,5 @@
 sudo pacman -S enlightenment17 chromium
+
+cp ln -s $CODE/dotfiles/system/network.service /etc/systemd/system/network.service
+systemctl enable network
+systemctl start network
