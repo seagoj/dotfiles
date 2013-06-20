@@ -7,6 +7,7 @@ export BROWSER=$(which google-chrome chromium-browser chromium firefox links2 li
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=$CODE/dotfiles
+export LANG=en_US.UTF-8
 
 # Example aliases
 # alias zshconfig="$EDITOR ~/.zshrc"
@@ -22,7 +23,7 @@ DISABLE_AUTO_UPDATE="true"
 export UPDATE_ZSH_DAYS=2
 
 # Uncomment following line if you want to disable colors in ls
-# DISABLE_LS_COLORS="true"
+DISABLE_LS_COLORS="true"
 
 # Uncomment following line if you want to disable autosetting terminal title.
 # DISABLE_AUTO_TITLE="true"
