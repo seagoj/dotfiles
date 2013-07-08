@@ -9,7 +9,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 "Bundle 'vim-scripts/closetag.vim'
 "Bundle 'Raimondi/delimitMate'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
 "Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
@@ -19,6 +19,7 @@ Bundle 'scrooloose/nerdtree'
 "Bundle 'motemen/git-vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic'
+Bundle 'Valloric/YouCompleteMe'
 "Bundle 'vim-scripts/taglist.vim'
 
 let mapleader = ","
