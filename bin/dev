@@ -1,3 +1,13 @@
 #!/bin/zsh
 
-cd $CODE/$1 && vim -O $1.php tests/$1Test.php $1Test.log
+cd $CODE/$1
+
+if [ -e "$1.php" ]
+then
+    cd $CODE/$1 && vim -c "! phpunit" -O $1.php tests/$1Test.php
+fi
+
+if [ -e "$1.rb" ]
+then
+    cd $CODE/$1 && vim -c "! rspec $1_spec.rb" -O $1.rb $1_spec.rb
+fi
