@@ -12,6 +12,7 @@ export LANG=en_US.UTF-8
 # Example aliases
 # alias zshconfig="$EDITOR ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
+alias dev=". dev"
 
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
