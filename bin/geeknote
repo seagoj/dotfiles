@@ -1,0 +1,63 @@
+#!/bin/sh
+
+srcDir=$CODE/geeknote
+notebook=Inbox
+title=$1
+
+if [ -z "$1" ]
+then
+title=$(date +%Y-%m-%d)
+fi
+
+case $title in
+    --help)
+        python $srcDir/geeknote.py $*
+        ;;
+    tag-edit)
+        python $srcDir/geeknote.py $*
+        ;;
+    create)
+        python $srcDir/geeknote.py $*
+        ;;
+    edit)
+        python $srcDir/geeknote.py $*
+        ;;
+    show)
+        python $srcDir/geeknote.py $*
+        ;;
+    login)
+        python $srcDir/geeknote.py $*
+        ;;
+    logout)
+        python $srcDir/geeknote.py $*
+        ;;
+    settings)
+        python $srcDir/geeknote.py $*
+        ;;
+    notebook-list)
+        python $srcDir/geeknote.py $*
+        ;;
+    user)
+        python $srcDir/geeknote.py $*
+        ;;
+    find)
+        python $srcDir/geeknote.py $*
+        ;;
+    remove)
+        python $srcDir/geeknote.py $*
+        ;;
+    notebook-create)
+        python $srcDir/geeknote.py $*
+        ;;
+    notebook-edit)
+        python $srcDir/geeknote.py $*
+        ;;
+    tag-create)
+        python $srcDir/geeknote.py $*
+        ;;
+    *)
+        echo creating a note named $title in the $notebook notebook
+        python $srcDir/geeknote.py create --title $title --notebook $notebook --content "# $title"
+        python $srcDir/geeknote.py edit --note $title
+        ;;
+esac
