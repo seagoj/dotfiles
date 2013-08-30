@@ -7,31 +7,22 @@ set tags=~/.vim/tags
 set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
-"Bundle 'vim-scripts/closetag.vim'
-"Bundle 'Raimondi/delimitMate'
-"Bundle 'ervandew/supertab'
 Bundle 'tpope/vim-fugitive'
-"Bundle 'majutsushi/tagbar'
 Bundle 'scrooloose/nerdcommenter'
-"Bundle 'kien/ctrlp.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
-"Bundle 'motemen/git-vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
-"Bundle 'vim-scripts/taglist.vim'
 
 let mapleader = ","
 "let G:mapleader = ","
 nmap <leader>w :w!<cr> "Map <leader>w to force write carriage return
 
 " General
-"set number "Enable line numbers
 set mouse=a "Enable mouse use
 set so=5 "When possible, show 5 lines above and below the cursor
 set wildmenu "Autocomplete and fun stuff
-"set ruler "Always show current position
 set number
 set cmdheight=2 "shortens cmd height
 set backspace=eol,start,indent "backspace configuration
@@ -94,6 +85,7 @@ match Overlength /\%81v.\+/
 nnoremap <Space> <PageDown>
 nnoremap <S-Space> <PageUp>
 imap jj <Esc> :w!<CR>
+imap jk <Esc>
 map <C-T> :tabnew<CR>
 map <C-PageDown> gt
 map <C-PageUp> gt
@@ -120,7 +112,6 @@ map <silent> <D-PageDown> :tabn<CR>
 map <silent> <D-PageUp> :tabp<CR>
 map <silent> <D-1> :tabn 1<cr>
 map <silent> <D-2> :tabN 2<cr>
-"set number
 
 " Code Folding
 set foldmethod=indent

@@ -1,0 +1,5 @@
+#!/usr/bin/zsh
+
+vagrant destroy --force
+rm -r cookbooks
+vagrant up
