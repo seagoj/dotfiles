@@ -17,6 +17,7 @@ Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'wincent/Command-T'
+Bundle 'majutsushi/tagbar'
 
 let mapleader = ","
 "let G:mapleader = ","
