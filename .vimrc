@@ -16,6 +16,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'scrooloose/syntastic'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'wincent/Command-T'
 
 let mapleader = ","
 "let G:mapleader = ","
