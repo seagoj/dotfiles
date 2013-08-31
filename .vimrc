@@ -8,6 +8,8 @@ set rtp+=$HOME/.vim/bundle/vundle/
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'scrooloose/nerdtree'
