@@ -19,6 +19,10 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'wincent/Command-T'
 Bundle 'majutsushi/tagbar'
 
+" Auto-commands
+autocmd vimenter * if !argc() | NERDTree | endif
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
 let mapleader = ","
 "let G:mapleader = ","
 nmap <leader>w :w!<cr> "Map <leader>w to force write carriage return
@@ -93,6 +97,7 @@ imap jk <Esc>
 map <C-T> :tabnew<CR>
 map <C-PageDown> gt
 map <C-PageUp> gt
+map <C-o> :NERDTreeToggle<CR>
 "inoremap {<CR> {<cr><cr>}<C-o>k<tab>
 "inoremap ( ()<left>
 "inoremap[ []<left>
