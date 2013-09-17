@@ -1,0 +1,11 @@
+#!/usr/bin/env ruby
+
+codeDir = ENV['CODE']
+
+Dir.glob("#{codeDir}/*").each do |d|
+    if File.directory?("#{d}/.git")
+        puts "--- #{d[codeDir.length+1, d.length-codeDir.length]} ----------"
+        puts `cd #{d} && git status`
+        puts "-------------------"
+    end
+end
