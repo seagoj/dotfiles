@@ -1,5 +1,7 @@
 set nocompatible
 filetype plugin on
+set modelines=5
+set ls=2
 
 set guifont=Anonymous\ Pro\ for\ Powerline:h14
 set tags=~/.vim/tags
@@ -11,17 +13,22 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/nerdcommenter'
-Bundle 'scrooloose/nerdtree'
+"Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'wincent/Command-T'
+"Bundle 'Valloric/YouCompleteMe'
+"Bundle 'wincent/Command-T'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
 Bundle 'majutsushi/tagbar'
+Bundle 'rking/ag.vim'
+
 
 " Auto-commands
-autocmd vimenter * if !argc() | NERDTree | endif
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+"autocmd vimenter * if !argc() | :Unite file<cr> | endif
+"autocmd vimenter * if !argc() | NERDTree | endif
+"autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 let mapleader = ","
 "let G:mapleader = ","
@@ -83,27 +90,42 @@ set ai "Autoindent
 set si "Smartindent
 
 " Line Width and wrapping
-set wrap "Wrap lines
-set textwidth=80
-set tw=80
-highlight Overlength ctermbg=red ctermfg=white guibg=#592929
-match Overlength /\%81v.\+/
+"set wrap "Wrap lines
+"set textwidth=80
+"set tw=80
+"highlight Overlength ctermbg=red ctermfg=white guibg=#592929
+"match Overlength /\%81v.\+/
+
+" Global vars
+let g:unite_source_history_yank_enable = 1
+let g:unite_enable_start_insert = 1
+let g:unite_enable_short_source_names = 1
+let g:unite_split_rule = 'topleft'
+let g:unite_enable_split_vertically = 1
+let g:unite_winheight = 45
 
 " Mappings
-nnoremap <Space> <PageDown>
-nnoremap <S-Space> <PageUp>
-imap jj <Esc> :w!<CR>
-imap jk <Esc>
-map <C-T> :tabnew<CR>
-map <C-PageDown> gt
-map <C-PageUp> gt
-map <C-o> :NERDTreeToggle<CR>
-"inoremap {<CR> {<cr><cr>}<C-o>k<tab>
-"inoremap ( ()<left>
-"inoremap[ []<left>
-"inoremap " ""<left>
-"inoremap ' ''<left>
-"map <C-S> :w!
+nnoremap    <Space>         <PageDown>
+nnoremap    <S-Space>       <PageUp>
+nnoremap    <C-o>           :Unite          -no-split    -buffer-name=files     -start-insert   file_rec/async:!<cr>
+nnoremap    <space>/        :Unite          grep:.<cr>
+nnoremap    <space>y        :Unite          history/yank<cr>
+nnoremap    <space>s        :Unite          -quick-match                                        buffer<cr>
+nnoremap    <space>e        :Unite          -no-split    -buffer-name=buffer                    buffer<cr>
+nnoremap    <space>r        :Unite          -no-split    -buffer-name=mru       -start-insert   file_mru<cr>
+nnoremap    <space>o        :Unite          -no-split    -buffer-name=ooutline  -start-insert   outline<cr>
+imap        jj              <Esc> :w!<CR>
+imap        jk              <Esc>
+map         <C-T>           :tabnew<CR>
+map         <C-PageDown>    gt
+map         <C-PageUp>      gt
+"map        <C-o>           :NERDTreeToggle<CR>
+inoremap    {<CR>           {<cr><cr>}<C-o>k<tab>
+""inoremap    (               ()<left>
+""inoremap    [               []<left>
+""inoremap    "               ""<left>
+""inoremap    '               ''<left>
+map         <C-S>           :w!
 
 "noremap <silent> <C-S>          :update<CR>
 "vnoremap <silent> <C-S>         <C-C>:update<CR>
