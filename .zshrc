@@ -1,5 +1,6 @@
 # Path to your oh-my-zsh configuration.
-export PATH=$PATH:$HOME/bin:$HOME/.gem/ruby/2.0.0/bin
+export PATH=$HOME/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
+export INPUTRC=~/.inputrc
 export CODE=$HOME/code
 export MEDIA=/mnt/media
 export EDITOR=/usr/bin/vim
@@ -8,6 +9,10 @@ export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=$CODE/dotfiles
 export LANG=en_US.UTF-8
+
+# Key Bindings
+bindkey '\e[7~' beginning-of-line   # Home
+bindkey '\e[8~' end-of-line         # End
 
 # Example aliases
 # alias zshconfig="$EDITOR ~/.zshrc"

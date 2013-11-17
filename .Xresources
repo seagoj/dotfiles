@@ -12,4 +12,6 @@
  urxvt.colorUL: #4682B4
  urxvt.iso14755: true
  urxvt.urgentOnBell: true
+ URxvt*keysym.Home: \033[7~
+ URxvt*keysym.End: \033[8~
  
