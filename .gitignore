@@ -1,4 +1,4 @@
-config
+config/*
 .vagrant
 lib/Predis
 cookbooks
@@ -20,5 +20,5 @@ Thumbs.db
 # Folder config file
 Desktop.ini
 
-.antigen/repos/*
+.antigen/*
 .vim/bundle/*
