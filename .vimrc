@@ -3,7 +3,7 @@ filetype plugin on
 set modelines=5
 set ls=2
 
-set guifont=Anonymous\ Pro\ for\ Powerline:h14
+"set guifont=Anonymous\ Pro\ for\ Powerline:h14
 set tags=~/.vim/tags
 
 set rtp+=$HOME/.vim/bundle/vundle/
@@ -13,16 +13,16 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'tpope/vim-commentary'
 Bundle 'scrooloose/nerdcommenter'
-"Bundle 'scrooloose/nerdtree'
 Bundle 'scrooloose/syntastic'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'terryma/vim-multiple-cursors'
 "Bundle 'Valloric/YouCompleteMe'
-"Bundle 'wincent/Command-T'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'rking/ag.vim'
+Bundle 'vim-scripts/cream-showinvisibles'
+Bundle 'koron/minimap-vim'
 
 
 " Auto-commands
@@ -81,7 +81,7 @@ set expandtab "Insert spaces whenever <tab> is pressed
 set tabstop=4 "Use 4 spaces for a tab
 set shiftwidth=4 "Change prior entered tabs to be 4 spaces
 set smarttab "Manage spaces as if they were tabs
-map <F2> :retab <CR> :w!<CR> "Maps <F2> to retab and write file
+map <F3> :retab <CR> :w!<CR> "Maps <F2> to retab and write file
 
 "set lbr
 "set tw=500
@@ -125,7 +125,8 @@ inoremap    {<CR>           {<cr><cr>}<C-o>k<tab>
 ""inoremap    [               []<left>
 ""inoremap    "               ""<left>
 ""inoremap    '               ''<left>
-map         <C-S>           :w!
+nnoremap    <F1>            :retab<CR> :wa<CR> :! git add . && git commit -a -m 'Testing' && git push origin release-1<CR>
+nnoremap    <F2>            :wa<CR> :! vagrant-phpunit<CR>
 
 "noremap <silent> <C-S>          :update<CR>
 "vnoremap <silent> <C-S>         <C-C>:update<CR>
