@@ -125,7 +125,7 @@ inoremap    {<CR>           {<cr><cr>}<C-o>k<tab>
 ""inoremap    [               []<left>
 ""inoremap    "               ""<left>
 ""inoremap    '               ''<left>
-nnoremap    <F1>            :retab<CR> :wa<CR> :! git add . && git commit -a -m 'Testing' && git push origin release-1<CR>
+nnoremap    <F1>            :wa<CR> :! $HOME/bin/bot-deploy<CR>
 nnoremap    <F2>            :wa<CR> :! vagrant-phpunit<CR>
 
 "noremap <silent> <C-S>          :update<CR>
