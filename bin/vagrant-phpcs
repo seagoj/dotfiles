@@ -1,0 +1,3 @@
+#!/usr/bin/zsh
+
+vagrant ssh -c "cd /vagrant && ./vendor/bin/phpcs -v --standard=PSR2 --tab-width=4 --extensions=php --ignore=tests/report,vendor,cookbooks,_notes,output,efax.bpspharmacy.com/html/report $*"

@@ -1,0 +1,4 @@
+#!/usr/bin/zsh
+
+cd ~/.vim/bundle/vimproc.vim
+make -f make_cygwin.mak

@@ -1,0 +1,8 @@
+#!/usr/bin/zsh
+
+rm -r ~/.vim/bundle/YouCOmpleteMe/build_cygwin
+mkdir ~/.vim/bundle/YouCompleteMe/build_cygwin && cd ~/.vim/bundle/YouCompleteMe/build_cygwin
+cmake -D CMAKE_CXX_COMPILER=/usr/bin/gcc -G "Unix Makefiles" . ../cpp
+make ycm_core
+#cd ~/.vim/bundle/YouCompleteMe/python
+#cp ~/.vim/bundle/YouCompleteMe/build_cygwin/ycm/ycm_core.pyd ycm_core.dll

@@ -1,5 +1,5 @@
-[push]
-	default = simple
+#[push]
+	#default = simple
 [user]
 	name = Jeremy Seago
 	email = seagoj@gmail.com

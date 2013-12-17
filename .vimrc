@@ -116,7 +116,7 @@ nnoremap    <space>r        :Unite          -no-split    -buffer-name=mru       
 nnoremap    <space>o        :Unite          -no-split    -buffer-name=ooutline  -start-insert   outline<cr>
 imap        jj              <Esc> :w!<CR>
 imap        jk              <Esc>
-map         <C-T>           :tabnew<CR>
+map         <C-T>           :tabnew<CR>:e .<CR>
 map         <C-PageDown>    gt
 map         <C-PageUp>      gt
 "map        <C-o>           :NERDTreeToggle<CR>

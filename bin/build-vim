@@ -1,0 +1,15 @@
+#!/usr/bin/zsh
+
+hg clone https://vim.googlecode.com/hg/ vim && cd vim
+./configure --prefix=/usr/ \
+    --enable-gui=no \
+    --without-x \
+    --disable-nls \
+    --enable-multibyte \
+    --with-tlib=ncurses \
+    --enable-pythoninterp \
+    --enable-ruby-interp \
+    --with-ruby-command=/usr/bin/ruby \
+    --enable-gui=no \
+    --without-x
+make && make install
