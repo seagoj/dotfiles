@@ -1,5 +1,5 @@
 # Path to your oh-my-zsh configuration.
-export PATH=$HOME/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
+export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
 export INPUTRC=~/.inputrc
 export CODE=$HOME/code
 export MEDIA=/mnt/media
