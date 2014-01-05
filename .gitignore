@@ -21,4 +21,4 @@ Thumbs.db
 Desktop.ini
 
 .antigen/*
-.vim/bundle/*
+.vim/bundle
