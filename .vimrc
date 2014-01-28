@@ -32,10 +32,14 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'majutsushi/tagbar'
-"Bundle 'rking/ag.vim'
+Bundle 'rking/ag.vim'
 Bundle 'vim-scripts/cream-showinvisibles'
 Bundle 'koron/minimap-vim'
 Bundle 'sjl/gundo.vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 
 let mapleader = ","
 let g:mapleader = ","
@@ -55,7 +59,7 @@ map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
 " -Tab Management
-map <leader>tn :tabnew<cr>
+map <leader>tn :tabnew<cr> <C-p>
 map <leader>to :tabonly<cr>
 map <leader>tc :tabclose<cr>
 map <leader>tm :tabmove
@@ -132,7 +136,7 @@ endif
 nmap        <leader>w       :update!<cr> "Map <leader>w to force write carriage return
 nnoremap    <Space>         <PageDown>
 nnoremap    <S-Space>       <PageUp>
-nnoremap    <C-p>           :Unite -no-split -buffer-name=files -start-insert -auto-preview file_rec/async:!<cr>
+nnoremap    <C-p>           :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap    <C-o>           :Unite -no-split -buffer-name=files -start-insert -auto-preview file_rec:!<cr>
 nnoremap    <space>/        :Unite grep:.<cr>
 nnoremap    <space>y        :Unite history/yank<cr>
@@ -140,17 +144,18 @@ nnoremap    <space>s        :Unite -no-split -auto-preview -quick-match buffer<c
 nnoremap    <space>e        :Unite -no-split -buffer-name=buffer buffer<cr>
 nnoremap    <space>r        :Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
 nnoremap    <space>o        :Unite -no-split -buffer-name=ooutline -start-insert outline<cr>
-imap        jj              <Esc> :w!<CR>
+imap        jj              <Esc> :update!<CR>
 imap        jk              <Esc>
 map         <C-t>           :tabnew<CR><C-p>
 map         <C-PageDown>    gt
 map         <C-PageUp>      gT
-"nnoremap    <F1>            :wa<CR> :! $HOME/bin/bot-deploy<CR>
-nnoremap    <F1>            :Gwrite<CR> :Gcommit<CR> :Git push development<CR>
-nnoremap    <F2>            :Gwrite<CR> :Gcommit<CR> :Git push staging<CR>
+nnoremap    <F1>            :wa<CR> :! git add . && git commit -a -m "testing" && git push<CR>
+nnoremap    <F2>            :Gwrite<cr> :Gcommit<cr>
+nnoremap    <F3>            :Git push<cr>
 "nnoremap    <F2>            :wa<CR> :! vagrant-phpunit<CR>
-map         <F3>            :retab<CR>:w!<CR>       "Maps <F2> to retab and write file
+map         <F4>            :retab<CR>:update!<CR>       "Maps <F2> to retab and write file
 nnoremap    <F5>            :GundoToggle<cr>
+nnoremap    <F12>           :Dash!<cr>
 " -Autocomplete
 inoremap    {<CR>           {<CR><CR>}<C-o>k<tab>
 "inoremap    (               ()<left>

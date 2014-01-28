@@ -1,0 +1,4 @@
+#!/bin/zsh
+
+cd ~/.vim/bundle/YouCompleteMe
+./install.sh

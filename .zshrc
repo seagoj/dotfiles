@@ -3,8 +3,8 @@ export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
 export INPUTRC=~/.inputrc
 export CODE=$HOME/code
 export MEDIA=/mnt/media
-export EDITOR=/usr/bin/vim
-export BROWSER=$(which google-chrome chromium-browser chromium firefox links2 links lynx | grep -Pm1 '^/')
+export EDITOR=$(which  vim nano | grep -m1 -e '^/')
+export BROWSER=$(which google-chrome chromium-browser chromium firefox links2 links lynx | grep -m1 -e '^/')
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=$CODE/dotfiles
@@ -41,6 +41,9 @@ COMPLETION_WAITING_DOTS="true"
 eval $(ssh-agent)
 ssh-add
 
+# Set geeknote editor
+geeknote settings --editor $EDITOR
+
 autoload $HOME/functions/*(:t)
 
 source $HOME/antigen.zsh
@@ -66,3 +69,5 @@ EOBUNDLES
 antigen-theme seagoj/js-magic js-magic
 
 antigen-apply
+
+eval "$(fasd --init auto)"

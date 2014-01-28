@@ -1,5 +1,6 @@
 #!/bin/zsh
-# 
+
+#
 # Aliases e to $EDITOR and provides a default argument of the current directory
 #
 # USAGE:
@@ -11,8 +12,10 @@
 #   $ e /opt
 #   # => opens the specified directory in $EDITOR
 
-if [[ "$1" == "" ]]; then
+if [[ $# -eq 0 ]] ; then
     exec $EDITOR .
+elif [[ $# -eq 1 ]] ; then
+    exec fasd -f -e $EDITOR $1
 else
     exec $EDITOR -O "$*"
 fi
