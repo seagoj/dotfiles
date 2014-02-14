@@ -1,0 +1,7 @@
+#!/bin/zsh
+
+if [[ $# != 0 ]]; then
+    echo $1 >> ~/todo.markdown
+fi
+
+cat ~/todo.markdown

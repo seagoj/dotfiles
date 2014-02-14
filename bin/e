@@ -11,11 +11,28 @@
 #   $ e .
 #   $ e /opt
 #   # => opens the specified directory in $EDITOR
+#
+#   $ e file.txt [exists in cwd]
+#   # => opens file in default editor
+#
+#   $ e file.txt [does not exist in cwd]
+#   # => searches for previously opened files with that name through fasd
+#
+#   @todo - waiting for update to fasd exit code
+#   $ e file.txt [does not exist in cwd; can't be found with fasd]
+#   # => opens new file at passed location
 
 if [[ $# -eq 0 ]] ; then
     exec $EDITOR .
 elif [[ $# -eq 1 ]] ; then
-    exec fasd -f -e $EDITOR $1
+    if [[ -a $1 ]]; then
+        exec $EDITOR $1
+    else
+        fasd -f -e $EDITOR $1
+        if [[ $? -ne 0 ]]; then
+            $EDITOR $1
+        fi
+    fi
 else
     exec $EDITOR -O "$*"
 fi

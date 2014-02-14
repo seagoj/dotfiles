@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-cd ~/code/bot && git add . && git commit -a -m $1 && git push origin release-1

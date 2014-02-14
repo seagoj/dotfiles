@@ -1,6 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/Admin/code/bot'
-let g:netrw_dirhist_2='/Users/Admin/code/dotfiles/.antigen'
-let g:netrw_dirhist_3='/Users/Admin/code/dotfiles'
-let g:netrw_dirhist_4='/Users/Admin'
+let g:netrw_dirhist_cnt =0

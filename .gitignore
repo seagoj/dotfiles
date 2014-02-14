@@ -3,6 +3,7 @@ config/*
 lib/Predis
 cookbooks
 *.log
+.vim/.netrwhist
 
 ############
 ## Sublime Text 2

@@ -15,31 +15,34 @@ set autoread                    "automatically watch for changes
 set hidden                      "hides unsaved files instead of forcing you to save/quit
 set modelines=5
 set laststatus=2
-set tags=~/.vim/tags
+set tags=./tags
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set rtp+=$HOME/.vim/bundle/vundle/
 
 call vundle#rc()
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-commentary'
-Bundle 'scrooloose/syntastic'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'Valloric/YouCompleteMe'
-"Bundle 'Shougo/neocomplete.vim'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'rking/ag.vim'
-Bundle 'vim-scripts/cream-showinvisibles'
+Bundle 'garbas/vim-snipmate'
+Bundle 'gmarik/vundle'
+Bundle 'honza/vim-snippets'
 Bundle 'koron/minimap-vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rking/ag.vim'
+Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'sjl/gundo.vim'
+Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-commentary'
+Bundle 'Valloric/YouCompleteMe'
+"Bundle 'vim-scripts/cream-showinvisibles'
 
 let mapleader = ","
 let g:mapleader = ","
@@ -146,12 +149,14 @@ nnoremap    <space>r        :Unite -no-split -buffer-name=mru -start-insert file
 nnoremap    <space>o        :Unite -no-split -buffer-name=ooutline -start-insert outline<cr>
 imap        jj              <Esc> :update!<CR>
 imap        jk              <Esc>
+imap        <C-j>           <Esc>a<Plug>snipMateNextOrTrigger
+smap        <C-j>           <Plug>snipMateNextOrTrigger
 map         <C-t>           :tabnew<CR><C-p>
 map         <C-PageDown>    gt
 map         <C-PageUp>      gT
-nnoremap    <F1>            :wa<CR> :! git add . && git commit -a -m "testing" && git push<CR>
-nnoremap    <F2>            :Gwrite<cr> :Gcommit<cr>
-nnoremap    <F3>            :Git push<cr>
+" nnoremap    <F1>            :wa<CR> :! git add . && git commit -v --cleanup=whitespace -a -m 'testing' && git push<CR>
+nnoremap    <F1>            :Gwrite<cr> :Gcommit --verbose<cr>i
+nnoremap    <F2>            :Git push<cr>
 "nnoremap    <F2>            :wa<CR> :! vagrant-phpunit<CR>
 map         <F4>            :retab<CR>:update!<CR>       "Maps <F2> to retab and write file
 nnoremap    <F5>            :GundoToggle<cr>
@@ -167,5 +172,12 @@ inoremap    {<CR>           {<CR><CR>}<C-o>k<tab>
 "map <silent> <C-PageUp> :tabp<CR>
 map <silent> <C-1> :tabn 1<cr>
 map <silent> <C-2> :tabN 2<cr>
+
+" :syntax include @PHP syntax/php.vim
+" :syntax include @HTML syntax/html.vim
+" :syntax region htmlSnip matchgroup=Snip start="<?php" end="?>" contains=@HTML
+" :syntax region phpSnip matchgroup=Snip start="<?" end="?>" contains=@PHP
+" :syntax region htmlSnip matchgroup=Snip start="<html>" end="</html>" contains=@HTML
+" :hi link Snip SpecialComment
 
 :cd ~/code/bot
