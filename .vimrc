@@ -112,6 +112,11 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 
+if &diff
+    " diff mode
+    set diffopt+=iwhite
+endif
+
 "set textwidth=80 wrap linebreak nolist     "Wrap lines longer than 80 characters
 "highlight Overlength ctermbg=blue ctermfg=white guibg=#592929
 "match Overlength /\%81v.\+/
@@ -155,23 +160,18 @@ map         <C-t>           :tabnew<CR><C-p>
 map         <C-PageDown>    gt
 map         <C-PageUp>      gT
 " nnoremap    <F1>            :wa<CR> :! git add . && git commit -v --cleanup=whitespace -a -m 'testing' && git push<CR>
-nnoremap    <F1>            :Gwrite<cr> :Gcommit --verbose<cr>i
+nnoremap    <F1>            :Gwrite<cr>:Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
 "nnoremap    <F2>            :wa<CR> :! vagrant-phpunit<CR>
 map         <F4>            :retab<CR>:update!<CR>       "Maps <F2> to retab and write file
 nnoremap    <F5>            :GundoToggle<cr>
-nnoremap    <F12>           :Dash!<cr>
+nnoremap    <F12>           <Esc>:Dash!<cr>
 " -Autocomplete
 inoremap    {<CR>           {<CR><CR>}<C-o>k<tab>
-"inoremap    (               ()<left>
-"inoremap    [               []<left>
-"inoremap    "               ""<left>
-"inoremap    '               ''<left>
-" -Tab Navigation
-"map <silent> <C-PageDown> :tabn<CR>
-"map <silent> <C-PageUp> :tabp<CR>
-map <silent> <C-1> :tabn 1<cr>
-map <silent> <C-2> :tabN 2<cr>
+inoremap    (               ()<left>
+inoremap    [               []<left>
+inoremap    "               ""<left>
+inoremap    '               ''<left>
 
 " :syntax include @PHP syntax/php.vim
 " :syntax include @HTML syntax/html.vim
@@ -180,4 +180,8 @@ map <silent> <C-2> :tabN 2<cr>
 " :syntax region htmlSnip matchgroup=Snip start="<html>" end="</html>" contains=@HTML
 " :hi link Snip SpecialComment
 
-:cd ~/code/bot
+" Show current git branch in statusline
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Remove fugitive buffers when hidden
+autocmd BufReadPost fugitive://* set bufhidden=delete
