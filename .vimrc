@@ -118,8 +118,8 @@ if &diff
 endif
 
 "set textwidth=80 wrap linebreak nolist     "Wrap lines longer than 80 characters
-"highlight Overlength ctermbg=blue ctermfg=white guibg=#592929
-"match Overlength /\%81v.\+/
+highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
+match Overlength /\%81v.\+/
 
 " Global vars
 " -Unite
