@@ -5,3 +5,5 @@
 	default = simple
 [github]
 	user = seagoj
+[alias]
+	lg = log --color --graph --abbrev-commit --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset'
