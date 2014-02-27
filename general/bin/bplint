@@ -1,0 +1,5 @@
+#!/bin/zsh
+
+ag 'style' .
+ag 'debugLog' .
+ag 'console.log' .
