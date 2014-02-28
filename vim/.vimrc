@@ -19,12 +19,70 @@ set tags=./tags
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set rtp+=$HOME/.vim/bundle/vundle/
+" Searching
+set ignorecase      "ignore case when searching
+set smartcase       "If a pattern contains an uppercase, then the search is case sensitive
+set hlsearch        "Highlight searches
+set incsearch       "More like webbrowser search
+set nolazyredraw    "Don't redraw during macros
+set magic           "For regular expressions
+set showmatch       "Matching braces highlighting
+set matchtime=2     "Blink for 2 tenths of a second when matching
+" No Sound On Errors
+set visualbell
+set timeoutlen=500
+" Colors
+syntax enable       "Enable highlighting
+set guioptions-=T
+set t_Co=256
+set background=dark
+colorscheme Tomorrow-Night-Eighties
+" Spaces/Tabs
+set expandtab       "Insert spaces whenever <tab> is pressed
+set tabstop=4       "Use 4 spaces for a tab
+set softtabstop=4   "Softtabstop?
+set shiftwidth=4    "Change prior entered tabs to be 4 spaces
+set smarttab        "Manage spaces as if they were tabs
+set autoindent      "Newline uses indentation depth of the previous
+set smartindent     "Newline conditionally uses 1 more indent
+" Code Folding
+set foldmethod=indent
+set foldnestmax=10
+set nofoldenable
+set foldlevel=1
 
+" Statusline
+" Show current git branch
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+
+" Features
+" Show Invisible Characters
+set listchars=eol:¬,trail:·,extends:»,precedes:«,nbsp:×,tab:❘-
+map <silent> <leader>l :set list!<cr>
+" Highlight Lines Longer Than 80 Characters
+highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
+match Overlength /\%81v.\+/
+
+" Specify Behavior For Switching Buffers
+try
+    set switchbuf=useopen,usetab,newtab
+    set showtabline=2
+catch
+endtry
+
+" Check For Vundle
+let vundleInstalled=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let vundleInstalled=0
+endif
 call vundle#rc()
-Bundle 'airblade/vim-gitgutter'
-Bundle 'garbas/vim-snipmate'
+
 Bundle 'gmarik/vundle'
-Bundle 'honza/vim-snippets'
+Bundle 'airblade/vim-gitgutter'
 Bundle 'koron/minimap-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'MarcWeber/vim-addon-mw-utils'
@@ -43,83 +101,9 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 Bundle 'Valloric/YouCompleteMe'
 
-let mapleader = ","
-let g:mapleader = ","
-" Auto-commands
-" -Remove trailing whitespace
-autocmd BufWritePre * :%s/\s\+$//e
-" -Return to last edit position when opening files
-autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-
-" Movement
-" -Treat long lines as break lines
-map j gj
-map k gk
-" -Move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
-" -Tab Management
-map <leader>tn :tabnew<cr> <C-p>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
-" - Change CWD to directory of selected buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-" -Specify Behavior For Switching Buffers
-try
-    set switchbuf=useopen,usetab,newtab
-    set showtabline=2
-catch
-endtry
-" -Remember Info About Open Buffers On Close
-"set viminfo=$HOME/.viminfo
-
-" Searching
-set ignorecase      "ignore case when searching
-set smartcase       "If a pattern contains an uppercase, then the search is case sensitive
-set hlsearch        "Highlight searches
-set incsearch       "More like webbrowser search
-set nolazyredraw    "Don't redraw during macros
-set magic           "For regular expressions
-set showmatch       "Matching braces highlighting
-set matchtime=2     "Blink for 2 tenths of a second when matching
-
-" No Sound On Errors
-set visualbell
-set timeoutlen=500
-
-" Colors
-syntax enable       "Enable highlighting
-set guioptions-=T
-set t_Co=256
-set background=dark
-colorscheme Tomorrow-Night-Eighties
-
-" Spaces/Tabs
-set expandtab       "Insert spaces whenever <tab> is pressed
-set tabstop=4       "Use 4 spaces for a tab
-set softtabstop=4   "Softtabstop?
-set shiftwidth=4    "Change prior entered tabs to be 4 spaces
-set smarttab        "Manage spaces as if they were tabs
-set autoindent      "Newline uses indentation depth of the previous
-set smartindent     "Newline conditionally uses 1 more indent
-
-" Code Folding
-set foldmethod=indent
-set foldnestmax=10
-set nofoldenable
-set foldlevel=1
-
-if &diff
-    " diff mode
-    set diffopt+=iwhite
+if vundleInstalled == 0
+    :BundleInstall
 endif
-
-"set textwidth=80 wrap linebreak nolist     "Wrap lines longer than 80 characters
-highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
-match Overlength /\%81v.\+/
 
 " Global vars
 " -Unite
@@ -141,7 +125,25 @@ if executable('ag')
 endif
 
 " Mappings
-nmap        <leader>w       :update!<cr> "Map <leader>w to force write carriage return
+let mapleader = ","
+let g:mapleader = ","
+" Movement
+" Treat long lines as break lines
+map j gj
+map k gk
+" Move between windows
+map <C-j> <C-W>j
+map <C-k> <C-W>k
+map <C-h> <C-W>h
+map <C-l> <C-W>l
+" Tab Management
+map <leader>tn :tabnew<cr> <C-p>
+map <leader>to :tabonly<cr>
+map <leader>tc :tabclose<cr>
+map <leader>tm :tabmove
+" Change CWD to directory of selected buffer
+map <leader>cd :cd %:p:h<cr>:pwd<cr>
+nmap        <leader>w       :update!<cr>
 nnoremap    <Space>         <PageDown>
 nnoremap    <S-Space>       <PageUp>
 nnoremap    <C-p>           :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
@@ -152,46 +154,46 @@ nnoremap    <space>s        :Unite -no-split -auto-preview -quick-match buffer<c
 nnoremap    <space>e        :Unite -no-split -buffer-name=buffer buffer<cr>
 nnoremap    <space>r        :Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
 nnoremap    <space>o        :Unite -no-split -buffer-name=ooutline -start-insert outline<cr>
-imap        jj              <Esc> :update!<CR>
+imap        jj              <Esc> :retab!<cr> :update!<CR>
 imap        jk              <Esc>
-imap        <C-j>           <Esc>a<Plug>snipMateNextOrTrigger
-smap        <C-j>           <Plug>snipMateNextOrTrigger
 map         <C-t>           :tabnew<CR><C-p>
 map         <C-PageDown>    gt
 map         <C-PageUp>      gT
-" nnoremap    <F1>            :wa<CR> :! git add . && git commit -v --cleanup=whitespace -a -m 'testing' && git push<CR>
-nnoremap    <F1>            :Gwrite<cr>:Gstatus<cr>
+nnoremap    <F1>            :retab!<cr> :Gwrite<cr>:Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
-"nnoremap    <F2>            :wa<CR> :! vagrant-phpunit<CR>
-map         <F4>            :retab<CR>:update!<CR>       "Maps <F2> to retab and write file
+map         <F4>            :retab!<CR>:update!<CR>      "Maps <F2> to retab and write file
 nnoremap    <F5>            :GundoToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
-" -Autocomplete
+" Autocomplete
 inoremap    {<CR>           {<CR><CR>}<C-o>k<tab>
 inoremap    (               ()<left>
 inoremap    [               []<left>
 inoremap    "               ""<left>
 inoremap    '               ''<left>
+vmap        <               <gv
+vmap        >               >gv
 
-" :syntax include @PHP syntax/php.vim
-" :syntax include @HTML syntax/html.vim
-" :syntax region htmlSnip matchgroup=Snip start="<?php" end="?>" contains=@HTML
-" :syntax region phpSnip matchgroup=Snip start="<?" end="?>" contains=@PHP
-" :syntax region htmlSnip matchgroup=Snip start="<html>" end="</html>" contains=@HTML
-" :hi link Snip SpecialComment
+if &diff
+    " diff mode
+    set diffopt+=iwhite
+    " map < :diffget //2
+    " map > :diffget //3
+endif
 
-" Show current git branch in statusline
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
-" Remove fugitive buffers when hidden
-autocmd BufReadPost fugitive://* set bufhidden=delete
-
-" Show Invisible Characters
-set listchars=eol:¬,trail:·,extends:»,precedes:«,nbsp:×,tab:❘-
-" convert spaces to tabs when reading file
-autocmd! bufreadpost * set noexpandtab | retab! 4
-" convert tabs to spaces before writing file
-autocmd! bufwritepre * set expandtab | retab! 4
-" convert spaces to tabs after writing file (to show guides again)
-autocmd! bufwritepost * set noexpandtab | retab! 4)
-map <silent> <leader>l :set list!<cr>
+" Autocommands
+if has("autocmd")
+    " Remove fugitive buffers when hidden
+    autocmd BufReadPost fugitive://* set bufhidden=delete
+    " convert spaces to tabs when reading file
+    autocmd! bufreadpost * set noexpandtab | retab! 4
+    " convert tabs to spaces before writing file
+    autocmd! bufwritepre * set expandtab | retab! 4
+    " convert spaces to tabs after writing file (to show guides again)
+    autocmd! bufwritepost * set noexpandtab | retab! 4)
+    " -Remove trailing whitespace
+    autocmd BufWritePre * :%s/\s\+$//e
+    " -Retab on write
+    autocmd BufWritePre * :retab!
+    " -Return to last edit position when opening files
+    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+endif
