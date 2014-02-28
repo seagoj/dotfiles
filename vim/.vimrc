@@ -42,7 +42,6 @@ Bundle 'tomtom/tlib_vim'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
 Bundle 'Valloric/YouCompleteMe'
-"Bundle 'vim-scripts/cream-showinvisibles'
 
 let mapleader = ","
 let g:mapleader = ","
@@ -101,6 +100,7 @@ colorscheme Tomorrow-Night-Eighties
 " Spaces/Tabs
 set expandtab       "Insert spaces whenever <tab> is pressed
 set tabstop=4       "Use 4 spaces for a tab
+set softtabstop=4   "Softtabstop?
 set shiftwidth=4    "Change prior entered tabs to be 4 spaces
 set smarttab        "Manage spaces as if they were tabs
 set autoindent      "Newline uses indentation depth of the previous
@@ -185,3 +185,13 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Remove fugitive buffers when hidden
 autocmd BufReadPost fugitive://* set bufhidden=delete
+
+" Show Invisible Characters
+set listchars=eol:¬,trail:·,extends:»,precedes:«,nbsp:×,tab:❘-
+" convert spaces to tabs when reading file
+autocmd! bufreadpost * set noexpandtab | retab! 4
+" convert tabs to spaces before writing file
+autocmd! bufwritepre * set expandtab | retab! 4
+" convert spaces to tabs after writing file (to show guides again)
+autocmd! bufwritepost * set noexpandtab | retab! 4)
+map <silent> <leader>l :set list!<cr>
