@@ -50,6 +50,7 @@ set foldmethod=indent
 set foldnestmax=10
 set nofoldenable
 set foldlevel=1
+set cul
 
 " Statusline
 " Show current git branch
@@ -57,8 +58,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Features
 " Show Invisible Characters
-set listchars=eol:¬,trail:·,extends:»,precedes:«,nbsp:×,tab:❘-
-map <silent> <leader>l :set list!<cr>
+set listchars=tab:¦·,trail:·,extends:»,precedes:«,nbsp:×,eol:¬
 " Highlight Lines Longer Than 80 Characters
 highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
 match Overlength /\%81v.\+/
@@ -136,6 +136,8 @@ map <C-j> <C-W>j
 map <C-k> <C-W>k
 map <C-h> <C-W>h
 map <C-l> <C-W>l
+" Toggle Invisibles
+map <silent> <leader>l :set list!<cr>
 " Tab Management
 map <leader>tn :tabnew<cr> <C-p>
 map <leader>to :tabonly<cr>
@@ -172,6 +174,7 @@ inoremap    "               ""<left>
 inoremap    '               ''<left>
 vmap        <               <gv
 vmap        >               >gv
+nmap        p               ]p
 
 if &diff
     " diff mode
