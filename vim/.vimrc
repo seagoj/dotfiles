@@ -91,14 +91,16 @@ Bundle 'mattn/webapi-vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
+Bundle 'rstacruz/sparkup', {'rtp':'vim/'}
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'sjl/gundo.vim'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
 
 if vundleInstalled == 0
