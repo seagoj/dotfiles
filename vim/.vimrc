@@ -58,7 +58,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Features
 " Show Invisible Characters
-set listchars=tab:¦·,trail:·,extends:»,precedes:«,nbsp:×,eol:¬
+set list listchars=tab:¦·,trail:·,extends:»,precedes:«,nbsp:×,eol:¬
 " Highlight Lines Longer Than 80 Characters
 highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
 match Overlength /\%81v.\+/
