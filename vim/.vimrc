@@ -16,14 +16,10 @@ if !filereadable(vundle_readme)
     let vundleInstalled=0
 endif
 call vundle#rc()
-
 Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
-" Bundle 'garbas/vim-snipmate'
-" Bundle 'honza/vim-snippets'
 Bundle 'koron/minimap-vim'
 Bundle 'majutsushi/tagbar'
-" Bundle 'MarcWeber/vim-addon-mw-utils'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'rizzatti/funcoo.vim'
@@ -35,8 +31,7 @@ Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
-" Bundle 'terryma/vim-multiple-cursors'
-" Bundle 'tomtom/tlib_vim'
+Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-fugitive'
@@ -44,10 +39,10 @@ Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
 filetype plugin on
 filetype indent on
-
 if vundleInstalled == 0
     :BundleInstall
 endif
+
 set mouse=a                     "Enable mouse use
 set scrolloff=5                 "When possible, show 5 lines above and below the cursor
 set wildmenu                    "Autocomplete and fun stuff
@@ -112,8 +107,6 @@ try
 catch
 endtry
 
-
-
 " Global vars
 " -Unite
 let g:unite_source_history_yank_enable = 1
@@ -134,11 +127,10 @@ if executable('ag')
 endif
 " -Sparkup
 let g:sparkupArgs = '--no-last-newline'
-let g:sparkupExecuteMapping = '<C-e>'
-let g:sparkupNextMapping = '<C-r>'
+let g:sparkupExecuteMapping = '<c-z>'
+let g:sparkupNextMapping = '<c-x>'
 " -Ultisnips
-" let g:UltiSnipsJumpForwardTrigger="<tab>"
-" let g:UltiSnipsListSnippets="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsExpandTrigger="<c-e>"
 
 " Mappings
@@ -183,12 +175,6 @@ nnoremap    <F2>            :Git push<cr>
 map         <F4>            :retab!<CR>:update!<CR>      "Maps <F2> to retab and write file
 nnoremap    <F5>            :GundoToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
-" Autocomplete
-" inoremap    {<CR>           {<CR><CR>}<C-o>k<tab>
-" inoremap    (               ()<left>
-" inoremap    [               []<left>
-" inoremap    "               ""<left>
-" inoremap    '               ''<left>
 vmap        <               <gv
 vmap        >               >gv
 nmap        p               ]p
@@ -200,25 +186,8 @@ if &diff
     " map > :diffget //3
 endif
 
-" Manage YCm/Ultisnips
-
-" if g:ulti_expand_res == 0
-"   if pumvisible()
-"       return "\<C-n>"
-"   else
-"       call UltiSnips#JumpForwards()
-"           if g:ulti_jump_forwards_res == 0
-"               return "\<TAB>"
-"           endif
-"       endif
-"   endif
-"   return ""
-" endfunction
-
 " Autocommands
 if has("autocmd")
-    " Manages YCM/Ultisnips
-    " autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
     " Remove fugitive buffers when hidden
     autocmd BufReadPost fugitive://* set bufhidden=delete
     " convert spaces to tabs when reading file
