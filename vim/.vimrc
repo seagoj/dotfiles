@@ -3,8 +3,51 @@ scriptencoding utf-8
 set encoding=utf-8
 set ffs=unix,mac,dos
 set nocompatible
+filetype off
+set rtp+=$HOME/.vim/bundle/vundle/
+
+" Check For Vundle
+let vundleInstalled=1
+let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+if !filereadable(vundle_readme)
+    echo "Installing Vundle.."
+    silent !mkdir -p ~/.vim/bundle
+    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+    let vundleInstalled=0
+endif
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'airblade/vim-gitgutter'
+" Bundle 'garbas/vim-snipmate'
+" Bundle 'honza/vim-snippets'
+Bundle 'koron/minimap-vim'
+Bundle 'majutsushi/tagbar'
+" Bundle 'MarcWeber/vim-addon-mw-utils'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
+Bundle 'rizzatti/funcoo.vim'
+Bundle 'rizzatti/dash.vim'
+Bundle 'rking/ag.vim'
+Bundle 'rstacruz/sparkup', {'rtp':'vim/'}
+Bundle 'scrooloose/syntastic'
+Bundle 'Shougo/unite.vim'
+Bundle 'Shougo/vimproc.vim'
+Bundle 'SirVer/ultisnips'
+Bundle 'sjl/gundo.vim'
+" Bundle 'terryma/vim-multiple-cursors'
+" Bundle 'tomtom/tlib_vim'
+Bundle 'tpope/vim-abolish'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-surround'
+Bundle 'Valloric/YouCompleteMe'
 filetype plugin on
 filetype indent on
+
+if vundleInstalled == 0
+    :BundleInstall
+endif
 set mouse=a                     "Enable mouse use
 set scrolloff=5                 "When possible, show 5 lines above and below the cursor
 set wildmenu                    "Autocomplete and fun stuff
@@ -18,7 +61,6 @@ set laststatus=2
 set tags=./tags
 set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
-set rtp+=$HOME/.vim/bundle/vundle/
 " Searching
 set ignorecase      "ignore case when searching
 set smartcase       "If a pattern contains an uppercase, then the search is case sensitive
@@ -58,7 +100,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Features
 " Show Invisible Characters
-set list listchars=tab:¦·,trail:·,extends:»,precedes:«,nbsp:×,eol:¬
+set list listchars=tab:¦\ ,extends:»,precedes:«,nbsp:×,eol:¬,trail:·
 " Highlight Lines Longer Than 80 Characters
 highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
 match Overlength /\%81v.\+/
@@ -70,42 +112,7 @@ try
 catch
 endtry
 
-" Check For Vundle
-let vundleInstalled=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let vundleInstalled=0
-endif
-call vundle#rc()
 
-Bundle 'gmarik/vundle'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'koron/minimap-vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'MarcWeber/vim-addon-mw-utils'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'rizzatti/funcoo.vim'
-Bundle 'rizzatti/dash.vim'
-Bundle 'rking/ag.vim'
-Bundle 'rstacruz/sparkup', {'rtp':'vim/'}
-Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc.vim'
-Bundle 'sjl/gundo.vim'
-Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tomtom/tlib_vim'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-surround'
-Bundle 'Valloric/YouCompleteMe'
-
-if vundleInstalled == 0
-    :BundleInstall
-endif
 
 " Global vars
 " -Unite
@@ -125,6 +132,14 @@ if executable('ag')
     let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
     let g:unite_source_grep_recursive_opt = ''
 endif
+" -Sparkup
+let g:sparkupArgs = '--no-last-newline'
+let g:sparkupExecuteMapping = '<C-e>'
+let g:sparkupNextMapping = '<C-r>'
+" -Ultisnips
+" let g:UltiSnipsJumpForwardTrigger="<tab>"
+" let g:UltiSnipsListSnippets="<c-e>"
+let g:UltiSnipsExpandTrigger="<c-e>"
 
 " Mappings
 let mapleader = ","
@@ -169,11 +184,11 @@ map         <F4>            :retab!<CR>:update!<CR>      "Maps <F2> to retab and
 nnoremap    <F5>            :GundoToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 " Autocomplete
-inoremap    {<CR>           {<CR><CR>}<C-o>k<tab>
-inoremap    (               ()<left>
-inoremap    [               []<left>
-inoremap    "               ""<left>
-inoremap    '               ''<left>
+" inoremap    {<CR>           {<CR><CR>}<C-o>k<tab>
+" inoremap    (               ()<left>
+" inoremap    [               []<left>
+" inoremap    "               ""<left>
+" inoremap    '               ''<left>
 vmap        <               <gv
 vmap        >               >gv
 nmap        p               ]p
@@ -185,8 +200,25 @@ if &diff
     " map > :diffget //3
 endif
 
+" Manage YCm/Ultisnips
+
+" if g:ulti_expand_res == 0
+"   if pumvisible()
+"       return "\<C-n>"
+"   else
+"       call UltiSnips#JumpForwards()
+"           if g:ulti_jump_forwards_res == 0
+"               return "\<TAB>"
+"           endif
+"       endif
+"   endif
+"   return ""
+" endfunction
+
 " Autocommands
 if has("autocmd")
+    " Manages YCM/Ultisnips
+    " autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
     " Remove fugitive buffers when hidden
     autocmd BufReadPost fugitive://* set bufhidden=delete
     " convert spaces to tabs when reading file
