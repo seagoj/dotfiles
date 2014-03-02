@@ -18,6 +18,7 @@ endif
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'edsono/vim-matchit'
 Bundle 'koron/minimap-vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
