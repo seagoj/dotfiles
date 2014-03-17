@@ -1,0 +1,28 @@
+#!/bin/zsh
+
+validateBranch () {
+    valid=(feature hotfix release)
+    local e
+
+    for e in $valid; do [[ "$e" == "$1" ]] && return 0; done
+    return 1
+}
+
+TYPE=$1
+validateBranch $TYPE
+if [[ $? -eq 0 ]]; then
+    shift
+    BRANCH=""
+
+    for var in "$@"; do
+        if [[ $BRANCH != "" ]]; then
+            BRANCH=${BRANCH}_
+        fi
+        BRANCH=${BRANCH}$var
+    done
+
+    git checkout -b $TYPE/$BRANCH && git push -u development $TYPE/$BRANCH
+else
+    echo "Invalid branch type $TYPE"
+    exit 1
+fi

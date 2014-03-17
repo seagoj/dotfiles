@@ -20,6 +20,7 @@ Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'edsono/vim-matchit'
 Bundle 'koron/minimap-vim'
+Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
@@ -33,6 +34,7 @@ Bundle 'Shougo/vimproc.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'sjl/gundo.vim'
 Bundle 'terryma/vim-multiple-cursors'
+Bundle 'tobyS/pdv'
 Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
 Bundle 'tpope/vim-dispatch'
@@ -56,7 +58,7 @@ set hidden                      "hides unsaved files instead of forcing you to s
 set modelines=5
 set laststatus=2
 set tags=./tags
-set backupdir=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
+set nobackup
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Searching
 set ignorecase      "ignore case when searching
@@ -109,24 +111,25 @@ try
 catch
 endtry
 
+set pastetoggle=<F11>
+
 " Global vars
 " -Unite
 let g:unite_source_history_yank_enable = 1
 let g:unite_enable_start_insert = 1
 let g:unite_enable_short_source_names = 1
-let g:unite_split_rule = 'topleft'
-let g:unite_enable_split_vertically = 1
-let g:unite_winheight = 45
-" -Gundo
-let g:gundo_width = 30
-let g:gundo_preview_height = 50
-let g:gundo_close_on_revert = 1
-" -AG
+" let g:unite_split_rule = 'topleft'
+let g:unite_enable_split_vertically = 0
+" let g:unite_winheight = 20
 if executable('ag')
     let g:unite_source_grep_command = 'ag'
     let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
     let g:unite_source_grep_recursive_opt = ''
 endif
+" -Gundo
+let g:gundo_width = 30
+let g:gundo_preview_height = 50
+let g:gundo_close_on_revert = 1
 " -Sparkup
 let g:sparkupArgs = '--no-last-newline'
 let g:sparkupExecuteMapping = '<c-z>'
@@ -138,54 +141,59 @@ let g:UltiSnipsExpandTrigger="<c-e>"
 " Mappings
 let mapleader = ","
 let g:mapleader = ","
+nnoremap    ;               :
+" Disable Cursor Keys
+map         <up>            <nop>
+map         <down>          <nop>
+map         <left>          <nop>
+map         <right>         <nop>
+" Use Standard Regex
+nnoremap    /               /\v
+vnoremap    /               /\v
 " Movement
 " Treat long lines as break lines
-map j gj
-map k gk
+map         j               gj
+map         k               gk
 " Move between windows
-map <C-j> <C-W>j
-map <C-k> <C-W>k
-map <C-h> <C-W>h
-map <C-l> <C-W>l
+map         <C-j>           <C-W>j
+map         <C-k>           <C-W>k
+map         <C-h>           <C-W>h
+map         <C-l>           <C-W>l
 " Toggle Invisibles
-map <silent> <leader>l :set list!<cr>
+map         <leader>l       :set list!<cr>
 " Tab Management
-map <leader>tn :tabnew<cr> <C-p>
-map <leader>to :tabonly<cr>
-map <leader>tc :tabclose<cr>
-map <leader>tm :tabmove
+map         <leader>tn      :tabnew<cr> <C-p>
+map         <leader>to      :tabonly<cr>
+map         <leader>tc      :tabclose<cr>
+map         <leader>tm      :tabmove
 " Change CWD to directory of selected buffer
-map <leader>cd :cd %:p:h<cr>:pwd<cr>
-nmap        <leader>w       :update!<cr>
-nnoremap    <Space>         <PageDown>
-nnoremap    <S-Space>       <PageUp>
-nnoremap    <C-p>           :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap    <C-o>           :Unite -no-split -buffer-name=files -start-insert -auto-preview file_rec:!<cr>
-nnoremap    <space>/        :Unite grep:.<cr>
-nnoremap    <space>y        :Unite history/yank<cr>
-nnoremap    <space>s        :Unite -no-split -auto-preview -quick-match buffer<cr>
-nnoremap    <space>e        :Unite -no-split -buffer-name=buffer buffer<cr>
-nnoremap    <space>r        :Unite -no-split -buffer-name=mru -start-insert file_mru<cr>
-nnoremap    <space>o        :Unite -no-split -buffer-name=ooutline -start-insert outline<cr>
+map         <leader>ev      :e $MYVIMRC<cr>
+map         <leader>so      :so $MYVIMRC<cr>
+map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
+nmap        <leader>w       :retab!<cr> :update!<cr>
+nnoremap    <leader>p       :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap    <leader>/       :Unite grep:.<cr>
+nnoremap    <leader>y       :Unite history/yank<cr>
+nnoremap    <leader>s       :Unite -no-split -auto-preview -quick-match buffer<cr>
+nnoremap    <leader>e       :Unite -no-split -buffer-name=buffer buffer<cr>
+nnoremap    <leader>o       :Unite -no-split -buffer-name=ooutline -start-insert outline<cr>
+nnoremap    <leader>u       :GundoToggle<cr>
+nmap        <leader><space> :nohlsearch<cr>
+nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
 imap        jj              <Esc> :retab!<cr> :update!<CR>
 imap        jk              <Esc>
-map         <C-t>           :tabnew<CR><C-p>
-map         <C-PageDown>    gt
-map         <C-PageUp>      gT
-nnoremap    <F1>            :retab!<cr> :Gwrite<cr>:Gstatus<cr>
+nnoremap    <F1>            :Gwrite<cr> :Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
-map         <F4>            :retab!<CR>:update!<CR>      "Maps <F2> to retab and write file
-nnoremap    <F5>            :GundoToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 vmap        <               <gv
 vmap        >               >gv
 nmap        p               ]p
-
+cmap        w!!             w !sudo tee % >/dev/null
 if &diff
     " diff mode
     set diffopt+=iwhite
-    " map < :diffget //2
-    " map > :diffget //3
+    map     <leader><       :diffget //2
+    map     <leader>>       :diffget //3
 endif
 
 " Autocommands
@@ -204,4 +212,11 @@ if has("autocmd")
     autocmd BufWritePre * :retab!
     " -Return to last edit position when opening files
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
+    " Save Files On Focus Change
+    autocmd FocusLost * <Esc>:wa
+    " autocmd VimEnter * RainbowParenthesesToggle
+    autocmd Syntax * RainbowParenthesesLoadRound
+    autocmd Syntax * RainbowParenthesesLoadSquare
+    autocmd Syntax * RainbowParenthesesLoadBraces
+    autocmd BufWritePost .vimrc source $MYVIMRC
 endif

@@ -1,3 +1,0 @@
-#!/bin/zsh
-
-git checkout -b $1 && git push -u development $1
