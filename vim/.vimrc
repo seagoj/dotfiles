@@ -24,6 +24,9 @@ Bundle 'kien/rainbow_parentheses.vim'
 Bundle 'majutsushi/tagbar'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
+Bundle 'michalliu/jsoncodecs.vim'
+Bundle 'michalliu/jsruntime.vim'
+Bundle 'michalliu/sourcebeautify.vim'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
@@ -137,6 +140,17 @@ let g:sparkupNextMapping = '<c-x>'
 " -Ultisnips
 let g:UltiSnipsJumpForwardTrigger="<c-n>"
 let g:UltiSnipsExpandTrigger="<c-e>"
+" -Gist-vim
+let g:gist_show_privates = 1
+let g:gist_post_private = 1
+let g:gist_detect_filetype = 1
+if executable('pbcopy')
+    let g:gist_clip_command = 'pbcopy'
+elseif executable('xclip')
+    let g:gist_clip_command = 'xclip -selection clipboard'
+elseif executable('putclip')
+    let g:gist_clip_command = 'putclip'
+endif
 
 " Mappings
 let mapleader = ","
@@ -174,7 +188,7 @@ nmap        <leader>w       :retab!<cr> :update!<cr>
 nnoremap    <leader>p       :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap    <leader>/       :Unite grep:.<cr>
 nnoremap    <leader>y       :Unite history/yank<cr>
-nnoremap    <leader>s       :Unite -no-split -auto-preview -quick-match buffer<cr>
+" nnoremap  <leader>s       :Unite -no-split -auto-preview -quick-match buffer<cr>
 nnoremap    <leader>e       :Unite -no-split -buffer-name=buffer buffer<cr>
 nnoremap    <leader>o       :Unite -no-split -buffer-name=ooutline -start-insert outline<cr>
 nnoremap    <leader>u       :GundoToggle<cr>

@@ -1,1 +1,3 @@
-../dotfiles/general/bin/clearMerged
+#!/bin/zsh
+
+git branch --merged | grep -v 'development$' | grep -v 'staging$' | grep -v 'master$' | xargs git branch -d

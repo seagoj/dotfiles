@@ -1,0 +1,3 @@
+#!/bin/zsh
+
+vagrant ssh -c "docker build /vagrant/."

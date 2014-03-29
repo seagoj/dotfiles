@@ -1,13 +1,15 @@
 [user]
-	name = Jeremy Seago
-	email = jseago@bellevuerx.com
+    name = Jeremy Seago
+    email = jseago@bellevuerx.com
 [push]
-	default = simple
+    default = simple
 [github]
-	user = seagoj
+    user = seagoj
 [alias]
-	lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
+    lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
 [mergetool "fugitive"]
-	cmd = vim -f -c \"Gdiff\" \"$MERGED\"
+    cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [merge]
-	tool = fugitive
+    tool = fugitive
+[github]
+    user = seagoj
