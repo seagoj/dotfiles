@@ -11,5 +11,7 @@
     cmd = vim -f -c \"Gdiff\" \"$MERGED\"
 [merge]
     tool = fugitive
+[diff]
+    tool = vimdiff
 [github]
     user = seagoj

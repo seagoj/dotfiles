@@ -16,6 +16,7 @@ if !filereadable(vundle_readme)
     let vundleInstalled=0
 endif
 call vundle#rc()
+
 Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'edsono/vim-matchit'
@@ -117,6 +118,11 @@ endtry
 set pastetoggle=<F11>
 
 " Global vars
+" -Tagbar
+let g:tagbar_autoclose = 1
+let g:tagbar_autofocus = 1
+let g:tagbar_show_visibility = 1
+let g:tagbar_autoshowtag = 1
 " -Unite
 let g:unite_source_history_yank_enable = 1
 let g:unite_enable_start_insert = 1
@@ -136,10 +142,11 @@ let g:gundo_close_on_revert = 1
 " -Sparkup
 let g:sparkupArgs = '--no-last-newline'
 let g:sparkupExecuteMapping = '<c-z>'
-let g:sparkupNextMapping = '<c-x>'
+" let g:sparkupNextMapping = '<c-x>'
 " -Ultisnips
-let g:UltiSnipsJumpForwardTrigger="<c-n>"
-let g:UltiSnipsExpandTrigger="<c-e>"
+let g:UltiSnipsJumpForwardTrigger="<tab>"
+let g:UltiSnipsListSnippets="<c-e>"
+let g:snips_author="Jeremy Seago <seagoj@gmail.com>"
 " -Gist-vim
 let g:gist_show_privates = 1
 let g:gist_post_private = 1
@@ -198,17 +205,42 @@ imap        jj              <Esc> :retab!<cr> :update!<CR>
 imap        jk              <Esc>
 nnoremap    <F1>            :Gwrite<cr> :Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
+nnoremap    <F3>            :! phpunit && git push github<cr>
+nnoremap    <F11>           <Esc>:TagbarToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
+map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
+nnoremap    <C-e>           <Esc>:UltiSnipsEdit<cr>
 vmap        <               <gv
 vmap        >               >gv
+nmap        0               0w
 nmap        p               ]p
 cmap        w!!             w !sudo tee % >/dev/null
-if &diff
-    " diff mode
+inoremap    <expr>          <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+" if &diff
+"   " diff mode
+    highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+    highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+    highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+    highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
     set diffopt+=iwhite
-    map     <leader><       :diffget //2
-    map     <leader>>       :diffget //3
-endif
+    map     <leader><       :diffget //2<cr>:diffupdate<cr>]c
+    map     <leader>>       :diffget //3<cr>:diffupdate<cr>]c
+" endif
+
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+                return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
 
 " Autocommands
 if has("autocmd")
@@ -233,4 +265,5 @@ if has("autocmd")
     autocmd Syntax * RainbowParenthesesLoadSquare
     autocmd Syntax * RainbowParenthesesLoadBraces
     autocmd BufWritePost .vimrc source $MYVIMRC
+    autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 endif

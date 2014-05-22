@@ -1,0 +1,112 @@
+snippet filedoc "File Level Doc" b
+/**
+ * ${1:Short Description}
+ *
+ * ${2:Long Description}
+ *
+ * PHP version ${3:5.3}
+ *
+ * @category ${4:Bot}
+ * @package  ${5:$3}
+ * @author   ${6:`!v g:snips_author`}
+ * @license  ${7:Commercial http://bellevuerx.com}
+ * @version  GIT: `git tag | tail -1`
+ * @link     ${8:http://bvbot.net}
+ **/
+
+$0
+endsnippet
+
+snippet responsetemplate
+<?php
+require_once 'autoloader.php';
+
+$resp = \Devtools\Response;
+
+if (isset($_REQUEST['$1'])) {
+    $0
+} else {
+    $resp->fail('Invalid request.');
+}
+
+echo $resp->json();
+endsnippet
+
+snippet testclass "PHPUnit Test Class" b
+/**
+ * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`}
+ * @author ${2:`!v g:snips_author`}
+ */
+class $1 extends ${2:PHPUnit_Framework_TestCase}
+{
+    public function setup()
+    {
+        ${3:// code}
+    }
+
+    public function tearDown()
+    {
+        ${4:// code}
+    }
+
+    public function test${4:Feature}()
+    {
+        ${0:// code}
+    }
+}
+endsnippet
+
+snippet funcdoc "Function level documentation" b
+/**
+ * $1
+ *
+ * ${2:Description}
+ *
+ * @return ${3:void}
+ * @author ${4:`!v g:snips_author`}
+ **/
+ $0
+endsnippet
+
+snippet function "Default function formatting"
+/**
+ * $2
+ *
+ * ${4:Description}
+ *
+ * @return ${5:void}
+ * @author ${6:`!v g:snips_author`}
+ **/
+${1:public }function ${2:someFunc}(${3})
+{
+    ${0}
+}
+endsnippet
+
+snippet '(^|\s)\[' "Array format conversion" r
+array($1);
+$0
+endsnippet
+
+snippet '=\[' "Array assignment format conversion" r
+= array($1);
+$0
+endsnippet
+
+snippet class "Class declaration template" b
+/**
+ * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`}
+ * @author ${2:`!v g:snips_author`}
+ */
+class $1
+{
+    public function ${3:__construct}(${4:$options})
+    {
+        ${0:// code}
+    }
+}
+endsnippet
+
+snippet request "Request"
+$_REQUEST['$1']$0
+endsnippet
