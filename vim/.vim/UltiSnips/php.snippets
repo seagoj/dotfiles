@@ -6,10 +6,10 @@ snippet filedoc "File Level Doc" b
  *
  * PHP version ${3:5.3}
  *
- * @category ${4:Bot}
- * @package  ${5:$3}
+ * @category ${4:Seago}
+ * @package  ${5:`!v toupper(fnamemodify(getcwd(), ':t'))`}
  * @author   ${6:`!v g:snips_author`}
- * @license  ${7:Commercial http://bellevuerx.com}
+ * @license  ${7:http://www.opensource.org/licenses/mit-license.html  MIT License}
  * @version  GIT: `git tag | tail -1`
  * @link     ${8:http://bvbot.net}
  **/
@@ -58,14 +58,14 @@ endsnippet
 
 snippet funcdoc "Function level documentation" b
 /**
- * $1
+ * ${VISUAL}$1
  *
  * ${2:Description}
  *
  * @return ${3:void}
  * @author ${4:`!v g:snips_author`}
  **/
- $0
+$0
 endsnippet
 
 snippet function "Default function formatting"

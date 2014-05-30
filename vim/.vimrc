@@ -28,6 +28,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'michalliu/sourcebeautify.vim'
+Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
@@ -103,7 +104,7 @@ set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
 
 " Features
 " Show Invisible Characters
-set list listchars=tab:¦\ ,extends:»,precedes:«,nbsp:×,eol:¬,trail:·
+" set list listchars=tab:¦\ ,extends:»,precedes:«,nbsp:×,eol:¬,trail:·
 " Highlight Lines Longer Than 80 Characters
 highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
 match Overlength /\%81v.\+/
@@ -158,6 +159,9 @@ elseif executable('xclip')
 elseif executable('putclip')
     let g:gist_clip_command = 'putclip'
 endif
+let g:indent_guides_auto_colors = 0
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 1
 
 " Mappings
 let mapleader = ","
@@ -212,7 +216,7 @@ map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr>
 nnoremap    <C-e>           <Esc>:UltiSnipsEdit<cr>
 vmap        <               <gv
 vmap        >               >gv
-nmap        0               0w
+" nmap        0               0w
 nmap        p               ]p
 cmap        w!!             w !sudo tee % >/dev/null
 inoremap    <expr>          <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
@@ -247,23 +251,26 @@ if has("autocmd")
     " Remove fugitive buffers when hidden
     autocmd BufReadPost fugitive://* set bufhidden=delete
     " convert spaces to tabs when reading file
-    autocmd! bufreadpost * set noexpandtab | retab! 4
+    " autocmd! bufreadpost * set noexpandtab | retab! 4
     " convert tabs to spaces before writing file
-    autocmd! bufwritepre * set expandtab | retab! 4
+    " autocmd! bufwritepre * set expandtab | retab! 4
     " convert spaces to tabs after writing file (to show guides again)
-    autocmd! bufwritepost * set noexpandtab | retab! 4)
+    " autocmd! bufwritepost * set noexpandtab | retab! 4)
     " -Remove trailing whitespace
     autocmd BufWritePre * :%s/\s\+$//e
     " -Retab on write
-    autocmd BufWritePre * :retab!
+    " autocmd BufWritePre * :retab!
     " -Return to last edit position when opening files
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
     " Save Files On Focus Change
-    autocmd FocusLost * <Esc>:wa
+    " autocmd FocusLost * <Esc>:wa
     " autocmd VimEnter * RainbowParenthesesToggle
     autocmd Syntax * RainbowParenthesesLoadRound
     autocmd Syntax * RainbowParenthesesLoadSquare
     autocmd Syntax * RainbowParenthesesLoadBraces
+    autocmd VimEnter,Colorscheme * IndentGuidesEnable
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey   ctermbg=grey
+    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=darkgrey
     autocmd BufWritePost .vimrc source $MYVIMRC
     autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 endif
