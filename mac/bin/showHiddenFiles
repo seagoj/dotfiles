@@ -1,15 +1,12 @@
 #!/bin/zsh
-# @todo: extract current value to toggle
+TOGGLE=$(defaults read com.apple.finder AppleShowAllFiles)
 
-TOGGLE="TRUE"
-
-if [[ $1 == 0 ]]; then
+if [[ $TOGGLE == "TRUE" ]]; then
     TOGGLE="FALSE"
+    echo "Hiding hidden files"
+elif [[ $TOGGLE == "FALSE" ]]; then
+    TOGGLE="TRUE"
+    echo "Showing hidden files"
 fi
-
-echo $(`defaults read com.apple.finder AppleShowAllFiles`);
-echo $TOGGLE
-
 defaults write com.apple.finder AppleShowAllFiles $TOGGLE
-
 killall Finder
