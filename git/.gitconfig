@@ -1,8 +1,8 @@
 [user]
     name = Jeremy Seago
     email = jseago@bellevuerx.com
-[push]
-    default = simple
+#[push]
+#    default = simple
 [github]
     user = seagoj
 [alias]

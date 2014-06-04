@@ -23,3 +23,4 @@ Desktop.ini
 
 .antigen/*
 .vim/bundle
+zsh/.antigen/repos/*
