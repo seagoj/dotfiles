@@ -1,0 +1,19 @@
+#!/bin/zsh
+
+# instantly hide dock
+defaults write com.apple.dock autohide-delay -float 0; killall Dock;
+
+# delay 5 seconds prior to displaying dock
+# defaults write com.apple.dock autohide-delay -float 5; killall Dock;
+
+# restore default delay
+# defaults delete com.apple.dock autohide-delay; killall Dock;
+
+# display dock without animation
+defaults write com.apple.dock autohide-time-modifier -float 0; killall Dock;
+
+# display dock with 0.2 second animation
+# defaults write com.apple.dock autohide-time-modifier -float 0.2; killall Dock;
+
+# restore default animation
+# defaults delete com.apple.dock autohide-time-modifier; killall Dock;
