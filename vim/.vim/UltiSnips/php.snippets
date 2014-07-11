@@ -1,6 +1,6 @@
 snippet filedoc "File Level Doc" b
 /**
- * ${1:Short Description}
+ * ${1:`!v expand('%:r')`}
  *
  * ${2:Long Description}
  *
@@ -24,9 +24,9 @@ require_once 'autoloader.php';
 $resp = \Devtools\Response;
 
 if (isset($_REQUEST['$1'])) {
-    $0
+	$0
 } else {
-    $resp->fail('Invalid request.');
+	$resp->fail('Invalid request.');
 }
 
 echo $resp->json();
@@ -39,20 +39,20 @@ snippet testclass "PHPUnit Test Class" b
  */
 class $1 extends ${2:PHPUnit_Framework_TestCase}
 {
-    public function setup()
-    {
-        ${3:// code}
-    }
+	public function setup()
+	{
+		${3:// code}
+	}
 
-    public function tearDown()
-    {
-        ${4:// code}
-    }
+	public function tearDown()
+	{
+		${4:// code}
+	}
 
-    public function test${4:Feature}()
-    {
-        ${0:// code}
-    }
+	public function test${4:Feature}()
+	{
+		${0:// code}
+	}
 }
 endsnippet
 
@@ -61,6 +61,7 @@ snippet funcdoc "Function level documentation" b
  * ${VISUAL}$1
  *
  * ${2:Description}
+${5:*\n* @param}
  *
  * @return ${3:void}
  * @author ${4:`!v g:snips_author`}
@@ -79,7 +80,7 @@ snippet function "Default function formatting"
  **/
 ${1:public }function ${2:someFunc}(${3})
 {
-    ${0}
+	${0}
 }
 endsnippet
 
@@ -100,10 +101,10 @@ snippet class "Class declaration template" b
  */
 class $1
 {
-    public function ${3:__construct}(${4:$options})
-    {
-        ${0:// code}
-    }
+	public function ${3:__construct}(${4:$options})
+	{
+		${0:// code}
+	}
 }
 endsnippet
 

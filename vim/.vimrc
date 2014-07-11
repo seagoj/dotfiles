@@ -28,7 +28,7 @@ Bundle 'mattn/webapi-vim'
 Bundle 'michalliu/jsoncodecs.vim'
 Bundle 'michalliu/jsruntime.vim'
 Bundle 'michalliu/sourcebeautify.vim'
-Bundle 'nathanaelkane/vim-indent-guides'
+" Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'rking/ag.vim'
@@ -46,6 +46,18 @@ Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
+" Experimental
+Bundle 'scrooloose/nerdtree'
+Bundle 'bling/vim-airline'
+Bundle 'yggdroot/indentline'
+Bundle 'pangloss/vim-javascript'
+Bundle 'tpope/vim-markdown'
+Bundle 'Townk/vim-autoclose'
+Bundle 'skwp/vim-html-escape'
+" Bundle 'Lokaltog/vim-powerline'
+" Bundle 'ervandew/supertab'
+" Bundle 'tpope/vim-repeat'
+" End Experimental
 filetype plugin on
 filetype indent on
 if vundleInstalled == 0
@@ -70,7 +82,7 @@ set ignorecase      "ignore case when searching
 set smartcase       "If a pattern contains an uppercase, then the search is case sensitive
 set hlsearch        "Highlight searches
 set incsearch       "More like webbrowser search
-set nolazyredraw    "Don't redraw during macros
+" set nolazyredraw    "Don't redraw during macros
 set magic           "For regular expressions
 set showmatch       "Matching braces highlighting
 set matchtime=2     "Blink for 2 tenths of a second when matching
@@ -97,7 +109,7 @@ set foldnestmax=10
 set nofoldenable
 set foldlevel=1
 set cul
-
+set splitright
 " Statusline
 " Show current git branch
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -116,9 +128,12 @@ try
 catch
 endtry
 
-set pastetoggle=<F11>
+set pastetoggle=<leader>z
 
 " Global vars
+" -Syntastic
+let g:syntastic_enable_signs=0
+let g:syntastic_echo_current_error=0
 " -Tagbar
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
@@ -159,9 +174,12 @@ elseif executable('xclip')
 elseif executable('putclip')
     let g:gist_clip_command = 'putclip'
 endif
+" -Indent Guides
 let g:indent_guides_auto_colors = 0
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 1
+" -Airline
+let g:airline#extensions#tabline#enabled = 1
 
 " Mappings
 let mapleader = ","
@@ -172,9 +190,6 @@ map         <up>            <nop>
 map         <down>          <nop>
 map         <left>          <nop>
 map         <right>         <nop>
-" Use Standard Regex
-nnoremap    /               /\v
-vnoremap    /               /\v
 " Movement
 " Treat long lines as break lines
 map         j               gj
@@ -205,21 +220,28 @@ nnoremap    <leader>o       :Unite -no-split -buffer-name=ooutline -start-insert
 nnoremap    <leader>u       :GundoToggle<cr>
 nmap        <leader><space> :nohlsearch<cr>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
+nnoremap    <leader>v       :vnew<cr>
 imap        jj              <Esc> :retab!<cr> :update!<CR>
 imap        jk              <Esc>
 nnoremap    <F1>            :Gwrite<cr> :Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
 nnoremap    <F3>            :! phpunit && git push github<cr>
-nnoremap    <F11>           <Esc>:TagbarToggle<cr>
+nnoremap    <F10>           <Esc>:TagbarToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
 nnoremap    <C-e>           <Esc>:UltiSnipsEdit<cr>
+map         <C-o>           <Esc>:NERDTreeToggle<cr>
 vmap        <               <gv
 vmap        >               >gv
 " nmap        0               0w
 nmap        p               ]p
 cmap        w!!             w !sudo tee % >/dev/null
-inoremap    <expr>          <CR> pumvisible() ? "\<C-y>" : "\<C-g>u\<CR>"
+nnoremap    <leader><Up>    :m-2<cr>
+nnoremap    <leader><Down>  :m+1<cr>
+" Clone current paragraph
+noremap     cp              yap<S-}>p
+" Align current paragraph
+noremap <leader>a           =ip
 " if &diff
 "   " diff mode
     highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -248,6 +270,20 @@ endfunction
 
 " Autocommands
 if has("autocmd")
+    " Autoopen NERDTree on load
+    autocmd vimenter * if !argc() | NERDTree | endif
+    " Autoclose vim if only NERDTree is open
+    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+
+    " vim mode-switch lag fix
+    if ! has("gui_running")
+        set ttimeoutlen=10
+        augroup FastEscape
+            autocmd!
+            au InsertEnter * set timeoutlen=0
+            au InsertLeave * set timeoutlen=1000
+        augroup END
+    endif
     " Remove fugitive buffers when hidden
     autocmd BufReadPost fugitive://* set bufhidden=delete
     " convert spaces to tabs when reading file
@@ -268,9 +304,9 @@ if has("autocmd")
     autocmd Syntax * RainbowParenthesesLoadRound
     autocmd Syntax * RainbowParenthesesLoadSquare
     autocmd Syntax * RainbowParenthesesLoadBraces
-    autocmd VimEnter,Colorscheme * IndentGuidesEnable
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey   ctermbg=grey
-    autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=darkgrey
+    " autocmd VimEnter,Colorscheme * IndentGuidesEnable
+    " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey   ctermbg=grey
+    " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=darkgrey
     autocmd BufWritePost .vimrc source $MYVIMRC
     autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 endif

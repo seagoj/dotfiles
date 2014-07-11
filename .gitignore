@@ -22,5 +22,5 @@ Thumbs.db
 Desktop.ini
 
 .antigen/*
-.vim/bundle
 zsh/.antigen/repos/*
+.DS_Store

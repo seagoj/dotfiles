@@ -1,4 +1,11 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =2
-let g:netrw_dirhist_1='/home/jseago/.antigen'
-let g:netrw_dirhist_2='/Users/Admin/code/bot'
+let g:netrw_dirhist_cnt =9
+let g:netrw_dirhist_1='/Users/Admin/code/bot'
+let g:netrw_dirhist_2='/Users/Admin/code/bot/techsource_inc'
+let g:netrw_dirhist_3='/Users/Admin/code/docker-selenium-chrome'
+let g:netrw_dirhist_4='/Users/Admin/code/docker-selenium-chrome/files'
+let g:netrw_dirhist_5='/Users/Admin/code/bot'
+let g:netrw_dirhist_6='/Users/Admin/code/margaretandjeremy.com'
+let g:netrw_dirhist_7='/Users/Admin/code/margaretandjeremy.com/templates'
+let g:netrw_dirhist_8='/Users/Admin/code/margaretandjeremy.com'
+let g:netrw_dirhist_9='/Users/Admin/code/bot'
