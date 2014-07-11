@@ -1,27 +1,5 @@
-config/*
-.vagrant
-lib/Predis
-cookbooks
 *.log
-.vim/.netrwhist
-
-############
-## Sublime Text 2
-============
-*.sublime-project
-*.sublime-workspace
-
-############
-## Windows
-############
-
-# Windows image file caches
-Thumbs.db
-
-# Folder config file
-Desktop.ini
-
-.antigen/*
 zsh/.antigen/repos/*
 vim/.vim/bundle
+vim/.vim/.netrwhist
 .DS_Store
