@@ -23,4 +23,5 @@ Desktop.ini
 
 .antigen/*
 zsh/.antigen/repos/*
+vim/.vim/bundle
 .DS_Store
