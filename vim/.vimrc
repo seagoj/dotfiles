@@ -16,47 +16,28 @@ if !filereadable(vundle_readme)
     let vundleInstalled=0
 endif
 call vundle#rc()
-
 Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
-Bundle 'edsono/vim-matchit'
-Bundle 'koron/minimap-vim'
-Bundle 'kien/rainbow_parentheses.vim'
-Bundle 'majutsushi/tagbar'
-Bundle 'mattn/gist-vim'
-Bundle 'mattn/webapi-vim'
-Bundle 'michalliu/jsoncodecs.vim'
-Bundle 'michalliu/jsruntime.vim'
-Bundle 'michalliu/sourcebeautify.vim'
-" Bundle 'nathanaelkane/vim-indent-guides'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
+Bundle 'majutsushi/tagbar'
+Bundle 'sj;/gundo.vim'
+Bundle 'edsono/vim-matchit'
+Bundle 'mattn/gist-vim'
+Bundle 'mattn/webapi-vim'
 Bundle 'rking/ag.vim'
-Bundle 'rstacruz/sparkup', {'rtp':'vim/'}
 Bundle 'scrooloose/syntastic'
 Bundle 'Shougo/unite.vim'
 Bundle 'Shougo/vimproc.vim'
 Bundle 'SirVer/ultisnips'
-Bundle 'sjl/gundo.vim'
 Bundle 'terryma/vim-multiple-cursors'
-Bundle 'tobyS/pdv'
-Bundle 'tpope/vim-abolish'
 Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-dispatch'
 Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
-" Experimental
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'yggdroot/indentline'
-Bundle 'pangloss/vim-javascript'
-Bundle 'tpope/vim-markdown'
-Bundle 'Townk/vim-autoclose'
-Bundle 'skwp/vim-html-escape'
-" Bundle 'Lokaltog/vim-powerline'
-" Bundle 'ervandew/supertab'
-" Bundle 'tpope/vim-repeat'
 " End Experimental
 filetype plugin on
 filetype indent on
@@ -133,7 +114,31 @@ set pastetoggle=<leader>z
 " Global vars
 " -Syntastic
 let g:syntastic_enable_signs=0
-let g:syntastic_echo_current_error=0
+" let g:syntastic_echo_current_error=0
+" let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_auto_jump = 2
+let g:syntastic_id_checkers = 1
+let g:syntastic_check_on_wq = 0
+let g:syntastic_quiet_messages = {
+\   'level': [],
+\   'type': [],
+\   'regex': [],
+\   'file': []
+\}
+let g:syntastic_php_phpcs_quiet_messages =  {
+\   'regex': [
+\       'Line indented incorrectly;',
+\       'Line exceeds 85 characters;'
+\   ]
+\}
+let g:syntastic_php_phpmd_quiet_messages = {
+\   'regex': [
+\       'Avoid variables with short names like \$q.'
+\   ]
+\}
+" -IndentLine
+let g:indentLine_faster=1
 " -Tagbar
 let g:tagbar_autoclose = 1
 let g:tagbar_autofocus = 1
@@ -206,10 +211,11 @@ map         <leader>tn      :tabnew<cr> <C-p>
 map         <leader>to      :tabonly<cr>
 map         <leader>tc      :tabclose<cr>
 map         <leader>tm      :tabmove
-" Change CWD to directory of selected buffer
 map         <leader>ev      :e $MYVIMRC<cr>
 map         <leader>so      :so $MYVIMRC<cr>
+" Change CWD to directory of selected buffer
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
+nnoremap    <leader>sc      :SyntasticToggle<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
 nnoremap    <leader>p       :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap    <leader>/       :Unite grep:.<cr>
@@ -241,9 +247,9 @@ nnoremap    <leader><Down>  :m+1<cr>
 " Clone current paragraph
 noremap     cp              yap<S-}>p
 " Align current paragraph
-noremap <leader>a           =ip
-" if &diff
-"   " diff mode
+noremap     <leader>a       =ip
+if &diff
+    " diff mode
     highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
     highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
     highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -251,7 +257,7 @@ noremap <leader>a           =ip
     set diffopt+=iwhite
     map     <leader><       :diffget //2<cr>:diffupdate<cr>]c
     map     <leader>>       :diffget //3<cr>:diffupdate<cr>]c
-" endif
+endif
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
@@ -274,7 +280,6 @@ if has("autocmd")
     autocmd vimenter * if !argc() | NERDTree | endif
     " Autoclose vim if only NERDTree is open
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
-
     " vim mode-switch lag fix
     if ! has("gui_running")
         set ttimeoutlen=10
@@ -286,27 +291,10 @@ if has("autocmd")
     endif
     " Remove fugitive buffers when hidden
     autocmd BufReadPost fugitive://* set bufhidden=delete
-    " convert spaces to tabs when reading file
-    " autocmd! bufreadpost * set noexpandtab | retab! 4
-    " convert tabs to spaces before writing file
-    " autocmd! bufwritepre * set expandtab | retab! 4
-    " convert spaces to tabs after writing file (to show guides again)
-    " autocmd! bufwritepost * set noexpandtab | retab! 4)
     " -Remove trailing whitespace
     autocmd BufWritePre * :%s/\s\+$//e
-    " -Retab on write
-    " autocmd BufWritePre * :retab!
     " -Return to last edit position when opening files
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
-    " Save Files On Focus Change
-    " autocmd FocusLost * <Esc>:wa
-    " autocmd VimEnter * RainbowParenthesesToggle
-    autocmd Syntax * RainbowParenthesesLoadRound
-    autocmd Syntax * RainbowParenthesesLoadSquare
-    autocmd Syntax * RainbowParenthesesLoadBraces
-    " autocmd VimEnter,Colorscheme * IndentGuidesEnable
-    " autocmd VimEnter,Colorscheme * :hi IndentGuidesOdd  guibg=grey   ctermbg=grey
-    " autocmd VimEnter,Colorscheme * :hi IndentGuidesEven guibg=darkgrey ctermbg=darkgrey
     autocmd BufWritePost .vimrc source $MYVIMRC
     autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 endif

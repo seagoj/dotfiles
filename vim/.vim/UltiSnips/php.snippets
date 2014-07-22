@@ -21,9 +21,17 @@ snippet responsetemplate
 <?php
 require_once 'autoloader.php';
 
-$resp = \Devtools\Response;
+$resp = new \Devtools\Response;
 
-if (isset($_REQUEST['$1'])) {
+extract(
+	$resp->getRequest(
+		array(
+			'$1'
+		)
+	)
+);
+
+if (isset($$1)) {
 	$0
 } else {
 	$resp->fail('Invalid request.');
@@ -58,10 +66,11 @@ endsnippet
 
 snippet funcdoc "Function level documentation" b
 /**
- * ${VISUAL}$1
+ * ${1:${VISUAL:function name}}
  *
  * ${2:Description}
-${5:*\n* @param}
+ *
+ * @param ${5:void}
  *
  * @return ${3:void}
  * @author ${4:`!v g:snips_author`}
