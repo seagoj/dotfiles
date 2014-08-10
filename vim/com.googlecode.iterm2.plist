@@ -123,7 +123,7 @@
 	<key>NSWindow Frame Preferences</key>
 	<string>356 252 924 485 0 0 1280 800 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>131 -233 900 705 0 0 1280 778 </string>
+	<string>-932 -230 898 1049 -900 -520 900 1578 </string>
 	<key>NeverWarnAboutShortLivedSessions_A1D46E23-CBED-4F4A-89C5-03CA02C2B150</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -10496,7 +10496,7 @@
 	<key>OpenTmuxWindowsIn</key>
 	<integer>0</integer>
 	<key>PMPrintingExpandedStateForPrint2</key>
-	<false/>
+	<true/>
 	<key>PassOnControlClick</key>
 	<false/>
 	<key>PasteFromClipboard</key>
@@ -10555,7 +10555,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2014-07-06T14:09:02Z</date>
+	<date>2014-08-08T18:41:19Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>

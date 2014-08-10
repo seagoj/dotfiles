@@ -38,7 +38,6 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'yggdroot/indentline'
-" End Experimental
 filetype plugin on
 filetype indent on
 if vundleInstalled == 0
@@ -117,7 +116,7 @@ let g:syntastic_enable_signs=0
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_auto_jump = 2
+let g:syntastic_auto_jump = 0
 let g:syntastic_id_checkers = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = {
@@ -129,12 +128,13 @@ let g:syntastic_quiet_messages = {
 let g:syntastic_php_phpcs_quiet_messages =  {
 \   'regex': [
 \       'Line indented incorrectly;',
-\       'Line exceeds 85 characters;'
+\       'Line exceeds 85 characters;',
+\       'must be prefixed with an underscore'
 \   ]
 \}
 let g:syntastic_php_phpmd_quiet_messages = {
 \   'regex': [
-\       'Avoid variables with short names like \$q.'
+\       'Avoid variables with short names like '
 \   ]
 \}
 " -IndentLine
@@ -148,9 +148,9 @@ let g:tagbar_autoshowtag = 1
 let g:unite_source_history_yank_enable = 1
 let g:unite_enable_start_insert = 1
 let g:unite_enable_short_source_names = 1
-" let g:unite_split_rule = 'topleft'
+" let g:unite_split_rule = 'bottom'
 let g:unite_enable_split_vertically = 0
-" let g:unite_winheight = 20
+let g:unite_winheight = 20
 if executable('ag')
     let g:unite_source_grep_command = 'ag'
     let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
@@ -160,10 +160,6 @@ endif
 let g:gundo_width = 30
 let g:gundo_preview_height = 50
 let g:gundo_close_on_revert = 1
-" -Sparkup
-let g:sparkupArgs = '--no-last-newline'
-let g:sparkupExecuteMapping = '<c-z>'
-" let g:sparkupNextMapping = '<c-x>'
 " -Ultisnips
 let g:UltiSnipsJumpForwardTrigger="<tab>"
 let g:UltiSnipsListSnippets="<c-e>"
@@ -217,7 +213,7 @@ map         <leader>so      :so $MYVIMRC<cr>
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
 nnoremap    <leader>sc      :SyntasticToggle<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
-nnoremap    <leader>p       :Unite -no-split -buffer-name=files -start-insert file_rec/async:!<cr>
+nnoremap    <leader>p       :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
 nnoremap    <leader>/       :Unite grep:.<cr>
 nnoremap    <leader>y       :Unite history/yank<cr>
 " nnoremap  <leader>s       :Unite -no-split -auto-preview -quick-match buffer<cr>
@@ -231,7 +227,7 @@ imap        jj              <Esc> :retab!<cr> :update!<CR>
 imap        jk              <Esc>
 nnoremap    <F1>            :Gwrite<cr> :Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
-nnoremap    <F3>            :! phpunit && git push github<cr>
+nnoremap    <F3>            :! phpunit && open tests/report/index.html<cr>
 nnoremap    <F10>           <Esc>:TagbarToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
@@ -248,7 +244,7 @@ nnoremap    <leader><Down>  :m+1<cr>
 noremap     cp              yap<S-}>p
 " Align current paragraph
 noremap     <leader>a       =ip
-if &diff
+" if &diff
     " diff mode
     highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
     highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
@@ -257,7 +253,7 @@ if &diff
     set diffopt+=iwhite
     map     <leader><       :diffget //2<cr>:diffupdate<cr>]c
     map     <leader>>       :diffget //3<cr>:diffupdate<cr>]c
-endif
+" endif
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()

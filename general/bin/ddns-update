@@ -1,0 +1,9 @@
+#!/bin/sh
+# vim: filetype=sh:
+
+HOST=home
+DOMAIN=seagoj.com
+PASSWORD=0e8aa2f21363486482272bec45a821a5
+IP=`curl -s ipecho.net/plain`
+
+curl "https://dynamicdns.park-your-domain.com/update?host=$HOST&domain=$DOMAIN&password=$PASSWORD&ip=$IP"
