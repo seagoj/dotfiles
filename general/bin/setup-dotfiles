@@ -23,6 +23,8 @@ else
 fi
 
 stow general
+stow mac
+stow ssh
 
 echo "  > Installing git..."
 if command -v git >/dev/null 2>&1; then
@@ -33,12 +35,21 @@ fi
 
 stow git
 
+echo "  > Installing tmux..."
+if command -v tmux >/dev/null 2>&1; then
+  echo "    > (Skipping) Already installed."
+else
+  brew install tmux &> /dev/null
+fi
+
 echo "  > Installing reattach-to-user-namespace..."
 if command -v reattach-to-user-namespace >/dev/null 2>&1; then
   echo "    > (Skipping) Already installed."
 else
   brew install reattach-to-user-namespace &> /dev/null
 fi
+
+stow tmux
 
 echo "  > Pulling latest dot-files..."
 git pull &> /dev/null
