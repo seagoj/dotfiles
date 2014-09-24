@@ -46,7 +46,7 @@ geeknote settings --editor $EDITOR
 
 autoload $HOME/functions/*(:t)
 
-source $HOME/antigen.zsh
+source $HOME/antigen/antigen.zsh
 antigen-use oh-my-zsh
 
 antigen-bundles <<EOBUNDLES
