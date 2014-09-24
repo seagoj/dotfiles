@@ -10,10 +10,28 @@ echo "  \__,_|\___/ \__|    |_| |_|_|\___||___/"
 echo ""
 
 echo "==> Here we go..."
-cd ~
+cd ~/dotfiles
 
 echo "  > Updating homebrew..."
 brew update &> /dev/null
+
+echo "  > Installing stow..."
+if command -v stow >/dev/null 2>&1; then
+  echo "    > (Skipping) Already installed."
+else
+  brew install stow &> /dev/null
+fi
+
+stow general
+
+echo "  > Installing git..."
+if command -v git >/dev/null 2>&1; then
+  echo "    > (Skipping) Already installed."
+else
+  brew install git &> /dev/null
+fi
+
+stow git
 
 echo "  > Installing reattach-to-user-namespace..."
 if command -v reattach-to-user-namespace >/dev/null 2>&1; then
