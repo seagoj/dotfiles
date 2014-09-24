@@ -1,9 +1,9 @@
 # Path to your oh-my-zsh configuration.
-export PATH=$HOME/bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
+export PATH=vendor/bin:$HOME/bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
 export INPUTRC=~/.inputrc
 export CODE=$HOME/code
 export MEDIA=/mnt/media
-export EDITOR=$(which  vim nano | grep -m1 -e '^/')
+export EDITOR=$(which vim nano | grep -m1 -e '^/')
 export BROWSER=$(which google-chrome chromium-browser chromium firefox links2 links lynx | grep -m1 -e '^/')
 export WWW=/var/www
 export DOCROOT=/var/www

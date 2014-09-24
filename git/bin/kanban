@@ -1,0 +1,11 @@
+#!/bin/sh
+# vim: filetype=sh:
+
+if [[ $1="ready" ]]; then
+    ghi list -L '1 - Ready'
+elif [[ $1="working" ]]; then
+    ghi list -L '2 - Working'
+elif [[ $1="done" ]]; then
+    ghi list -L '3 - Done'
+fi
+

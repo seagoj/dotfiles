@@ -1,6 +1,7 @@
 " General
 scriptencoding utf-8
 set encoding=utf-8
+set guifont=Sauce\ Code\ Powerline\ Semibold:h10
 set ffs=unix,mac,dos
 set nocompatible
 filetype off
@@ -21,14 +22,15 @@ Bundle 'airblade/vim-gitgutter'
 Bundle 'rizzatti/funcoo.vim'
 Bundle 'rizzatti/dash.vim'
 Bundle 'majutsushi/tagbar'
-Bundle 'sj;/gundo.vim'
+Bundle 'sjl/gundo.vim'
 Bundle 'edsono/vim-matchit'
 Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
-Bundle 'Shougo/unite.vim'
-Bundle 'Shougo/vimproc.vim'
+" Bundle 'Shougo/unite.vim'
+" Bundle 'Shougo/vimproc.vim'
+Bundle 'kien/ctrlp.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'terryma/vim-multiple-cursors'
 Bundle 'tpope/vim-commentary'
@@ -38,6 +40,12 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'yggdroot/indentline'
+" Experimental
+Bundle 'maksimr/vim-jsbeautify'
+Bundle 'vim-scripts/localrc.vim'
+Bundle 'vim-scripts/AutoClose'
+Bundle 'spf13/PIV'
+Bundle 'craigemery/vim-autotag'
 filetype plugin on
 filetype indent on
 if vundleInstalled == 0
@@ -116,7 +124,7 @@ let g:syntastic_enable_signs=0
 " let g:syntastic_echo_current_error=0
 " let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
 let g:syntastic_auto_loc_list = 1
-let g:syntastic_auto_jump = 0
+let g:syntastic_auto_jump = 1
 let g:syntastic_id_checkers = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_quiet_messages = {
@@ -152,9 +160,9 @@ let g:unite_enable_short_source_names = 1
 let g:unite_enable_split_vertically = 0
 let g:unite_winheight = 20
 if executable('ag')
-    let g:unite_source_grep_command = 'ag'
-    let g:unite_source_grep_default_opts = '--nogroup --nocolor --column'
-    let g:unite_source_grep_recursive_opt = ''
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup\ --nocolor
+    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
 endif
 " -Gundo
 let g:gundo_width = 30
@@ -181,18 +189,21 @@ let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 1
 " -Airline
 let g:airline#extensions#tabline#enabled = 1
+let g:airline_powerline_fonts = 1
+" -PIV
+" let g:DisableAutoPHPFolding = 1
 
 " Mappings
 let mapleader = ","
 let g:mapleader = ","
 nnoremap    ;               :
-" Disable Cursor Keys
+" -Disable Cursor Keys
 map         <up>            <nop>
 map         <down>          <nop>
 map         <left>          <nop>
 map         <right>         <nop>
-" Movement
-" Treat long lines as break lines
+" -Movement
+" -Treat long lines as break lines
 map         j               gj
 map         k               gk
 " Move between windows
@@ -200,30 +211,27 @@ map         <C-j>           <C-W>j
 map         <C-k>           <C-W>k
 map         <C-h>           <C-W>h
 map         <C-l>           <C-W>l
-" Toggle Invisibles
+" -Toggle Invisibles
 map         <leader>l       :set list!<cr>
-" Tab Management
-map         <leader>tn      :tabnew<cr> <C-p>
+" -Tab Management
+map         <leader>tn      :tabnew<cr><c-p>
 map         <leader>to      :tabonly<cr>
 map         <leader>tc      :tabclose<cr>
 map         <leader>tm      :tabmove
-map         <leader>ev      :e $MYVIMRC<cr>
+map         <leader>ev      :tabnew $MYVIMRC<cr>
 map         <leader>so      :so $MYVIMRC<cr>
-" Change CWD to directory of selected buffer
+" -Change CWD to directory of selected buffer
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
 nnoremap    <leader>sc      :SyntasticToggle<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
-nnoremap    <leader>p       :Unite -buffer-name=files -start-insert file_rec/async:!<cr>
-nnoremap    <leader>/       :Unite grep:.<cr>
-nnoremap    <leader>y       :Unite history/yank<cr>
-" nnoremap  <leader>s       :Unite -no-split -auto-preview -quick-match buffer<cr>
-nnoremap    <leader>e       :Unite -no-split -buffer-name=buffer buffer<cr>
-nnoremap    <leader>o       :Unite -no-split -buffer-name=ooutline -start-insert outline<cr>
+map         <leader>p       <Esc><c-p>
+nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
+nnoremap    <leader>/       :Ag<Space>
 nnoremap    <leader>u       :GundoToggle<cr>
 nmap        <leader><space> :nohlsearch<cr>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
 nnoremap    <leader>v       :vnew<cr>
-imap        jj              <Esc> :retab!<cr> :update!<CR>
+imap        jj              <Esc>:update!<CR>
 imap        jk              <Esc>
 nnoremap    <F1>            :Gwrite<cr> :Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
@@ -240,20 +248,17 @@ nmap        p               ]p
 cmap        w!!             w !sudo tee % >/dev/null
 nnoremap    <leader><Up>    :m-2<cr>
 nnoremap    <leader><Down>  :m+1<cr>
-" Clone current paragraph
+" -Clone current paragraph
 noremap     cp              yap<S-}>p
-" Align current paragraph
-noremap     <leader>a       =ip
-" if &diff
-    " diff mode
-    highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-    highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-    highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
-    highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
-    set diffopt+=iwhite
-    map     <leader><       :diffget //2<cr>:diffupdate<cr>]c
-    map     <leader>>       :diffget //3<cr>:diffupdate<cr>]c
-" endif
+" -Align current paragraph
+" noremap     <leader>a       =ip
+" -GitGutter Mappings
+nmap        ]c              <Plug>GitGutterNextHunk
+nmap        [c              <Plug>GitGutterPrevHunk
+nmap        <leader>hs      <Plug>GitGutterStageHunk
+nmap        <leader>hr      <Plug>GitGutterRevertHunk
+nmap        <leader>hp      <Plug>GitGutterPreviewHunk
+map         <leader>c       "*y
 
 function! g:UltiSnips_Complete()
     call UltiSnips#ExpandSnippet()
@@ -273,11 +278,13 @@ endfunction
 " Autocommands
 if has("autocmd")
     " Autoopen NERDTree on load
-    autocmd vimenter * if !argc() | NERDTree | endif
+    " autocmd vimenter * if !argc() | NERDTree | endif
     " Autoclose vim if only NERDTree is open
     autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     " vim mode-switch lag fix
     if ! has("gui_running")
+        set guioptions-=T         " Remove toolbar
+        set guioptions-=r         " Remove right scrollbar
         set ttimeoutlen=10
         augroup FastEscape
             autocmd!
@@ -292,5 +299,17 @@ if has("autocmd")
     " -Return to last edit position when opening files
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
     autocmd BufWritePost .vimrc source $MYVIMRC
-    autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
+    " autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 endif
+
+" if &diff
+    " diff mode
+    highlight DiffAdd    cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+    highlight DiffDelete cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+    highlight DiffChange cterm=bold ctermfg=10 ctermbg=17 gui=none guifg=bg guibg=Red
+    highlight DiffText   cterm=bold ctermfg=10 ctermbg=88 gui=none guifg=bg guibg=Red
+    set diffopt+=iwhite
+    map     <leader><       :diffget //2<cr>:diffupdate<cr>]c
+    map     <leader>>       :diffget //3<cr>:diffupdate<cr>]c
+" endif
+:cd ~/code

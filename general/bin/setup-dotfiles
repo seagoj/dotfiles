@@ -1,0 +1,32 @@
+#!/bin/sh
+
+set -e
+
+echo "      _       _         __ _ _"
+echo "   __| | ___ | |_      / _(_) | ___  ___"
+echo "  / _\` |/ _ \| __|____| |_| | |/ _ \/ __|"
+echo " | (_| | (_) | ||_____|  _| | |  __/\__ \\"
+echo "  \__,_|\___/ \__|    |_| |_|_|\___||___/"
+echo ""
+
+echo "==> Here we go..."
+cd ~
+
+echo "  > Updating homebrew..."
+brew update &> /dev/null
+
+echo "  > Installing reattach-to-user-namespace..."
+if command -v reattach-to-user-namespace >/dev/null 2>&1; then
+  echo "    > (Skipping) Already installed."
+else
+  brew install reattach-to-user-namespace &> /dev/null
+fi
+
+echo "  > Pulling latest dot-files..."
+git pull &> /dev/null
+
+echo "  > Updating all git submodules..."
+git submodule init &> /dev/null
+git submodule update &> /dev/null
+
+echo "==> Done with setup."

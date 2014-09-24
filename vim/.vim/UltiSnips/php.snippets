@@ -17,6 +17,26 @@ snippet filedoc "File Level Doc" b
 $0
 endsnippet
 
+snippet classdoc "Class Level Doc" b
+/**
+ * ${1:`!v expand('%:r')`}
+ *
+ * ${2:Long Description}
+ *
+ * PHP version ${3:5.3}
+ *
+ * @category ${4:Seago}
+ * @package  ${5:`!v toupper(fnamemodify(getcwd(), ':t'))`}
+ * @author   ${6:`!v g:snips_author`}
+ * @license  ${7:http://www.opensource.org/licenses/mit-license.html  MIT License}
+ * @link     ${8:http://bvbot.net}
+ **/
+
+$0
+endsnippet
+
+
+
 snippet responsetemplate
 <?php
 require_once 'autoloader.php';
