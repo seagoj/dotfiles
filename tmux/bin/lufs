@@ -1,0 +1,62 @@
+#!/bin/sh
+
+set -e
+
+limiter=1
+
+function usage {
+  echo "usage: lufs [infile] [target lufs]"
+  exit 1
+}
+
+if [ -z "$1" ]; then
+  echo "In file is required."
+  echo
+  usage
+fi
+
+if [ -z "$2" ]; then
+  target=16
+else
+  target=${2#-}
+fi
+
+command="ffmpeg -nostats -i $1 -filter_complex ebur128=peak=true -f null -"
+lufs=$(eval $command 2>&1 | grep -v ebur128 | grep I: | awk {'print $2'})
+
+adjust=$(bc <<< "-1 * ($lufs + $target)")
+
+if [ -z "$lufs" ]; then
+  echo "Error reading LUFS for '$1'"
+  echo
+  usage
+fi
+
+function results() {
+  echo "Target:  -$(echo $target)dB"
+  echo "Current: $(echo $lufs)dB"
+}
+
+if [ $(bc <<< "$adjust == 0") -eq 1 ]; then
+  echo "Your audio is already perfect!"
+  echo
+  results
+elif [ $(bc <<< "$adjust > 0") -eq 1 ]; then
+  adjust=$(bc <<< "$adjust + $limiter")
+  echo "Your audio is too quiet."
+  echo
+  results
+  echo
+  echo "Make an adjustment of $(echo $adjust)dB and limit peaks to -$(echo $limiter)dB."
+  echo
+  echo "Adjust: $(echo $adjust)dB"
+  echo "Limit:  -$(echo $limiter)dB"
+else
+  echo "Your audio is too loud."
+  echo
+  results
+  echo
+  echo "Make an adjustment of $(echo $adjust)dB."
+  echo
+  echo "Adjust: $(echo $adjust)dB"
+fi
