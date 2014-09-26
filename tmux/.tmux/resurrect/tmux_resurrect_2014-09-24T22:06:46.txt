@@ -1,0 +1,13 @@
+pane	bot	1	:zsh	1	:*	1	:/Users/Admin/code/bot	1	zsh	:
+pane	bot	1	:zsh	1	:*	2	:/Users/Admin/code/bot	0	node	:gulp 
+pane	bot	2	:DevelopmentLogs	0	: 	1	:/Users/Admin/code/bot	0	ssh	:ssh development tail -f /home/www/Error.log
+pane	bot	2	:DevelopmentLogs	0	: 	2	:/Users/Admin/code/bot	1	ssh	:ssh development tail -f /home/www/Debug.log
+pane	bot	3	:StagingLogs	0	: 	1	:/Users/Admin/code/bot	0	ssh	:ssh staging tail -f /home/www/Error.log
+pane	bot	3	:StagingLogs	0	: 	2	:/Users/Admin/code/bot	1	ssh	:ssh staging tail -f /home/www/Debug.log
+pane	bot	4	:ProductionLogs	0	:-	1	:/Users/Admin/code/bot	0	ssh	:ssh production tail -f /home/www/Error.log
+pane	bot	4	:ProductionLogs	0	:-	2	:/Users/Admin/code/bot	1	ssh	:ssh production tail -f /home/www/Debug.log
+window	bot	1	1	:*	7d8c,211x55,0,0[211x37,0,0,0,211x17,0,38,7]
+window	bot	2	0	: 	ea0b,211x55,0,0[211x27,0,0,1,211x27,0,28,2]
+window	bot	3	0	: 	ea10,211x55,0,0[211x27,0,0,3,211x27,0,28,4]
+window	bot	4	0	:-	ea15,211x55,0,0[211x27,0,0,5,211x27,0,28,6]
+state	bot	

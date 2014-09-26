@@ -7,7 +7,7 @@ export EDITOR=$(which vim nano | grep -m1 -e '^/')
 export BROWSER=$(which google-chrome chromium-browser chromium firefox links2 links lynx | grep -m1 -e '^/')
 export WWW=/var/www
 export DOCROOT=/var/www
-export DOTFILES=$CODE/dotfiles
+export DOTFILES=$HOME/dotfiles
 export LANG=en_US.UTF-8
 
 # Key Bindings
@@ -73,8 +73,8 @@ antigen-apply
 eval "$(fasd --init auto)"
 
 # Always work in a tmux session if tmux is installed
-if which tmux 2>&1 >/dev/null; then
-  if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-    tmux attach -t hack || tmux new -s hack; exit
-  fi
-fi
+# if which tmux 2>&1 >/dev/null; then
+#   if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
+#     tmux attach -t hack || tmux new -s hack; exit
+#   fi
+# fi

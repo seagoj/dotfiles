@@ -238,7 +238,8 @@ nnoremap    <F2>            :Git push<cr>
 nnoremap    <F3>            :! phpunit && open tests/report/index.html<cr>
 nnoremap    <F10>           <Esc>:TagbarToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
-map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
+" map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
+map         <C-]>           :call TagbarGotoTag()<cr>
 nnoremap    <C-e>           <Esc>:UltiSnipsEdit<cr>
 map         <C-o>           <Esc>:NERDTreeToggle<cr>
 vmap        <               <gv
@@ -273,6 +274,11 @@ function! g:UltiSnips_Complete()
         endif
     endif
     return ""
+endfunction
+
+" Finds the definition of the term under the cursor
+function! TagbarGotoTag()
+    normal! "zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
 endfunction
 
 " Autocommands
@@ -312,4 +318,4 @@ endif
     map     <leader><       :diffget //2<cr>:diffupdate<cr>]c
     map     <leader>>       :diffget //3<cr>:diffupdate<cr>]c
 " endif
-:cd ~/code
+" :cd ~/code

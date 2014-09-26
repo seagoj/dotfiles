@@ -9,6 +9,7 @@
     editor = vim -f
     autocrlf = input
     safecrlf = true
+	ignorecase = false
 [web]
     browser = open
 [push]
@@ -47,3 +48,5 @@
     untracked = blue
 [alias]
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
+[branch]
+	autosetuprebase = always
