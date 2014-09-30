@@ -62,7 +62,7 @@ set autoread                    "automatically watch for changes
 set hidden                      "hides unsaved files instead of forcing you to save/quit
 set modelines=5
 set laststatus=2
-set tags=./tags
+set tags=.git/tags
 set nobackup
 set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp
 " Searching
@@ -193,6 +193,30 @@ let g:airline_powerline_fonts = 1
 " -PIV
 " let g:DisableAutoPHPFolding = 1
 
+function! g:UltiSnips_Complete()
+    call UltiSnips#ExpandSnippet()
+    if g:ulti_expand_res == 0
+        if pumvisible()
+            return "\<C-n>"
+        else
+            call UltiSnips#JumpForwards()
+            if g:ulti_jump_forwards_res == 0
+                return "\<TAB>"
+            endif
+        endif
+    endif
+    return ""
+endfunction
+
+" Finds the definition of the term under the cursor
+" function! TagbarGotoTag()
+"     normal! "zyiw
+"     call tagbar#OpenWindow('fcj')
+"     :exe "/".@z.""
+"     call feedkeys("\<CR>")
+"     :nohlsearch
+" endfunction
+
 " Mappings
 let mapleader = ","
 let g:mapleader = ","
@@ -239,7 +263,7 @@ nnoremap    <F3>            :! phpunit && open tests/report/index.html<cr>
 nnoremap    <F10>           <Esc>:TagbarToggle<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 " map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
-map         <C-]>           :call TagbarGotoTag()<cr>
+" map         <C-]>           :call TagbarGotoTag()<cr>
 nnoremap    <C-e>           <Esc>:UltiSnipsEdit<cr>
 map         <C-o>           <Esc>:NERDTreeToggle<cr>
 vmap        <               <gv
@@ -260,26 +284,6 @@ nmap        <leader>hs      <Plug>GitGutterStageHunk
 nmap        <leader>hr      <Plug>GitGutterRevertHunk
 nmap        <leader>hp      <Plug>GitGutterPreviewHunk
 map         <leader>c       "*y
-
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-                return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
-
-" Finds the definition of the term under the cursor
-function! TagbarGotoTag()
-    normal! "zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
-endfunction
 
 " Autocommands
 if has("autocmd")

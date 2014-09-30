@@ -48,5 +48,8 @@
     untracked = blue
 [alias]
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
+	ctags = !.git/hooks/ctags
 [branch]
 	autosetuprebase = always
+[init]
+	templatedir = ~/.git_template

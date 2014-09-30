@@ -130,7 +130,8 @@ channels = (
   { name = "#Laravel"; chatnet = "Freenode"; autojoin = "yes"; },
   { name = "#phpfreaks"; chatnet = "Freenode"; autojoin = "no"; },
   { name = "#chat"; chatnet = "PHPFreaks"; autojoin = "yes"; },
-  { name = "#help"; chatnet = "PHPFreaks"; autojoin = "yes"; }
+  { name = "#help"; chatnet = "PHPFreaks"; autojoin = "yes"; },
+  { name = "#vim"; chatnet = "Freenode"; autojoin = "yes"; }
 );
 
 aliases = {
@@ -354,3 +355,7 @@ mainwindows = {
   4 = { first_line = "8"; lines = "44"; };
   5 = { first_line = "1"; lines = "7"; };
 };
+ignores = (
+  { mask = "joins,parts,crap"; level = "ALL"; },
+  { level = "JOINS PARTS QUITS NICKS"; }
+);
