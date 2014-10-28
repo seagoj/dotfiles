@@ -3,3 +3,4 @@ zsh/.antigen/repos/*
 vim/.vim/bundle
 vim/.vim/.netrwhist
 .DS_Store
+*/.DS_Store
