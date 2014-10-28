@@ -1,5 +1,4 @@
-general/bin/composer binary eol=CRLF
-* text eol=LF
+text=auto
 
 # Standard to msysgit
 *.doc  diff=astextplain
