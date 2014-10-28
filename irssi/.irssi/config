@@ -63,6 +63,7 @@ chatnets = {
   Freenode = {
     type = "IRC";
     nick = "seagoj";
+    autosendcmd = "/msg nickserv identify 1qaz2wsx;wait 2000";
     max_kicks = "1";
     max_msgs = "4";
     max_whois = "1";
@@ -131,7 +132,11 @@ channels = (
   { name = "#phpfreaks"; chatnet = "Freenode"; autojoin = "no"; },
   { name = "#chat"; chatnet = "PHPFreaks"; autojoin = "yes"; },
   { name = "#help"; chatnet = "PHPFreaks"; autojoin = "yes"; },
-  { name = "#vim"; chatnet = "Freenode"; autojoin = "yes"; }
+  { name = "#vim"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#phpspec"; chatnet = "Freenode"; autojoin = "yes"; },
+  { name = "#requirejs"; chatnet = "Freenode"; },
+  { name = "#jasmine"; chatnet = "Freenode"; },
+  { name = "#zombie.js"; chatnet = "Freenode"; }
 );
 
 aliases = {

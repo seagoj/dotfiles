@@ -83,6 +83,7 @@ set guioptions-=T
 set t_Co=256
 set background=dark
 colorscheme Tomorrow-Night-Eighties
+hi Normal ctermbg=NONE
 " Spaces/Tabs
 set expandtab       "Insert spaces whenever <tab> is pressed
 set tabstop=4       "Use 4 spaces for a tab
@@ -137,7 +138,9 @@ let g:syntastic_php_phpcs_quiet_messages =  {
 \   'regex': [
 \       'Line indented incorrectly;',
 \       'Line exceeds 85 characters;',
-\       'must be prefixed with an underscore'
+\       'must be prefixed with an underscore',
+\       'doc comment',
+\       'is not in camel caps format'
 \   ]
 \}
 let g:syntastic_php_phpmd_quiet_messages = {
@@ -287,10 +290,6 @@ map         <leader>c       "*y
 
 " Autocommands
 if has("autocmd")
-    " Autoopen NERDTree on load
-    " autocmd vimenter * if !argc() | NERDTree | endif
-    " Autoclose vim if only NERDTree is open
-    autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
     " vim mode-switch lag fix
     if ! has("gui_running")
         set guioptions-=T         " Remove toolbar

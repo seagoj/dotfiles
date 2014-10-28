@@ -1,4 +1,4 @@
-general/bin/composer binary
+general/bin/composer binary eol=CRLF
 * text eol=LF
 
 # Standard to msysgit

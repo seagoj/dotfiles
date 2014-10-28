@@ -1,0 +1,10 @@
+#!/bin/bash
+
+# Setup irssi
+tmux new-window -t $1:5 -n 'IRC'
+tmux send-keys 'irssi' C-m
+tmux send-keys '/nicklist fifo' C-m
+tmux split-window -h
+tmux resize-pane -x 40
+tmux send-keys "cat ~/.irssi/nicklistfifo" C-m
+tmux send-keys '/set nicklist_width 40' C-m

@@ -23,7 +23,7 @@
 #   # => opens new file at passed location
 
 if [[ $# -eq 0 ]] ; then
-    exec $EDITOR .
+    exec $EDITOR
 elif [[ $# -eq 1 ]] ; then
     if [[ -a $1 ]]; then
         exec $EDITOR $1
