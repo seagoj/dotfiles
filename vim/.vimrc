@@ -140,7 +140,8 @@ let g:syntastic_php_phpcs_quiet_messages =  {
 \       'Line exceeds 85 characters;',
 \       'must be prefixed with an underscore',
 \       'doc comment',
-\       'is not in camel caps format'
+\       'is not in camel caps format',
+\       'Closing brace must be on a line by itself'
 \   ]
 \}
 let g:syntastic_php_phpmd_quiet_messages = {
@@ -257,7 +258,8 @@ nnoremap    <leader>/       :Ag<Space>
 nnoremap    <leader>u       :GundoToggle<cr>
 nmap        <leader><space> :nohlsearch<cr>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
-nnoremap    <leader>v       :vnew<cr>
+" nnoremap    <leader>v       :vnew<cr><c-p>
+nnoremap    <leader>v       :vnew<bar>CtrlP<cr>
 imap        jj              <Esc>:update!<CR>
 imap        jk              <Esc>
 nnoremap    <F1>            :Gwrite<cr> :Gstatus<cr>
@@ -268,7 +270,7 @@ nnoremap    <F12>           <Esc>:Dash!<cr>
 " map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
 " map         <C-]>           :call TagbarGotoTag()<cr>
 nnoremap    <C-e>           <Esc>:UltiSnipsEdit<cr>
-map         <C-o>           <Esc>:NERDTreeToggle<cr>
+" map         <C-o>           <Esc>:NERDTreeToggle<cr>
 vmap        <               <gv
 vmap        >               >gv
 " nmap        0               0w

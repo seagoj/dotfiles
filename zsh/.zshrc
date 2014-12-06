@@ -1,80 +1,65 @@
-# Path to your oh-my-zsh configuration.
-export PATH=vendor/bin:$HOME/bin:/usr/local/bin:$PATH:$HOME/.gem/ruby/2.0.0/bin
-export INPUTRC=~/.inputrc
-export CODE=$HOME/code
-export MEDIA=/mnt/media
-export EDITOR=$(which vim nano | grep -m1 -e '^/')
-export BROWSER=$(which google-chrome chromium-browser chromium firefox links2 links lynx | grep -m1 -e '^/')
-export WWW=/var/www
-export DOCROOT=/var/www
-export DOTFILES=$HOME/dotfiles
-export LANG=en_US.UTF-8
+# initialize prezto
+if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
+    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+fi
 
-# Key Bindings
-bindkey '\e[7~' beginning-of-line   # Home
-bindkey '\e[8~' end-of-line         # End
+# key bindings
+bindkey '\e[1~' beginning-of-line   # Home
+bindkey '\e[4~' end-of-line         # End
 
-# Example aliases
-# alias zshconfig="$EDITOR ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
+# aliases
 alias dev=". dev"
-
-# Set to this to use case-sensitive completion
-# CASE_SENSITIVE="true"
-
-# Comment this out to disable bi-weekly auto-update checks
-DISABLE_AUTO_UPDATE="true"
-
-# Uncomment following line if you want to disable autosetting terminal title.
-DISABLE_AUTO_TITLE="true"
-
-# Uncomment to change how many often would you like to wait before auto-updates occur? (in days)
-export UPDATE_ZSH_DAYS=2
-
-# Uncomment following line if you want to disable colors in ls
-DISABLE_LS_COLORS="true"
-
-# Uncomment following line if you want red dots to be displayed while waiting for completion
-COMPLETION_WAITING_DOTS="true"
+## git aliases
+alias gst="git status"
+alias ga="git add"
 
 # START SSH_AGENT
-eval $(ssh-agent)
-ssh-add
+# eval $(ssh-agent)
+# ssh-add
 
-# Set geeknote editor
+# assume path with no command is a cd command
+setopt AUTO_CD
+
+# 10 second delay on `$ rm *`
+setopt RM_STAR_WAIT
+
+# boilerplate zsh
+setopt ZLE
+setopt NO_HUP
+
+# forces `$ exit` to quit zsh
+setopt IGNORE_EOF
+
+# don't disable input or output to the terminal
+setopt NO_FLOW_CONTROL
+
+# case insensitive globbing
+setopt NO_CASE_GLOB
+
+setopt NUMERIC_GLOB_SORT
+setopt EXTENDED_GLOB
+
+# arrays are used as expected in zsh scripts
+setopt RC_EXPAND_PARAM
+
+# Incremental search is elite!
+bindkey -M vicmd "/" history-incremental-search-backward
+bindkey -M vicmd "?" history-incremental-search-forward
+
+# Search based on what you typed in already
+bindkey -M vicmd "//" history-beginning-search-backward
+bindkey -M vicmd "??" history-beginning-search-forward
+
+# oh wow!  This is killer...  try it!
+bindkey -M vicmd "q" push-line
+
+# it's like, space AND completion.  Gnarlbot.
+bindkey -M viins ' ' magic-space
+
+# set geeknote editor
 geeknote settings --editor $EDITOR
 
 autoload $HOME/functions/*(:t)
 
-source $HOME/antigen/antigen.zsh
-antigen-use oh-my-zsh
-
-antigen-bundles <<EOBUNDLES
-git
-npm
-ruby
-gem
-python
-archlinux
-vagrant
-systemd
-redis-cli
-zsh-users/zsh-syntax-highlighting
-EOBUNDLES
-
-#antigen-theme garyblessington
-#antigen-theme theunraveler
-#antigen-theme af-magic
-#antigen-theme af-magic-custom
-antigen-theme seagoj/js-magic js-magic
-
-antigen-apply
-
+# initialize fasd
 eval "$(fasd --init auto)"
-
-# Always work in a tmux session if tmux is installed
-# if which tmux 2>&1 >/dev/null; then
-#   if [ $TERM != "screen-256color" ] && [  $TERM != "screen" ]; then
-#     tmux attach -t hack || tmux new -s hack; exit
-#   fi
-# fi

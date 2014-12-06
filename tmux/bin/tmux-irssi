@@ -1,10 +1,19 @@
 #!/bin/bash
 
+PROJECT=irc
+
+# Create bot session
+tmux -2 new-session -d -s $PROJECT -n 'IRC'
+
 # Setup irssi
-tmux new-window -t $1:5 -n 'IRC'
+# tmux new-window -t $1:5 -n 'IRC'
 tmux send-keys 'irssi' C-m
 tmux send-keys '/nicklist fifo' C-m
 tmux split-window -h
 tmux resize-pane -x 40
-tmux send-keys "cat ~/.irssi/nicklistfifo" C-m
+tmux send-keys 'cat ~/.irssi/nicklistfifo' C-m
 tmux send-keys '/set nicklist_width 40' C-m
+tmux select-pane -t 1
+
+# Attach to session
+tmux -2 attach-session -t $PROJECT

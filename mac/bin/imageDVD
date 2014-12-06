@@ -1,0 +1,5 @@
+#!/bin/bash
+
+umount /dev/disk1
+dd if=/dev/disk1 of=$1
+drutil eject external
