@@ -31,7 +31,17 @@ servers = (
     use_ssl = "no";
     ssl_verify = "no";
     autoconnect = "yes";
-  }
+  },
+  {
+    address = "irc.seago.io";
+    chatnet = "slack";
+    port = "5000";
+    password = "seagoj/slack:1qaz2wsx";
+    use_ssl = "no";
+    ssl_verify = "no";
+    autoconnect = "yes";
+  },
+
 );
 
 chatnets = {
@@ -105,6 +115,7 @@ chatnets = {
     max_whois = "30";
   };
   SILC = { type = "IRC"; };
+  slack = { type = "IRC"; };
 };
 
 aliases = {

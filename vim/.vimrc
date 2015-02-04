@@ -41,6 +41,7 @@ Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'yggdroot/indentline'
 " Experimental
+Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'vim-scripts/localrc.vim'
 Bundle 'vim-scripts/AutoClose'
@@ -254,7 +255,8 @@ nnoremap    <leader>sc      :SyntasticToggle<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
 map         <leader>p       <Esc><c-p>
 nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
-nnoremap    <leader>/       :Ag<Space>
+nnoremap    <leader>/       :Ag<Space>""<left>
+" nnoremap    <leader>/       :.call AgSearch()<cr>
 nnoremap    <leader>u       :GundoToggle<cr>
 nmap        <leader><space> :nohlsearch<cr>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
@@ -262,7 +264,7 @@ nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
 nnoremap    <leader>v       :vnew<bar>CtrlP<cr>
 imap        jj              <Esc>:update!<CR>
 imap        jk              <Esc>
-nnoremap    <F1>            :Gwrite<cr> :Gstatus<cr>
+nnoremap    <F1>            :update<cr> :Git add %<cr> :Gstatus<cr>
 nnoremap    <F2>            :Git push<cr>
 nnoremap    <F3>            :! phpunit && open tests/report/index.html<cr>
 nnoremap    <F10>           <Esc>:TagbarToggle<cr>
@@ -290,8 +292,24 @@ nmap        <leader>hr      <Plug>GitGutterRevertHunk
 nmap        <leader>hp      <Plug>GitGutterPreviewHunk
 map         <leader>c       "*y
 
+fun! StripTrailingWhitespace()
+    " Only strip if the b:noStripeWhitespace variable isn't set
+    if exists('b:noStripWhitespace')
+        return
+    endif
+    %s/\s\+$//e
+endfun
+
+function! AgSearch()
+    call inputsave()
+    let name = input('Search: ')
+    call inputrestore()
+    Ag . "\"" . name . "\""
+endfunction
+
 " Autocommands
 if has("autocmd")
+    autocmd BufRead,BufNewFile *.md,*.markdown set filetype=markdown
     " vim mode-switch lag fix
     if ! has("gui_running")
         set guioptions-=T         " Remove toolbar
@@ -306,7 +324,9 @@ if has("autocmd")
     " Remove fugitive buffers when hidden
     autocmd BufReadPost fugitive://* set bufhidden=delete
     " -Remove trailing whitespace
-    autocmd BufWritePre * :%s/\s\+$//e
+    autocmd FileType markdown let b:noStripWhitespace=1
+    autocmd BufWritePre * call StripTrailingWhitespace()
+    " autocmd BufWritePre * :%s/\s\+$//e
     " -Return to last edit position when opening files
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
     autocmd BufWritePost .vimrc source $MYVIMRC

@@ -4,8 +4,11 @@ codeDir = ENV['CODE']
 
 Dir.glob("#{codeDir}/*").each do |d|
     if File.directory?("#{d}/.git")
-        puts "--- #{d[codeDir.length+1, d.length-codeDir.length]} ----------"
-        puts `cd #{d} && git status`
-        puts "-------------------"
+        output = `cd #{d} && git status -s`
+        unless output.empty?
+            puts "--- #{d[codeDir.length+1, d.length-codeDir.length]} ----------"
+            puts output
+            # puts "-------------------"
+        end
     end
 end
