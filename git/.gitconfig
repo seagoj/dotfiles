@@ -1,5 +1,5 @@
 [user]
-    name = Jeremy Seago
+	name = Jeremy Seago
     email = seagoj@gmail.com
 [github]
     user = seagoj
@@ -10,6 +10,7 @@
     autocrlf = input
     safecrlf = true
 	ignorecase = false
+	excludesfile = /Users/Admin/.gitignore_global
 [web]
     browser = open
 [push]
@@ -53,3 +54,7 @@
 	autosetuprebase = always
 [init]
 	templatedir = ~/.git_template
+[filter "hawser"]
+	clean = git hawser clean %f
+	smudge = git hawser smudge %f
+	required = true

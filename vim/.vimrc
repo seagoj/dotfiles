@@ -1,4 +1,3 @@
-" General
 scriptencoding utf-8
 set encoding=utf-8
 set guifont=Sauce\ Code\ Powerline\ Semibold:h10
@@ -7,15 +6,159 @@ set nocompatible
 filetype off
 set rtp+=$HOME/.vim/bundle/vundle/
 
-" Check For Vundle
-let vundleInstalled=1
-let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-if !filereadable(vundle_readme)
-    echo "Installing Vundle.."
-    silent !mkdir -p ~/.vim/bundle
-    silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-    let vundleInstalled=0
-endif
+function! AutoInstallVundle()
+    let vundleInstalled=1
+    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
+    if !filereadable(vundle_readme)
+        echo "Installing Vundle.."
+        silent !mkdir -p ~/.vim/bundle
+        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
+        vundleInstalled=0
+    endif
+    return vundleInstalled
+endfunction
+
+function! MoveLinesMap()
+    nnoremap    <leader><Up>    :m-2<cr>
+    nnoremap    <leader><Down>  :m+1<cr>
+endfunction
+
+function! GitGutterFeature()
+    nmap    ]c          <Plug>GitGutterNextHunk
+    nmap    [c          <Plug>GitGutterPrevHunk
+    nmap    <leader>hs  <Plug>GitGutterStageHunk
+    nmap    <leader>hr  <Plug>GitGutterRevertHunk
+    nmap    <leader>hp  <Plug>GitGutterPreviewHunk
+endfunction
+
+function! FugitiveFeature()
+    nnoremap <F1>   :update<cr> :Git add %<cr> :Gstatus<cr>
+    nnoremap <F2>   :Git push<cr>
+endfunction
+
+function! CtrlPMap()
+    map         <leader>p   <Esc><c-p>
+    nnoremap    <leader>v   :vnew<bar>CtrlP<cr>
+endfunction
+
+function! NerdTreeMap()
+    nnoremap    <leader>o   <Esc>:NERDTreeToggle<cr>
+endfunction
+
+function! AgMap()
+    nnoremap    <leader>/   :Ag<Space>""<left>
+endfunction
+
+function! HighlightOverlength(charLimit)
+    " @todo - use charLimit
+    highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
+    match Overlength /\%81v.\+/
+endfunction
+
+function! Solarized()
+    " let g:solarized_contrast="low"
+    " let g:solarized_visibility="high"
+    let g:solarized_termcolors=256
+    colorscheme solarized
+endfunction
+
+function! SyntasticFlags()
+    let g:syntastic_enable_signs=0
+    " let g:syntastic_echo_current_error=0
+    " let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
+    let g:syntastic_auto_loc_list = 1
+    let g:syntastic_auto_jump = 1
+    let g:syntastic_id_checkers = 1
+    let g:syntastic_check_on_wq = 0
+    let g:syntastic_quiet_messages = {
+\   'level': [],
+\   'type': [],
+\   'regex': [],
+\   'file': []
+\}
+
+    let g:syntastic_php_phpcs_quiet_messages =  {
+\   'regex': [
+\       'Line indented incorrectly;',
+\       'Line exceeds 85 characters;',
+\       'must be prefixed with an underscore',
+\       'doc comment',
+\       'is not in camel caps format',
+\       'Closing brace must be on a line by itself'
+\   ]
+\}
+
+    let g:syntastic_php_phpmd_quiet_messages = {
+\   'regex': [
+\       'Avoid variables with short names like '
+\   ]
+\}
+    nnoremap <leader>sc :SyntasticToggle<cr>
+endfunction
+
+function! IndentLineFlags()
+    let g:indentLine_faster=1
+endfunction
+
+function! AgFlags()
+    if executable('ag')
+        " Use Ag over Grep
+        set grepprg=ag\ --nogroup\ --nocolor
+        let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
+    endif
+endfunction
+
+function! GundoFlags()
+    let g:gundo_width = 30
+    let g:gundo_preview_height = 50
+    let g:gundo_close_on_revert = 1
+    nnoremap <leader>u :GundoToggle<cr>
+endfunction
+
+function! UltisnipsFlags()
+    let g:UltiSnipsJumpForwardTrigger="<tab>"
+    let g:UltiSnipsListSnippets="<c-e>"
+    let g:snips_author="Jeremy Seago <seagoj@gmail.com>"
+    nnoremap <C-e> <Esc>:UltiSnipsEdit<cr>
+endfunction
+
+function! GistFlags()
+    let g:gist_show_privates = 1
+    let g:gist_post_private = 1
+    let g:gist_detect_filetype = 1
+    if executable('pbcopy')
+        let g:gist_clip_command = 'pbcopy'
+    elseif executable('xclip')
+        let g:gist_clip_command = 'xclip -selection clipboard'
+    elseif executable('putclip')
+        let g:gist_clip_command = 'putclip'
+    endif
+endfunction
+
+function! AirlineFlags()
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+endfunction
+
+function! PIVFlags()
+    " -PIV
+    " let g:DisableAutoPHPFolding = 1
+endfunction
+
+function! DisableCursorKeysMap()
+    map <up>    <nop>
+    map <down>  <nop>
+    map <left>  <nop>
+    map <right> <nop>
+endfunction
+
+function! FixLineWrapNavigationMap()
+    map j gj
+    map k gk
+endfunction
+
+let vundleInstalled=AutoInstallVundle()
+
 call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'airblade/vim-gitgutter'
@@ -28,8 +171,6 @@ Bundle 'mattn/gist-vim'
 Bundle 'mattn/webapi-vim'
 Bundle 'rking/ag.vim'
 Bundle 'scrooloose/syntastic'
-" Bundle 'Shougo/unite.vim'
-" Bundle 'Shougo/vimproc.vim'
 Bundle 'kien/ctrlp.vim'
 Bundle 'SirVer/ultisnips'
 Bundle 'terryma/vim-multiple-cursors'
@@ -40,15 +181,25 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/nerdtree'
 Bundle 'bling/vim-airline'
 Bundle 'yggdroot/indentline'
+Bundle 'seagoj/buffer-selection.vim'
+Bundle 'seagoj/tab-management.vim'
+Bundle 'seagoj/whitespace.vim'
 " Experimental
 Bundle 'christoomey/vim-tmux-navigator'
 Bundle 'maksimr/vim-jsbeautify'
 Bundle 'vim-scripts/localrc.vim'
-Bundle 'vim-scripts/AutoClose'
 Bundle 'spf13/PIV'
 Bundle 'craigemery/vim-autotag'
+" Colorschemes
+Bundle 'chriskempson/tomorrow-theme'
+Bundle 'noah/fu'
+Bundle 'adlawson/sorcerer'
+Bundle 'jpo/vim-railscasts-theme'
+Bundle 'altercation/solarized'
+Bundle 'blerins/flattown'
 filetype plugin on
 filetype indent on
+
 if vundleInstalled == 0
     :BundleInstall
 endif
@@ -83,8 +234,9 @@ syntax enable       "Enable highlighting
 set guioptions-=T
 set t_Co=256
 set background=dark
-colorscheme Tomorrow-Night-Eighties
-hi Normal ctermbg=NONE
+" colorscheme Tomorrow-Night-Eighties
+call Solarized()
+" hi Normal ctermbg=NONE
 " Spaces/Tabs
 set expandtab       "Insert spaces whenever <tab> is pressed
 set tabstop=4       "Use 4 spaces for a tab
@@ -100,16 +252,12 @@ set nofoldenable
 set foldlevel=1
 set cul
 set splitright
-" Statusline
 " Show current git branch
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" Define Invisible Characters
+set listchars=tab:¦\ ,extends:»,precedes:«,nbsp:×,eol:¬,trail:·
 
-" Features
-" Show Invisible Characters
-" set list listchars=tab:¦\ ,extends:»,precedes:«,nbsp:×,eol:¬,trail:·
-" Highlight Lines Longer Than 80 Characters
-highlight Overlength ctermbg=grey ctermfg=white guibg=#da5c34
-match Overlength /\%81v.\+/
+call HighlightOverlength(80)
 
 " Specify Behavior For Switching Buffers
 try
@@ -120,217 +268,71 @@ endtry
 
 set pastetoggle=<leader>z
 
-" Global vars
-" -Syntastic
-let g:syntastic_enable_signs=0
-" let g:syntastic_echo_current_error=0
-" let g:syntastic_mode_map = {'mode': 'passive', 'active_filetypes': [], 'passive_filetypes': []}
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_auto_jump = 1
-let g:syntastic_id_checkers = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_quiet_messages = {
-\   'level': [],
-\   'type': [],
-\   'regex': [],
-\   'file': []
-\}
-let g:syntastic_php_phpcs_quiet_messages =  {
-\   'regex': [
-\       'Line indented incorrectly;',
-\       'Line exceeds 85 characters;',
-\       'must be prefixed with an underscore',
-\       'doc comment',
-\       'is not in camel caps format',
-\       'Closing brace must be on a line by itself'
-\   ]
-\}
-let g:syntastic_php_phpmd_quiet_messages = {
-\   'regex': [
-\       'Avoid variables with short names like '
-\   ]
-\}
-" -IndentLine
-let g:indentLine_faster=1
-" -Tagbar
-let g:tagbar_autoclose = 1
-let g:tagbar_autofocus = 1
-let g:tagbar_show_visibility = 1
-let g:tagbar_autoshowtag = 1
-" -Unite
-let g:unite_source_history_yank_enable = 1
-let g:unite_enable_start_insert = 1
-let g:unite_enable_short_source_names = 1
-" let g:unite_split_rule = 'bottom'
-let g:unite_enable_split_vertically = 0
-let g:unite_winheight = 20
-if executable('ag')
-    " Use Ag over Grep
-    set grepprg=ag\ --nogroup\ --nocolor
-    let g:ctrlp_user_command = 'ag %s -l --nocolor -g ""'
-endif
-" -Gundo
-let g:gundo_width = 30
-let g:gundo_preview_height = 50
-let g:gundo_close_on_revert = 1
-" -Ultisnips
-let g:UltiSnipsJumpForwardTrigger="<tab>"
-let g:UltiSnipsListSnippets="<c-e>"
-let g:snips_author="Jeremy Seago <seagoj@gmail.com>"
-" -Gist-vim
-let g:gist_show_privates = 1
-let g:gist_post_private = 1
-let g:gist_detect_filetype = 1
-if executable('pbcopy')
-    let g:gist_clip_command = 'pbcopy'
-elseif executable('xclip')
-    let g:gist_clip_command = 'xclip -selection clipboard'
-elseif executable('putclip')
-    let g:gist_clip_command = 'putclip'
-endif
-" -Indent Guides
-let g:indent_guides_auto_colors = 0
-let g:indent_guides_guide_size = 1
-let g:indent_guides_start_level = 1
-" -Airline
-let g:airline#extensions#tabline#enabled = 1
-let g:airline_powerline_fonts = 1
-" -PIV
-" let g:DisableAutoPHPFolding = 1
-
-function! g:UltiSnips_Complete()
-    call UltiSnips#ExpandSnippet()
-    if g:ulti_expand_res == 0
-        if pumvisible()
-            return "\<C-n>"
-        else
-            call UltiSnips#JumpForwards()
-            if g:ulti_jump_forwards_res == 0
-                return "\<TAB>"
-            endif
-        endif
-    endif
-    return ""
-endfunction
-
-" Finds the definition of the term under the cursor
-" function! TagbarGotoTag()
-"     normal! "zyiw
-"     call tagbar#OpenWindow('fcj')
-"     :exe "/".@z.""
-"     call feedkeys("\<CR>")
-"     :nohlsearch
-" endfunction
-
 " Mappings
-let mapleader = ","
+let mapleader   = ","
 let g:mapleader = ","
-nnoremap    ;               :
-" -Disable Cursor Keys
-map         <up>            <nop>
-map         <down>          <nop>
-map         <left>          <nop>
-map         <right>         <nop>
-" -Movement
-" -Treat long lines as break lines
-map         j               gj
-map         k               gk
-" Move between windows
-map         <C-j>           <C-W>j
-map         <C-k>           <C-W>k
-map         <C-h>           <C-W>h
-map         <C-l>           <C-W>l
-" -Toggle Invisibles
-map         <leader>l       :set list!<cr>
-" -Tab Management
-map         <leader>tn      :tabnew<cr><c-p>
-map         <leader>to      :tabonly<cr>
-map         <leader>tc      :tabclose<cr>
-map         <leader>tm      :tabmove
-map         <leader>ev      :tabnew $MYVIMRC<cr>
-map         <leader>so      :so $MYVIMRC<cr>
-" -Change CWD to directory of selected buffer
+
+call SyntasticFlags()
+call IndentLineFlags()
+call AgFlags()
+call GundoFlags()
+call UltisnipsFlags()
+call GistFlags()
+call AirlineFlags()
+call PIVFlags()
+call DisableCursorKeysMap()
+call FixLineWrapNavigationMap()
+call VimifyWindowSelectionMap()
+call TabManagementMap()
+call CtrlPMap()
+call NerdTreeMap()
+call AgMap()
+call GitGutterFeature()
+call FugitiveFeature()
+call MoveLinesMap()
+
+" Copy to clipboard
+map         <leader>c       "*y
+" Change CWD to directory of selected buffer
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
-nnoremap    <leader>sc      :SyntasticToggle<cr>
-nmap        <leader>w       :retab!<cr> :update!<cr>
-map         <leader>p       <Esc><c-p>
-nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
-nnoremap    <leader>/       :Ag<Space>""<left>
-" nnoremap    <leader>/       :.call AgSearch()<cr>
-nnoremap    <leader>u       :GundoToggle<cr>
-nmap        <leader><space> :nohlsearch<cr>
+" Toggle Invisibles
+map         <leader>l       :set list!<cr>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
-" nnoremap    <leader>v       :vnew<cr><c-p>
-nnoremap    <leader>v       :vnew<bar>CtrlP<cr>
-imap        jj              <Esc>:update!<CR>
-imap        jk              <Esc>
-nnoremap    <F1>            :update<cr> :Git add %<cr> :Gstatus<cr>
-nnoremap    <F2>            :Git push<cr>
-nnoremap    <F3>            :! phpunit && open tests/report/index.html<cr>
-nnoremap    <F10>           <Esc>:TagbarToggle<cr>
-nnoremap    <F12>           <Esc>:Dash!<cr>
-" map         <C-]>           <Esc>"zyiw:TagbarOpenAutoClose<cr>:exe "/".@z.""<cr><cr>:nohlsearch<cr>
-" map         <C-]>           :call TagbarGotoTag()<cr>
-nnoremap    <C-e>           <Esc>:UltiSnipsEdit<cr>
-" map         <C-o>           <Esc>:NERDTreeToggle<cr>
+nmap        <leader>w       :retab!<cr> :update!<cr>
+map         <leader>ev      :tabnew $MYVIMRC<cr>
+nmap        <leader><space> :nohlsearch<cr>
+" Align paragraph
+map         <leader>ap      =ip
+" Clone paragraph
+map         <leader>cp      yap<S-}>p
+imap        jj              <Esc>
+imap        kk              <Esc>
 vmap        <               <gv
 vmap        >               >gv
-" nmap        0               0w
+nnoremap    ;               :
 nmap        p               ]p
+" Sudo write
 cmap        w!!             w !sudo tee % >/dev/null
-nnoremap    <leader><Up>    :m-2<cr>
-nnoremap    <leader><Down>  :m+1<cr>
-" -Clone current paragraph
-noremap     cp              yap<S-}>p
-" -Align current paragraph
-" noremap     <leader>a       =ip
-" -GitGutter Mappings
-nmap        ]c              <Plug>GitGutterNextHunk
-nmap        [c              <Plug>GitGutterPrevHunk
-nmap        <leader>hs      <Plug>GitGutterStageHunk
-nmap        <leader>hr      <Plug>GitGutterRevertHunk
-nmap        <leader>hp      <Plug>GitGutterPreviewHunk
-map         <leader>c       "*y
-
-fun! StripTrailingWhitespace()
-    " Only strip if the b:noStripeWhitespace variable isn't set
-    if exists('b:noStripWhitespace')
-        return
-    endif
-    %s/\s\+$//e
-endfun
-
-function! AgSearch()
-    call inputsave()
-    let name = input('Search: ')
-    call inputrestore()
-    Ag . "\"" . name . "\""
-endfunction
+nnoremap    <F12>           <Esc>:Dash!<cr>
 
 " Autocommands
 if has("autocmd")
-    autocmd BufRead,BufNewFile *.md,*.markdown set filetype=markdown
     " vim mode-switch lag fix
     if ! has("gui_running")
         set guioptions-=T         " Remove toolbar
         set guioptions-=r         " Remove right scrollbar
-        set ttimeoutlen=10
-        augroup FastEscape
-            autocmd!
-            au InsertEnter * set timeoutlen=0
-            au InsertLeave * set timeoutlen=1000
-        augroup END
+        " set ttimeoutlen=10
+        " augroup FastEscape
+        "     autocmd!
+        "     au InsertEnter * set timeoutlen=0
+        "     au InsertLeave * set timeoutlen=1000
+        " augroup END
     endif
     " Remove fugitive buffers when hidden
     autocmd BufReadPost fugitive://* set bufhidden=delete
-    " -Remove trailing whitespace
-    autocmd FileType markdown let b:noStripWhitespace=1
-    autocmd BufWritePre * call StripTrailingWhitespace()
-    " autocmd BufWritePre * :%s/\s\+$//e
     " -Return to last edit position when opening files
     autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
     autocmd BufWritePost .vimrc source $MYVIMRC
-    " autocmd BufEnter * exec "inoremap <silent> " . g:UltiSnipsExpandTrigger . " <C-R>=g:UltiSnips_Complete()<cr>"
 endif
 
 " if &diff
