@@ -1,5 +1,0 @@
-#!/bin/bash
-
-tmux split-window -h
-# tmux resize-pane -L 20
-tmux send-keys "karma start" C-m

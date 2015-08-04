@@ -6,74 +6,69 @@ set nocompatible
 filetype off
 set rtp+=$HOME/.vim/bundle/vundle/
 
-function! AutoInstallVundle()
-    let vundleInstalled=1
-    let vundle_readme=expand('~/.vim/bundle/vundle/README.md')
-    if !filereadable(vundle_readme)
-        echo "Installing Vundle.."
-        silent !mkdir -p ~/.vim/bundle
-        silent !git clone https://github.com/gmarik/vundle ~/.vim/bundle/vundle
-        vundleInstalled=0
+function! AutoInstallVimPlug()
+    let vimPlugInstalled=1
+    let vimPlugFile=expand('~/.vim/autoload/plug.vim')
+    if !filereadable(vimPlugFile)
+        echo "Installing vim-plug..."
+        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        let vimPlugInstalled=0
     endif
-    return vundleInstalled
+    return vimPlugInstalled
 endfunction
 
-let vundleInstalled=AutoInstallVundle()
+" @todo - figure out how to move to airline-config
+function! AirlineConfig()
+    let g:airline#extensions#tabline#enabled = 1
+    let g:airline_powerline_fonts = 1
+endfunction
 
-call vundle#begin()
-Plugin 'gmarik/vundle'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'rizzatti/funcoo.vim'
-Plugin 'rizzatti/dash.vim'
-Plugin 'majutsushi/tagbar'
-Plugin 'sjl/gundo.vim'
-Plugin 'seagoj/gundo-config.vim'
-Plugin 'edsono/vim-matchit'
-Plugin 'mattn/gist-vim'
-Plugin 'seagoj/gist-config.vim'
-Plugin 'mattn/webapi-vim'
-Plugin 'rking/ag.vim'
-Plugin 'seagoj/ag-config.vim'
-Plugin 'scrooloose/syntastic'
-Plugin 'seagoj/syntastic-config.vim'
-Plugin 'kien/ctrlp.vim'
-Plugin 'SirVer/ultisnips'
-Plugin 'seagoj/ultisnips-config.vim'
-Plugin 'terryma/vim-multiple-cursors'
-Plugin 'tpope/vim-commentary'
-Plugin 'tpope/vim-fugitive'
-Plugin 'seagoj/fugitive-config.vim'
-Plugin 'tpope/vim-surround'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/nerdtree'
-Plugin 'bling/vim-airline'
-Plugin 'yggdroot/indentline'
-Plugin 'seagoj/autosource-vimrc.vim'
-Plugin 'seagoj/indentline-config.vim'
-Plugin 'seagoj/buffer-selection.vim'
-Plugin 'seagoj/disable-cursor-keys.vim'
-Plugin 'seagoj/git-gutter-feature.vim'
-Plugin 'seagoj/line-wrap-navigation.vim'
-Plugin 'seagoj/overlength.vim'
-Plugin 'seagoj/tab-management.vim'
-Plugin 'seagoj/whitespace.vim'
-Plugin 'christoomey/vim-tmux-navigator'
-Plugin 'maksimr/vim-jsbeautify'
-Plugin 'vim-scripts/localrc.vim'
-Plugin 'spf13/PIV'
-" Plugin 'seagoj/piv-config.vim'
-Plugin 'craigemery/vim-autotag'
-Plugin 'chriskempson/tomorrow-theme'
-" Plugin 'seagoj/tomorrow-night-config.vim'
-Plugin 'altercation/solarized'
-Plugin 'seagoj/solarized-config.vim'
-Plugin 'seagoj/airline-config.vim'
-call vundle#end()
+let vimPlugInstalled=AutoInstallVimPlug()
+
+call plug#begin('~/.vim/plugged')
+Plug 'airblade/vim-gitgutter'
+Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim'
+Plug 'majutsushi/tagbar'
+Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
+Plug 'edsono/vim-matchit'
+Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' | Plug 'seagoj/gist-config.vim'
+Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
+Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'ervandew/supertab' | Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
+Plug 'tpope/vim-surround'
+Plug 'Valloric/YouCompleteMe'
+Plug 'scrooloose/nerdtree'
+Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
+Plug 'seagoj/autosource-vimrc.vim'
+Plug 'seagoj/buffer-selection.vim'
+Plug 'seagoj/disable-cursor-keys.vim'
+Plug 'seagoj/git-gutter-feature.vim'
+Plug 'seagoj/last-position.vim'
+Plug 'seagoj/line-wrap-navigation.vim'
+Plug 'seagoj/overlength.vim'
+Plug 'seagoj/tab-management.vim'
+Plug 'seagoj/whitespace.vim'
+Plug 'christoomey/vim-tmux-navigator'
+Plug 'maksimr/vim-jsbeautify'
+Plug 'vim-scripts/localrc.vim'
+" Plug 'spf13/PIV' | Plug 'seagoj/piv-config.vim'
+Plug 'craigemery/vim-autotag'
+" Plug 'chriskempson/tomorrow-theme' | Plug 'seagoj/tomorrow-night-config.vim'
+Plug 'altercation/solarized' | Plug 'seagoj/solarized-config.vim'
+" Plug 'chase/vim-ansible-yaml'
+Plug 'bling/vim-airline'
+"| Plug 'seagoj/airline-config.vim'
+call plug#end()
+
 filetype plugin on
 filetype indent on
 
-if vundleInstalled == 0
-    :PluginInstall
+if vimPlugInstalled == 0
+    :PlugInstall
 endif
 
 set mouse=a                     "Enable mouse use
@@ -119,23 +114,19 @@ set splitright
 " Define Invisible Characters
 set listchars=tab:¦\ ,extends:»,precedes:«,nbsp:×,eol:¬,trail:·
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
-
 " Specify Behavior For Switching Buffers
 try
     set switchbuf=useopen,usetab,newtab
     set showtabline=2
 catch
 endtry
-
 set pastetoggle=<leader>z
 
-" @todo - figure out how to move to airline-config
-" let g:airline_powerline_fonts = 1
+call AirlineConfig()
 
 " Mappings
 let mapleader   = ","
 let g:mapleader = ","
-
 " Copy to clipboard
 map         <leader>c       "*y
 " Change CWD to directory of selected buffer
@@ -148,8 +139,9 @@ nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
 nnoremap    <leader>v       :vnew<bar>CtrlP<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
 map         <leader>ev      :tabnew $MYVIMRC<cr>
+map         <leader>k       0y$:! open <C-r>"<cr>j<leader>k
 nmap        <leader><space> :nohlsearch<cr>
-" Moves currennt line up/down
+" Moves current line up/down
 nnoremap    <leader><Up>    :m-2<cr>
 nnoremap    <leader><Down>  :m+1<cr>
 " Align paragraph
@@ -164,13 +156,17 @@ nnoremap    ;               :
 nmap        p               ]p
 " Sudo write
 cmap        w!!             w !sudo tee % >/dev/null
+nnoremap    <F3>            <Esc>:Git push<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
+nnoremap    <F5>            <Esc>:!phpspec run <c-r>=expand('%:p')<cr><cr>
+nnoremap <C-j>   <C-W>j
+nnoremap <C-k>   <C-W>k
+nnoremap <C-h>   <C-W>h
+nnoremap <C-l>   <C-W>l
 
 if has("autocmd")
     if ! has("gui_running")
         set guioptions-=T         " Remove toolbar
         set guioptions-=r         " Remove right scrollbar
     endif
-    " -Return to last edit position when opening files
-    autocmd BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$") | exe "normal! g`\"" | endif
 endif

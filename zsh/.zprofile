@@ -2,13 +2,17 @@
 
 # Paths
 export INPUTRC=~/.inputrc
-export CODE=$HOME/code
+export CODE=/Volumes/code
 export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=$HOME/dotfiles
-export VAGRANT_DEFAULT_PROVIDER=parallels
+export VAGRANT_DEFAULT_PROVIDER=virtualbox
+export GOPATH=$HOME/go
+export FUNCTIONS=$HOME/functions
+# export VAGRANT_DEFAULT_PROVIDER=parallels
 # export LSCOLORS="exfxcxdxbxegedabagacad"
+source ~/.secrets
 
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then
@@ -18,7 +22,7 @@ else
 fi
 
 # Editors
-export EDITOR=$(which vim nano | grep -m1 -e '^/')
+export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
 export VISUAL=$(which macvim subl | grep -m1 -e '^/')
 export PAGER='less'
 
@@ -45,6 +49,8 @@ path=(
   $HOME/.chefdk/gem/ruby/2.1.0/bin
   /opt/chefdk/bin
   $path
+  $GOPATH/bin
+  ./bin
 )
 
 # Less
@@ -69,3 +75,8 @@ TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
+
+# Setting PATH for Python 2.7
+# The orginal version is saved in .zprofile.pysave
+PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
+export PATH

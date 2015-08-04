@@ -1,6 +1,0 @@
-#!/bin/bash
-
-# Setup test pane
-tmux split-window -v
-# tmux resize-pane -L 20
-tmux send-keys "gulp" C-m

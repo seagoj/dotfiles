@@ -35,29 +35,39 @@ snippet classdoc "Class Level Doc" b
 $0
 endsnippet
 
+snippet botservice
+<?php namespace Bot\Service;
 
+use Devtools\Response;
+use Devtools\Log;
+use Bot\Repository;
+use Bot\BotNew as App;
+use Exception;
 
-snippet responsetemplate
-<?php
-require_once 'autoloader.php';
+class ${1:`!v expand('%:t:r')`} extends Response
+{
+	public function __construct(
+		${2:Repository\GeneralRepository} $${3:repository},
+		${4:Log} $${5:log}
+	) {
+		parent::__construct();
+		$this->$3 = $$3;
+		$this->$5 = $$5;
+		$this->processRequest();
+	}
 
-$resp = new \Devtools\Response;
-
-extract(
-	$resp->getRequest(
-		array(
-			'$1'
-		)
-	)
-);
-
-if (isset($$1)) {
-	$0
-} else {
-	$resp->fail('Invalid request.');
+	public function ${6:get}()
+	{
+		$this->loadRequest(
+			array(
+				$7
+			)
+		);
+		$0
+	}
 }
 
-echo $resp->json();
+App::startService('Bot\Service\\$1');
 endsnippet
 
 snippet testclass "PHPUnit Test Class" b
