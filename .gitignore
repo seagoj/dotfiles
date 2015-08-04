@@ -5,3 +5,6 @@ vim/.vim/plugged
 vim/.vim/.netrwhist
 .DS_Store
 */.DS_Store
+anyconnect/.anyconnect
+vim/.gist-vim
+general/.secrets
