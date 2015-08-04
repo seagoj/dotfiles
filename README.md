@@ -6,17 +6,16 @@ Repository of configuration files and scripts.
 
 #### Installation
 
-Decrypts files and creates symlinks using 
+Automatically finds and decrypts *.gpg files
 
 ```shell
-$ git clone git://github.com/seagoj/dotfiles.git ~/dotfiles
-$ cd ~/dotfiles && ./bootstrap.sh
+$ ./bootstrap.sh
 ```
 
 #### Rollup unencrypted files for commit
 
-Encrypts sensitive files
+Automatically re-encrypts those files to commit
 
 ```shell
-$ cd ~/dotfiles && ./rollup.sh
+$ ./rollup.sh
 ```
