@@ -1,5 +1,8 @@
 #!/bin/sh
 
-gpg --output ~/dotfiles/anyconnect/.anyconnect.gpg --encrypt --recipient seagoj@gmail.com ~/.anyconnect
-gpg --output ~/dotfiles/vim/.gist-vim.gpg --encrypt --recipient seagoj@gmail.com ~/.gist-vim
-gpg --output ~/dotfiles/general/.secrets.gpg --encrypt --recipient seagoj@gmail.com ~/.secrets
+EMAIL=seagoj@gmail.com
+declare -a SECRETS=($(find . -name *.gpg))
+
+for i in "${SECRETS[@]%.gpg}"; do
+    gpg --batch --yes --quiet --output $i.gpg --encrypt --recipient $EMAIL $i
+done
