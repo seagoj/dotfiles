@@ -63,3 +63,5 @@ autoload $HOME/functions/*(:t)
 
 # initialize fasd
 eval "$(fasd --init auto)"
+
+test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
