@@ -2,10 +2,21 @@
 
 Repository of configuration files and scripts.
 
-### To Do
+### Usage
 
-#### Prepare method to encrypt/obfuscate and commit the following files:
-- .anyconnect
-- .filezilla
-- .gist-vim
-- .secrets
+#### Installation
+
+Decrypts files and creates symlinks using 
+
+```shell
+$ git clone git://github.com/seagoj/dotfiles.git ~/dotfiles
+$ cd ~/dotfiles && ./bootstrap.sh
+```
+
+#### Rollup unencrypted files for commit
+
+Encrypts sensitive files
+
+```shell
+$ cd ~/dotfiles && ./rollup.sh
+```
