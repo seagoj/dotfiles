@@ -6,7 +6,7 @@ Repository of configuration files and scripts.
 
 #### Installation
 
-Automatically finds and decrypts *.gpg files
+Automatically finds and decrypts *.gpg files then deploys packages to user home.
 
 ```shell
 $ ./bootstrap.sh
