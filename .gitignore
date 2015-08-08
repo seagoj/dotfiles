@@ -3,9 +3,10 @@ zsh/.antigen/repos/*
 vim/.vim/bundle
 vim/.vim/plugged
 vim/.vim/.netrwhist
-.DS_Store
 */.DS_Store
 anyconnect/.anyconnect
-vim/.gist-vim
 general/.secrets
 ssh/.ssh/config
+ssh/.ssh/id_rsa
+ssh/.ssh/id_rsa_deploy
+vim/.gist-vim
