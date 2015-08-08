@@ -8,3 +8,4 @@ vim/.vim/.netrwhist
 anyconnect/.anyconnect
 vim/.gist-vim
 general/.secrets
+ssh/.ssh/config

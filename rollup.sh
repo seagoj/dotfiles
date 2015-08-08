@@ -5,4 +5,5 @@ declare -a SECRETS=($(find . -name *.gpg))
 
 for i in "${SECRETS[@]%.gpg}"; do
     gpg --batch --yes --quiet --output $i.gpg --encrypt --recipient $EMAIL $i
+    rm $i
 done
