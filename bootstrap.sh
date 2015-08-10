@@ -18,6 +18,7 @@ stow $STOWOPTS ansible\
     mysql\
     ncmpcpp\
     nginx\
+    nvim\
     php\
     ssh\
     system\
@@ -36,3 +37,4 @@ case $(uname -s) in
   "Darwin")
     stow $STOWOPTS mac iterm
 esac
+ echo "Please source ~/.zshrc for changes to take affect"

@@ -3,15 +3,14 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+# Source alias files
+for file in ${ZDOTDIR:-$HOME}/.aliases/*.alias; do
+    source "$file"
+done
+
 # key bindings
 bindkey '\e[1~' beginning-of-line   # Home
 bindkey '\e[4~' end-of-line         # End
-
-# aliases
-alias dev=". dev"
-## git aliases
-alias gst="git status"
-alias ga="git add"
 
 # START SSH_AGENT
 # eval $(ssh-agent)

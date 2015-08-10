@@ -1,0 +1,28 @@
+_myos="$(uname)"
+
+alias dev='. dev'
+
+## User not `root`
+if [ $UID -ne 0 ]; then
+    alias reboot='sudo shutdown -r now'
+    alias shutdown='sudo shutdown -h now'
+    case $_myos in
+        Linux)
+            alias update='sudo apt-get update'
+            ;;
+        FreeBSD|OpenBSD)
+            alias update='sudo yum update'
+            ;;
+        Darwin)
+            alias update='sudo brew update'
+            ;;
+        *) ;;
+    esac
+fi
+
+## General
+### Ping
+alias ping='ping -c 5'
+alias ping1000='ping -c 1000'
+alias fastping='ping -c 100 -i.2'
+alias pingfast='fastping'
