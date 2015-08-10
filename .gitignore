@@ -10,3 +10,4 @@ ssh/.ssh/config
 ssh/.ssh/id_rsa
 ssh/.ssh/id_rsa_deploy
 vim/.gist-vim
+mycli/.aliases/mycli.alias
