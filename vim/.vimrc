@@ -17,12 +17,6 @@ function! AutoInstallVimPlug()
     return vimPlugInstalled
 endfunction
 
-" @todo - figure out how to move to airline-config
-function! AirlineConfig()
-    let g:airline#extensions#tabline#enabled = 1
-    let g:airline_powerline_fonts = 1
-endfunction
-
 let vimPlugInstalled=AutoInstallVimPlug()
 
 call plug#begin('~/.vim/plugged')
@@ -44,7 +38,7 @@ Plug 'Valloric/YouCompleteMe'
 Plug 'scrooloose/nerdtree'
 Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
 Plug 'seagoj/autosource-vimrc.vim'
-Plug 'seagoj/buffer-selection.vim'
+Plug 'seagoj/buffers.vim'
 Plug 'seagoj/disable-cursor-keys.vim'
 Plug 'seagoj/git-gutter-feature.vim'
 Plug 'seagoj/last-position.vim'
@@ -55,13 +49,11 @@ Plug 'seagoj/whitespace.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'vim-scripts/localrc.vim'
-" Plug 'spf13/PIV' | Plug 'seagoj/piv-config.vim'
 Plug 'craigemery/vim-autotag'
 " Plug 'chriskempson/tomorrow-theme' | Plug 'seagoj/tomorrow-night-config.vim'
 Plug 'altercation/solarized' | Plug 'seagoj/solarized-config.vim'
 " Plug 'chase/vim-ansible-yaml'
-Plug 'bling/vim-airline'
-"| Plug 'seagoj/airline-config.vim'
+Plug 'seagoj/airline-config.vim' | Plug 'bling/vim-airline'
 call plug#end()
 
 filetype plugin on
@@ -122,8 +114,6 @@ catch
 endtry
 set pastetoggle=<leader>z
 
-call AirlineConfig()
-
 " Mappings
 let mapleader   = ","
 let g:mapleader = ","
@@ -136,7 +126,6 @@ map         <leader>l       :set list!<cr>
 nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
 map         <leader>p       <Esc><c-p>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
-nnoremap    <leader>v       :vnew<bar>CtrlP<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
 map         <leader>ev      :tabnew $MYVIMRC<cr>
 map         <leader>k       0y$:! open <C-r>"<cr>j<leader>k
@@ -159,10 +148,6 @@ cmap        w!!             w !sudo tee % >/dev/null
 nnoremap    <F3>            <Esc>:Git push<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 nnoremap    <F5>            <Esc>:!phpspec run <c-r>=expand('%:p')<cr><cr>
-nnoremap <C-j>   <C-W>j
-nnoremap <C-k>   <C-W>k
-nnoremap <C-h>   <C-W>h
-nnoremap <C-l>   <C-W>l
 
 if has("autocmd")
     if ! has("gui_running")
