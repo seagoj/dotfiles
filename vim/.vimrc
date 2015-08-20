@@ -4,65 +4,12 @@ set guifont=Sauce\ Code\ Powerline\ Semibold:h10
 set ffs=unix,mac,dos
 set nocompatible
 filetype off
-set rtp+=$HOME/.vim/bundle/vundle/
 
-function! AutoInstallVimPlug()
-    let vimPlugInstalled=1
-    let vimPlugFile=expand('~/.vim/autoload/plug.vim')
-    if !filereadable(vimPlugFile)
-        echo "Installing vim-plug..."
-        silent !curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        let vimPlugInstalled=0
-    endif
-    return vimPlugInstalled
-endfunction
-
-let vimPlugInstalled=AutoInstallVimPlug()
-
-call plug#begin('~/.vim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim'
-Plug 'majutsushi/tagbar'
-Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
-Plug 'edsono/vim-matchit'
-Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' | Plug 'seagoj/gist-config.vim'
-Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
-Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
-Plug 'kien/ctrlp.vim'
-Plug 'ervandew/supertab' | Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
-Plug 'terryma/vim-multiple-cursors'
-Plug 'tpope/vim-commentary'
-Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
-Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
-Plug 'scrooloose/nerdtree'
-Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
-Plug 'seagoj/autosource-vimrc.vim'
-Plug 'seagoj/buffers.vim'
-Plug 'seagoj/disable-cursor-keys.vim'
-Plug 'seagoj/git-gutter-feature.vim'
-Plug 'seagoj/last-position.vim'
-Plug 'seagoj/line-wrap-navigation.vim'
-Plug 'seagoj/overlength.vim'
-Plug 'seagoj/tab-management.vim'
-Plug 'seagoj/whitespace.vim'
-Plug 'christoomey/vim-tmux-navigator'
-Plug 'maksimr/vim-jsbeautify'
-Plug 'vim-scripts/localrc.vim'
-Plug 'craigemery/vim-autotag'
-" Plug 'chriskempson/tomorrow-theme' | Plug 'seagoj/tomorrow-night-config.vim'
-Plug 'altercation/solarized' | Plug 'seagoj/solarized-config.vim'
-" Plug 'chase/vim-ansible-yaml'
-Plug 'seagoj/airline-config.vim' | Plug 'bling/vim-airline'
-call plug#end()
+source ~/.plugins.vim
+source ~/.keymap.vim
 
 filetype plugin on
 filetype indent on
-
-if vimPlugInstalled == 0
-    :PlugInstall
-endif
-
 set mouse=a                     "Enable mouse use
 set scrolloff=5                 "When possible, show 5 lines above and below the cursor
 set wildmenu                    "Autocomplete and fun stuff
@@ -113,45 +60,4 @@ try
 catch
 endtry
 set pastetoggle=<leader>z
-
-" Mappings
-let mapleader   = ","
-let g:mapleader = ","
-" Copy to clipboard
-map         <leader>c       "*y
-" Change CWD to directory of selected buffer
-map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
-" Toggle Invisibles
-map         <leader>l       :set list!<cr>
-nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
-map         <leader>p       <Esc><c-p>
-nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
-nmap        <leader>w       :retab!<cr> :update!<cr>
-map         <leader>ev      :tabnew $MYVIMRC<cr>
-map         <leader>k       0y$:! open <C-r>"<cr>j<leader>k
-nmap        <leader><space> :nohlsearch<cr>
-" Moves current line up/down
-nnoremap    <leader><Up>    :m-2<cr>
-nnoremap    <leader><Down>  :m+1<cr>
-" Align paragraph
-map         <leader>ap      =ip
-" Clone paragraph
-map         <leader>cp      yap<S-}>p
-imap        jj              <Esc>
-imap        kk              <Esc>
-vmap        <               <gv
-vmap        >               >gv
-nnoremap    ;               :
-nmap        p               ]p
-" Sudo write
-cmap        w!!             w !sudo tee % >/dev/null
-nnoremap    <F3>            <Esc>:Git push<cr>
-nnoremap    <F12>           <Esc>:Dash!<cr>
-nnoremap    <F5>            <Esc>:!phpspec run <c-r>=expand('%:p')<cr><cr>
-
-if has("autocmd")
-    if ! has("gui_running")
-        set guioptions-=T         " Remove toolbar
-        set guioptions-=r         " Remove right scrollbar
-    endif
-endif
+set relativenumber
