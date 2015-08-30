@@ -12,7 +12,9 @@ export GOPATH=$HOME/go
 export FUNCTIONS=$HOME/functions
 # export VAGRANT_DEFAULT_PROVIDER=parallels
 # export LSCOLORS="exfxcxdxbxegedabagacad"
-source ~/.secrets
+if [[ -f "~/.secrets" ]]; then
+    source ~/.secrets
+fi
 
 # Browser
 if [[ "$OSTYPE" == darwin* ]]; then

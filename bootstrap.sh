@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 
 STOWOPTS=--ignore=\.gpg\ -vt\ $HOME
 declare -a SECRETS=($(find . -name *.gpg))
