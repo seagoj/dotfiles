@@ -56,11 +56,19 @@ bindkey -M vicmd "q" push-line
 bindkey -M viins ' ' magic-space
 
 # set geeknote editor
-geeknote settings --editor $EDITOR
+if which geeknote >/dev/null; then
+    geeknote settings --editor $EDITOR
+else
+    echo "geeknote is not installed.";
+fi
 
 autoload $HOME/functions/*(:t)
 
 # initialize fasd
-eval "$(fasd --init auto)"
+if which fasd >/dev/null; then
+    eval "$(fasd --init auto)"
+else
+    echo "fasd is not installed.";
+fi
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh

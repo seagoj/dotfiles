@@ -14,7 +14,7 @@
 [web]
     browser = open
 [push]
-    default = simple
+    default = current
 [rebase]
     autosquash = true
 [merge]

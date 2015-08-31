@@ -1,9 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =7
-let g:netrw_dirhist_1='/Users/Admin/code/Devtools'
-let g:netrw_dirhist_2='/Users/Admin/code/bot'
-let g:netrw_dirhist_3='/Users/Admin/code/prophecy'
-let g:netrw_dirhist_4='/Users/Admin/code/bot'
-let g:netrw_dirhist_5='/Users/Admin/code/bot/spec'
-let g:netrw_dirhist_6='/Users/Admin/code/bot'
-let g:netrw_dirhist_7='/Users/Admin/code/bot/efax.bpspharmacy.com/html/secure/lookup'
