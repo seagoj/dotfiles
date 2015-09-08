@@ -1,8 +1,7 @@
-# /bin/sh
+# /bin/bash
 
 function installGit()
 {
-    echo "installGit called"
     if ! which git >/dev/null; then
         case $(uname -s) in
           "Linux")
