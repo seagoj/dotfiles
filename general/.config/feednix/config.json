@@ -1,6 +1,6 @@
 
 {
-	"colors" : 
+	"colors" :
 	{
 		"active_panel" : 1,/* ====== Color Definitions =======
                  *  BLACK   0
@@ -23,15 +23,14 @@
 		"status_line" : 7
 	},
 	"ctg_win_width" : 40,
-	"developer_token" : "Akki98x7ImEiOiJGZWVkbHkgRGV2ZWxvcGVyIiwiZSI6MTQ0MDA0MTA3MTkxOCwiaSI6IjlhNzA5N2MxLTI3NjYtNGFhZS1hNzRhLTdjY2EyZTQ2YjQ2YiIsInAiOjYsInQiOjEsInYiOiJwcm9kdWN0aW9uIiwidyI6IjIwMTMuMjYiLCJ4IjoicHJvIn0:feedlydev",// Count of posts to be retrived per request. Maximum is 10000
-
-
+	"developer_token" : "Akki98x7ImEiOiJGZWVkbHkgRGV2ZWxvcGVyIiwiZSI6MTQ0MDA0MTA3MTkxOCwiaSI6IjlhNzA5N2MxLTI3NjYtNGFhZS1hNzRhLTdjY2EyZTQ2YjQ2YiIsInAiOjYsInQiOjEsInYiOiJwcm9kdWN0aW9uIiwidyI6IjIwMTMuMjYiLCJ4IjoicHJvIn0:feedlydev",
+    // Count of posts to be retrived per request. Maximum is 10000
 	"posts_retrive_count" : "500",
 	"preview_active" : true,//Feedly API Allows for two sort types:
 
-// Newest(default) false 
+// Newest(default) false
 
-// Oldest true 
+// Oldest true
 
 
 	"rank" : false,
