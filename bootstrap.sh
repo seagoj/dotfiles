@@ -27,7 +27,7 @@ declare -a MAC_PACKAGES=(
 )
 
 declare -a NIX_PACKAGES=(
-    archey
+#    archey
 )
 
 STOWOPTS=--ignore=\.gpg\ --ignore=\package-install.sh\ -vt\ $HOME
@@ -86,4 +86,4 @@ decryptSecrets
 install ${PACKAGES[@]}
 installOSSpecificPackages
 
-echo "Please source ~/.zshrc for changes to take affect"
+echo "Please source ~/.zshrc for changes to take effect"
