@@ -14,3 +14,4 @@ mycli/.aliases/mycli.alias
 tmux/.ngrok2/ngrok.yml
 atom/.atom/compile-cache
 atom/.atom/storage
+general/.config/feednix/log.txt
