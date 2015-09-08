@@ -7,6 +7,7 @@ map         <leader>c       "*y
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
 " Toggle Invisibles
 map         <leader>l       :set list!<cr>
+nmap        <leader>m       :!markdown %<cr>
 nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
 map         <leader>p       <Esc><c-p>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
@@ -32,3 +33,4 @@ cmap        w!!             w !sudo tee % >/dev/null
 nnoremap    <F3>            <Esc>:Git push<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 nnoremap    <F5>            <Esc>:!phpspec run <c-r>=expand('%:p')<cr><cr>
+

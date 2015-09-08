@@ -718,9 +718,11 @@
 	<key>MaxVertically</key>
 	<false/>
 	<key>NSNavLastRootDirectory</key>
-	<string>~/dotfiles/iterm/.iterm</string>
+	<string>~/Documents</string>
 	<key>NSNavPanelExpandedSizeForOpenMode</key>
 	<string>{712, 448}</string>
+	<key>NSNavPanelExpandedSizeForSaveMode</key>
+	<string>{712, 565}</string>
 	<key>NSQuotedKeystrokeBinding</key>
 	<string></string>
 	<key>NSRepeatCountBinding</key>
@@ -765,11 +767,15 @@
 	<key>NSWindow Frame NSFontPanel</key>
 	<string>1155 110 445 103 0 0 1600 1177 </string>
 	<key>NSWindow Frame Preferences</key>
-	<string>185 247 606 456 0 0 1280 777 </string>
+	<string>185 320 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>5 7 1914 763 0 0 1280 777 </string>
+	<string>4 0 1276 777 0 0 1280 777 </string>
+	<key>NSWindow Frame iTerm Window 1</key>
+	<string>-306 803 955 1051 -308 800 1920 1057 </string>
+	<key>NSWindow Frame iTerm Window 2</key>
+	<string>-306 803 955 1051 -308 800 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_A1D46E23-CBED-4F4A-89C5-03CA02C2B150</key>
 	<true/>
 	<key>New Bookmarks</key>
@@ -6655,8 +6661,12 @@
 			<string>/Users/Admin/code/datamapper</string>
 		</dict>
 	</array>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste</key>
+	<true/>
+	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
+	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>460478799.36746597</real>
+	<real>462032653.91971803</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -6666,7 +6676,29 @@
 	<key>NoSyncTimeOfLastPromo</key>
 	<real>453220973.91769803</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
-	<real>460408934.86969399</real>
+	<real>460495335.71736699</real>
+	<key>NoSyncTipsToNotShow</key>
+	<array>
+		<string>000</string>
+		<string>0000</string>
+		<string>0001</string>
+		<string>0002</string>
+		<string>0003</string>
+		<string>0004</string>
+		<string>0005</string>
+		<string>0006</string>
+		<string>0007</string>
+		<string>0008</string>
+		<string>0009</string>
+		<string>0010</string>
+		<string>0011</string>
+		<string>0012</string>
+		<string>0013</string>
+		<string>0014</string>
+		<string>0015</string>
+		<string>0016</string>
+		<string>0017</string>
+	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
 	<key>OpenArrangementAtStartup</key>
@@ -6737,7 +6769,7 @@
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-04T14:46:38Z</date>
+	<date>2015-08-24T02:18:15Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>

@@ -1,1 +1,1 @@
-/home/pi/.vim/plugged/solarized/vim-colors-solarized/colors/solarized.vim
+../plugged/solarized/vim-colors-solarized/colors/solarized.vim

@@ -12,3 +12,5 @@ ssh/.ssh/id_rsa_deploy
 vim/.gist-vim
 mycli/.aliases/mycli.alias
 tmux/.ngrok2/ngrok.yml
+atom/.atom/compile-cache
+atom/.atom/storage

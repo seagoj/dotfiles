@@ -38,3 +38,15 @@ ERROR: Failed to Retrive Categories
 	"errorMessage" : "too many requests, try again later"
 }
 
+======== Tue Sep  8 12:50:50 2015
+
+ERROR: Curl Request Failed
+ HTTP Response Code: 401
+======== Tue Sep  8 12:50:55 2015
+
+ERROR: Curl Request Failed
+ HTTP Response Code: 401
+======== Tue Sep  8 12:58:38 2015
+
+ERROR: Curl Request Failed
+ HTTP Response Code: 401

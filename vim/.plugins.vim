@@ -47,6 +47,7 @@ Plug 'altercation/solarized' | Plug 'seagoj/solarized-config.vim'
 " Plug 'chase/vim-ansible-yaml'
 Plug 'seagoj/airline-config.vim' | Plug 'bling/vim-airline'
 Plug 'chase/vim-ansible-yaml'
+Plug 'neilagabriel/vim-geeknote'
 call plug#end()
 
 if vimPlugInstalled == 0

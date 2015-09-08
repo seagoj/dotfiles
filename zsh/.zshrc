@@ -3,6 +3,10 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
+if [[ -f $HOME/.secrets ]]; then
+    source $HOME/.secrets
+fi
+
 # Source alias files
 for file in ${ZDOTDIR:-$HOME}/.aliases/*.alias; do
     source "$file"
