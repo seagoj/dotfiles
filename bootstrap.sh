@@ -78,6 +78,7 @@ function installOSSpecificPackages()
         ;;
     *)
         echo "No additional packages needed for $(uname -s)"
+        ;;
     esac
 }
 
