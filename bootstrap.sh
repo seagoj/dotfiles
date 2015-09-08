@@ -42,13 +42,15 @@ for p in "${PACKAGES[@]}"; do
 done
 
 case $(uname -s) in
-  "Linux")
+"Linux")
     stow $STOWOPTS archey
     ;;
-  "FreeBSD")
+"FreeBSD")
     stow $STOWOPTS archey
     ;;
-  "Darwin")
+"Darwin")
     stow $STOWOPTS mac iterm
+*)
+    echo "No additional packages needed for $(uname -s)"
 esac
 echo "Please source ~/.zshrc for changes to take affect"
