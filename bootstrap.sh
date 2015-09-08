@@ -1,21 +1,6 @@
 #!/bin/bash
 
-STOWOPTS=--ignore=\.gpg\ -vt\ $HOME
-declare -a SECRETS=($(find . -name *.gpg))
-
-for i in "${SECRETS[@]%.gpg}"; do
-    gpg --batch --yes --quiet --output $i --decrypt $i.gpg
-done
-
-if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
-    if which git >/dev/null; then
-        git clone --recursive git://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto" 
-    else 
-        echo "Git must be installed to pull down prezto.";
-    fi
-fi
-
-stow $STOWOPTS ansible\
+declare -a PACKAGES=(ansible\
     anyconnect\
     atom\
     bot\
@@ -34,6 +19,27 @@ stow $STOWOPTS ansible\
     vagrant\
     vim\
     zsh
+)
+
+function decryptSecrets()
+{
+    declare -a SECRETS=($(find . -name *.gpg))
+    for i in "${SECRETS[@]%.gpg}"; do
+        gpg --batch --yes --quiet --output $i --decrypt $i.gpg
+    done
+}
+
+# decryptSecrets
+
+STOWOPTS=--ignore=\.gpg\ --ignore=\package-install.sh\ -vt\ $HOME
+
+for p in "${PACKAGES[@]}"; do
+    echo "stowing $p"
+    if [[ -f $p/package-install.sh ]]; then
+        source $p/package-install.sh
+    fi
+    stow $STOWOPTS $p
+done
 
 case $(uname -s) in
   "Linux")
@@ -45,4 +51,4 @@ case $(uname -s) in
   "Darwin")
     stow $STOWOPTS mac iterm
 esac
- echo "Please source ~/.zshrc for changes to take affect"
+echo "Please source ~/.zshrc for changes to take affect"
