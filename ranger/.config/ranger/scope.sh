@@ -52,6 +52,8 @@ case "$extension" in
         exit 1;;
     rar)
         try unrar -p- lt "$path" && { dump | trim; exit 0; } || exit 1;;
+    jpeg|jpg|png|bmp)
+        img2txt --width="$width" --height="$height" "$path" && exit 4 || exit 1;;
     # PDF documents:
     pdf)
         try pdftotext -l 10 -nopgbrk -q "$path" - && \
@@ -73,7 +75,7 @@ case "$mimetype" in
         try highlight --out-format=ansi "$path" && { dump | trim; exit 5; } || exit 2;;
     # Ascii-previews of images:
     image/*)
-        img2txt --gamma=0.6 --width="$width" "$path" && exit 4 || exit 1;;
+        img2txt --width="$width" --height="$height" "$path" && exit 4 || exit 1;;
     # Display information about media files:
     video/* | audio/*)
         exiftool "$path" && exit 5
