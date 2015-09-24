@@ -3,6 +3,7 @@ zsh/.antigen/repos/*
 vim/.vim/bundle
 vim/.vim/plugged
 vim/.vim/.netrwhist
+vim/.vim/autoload/plug.vim
 */.DS_Store
 anyconnect/.anyconnect
 general/.secrets
@@ -15,3 +16,4 @@ tmux/.ngrok2/ngrok.yml
 atom/.atom/compile-cache
 atom/.atom/storage
 general/.config/feednix/log.txt
+geeknote/.geeknote/database.db
