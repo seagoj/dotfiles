@@ -35,9 +35,11 @@ STOWOPTS=--ignore=\.gpg\ --ignore=\package-install.sh\ -vt\ $HOME
 
 function decryptSecrets()
 {
+    read -sp "Enter passphrase: " pass
+
     declare -a SECRETS=($(find . -name *.gpg))
     for i in "${SECRETS[@]%.gpg}"; do
-        gpg --yes --quiet --output $i --decrypt $i.gpg
+        gpg --batch --yes --passphrase $pass --quiet --output $i --decrypt $i.gpg
     done
 }
 
