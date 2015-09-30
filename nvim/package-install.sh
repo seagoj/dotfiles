@@ -2,22 +2,33 @@
 
 function installNeovimMac()
 {
-    if ! which nvim >/dev/null; then
-        bootstrap brew
-        bootstrap vim
+    bootstrap brew
+    bootstrap vim
 
-        brew tap neovim/neovim
-        brew install --HEAD neovim
-    fi
+    brew tap neovim/neovim
+    brew install --HEAD neovim
 }
 
-case $(uname -s) in
-"Darwin")
-    installNeovimMac
-    ;;
-*)
-    DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-    echo "Please define ${DIR##*/} installation for $(uname -s)"
-    exit 1
-    ;;
-esac
+function installNeovimDebian()
+{
+    sudo apt-get install python-dev python-pip python3-dev python3-pip
+    sudo add-apt-repository ppa:neovim-ppa/unstable
+    sudo apt-get update
+    sudo apt-get install neovim
+}
+
+if ! which nvim >/dev/null; then
+    case $(uname -s) in
+    "Darwin")
+        installNeovimMac
+        ;;
+    "Linux")
+        installNeovimDebian
+        ;;
+    *)
+        DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+        echo "Please define ${DIR##*/} installation for $(uname -s)"
+        exit 1
+        ;;
+    esac
+fi

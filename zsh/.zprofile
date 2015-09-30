@@ -2,7 +2,11 @@
 
 # Paths
 export INPUTRC=~/.inputrc
-export CODE=/Volumes/code
+if [[ -d /Volumes/code ]]; then
+	export CODE=/Volumes/code
+else
+    export CODE=$HOME/code
+fi
 export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
