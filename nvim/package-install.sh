@@ -18,6 +18,8 @@ function installNeovimDebian()
 }
 
 if ! which nvim >/dev/null; then
+    ln -s ~/.vimrc ~/.nvimrc
+    ln -s ~/.vim ~/.nvim
     case $(uname -s) in
     "Darwin")
         installNeovimMac

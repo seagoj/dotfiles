@@ -37,7 +37,7 @@ function decryptSecrets()
 {
     declare -a SECRETS=($(find . -name *.gpg))
     for i in "${SECRETS[@]%.gpg}"; do
-        gpg --batch --yes --quiet --output $i --decrypt $i.gpg
+        gpg --yes --quiet --output $i --decrypt $i.gpg
     done
 }
 
@@ -86,5 +86,4 @@ function installOSSpecificPackages()
 decryptSecrets
 install ${PACKAGES[@]}
 installOSSpecificPackages
-
 echo "Please source ~/.zshrc for changes to take effect"
