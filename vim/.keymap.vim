@@ -33,4 +33,4 @@ cmap        w!!             w !sudo tee % >/dev/null
 nnoremap    <F3>            <Esc>:Git push<cr>
 nnoremap    <F12>           <Esc>:Dash!<cr>
 nnoremap    <F5>            <Esc>:!phpspec run <c-r>=expand('%:p')<cr><cr>
-
+nnoremap    <leader>b       F-vlUdl

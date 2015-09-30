@@ -765,15 +765,15 @@
 		<integer>1</integer>
 	</dict>
 	<key>NSWindow Frame NSFontPanel</key>
-	<string>1155 110 445 103 0 0 1600 1177 </string>
+	<string>835 33 445 77 0 0 1280 800 </string>
 	<key>NSWindow Frame Preferences</key>
 	<string>185 320 606 456 0 0 1280 777 </string>
 	<key>NSWindow Frame UKCrashReporter</key>
 	<string>80 193 592 584 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 0</key>
-	<string>4 0 1276 777 0 0 1280 777 </string>
+	<string>5 350 570 427 0 0 1280 777 </string>
 	<key>NSWindow Frame iTerm Window 1</key>
-	<string>-306 803 955 1051 -308 800 1920 1057 </string>
+	<string>-306 1439 570 427 -308 800 1920 1080 </string>
 	<key>NSWindow Frame iTerm Window 2</key>
 	<string>-306 803 955 1051 -308 800 1920 1057 </string>
 	<key>NeverWarnAboutShortLivedSessions_A1D46E23-CBED-4F4A-89C5-03CA02C2B150</key>
@@ -1338,7 +1338,7 @@
 			<key>Non-ASCII Anti Aliased</key>
 			<true/>
 			<key>Normal Font</key>
-			<string>SauceCodePowerline-Semibold 12</string>
+			<string>SauceCodePowerline-Semibold 10</string>
 			<key>Option Key Sends</key>
 			<integer>0</integer>
 			<key>Prompt Before Closing 2</key>
@@ -6666,7 +6666,7 @@
 	<key>NoSyncDoNotWarnBeforeMultilinePaste_selection</key>
 	<integer>0</integer>
 	<key>NoSyncLastTipTime</key>
-	<real>462032653.91971803</real>
+	<real>463004161.417687</real>
 	<key>NoSyncNeverRemindPrefsChangesCopy</key>
 	<true/>
 	<key>NoSyncNeverRemindPrefsChangesLostForFile</key>
@@ -6677,6 +6677,8 @@
 	<real>453220973.91769803</real>
 	<key>NoSyncTimeOfLastPromoDownload</key>
 	<real>460495335.71736699</real>
+	<key>NoSyncTipsDisabled</key>
+	<true/>
 	<key>NoSyncTipsToNotShow</key>
 	<array>
 		<string>000</string>
@@ -6698,6 +6700,13 @@
 		<string>0015</string>
 		<string>0016</string>
 		<string>0017</string>
+		<string>0018</string>
+		<string>0019</string>
+		<string>0020</string>
+		<string>0021</string>
+		<string>0022</string>
+		<string>0023</string>
+		<string>0024</string>
 	</array>
 	<key>OnlyWhenMoreTabs</key>
 	<true/>
@@ -6765,11 +6774,11 @@
 	<key>SUFeedAlternateAppNameKey</key>
 	<string>iTerm</string>
 	<key>SUFeedURL</key>
-	<string>https://iterm2.com/appcasts/testing3.xml</string>
+	<string>http://iterm2.com/appcasts/testing3.xml</string>
 	<key>SUHasLaunchedBefore</key>
 	<true/>
 	<key>SULastCheckTime</key>
-	<date>2015-08-24T02:18:15Z</date>
+	<date>2015-09-28T03:09:41Z</date>
 	<key>SavePasteHistory</key>
 	<false/>
 	<key>Secure Input</key>
@@ -10842,7 +10851,7 @@
 	<key>findRegex_iTerm</key>
 	<false/>
 	<key>iTerm Version</key>
-	<string>2.9.20150626</string>
+	<string>2.9.20150830</string>
 	<key>kCommandHistoryHasEverBeenUsed</key>
 	<true/>
 </dict>

@@ -13,6 +13,7 @@ declare -a PACKAGES=(ansible\
     nginx\
     nvim\
     php\
+    ranger\
     ssh\
     system\
     tmux\

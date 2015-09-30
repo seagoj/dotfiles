@@ -29,10 +29,10 @@ if [[ $? -eq 0 ]]; then
 
     if [[ $ISSUE != "" ]]; then
         echo $ISSUE
-        git checkout -b $TYPE/$ISSUE-$BRANCH && git push -u development $TYPE/$ISSUE-$BRANCH
-        ghi edit $ISSUE -L "$TYPE" -L "2 - Working"
+        git checkout -b $TYPE/$ISSUE-$BRANCH && git push --set-upstream staging $TYPE/$ISSUE-$BRANCH
+        # ghi edit $ISSUE -L "$TYPE" -L "2 - Working"
     else
-        git checkout -b $TYPE/$BRANCH && git push -u development $TYPE/$BRANCH
+        git checkout -b $TYPE/$BRANCH && git push --set-upstream staging $TYPE/$BRANCH
     fi
 else
     echo "Invalid branch type $TYPE"
