@@ -15,3 +15,7 @@ tmux/.ngrok2/ngrok.yml
 atom/.atom/compile-cache
 atom/.atom/storage
 general/.config/feednix/log.txt
+general/.config/configstore/bower-github.yml
+general/.config/configstore/insight-bower.yml
+general/.config/configstore/update-notifier-bower.yml
+ranger/.config/ranger/history
