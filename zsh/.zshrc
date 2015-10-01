@@ -77,6 +77,6 @@ fi
 
 test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
 
-
-source ~/.xsh
-
+if [[ -f ~/.xsh ]]; then
+    source ~/.xsh
+fi
