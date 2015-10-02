@@ -31,6 +31,7 @@ fi
 export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
 export VISUAL=$(which macvim subl | grep -m1 -e '^/')
 export PAGER='less'
+export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Language
 if [[ -z "$LANG" ]]; then
