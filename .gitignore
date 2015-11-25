@@ -2,6 +2,8 @@
 zsh/.antigen/repos/*
 vim/.vim/bundle
 vim/.vim/plugged
+nvim/.config/nvim/plugged
+nvim/.config/nvim/bundle
 vim/.vim/.netrwhist
 vim/.vim/autoload/plug.vim
 */.DS_Store
