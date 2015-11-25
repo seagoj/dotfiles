@@ -1,25 +1,16 @@
-#!/bin/bash
+#!/bin/zsh
 
 function installGeeknote()
 {
-    if ! which geeknote >/dev/null; then
-        bootstrap git
+    autoload updateRepo
+    # if ! which geeknote >/dev/null; then
         bootstrap python
 
-        if [[ -z "$CODE" ]]; then
-            CODE=$HOME/code
-        fi
-
-        if [[ ! -d "$CODE" ]]; then
-            mkdir -p $CODE
-        fi
-
-	CWD = ${PWD}
-        git clone git://github.com/VitaliyRodnenko/geeknote.git ${CODE}/geeknote
-        cd ${CODE}/geeknote
-        sudo python setup.py install
-	cd ${DOTFILES:~$CWD}
-    fi
+        updateRepo git://github.com/VitaliyRodnenko/geeknote.git geeknote &&\
+            sudo pacman -Syu python2-setuptools --noconfirm &&\
+            sudo python2 setup.py install
+        popd
+    # fi
 }
 
 installGeeknote

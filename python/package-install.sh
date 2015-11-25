@@ -7,15 +7,23 @@ function installPythonMac()
 
 function installPythonDebian()
 {
-    apt-get install python 
+    apt-get install python
+}
+
+function installPythonArch()
+{
+    sudo pacman -Syu python python2 --noconfirm
 }
 
 if ! which python >/dev/null; then
-    case $(uname -s) in
+    case $OS_TYPE in
+    "Arch")
+        installPythonArch
+        ;;
     "Darwin")
         installPythonMac
         ;;
-    "Linux")
+    "Debian")
         installPythonDebian
         ;;
     *)

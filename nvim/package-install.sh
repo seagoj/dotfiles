@@ -17,15 +17,21 @@ function installNeovimDebian()
     sudo apt-get install neovim
 }
 
+function installNeovimArch()
+{
+    sudo pacman -Syu neovim python2-neovim python-neovim --noconfirm
+}
+
 if ! which nvim >/dev/null; then
-    ln -s ~/.vimrc ~/.nvimrc
-    ln -s ~/.vim ~/.nvim
-    case $(uname -s) in
+    case $OS_TYPE in
     "Darwin")
         installNeovimMac
         ;;
-    "Linux")
-        installNeovimDebian
+    "Arch")
+        installNeovimArch
+        ;;
+    "Debian")
+            installNeovimDebian
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

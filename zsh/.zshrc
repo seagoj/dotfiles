@@ -1,3 +1,18 @@
+function setOSType()
+{
+    if [[ -f /etc/arch-release ]]; then
+        export OS_TYPE='Arch'
+    elif [[ $(uname -s) == 'Darwin' ]]; then
+        export OS_TYPE='Darwin'
+    elif [[ -f /etc/redhat-release ]]; then
+        export OS_TYPE='RedHat'
+    elif [[ $(uname -s) == 'Linux' ]]; then
+        export OS_TYPE='Debian'
+    fi
+}
+
+setOSType
+
 # initialize prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -66,7 +81,8 @@ else
     echo "geeknote is not installed.";
 fi
 
-autoload $HOME/functions/*(:t)
+autoload updateRepo
+# autoload $HOME/functions/*(:t)
 
 # initialize fasd
 if which fasd >/dev/null; then

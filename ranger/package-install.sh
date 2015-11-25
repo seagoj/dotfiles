@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 function installRangerMac()
 {
@@ -12,13 +12,21 @@ function installRangerLinux()
     apt-get install -y ranger
 }
 
+function installRangerArch()
+{
+    autoload archInstall; archInstall ranger
+}
+
 if ! which ranger >/dev/null; then
-    case $(uname -s) in
+    case $OS_TYPE in
     "Darwin")
         installRangerMac
         ;;
-    Linux)
+    "Debian")
         installRangerLinux
+        ;;
+    "Arch")
+        installRangerArch
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

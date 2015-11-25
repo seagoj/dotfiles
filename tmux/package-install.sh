@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 function installTmuxMac()
 {
@@ -12,13 +12,21 @@ function installTmuxLinux()
     apt-get install -y tmux
 }
 
+function installTmuxArch()
+{
+    autoload archInstall; archInstall tmux
+}
+
 if ! which tmux >/dev/null; then
-    case $(uname -s) in
+    case $OS_TYPE in
     Darwin)
         installTmuxMac
         ;;
     Linux)
         installTmuxLinux
+        ;;
+    Arch)
+        installTmuxArch
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

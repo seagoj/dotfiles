@@ -1,4 +1,4 @@
 #!/bin/zsh
 
 cd ~/.vim/bundle/YouCompleteMe
-./install.sh
+./install.sh --clang-completer --system-libclang

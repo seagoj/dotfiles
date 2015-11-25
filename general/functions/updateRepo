@@ -1,0 +1,16 @@
+if [[ $# -ne 2 ]]; then
+    echo Invalid parameters
+    exit 1
+fi
+
+bootstrap git
+
+repo="${CODE:-${$HOME}/code}/${2}"
+
+if [[ ! -d $repo ]]; then
+    git clone ${1} $repo &&\
+        pushd $repo
+else
+    pushd $repo &&\
+        git pull
+fi
