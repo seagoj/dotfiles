@@ -24,7 +24,11 @@
 [mergetool "fugitive"]
     cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [diff]
-    tool = nvim -d
+    tool = nvimdiff
+[difftool]
+    prompt = true
+[difftool "nvimdiff"]
+    cmd = nvim -d -u ~/.config/nvim/init.vim \"$LOCAL\" \"$REMOTE\"
 [ghi]
 	token = !security find-internet-password -a seagoj -s github.com -l 'ghi token' -w
 [color]

@@ -7,6 +7,9 @@ if [[ -d /Volumes/code ]]; then
 else
     export CODE=$HOME/code
 fi
+export XDG_CONFIG_HOME="$HOME/.config"
+export XDG_DATA_HOME="$HOME/.local/share"
+export XDG_CACHE_HOME="$HOME/.cache"
 export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
@@ -83,7 +86,14 @@ if [[ ! -d "$TMPPREFIX" ]]; then
   mkdir -p "$TMPPREFIX"
 fi
 
+# rbenv init
+export RBENV_ROOT="${HOME}/.rbenv"
+if which rbenv > /dev/null; then eval "$(rbenv init -)"; fi
+
+# PATH="${HOME}/.rbenv/shims:${PATH}"
+
 # Setting PATH for Python 2.7
 # The orginal version is saved in .zprofile.pysave
 PATH="/Library/Frameworks/Python.framework/Versions/2.7/bin:${PATH}"
 export PATH
+

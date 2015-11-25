@@ -1,0 +1,6 @@
+alias nvim-install='brew tap neovim/neovim && brew install --HEAD neovim'
+alias nvim-update='brew reinstall --HEAD neovim'
+alias brew-init='cat ~/.homebrew | xargs brew install && nvim-install'
+alias brew-update='brew update && brew upgrade --all && brew leaves >! ~/.homebrew && nvim-update'
+alias system-init='brew-init'
+alias system-update='brew-update'

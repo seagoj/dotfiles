@@ -1,6 +1,7 @@
 #!/bin/bash
 
-declare -a PACKAGES=(ansible\
+declare -a PACKAGES=(
+    ansible\
     anyconnect\
     atom\
     bot\

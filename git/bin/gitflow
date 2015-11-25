@@ -10,30 +10,30 @@ validateBranch () {
 
 TYPE=$1
 BRANCH=$2
-if [[ -z "$3" ]]; then
-    ISSUE=""
-else
-    ISSUE=$3
-fi
+# if [[ -z "$3" ]]; then
+#     ISSUE=""
+# else
+#     ISSUE=$3
+# fi
 validateBranch $TYPE
 if [[ $? -eq 0 ]]; then
-    # shift
-    # BRANCH=""
+    shift
+    BRANCH=""
 
-    # for var in "$@"; do
-    #     if [[ $BRANCH != "" ]]; then
-    #         BRANCH=${BRANCH}_
-    #     fi
-    #     BRANCH=${BRANCH}$var
-    # done
+    for var in "$@"; do
+        if [[ $BRANCH != "" ]]; then
+            BRANCH=${BRANCH}-
+        fi
+        BRANCH=${BRANCH}$var
+    done
 
-    if [[ $ISSUE != "" ]]; then
-        echo $ISSUE
-        git checkout -b $TYPE/$ISSUE-$BRANCH && git push --set-upstream staging $TYPE/$ISSUE-$BRANCH
-        # ghi edit $ISSUE -L "$TYPE" -L "2 - Working"
-    else
+    # if [[ $ISSUE != "" ]]; then
+    #     echo $ISSUE
+    #     git checkout -b $TYPE/$ISSUE-$BRANCH && git push --set-upstream staging $TYPE/$ISSUE-$BRANCH
+    #     # ghi edit $ISSUE -L "$TYPE" -L "2 - Working"
+    # else
         git checkout -b $TYPE/$BRANCH && git push --set-upstream staging $TYPE/$BRANCH
-    fi
+    # fi
 else
     echo "Invalid branch type $TYPE"
     exit 1

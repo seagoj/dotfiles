@@ -1,0 +1,23 @@
+snippet style "Stylesheet reference"
+<link rel='stylesheet' type='text/css' href='$1'>
+$0
+endsnippet
+
+snippet doctype "HTML Doctype" b
+<!DOCTYPE html>
+$0
+endsnippet
+
+snippet angular "Angular Application Template" b
+<!DOCTYPE html>
+<html ng-app="${1:MyApp}">
+<body>
+	$0
+	<div ng-view></div>
+	<script type="text/javascript" src="../bower_components/angular/angular.js"></script>
+	<script type="text/javascript" src="../bower_components/angular-route/angular-route.js"></script>
+	<script type="text/javascript" src="${2:app.js}"></script>
+</body>
+</html>
+endsnippet
+
