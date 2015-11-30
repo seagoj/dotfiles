@@ -29,18 +29,19 @@ declare -a MAC_PACKAGES=(
 )
 
 declare -a NIX_PACKAGES=(
-#    archey
+
 )
 
-STOWOPTS=--ignore=\.gpg\ --ignore=\package-install.sh\ -vt\ $HOME
+declare -a ARCH_PACKAGES=(
+    archey\
+    termite
+)
 
 function decryptSecrets()
 {
-    read -sp "Enter passphrase: " pass
-
-    declare -a SECRETS=($(find . -name *.gpg))
+    declare -a SECRETS=($(find . -name "*.gpg"))
     for i in "${SECRETS[@]%.gpg}"; do
-        gpg --batch --yes --passphrase $pass --quiet --output $i --decrypt $i.gpg
+        gpg --batch --yes --quiet --output $i --decrypt $i.gpg
     done
 }
 
@@ -58,19 +59,23 @@ function bootstrap()
 function install()
 {
     declare -a PACKS=("${@}")
+    STOWOPTS=""
 
     for p in "${PACKS[@]}"; do
         echo "stowing $p"
         if [[ -f $p/package-install.sh ]]; then
             source $p/package-install.sh
         fi
-        stow $STOWOPTS $p
+        stow --ignore=.gpg --ignore=package-install.sh -vt $HOME $p
     done
 }
 
 function installOSSpecificPackages()
 {
-    case $(uname -s) in
+    case $OS_TYPE in
+    Arch)
+        install ${ARCH_PACKAGES[@]}
+        ;;
     "Linux")
         install ${NIX_PACKAGES[@]}
         ;;

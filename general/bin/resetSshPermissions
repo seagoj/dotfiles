@@ -1,0 +1,33 @@
+#!/bin/bash
+
+SSH_CONFIG=${HOME}/.ssh
+
+function setPermission()
+{
+    if [[ $# -ne 2 ]]; then
+        echo "usage:"
+        echo "setPermission [path to file] [permission]"
+        exit 1
+    fi
+
+    if [[ -e ${1} ]]; then
+        sudo chmod ${2} ${1} &&\
+            echo - ${2}: ${1}
+    fi
+}
+
+echo "# Reset keys"
+declare -a KEYS=($(find ${SSH_CONFIG}/ -name "*.pub"))
+for i in "${KEYS[@]%.pub}"; do
+    setPermission ${i} 600
+    setPermission ${i}.pub 600
+done
+echo ""
+
+echo "# Reset known_hosts"
+setPermission ${SSH_CONFIG}/known_hosts 644
+echo ""
+
+echo "# Reset .ssh"
+setPermission "${SSH_CONFIG}" 755
+echo ""

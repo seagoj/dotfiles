@@ -44,6 +44,8 @@ beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 terminal = "termite" or "xterm"
 editor = os.getenv("EDITOR") or "nvim" or "vim" or "nano"
 editor_cmd = terminal .. " -e " .. editor
+browser = os.getenv("BROWSER")
+mounter = terminal .. " -e bashmount"
 
 -- Default modkey.
 -- Usually, Mod4 is the key with a logo between Control and Alt.
@@ -97,7 +99,10 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "open terminal", terminal }
+                                    { "broswer", browser },
+                                    { "mount drives", mounter },
+                                    { "terminal", terminal },
+                                    { "vm host", 'virtualbox' }
                                   }
                         })
 

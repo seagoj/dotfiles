@@ -96,3 +96,9 @@ test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_in
 if [[ -f ~/.xsh ]]; then
     source ~/.xsh
 fi
+
+if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
+    source $CODE/sourcerer/sourcerer.sh
+fi
+
+eval $(dircolors ~/.dircolors)

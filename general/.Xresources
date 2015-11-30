@@ -1,12 +1,12 @@
  URxvt*termName:rxvt-256color
- urxvt*transparent:true
+ /* urxvt*transparent:true */
  urxvt.background: [60]#000000
  urxvt*foreground: White
  URxvt.font: xft:Anonymous Pro for Powerline:size=10:antialias=true:autohint=false,xft:IPAGothic:size=11:antialias=true
  URxvt.boldFont: xft:Anonymous Pro for Powerline:size=10:weight=Bold:antialias=true:autohint=false,xft:IPAGothic:size=11:weight=Bold:antialias=true*utf8: 2
  urxvt.imLocale:	en_US.UTF-8
  urxvt*scrollBar: false
- urxvt.perl-ext-common:	default, matcher
+ /* urxvt.perl-ext-common:	default, matcher */
  urxvt.url-launcher: /opt/chromium
  urxvt.matcher.button: 1
  urxvt.colorUL: #4682B4

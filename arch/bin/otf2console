@@ -1,0 +1,8 @@
+#!/bin/zsh
+
+size=10
+localFontLocation=${HOME}/.local/share/fonts
+consoleFontLocation=/usr/share/kbd/consolefonts
+
+# otf2bdf -r 72 -p ${size} -c C ${localFontLocation}/${1}.otf | sed -e "s/AVERAGE_WIDTH.*/AVERAGE_WIDTH 80/" > ${1}-${size}.bdf
+bdf2psf ${1}-${size}.bdf /usr/share/bdf2psf/standard.equivalents /usr/share/bdf2psf/linux.set+/usr/share/bdf2psf/useful.set 256 ${consoleFontLocation}/${1}-${size}.psfu
