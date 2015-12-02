@@ -19,7 +19,6 @@ declare -a PACKAGES=(
     system\
     tmux\
     vagrant\
-    vim\
     zsh
 )
 
@@ -32,7 +31,12 @@ declare -a NIX_PACKAGES=(
 
 )
 
+declare -a DEBIAN_PACKAGES=(
+    debian
+)
+
 declare -a ARCH_PACKAGES=(
+    arch\
     archey\
     termite
 )
@@ -47,19 +51,7 @@ function decryptSecrets()
 
 function bootstrap()
 {
-    echo "- $1";
-    if [[ -f $1/package-install.sh ]]; then
-        source $1/package-install.sh
-    else
-        echo "No install script defined for $1"
-        exit 1
-    fi
-}
-
-function install()
-{
     declare -a PACKS=("${@}")
-    STOWOPTS=""
 
     for p in "${PACKS[@]}"; do
         echo "stowing $p"
@@ -74,16 +66,13 @@ function installOSSpecificPackages()
 {
     case $OS_TYPE in
     Arch)
-        install ${ARCH_PACKAGES[@]}
+        bootstrap ${ARCH_PACKAGES[@]}
         ;;
-    "Linux")
-        install ${NIX_PACKAGES[@]}
+    Linux | FreeBSD)
+        bootstrap ${NIX_PACKAGES[@]}
         ;;
-    "FreeBSD")
-        install ${NIX_PACKAGES[@]}
-        ;;
-    "Darwin")
-        install ${MAC_PACKAGES[@]}
+    Darwin | Mac)
+        bootstrap ${MAC_PACKAGES[@]}
         ;;
     *)
         echo "No additional packages needed for $(uname -s)"
@@ -91,7 +80,32 @@ function installOSSpecificPackages()
     esac
 }
 
+function installOS()
+{
+    case $OS_TYPE in
+    Arch)
+        bootstrap arch
+        ;;
+    Debian)
+        bootstrap debian
+        ;;
+    Linux | FreeBSD)
+        bootstrap linux
+        ;;
+    Darwin | Mac)
+        bootstrap mac
+        ;;
+    esac
+}
+
+function installShell()
+{
+    bootstrap zsh
+}
+
+installOS
+installShell
 decryptSecrets
-install ${PACKAGES[@]}
+bootstrap ${PACKAGES[@]}
 installOSSpecificPackages
 echo "Please source ~/.zshrc for changes to take effect"

@@ -1,0 +1,4 @@
+#!/bin/bash
+#vim: filetype=sh
+
+sudo brew update ${@}

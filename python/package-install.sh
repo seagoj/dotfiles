@@ -1,30 +1,15 @@
 #!/bin/bash
 
-function installPythonMac()
-{
-    brew install python
-}
-
-function installPythonDebian()
-{
-    apt-get install python
-}
-
-function installPythonArch()
-{
-    sudo pacman -Syu python python2 --noconfirm
-}
-
 if ! which python >/dev/null; then
     case $OS_TYPE in
-    "Arch")
-        installPythonArch
+    Arch)
+        install python python2
         ;;
-    "Darwin")
-        installPythonMac
+    Darwin | Mac)
+        install python
         ;;
-    "Debian")
-        installPythonDebian
+    Debian)
+        install python
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

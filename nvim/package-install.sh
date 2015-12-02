@@ -1,4 +1,4 @@
-#! /bin/bash
+#! /bin/zsh
 
 function installNeovimMac()
 {
@@ -17,25 +17,31 @@ function installNeovimDebian()
     sudo apt-get install neovim
 }
 
-function installNeovimArch()
+function installSourcerer()
 {
-    sudo pacman -Syu neovim python2-neovim python-neovim --noconfirm
+    if [[ ! -f ${XDG_CONFIG_HOME}/nvim/colors/sourcerer.vim ]]; then
+        autoload updateRepo; updateRepo git://github.com/xero/sourcerer.git sourcerer
+        ln -s ${CODE}/sourcerer/sourcerer.vim $XDG_CONFIG_HOME/nvim/colors/sourcerer.vim
+    fi
 }
 
 if ! which nvim >/dev/null; then
-    case $OS_TYPE in
-    "Darwin")
+    case "${OS_TYPE}" in
+    Darwin | Mac)
         installNeovimMac
+        installSourcerer
         ;;
-    "Arch")
-        installNeovimArch
+    Arch)
+        install neovim python2-neovim python-neovim
+        installSourcerer
         ;;
-    "Debian")
-            installNeovimDebian
+    Debian)
+        installNeovimDebian
+        installSourcerer
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
-        echo "Please define ${DIR##*/} installation for $(uname -s)"
+        echo "Please define ${DIR##*/} installation for ${OS_TYPE}"
         exit 1
         ;;
     esac

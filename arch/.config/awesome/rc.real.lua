@@ -41,7 +41,7 @@ end
 beautiful.init("/usr/share/awesome/themes/default/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
-terminal = "termite" or "xterm"
+terminal = os.getenv("TERMINAL") or "termite" or "xterm"
 editor = os.getenv("EDITOR") or "nvim" or "vim" or "nano"
 editor_cmd = terminal .. " -e " .. editor
 browser = os.getenv("BROWSER")

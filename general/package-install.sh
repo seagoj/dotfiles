@@ -8,7 +8,7 @@ function installFonts()
 }
 
 case $OS_TYPE in
-"Arch")
+Arch | Mac | Debian)
     installFonts
     ;;
 *)

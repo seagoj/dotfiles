@@ -1,1 +1,4 @@
+#!/bin/bash
+#vim: filetype=sh
+
 sudo pacman -Syu --noconfirm ${@}

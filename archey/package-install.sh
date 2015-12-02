@@ -3,7 +3,7 @@
 if ! which archey > /dev/null; then
     case $OS_TYPE in
     Arch)
-        aurInstall archey3-git
+        install archey3-git
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

@@ -1,8 +1,6 @@
-#!/bin/bash
+#!/bin/zsh
 
 if [[ ! -f iterm/.iterm/sourcerer.itermcolors ]]; then
-    bootstrap git
-
-    git clone https://github.com/xero/sourcerer $CODE/sourcerer
+    autoload updateRepo; updateRepo https://github.com/xero/sourcerer sourcerer
     ln -s $CODE/sourcerer/sourcerer.itermcolors iterm/.iterm/sourcerer.itermcolors
 fi

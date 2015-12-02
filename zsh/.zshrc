@@ -1,30 +1,13 @@
-function setOSType()
-{
-    if [[ -f /etc/arch-release ]]; then
-        export OS_TYPE='Arch'
-    elif [[ $(uname -s) == 'Darwin' ]]; then
-        export OS_TYPE='Darwin'
-    elif [[ -f /etc/redhat-release ]]; then
-        export OS_TYPE='RedHat'
-    elif [[ $(uname -s) == 'Linux' ]]; then
-        export OS_TYPE='Debian'
-    fi
-}
-
-setOSType
+#vim: filetype=sh
 
 # initialize prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
 fi
 
-if [[ -f $HOME/.secrets ]]; then
-    source $HOME/.secrets
-fi
-
 # Source alias files
 for file in ${ZDOTDIR:-$HOME}/.aliases/*.alias; do
-    source "$file"
+    source "${file}"
 done
 
 # key bindings
@@ -76,12 +59,12 @@ bindkey -M viins ' ' magic-space
 
 # set geeknote editor
 if which geeknote >/dev/null; then
-    geeknote settings --editor $EDITOR
+    # geeknote settings --editor $EDITOR
 else
     echo "geeknote is not installed.";
 fi
 
-autoload updateRepo
+# autoload updateRepo
 # autoload $HOME/functions/*(:t)
 
 # initialize fasd
@@ -91,14 +74,16 @@ else
     echo "fasd is not installed.";
 fi
 
-test -e ${HOME}/.iterm2_shell_integration.zsh && source ${HOME}/.iterm2_shell_integration.zsh
+if [[ -f ${HOME}/.iterm2_shell_integration.zsh ]]; then
+    source ${HOME}/.iterm2_shell_integration.zsh
+fi
 
-if [[ -f ~/.xsh ]]; then
-    source ~/.xsh
+if [[ -f ${HOME}/.xsh ]]; then
+    source ${HOME}/.xsh
 fi
 
 if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
     source $CODE/sourcerer/sourcerer.sh
 fi
 
-eval $(dircolors ~/.dircolors)
+eval $(dircolors ${HOME}/.dircolors)

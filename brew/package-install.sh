@@ -1,7 +1,6 @@
 # /bin/bash
 
-function installBrew()
-{
+if [[ $OS_TYPE -eq "Mac" ]]; then
     if ! which curl >/dev/null; then
         echo "Define how to install curl in brew"
         exit 1
@@ -15,6 +14,4 @@ function installBrew()
     if ! which brew >/dev/null; then
         ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
     fi
-}
-
-installBrew
+fi

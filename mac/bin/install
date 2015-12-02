@@ -1,0 +1,8 @@
+#!/bin/zsh
+#vim: filetype=sh
+
+if ! which brew > /dev/null; then
+    autoload bootstrap; bootstrap brew
+fi
+
+sudo brew install ${@}

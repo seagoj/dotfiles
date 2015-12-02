@@ -1,32 +1,15 @@
 #!/bin/zsh
 
-function installRangerMac()
-{
-    bootstrap brew
-
-    brew install w3m lynx highlight atool mediainfo xpdf libcaca --with-imlib2
-}
-
-function installRangerLinux()
-{
-    apt-get install -y ranger
-}
-
-function installRangerArch()
-{
-    autoload archInstall; archInstall ranger
-}
-
 if ! which ranger >/dev/null; then
     case $OS_TYPE in
-    "Darwin")
-        installRangerMac
+    Darwin | Mac)
+        install  w3m lynx highlight atool mediainfo xpdf libcaca --with-imlib2
         ;;
-    "Debian")
-        installRangerLinux
+    Debian)
+        install ranger
         ;;
-    "Arch")
-        installRangerArch
+    Arch)
+        install ranger
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

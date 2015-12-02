@@ -7,7 +7,7 @@ function installGeeknote()
         bootstrap python
 
         updateRepo git://github.com/VitaliyRodnenko/geeknote.git geeknote &&\
-            sudo pacman -Syu python2-setuptools --noconfirm &&\
+            install python2-setuptools &&\
             sudo python2 setup.py install
         popd
     # fi

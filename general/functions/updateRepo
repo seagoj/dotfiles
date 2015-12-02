@@ -8,7 +8,7 @@ bootstrap git
 repo="${CODE:-${$HOME}/code}/${2}"
 
 if [[ ! -d $repo ]]; then
-    git clone ${1} $repo &&\
+    git clone --recursive ${1} $repo &&\
         pushd $repo
 else
     pushd $repo &&\

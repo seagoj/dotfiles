@@ -1,32 +1,12 @@
 #!/bin/zsh
 
-function installTmuxMac()
-{
-    bootstrap brew
-
-    brew install https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb
-}
-
-function installTmuxLinux()
-{
-    apt-get install -y tmux
-}
-
-function installTmuxArch()
-{
-    autoload archInstall; archInstall tmux
-}
-
 if ! which tmux >/dev/null; then
     case $OS_TYPE in
-    Darwin)
-        installTmuxMac
+    Darwin | Mac)
+        install https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb
         ;;
-    Linux)
-        installTmuxLinux
-        ;;
-    Arch)
-        installTmuxArch
+    Linux | Arch)
+        install tmux
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

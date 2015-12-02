@@ -4,6 +4,7 @@ vim/.vim/bundle
 vim/.vim/plugged
 nvim/.config/nvim/plugged
 nvim/.config/nvim/bundle
+nvim/.config/nvim/colors/sourcerer.vim
 vim/.vim/.netrwhist
 vim/.vim/autoload/plug.vim
 */.DS_Store

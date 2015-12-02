@@ -3,7 +3,7 @@
 if ! which termite >/dev/null; then
     case $OS_TYPE in
     Arch)
-        archInstall termite
+        install termite
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

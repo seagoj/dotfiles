@@ -1,0 +1,20 @@
+#!/bin/bash
+#vim: filetype=sh
+
+if [[ $# -eq 0 ]]; then
+    echo "usage:"
+    echo "install [...package names]"
+    exit 1
+fi
+
+for package in "${@}"; do
+    sudo pacman -Syu ${package} --noconfirm
+
+    if [[ $? -ne 0 ]]; then
+        pushd ${BUILD_LOCATION:-${HOME}/builds}
+        git clone https://aur.archlinux.org/${package}.git
+        cd ${package} &&\
+        makepkg -sri --noconfirm
+        popd
+    fi
+done
