@@ -70,6 +70,7 @@ path=(
     $path
     $GOPATH/bin
     ./bin
+    ./node_modules/**/bin
 )
 
 # Less
