@@ -19,7 +19,8 @@ declare -a PACKAGES=(
     system\
     tmux\
     vagrant\
-    zsh
+    php\
+    npm
 )
 
 declare -a MAC_PACKAGES=(

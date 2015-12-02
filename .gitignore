@@ -14,6 +14,7 @@ ssh/.ssh/config
 ssh/.ssh/id_rsa
 ssh/.ssh/id_rsa_deploy
 ssh/.ssh/nexus6
+ssh/.ssh/known_hosts
 vim/.gist-vim
 mycli/.aliases/mycli.alias
 tmux/.ngrok2/ngrok.yml
