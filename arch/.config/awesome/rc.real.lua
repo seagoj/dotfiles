@@ -37,10 +37,10 @@ end
 -- }}}
 
 -- {{{ Variable definitions
-theme = "blackburn"
+-- theme = "blackburn"
 -- theme = "multicolor"
 -- theme = "niceandclean"
-theme = "steamburn"
+theme = "steamburn-mod"
 -- theme = "lined"
 -- theme = "dremora"
 -- Themes define colours, icons, font and wallpapers.
