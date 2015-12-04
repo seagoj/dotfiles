@@ -26,3 +26,5 @@ general/.config/configstore/insight-bower.yml
 general/.config/configstore/update-notifier-bower.yml
 ranger/.config/ranger/history
 geeknote/.geeknote/database.db
+tmux/.tmux/plugins/tmux-resurrect
+tmux/.tmux/plugins/tmux-sensible

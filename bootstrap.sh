@@ -1,33 +1,33 @@
 #!/bin/zsh
 
 declare -a PACKAGES=(
-    ansible\
-    anyconnect\
-    atom\
-    bot\
-    geeknote\
-    general\
-    git\
-    irssi\
-    mysql\
-    ncmpcpp\
-    nginx\
-    nvim\
-    php\
-    ranger\
-    ssh\
-    system\
-    tmux\
-    vagrant\
-    php\
-    npm\
-    sass\
-    chromium\
+    ansible
+    anyconnect
+    atom
+    bot
+    geeknote
+    general
+    git
+    irssi
+    mysql
+    ncmpcpp
+    nginx
+    nvim
+    php
+    ranger
+    ssh
+    system
+    tmux
+    vagrant
+    php
+    npm
+    sass
+    chromium
     wego
 )
 
 declare -a MAC_PACKAGES=(
-    mac\
+    mac
     iterm
 )
 
@@ -40,8 +40,9 @@ declare -a DEBIAN_PACKAGES=(
 )
 
 declare -a ARCH_PACKAGES=(
-    arch\
-    archey\
+    arch
+    awesome
+    archey
     termite
 )
 
@@ -62,16 +63,16 @@ function bootstrap()
     declare -a PACKS=("${@}")
 
     for p in "${PACKS[@]}"; do
-        if [[ -f $p/package-install.sh ]]; then
+        if [[ -f $p/_install.sh ]]; then
             info "$p: installing"
-            source $p/package-install.sh
+            source $p/_install.sh
             if [[ $? -ne 0 ]]; then
                 fail "$p: installing"
             fi
         fi
 
         info "$p stowing"
-        stow --ignore=.gpg --ignore=package-install.sh -vt $HOME $p
+        stow --ignore=.gpg --ignore=_install.sh -vt $HOME $p
         if [[ $? -ne 0 ]]; then
             fail "$p: stowing"
         fi
