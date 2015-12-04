@@ -1,7 +1,7 @@
 #!/bin/zsh
 #
 # Script to manage dotfiles and linking
-# 
+#
 # Keeps a list of dotfiles to be linked to $HOME from the $DOTFILES directory. This
 # script manages adding and removing from the list as well as rebuilding the
 # links.
@@ -23,7 +23,9 @@
 #   #    copies in the static file
 
 set -e
-source $HOME/functions/alerts.zsh
+
+autoload success
+autoload fail
 
 zmodload zsh/mapfile
 FNAME=$DOTFILES/bin/dot.list
@@ -37,7 +39,7 @@ function add() {
         mv $dest $dest\.backup
         success "moved $dest to $dest.backup"
     fi
-    
+
     cp -R ~/$1 $dest
     success "$1 copied to $HOME"
 

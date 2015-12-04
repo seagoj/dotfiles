@@ -1,6 +1,7 @@
 #!/bin/zsh
 
-source $HOME/functions/alerts.zsh
+autoload success
+autoload fail
 
 checkEncode() {
     return [ `locale -a | grep en_US.utf8`=="en_US.utf8" ]

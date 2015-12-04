@@ -1,15 +1,10 @@
-#! /bin/bash
-
-function installFonts()
-{
-    updateRepo git://github.com/powerline/fonts.git fonts &&\
-        ./install.sh
-    popd
-}
+#! /bin/zsh
 
 case $OS_TYPE in
 Arch | Mac | Debian)
-    installFonts
+    autoload updateRepo; updateRepo git://github.com/powerline/fonts.git fonts &&\
+        ./install.sh
+    popd
     ;;
 *)
     DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

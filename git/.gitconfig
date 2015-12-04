@@ -1,6 +1,8 @@
 [user]
 	name = Jeremy Seago
     email = seagoj@gmail.com
+[url "git@github.com:"]
+    insteadof = https://github.com
 [github]
     user = seagoj
 [core]

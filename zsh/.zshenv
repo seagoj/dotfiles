@@ -19,9 +19,11 @@ export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_DATA_HOME=${HOME}/.local/share
 export XDG_CACHE_HOME=${HOME}/.cache
 
+export FUNCTIONS=${HOME}/functions
+
 # ZSH Function Path
 fpath=(
-    ${HOME}/functions
+    $FUNCTIONS
     $fpath
 )
 
@@ -70,7 +72,9 @@ path=(
     $path
     $GOPATH/bin
     ./bin
-    ./node_modules/**/bin
+    $CODE/**/node_modules/**/bin
+    $HOME/.rbenv/bin
+    $HOME/.gem/ruby/**/bin
 )
 
 # Less

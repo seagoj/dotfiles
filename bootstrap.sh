@@ -20,7 +20,10 @@ declare -a PACKAGES=(
     tmux\
     vagrant\
     php\
-    npm
+    npm\
+    sass\
+    chromium\
+    wego
 )
 
 declare -a MAC_PACKAGES=(
@@ -42,6 +45,10 @@ declare -a ARCH_PACKAGES=(
     termite
 )
 
+autoload success
+autoload fail
+autoload info
+
 function decryptSecrets()
 {
     declare -a SECRETS=($(find . -name "*.gpg"))
@@ -55,11 +62,21 @@ function bootstrap()
     declare -a PACKS=("${@}")
 
     for p in "${PACKS[@]}"; do
-        echo "stowing $p"
         if [[ -f $p/package-install.sh ]]; then
+            info "$p: installing"
             source $p/package-install.sh
+            if [[ $? -ne 0 ]]; then
+                fail "$p: installing"
+            fi
         fi
+
+        info "$p stowing"
         stow --ignore=.gpg --ignore=package-install.sh -vt $HOME $p
+        if [[ $? -ne 0 ]]; then
+            fail "$p: stowing"
+        fi
+
+        success $p
     done
 }
 
@@ -76,7 +93,7 @@ function installOSSpecificPackages()
         bootstrap ${MAC_PACKAGES[@]}
         ;;
     *)
-        echo "No additional packages needed for $(uname -s)"
+        info "No additional packages needed for $(uname -s)"
         ;;
     esac
 }
@@ -109,4 +126,4 @@ installShell
 decryptSecrets
 bootstrap ${PACKAGES[@]}
 installOSSpecificPackages
-echo "Please source ~/.zshrc for changes to take effect"
+info "Please source ~/.zshrc for changes to take effect"

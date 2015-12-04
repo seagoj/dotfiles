@@ -37,8 +37,14 @@ end
 -- }}}
 
 -- {{{ Variable definitions
+theme = "blackburn"
+-- theme = "multicolor"
+-- theme = "niceandclean"
+theme = "steamburn"
+-- theme = "lined"
+-- theme = "dremora"
 -- Themes define colours, icons, font and wallpapers.
-beautiful.init("/usr/share/awesome/themes/default/theme.lua")
+beautiful.init(os.getenv("XDG_CONFIG_HOME") .. "/awesome/themes/" .. theme .. "/theme.lua")
 
 -- This is used later as the default terminal and editor to run.
 terminal = os.getenv("TERMINAL") or "termite" or "xterm"
@@ -99,7 +105,7 @@ myawesomemenu = {
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
-                                    { "broswer", browser },
+                                    { "browser", browser },
                                     { "mount drives", mounter },
                                     { "terminal", terminal },
                                     { "vm host", 'virtualbox' }
@@ -363,7 +369,8 @@ awful.rules.rules = {
                      focus = awful.client.focus.filter,
                      raise = true,
                      keys = clientkeys,
-                     buttons = clientbuttons } },
+                     buttons = clientbuttons,
+                     size_hints_honor = false } },
     { rule = { class = "MPlayer" },
       properties = { floating = true } },
     { rule = { class = "pinentry" },
