@@ -47,10 +47,10 @@ fi
 # exec xterm -geometry 80x66+0+0 -name login
 
 #display mobile
-# xrandr --output default --mode 1280x800
+xrandr --output default --mode 1280x800
 
 #display docked
-xrandr --output default --mode 1920x1200
+# xrandr --output default --mode 1920x1200
 
 # autorandr --change
 
