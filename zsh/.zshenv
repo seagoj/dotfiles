@@ -82,10 +82,10 @@ if [[ -d $CODE/**node_modules/**/bin ]]; then
     )
 fi
 
-if [[ -d $HOME/.gem/ruby/**/bin ]]; then
+if [[ -d $HOME/.gem/ruby/2.2.0/bin ]]; then
     path=(
         $path
-        $HOME/.gem/ruby/**/bin
+        $HOME/.gem/ruby/2.2.0/bin
     )
 fi
 
