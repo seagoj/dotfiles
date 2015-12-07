@@ -1,9 +1,9 @@
 #!/bin/bash
 
 if ! which node > /dev/null; then
-    install nodejs
+    osinstall nodejs
 fi
 
 if ! which npm > /dev/null; then
-    npm
+    osinstall npm
 fi

@@ -3,13 +3,13 @@
 if ! which ranger >/dev/null; then
     case $OS_TYPE in
     Darwin | Mac)
-        install  w3m lynx highlight atool mediainfo xpdf libcaca --with-imlib2
+        osinstall  w3m lynx highlight atool mediainfo xpdf libcaca --with-imlib2
         ;;
     Debian)
-        install ranger
+        osinstall ranger
         ;;
     Arch)
-        install ranger
+        osinstall ranger
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

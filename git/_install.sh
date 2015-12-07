@@ -6,7 +6,7 @@ function installGit()
         case $OS_TYPE in
           Arch)
             source zsh/package-install.sh &&\
-            install git &&\
+            osinstall git &&\
                 installZprezto
             ;;
           FreeBSD)
@@ -14,7 +14,7 @@ function installGit()
             ;;
           Darwin | Mac)
               source zsh/packacge-install.sh
-            install git &&\
+            osinstall git &&\
                 installZprezto
             ;;
         esac

@@ -72,10 +72,22 @@ path=(
     $path
     $GOPATH/bin
     ./bin
-    $CODE/**/node_modules/**/bin
     $HOME/.rbenv/bin
-    $HOME/.gem/ruby/**/bin
 )
+
+if [[ -d $CODE/**node_modules/**/bin ]]; then
+    path=(
+        $path
+        $CODE/**node_modules/**/bin ]]
+    )
+fi
+
+if [[ -d $HOME/.gem/ruby/**/bin ]]; then
+    path=(
+        $path
+        $HOME/.gem/ruby/**/bin
+    )
+fi
 
 # Less
 ## Set the default Less options.

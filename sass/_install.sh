@@ -1,4 +1,4 @@
 #!/bin/bash
 
 bootstrap rbenv
-# sudo gem install sass
+gem install sass

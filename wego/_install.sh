@@ -1,7 +1,7 @@
 #!/bin/bash
 
 if ! which go > /dev/null; then
-    install go
+    osinstall go
 fi
 
 if ! which wego > /dev/null; then

@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/bin/zsh
 
 if ! which rbenv > /dev/null; then
     git clone --recursive https://github.com/sstephenson/rbenv.git ${HOME}/.rbenv

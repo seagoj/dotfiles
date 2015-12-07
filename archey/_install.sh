@@ -4,7 +4,7 @@ if ! which archey > /dev/null; then
     case $OS_TYPE in
     Arch)
         if ! which archey3 > /dev/null; then
-            install archey3-git
+            osinstall archey3-git
         fi
         ;;
     *)

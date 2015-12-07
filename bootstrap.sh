@@ -54,7 +54,7 @@ function decryptSecrets()
 {
     declare -a SECRETS=($(find . -name "*.gpg"))
     for i in "${SECRETS[@]%.gpg}"; do
-        gpg --batch --yes --quiet --output $i --decrypt $i.gpg
+         gpg --batch --yes --quiet --output $i --decrypt $i.gpg
     done
 }
 

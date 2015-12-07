@@ -32,7 +32,7 @@ if ! which nvim >/dev/null; then
         installSourcerer
         ;;
     Arch)
-        install neovim python2-neovim python-neovim
+        osinstall neovim python2-neovim python-neovim
         installSourcerer
         ;;
     Debian)

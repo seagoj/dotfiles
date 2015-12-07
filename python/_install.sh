@@ -3,13 +3,13 @@
 if ! which python >/dev/null; then
     case $OS_TYPE in
     Arch)
-        install python python2
+        osinstall python python2
         ;;
     Darwin | Mac)
-        install python
+        osinstall python
         ;;
     Debian)
-        install python
+        osinstall python
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
