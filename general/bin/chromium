@@ -1,1 +1,0 @@
-/usr/bin/chromium --enable-plugins --user-data-dir=$HOME/.config/chromium/Default

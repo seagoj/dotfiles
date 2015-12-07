@@ -63,7 +63,7 @@ if [[ -z "$lang" ]]; then
 fi
 
 # Executable Path
-path=(
+export path=(
     $HOME/bin
     /usr/local/{bin,sbin}
     vendor/bin
@@ -78,7 +78,7 @@ path=(
 if [[ -d $CODE/**node_modules/**/bin ]]; then
     path=(
         $path
-        $CODE/**node_modules/**/bin ]]
+        $CODE/**node_modules/**/bin
     )
 fi
 
@@ -120,7 +120,7 @@ fi
 
 # Python
 if [[ -d /Library/Frameworks/Python.framework/Versions/2.7/bin ]]; then
-    path=(
+   export path=(
         /Library/Frameworks/Python.framework/Versions/2.7/bin
         $path
     )

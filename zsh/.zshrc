@@ -1,5 +1,4 @@
 #vim: filetype=sh
-
 # initialize prezto
 if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
@@ -64,9 +63,6 @@ else
     echo "geeknote is not installed.";
 fi
 
-# autoload updateRepo
-# autoload $HOME/functions/*(:t)
-
 # initialize fasd
 if which fasd >/dev/null; then
     eval "$(fasd --init auto)"
@@ -82,8 +78,8 @@ if [[ -f ${HOME}/.xsh ]]; then
     source ${HOME}/.xsh
 fi
 
-if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
-    source $CODE/sourcerer/sourcerer.sh
-fi
+# if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
+#     source $CODE/sourcerer/sourcerer.sh
+# fi
 
 eval $(dircolors ${HOME}/.dircolors)
