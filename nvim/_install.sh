@@ -21,6 +21,7 @@ function installSourcerer()
 {
     if [[ ! -f ${XDG_CONFIG_HOME}/nvim/colors/sourcerer.vim ]]; then
         autoload updateRepo; updateRepo git://github.com/xero/sourcerer.git sourcerer
+        popd
         ln -s ${CODE}/sourcerer/sourcerer.vim $XDG_CONFIG_HOME/nvim/colors/sourcerer.vim
     fi
 }

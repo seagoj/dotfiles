@@ -24,6 +24,7 @@ declare -a PACKAGES=(
     sass
     chromium
     wego
+    ag
 )
 
 declare -a MAC_PACKAGES=(
