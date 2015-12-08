@@ -22,6 +22,7 @@ function useZsh()
 
 if ! which zsh >/dev/null; then
     osinstall zsh
-    installZprezto
     useZsh
 fi
+
+installZprezto
