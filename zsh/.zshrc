@@ -78,8 +78,8 @@ if [[ -f ${HOME}/.xsh ]]; then
     source ${HOME}/.xsh
 fi
 
-# if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
-#     source $CODE/sourcerer/sourcerer.sh
-# fi
+if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
+    source $CODE/sourcerer/sourcerer.sh
+fi
 
 eval $(dircolors ${HOME}/.dircolors)
