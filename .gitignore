@@ -28,3 +28,4 @@ ranger/.config/ranger/history
 geeknote/.geeknote/database.db
 tmux/.tmux/plugins/tmux-resurrect
 tmux/.tmux/plugins/tmux-sensible
+zsh/.zprezto
