@@ -47,6 +47,7 @@ declare -a ARCH_PACKAGES=(
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
+    stow --ignore=.gpg --ignore=_install.sh -vt $HOME zsh
     stow --ignore=.gpg --ignore=_install.sh -vt $HOME general
     source $HOME/.zshenv
 fi
