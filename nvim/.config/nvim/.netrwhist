@@ -1,6 +1,0 @@
-let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =4
-let g:netrw_dirhist_1='/Users/Admin/dotfiles/nvim'
-let g:netrw_dirhist_2='/Users/Admin/dotfiles/nvim/.config'
-let g:netrw_dirhist_3='/Users/Admin/dotfiles/nvim/.config/nvim'
-let g:netrw_dirhist_4='/home/seagoj/.gnupg'
