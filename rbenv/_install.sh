@@ -19,9 +19,12 @@ fi
 if [[ ! -d ${HOME}/.rbenv/plugins/ruby-build/share/ruby-build ]]; then
     pushd ${HOME}/.rbenv/plugins/ruby-build &&\
         ./install.sh &&\
+        rbenv install 2.2.3 &&\
+        rbenv global 2.2.3 &&\
         popd
 fi
 
 if ! which bundle > /dev/null; then
+    source $HOME/.zshenv
     gem install bundler
 fi

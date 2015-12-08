@@ -11,6 +11,7 @@ for package in "${@}"; do
     sudo pacman -Syu ${package} --noconfirm
 
     if [[ $? -ne 0 ]]; then
+        mkdir -p ${BUILD_LOCATION:-${HOME}/builds} 
         pushd ${BUILD_LOCATION:-${HOME}/builds}
         git clone https://aur.archlinux.org/${package}.git
         cd ${package} &&\

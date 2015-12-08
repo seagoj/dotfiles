@@ -46,6 +46,11 @@ declare -a ARCH_PACKAGES=(
     termite
 )
 
+if [[ ! -d ${HOME}/functions ]]; then
+    stow --ignore=.gpg --ignore=_install.sh -vt $HOME general
+    source $HOME/.zshenv
+fi
+
 autoload success
 autoload fail
 autoload info
@@ -54,7 +59,7 @@ function decryptSecrets()
 {
     declare -a SECRETS=($(find . -name "*.gpg"))
     for i in "${SECRETS[@]%.gpg}"; do
-         gpg --batch --yes --quiet --output $i --decrypt $i.gpg
+        gpg --batch --yes --quiet --output $i --decrypt $i.gpg
     done
 }
 
@@ -63,6 +68,13 @@ function bootstrap()
     declare -a PACKS=("${@}")
 
     for p in "${PACKS[@]}"; do
+         info "$p stowing"
+        stow --ignore=.gpg --ignore=_install.sh -vt $HOME $p
+        if [[ $? -ne 0 ]]; then
+            fail "$p: stowing"
+        fi
+
+
         if [[ -f $p/_install.sh ]]; then
             info "$p: installing"
             source $p/_install.sh
@@ -71,13 +83,7 @@ function bootstrap()
             fi
         fi
 
-        info "$p stowing"
-        stow --ignore=.gpg --ignore=_install.sh -vt $HOME $p
-        if [[ $? -ne 0 ]]; then
-            fail "$p: stowing"
-        fi
-
-        success $p
+           success $p
     done
 }
 
