@@ -2,12 +2,12 @@
 
 function installZprezto()
 {
-    #if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
+    if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto/.git" ]]; then
         bootstrap git
 
-        git clone --recursive git://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-        git clone --recursive git://github.xom/xero/sourcerer.git "${HOME}/code/sourcerer"
-    #fi
+        git clone --recurse-submodules git://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        git clone --recurse-submodules git://github.xom/xero/sourcerer.git "${HOME}/code/sourcerer"
+    fi
 }
 
 function useZsh()
@@ -20,8 +20,8 @@ function useZsh()
     fi
 }
 
-# if ! which zsh >/dev/null; then
+if ! which zsh >/dev/null; then
     osinstall zsh
     installZprezto
     useZsh
-# fi
+fi

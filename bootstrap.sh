@@ -22,9 +22,9 @@ declare -a PACKAGES=(
     php
     npm
     sass
-    chromium
     wego
     ag
+    chromium
 )
 
 declare -a MAC_PACKAGES=(
@@ -135,4 +135,4 @@ installShell
 decryptSecrets
 bootstrap ${PACKAGES[@]}
 installOSSpecificPackages
-info "Please source ~/.zshrc for changes to take effect"
+info "Logout and back in"

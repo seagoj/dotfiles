@@ -1,3 +1,5 @@
 #!/bin/bash
 
-osinstall silver-searcher-git
+if ! which ag > /dev/null; then
+    osinstall silver-searcher-git
+fi
