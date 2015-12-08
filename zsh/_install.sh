@@ -2,7 +2,7 @@
 
 function installZprezto()
 {
-    if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto/.git" ]]; then
+    if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto" ]]; then
         bootstrap git
 
         git clone --recurse-submodules git://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"

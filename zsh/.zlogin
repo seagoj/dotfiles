@@ -23,5 +23,5 @@ if (( $+commands[fortune] )); then
 fi
 
 if which archey3 > /dev/null; then
-#    archey3
+    archey3
 fi
