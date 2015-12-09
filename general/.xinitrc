@@ -50,7 +50,9 @@ fi
 # xrandr --output default --mode 1280x800
 
 #display docked
-xrandr --output default --mode 1920x1200
+# xrandr --output default --mode 1920x1200
+xrandr --output VGA-0 --mode 1920x1080
+
 
 # autorandr --change
 
