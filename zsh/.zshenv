@@ -67,6 +67,7 @@ export path=(
     $HOME/bin
     /usr/local/{bin,sbin}
     vendor/bin
+    node_modules/.bin
     $HOME/.chefdk/gem/ruby/2.1.0/bin
     /opt/chefdk/bin
     $path
@@ -75,15 +76,8 @@ export path=(
     $HOME/.rbenv/bin
 )
 
-if [[ -d $CODE/**node_modules/**/bin ]]; then
-    path=(
-        $path
-        $CODE/**node_modules/**/bin
-    )
-fi
-
 if [[ -d $HOME/.gem/ruby/2.2.0/bin ]]; then
-    path=(
+    export path=(
         $path
         $HOME/.gem/ruby/2.2.0/bin
     )
