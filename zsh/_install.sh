@@ -5,8 +5,10 @@ function installZprezto()
     if [[ ! -d "${ZDOTDIR:-$HOME}/.zprezto/.git" ]]; then
         bootstrap git
 
+        stow -D zsh
         git clone --recurse-submodules git://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
-        git clone --recurse-submodules git://github.xom/xero/sourcerer.git "${HOME}/code/sourcerer"
+        stow --ignore=.gpg --ignore=_install.sh -vt $HOME zsh
+        git clone --recurse-submodules git://github.com/xero/sourcerer.git "${HOME}/code/sourcerer"
     fi
 }
 
