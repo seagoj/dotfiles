@@ -45,6 +45,7 @@ declare -a ARCH_PACKAGES=(
     awesome
     archey
     termite
+    mutate
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
