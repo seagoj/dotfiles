@@ -7,6 +7,9 @@ function installZprezto()
 
         stow -D zsh
         git clone --recurse-submodules git://github.com/sorin-ionescu/prezto.git "${ZDOTDIR:-$HOME}/.zprezto"
+        pushd "${ZDOTDIR:-$HOME}/.zprezto"
+        git submodule update
+        popd
         stow --ignore=.gpg --ignore=_install.sh -vt $HOME zsh
         git clone --recurse-submodules git://github.com/xero/sourcerer.git "${HOME}/code/sourcerer"
     fi

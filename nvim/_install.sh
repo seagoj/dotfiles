@@ -26,11 +26,17 @@ function installSourcerer()
     fi
 }
 
+function installPlugins()
+{
+    nvim -c :PlugInstall && installYCM
+}
+
 if ! which nvim >/dev/null; then
     case "${OS_TYPE}" in
     Darwin | Mac)
         installNeovimMac
         installSourcerer
+        installPlugins
         ;;
     Arch)
         osinstall neovim python2-neovim python-neovim
