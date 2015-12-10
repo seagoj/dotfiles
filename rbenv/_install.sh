@@ -4,7 +4,7 @@ if [[ ! -d $HOME/.rbenv/.git ]]; then
     git clone --recursive https://github.com/sstephenson/rbenv.git ${HOME}/.rbenv
 else
     pushd $HOME/.rbenv
-    git pull --recurse-submodules
+    git pull --recurse-submodules > /dev/null
     popd
 fi
 
@@ -12,7 +12,7 @@ if [[ ! -d ${HOME}/.rbenv/plugins/ruby-build/.git ]]; then
     git clone --recursive https://github.com/rbenv/ruby-build.git ${HOME}/.rbenv/plugins/ruby-build
 else
     pushd ${HOME}/.rbenv/plugins/ruby-build
-    git pull --recurse-submodules
+    git pull --recurse-submodules > /dev/null
     popd
 fi
 

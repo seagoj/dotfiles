@@ -2,9 +2,11 @@
 
 case $OS_TYPE in
 Arch | Mac | Debian)
-    autoload updateRepo; updateRepo git://github.com/powerline/fonts.git fonts &&\
+    autoload updateRepo; updateRepo git://github.com/powerline/fonts.git fonts | grep "up to date" > /dev/null
+    if [[ ! $? -eq 0 ]]; then
         ./install.sh
-    popd
+        popd
+    fi
     ;;
 *)
     DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

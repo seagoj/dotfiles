@@ -16,6 +16,7 @@ function setPermission()
     fi
 }
 
+echo ""
 echo "# Reset keys"
 declare -a KEYS=($(find ${SSH_CONFIG}/ -name "*.pub"))
 for i in "${KEYS[@]%.pub}"; do

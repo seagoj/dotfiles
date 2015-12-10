@@ -1,5 +1,5 @@
 #!/bin/bash
 
-if ! which mutate; then
+if ! which mutate > /dev/null; then
     osinstall mutate-git
 fi

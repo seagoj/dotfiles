@@ -21,10 +21,10 @@ declare -a PACKAGES=(
     vagrant
     php
     npm
-    sass
     wego
     ag
-    chromium
+    rbenv
+    fasd
 )
 
 declare -a MAC_PACKAGES=(
@@ -46,6 +46,7 @@ declare -a ARCH_PACKAGES=(
     archey
     termite
     mutate
+    chromium
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
@@ -136,4 +137,4 @@ installShell
 decryptSecrets
 bootstrap ${PACKAGES[@]}
 installOSSpecificPackages
-info "Logout and back in"
+info "Logout and back in for changes to take effect"

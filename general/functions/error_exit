@@ -1,0 +1,5 @@
+# vim: filetype=sh
+
+echo ""
+echo "${PROGNAME}: ${1:- 'Unknown Error'}" 1>&2
+exit 1
