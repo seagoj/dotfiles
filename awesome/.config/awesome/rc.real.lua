@@ -1,4 +1,5 @@
 -- Standard awesome library
+vicious = require("vicious")
 local gears = require("gears")
 local awful = require("awful")
 awful.rules = require("awful.rules")
@@ -63,7 +64,6 @@ modkey = "Mod4"
 -- Table of layouts to cover with awful.layout.inc, order matters.
 local layouts =
 {
-
     awful.layout.suit.tile,
     awful.layout.suit.tile.left,
     awful.layout.suit.tile.bottom,
@@ -122,6 +122,40 @@ menubar.utils.terminal = terminal -- Set the terminal for applications that requ
 -- {{{ Wibox
 -- Create a textclock widget
 mytextclock = awful.widget.textclock()
+
+-- BlingBling
+local blingbling = require("blingbling")
+
+local cpu_graph = blingbling.line_graph({
+    height = 18,
+    width = 200,
+    show_text = true,
+    label = "cpu: $percent %",
+    rounded_size = 0.3,
+    graph_background_color = "#00000033"
+})
+vicious.register(cpu_graph, vicious.widgets.cpu, '$1', 2)
+
+local mem_graph = blingbling.line_graph({
+    height = 18,
+    width = 200,
+    show_text = true,
+    label = "ram: $percent %",
+    rounded_size = 0.3,
+    graph_background_color = "#00000033"
+})
+vicious.register(mem_graph, vicious.widgets.mem, '$1', 13)
+
+local volume = blingbling.volume({
+    height = 18,
+    width = 40,
+    bar = true,
+    show_text = true,
+    label = "vol $percent%",
+    pulseaudio = true
+})
+volume:update_master()
+volume:set_master_control()
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -202,6 +236,9 @@ for s = 1, screen.count() do
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
     if s == 1 then right_layout:add(wibox.widget.systray()) end
+    right_layout:add(cpu_graph)
+    right_layout:add(mem_graph)
+    right_layout:add(volume)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -466,3 +503,5 @@ do
     awful.util.spawn(i)
   end
 end
+
+
