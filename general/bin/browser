@@ -1,8 +1,3 @@
-#!/bin/bash
+#!/bin/zsh
 
-if [[ -z "${BROWSER}" ]]; then
-    echo "No default browser set."
-    exit 1
-fi
-
-${BROWSER}
+autoload envVarToScript; envVarToScript "BROWSER" $@

@@ -1,8 +1,3 @@
-#!/bin/bash
+#!/bin/zsh
 
-if [[ -z "${EDITOR}" ]]; then
-    echo "No default editor set."
-    exit 1
-fi
-
-${EDITOR}
+autoload envVarToScript; envVarToScript "EDITOR" $@
