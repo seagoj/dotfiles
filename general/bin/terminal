@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -z "${TERMINAL}" ]]; then
+    echo "No default terminal set."
+    exit 1
+fi
+
+${TERMINAL}

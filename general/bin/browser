@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -z "${BROWSER}" ]]; then
+    echo "No default browser set."
+    exit 1
+fi
+
+${BROWSER}

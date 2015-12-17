@@ -1,0 +1,8 @@
+#!/bin/bash
+
+if [[ -z "${EDITOR}" ]]; then
+    echo "No default editor set."
+    exit 1
+fi
+
+${EDITOR}
