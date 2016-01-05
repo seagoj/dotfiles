@@ -14,15 +14,22 @@ function installFromArch()
     sudo pacman -Syu ${1} --noconfirm
 }
 
+function initializeInstallFromAur()
+{
+    mkdir -p ${BUILD_LOCATION:-${HOME}/builds}
+    pushd ${BUILD_LOCATION:-${HOME}/builds}
+    git clone https://aur.archlinux.org/${1}.git
+    installFromArch package-query
+    cd ${1} &&\
+        makepkg -sri --noconfirm
+    popd
+}
+
 function installFromAur()
 {
     if ! which yaourt > /dev/null; then
-        mkdir -p ${BUILD_LOCATION:-${HOME}/builds}
-        pushd ${BUILD_LOCATION:-${HOME}/builds}
-        git clone https://aur.archlinux.org/yaourt.git
-        cd yaourt &&\
-            makepkg -sri --noconfirm
-        popd
+        initializeInstallFromAur package-query
+        initializeInstallFromAur yaourt
     fi
     yaourt -S ${1}
 }

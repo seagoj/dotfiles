@@ -47,6 +47,8 @@ declare -a ARCH_PACKAGES=(
     archey
     termite
     chromium
+    vpn
+    thinkpad
 )
 
 if [[ ! -d ${HOME}/functions ]]; then

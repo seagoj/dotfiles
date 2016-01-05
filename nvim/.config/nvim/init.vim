@@ -1,6 +1,7 @@
 scriptencoding utf-8
 set encoding=utf-8
-set guifont=Sauce\ Code\ Powerline\ Semibold:h10
+" set guifont=Sauce\ Code\ Powerline\ Semibold:h8
+set guifont=Source\ Code\ Pro\ Semibold:h8
 set ffs=unix,mac,dos
 set nocompatible
 filetype off
