@@ -45,7 +45,6 @@ declare -a ARCH_PACKAGES=(
     awesome
     archey
     termite
-    mutate
     chromium
 )
 
