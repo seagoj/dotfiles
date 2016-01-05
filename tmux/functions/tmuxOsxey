@@ -1,2 +1,2 @@
-autoload split; split "$1"
+autoload tmuxSplit; tmuxSplit "$1"
 tmux send-keys "OSXey -c && wwwtxt" C-m
