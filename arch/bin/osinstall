@@ -7,15 +7,30 @@ if [[ $# -eq 0 ]]; then
     exit 1
 fi
 
+aurInstallCommand="yaourt -S"
+
+function installFromArch()
+{
+    sudo pacman -Syu ${1} --noconfirm
+}
+
+function installFromAur()
+{
+    if ! which yaourt > /dev/null; then
+        mkdir -p ${BUILD_LOCATION:-${HOME}/builds}
+        pushd ${BUILD_LOCATION:-${HOME}/builds}
+        git clone https://aur.archlinux.org/yaourt.git
+        cd yaourt &&\
+            makepkg -sri --noconfirm
+        popd
+    fi
+    yaourt -S ${1}
+}
+
 for package in "${@}"; do
-    sudo pacman -Syu ${package} --noconfirm
+    installFromArch ${package}
 
     if [[ $? -ne 0 ]]; then
-        mkdir -p ${BUILD_LOCATION:-${HOME}/builds} 
-        pushd ${BUILD_LOCATION:-${HOME}/builds}
-        git clone https://aur.archlinux.org/${package}.git
-        cd ${package} &&\
-        makepkg -sri --noconfirm
-        popd
+        installFromAur ${package}
     fi
 done

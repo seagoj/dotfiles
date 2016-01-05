@@ -2,5 +2,5 @@
 
 if ! which mycli > /dev/null; then
     osinstall pip
-    pip install mycli
-do
+    sudo pip install mycli
+fi
