@@ -48,14 +48,46 @@ fi
 
 #display mobile
 # xrandr --output default --mode 1280x800
-# xrandr --output VGA-0 --mode 1024x768
+xrandr --output VGA-0 --mode 1024x768
 
 #display docked
 # xrandr --output default --mode 1920x1200
-xrandr --output VGA-0 --mode 1920x1080
+# xrandr --output VGA-0 --mode 1920x1080
 
 # autorandr --change
 
 xset r rate 200 50
 
 exec awesome
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

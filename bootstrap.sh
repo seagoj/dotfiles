@@ -25,6 +25,7 @@ declare -a PACKAGES=(
     ag
     rbenv
     fasd
+    mycli
 )
 
 declare -a MAC_PACKAGES=(

@@ -1,8 +1,9 @@
 env_var=$1
 shift
-if [[ -z "${!env_var}" ]]; then
+
+if [[ -z "${env_var}" ]]; then
     echo "No default ${env_var} set"
     exit
 fi
 
-${!env_var} $@
+eval "\$${env_var} $@"

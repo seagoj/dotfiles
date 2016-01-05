@@ -496,12 +496,10 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 do
   local onStartup =
   {
-    "mutate"
+    -- "mutate"
   }
 
   for _,i in pairs(onStartup) do
     awful.util.spawn(i)
   end
 end
-
-
