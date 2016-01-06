@@ -1,2 +1,2 @@
 autoload tmuxSplit; tmuxSplit "$1"
-tmux send-keys "gulp.js" C-m
+tmux send-keys "gulp" C-m
