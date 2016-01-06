@@ -56,6 +56,8 @@ fi
 
 # autorandr --change
 
+setDocked
+
 # # configure trackpoint scroll
 # xprop() { xinput set-prop "TPPS/2 IBM Trackpoint" "$@"; }
 # xprop "Evdev Wheel Emulation" 1
