@@ -106,7 +106,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "browser", browser },
                                     { "mount drives", mounter },
                                     { "terminal", terminal },
-                                    { "vm host", 'virtualbox' }
+                                    { "vm host", 'sudo /sbin/rcvboxdrv setup && virtualbox' }
                                   }
                         })
 
@@ -143,6 +143,17 @@ local mem_graph = blingbling.line_graph({
     graph_background_color = "#00000033"
 })
 vicious.register(mem_graph, vicious.widgets.mem, '$1', 13)
+
+local battery_graph = blingbling.line_graph({
+    height = 18,
+    width = 35,
+    show_text = true,
+    vertical = true,
+    label = "$percent %",
+    rounded_size = 0.3,
+    graph_background_color = "#00000033"
+});
+vicious.register(battery_graph, vicious.widgets.bat, '$2', 120, "BAT0");
 
 local volume = blingbling.volume({
     height = 18,
@@ -238,6 +249,7 @@ for s = 1, screen.count() do
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(cpu_graph)
     right_layout:add(mem_graph)
+    right_layout:add(battery_graph)
     right_layout:add(volume)
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
