@@ -46,16 +46,6 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 
-#display mobile
-# xrandr --output default --mode 1280x800
-# xrandr --output VGA-0 --mode 1024x768
-
-#display docked
-# xrandr --output default --mode 1920x1200
-# xrandr --output VGA-0 --mode 1920x1080
-
-# autorandr --change
-
 setDocked
 
 # # configure trackpoint scroll
@@ -69,35 +59,3 @@ setDocked
 xset r rate 200 50
 
 exec awesome
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

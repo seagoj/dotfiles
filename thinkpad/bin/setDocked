@@ -5,6 +5,6 @@ EXT="HDMI-1"
 
 xrandr --output $IN --mode 1600x900
 
-if (xrandr | grep "$EXT disconnected"); then
+if (! xrandr | grep "$EXT disconnected"); then
     xrandr --output $EXT --mode 1920x1080 --above $IN
 fi
