@@ -144,7 +144,7 @@ local mem_graph = blingbling.line_graph({
 })
 vicious.register(mem_graph, vicious.widgets.mem, '$1', 13)
 
-local battery_graph = blingbling.line_graph({
+local battery_graph = blingbling.progress_graph({
     height = 18,
     width = 35,
     show_text = true,
