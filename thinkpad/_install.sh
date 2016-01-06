@@ -12,3 +12,15 @@ if [[ ! -f $config ]]; then
     echo "    Option 		\"YAxisMapping\" 		\"4 5\"" | sudo tee -a $config
     echo "EndSection" | sudo tee -a $config
 fi
+
+if ! which acpi > /dev/null; then
+    osinstall acpi acpid
+fi
+
+if [[ ! -f /etc/modules-load.d/thinkpad-acpi.conf ]]; then
+    echo "thinkpad-acpi" | sudo tee /etc/modules-load.d/thinkpad-acpi.conf
+fi
+
+if ! which bluetoothctl > /dev/null; then
+    osinstall bluez bluez-utils
+fi
