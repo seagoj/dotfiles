@@ -24,3 +24,7 @@ fi
 if ! which bluetoothctl > /dev/null; then
     osinstall bluez bluez-utils
 fi
+
+if ! which notity-send > /dev/null; then
+    osinstall libnotify
+fi
