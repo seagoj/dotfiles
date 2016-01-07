@@ -50,6 +50,7 @@ declare -a ARCH_PACKAGES=(
     vpn
     thinkpad
     flamerobin
+    cloudstation
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
