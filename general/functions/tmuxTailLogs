@@ -12,5 +12,5 @@ fi
 
 tmux new-window -t $PROJECT -n "$DESC"
 tmux send-keys "$SSHCOMMAND 'tail -f $ERRORLOG'" C-m
-autoload split; split v
+autoload tmuxSplit; tmuxSplit v
 tmux send-keys "$SSHCOMMAND 'tail -f $DEBUGLOG'" C-m
