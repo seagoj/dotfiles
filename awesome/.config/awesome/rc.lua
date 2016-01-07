@@ -129,7 +129,6 @@ local cpu_graph = blingbling.line_graph({
     width = 200,
     show_text = true,
     label = "cpu: $percent %",
-    rounded_size = 0.3,
     graph_background_color = "#00000033"
 })
 vicious.register(cpu_graph, vicious.widgets.cpu, '$1', 2)
@@ -139,7 +138,6 @@ local mem_graph = blingbling.line_graph({
     width = 200,
     show_text = true,
     label = "ram: $percent %",
-    rounded_size = 0.3,
     graph_background_color = "#00000033"
 })
 vicious.register(mem_graph, vicious.widgets.mem, '$1', 13)
@@ -150,7 +148,6 @@ local battery_graph = blingbling.progress_graph({
     show_text = true,
     vertical = true,
     label = "$percent %",
-    rounded_size = 0.3,
     graph_background_color = "#00000033"
 });
 vicious.register(battery_graph, vicious.widgets.bat, '$2', 120, "BAT0");
