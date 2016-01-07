@@ -31,3 +31,4 @@ geeknote/.geeknote/database.db
 tmux/.tmux/plugins/tmux-resurrect
 tmux/.tmux/plugins/tmux-sensible
 mutate/.config/Mutate/frequence
+nxmpcpp/.mpd/sticker.sql
