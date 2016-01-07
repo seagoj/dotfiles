@@ -28,3 +28,7 @@ fi
 if ! which notity-send > /dev/null; then
     osinstall libnotify
 fi
+
+if ! which bashmount > /dev/null; then
+    osinstall bashmount
+fi
