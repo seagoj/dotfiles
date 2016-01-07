@@ -49,6 +49,7 @@ declare -a ARCH_PACKAGES=(
     chromium
     vpn
     thinkpad
+    flamerobin
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
