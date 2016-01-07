@@ -1,6 +1,6 @@
 #!/bin/bash
 
 if ! which mycli > /dev/null; then
-    osinstall pip
+    osinstall python-pip
     sudo pip install mycli
 fi
