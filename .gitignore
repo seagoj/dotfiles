@@ -19,6 +19,7 @@ ssh/.ssh/known_hosts
 vim/.gist-vim
 mycli/.aliases/mycli.alias
 tmux/.ngrok2/ngrok.yml
+flamerobin/.flamerobin/fr_databases.conf
 atom/.atom/compile-cache/*
 atom/.atom/storage
 general/.config/feednix/log.txt
