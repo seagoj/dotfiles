@@ -106,7 +106,8 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "browser", browser },
                                     { "mount drives", mounter },
                                     { "terminal", terminal },
-                                    { "vm host", 'sudo /sbin/rcvboxdrv setup && virtualbox' }
+                                    { "vm host", 'start-virtualbox' },
+                                    { "vpn: bellevue", "vpn-bellevue" }
                                   }
                         })
 
@@ -243,11 +244,11 @@ for s = 1, screen.count() do
 
     -- Widgets that are aligned to the right
     local right_layout = wibox.layout.fixed.horizontal()
-    if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(cpu_graph)
     right_layout:add(mem_graph)
     right_layout:add(battery_graph)
     right_layout:add(volume)
+    if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
 
@@ -506,6 +507,7 @@ do
   local onStartup =
   {
     -- "mutate"
+    "synology-cloud-station"
   }
 
   for _,i in pairs(onStartup) do

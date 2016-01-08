@@ -13,7 +13,8 @@ let vimPlugInstalled=AutoInstallVimPlug()
 
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
-Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim'
+" Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim'
+Plug 'KabbAmine/zeavim.vim'
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
 Plug 'edsono/vim-matchit'

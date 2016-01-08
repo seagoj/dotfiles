@@ -51,6 +51,8 @@ declare -a ARCH_PACKAGES=(
     thinkpad
     flamerobin
     cloudstation
+    virtualbox
+    zeal
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
