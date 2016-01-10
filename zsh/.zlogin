@@ -25,3 +25,5 @@ fi
 if which archey3 > /dev/null; then
     archey3
 fi
+
+startx
