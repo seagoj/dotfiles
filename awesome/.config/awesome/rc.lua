@@ -127,7 +127,7 @@ local blingbling = require("blingbling")
 
 local cpu_graph = blingbling.line_graph({
     height = 18,
-    width = 200,
+    width = 75,
     show_text = true,
     label = "cpu: $percent %",
     graph_background_color = "#00000033"
@@ -136,7 +136,7 @@ vicious.register(cpu_graph, vicious.widgets.cpu, '$1', 2)
 
 local mem_graph = blingbling.line_graph({
     height = 18,
-    width = 200,
+    width = 75,
     show_text = true,
     label = "ram: $percent %",
     graph_background_color = "#00000033"
@@ -153,16 +153,15 @@ local battery_graph = blingbling.progress_graph({
 });
 vicious.register(battery_graph, vicious.widgets.bat, '$2', 120, "BAT0");
 
-local volume = blingbling.volume({
-    height = 18,
-    width = 40,
-    bar = true,
-    show_text = true,
-    label = "vol $percent%",
-    pulseaudio = true
-})
-volume:update_master()
-volume:set_master_control()
+-- local volume = blingbling.volume({
+--     height = 18,
+--     width = 40,
+--     bar = true,
+--     show_text = true,
+--     label = "vol $percent%",
+--     pulseaudio = true
+-- });
+-- vicious.register(volume, vicious.widgets.volume, '$1', 5)
 
 -- Create a wibox for each screen and add it
 mywibox = {}
@@ -247,7 +246,7 @@ for s = 1, screen.count() do
     right_layout:add(cpu_graph)
     right_layout:add(mem_graph)
     right_layout:add(battery_graph)
-    right_layout:add(volume)
+    -- right_layout:add(volume)
     if s == 1 then right_layout:add(wibox.widget.systray()) end
     right_layout:add(mytextclock)
     right_layout:add(mylayoutbox[s])
