@@ -4,13 +4,14 @@ let g:mapleader = ","
 " Copy to clipboard
 " map         <leader>c       "*y
 map         <leader>c       "+y
+map         <leader>p       "+p
 " Change CWD to directory of selected buffer
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
 " Toggle Invisibles
 map         <leader>l       :set list!<cr>
 nmap        <leader>m       :!markdown %<cr>
 nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
-map         <leader>p       <Esc><c-p>
+" map         <leader>p       <Esc><c-p>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
 map         <leader>ev      :tabnew $MYVIMRC<cr>
