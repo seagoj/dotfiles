@@ -18,6 +18,10 @@ if ! which alsamixer > /dev/null; then
     osinstall alsa-utils
 fi
 
+if ! which htop > /dev/null; then
+    osinstall htop
+fi
+
 output=$(
     echo "FONT=ter-212n" | sudo tee /etc/vconsole.conf &&\
     echo "FONT_MAP=8859-2" | sudo tee -a /etc/vconsole.conf
