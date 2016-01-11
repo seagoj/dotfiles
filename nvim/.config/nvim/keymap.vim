@@ -2,7 +2,8 @@
 let mapleader   = ","
 let g:mapleader = ","
 " Copy to clipboard
-map         <leader>c       "*y
+" map         <leader>c       "*y
+map         <leader>c       "+y
 " Change CWD to directory of selected buffer
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
 " Toggle Invisibles

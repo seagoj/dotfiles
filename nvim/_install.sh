@@ -39,8 +39,9 @@ if ! which nvim >/dev/null; then
         installPlugins
         ;;
     Arch)
-        osinstall neovim python2-neovim python-neovim
+        osinstall neovim python2-neovim python-neovim xsel
         installSourcerer
+        installPlugins
         ;;
     Debian)
         installNeovimDebian
