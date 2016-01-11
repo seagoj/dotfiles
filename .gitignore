@@ -32,3 +32,5 @@ tmux/.tmux/plugins/tmux-resurrect
 tmux/.tmux/plugins/tmux-sensible
 mutate/.config/Mutate/frequence
 ncmpcpp/.mpd/sticker.sql
+flamerobin/.flamerobin/code-templates
+flamerobin/.flamerobin/history
