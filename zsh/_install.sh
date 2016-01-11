@@ -30,4 +30,4 @@ if ! which zsh >/dev/null; then
     useZsh
 fi
 
-installZprezto
+# installZprezto

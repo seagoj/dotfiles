@@ -1,7 +1,11 @@
 #vim: filetype=sh
-# initialize prezto
-if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprezto/init.zsh"
+#
+# User configuration sourced by interactive shells
+#
+
+# Source zim
+if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
+  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
 # Source alias files
@@ -10,8 +14,8 @@ for file in ${ZDOTDIR:-$HOME}/.aliases/*.alias; do
 done
 
 # key bindings
-bindkey '\e[1~' beginning-of-line   # Home
-bindkey '\e[4~' end-of-line         # End
+bindkey '[1~' beginning-of-line   # Home
+bindkey '[4~' end-of-line         # End
 
 # START SSH_AGENT
 # eval $(ssh-agent)
