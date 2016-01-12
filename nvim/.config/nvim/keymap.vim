@@ -2,9 +2,8 @@
 let mapleader   = ","
 let g:mapleader = ","
 " Copy to clipboard
-" map         <leader>c       "*y
 map         <leader>c       "+y
-map         <leader>p       "+p
+map         <leader>v       "+p
 " Change CWD to directory of selected buffer
 map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
 " Toggle Invisibles
@@ -33,5 +32,5 @@ nmap        p               ]p
 " Sudo write
 cmap        w!!             w !sudo tee % >/dev/null
 nnoremap    <F3>            <Esc>:Git push<cr>
-nnoremap    <F12>           <Esc>:Dash!<cr>
+nnoremap    <F12>           <Esc>:!Dash<cr>
 nnoremap    <leader>b       F-vlUdl
