@@ -506,7 +506,8 @@ do
   local onStartup =
   {
     -- "mutate"
-    "synology-cloud-station"
+    "synology-cloud-station",
+    "zeal"
   }
 
   for _,i in pairs(onStartup) do
