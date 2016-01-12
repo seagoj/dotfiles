@@ -10,7 +10,7 @@ map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
 map         <leader>l       :set list!<cr>
 nmap        <leader>m       :!markdown %<cr>
 nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
-" map         <leader>p       <Esc><c-p>
+map         <leader>p       <Esc><c-p>
 nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
 nmap        <leader>w       :retab!<cr> :update!<cr>
 map         <leader>ev      :tabnew $MYVIMRC<cr>
