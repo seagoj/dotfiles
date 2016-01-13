@@ -32,3 +32,11 @@ fi
 if ! which bashmount > /dev/null; then
     osinstall bashmount
 fi
+
+if ! which rar > /dev/null; then
+    osinstall rar
+fi
+
+if ! which baobab > /dev/null; then
+    osinstall baobab
+fi
