@@ -47,8 +47,8 @@ beautiful.init(os.getenv("XDG_CONFIG_HOME") .. "/awesome/themes/" .. theme .. "/
 -- This is used later as the default terminal and editor to run.
 terminal = "terminal" or os.getenv("TERMINAL") or "termite" or "xterm"
 terminal_cmd = terminal .. " -e "
-editor = "editor" or os.getenv("EDITOR") or "nvim" or "vim" or "nano"
-editor_cmd = terminal_cmd .. editor
+editor = "editor-gui" or os.getenv("EDITOR") or "nvim" or "vim" or "nano"
+editor_cmd = editor .. " "
 browser = "browser" or os.getenv("BROWSER")
 mounter = terminal_cmd .. "bashmount"
 
@@ -97,17 +97,25 @@ end
 -- Create a laucher widget and a main menu
 myawesomemenu = {
    { "manual", terminal .. " -e man awesome" },
-   { "edit config", editor_cmd .. " " .. awesome.conffile },
+   { "edit config", editor_cmd .. awesome.conffile },
    { "restart", awesome.restart },
    { "quit", awesome.quit }
 }
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "browser", browser },
-                                    { "mount drives", mounter },
                                     { "terminal", terminal },
                                     { "vm host", 'start-virtualbox' },
-                                    { "vpn: bellevue", "vpn-bellevue" }
+                                    { "bps", {
+                                            { "vpn", terminal_cmd .. "vpn-bellevue" }
+                                        }
+                                    },
+                                    { "system", {
+                                            { "mount drives", mounter },
+                                            { "storage", "baobab" },
+                                            { "wifi", terminal_cmd .. "wifi-connect" }
+                                        }
+                                    }
                                   }
                         })
 
@@ -506,7 +514,7 @@ do
   local onStartup =
   {
     -- "mutate"
-    "synology-cloud-station",
+    -- "synology-cloud-station",
     "zeal"
   }
 
