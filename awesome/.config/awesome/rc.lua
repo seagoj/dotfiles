@@ -49,6 +49,7 @@ terminal = "terminal" or os.getenv("TERMINAL") or "termite" or "xterm"
 terminal_cmd = terminal .. " -e "
 editor = "editor-gui" or os.getenv("EDITOR") or "nvim" or "vim" or "nano"
 editor_cmd = editor .. " "
+virtual_cmd = "vm-start "
 browser = "browser" or os.getenv("BROWSER")
 mounter = terminal_cmd .. "bashmount"
 
@@ -104,8 +105,14 @@ myawesomemenu = {
 
 mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesome_icon },
                                     { "browser", browser },
+                                    { "editor", editor_cmd },
                                     { "terminal", terminal },
-                                    { "vm host", 'start-virtualbox' },
+                                    { "vm", {
+                                            { 'windows 10', virtual_cmd .. '".Net Dev Environment"' },
+                                            { 'mac osx', virtual_cmd .. '"IOS Dev Environment"' },
+                                            { 'virtualbox', 'vb-setup && virtualbox' }
+                                        }
+                                    },
                                     { "bps", {
                                             { "vpn", terminal_cmd .. "vpn-bellevue" }
                                         }
@@ -113,6 +120,7 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                     { "system", {
                                             { "mount drives", mounter },
                                             { "storage", "baobab" },
+                                            { "volume", terminal_cmd .. "alsamixer" },
                                             { "wifi", terminal_cmd .. "wifi-connect" }
                                         }
                                     }

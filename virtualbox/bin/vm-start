@@ -1,0 +1,4 @@
+#!/bin/bash
+
+vb-setup &&\
+    VBoxManage startvm "$1"
