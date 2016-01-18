@@ -123,6 +123,12 @@ mymainmenu = awful.menu({ items = { { "awesome", myawesomemenu, beautiful.awesom
                                             { "volume", terminal_cmd .. "alsamixer" },
                                             { "wifi", terminal_cmd .. "wifi-connect" }
                                         }
+                                    },
+                                    { "DnD", {
+                                            { "Players Handbook", "openPlayersHandbook" },
+                                            { "DM's Guide", "" },
+                                            { "Monsters Manual", "" }
+                                        }
                                     }
                                   }
                         })

@@ -1,0 +1,3 @@
+#!/bin/bash
+
+xdg-open ~/Documents/DnD/5th\ Edition/*Players\ Handbook*
