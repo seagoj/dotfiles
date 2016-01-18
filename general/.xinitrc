@@ -46,7 +46,7 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 
-setDocked
+toggleDocked
 
 # # configure trackpoint scroll
 # xprop() { xinput set-prop "TPPS/2 IBM Trackpoint" "$@"; }
