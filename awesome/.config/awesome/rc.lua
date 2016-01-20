@@ -528,7 +528,9 @@ do
   local onStartup =
   {
     -- "mutate"
-    -- "synology-cloud-station",
+    "synology-cloud-station",
+    "dropbox",
+    "keepass",
     "zeal"
   }
 
