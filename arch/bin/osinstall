@@ -31,7 +31,7 @@ function installFromAur()
         initializeInstallFromAur package-query
         initializeInstallFromAur yaourt
     fi
-    yaourt -S ${1}
+    yaourt -S ${1} --noconfirm
 }
 
 for package in "${@}"; do
