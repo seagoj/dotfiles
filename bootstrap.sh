@@ -53,6 +53,7 @@ declare -a ARCH_PACKAGES=(
     cloudstation
     virtualbox
     zeal
+    calibre
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
