@@ -72,7 +72,9 @@ function decryptSecrets()
 {
     declare -a SECRETS=($(find . -name "*.gpg"))
     for i in "${SECRETS[@]%.gpg}"; do
-        gpg --batch --yes --quiet --output $i --decrypt $i.gpg
+        if ! echo $i | grep ".password-store" > /dev/null; then
+            gpg --batch --yes --quiet --output $i --decrypt $i.gpg
+        fi
 	if [[ $? -ne 0 ]]; then
 		echo "unable to decrypt"
 		exit 1
