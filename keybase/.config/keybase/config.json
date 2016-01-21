@@ -1,0 +1,17 @@
+{
+    "current_user": "seagoj",
+    "user": {
+        "email": "seagoj@gmail.com",
+        "id": "83146a50b7f415f2254d062b21a77b19",
+        "name": "seagoj",
+        "salt": "64a95e0bf0d0ac1d5d658c4eda909e8a"
+    },
+    "users": {
+        "seagoj": {
+            "device": "6eb47d91e45931c97e154c0210e5de18",
+            "id": "83146a50b7f415f2254d062b21a77b19",
+            "name": "seagoj",
+            "salt": "64a95e0bf0d0ac1d5d658c4eda909e8a"
+        }
+    }
+}

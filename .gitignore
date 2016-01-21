@@ -35,3 +35,5 @@ ncmpcpp/.mpd/sticker.sql
 flamerobin/.flamerobin/code-templates
 flamerobin/.flamerobin/history
 keepass/.config/KeePass/KeePass.config.xml
+general/.config/keybase/secretkeys.seagoj.mpack
+keybase/.config/keybase/secretkeys.seagoj.mpack
