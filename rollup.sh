@@ -1,6 +1,7 @@
 #!/bin/sh
 
-EMAIL=seagoj@gmail.com
+# EMAIL=seagoj@gmail.com
+EMAIL=seagoj@keybase.io
 declare -a SECRETS=($(find . -name *.gpg))
 
 for i in "${SECRETS[@]%.gpg}"; do
