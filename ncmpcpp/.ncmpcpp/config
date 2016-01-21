@@ -6,7 +6,7 @@
 
 mpd_host = "localhost"
 mpd_port = "6600"
-mpd_music_dir = "/home/jason/Music"
+mpd_music_dir = "/home/seagoj/Music"
 mpd_connection_timeout = "5"
 playlist_disable_highlight_delay = "3"
 message_delay_time = "4"

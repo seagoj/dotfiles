@@ -34,3 +34,4 @@ mutate/.config/Mutate/frequence
 ncmpcpp/.mpd/sticker.sql
 flamerobin/.flamerobin/code-templates
 flamerobin/.flamerobin/history
+keepass/.config/KeePass/KeePass.config.xml
