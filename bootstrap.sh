@@ -55,6 +55,7 @@ declare -a ARCH_PACKAGES=(
     zeal
     calibre
     keybase
+    pass
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
