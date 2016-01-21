@@ -530,7 +530,7 @@ do
     -- "mutate"
     "synology-cloud-station",
     "dropbox",
-    "keepass",
+    -- "keepass",
     "zeal"
   }
 
