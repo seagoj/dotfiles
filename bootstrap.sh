@@ -54,6 +54,7 @@ declare -a ARCH_PACKAGES=(
     virtualbox
     zeal
     calibre
+    keybase
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
