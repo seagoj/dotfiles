@@ -56,6 +56,7 @@ declare -a ARCH_PACKAGES=(
     calibre
     keybase
     pass
+    feednix
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
