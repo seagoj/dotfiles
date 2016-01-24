@@ -1,0 +1,6 @@
+#!/bin/bash
+
+GMusicProxy &&\
+sudo mpd &&\
+gmusic-mpd -d ~/.mpd/playlists -r --play programming &&\
+ncmpcpp
