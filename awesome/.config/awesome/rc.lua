@@ -11,6 +11,7 @@ local beautiful = require("beautiful")
 -- Notification library
 local naughty = require("naughty")
 local menubar = require("menubar")
+local sharetags = require("sharetags")
 
 -- {{{ Error handling
 -- Check if awesome encountered an error during startup and fell back to
@@ -87,10 +88,15 @@ end
 
 -- {{{ Tags
 -- Define a tag table which hold all screen tags.
-tags = {}
+tags = {
+    name = { 'dash', 'code', 'www', 'media' },
+    layout = { layouts[8], layouts[8], layouts[8], layouts[8] }
+}
+-- tags = sharetags.create_tags(tags.name, tags.layout)
+-- tags = {}
 for s = 1, screen.count() do
     -- Each screen has its own tag table.
-    tags[s] = awful.tag({ 1, 2, 3, 4, 5, 6, 7, 8, 9 }, s, layouts[8])
+    tags[s] = awful.tag(tags.name, s, layouts[8])
 end
 -- }}}
 
