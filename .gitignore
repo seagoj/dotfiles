@@ -46,3 +46,4 @@ ncmpcpp/.mpd/mpd.pid
 ncmpcpp/.mpd/mpdstate
 ncmpcpp/.config/gmusicproxy.cfg
 atom/.atom/.apm/.apmrc
+atom/.atom/storage/application.json
