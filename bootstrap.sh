@@ -57,6 +57,7 @@ declare -a ARCH_PACKAGES=(
     keybase
     pass
     feednix
+    turses
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
