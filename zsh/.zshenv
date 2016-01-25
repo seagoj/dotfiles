@@ -51,7 +51,7 @@ export BROWSER=$(which open google-chrome chromium-browser chromium firefox link
 # Editor
 export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
 export EDITORGUI=$(which editor-gui nvim vim nano | grep -m1 -e '^/')
-export VISUAL=$(which macvim atom subl | grep -m1 -e '^/')
+# export VISUAL=$(which macvim atom subl | grep -m1 -e '^/')
 export PAGER='less'
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 

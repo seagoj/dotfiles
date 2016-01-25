@@ -92,11 +92,21 @@ tags = {
     name = { 'dash', 'code', 'www', 'media' },
     layout = { layouts[8], layouts[8], layouts[8], layouts[8] }
 }
--- tags = sharetags.create_tags(tags.name, tags.layout)
--- tags = {}
-for s = 1, screen.count() do
-    -- Each screen has its own tag table.
-    tags[s] = awful.tag(tags.name, s, layouts[8])
+
+local useShareTags = false
+
+if useShareTags then
+    local sharetags_taglist = require('sharetags.taglist')
+    tags = sharetags.create_tags(tags.name, tags.layout)
+    mytaglist = {}
+    for s = 1, screen.count() do
+        mytaglist[s] = sharetags_taglist(tags, s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    end
+else
+    for s = 1, screen.count() do
+        -- Each screen has its own tag table.
+        tags[s] = awful.tag(tags.name, s, layouts[8])
+    end
 end
 -- }}}
 
@@ -255,7 +265,11 @@ for s = 1, screen.count() do
     ))
 
     -- Create a taglist widget
-    mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    if useShareTags then
+
+    else
+        mytaglist[s] = awful.widget.taglist(s, awful.widget.taglist.filter.all, mytaglist.buttons)
+    end
 
     -- Create a tasklist widget
     mytasklist[s] = awful.widget.tasklist(s, awful.widget.tasklist.filter.currenttags, mytasklist.buttons)

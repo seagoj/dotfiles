@@ -13,3 +13,6 @@
 [submodule "pass/.password-store"]
 	path = pass/.password-store
 	url = github:seagoj/password-store.git
+[submodule "awesome/.config/awesome/sharetags"]
+	path = awesome/.config/awesome/sharetags
+	url = git://github.com/XLegion/sharetags.git
