@@ -25,14 +25,11 @@
 if [[ $# -eq 0 ]] ; then
     exec $EDITOR
 elif [[ $# -eq 1 ]] ; then
-    if [[ -a $1 ]]; then
+    # if [[ -a $1 ]]; then
         exec $EDITOR $1
-    else
-        fasd -f -e $EDITOR $1
-        if [[ $? -ne 0 ]]; then
-            $EDITOR $1
-        fi
-    fi
+    # else
+    #     fasd -f -e "$EDITOR" $1 || $EDITOR $1
+    # fi
 else
     exec $EDITOR -O "$*"
 fi
