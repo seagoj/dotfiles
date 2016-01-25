@@ -45,3 +45,4 @@ ncmpcpp/.mpd/mpd.db
 ncmpcpp/.mpd/mpd.pid
 ncmpcpp/.mpd/mpdstate
 ncmpcpp/.config/gmusicproxy.cfg
+atom/.atom/.apm/.apmrc
