@@ -1,7 +1,20 @@
 #!/bin/bash
 
-IN="LVDS-1"
-EXT="HDMI-2"
+if (xrandr | grep "LVDS1 connected"); then
+    IN="LVDS1"
+fi
+
+if xrandr | grep "LVDS-1 connected"); then
+    IN="LVDS-1"
+fi
+
+if (xrandr | grep "HDMI2 connected"); then
+    EXT="HDMI2"
+fi
+
+if (xrandr | grep "HDMI-2 connected"); then
+    EXT="HDMI-2"
+fi
 
 xrandr --output $IN --mode 1600x900
 

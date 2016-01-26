@@ -58,6 +58,7 @@ declare -a ARCH_PACKAGES=(
     pass
     feednix
     turses
+    steam
 )
 
 if [[ ! -d ${HOME}/functions ]]; then
