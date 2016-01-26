@@ -56,10 +56,14 @@
 [alias]
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
 	ctags = !.git/hooks/ctags
+    clean-local-merged = "!. $XDG_CONFIG_HOME/git/helpers && delete_local_merged_branches"
+    gst = "git status"
+    ga = "git add"
+    gdn = "git diff --name-only"
 [branch]
 	autosetuprebase = always
 [init]
-	templatedir = ~/.git_template
+	templatedir = "$XDG_CONFIG_HOME/git/template"
 [filter "hawser"]
 	clean = git hawser clean %f
 	smudge = git hawser smudge %f

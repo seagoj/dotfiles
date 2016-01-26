@@ -1,4 +1,0 @@
-## Git
-alias gst='git status'
-alias ga='git add'
-alias gdn='git diff --name-only'
