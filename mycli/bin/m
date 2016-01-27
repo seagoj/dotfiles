@@ -1,0 +1,13 @@
+#!/bin/bash
+
+if [[ $# -eq 1 && "$1" != "--help" ]]; then
+
+    if [[ ! -f /var/log/mycli-$1.log ]]; then
+        sudo touch /var/log/mycli-$1.log
+        sudo chmod a+rw /var/log/mycli-$1.log
+    fi
+
+    mycli --login-path $1 --database bps --logfile /var/log/mycli-$1.log
+else
+    mycli "$@"
+fi

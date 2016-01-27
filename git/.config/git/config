@@ -57,9 +57,9 @@
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
 	ctags = !.git/hooks/ctags
     clean-local-merged = "!. $XDG_CONFIG_HOME/git/helpers && delete_local_merged_branches"
-    gst = "git status"
-    ga = "git add"
-    gdn = "git diff --name-only"
+    st = "status"
+    a = "add"
+    dn = "diff --name-only"
 [branch]
 	autosetuprebase = always
 [init]
