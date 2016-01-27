@@ -1,0 +1,15 @@
+#!/bin/bash
+
+logfile=/var/log/mycli-production.log
+
+if [[ ! -f $logfile ]]; then
+    sudo touch $logfile
+    sudo chmod a+rw $logfile
+fi
+
+mycli\
+    --host 192.168.0.48\
+    --user root\
+    --pass $BOT_SQL_PASS\
+    --database bps\
+    --logfile $logfile

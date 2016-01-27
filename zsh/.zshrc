@@ -9,7 +9,7 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
 fi
 
 # Source alias files
-for file in ${ZDOTDIR:-$HOME}/.aliases/*.alias; do
+for file in ${XDG_CONFIG_HOME:-$HOME/.config}/aliases/*.alias; do
     source "${file}"
 done
 
