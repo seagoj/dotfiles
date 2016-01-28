@@ -40,3 +40,7 @@ fi
 if ! which baobab > /dev/null; then
     osinstall baobab
 fi
+
+if ! which unzip > /dev/null; then
+    osinstall unzip
+fi
