@@ -11,16 +11,16 @@
       <ExtraDataItem name="GUI/DetailsPageBoxes" value="general,system,preview,display,storage,audio,network,usb,sharedFolders,description"/>
       <ExtraDataItem name="GUI/GroupDefinitions/" value="m=224f2d97-159b-49f5-b9bf-21468e2fb4e1,m=f789a0e7-757c-4957-8609-ef9f6b4262e7"/>
       <ExtraDataItem name="GUI/HideDescriptionForWizards" value="ImportAppliance"/>
-      <ExtraDataItem name="GUI/LastItemSelected" value="m=_Net Dev Environment"/>
-      <ExtraDataItem name="GUI/LastWindowPosition" value="1,32,958,1047"/>
-      <ExtraDataItem name="GUI/SplitterSizes" value="318,636"/>
-      <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutAutoCapture,remindAboutMouseIntegration"/>
-      <ExtraDataItem name="GUI/UpdateCheckCount" value="3"/>
-      <ExtraDataItem name="GUI/UpdateDate" value="1 d, 2016-01-21, stable, 5.0.12"/>
+      <ExtraDataItem name="GUI/LastItemSelected" value="m=.Net Dev Environment"/>
+      <ExtraDataItem name="GUI/LastWindowPosition" value="1,32,1918,1047"/>
+      <ExtraDataItem name="GUI/SplitterSizes" value="638,1276"/>
+      <ExtraDataItem name="GUI/SuppressMessages" value="remindAboutAutoCapture,remindAboutMouseIntegration,confirmGoingScale"/>
+      <ExtraDataItem name="GUI/UpdateCheckCount" value="5"/>
+      <ExtraDataItem name="GUI/UpdateDate" value="1 d, 2016-01-29, stable, 5.0.14"/>
     </ExtraData>
     <MachineRegistry>
-      <MachineEntry uuid="{224f2d97-159b-49f5-b9bf-21468e2fb4e1}" src="/home/seagoj/Virtualbox VMs/_Net Dev Environment/_Net Dev Environment.vbox"/>
-      <MachineEntry uuid="{f789a0e7-757c-4957-8609-ef9f6b4262e7}" src="/home/seagoj/Virtualbox VMs/IOS Dev Environment/IOS Dev Environment.vbox"/>
+      <MachineEntry uuid="{224f2d97-159b-49f5-b9bf-21468e2fb4e1}" src="/home/seagoj/Virtualbox Vms/_Net Dev Environment/_Net Dev Environment.vbox"/>
+      <MachineEntry uuid="{f789a0e7-757c-4957-8609-ef9f6b4262e7}" src="/home/seagoj/Virtualbox Vms/IOS Dev Environment/IOS Dev Environment.vbox"/>
     </MachineRegistry>
     <MediaRegistry>
       <HardDisks/>
