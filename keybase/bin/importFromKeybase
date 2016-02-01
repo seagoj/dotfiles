@@ -1,0 +1,8 @@
+#!/bin/bash
+
+echo $#
+if [[ $# == 1 ]]; then
+    echo "true"
+    curl https://keybase.io/${1}/key.asc | gpg --import &&\
+    keybase track $1
+fi
