@@ -46,7 +46,7 @@ Plug 'craigemery/vim-autotag'
 " Plug 'chriskempson/tomorrow-theme' | Plug 'seagoj/tomorrow-night-config.vim'
 " Plug 'altercation/solarized' | Plug 'seagoj/solarized-config.vim'
 Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
-Plug 'seagoj/airline-config.vim' | Plug 'bling/vim-airline'
+Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'chase/vim-ansible-yaml'
 Plug 'neilagabriel/vim-geeknote'
 call plug#end()
