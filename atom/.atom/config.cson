@@ -1,15 +1,20 @@
-'exception-reporting':
-  'userId': '2a334fcc-54b1-2e2e-2381-6b72fa6af3ad'
-'release-notes':
-  'viewedVersion': '0.80.0'
-'welcome':
-  'showOnStartup': false
-'metrics':
-  'userId': 'b21a23fb0f4f173cc4c1a235abd45b2b0709037c'
-'editor':
-  'fontSize': 16
-'core':
-  'themes': [
-    'atom-dark-ui'
-    'atom-dark-syntax'
-  ]
+"*":
+  core:
+    themes: [
+      "one-dark-ui"
+      "atom-dark-syntax"
+    ]
+  editor:
+    fontSize: 16
+    invisibles: {}
+  "exception-reporting":
+    userId: "2a334fcc-54b1-2e2e-2381-6b72fa6af3ad"
+  metrics:
+    userId: "b21a23fb0f4f173cc4c1a235abd45b2b0709037c"
+  "release-notes":
+    viewedVersion: "0.80.0"
+  "vim-mode":
+    useClipboardAsDefaultRegister: true
+    useSmartcaseForSearch: true
+  welcome:
+    showOnStartup: false

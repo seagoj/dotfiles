@@ -31,6 +31,13 @@ function installPlugins()
     nvim -c :PlugInstall && installYCM
 }
 
+function installESLint()
+{
+    if ! which eslint > /dev/null; then
+        sudo npm install -g eslint
+    fi
+}
+
 if ! which nvim >/dev/null; then
     case "${OS_TYPE}" in
     Darwin | Mac)

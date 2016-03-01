@@ -121,6 +121,11 @@ if [[ -d /Library/Frameworks/Python.framework/Versions/2.7/bin ]]; then
     )
 fi
 
+# pomodoro
+if [[ -f "${CODE}/pomodoro/pomodoro.sh" ]]; then
+    source "${CODE}/pomodoro/pomodoro.sh"
+fi
+
 # secrets
 if [[ -f "${HOME}/.secrets" ]]; then
     source "$HOME/.secrets"
