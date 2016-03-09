@@ -58,4 +58,5 @@ toggleDocked
 
 xset r rate 200 50
 
+xbindkeys &
 exec awesome
