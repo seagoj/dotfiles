@@ -46,3 +46,4 @@ ncmpcpp/.config/gmusicproxy.cfg
 atom/.atom/.apm/.apmrc
 atom/.atom/storage/application.json
 atom/.atom
+ssh/.ssh/id_rsa_milito

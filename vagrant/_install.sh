@@ -5,5 +5,5 @@ if ! which virtualbox > /dev/null; then
 fi
 
 if ! which vagrant > /dev/null; then
-    osinstall vagrant
+    osinstall vagrant net-tools
 fi

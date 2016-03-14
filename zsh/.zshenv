@@ -75,6 +75,7 @@ export path=(
     $GOPATH/bin
     ./bin
     $HOME/.rbenv/bin
+    $HOME/.composer/vendor/bin
 )
 
 if [[ -d $HOME/.gem/ruby/2.2.0/bin ]]; then
