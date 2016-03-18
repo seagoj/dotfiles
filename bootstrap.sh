@@ -2,7 +2,7 @@
 
 declare -a PACKAGES=(
     ansible
-    anyconnect
+    # anyconnect
     atom
     bot
     geeknote
@@ -31,6 +31,10 @@ declare -a PACKAGES=(
 declare -a MAC_PACKAGES=(
     mac
     iterm
+    # zeal
+    # calibre
+    # keybase
+    # pass
 )
 
 declare -a NIX_PACKAGES=(
