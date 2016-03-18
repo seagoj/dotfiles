@@ -23,7 +23,7 @@
     <MachineRegistry>
       <MachineEntry uuid="{224f2d97-159b-49f5-b9bf-21468e2fb4e1}" src="/home/seagoj/Virtualbox Vms/_Net Dev Environment/_Net Dev Environment.vbox"/>
       <MachineEntry uuid="{f789a0e7-757c-4957-8609-ef9f6b4262e7}" src="/home/seagoj/Virtualbox Vms/IOS Dev Environment/IOS Dev Environment.vbox"/>
-      <MachineEntry uuid="{a772bd07-64d2-4cd4-af9c-227772733ab3}" src="/home/seagoj/VirtualBox VMs/homestead/homestead.vbox"/>
+      <MachineEntry uuid="{a772bd07-64d2-4cd4-af9c-227772733ab3}" src="/home/seagoj/VirtualBox VMs/settler_default_1443380277864_32935_1457973196173_28754/settler_default_1443380277864_32935_1457973196173_28754.vbox"/>
     </MachineRegistry>
     <MediaRegistry>
       <HardDisks/>
