@@ -75,7 +75,6 @@ export path=(
     $GOPATH/bin
     ./bin
     $HOME/.rbenv/bin
-    $HOME/.composer/vendor/bin
 )
 
 if [[ -d $HOME/.gem/ruby/2.2.0/bin ]]; then
@@ -118,6 +117,14 @@ fi
 if [[ -d /Library/Frameworks/Python.framework/Versions/2.7/bin ]]; then
    export path=(
         /Library/Frameworks/Python.framework/Versions/2.7/bin
+        $path
+    )
+fi
+
+# Composer
+if [[ -d $HOME/.config/composer/vendor/bin ]]; then
+    export path=(
+        $HOME/.config/composer/vendor/bin
         $path
     )
 fi
