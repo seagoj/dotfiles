@@ -3,7 +3,7 @@
 function installNeovimMac()
 {
     bootstrap brew
-    bootstrap vim
+    # bootstrap vim
 
     brew tap neovim/neovim
     brew install --HEAD neovim
