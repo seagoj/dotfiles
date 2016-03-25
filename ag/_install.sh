@@ -1,5 +1,11 @@
-#!/bin/bash
+#!/bin/zsh
 
-if ! which ag > /dev/null; then
+function installArch() {
     osinstall silver-searcher-git
-fi
+}
+
+function installMac() {
+    osinstall the_silver_searcher
+}
+
+autoload dotfilesInstall; dotfilesInstall ag

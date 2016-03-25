@@ -3,13 +3,16 @@
 if ! which python >/dev/null; then
     case $OS_TYPE in
     Arch)
-        osinstall python python2
+        osinstall python python2 &&\
+            sudo easy_install pip
         ;;
     Darwin | Mac)
-        osinstall python
+        osinstall python &&\
+            sudo easy_install pip
         ;;
     Debian)
-        osinstall python
+        osinstall python &&\
+            sudo easy_install pip
         ;;
     *)
         DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
