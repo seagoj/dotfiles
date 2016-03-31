@@ -10,18 +10,22 @@ function! AutoInstallVimPlug()
 endfunction
 
 let vimPlugInstalled=AutoInstallVimPlug()
+let s:uname = system("echo -n \"$(uname)\"")
 
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
-" Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim'
-Plug 'KabbAmine/zeavim.vim'
+if !v:shell_error && s:uname == "Linux"
+    Plug 'KabbAmine/zeavim.vim'
+elseif !v:shell_error && s:uname == "Darwin"
+    Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim'
+endif
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
 Plug 'edsono/vim-matchit'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' | Plug 'seagoj/gist-config.vim'
 Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
 Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
-Plug 'kien/ctrlp.vim'
+Plug 'kien/ctrlp.vim' | Plug 'lucidstack/ctrlp-mpc.vim' | Plug 'seagoj/ctrlp-mpc-config.vim'
 Plug 'ervandew/supertab' | Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
@@ -49,6 +53,7 @@ Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
 Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'chase/vim-ansible-yaml'
 Plug 'neilagabriel/vim-geeknote'
+Plug 'junegunn/vader.vim'
 call plug#end()
 
 if vimPlugInstalled == 0
