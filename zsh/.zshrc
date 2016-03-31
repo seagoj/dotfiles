@@ -86,4 +86,10 @@ if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
     source $CODE/sourcerer/sourcerer.sh
 fi
 
-eval $(dircolors ${HOME}/.dircolors)
+if [[ -f $CODE/pomodoro/pomodoro.sh ]]; then
+    source $CODE/pomodoro/pomodoro.sh
+fi
+
+if which dircolors > /dev/null; then
+    eval $(dircolors ${HOME}/.dircolors)
+fi

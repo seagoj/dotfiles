@@ -1,0 +1,17 @@
+#!/bin/bash
+
+<<<<<<< HEAD
+. $HOME/functions/buku.sh
+
+if [[ "$1" == "links" ]]; then
+    if ! which buku >/dev/null; then
+        echo "buku is required for the links option. Please install buku.";
+        exit 1
+    fi
+    cd ~/code/bonfyre/config_management/puppet/bonfyre_app && buku::open_from_search work && tmux.sh
+else
+    cd ~/code/bonfyre/config_management/puppet/bonfyre_app && tmux.sh
+fi
+=======
+cd ~/code/bonfyre/config_management/puppet/bonfyre_app && tmux attach -t bonfyre || tmux.sh
+>>>>>>> 6e8917b... mac updates

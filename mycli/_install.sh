@@ -1,6 +1,13 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
-if ! which mycli > /dev/null; then
+function installArch() {
     osinstall python-pip
     sudo pip install mycli
-fi
+}
+
+function installMac() {
+    osinstall python3
+    sudo pip3 install mycli
+}
+
+autoload dotfilesInstall; dotfilesInstall mycli

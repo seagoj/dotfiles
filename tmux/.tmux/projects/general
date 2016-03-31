@@ -1,0 +1,20 @@
+# Create bot session
+tmux -2 new-session -d -s $PROJECT -n 'vim'
+tmux send-keys 'wego 2' C-m
+
+# Bottom Bar
+autoload tmuxGulp; tmuxGulp v
+autoload tmuxSplit; tmuxSplit h
+autoload tmuxStatus; tmuxStatus h
+
+# Resize
+tmux resize-pane -t 1 -D 10
+tmux resize-pane -t 2 -L 40
+tmux resize-pane -t 3 -L 20
+
+# Set default window
+tmux select-window -t $PROJECT:1
+tmux select-pane -t 1
+
+# Attach to session
+tmux -2 attach-session -t $PROJECT

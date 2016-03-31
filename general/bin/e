@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 #
 # Aliases e to $EDITOR and provides a default argument of the current directory
@@ -25,10 +25,10 @@
 if [[ $# -eq 0 ]] ; then
     exec $EDITOR
 elif [[ $# -eq 1 ]] ; then
-    # if [[ -a $1 ]]; then
+    # if [[ -e $1 ]]; then
         exec $EDITOR $1
     # else
-    #     fasd -f -e "$EDITOR" $1 || $EDITOR $1
+    #     fasd -a -e "$EDITOR" $1 || $EDITOR $1
     # fi
 else
     exec $EDITOR -O "$*"

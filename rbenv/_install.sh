@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 if [[ ! -d $HOME/.rbenv/.git ]]; then
     git clone --recursive https://github.com/sstephenson/rbenv.git ${HOME}/.rbenv
@@ -26,5 +26,5 @@ fi
 
 if ! which bundle > /dev/null; then
     source $HOME/.zshenv
-    gem install bundler
+    sudo gem install bundler
 fi

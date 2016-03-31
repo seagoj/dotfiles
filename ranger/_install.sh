@@ -1,9 +1,10 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 if ! which ranger >/dev/null; then
     case $OS_TYPE in
     Darwin | Mac)
-        osinstall  w3m lynx highlight atool mediainfo xpdf libcaca --with-imlib2
+        brew tap homebrew/x11
+        osinstall w3m lynx highlight atool Caskroom/cask/xquartz mediainfo xpdf libcaca --with-imlib2 ranger
         ;;
     Debian)
         osinstall ranger

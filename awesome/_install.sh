@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 if ! which startx > /dev/null; then
     osinstall xorg-server xorg-server-utils xorg-xinit

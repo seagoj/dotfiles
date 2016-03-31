@@ -36,7 +36,8 @@ zstyle ':prezto:load' pmodule \
   'git' \
   'tmux' \
   'syntax-highlighting' \
-  'prompt'
+  'prompt' \
+  'gpg'
 
 #
 # Editor

@@ -1,51 +1,66 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
-declare -a PACKAGES=(
+declare -a PACKAGES
+PACKAGES=(
     ansible
-    # anyconnect
+#    anyconnect
     atom
     bot
     geeknote
     general
     git
+    go
     irssi
-    mysql
+#    mysql
     ncmpcpp
-    nginx
+#    nginx
     nvim
-    php
+#    php
     ranger
     ssh
     system
     tmux
     vagrant
-    php
     npm
     wego
     ag
     rbenv
     fasd
     mycli
+    calibre
+    keybase
+    pass
+    buku
+    boilr
+    bonfyre
 )
+declare -r PACKAGES
 
-declare -a MAC_PACKAGES=(
+declare -a MAC_PACKAGES
+MAC_PACKAGES=(
     mac
     iterm
+    dash
+    osxey
+    wwwtxt
     # zeal
-    # calibre
-    # keybase
-    # pass
 )
+declare -r MAC_PACKAGES
 
-declare -a NIX_PACKAGES=(
+declare -a NIX_PACKAGES
+NIX_PACKAGES=(
 
 )
+declare -r NIX_PACKAGES
 
-declare -a DEBIAN_PACKAGES=(
+declare -a DEBIAN_PACKAGES
+DEBIAN_PACKAGES=(
     debian
 )
+declare -r DEBIAN_PACKAGES
 
-declare -a ARCH_PACKAGES=(
+declare -a ARCH_PACKAGES
+ARCH_PACKAGES=(
     arch
     awesome
     archey
@@ -57,13 +72,13 @@ declare -a ARCH_PACKAGES=(
     cloudstation
     virtualbox
     zeal
-    calibre
-    keybase
-    pass
     feednix
     turses
     steam
 )
+declare -r ARCH_PACKAGES
+GPG="gpg"
+which gpg2 &>/dev/null && GPG="gpg2"
 
 if [[ ! -d ${HOME}/functions ]]; then
     stow --ignore=.gpg --ignore=_install.sh -vt $HOME zsh
@@ -71,16 +86,21 @@ if [[ ! -d ${HOME}/functions ]]; then
     source $HOME/.zshenv
 fi
 
+if [[ ! -f ${HOME}/functions/success || ! -f ${HOME}/functions/fail || ! -f ${HOME}/functions/info || ! -f ${HOME}/functions/bootstrap ]]; then
+    stow --ignore=.gpg --ignore=_install.sh -vt $HOME general
+fi
+
 autoload success
 autoload fail
 autoload info
+autoload bootstrap
 
 function decryptSecrets()
 {
     declare -a SECRETS=($(find . -name "*.gpg"))
     for i in "${SECRETS[@]%.gpg}"; do
         if ! echo $i | grep ".password-store" > /dev/null; then
-            gpg --batch --yes --quiet --output $i --decrypt $i.gpg
+            $GPG --batch --yes --quiet --use-agent --output $i --decrypt $i.gpg
         fi
 	if [[ $? -ne 0 ]]; then
 		echo "unable to decrypt"
@@ -89,29 +109,29 @@ function decryptSecrets()
     done
 }
 
-function bootstrap()
-{
-    declare -a PACKS=("${@}")
+# function bootstrap()
+# {
+#     declare -a PACKS=("${@}")
 
-    for p in "${PACKS[@]}"; do
-         info "$p stowing"
-        stow --ignore=.gpg --ignore=_install.sh -vt $HOME $p
-        if [[ $? -ne 0 ]]; then
-            fail "$p: stowing"
-        fi
+#     for p in "${PACKS[@]}"; do
+#          info "$p stowing"
+#         stow --ignore=.gpg --ignore=_install.sh -vt $HOME $p
+#         if [[ $? -ne 0 ]]; then
+#             fail "$p: stowing"
+#         fi
 
 
-        if [[ -f $p/_install.sh ]]; then
-            info "$p: installing"
-            source $p/_install.sh
-            if [[ $? -ne 0 ]]; then
-                fail "$p: installing"
-            fi
-        fi
+#         if [[ -f $p/_install.sh ]]; then
+#             info "$p: installing"
+#             source $p/_install.sh
+#             if [[ $? -ne 0 ]]; then
+#                 fail "$p: installing"
+#             fi
+#         fi
 
-           success $p
-    done
-}
+#            success $p
+#     done
+# }
 
 function installOSSpecificPackages()
 {

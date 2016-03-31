@@ -1,5 +1,11 @@
-#!/bin/bash
+#!/usr/bin/env zsh
 
-if ! which calibre > /dev/null; then
+function installArch() {
     osinstall calibre
-fi
+}
+
+function installMac() {
+    brew cask install calibre
+}
+
+autoload dotfilesInstall; dotfilesInstall calibre

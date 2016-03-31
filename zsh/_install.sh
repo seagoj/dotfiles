@@ -1,4 +1,4 @@
-# /bin/bash
+#!/bin/bash
 
 function installZprezto()
 {
@@ -30,4 +30,4 @@ if ! which zsh >/dev/null; then
     useZsh
 fi
 
-# installZprezto
+installZprezto

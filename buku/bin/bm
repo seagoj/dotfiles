@@ -1,0 +1,32 @@
+#!/bin/bash
+
+while [[ $# > 1 ]]
+do
+key="$1"
+
+case $key in
+    -a|add)
+        ACTION="add"
+        URL="$2"
+        TITLE="$3"
+        TAGS="$4"
+        buku -a $URL $TAGS -t $TITLE
+        ;;
+    -u|update)
+        ACTION="update"
+        INDEX="$2"
+        URL="$3"
+        TITLE="$4"
+        TAGS="$5"
+        buku -u $INDEX --url $URL --tags $TAGS -t $TITLE
+        shift
+        shift
+        shift
+        shift
+        ;;
+    *)
+        # unknown option
+        ;;
+esac
+done
+

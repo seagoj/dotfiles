@@ -1,4 +1,4 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
 if ! which tmux >/dev/null; then
     case $OS_TYPE in

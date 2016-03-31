@@ -1,0 +1,10 @@
+#!/bin/bash
+
+echo |\
+    buku -S work |\
+    awk '/\[[0-9]\]/ {print $3}' |\
+    sed 's/\[//g' |\
+    sed 's/\]//g' |\
+    sed 's/^/buku -o /' |\
+    tr '\n' '&; ' |\
+    bash

@@ -9,8 +9,8 @@
 # Select what modules you would like enabled.
 # The second line of modules may depend on options set by modules in the first line.
 # These dependencies are noted on the respective module's README.md.
-zmodules=(directory environment ssh history input utility custom spectrum pacman
-          syntax-highlighting history-substring-search prompt git completion)
+zmodules=(directory environment ssh history input utility custom spectrum
+    pacman syntax-highlighting history-substring-search prompt git completion)
 
 
 ###################
@@ -47,13 +47,13 @@ zhighlighters=(main brackets cursor)
 zssh_ids=(id_rsa)
 
 
-#
-# Pacman
-#
+# #
+# # Pacman
+# #
 
-# Set (optional) pacman front-end.
-#zpacman_frontend='powerpill'
-zpacman_frontend='yaourt'
+# # Set (optional) pacman front-end.
+# #zpacman_frontend='powerpill'
+# zpacman_frontend='yaourt'
 
-# Load any helper scripts as defined here
-zpacman_helper=(aur)
+# # Load any helper scripts as defined here
+# zpacman_helper=(aur)

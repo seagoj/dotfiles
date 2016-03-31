@@ -1,0 +1,20 @@
+declare -a PACKS=("${@}")
+
+for p in "${PACKS[@]}"; do
+     info "$p stowing"
+    stow --ignore=.gpg --ignore=_install.sh -vt $HOME $p
+    if [[ $? -ne 0 ]]; then
+        fail "$p: stowing"
+    fi
+
+
+    if [[ -f $p/_install.sh ]]; then
+        info "$p: installing"
+        source $p/_install.sh
+        if [[ $? -ne 0 ]]; then
+            fail "$p: installing"
+        fi
+    fi
+
+       success $p
+done

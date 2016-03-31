@@ -1,10 +1,18 @@
-#!/bin/zsh
+#!/usr/bin/env zsh
 
-if ! which geeknote >/dev/null; then
+function installMac() {
     bootstrap python
+    autoload updateRepo; updateRepo git://github.com/VitaliyRodnenko/geeknote.git geeknote &&\
+        sudo python setup.py install
+    popd
+}
 
+function installArch() {
+    bootstrap python
     autoload updateRepo; updateRepo git://github.com/VitaliyRodnenko/geeknote.git geeknote &&\
         osinstall python2-setuptools &&\
         sudo python2 setup.py install
     popd
-fi
+}
+
+autoload dotfilesInstall; dotfilesInstall geeknote

@@ -1,0 +1,426 @@
+sw_volume: 98
+audio_device_state:1:My Mac Device
+audio_device_state:1:FIFO
+state: play
+current: 4
+time: 0.000000
+random: 0
+repeat: 0
+single: 0
+consume: 0
+crossfade: 0
+mixrampdb: 0.000000
+mixrampdelay: -1.000000
+playlist_begin
+song_begin: http://192.168.88.146:9999/get_song?id=bc0ae69c-2f57-3711-a9f0-f5597d8e3c6d
+Time: 232.000000
+Artist: Eclectic Method
+Title: The Wolf Of Wall Street Chest Thump Mix`
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tqnncjsdctxb5lcqmjllupfqk6y
+Time: 351.000000
+Artist: Radiohead
+Title: The National Anthem
+Album: Kid A
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=97059e77-ea3c-398a-8900-9ce16707b208
+Time: 473.000000
+Artist: LCD Soundsystem
+Title: Losing My Edge
+Album: LCD Soundsystem [UK]
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tcxvuzfayo4ysptd3lqny7y3ssu
+Time: 392.000000
+Artist: deadmau5
+Title: Superliminal
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tgn4u6sibv37za3v325xpjthjem
+Time: 290.000000
+Artist: deadmau5
+Title: Channel 42
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tzfjqajaqlvmxtobknyno25xpr4
+Time: 531.000000
+Artist: deadmau5
+Title: Fn Pig
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Trqmezvqex6yttcfrv4fncfajbe
+Time: 243.000000
+Artist: deadmau5
+Title: Professional Griefers (Vocal Mix) (feat. Gerard Way)
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Te2nvuvcsewa7wugcjunggl23bi
+Time: 413.000000
+Artist: deadmau5
+Title: Maths (Original Mix)
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tjnbir2hlr54sf53o2zedphuase
+Time: 422.000000
+Artist: deadmau5
+Title: There Might Be Coffee
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=T7rfrbzdmdnfhiqyi3uyd2zqpt4
+Time: 433.000000
+Artist: deadmau5
+Title: Take care of the proper paperwork
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=T6aplmeryzo7yx77bb7hs7g63ty
+Time: 430.000000
+Artist: deadmau5
+Title: Closer
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tazvrwj42rf7ikqk3hrabfmne2e
+Time: 289.000000
+Artist: deadmau5
+Title: Failbait (Original Mix) (feat. Cypress Hill)
+Album: > album title goes here <
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=afca709a-f795-3912-b277-685d42030868
+Time: 396.000000
+Artist: Animal Collective
+Title: For Reverend Green
+Album: Strawberry Jam
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=edfbf705-63a4-3248-bcc4-5217da0fd5ba
+Time: 313.000000
+Artist: Animal Collective
+Title: Peacebone
+Album: Strawberry Jam
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=ba624005-8853-34b9-9188-7fafa9464c5a
+Time: 315.000000
+Artist: Chemical Brothers
+Title: Block Rockin' Beats
+Album: Dig Your Own Hole
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=f650107f-6f8e-3c36-a2b7-5fe26358d360
+Time: 234.000000
+Artist: Dan Deacon
+Title: The Crystal Cat
+Album: Spiderman of the Rings
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=8c79c6a1-8527-3984-b4f3-82e0afa29c66
+Time: 256.000000
+Artist: Chemical Brothers
+Title: Bass Test
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=a0a487ba-bd25-3bbd-a45a-1b73179d93dd
+Time: 333.000000
+Artist: Deadmau5
+Title: Sofi Needs a Ladder
+Album: 4 x 4 = 12
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=44915160-836c-393a-bd70-7fe096378e8f
+Time: 484.000000
+Artist: Deadmau5
+Title: Some Chords
+Album: 4 x 4 = 12
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=8fbf4df3-e696-3a6b-9fa5-c0aa42009298
+Time: 352.000000
+Artist: Deadmau5
+Title: I Said [Michael Woods Remix]
+Album: 4 x 4 = 12
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=0b90f451-0f14-3163-ad26-c1668873c095
+Time: 302.000000
+Artist: Deadmau5
+Title: A City in Florida
+Album: 4 x 4 = 12
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=06918d9c-df17-3299-8816-de21a5816f50
+Time: 299.000000
+Artist: Deadmau5
+Title: Animal Rights
+Album: 4 x 4 = 12
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=94eacb7e-d1db-3f4b-bdcf-598b8b670f3b
+Time: 216.000000
+Artist: Deadmau5
+Title: One Trick Pony
+Album: 4 x 4 = 12
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=2523b99e-8406-3dc7-aaef-1c21d70edf75
+Time: 323.000000
+Artist: The Dirtbombs
+Title: Jaguar
+Album: Party Store
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=54101855-f1f7-31b7-89eb-1d6687046c84
+Time: 313.000000
+Artist: The Jimi Hendrix Experience
+Title: Voodoo Child (Slight Return)
+Album: Electric Ladyland
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=d70f989d-831e-3fd1-9b95-00b413f60e4b
+Time: 221.000000
+Artist: LCD Soundsystem
+Title: Drunk Girls (London Session)
+Album: London Sessions
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=be01d01b-8e15-335f-bec0-ee8d3443e5cc
+Time: 413.000000
+Artist: LCD Soundsystem
+Title: Get Innocuous! (London Session)
+Album: London Sessions
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=d37cc254-685f-3234-9150-c5741d4c42b5
+Time: 147.000000
+Artist: Link Wray
+Title: Rumble
+Album: The Original Rumble
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=e146804d-6643-32d5-8fcf-add7bef7f0f7
+Time: 174.000000
+Artist: Pixies
+Title: Debaser
+Album: Doolittle
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=bdc72a0a-dd26-34cf-b9e1-0ba977aa79ee
+Time: 127.000000
+Artist: Pixies
+Title: Planet Of Sound
+Album: Death To The Pixies
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=3d379d43-1ee5-3283-be7a-af7f63b8da84
+Time: 183.000000
+Artist: Pixies
+Title: Dig For Fire
+Album: Death To The Pixies
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=321d0668-77ac-3f25-a972-5414b43c637a
+Time: 181.000000
+Artist: Pixies
+Title: U-Mass
+Album: Death To The Pixies
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=c6be85c5-6def-3874-8b67-ab9f06c9447d
+Time: 242.000000
+Artist: Radiohead
+Title: Bodysnatchers
+Album: In Rainbows
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=647e122d-fcea-33e5-8821-e623deb8e1ee
+Time: 233.000000
+Artist: Les Savy Fav
+Title: Patty Lee
+Album: Let's Stay Friends
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=885c006f-4968-3a30-8d62-bcf2ac44ba02
+Time: 213.000000
+Artist: The Von Bondies
+Title: Lack of Communication
+Album: Lack of Communication
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=1de94c29-0f92-3728-885e-1f3fa9f0f57c
+Time: 132.000000
+Artist: The Von Bondies
+Title: It Came From Japan
+Album: Lack of Communication
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=cbc98f60-83a0-3131-a48a-3735453a9a8d
+Time: 164.000000
+Artist: The White Stripes
+Title: Astro
+Album: The White Stripes
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=e2aa64a8-e188-37b5-9dad-84d5b579e366
+Time: 187.000000
+Artist: The White Stripes
+Title: I Fought Piranhas
+Album: The White Stripes
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tw2u6cuj2jslxjf6cezfi2mgpya
+Time: 536.000000
+Artist: LCD Soundsystem
+Title: Dance Yrself Clean
+Album: This Is Happening
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tl7g5wbfghk4q6xrs3txx37egna
+Time: 1613.000000
+Artist: Miles Davis
+Title: Right Off
+Album: A Tribute To Jack Johnson
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=5b5ccbfc-6f3f-3a79-aa62-dfce5c6a60f7
+Time: 1534.000000
+Artist: Miles Davis
+Title: Yesternow
+Album: A Tribute To Jack Johnson
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Toupo2hniqjwfa7objm5pqzm6du
+Time: 179.000000
+Artist: Teddybears
+Title: Cobrastyle Featuring Mad Cobra (Instrumental)
+Album: Cobrastyle Featuring Mad Cobra (6-94401)
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tagivqvqbz3lyjs5exo3a3kbsn4
+Time: 246.000000
+Artist: Teddybears
+Title: Punkrocker (Feat. Iggy Pop)
+Album: Punkrocker Featuring Iggy Pop (6-94402)
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tt7yyqxzif3dqcepl4ayeujerma
+Time: 22.000000
+Artist: Teddybears
+Title: Bukowski
+Album: Devil's Music
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tkuj257dlprlt3b7tdrxypdhg7a
+Time: 185.000000
+Artist: Teddybears
+Title: Rocket Scientist (feat. Eve)
+Album: Devil's Music
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=T7ebgqwo3kaoldahr2dzllc5mme
+Time: 205.000000
+Artist: Teddybears
+Title: Devil's Music (feat. ADL)
+Album: Devil's Music
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Txv4vw2x6ugtr5dgcmnz3zbxfga
+Time: 178.000000
+Artist: Teddybears
+Title: Cardiac Arrest (feat. Robyn)
+Album: Devil's Music
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=Tp6ptwosruzivkkiypyk4zrzxy4
+Time: 945.000000
+Artist: Maurice Ravel
+Title: Boléro (Studio)
+Album: Bolero
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=e511a50a-66e2-340f-b384-aa8bf3ffec93
+Time: 160.000000
+Artist: Vampire Weekend
+Title: Diane Young
+Album: Modern Vampires of the City
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=16c44f7b-a4d4-3867-a115-f43b85a92d9f
+Time: 271.000000
+Artist: Big Black Delta
+Title: Money Rain Down
+Album: Money Rain Down
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=2fad2b14-b7f5-3513-a1ff-1cbe296479cc
+Time: 230.000000
+Artist: Dan Deacon
+Title: Guilford Avenue Bridge
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=702b992d-17da-3a9c-90c5-8c924b656ba3
+Time: 284.000000
+Artist: Dan Deacon
+Title: True Thrush
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=b44c92cf-4a54-3c2c-8801-2e6d04f916ef
+Time: 170.000000
+Artist: Dan Deacon
+Title: Lots
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=2273e0bf-6f1b-3250-99cb-5a59754a9574
+Time: 322.000000
+Artist: Dan Deacon
+Title: Prettyboy
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=0265a9d0-73c1-3691-aa0d-ea61675f3e79
+Time: 271.000000
+Artist: Dan Deacon
+Title: Crash Jam
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=b78312e3-4f04-31a4-86e5-da4562294019
+Time: 283.000000
+Artist: Dan Deacon
+Title: USA I: Is a Monster
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=c3669c38-126d-3fa6-9ec1-9da1820cf9f4
+Time: 430.000000
+Artist: Dan Deacon
+Title: USA II: The Great American Desert
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=dfae0fad-130b-3d2e-9622-79ef0d815084
+Time: 390.000000
+Artist: Dan Deacon
+Title: USA III: Rail
+Album: America
+mtime: 0
+song_end
+song_begin: http://192.168.88.146:9999/get_song?id=26cc52b1-847f-3eb9-be9b-651b6fbcd99d
+Time: 204.000000
+Artist: Dan Deacon
+Title: USA IV: Manifest
+Album: America
+mtime: 0
+song_end
+playlist_end

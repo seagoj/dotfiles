@@ -32,11 +32,11 @@ export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=${HOME}/dotfiles
-if [[ -d /Volumes/code ]]; then
-    export CODE=/Volumes/code
-else
+#if [[ -d /Volumes/code ]]; then
+#    export CODE=/Volumes/code
+#else
     export CODE=${HOME}/code
-fi
+#fi
 
 # Vagrant
 ## Provider(virtualbox, parallels)
@@ -64,7 +64,9 @@ if [[ -z "$lang" ]]; then
 fi
 
 # Executable Path
-export path=(
+declare -a PATH_TEMP
+PATH_TEMP=(
+# export path=(
     $HOME/bin
     /usr/local/{bin,sbin}
     vendor/bin
@@ -76,12 +78,12 @@ export path=(
     ./bin
     $HOME/.rbenv/bin
 )
+path=($PATH_TEMP)
+export path
+declare -r PATH_TEMP
 
 if [[ -d $HOME/.gem/ruby/2.2.0/bin ]]; then
-    export path=(
-        $path
-        $HOME/.gem/ruby/2.2.0/bin
-    )
+    export path=($path $HOME/.gem/ruby/2.2.0/bin)
 fi
 
 # Less
@@ -115,18 +117,12 @@ fi
 
 # Python
 if [[ -d /Library/Frameworks/Python.framework/Versions/2.7/bin ]]; then
-   export path=(
-        /Library/Frameworks/Python.framework/Versions/2.7/bin
-        $path
-    )
+   export path=(/Library/Frameworks/Python.framework/Versions/2.7/bin $path)
 fi
 
 # Composer
 if [[ -d $HOME/.config/composer/vendor/bin ]]; then
-    export path=(
-        $HOME/.config/composer/vendor/bin
-        $path
-    )
+    export path=($HOME/.config/composer/vendor/bin $path)
 fi
 
 # pomodoro

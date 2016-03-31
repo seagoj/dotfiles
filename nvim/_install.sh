@@ -7,6 +7,7 @@ function installNeovimMac()
 
     brew tap neovim/neovim
     brew install --HEAD neovim
+    osinstall python3 && sudo pip3 install neovim
 }
 
 function installNeovimDebian()

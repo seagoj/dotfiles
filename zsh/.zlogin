@@ -75,4 +75,6 @@ if which archey3 > /dev/null; then
     archey3
 fi
 
-startx
+if [[ "$(uname -s)" != "Darwin" ]] && which startx >/dev/null; then
+    startx
+fi

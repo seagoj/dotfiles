@@ -17,7 +17,7 @@ Plug 'airblade/vim-gitgutter'
 if !v:shell_error && s:uname == "Linux"
     Plug 'KabbAmine/zeavim.vim'
 elseif !v:shell_error && s:uname == "Darwin"
-    Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim'
+    Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
 endif
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
@@ -52,10 +52,15 @@ Plug 'craigemery/vim-autotag'
 Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
 Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'chase/vim-ansible-yaml'
-Plug 'neilagabriel/vim-geeknote'
+" Plug 'neilagabriel/vim-geeknote'
 Plug 'junegunn/vader.vim'
+" Experimental
+Plug 'joonty/vdebug'
+Plug 'IN3D/vim-raml'
 call plug#end()
 
 if vimPlugInstalled == 0
     :PlugInstall
 endif
+
+let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/bonfyre/config_management/puppet/bonfyre_app"} }

@@ -13,6 +13,8 @@
     userId: "b21a23fb0f4f173cc4c1a235abd45b2b0709037c"
   "release-notes":
     viewedVersion: "0.80.0"
+  "tree-view":
+    hideVcsIgnoredFiles: true
   "vim-mode":
     useClipboardAsDefaultRegister: true
     useSmartcaseForSearch: true

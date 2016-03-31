@@ -60,6 +60,7 @@
     st = "status"
     a = "add"
     dn = "diff --name-only"
+    hash = "rev-parse HEAD | pbcopy"
 [branch]
 	autosetuprebase = always
 [init]
@@ -72,3 +73,19 @@
 	clean = git-lfs clean %f
 	smudge = git-lfs smudge %f
 	required = true
+[filter "tabify"]
+    clean = unexpand -t 4
+[filter "spacify"]
+    clean = expand -t 4
+[filter "co_4_spaces_commit_tabs"]
+    smudge = expand -t 4
+    clean = unexpand -t 4
+[filter "co_tabs_commit_4_spaces"]
+    smudge = unexpand -t 4
+    clean = expand -t 4
+[filter "co_2_spaces_commit_tabs"]
+    smudge = expand -t 2
+    clean = unexpand -t 2
+[filter "co_tabs_commit_2_spaces"]
+    smudge = unexpand -t 2
+    clean = expand -t 2

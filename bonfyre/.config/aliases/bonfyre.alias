@@ -1,0 +1,1 @@
+alias jenkins-start='open http://localhost:8181&; ssh -N jenkins'
