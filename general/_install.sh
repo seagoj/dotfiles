@@ -1,5 +1,5 @@
 installMac() {
-    dotfiles::updateRepo git://github.com/powerline/fonts.git fonts | grep "up to date" >/dev/null
+    dotfiles::update_repo git://github.com/powerline/fonts.git fonts | grep "up to date" >/dev/null
     if [[ ! $? -eq 0 ]]; then
         ./install.sh
         popd >/dev/null

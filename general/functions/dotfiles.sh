@@ -169,7 +169,7 @@ dotfiles::install() {
     dotfiles::clearFunc installMac
 }
 
-dotfiles::updateRepo() {
+dotfiles::update_repo() {
     if [[ $# -ne 2 ]]; then
         echo Invalid parameters
         exit 1

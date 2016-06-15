@@ -6,6 +6,6 @@ if ! sudo pip3 freeze | grep pycrypto >/dev/null; then
     sudo pip3 install pycrypto >/dev/null
 fi
 
-dotfiles::updateRepo https://github.com/jarun/Buku buku
+dotfiles::update_repo https://github.com/jarun/Buku buku
 sudo make install >/dev/null
 popd >/dev/null

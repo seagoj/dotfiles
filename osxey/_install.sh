@@ -1,5 +1,5 @@
 if ! which OSXey &>/dev/null; then
-    dotfiles::updateRepo git://github.com/Gary00/OSXey osxey
+    dotfiles::update_repo git://github.com/Gary00/OSXey osxey
     ./install.sh
     popd
 fi

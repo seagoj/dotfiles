@@ -15,7 +15,7 @@ installNeovimDebian() {
 
 installSourcerer() {
     if [[ ! -f ${XDG_CONFIG_HOME}/nvim/colors/sourcerer.vim ]]; then
-        general::updateRepo git://github.com/xero/sourcerer.git sourcerer
+        general::update_repo git://github.com/xero/sourcerer.git sourcerer
         popd
         ln -s ${CODE}/sourcerer/sourcerer.vim $XDG_CONFIG_HOME/nvim/colors/sourcerer.vim
     fi

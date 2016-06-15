@@ -1,4 +1,4 @@
 if [[ ! -d ${CODE}/sandboxd ]]; then
-    dotfiles::updateRepo https://github.com/benvan/sandboxd sandboxd
+    dotfiles::update_repo https://github.com/benvan/sandboxd sandboxd
     popd
 fi
