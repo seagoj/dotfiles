@@ -1,13 +1,11 @@
-#!/bin/zsh
-
 if ! which pip3 >/dev/null; then
-    bootstrap python
+    dotfiles::bootstrap python
 fi
 
 if ! sudo pip3 freeze | grep pycrypto >/dev/null; then
-    sudo pip3 install pycrypto
+    sudo pip3 install pycrypto >/dev/null
 fi
 
-autoload updateRepo; updateRepo https://github.com/jarun/Buku buku
-sudo make install
-popd
+dotfiles::updateRepo https://github.com/jarun/Buku buku
+sudo make install >/dev/null
+popd >/dev/null

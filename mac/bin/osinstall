@@ -1,8 +1,10 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 #vim: filetype=sh
 
-if ! which brew > /dev/null; then
-    autoload bootstrap; bootstrap brew
+. $HOME/functions/dotfiles.sh
+
+if ! which brew &>/dev/null; then
+    dotfiles::bootstrap brew
 fi
 
 brew install ${@}

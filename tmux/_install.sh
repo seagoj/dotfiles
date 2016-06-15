@@ -1,6 +1,4 @@
-#!/usr/bin/env zsh
-
-if ! which tmux >/dev/null; then
+if ! which tmux &>/dev/null; then
     case $OS_TYPE in
     Darwin | Mac)
         osinstall https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb

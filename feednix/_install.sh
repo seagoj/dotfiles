@@ -1,3 +1,3 @@
-if ! which feednix > /dev/null; then
+if ! which feednix &>/dev/null; then
     osinstall feednix
 fi

@@ -1,2 +1,0 @@
-autoload split; split "$1"
-tmux send-keys "karma start" C-m

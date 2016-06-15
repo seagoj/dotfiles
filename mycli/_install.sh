@@ -1,13 +1,11 @@
-#!/usr/bin/env zsh
-
-function installArch() {
+installArch() {
     osinstall python-pip
     sudo pip install mycli
 }
 
-function installMac() {
+installMac() {
     osinstall python3
     sudo pip3 install mycli
 }
 
-autoload dotfilesInstall; dotfilesInstall mycli
+dotfiles::install mycli

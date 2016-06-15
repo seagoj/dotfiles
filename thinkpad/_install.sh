@@ -13,7 +13,7 @@ if [[ ! -f $config ]]; then
     echo "EndSection" | sudo tee -a $config
 fi
 
-if ! which acpi > /dev/null; then
+if ! which acpi &>/dev/null; then
     osinstall acpi acpid
 fi
 
@@ -21,26 +21,26 @@ if [[ ! -f /etc/modules-load.d/thinkpad-acpi.conf ]]; then
     echo "thinkpad-acpi" | sudo tee /etc/modules-load.d/thinkpad-acpi.conf
 fi
 
-if ! which bluetoothctl > /dev/null; then
+if ! which bluetoothctl &>/dev/null; then
     osinstall bluez bluez-utils
 fi
 
-if ! which notify-send > /dev/null; then
+if ! which notify-send &>/dev/null; then
     osinstall libnotify
 fi
 
-if ! which bashmount > /dev/null; then
+if ! which bashmount &>/dev/null; then
     osinstall bashmount
 fi
 
-if ! which rar > /dev/null; then
+if ! which rar &>/dev/null; then
     osinstall rar
 fi
 
-if ! which baobab > /dev/null; then
+if ! which baobab &>/dev/null; then
     osinstall baobab
 fi
 
-if ! which unzip > /dev/null; then
+if ! which unzip &>/dev/null; then
     osinstall unzip
 fi

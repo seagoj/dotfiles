@@ -1,5 +1,4 @@
-#!/usr/bin/env zsh
-
+#!/bin/bash
 if (( $# == 1 )); then
 ssh $1 "cd /root/samba_conf && ./install.sh";
 else

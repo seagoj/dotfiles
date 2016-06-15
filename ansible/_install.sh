@@ -1,15 +1,13 @@
-#!/usr/bin/env zsh
-
-function installArch() {
+installArch() {
     osinsstall ansible
 }
 
-function installMac() {
-    bootstrap python &&\
+installMac() {
+    dotfiles::bootstrap python &&\
         sudo CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible
 }
 
-autoload dotfilesInstall; dotfilesInstall ansible
+dotfiles::install ansible
 
 if [[ ! -f "${HOME}/.vault_pass" ]]; then
     echo "$(pass ansible/vault/bellevue | head -n1)" > "${HOME}/.vault_pass"

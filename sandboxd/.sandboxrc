@@ -1,0 +1,3 @@
+sandbox_init_rbenv() {
+    eval "$(rbenv init -)"
+}

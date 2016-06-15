@@ -1,6 +1,4 @@
-#!/bin/bash
-
-if ! which termite >/dev/null; then
+if ! which termite &>/dev/null; then
     case $OS_TYPE in
     Arch)
         osinstall termite

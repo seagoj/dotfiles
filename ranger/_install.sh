@@ -1,6 +1,4 @@
-#!/usr/bin/env zsh
-
-if ! which ranger >/dev/null; then
+if ! which ranger &>/dev/null; then
     case $OS_TYPE in
     Darwin | Mac)
         brew tap homebrew/x11

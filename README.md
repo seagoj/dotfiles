@@ -6,10 +6,14 @@ Repository of configuration files and scripts.
 
 #### Installation
 
+```shell
+$ git clone git://github.com/seagoj/dotfiles.git ~/dotfiles
+```
+
 Automatically finds and decrypts *.gpg files then deploys packages to user home.
 
 ```shell
-$ ./bootstrap.sh
+$ make install
 ```
 
 #### Rollup unencrypted files for commit
@@ -17,5 +21,5 @@ $ ./bootstrap.sh
 Automatically re-encrypts those files to commit
 
 ```shell
-$ ./rollup.sh
+$ make encrypt
 ```

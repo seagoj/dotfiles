@@ -1,11 +1,9 @@
-#!/usr/bin/env zsh
-
-function installArch() {
+installArch() {
     osinstall calibre
 }
 
-function installMac() {
+installMac() {
     brew cask install calibre
 }
 
-autoload dotfilesInstall; dotfilesInstall calibre
+dotfiles::install calibre

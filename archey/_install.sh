@@ -1,9 +1,7 @@
-#!/bin/bash
-
-if ! which archey > /dev/null; then
+if ! which archey &>/dev/null; then
     case $OS_TYPE in
     Arch)
-        if ! which archey3 > /dev/null; then
+        if ! which archey3 &>/dev/null; then
             osinstall archey3-git
         fi
         ;;

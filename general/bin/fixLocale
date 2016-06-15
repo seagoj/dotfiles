@@ -1,14 +1,13 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
-autoload success
-autoload fail
+. $HOME/functions/general.sh
 
 checkEncode() {
     return [ `locale -a | grep en_US.utf8`=="en_US.utf8" ]
 }
 
 #if [ checkEncode ] ; then
-#    success "en_US.utf8 encoding exists in locale"
+#    general::success "en_US.utf8 encoding exists in locale"
 #    exit 0
 #else
     sudo localedef -v -c -i en_US -f UTF-8 en_US.UTF-8
@@ -18,7 +17,7 @@ checkEncode() {
         fail "Encoding falied" $rc
     else
         if [ checkEncode ] ; then
-            success "en_US.utf8 has been successfully coded and added to the locale"
+            general::success "en_US.utf8 has been successfully coded and added to the locale"
             exit 0
         else
             exit 1

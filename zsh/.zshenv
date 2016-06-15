@@ -4,6 +4,51 @@
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
 
+. $HOME/functions/path.sh
+
+# INPUTRC
+export INPUTRC=${HOME}/.inputrc
+
+# XDG
+export XDG_CONFIG_HOME=${HOME}/.config
+export XDG_DATA_HOME=${HOME}/.local/share
+export XDG_CACHE_HOME=${HOME}/.cache
+
+# ZSH Functions
+export FUNCTIONS=${HOME}/functions
+fpath=(
+    $FUNCTIONS
+    $fpath
+)
+
+# Go
+export GOPATH=${HOME}/go
+
+# Path
+## Local (s)bin
+path::add --prepend /usr/local/{bin,sbin}
+## Composer
+path::add --prepend $HOME/.config/composer/vendor/bin
+path::add --prepend --relative vendor/bin
+## Node
+path::add --prepend --relative node_modules/.bin
+## Go
+path::add ${GOPATH}/bin
+## rbenv
+path::add $HOME/.rbenv/bin
+## Chef Ruby
+path::add ${HOME}/.chefdk/gem/ruby/latest/bin
+path::add /opt/chefdk/bin
+## Ruby
+path::add ${HOME}/.gem/ruby/2.0.0/bin
+## Python
+path::add --prepend /Library/Frameworks/Python.framework/Versions/2.7/bin
+## Local Bin
+path::add --relative ./bin
+## Home Bin
+path::add --prepend $HOME/bin
+
+# Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
     export OS_TYPE=Arch
 elif [[ -f /etc/redhat-release ]]; then
@@ -12,38 +57,16 @@ elif [[ "$(uname -s)" -eq "Darwin" ]]; then
     export OS_TYPE=Mac
 fi
 
-export INPUTRC=${HOME}/.inputrc
-
-# XDG
-export XDG_CONFIG_HOME=${HOME}/.config
-export XDG_DATA_HOME=${HOME}/.local/share
-export XDG_CACHE_HOME=${HOME}/.cache
-
-export FUNCTIONS=${HOME}/functions
-
-# ZSH Function Path
-fpath=(
-    $FUNCTIONS
-    $fpath
-)
-
 # User Directories
 export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=${HOME}/dotfiles
-#if [[ -d /Volumes/code ]]; then
-#    export CODE=/Volumes/code
-#else
-    export CODE=${HOME}/code
-#fi
+export CODE=${HOME}/code
 
 # Vagrant
 ## Provider(virtualbox, parallels)
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
-
-# Go
-export GOPATH=${HOME}/go
 
 # Browser
 export BROWSER=$(which open google-chrome chromium-browser chromium firefox links2 links lynx | grep -m1 -e '^/')
@@ -52,7 +75,6 @@ export BROWSER=$(which open google-chrome chromium-browser chromium firefox link
 export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
 export EDITORGUI=$(which editor-gui nvim vim nano | grep -m1 -e '^/')
 # export VISUAL=$(which macvim atom subl | grep -m1 -e '^/')
-export PAGER='less'
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Terminal
@@ -63,72 +85,27 @@ if [[ -z "$lang" ]]; then
     export LANG='en_US.UTF-8'
 fi
 
-# Executable Path
-declare -a PATH_TEMP
-PATH_TEMP=(
-# export path=(
-    $HOME/bin
-    /usr/local/{bin,sbin}
-    vendor/bin
-    node_modules/.bin
-    $HOME/.chefdk/gem/ruby/2.1.0/bin
-    /opt/chefdk/bin
-    $path
-    $GOPATH/bin
-    ./bin
-    $HOME/.rbenv/bin
-)
-path=($PATH_TEMP)
-export path
-declare -r PATH_TEMP
-
-if [[ -d $HOME/.gem/ruby/2.2.0/bin ]]; then
-    export path=($path $HOME/.gem/ruby/2.2.0/bin)
-fi
-
 # Less
-## Set the default Less options.
-## Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
-## Remove -X and -F (exit if the content fits on one screen) to enable it.
-export LESS='-F -g -i -M -R -S -w -X -z-4'
-## Set the Less input preprocessor.
-## Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
-if (( $#commands[(i)lesspipe(|.sh)] )); then
-    export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+if which less >/dev/null; then
+    export PAGER='less'
+    # Less
+    ## Set the default Less options.
+    ## Mouse-wheel scrolling has been disabled by -X (disable screen clearing).
+    ## Remove -X and -F (exit if the content fits on one screen) to enable it.
+    export LESS='-F -g -i -M -R -S -w -X -z-4'
+    ## Set the Less input preprocessor.
+    ## Try both `lesspipe` and `lesspipe.sh` as either might exist on a system.
+    if (( $#commands[(i)lesspipe(|.sh)] )); then
+        export LESSOPEN="| /usr/bin/env $commands[(i)lesspipe(|.sh)] %s 2>&-"
+    fi
 fi
 
 # Temporary Files
-if [[ ! -d "$TMPDIR" ]]; then
-    export TMPDIR="/tmp/$USER"
-  mkdir -p -m 700 "$TMPDIR"
-fi
-
+export TMPDIR="/tmp/$USER"
 export TMPPREFIX="${TMPDIR%/}/zsh"
-if [[ ! -d "$TMPPREFIX" ]]; then
-  mkdir -p "$TMPPREFIX"
-fi
 
 # Ruby
-## Initialize rbenv
 export RBENV_ROOT=${HOME}/.rbenv
-if which rbenv > /dev/null; then
-    eval "$(rbenv init -)"
-fi
-
-# Python
-if [[ -d /Library/Frameworks/Python.framework/Versions/2.7/bin ]]; then
-   export path=(/Library/Frameworks/Python.framework/Versions/2.7/bin $path)
-fi
-
-# Composer
-if [[ -d $HOME/.config/composer/vendor/bin ]]; then
-    export path=($HOME/.config/composer/vendor/bin $path)
-fi
-
-# pomodoro
-if [[ -f "${CODE}/pomodoro/pomodoro.sh" ]]; then
-    source "${CODE}/pomodoro/pomodoro.sh"
-fi
 
 # secrets
 if [[ -f "${HOME}/.secrets" ]]; then
@@ -137,5 +114,5 @@ fi
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-  source "${ZDOTDIR:-$HOME}/.zprofile"
+    source "${ZDOTDIR:-$HOME}/.zprofile"
 fi

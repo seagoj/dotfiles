@@ -1,6 +1,4 @@
-#!/bin/bash
-
-if ! which python >/dev/null; then
+if ! which python &>/dev/null; then
     case $OS_TYPE in
     Arch)
         osinstall python python2 &&\

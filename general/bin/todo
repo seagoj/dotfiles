@@ -1,5 +1,5 @@
-#!/usr/bin/env zsh
-
+#!/bin/bash
+#
 if [[ $# != 0 ]]; then
     echo $1 >> ~/todo.markdown
 fi

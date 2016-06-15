@@ -3,9 +3,9 @@ tmux -2 new-session -d -s $PROJECT -n 'vim'
 tmux send-keys 'wego 2' C-m
 
 # Bottom Bar
-autoload tmuxGulp; tmuxGulp v
-autoload tmuxSplit; tmuxSplit h
-autoload tmuxStatus; tmuxStatus h
+tmux::gulp v
+tmux::split h
+tmux::status h
 
 # Resize
 tmux resize-pane -t 1 -D 10

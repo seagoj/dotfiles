@@ -1,11 +1,9 @@
-#!/usr/bin/env zsh
-
-function installArch() {
+installArch() {
     osinstall silver-searcher-git
 }
 
-function installMac() {
+installMac() {
     osinstall the_silver_searcher
 }
 
-autoload dotfilesInstall; dotfilesInstall ag
+dotfiles::install ag

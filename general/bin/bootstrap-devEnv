@@ -1,8 +1,0 @@
-pacman -S gcc php php-pear php-xsl nginx redis vim
-
-pear config-set auto_discover 1
-pear install phpDocumentor PHP_CodeSniffer PHP_Archive-alpha pear.phpunit.de/PHPUnit
-pecl install xdebug
-
-systemctl enable redis
-systemctl start redis

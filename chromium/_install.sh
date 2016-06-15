@@ -1,6 +1,4 @@
-#!/bin/bash
-
-if ! which chromium > /dev/null; then
+if ! which chromium &>/dev/null; then
     osinstall chromium chromium-pepper-flash chromium-widevine
 
     # Set as default browser

@@ -52,3 +52,7 @@ vim/.vim/autoload/plug.vim
 zsh/.antigen/repos/*
 atom/.atom/.apm/emissary
 atom/.atom/.apm/registry.npmjs.org
+vpn/bin/vpn-bellevue
+bonfyre/.config/aliases/bonfyre.alias
+bonfyre/bin/work
+keybase/.config/keybase/config.json

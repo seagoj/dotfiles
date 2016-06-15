@@ -1,10 +1,12 @@
-#!/bin/zsh
+#!/bin/bash
+
+. $HOME/functions/tmux.sh
 
 # project settings
 PROJECT=${PWD##*/}
 
 if [[ -f ~/.tmux/projects/$PROJECT ]]; then
-    source ~/.tmux/projects/$PROJECT
+    tmux attach -t $PROJECT || source ~/.tmux/projects/$PROJECT
 else
-    source ~/.tmux/projects/general
+    tmux attach -t $PROJECT || source ~/.tmux/projects/general
 fi

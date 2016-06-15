@@ -1,4 +1,5 @@
-#!/usr/bin/zsh
+#!/bin/bash
+#
 echo "Requires packages:\nmingw-gcc-g++\nmingw-zlib-devel\npkg-config\nautoconf\nautomake\ngit\nwget\n==================\n\n"
 
 # Build PCRE

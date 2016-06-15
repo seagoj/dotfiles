@@ -1,5 +1,5 @@
-#!/usr/bin/env zsh
-
+#!/bin/bash
+#
 cd $CODE/$1
 
 if [ -e "$1.php" ]

@@ -1,7 +1,5 @@
-#!/bin/bash
-
-if ! which fasd > /dev/null; then
-    bootstrap git
+if ! which fasd &>/dev/null; then
+    dotfiles::bootstrap git
 
     if [[ ! -d ${HOME}/builds ]]; then
         mkdir -p ${HOME}/builds

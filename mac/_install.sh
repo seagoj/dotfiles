@@ -1,5 +1,11 @@
-#!/usr/bin/env zsh
-
-if ! which pinentry-curses > /dev/null; then
+if ! which pinentry-curses >/dev/null; then
     osinstall gpg gpg2
+fi
+
+if [[ "15" != "$(defaults read -g InitialKeyRepeat)" ]]; then
+    defaults write -g InitialKeyRepeat -int 15
+fi
+
+if [[ "2" != "$(defaults read -g KeyRepeat)" ]]; then
+    defaults write -g KeyRepeat -int 2
 fi

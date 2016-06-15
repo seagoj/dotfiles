@@ -1,4 +1,4 @@
-#vim: filetype=sh
+#vim: filetype=bash:
 #
 # User configuration sourced by interactive shells
 #
@@ -6,6 +6,11 @@
 # Source zim
 if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
+fi
+
+# Source sandboxd
+if [[ -s ${CODE}/sandboxd/sandboxd ]]; then
+    source ${CODE}/sandboxd/sandboxd
 fi
 
 # Source alias files
@@ -16,10 +21,6 @@ done
 # key bindings
 bindkey '[1~' beginning-of-line   # Home
 bindkey '[4~' end-of-line         # End
-
-# START SSH_AGENT
-# eval $(ssh-agent)
-# ssh-add
 
 # assume path with no command is a cd command
 setopt AUTO_CD
@@ -61,10 +62,8 @@ bindkey -M vicmd "q" push-line
 bindkey -M viins ' ' magic-space
 
 # set geeknote editor
-if which geeknote >/dev/null; then
-    # geeknote settings --editor $EDITOR
-else
-    echo "geeknote is not installed.";
+if which geeknote >/dev/null && [[ "$EDITOR" != "$(geeknote settings | grep "Current editor: " | sed 's/Current editor: //g')" ]]; then
+    geeknote settings --editor $EDITOR >/dev/null
 fi
 
 # initialize fasd
@@ -74,22 +73,44 @@ else
     echo "fasd is not installed.";
 fi
 
-if [[ -f ${HOME}/.iterm2_shell_integration.zsh ]]; then
+if [[ -s ${HOME}/.iterm2_shell_integration.zsh ]]; then
     source ${HOME}/.iterm2_shell_integration.zsh
 fi
 
-if [[ -f ${HOME}/.xsh ]]; then
+if [[ -s ${HOME}/.xsh ]]; then
     source ${HOME}/.xsh
 fi
 
-if [[ -f $CODE/sourcerer/sourcerer.sh ]]; then
+if [[ -s $CODE/sourcerer/sourcerer.sh ]]; then
     source $CODE/sourcerer/sourcerer.sh
 fi
 
-if [[ -f $CODE/pomodoro/pomodoro.sh ]]; then
+if [[ -s $CODE/pomodoro/pomodoro.sh ]]; then
     source $CODE/pomodoro/pomodoro.sh
 fi
 
-if which dircolors > /dev/null; then
-    eval $(dircolors ${HOME}/.dircolors)
+if which dircolors >/dev/null; then
+    eval "$(dircolors ${HOME}/.dircolors)"
+fi
+
+if which tag >/dev/null; then
+    tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null; }
+fi
+
+if which rbenv >/dev/null; then
+    if which sandbox >/dev/null; then
+        echo "Define sandbox"
+        sandbox_hook rbenv ruby
+    else
+        source $HOME/.sandboxrc
+        sandbox_init_rbenv
+    fi
+fi
+
+# Temporary Directories
+if [[ ! -d "$TMPDIR" ]]; then
+    mkdir -p -m 700 "$TMPDIR"
+fi
+if [[ ! -d "$TMPPREFIX" ]]; then
+    mkdir -p "$TMPPREFIX"
 fi

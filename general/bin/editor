@@ -1,3 +1,5 @@
-#!/usr/bin/env zsh
+#!/bin/bash
 
-autoload envVarToScript; envVarToScript "EDITOR" $@
+. $HOME/functions/general.sh
+
+general::env_var_to_script "EDITOR" $@

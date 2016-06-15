@@ -1,0 +1,24 @@
+#!/bin/bash
+
+. general/functions/dotfiles.sh
+
+dotfiles::stow_functions
+
+case $OS_TYPE in
+Arch)
+    OS=arch
+    ;;
+Debian)
+    OS=debian
+    ;;
+Linux | FreeBSD)
+    OS=nix
+    ;;
+Darwin | Mac)
+    OS=mac
+    ;;
+esac
+
+SHELL=zsh
+
+dotfiles::process_packages

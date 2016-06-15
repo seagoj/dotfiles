@@ -1,4 +1,7 @@
-$HOME/bin/resetSshPermissions > /dev/null
+. $HOME/functions/ssh.sh
+
+ssh::reset_permissions
+
 git remote rm origin &&\
     git remote add origin git@github.com:seagoj/dotfiles.git &&\
     git submodule update --recursive --init
