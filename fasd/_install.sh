@@ -7,6 +7,6 @@ if ! which fasd &>/dev/null; then
 
     git clone --recurse-submodules git://github.com/clvv/fasd.git ${HOME}/builds/fasd
     pushd ${HOME}/builds/fasd
-    sudo make install
+    general::sudo make install
     popd
 fi

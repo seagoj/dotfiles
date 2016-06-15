@@ -34,6 +34,14 @@ general::env_var_to_script() {
     eval "\$${env_var} $@"
 }
 
+general::sudo() {
+    if which pass >/dev/null; then
+        echo "$(pass thinkpad/login | head -n 1)" | sudo -S "$@"
+    else
+        sudo $@
+    fi
+}
+
 general::set_permission() {
     if [[ $# -ne 2 ]]; then
         echo "usage:"
@@ -42,10 +50,11 @@ general::set_permission() {
     fi
 
     if [[ -e ${1} ]]; then
-        if which pass >/dev/null; then
-            echo $(pass thinkpad/login | head -n 1) | sudo chmod ${2} ${1}
-        else
-            sudo chmod ${2} ${1}
-        fi
+        general::sudo chmod ${2} ${1}
+        # if which pass >/dev/null; then
+        #     echo $(pass thinkpad/login | head -n 1) | sudo chmod ${2} ${1}
+        # else
+        #     sudo chmod ${2} ${1}
+        # fi
     fi
 }

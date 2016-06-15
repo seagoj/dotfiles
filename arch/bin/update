@@ -1,4 +1,6 @@
 #!/bin/bash
 #vim: filetype=sh
 
-sudo pacman -Syu --noconfirm ${@}
+. $HOME/functions/general.sh
+
+general::sudo pacman -Syu --noconfirm ${@}

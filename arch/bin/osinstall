@@ -1,6 +1,8 @@
 #!/bin/bash
 #vim: filetype=sh
 
+. $HOME/functions/general.sh
+
 if [[ $# -eq 0 ]]; then
     echo "usage:"
     echo "install [...package names]"
@@ -11,7 +13,7 @@ aurInstallCommand="yaourt -S"
 
 function installFromArch()
 {
-    sudo pacman -Syu ${1} --noconfirm
+    general::sudo pacman -Syu ${1} --noconfirm
 }
 
 function initializeInstallFromAur()

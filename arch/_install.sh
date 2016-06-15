@@ -21,8 +21,8 @@ if ! which htop &>/dev/null; then
 fi
 
 output=$(
-    echo "FONT=ter-212n" | sudo tee /etc/vconsole.conf &&\
-    echo "FONT_MAP=8859-2" | sudo tee -a /etc/vconsole.conf
+    echo "FONT=ter-212n" | general::sudo tee /etc/vconsole.conf &&\
+    echo "FONT_MAP=8859-2" | general::sudo tee -a /etc/vconsole.conf
 )
 
 if [[ $? -ne 0 ]]; then

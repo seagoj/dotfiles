@@ -17,12 +17,12 @@ installMac() {
         osinstall python3 --with-brewed-openssl
         git clone https://github.com/diraimondo/gmusicproxy.git $CODE/gmusicproxy &&\
             cd $CODE/gmusicproxy &&\
-            sudo pip3 install -r requirements.txt
+            general::sudo pip3 install -r requirements.txt
     fi
 }
 
 if ! which gmusic-mpd &>/dev/null; then
-    sudo npm -g install gmusic-mpd
+    general::sudo npm -g install gmusic-mpd
 fi
 
 dotfiles::install ncmpcpp

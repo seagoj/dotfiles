@@ -16,7 +16,7 @@ fi
 
 if ! which gem &>/dev/null; then
     pushd ${HOME}/.rbenv/plugins/ruby-build >/dev/null &&\
-        sudo ./install.sh &&\
+        generall::sudo ./install.sh &&\
         rbenv install 2.2.3 --verbose &&\
         rbenv global 2.2.3 &&\
         popd >/dev/null
@@ -24,5 +24,5 @@ fi
 
 if ! which bundle &>/dev/null; then
     source $HOME/.zshenv
-    sudo gem install bundler
+    generall::sudo gem install bundler
 fi

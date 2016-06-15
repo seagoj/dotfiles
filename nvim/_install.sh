@@ -3,14 +3,14 @@ installNeovimMac() {
 
     brew tap neovim/neovim
     brew install --HEAD neovim
-    osinstall python3 && sudo pip3 install neovim
+    osinstall python3 && general::sudo pip3 install neovim
 }
 
 installNeovimDebian() {
-    sudo apt-get install python-dev python-pip python3-dev python3-pip
-    sudo add-apt-repository ppa:neovim-ppa/unstable
-    sudo apt-get update
-    sudo apt-get install neovim
+    general::sudo apt-get install python-dev python-pip python3-dev python3-pip
+    general::sudo add-apt-repository ppa:neovim-ppa/unstable
+    general::sudo apt-get update
+    general::sudo apt-get install neovim
 }
 
 installSourcerer() {
@@ -27,7 +27,7 @@ installPlugins() {
 
 installESLint() {
     if ! which eslint &>/dev/null; then
-        sudo npm install -g eslint
+        general::sudo npm install -g eslint
     fi
 }
 

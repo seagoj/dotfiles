@@ -1,3 +1,3 @@
 if ! which wwwtxt &>/dev/null; then
-    sudo npm install -g wwwtxt
+    general::sudo npm install -g wwwtxt
 fi
