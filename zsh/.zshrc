@@ -99,7 +99,6 @@ fi
 
 if which rbenv >/dev/null; then
     if which sandbox >/dev/null; then
-        echo "Define sandbox"
         sandbox_hook rbenv ruby
     else
         source $HOME/.sandboxrc

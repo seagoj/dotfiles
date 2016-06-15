@@ -181,9 +181,8 @@ dotfiles::update_repo() {
 
     if [[ ! -d $repo/.git ]]; then
         git clone --recursive ${1} $repo &&\
-            pushd $repo >/dev/null
+            pushd $repo
     else
-        pushd $repo >/dev/null &&\
-            git pull
+        pushd $repo && git pull
     fi
 }

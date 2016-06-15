@@ -2,10 +2,10 @@ if ! which pip3 >/dev/null; then
     dotfiles::bootstrap python
 fi
 
-if ! sudo pip3 freeze | grep pycrypto >/dev/null; then
+if ! pip3 freeze | grep pycrypto >/dev/null; then
     sudo pip3 install pycrypto >/dev/null
 fi
 
-dotfiles::update_repo https://github.com/jarun/Buku buku
+dotfiles::update_repo https://github.com/jarun/Buku buku >/dev/null
 sudo make install >/dev/null
 popd >/dev/null
