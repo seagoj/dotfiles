@@ -42,8 +42,8 @@ general::set_permission() {
     fi
 
     if [[ -e ${1} ]]; then
-        if which pass &>/dev/null; then
-            sudo chmod ${2} ${1}
+        if which pass >/dev/null; then
+            echo $(pass thinkpad/login | head -n 1) | sudo chmod ${2} ${1}
         else
             sudo chmod ${2} ${1}
         fi
