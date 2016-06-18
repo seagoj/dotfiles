@@ -140,7 +140,7 @@ dotfiles::clearFunc() {
 }
 
 dotfiles::install() {
-    if ! which $1 >/dev/null; then
+    if ! which $1 &>/dev/null; then
         case $OS_TYPE in
         Arch)
             if type installArch | grep 'function' >/dev/null; then
