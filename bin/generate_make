@@ -1,0 +1,8 @@
+#!/bin/bash
+
+declare -a PACKAGES=($(ls -d **))
+for PACKAGE in "${PACKAGES[@]}"; do
+    if ! echo $PACKAGE | grep "bin" >/dev/null; then
+        echo $PACKAGE
+    fi
+done

@@ -1,16 +1,16 @@
 config=/etc/X11/xorg.conf.d/20-thinkpad.conf
 
 if [[ ! -f $config ]]; then
-    echo "Section \"InputClass\"" | general::sudo tee $config
-    echo "    Identifier 	\"Trackpoint Wheel Emulation\"" | general::sudo tee -a $config
-    echo "    MatchProduct 	\"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB TrackPoint pointing device|Composite TouchPad / TrackPoint\"" | general::sudo tee -a $config
-    echo "    MatchDevicePath \"/dev/input/event*\"" | general::sudo tee -a $config
-    echo "    Option 		\"EmulateWheel\" 		\"true\"" | general::sudo tee -a $config
-    echo "    Option 		\"EmulateWheelButton\" 	\"2\"" | general::sudo tee -a $config
-    echo "    Option 		\"Emulate3Buttons\" 	\"false\"" | general::sudo tee -a $config
-    echo "    Option 		\"XAxismapping\" 		\"6 7\"" | general::sudo tee -a $config
-    echo "    Option 		\"YAxisMapping\" 		\"4 5\"" | general::sudo tee -a $config
-    echo "EndSection" | general::sudo tee -a $config
+    general::sudo $(tee $config <<< 'Section \"InputClass\"')
+    general::sudo $(tee -a $config <<< '    Identifier 	\"Trackpoint Wheel Emulation\"')
+    general::sudo $(tee -a $config <<< '    MatchProduct 	\"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB TrackPoint pointing device|Composite TouchPad / TrackPoint\"')
+    general::sudo $(tee -a $config <<< '    MatchDevicePath \"/dev/input/event*\"')
+    general::sudo $(tee -a $config <<< '    Option 		\"EmulateWheel\" 		\"true\"')
+    general::sudo $(tee -a $config <<< '    Option 		\"EmulateWheelButton\" 	\"2\"')
+    general::sudo $(tee -a $config <<< '    Option 		\"Emulate3Buttons\" 	\"false\"')
+    general::sudo $(tee -a $config <<< '    Option 		\"XAxismapping\" 		\"6 7\"')
+    general::sudo $(tee -a $config <<< '    Option 		\"YAxisMapping\" 		\"4 5\"')
+    general::sudo $(tee -a $config <<< 'EndSection')
 fi
 
 if ! which acpi &>/dev/null; then
@@ -18,7 +18,7 @@ if ! which acpi &>/dev/null; then
 fi
 
 if [[ ! -f /etc/modules-load.d/thinkpad-acpi.conf ]]; then
-    echo "thinkpad-acpi" | general::sudo tee /etc/modules-load.d/thinkpad-acpi.conf
+    general::sudo $(tee /etc/modules-load.d/thinkpad-acpi.conf <<< 'thinkpad-acpi')
 fi
 
 if ! which bluetoothctl &>/dev/null; then

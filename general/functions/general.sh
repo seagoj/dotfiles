@@ -36,7 +36,8 @@ general::env_var_to_script() {
 
 general::sudo() {
     if which pass >/dev/null; then
-        echo "$(pass thinkpad/login | head -n 1)" | sudo -S "$@"
+        password=$(pass thinkpad/login | head -n 1)
+        eval "sudo -kS <<< $password $@"
     else
         sudo $@
     fi

@@ -4,7 +4,7 @@ installArch() {
 
 installMac() {
     dotfiles::bootstrap python &&\
-        general::sudo CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible
+        general::sudo 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible'
 }
 
 dotfiles::install ansible
