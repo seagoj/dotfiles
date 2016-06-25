@@ -1,0 +1,13 @@
+.DEFAULT_GOAL := install
+
+decrypt: bin/decrypt
+	@./bin/decrypt
+
+encrypt: bin/encrypt
+	@./bin/encrypt
+
+install: bin/install
+	@./bin/install
+
+push: encrypt
+	@git add . && git commit && git push

@@ -29,6 +29,8 @@ vmap        <               <gv
 vmap        >               >gv
 nnoremap    ;               :
 nmap        p               ]p
+" Disable ex mode
+map         Q               <Nop>
 " Sudo write
 cmap        w!!             w !sudo tee % >/dev/null
 nnoremap    <F3>            <Esc>:Git push<cr>

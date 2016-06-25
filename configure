@@ -1,0 +1,10 @@
+#!/bin/bash
+
+cp Makefile.in Makefile
+
+declare -a PACKAGES=($(ls -d **))
+for PACKAGE in "${PACKAGES[@]}"; do
+    if [[ -d $PACKAGE ]] && ! echo $PACKAGE | grep "bin" >/dev/null; then
+        printf "\n$PACKAGE: bin/bootstrap $PACKAGE/_install.sh\n\t@./bin/bootstrap $PACKAGE\n" >> Makefile
+    fi
+done

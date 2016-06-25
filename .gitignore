@@ -56,3 +56,4 @@ vpn/bin/vpn-bellevue
 bonfyre/.config/aliases/bonfyre.alias
 bonfyre/bin/work
 keybase/.config/keybase/config.json
+Makefile

@@ -22,7 +22,7 @@ dotfiles::process_packages() {
     dotfiles::banner
     dotfiles::set_gpg
     dotfiles::generate_packages
-    dotfiles::decryptSecrets
+    dotfiles::decrypt_secrets
     dotfiles::bootstrap ${PACKAGES[@]}
     general::info "Logout and back in for changes to take effect"
 }
@@ -79,7 +79,7 @@ dotfiles::stow_functions() {
     source $HOME/.zshenv &>/dev/null
 }
 
-dotfiles::decryptSecrets() {
+dotfiles::decrypt_secrets() {
     dotfiles::set_gpg
     declare -a SECRETS=($(find . -name "*.gpg"))
     for i in "${SECRETS[@]%.gpg}"; do
