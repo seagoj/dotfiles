@@ -1,0 +1,5 @@
+#!/bin/bash
+
+. general/functions/dotfiles.sh
+
+dotfiles::encrypt_secrets seagoj@keybase.io

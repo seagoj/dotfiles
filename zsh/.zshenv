@@ -69,11 +69,11 @@ export CODE=${HOME}/code
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Browser
-export BROWSER=$(which open google-chrome chromium-browser chromium firefox links2 links lynx | grep -m1 -e '^/')
+export BROWSER=$(which open chromium-browser chromium google-chrome google-chrome-stable firefox links2 links lynx | grep -m1 -e '^/' &>/dev/null)
 
 # Editor
-export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
-export EDITORGUI=$(which editor-gui nvim vim nano | grep -m1 -e '^/')
+export EDITOR=$(which nvim vim nano | grep -m1 -e '^/' &>/dev/null)
+export EDITORGUI=$(which editor-gui nvim vim nano | grep -m1 -e '^/' &>/dev/null)
 # export VISUAL=$(which macvim atom subl | grep -m1 -e '^/')
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 

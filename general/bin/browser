@@ -1,3 +1,5 @@
 #!/bin/bash
-#
-autoload envVarToScript; envVarToScript "BROWSER" $@
+
+. $HOME/functions/general.sh
+
+general::env_var_to_script "BROWSER" $@
