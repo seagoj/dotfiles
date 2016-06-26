@@ -94,7 +94,12 @@ if which dircolors >/dev/null; then
 fi
 
 if which tag >/dev/null; then
-    tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null; }
+    alias_file=${TAG_ALIAS_FILE:-/tmp/tag_aliases}
+    tag_alias_dir=$(dirname $alias_file)
+    if [[ ! -d "$tag_alias_dir" ]]; then
+        mkdir -p $tag_alias_dir
+    fi
+    tag() { command tag "$@"; source $alias_file 2>/dev/null; }
 fi
 
 if which rbenv >/dev/null; then

@@ -38,6 +38,10 @@ general::sudo() {
     if which pass >/dev/null; then
         password=$(pass thinkpad/login | head -n 1)
         eval "sudo -kS <<< $password $@"
+        if [[ $? -ne 0 ]]; then
+            echo "FAILED: sudo -kS <<< $password $@"
+            exit 1
+        fi
     else
         sudo $@
     fi
@@ -46,16 +50,14 @@ general::sudo() {
 general::set_permission() {
     if [[ $# -ne 2 ]]; then
         echo "usage:"
-        echo "setPermission [path to file] [permission]"
+        echo "set_permission [permission] [path_to_file]"
         exit 1
     fi
 
-    if [[ -e ${1} ]]; then
-        general::sudo chmod ${2} ${1}
-        # if which pass >/dev/null; then
-        #     echo $(pass thinkpad/login | head -n 1) | sudo chmod ${2} ${1}
-        # else
-        #     sudo chmod ${2} ${1}
-        # fi
+    permission="{$1}"
+    path_to_file="{$2}"
+
+    if [[ -e $path_to_file ]]; then
+        general::sudo "chmod ${permission} ${path_to_file}"
     fi
 }
