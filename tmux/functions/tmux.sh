@@ -17,7 +17,7 @@ tmux::status() {
     tmux::split "$1"
     case $OS_TYPE in
     Arch)
-        tmux send-keys "archey3 -c && wwwtxt" C-m
+        tmux send-keys "archey3 && wwwtxt" C-m
         ;;
     Darwin | Mac)
         tmux send-keys "OSXey -c && wwwtxt" C-m
