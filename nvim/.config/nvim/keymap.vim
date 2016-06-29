@@ -36,3 +36,6 @@ cmap        w!!             w !sudo tee % >/dev/null
 nnoremap    <F3>            <Esc>:Git push<cr>
 nnoremap    <F12>           <Esc>:!Dash<cr>
 nnoremap    <leader>b       F-vlUdl
+" scroll 3 times faster
+nnoremap    <C-e>           3<C-e>
+nnoremap    <C-y>           3<C-y>
