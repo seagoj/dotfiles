@@ -7,7 +7,7 @@ if [[ $# -eq 1 && "$1" != "--help" ]]; then
         sudo chmod a+rw /var/log/mycli-$1.log
     fi
 
-    mycli --login-path $1 --database bps --logfile /var/log/mycli-$1.log
+    mycli --login-path $1 --database bonfyre --logfile /var/log/mycli-$1.log
 else
     mycli "$@"
 fi

@@ -1,10 +1,10 @@
 installArch() {
-    osinstall python-pip
+    osinstall mysql python-pip
     general::sudo pip install mycli
 }
 
 installMac() {
-    osinstall python3
+    osinstall mysql python3
     general::sudo pip3 install mycli
 }
 
