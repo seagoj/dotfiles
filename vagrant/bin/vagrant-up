@@ -2,5 +2,5 @@
 
 (\
     (vagrant resume; vagrant ssh) || \
-    (vagrant destroy -f && vagrant up; vagrant ssh)\
+    (vagrant destroy -f && vagrant up && ssh-copy-id vagrant@127.0.0.1 -p 2222; vagrant ssh) \
 ) && vagrant suspend
