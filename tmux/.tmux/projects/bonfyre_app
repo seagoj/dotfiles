@@ -13,6 +13,24 @@ tmux resize-pane -t 1 -D 10
 tmux resize-pane -t 2 -L 40
 tmux resize-pane -t 3 -L 20
 
+pushd ~/dotfiles >/dev/null
+tmux new-window
+tmux select-window -t 2
+tmux rename-window dotfiles
+
+# Bottom Bar
+tmux::split v
+tmux::split h
+tmux::status h
+
+# Resize
+tmux resize-pane -t 1 -D 10
+tmux resize-pane -t 2 -L 40
+tmux resize-pane -t 3 -L 20
+popd >/dev/null
+
+# tmux source-file /Users/seagoj/.tmux/projects/general
+
 # Set default window
 tmux select-window -t $PROJECT:1
 tmux select-pane -t 1
