@@ -12,3 +12,5 @@ function! TodoToggle()
 endfunction
 
 nmap <silent> x :call TodoToggle()<cr>
+match none
+
