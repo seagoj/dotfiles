@@ -13,3 +13,6 @@
 [submodule "awesome/.config/awesome/sharetags"]
 	path = awesome/.config/awesome/sharetags
 	url = git://github.com/XLegion/sharetags.git
+[submodule "tmux/.tmux/plugins/tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = git://github.com/tmux-plugins/tpm.git
