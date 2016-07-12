@@ -31,7 +31,7 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
 Plug 'tpope/vim-surround'
-Plug 'Valloric/YouCompleteMe'
+Plug 'Valloric/YouCompleteMe', {'do': 'installYCM'}
 Plug 'scrooloose/nerdtree'
 Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
 Plug 'seagoj/autosource-vimrc.vim'
