@@ -1,0 +1,2 @@
+alias tunnel='ssh -N'
+alias tnl='ssh -N'
