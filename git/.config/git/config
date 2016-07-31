@@ -22,11 +22,18 @@
 [merge]
     summary = true
     defaultToUpstream = true
+    algorithm = histogram
     tool = fugitive
+    ; tool = filemerge
+[mergetool "filemerge"]
+    algorithm = histogram
+    cmd = /usr/bin/opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\"
 [mergetool "fugitive"]
+    algorithm = histogram
     cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [diff]
     tool = nvimdiff
+    algorithm = patience
 [difftool]
     prompt = true
 [difftool "nvimdiff"]
@@ -45,7 +52,7 @@
     local   = yellow
     remote  = green
 [color "diff"]
-    meta = blue
+    ; meta = blue
     frag = magenta
     old  = red
     new  = green

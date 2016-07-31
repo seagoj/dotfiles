@@ -57,6 +57,7 @@ Plug 'junegunn/vader.vim'
 " Experimental
 Plug 'joonty/vdebug'
 Plug 'IN3D/vim-raml'
+Plug 'chrisbra/vim-diff-enhanced'
 call plug#end()
 
 if vimPlugInstalled == 0
