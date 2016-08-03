@@ -9,9 +9,9 @@ tmux send-keys 'vagrant-up' C-m
 tmux::status h
 
 # Resize
-tmux resize-pane -t 1 -D 10
-tmux resize-pane -t 2 -L 40
-tmux resize-pane -t 3 -L 20
+tmux resize-pane -t 1 -D 20
+tmux resize-pane -t 2 -L 50
+tmux resize-pane -t 3 -L 30
 
 pushd ~/dotfiles >/dev/null
 tmux new-window
@@ -24,9 +24,9 @@ tmux::split h
 tmux::status h
 
 # Resize
-tmux resize-pane -t 1 -D 10
-tmux resize-pane -t 2 -L 40
-tmux resize-pane -t 3 -L 20
+tmux resize-pane -t 1 -D 20
+tmux resize-pane -t 2 -L 50
+tmux resize-pane -t 3 -L 30
 popd >/dev/null
 
 pushd ~ >/dev/null

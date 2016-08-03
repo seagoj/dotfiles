@@ -8,7 +8,7 @@ tmux::split h
 tmux::status h
 
 # Resize
-tmux resize-pane -t 1 -D 10
+tmux resize-pane -t 1 -D 20
 tmux resize-pane -t 2 -L 40
 tmux resize-pane -t 3 -L 20
 

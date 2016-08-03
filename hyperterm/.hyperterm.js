@@ -1,10 +1,22 @@
+let semibold = 600;
+let blue = '#6688aa';
+let systemDefaultShell = '';
+let fonts = [
+  "Source Code Pro for Powerline",
+  "Sauce Code Powerline",
+  "Anonymous Pro",
+  "Anonymice Powerline",
+  "Menlo",
+  "DejaVu Sans Mono",
+  "Lucida Console",
+  "monospace"
+];
+
 module.exports = {
   config: {
-    // default font size in pixels for all tabs
     fontSize: 10,
 
-    // font family with optional fallbacks
-    fontFamily: '"Source Code Pro for Powerline", Menlo, "DejaVu Sans Mono", "Lucida Console", monospace',
+    fontFamily: fonts.join(','),
 
     // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
     cursorShape: 'BLOCK',
@@ -16,44 +28,35 @@ module.exports = {
 
     // custom css to embed in the terminal window
     termCSS: `
-      ix-screen a { color: blue; }
+      x-screen * { font-weight: ` + semibold + `; }
+      x-screen a {
+        color: ` + blue + `;
+        text-decoration: underline;
+      }
       x-screen a.hover { text-decoration: none; }
     `,
 
-    // custom padding (css format, i.e.: `top right bottom left`)
-    // padding: '12px 14px',
     padding: '0px',
 
-    // the shell to run when spawning a new session (i.e. /usr/local/bin/fish)
-    // if left empty, your system's login shell will be used by default
-    shell: '',
-
-    // for advanced config flags please refer to https://hyperterm.org/#cfg
+    shell: systemDefaultShell,
 
     hyperclean: {
       hideTabs: true
     },
 
-    hypertype: false
+    hypertype: false,
+
+    // for advanced config flags please refer to https://hyperterm.org/#cfg
   },
 
-  // a list of plugins to fetch and install from npm
-  // format: [@org/]project[#version]
-  // examples:
-  //   `hyperpower`
-  //   `@company/project`
-  //   `project#1.0.1`
   plugins: [
     'hyperclean',
     'hyperlinks',
-    // 'hypertype', // uncomment after PR is accepted
-    'sourcerer-hyperterm'
+    'hyperterm-sourcerer',
+    'hyperterm-themed-scrollbar'
   ],
 
-  // in development, you can create a directory under
-  // `~/.hyperterm_plugins/local/` and include it here
-  // to load it and avoid it being `npm install`ed
   localPlugins: [
-    'hypertype' // remove after PR is accepted
+    'hypertype'
   ]
 };
