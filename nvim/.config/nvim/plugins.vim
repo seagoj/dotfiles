@@ -1,12 +1,12 @@
 function! AutoInstallVimPlug()
-	let vimPlugInstalled=1
-	let vimPlugFile=expand("$XDG_CONFIG_HOME/nvim/autoload/plug.vim")
-	if !filereadable(vimPlugFile)
-		echo "Installing vim-plug..."
-		silent !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-		let vimPlugInstalled=0
-	endif
-	return vimPlugInstalled
+    let vimPlugInstalled=1
+    let vimPlugFile=expand("$XDG_CONFIG_HOME/nvim/autoload/plug.vim")
+    if !filereadable(vimPlugFile)
+        echo "Installing vim-plug..."
+        silent !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        let vimPlugInstalled=0
+    endif
+    return vimPlugInstalled
 endfunction
 
 let vimPlugInstalled=AutoInstallVimPlug()
@@ -15,9 +15,9 @@ let s:uname = system("echo -n \"$(uname)\"")
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
 if !v:shell_error && s:uname == "Linux"
-	Plug 'KabbAmine/zeavim.vim'
+    Plug 'KabbAmine/zeavim.vim'
 elseif !v:shell_error && s:uname == "Darwin"
-	Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
+    Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
 endif
 Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
@@ -58,10 +58,11 @@ Plug 'junegunn/vader.vim'
 Plug 'joonty/vdebug'
 Plug 'IN3D/vim-raml'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'seagoj/tab-or-spaces.vim' | Plug 'tab-or-spaces-config.vim'
 call plug#end()
 
 if vimPlugInstalled == 0
-	:PlugInstall
+    :PlugInstall
 endif
 
 let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/bonfyre/config_management/puppet/bonfyre_app"} }
