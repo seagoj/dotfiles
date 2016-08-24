@@ -1,0 +1,23 @@
+set imap_user = "jeremy.seago@bonfyreapp.com"
+set imap_pass = "vommkvyjnsagmhzx"
+
+# Google Remote Folders
+set folder = "imaps://imap.gmail.com:993"
+set spoolfile = "+INBOX"
+set record="+[Gmail]/Sent Mail"
+set postponed="+[Gmail]/Drafts"
+set header_cache=$XDG_CACHE_HOME/mutt/cache/headers
+set message_cachedir=$XDG_CACHE_HOME/mutt/cache/bodies
+set certificate_file=$XDG_CONFIG_HOME/mutt/certificates
+set mailcap_path=$XDG_CONFIG_HOME/mutt/mailcap
+
+set from = "jeremy.seago@bonfyreapp.com"
+set realname = "Jeremy Seago"
+# set smtp_url = "smtp://jeremy.seago%40bonfyreapp.com@smtp.gmail.com:465/"
+set smtp_url = "smtp://jeremy.seago%40bonfyreapp.com@smtp.gmail.com:587/"
+set smtp_pass = "vommkvyjnsagmhzx"
+
+set move = no
+auto_view text/html
+alternative_order text/plain text/enriched text/html
+set smtp_authenticators = 'gssapi:login'
