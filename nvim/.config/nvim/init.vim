@@ -40,15 +40,9 @@ set timeoutlen=500
 set autoindent		"Newline uses indentation depth of the previous
 set smartindent		"Newline conditionally uses 1 more indent
 " Spaces/Tabs
-set tabstop=4		"Use 4 spaces for a tab
-set softtabstop=4	"Softtabstop?
-set shiftwidth=4	"Change prior entered tabs to be 4 spaces
-" " Use Spaces
-" set expandtab		  "Insert spaces whenever <tab> is pressed
-" set smarttab		  "Manage spaces as if they were tabs
-" Use tabs
-set noexpandtab		" Use tabs
-au BufNewFile,BufRead,BufWritePre * :retab!
+" set tabstop=4		"Use 4 spaces for a tab
+" set softtabstop=4	"Softtabstop?
+" set shiftwidth=4	"Change prior entered tabs to be 4 spaces
 " Code Folding
 set foldmethod=indent
 set foldnestmax=10

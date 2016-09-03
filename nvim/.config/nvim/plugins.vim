@@ -42,7 +42,7 @@ Plug 'seagoj/last-position.vim'
 Plug 'seagoj/line-wrap-navigation.vim'
 Plug 'seagoj/overlength.vim'
 Plug 'seagoj/tab-management.vim'
-Plug 'seagoj/whitespace.vim'
+Plug 'seagoj/whitespace.vim' | Plug 'seagoj/whitespace-config.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'maksimr/vim-jsbeautify'
 Plug 'vim-scripts/localrc.vim'
@@ -58,6 +58,7 @@ Plug 'junegunn/vader.vim'
 Plug 'joonty/vdebug'
 Plug 'IN3D/vim-raml'
 Plug 'chrisbra/vim-diff-enhanced'
+
 call plug#end()
 
 if vimPlugInstalled == 0

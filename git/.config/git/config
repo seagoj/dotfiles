@@ -62,7 +62,7 @@
 	untracked = blue
 [alias]
 	a = "add"
-	amend = git commit --amend --no-edit
+	amend = commit --amend --no-edit
 	clean-local-merged = "!. ~/.config/git/helpers && delete_local_merged_branches"
 	ctags = !.git/hooks/ctags
 	dn = "diff --name-only"
