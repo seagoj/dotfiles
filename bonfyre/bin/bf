@@ -38,6 +38,20 @@ pr() {
 		git diff -w origin/master
 }
 
+prepare-deploy() {
+	if [[ $# != 1 ]]; then
+		less "Must provide commit hash or branch id."
+		exit 1
+	fi
+
+	commit_hash=$1
+
+	git checkout master &&\
+		git pull origin master &&\
+		git merge $commit_hash &&\
+		git diff -w origin/master
+}
+
 if [[ $# == 0 ]]; then
 	usage
 fi
@@ -50,6 +64,10 @@ while [[ $# > 0 ]]; do
 		;;
 	pr)
 		pr $2
+		shift 2
+		;;
+	prepare-deploy|pd)
+		prepare-deploy $2
 		shift 2
 		;;
 	*)
