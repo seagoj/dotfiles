@@ -71,11 +71,6 @@ for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
 	source "${file}"
 done
 
-# set geeknote editor
-if which geeknote >/dev/null && [[ "$EDITOR" != "$(geeknote settings | grep "Current editor: " | sed 's/Current editor: //g')" ]]; then
-	geeknote settings --editor $EDITOR >/dev/null
-fi
-
 # initialize fasd
 if which fasd >/dev/null; then
 	eval "$(fasd --init auto)"
