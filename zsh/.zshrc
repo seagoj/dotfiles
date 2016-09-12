@@ -1,7 +1,6 @@
 #vim: filetype=bash:
 #
 # User configuration sourced by interactive shells
-#
 
 # Source zim
 if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
@@ -47,6 +46,12 @@ setopt EXTENDED_GLOB
 # arrays are used as expected in zsh scripts
 setopt RC_EXPAND_PARAM
 
+# Long running history
+HISTSIZE=100000
+SAVEHIST=100000
+setopt hist_ignore_all_dups
+setopt inc_append_history extendedglob share_history
+
 # Incremental search is elite!
 bindkey -M vicmd "/" history-incremental-search-backward
 bindkey -M vicmd "?" history-incremental-search-forward
@@ -61,10 +66,10 @@ bindkey -M vicmd "q" push-line
 # it's like, space AND completion.	Gnarlbot.
 bindkey -M viins ' ' magic-space
 
-# set geeknote editor
-if which geeknote >/dev/null && [[ "$EDITOR" != "$(geeknote settings | grep "Current editor: " | sed 's/Current editor: //g')" ]]; then
-	geeknote settings --editor $EDITOR >/dev/null
-fi
+# source application specific settings
+for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
+	source "${file}"
+done
 
 # initialize fasd
 if which fasd >/dev/null; then

@@ -1,0 +1,7 @@
+# vim: filetype=sh
+
+if which geeknote >/dev/null &&\
+	[[ "$EDITOR" != "$(geeknote settings | grep "Current editor: " | sed 's/Current editor: //g')" ]]
+then
+	geeknote settings --editor $EDITOR >/dev/null
+fi
