@@ -1,0 +1,77 @@
+#!/bin/bash
+
+usage() {
+	less <<USAGE_STR
+usage: bf <command>
+
+commands:
+	ticket	Updates master from origin and creates new branch from master based on the ticket name
+USAGE_STR
+	exit 1
+}
+
+new_ticket() {
+	if [[ $# != 1 ]]; then
+		less "Must provide ticket id."
+		exit 1
+	fi
+
+	ticket_id=$1
+
+	git checkout master &&\
+		git pull origin master &&\
+		git checkout origin/master -b $ticket_id
+}
+
+pr() {
+	if [[ $# != 1 ]]; then
+		less "Must provide commit hash."
+		exit 1
+	fi
+
+	commit_hash=$1
+
+	git checkout master &&\
+		git pull origin &&\
+		git checkout $commit_hash &&\
+		git pull origin master &&\
+		git diff -w origin/master
+}
+
+prepare-deploy() {
+	if [[ $# != 1 ]]; then
+		less "Must provide commit hash or branch id."
+		exit 1
+	fi
+
+	commit_hash=$1
+
+	git checkout master &&\
+		git pull origin master &&\
+		git merge $commit_hash &&\
+		git diff -w origin/master
+}
+
+if [[ $# == 0 ]]; then
+	usage
+fi
+
+while [[ $# > 0 ]]; do
+	case $1 in
+	start-ticket | ticket)
+		new_ticket $2
+		shift 2
+		;;
+	pr)
+		pr $2
+		shift 2
+		;;
+	prepare-deploy|pd)
+		prepare-deploy $2
+		shift 2
+		;;
+	*)
+		usage
+		;;
+	esac
+done
