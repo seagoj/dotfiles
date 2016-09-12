@@ -64,6 +64,7 @@
 	a = "add"
 	amend = commit --amend --no-edit
 	clean-local-merged = "!. ~/.config/git/helpers && delete_local_merged_branches"
+	clean-merged = "!. ~/.config/git/helpers && delete_local_merged_branches"
 	ctags = !.git/hooks/ctags
 	dn = "diff --name-only"
 	hash = "rev-parse HEAD | pbcopy"
