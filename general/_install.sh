@@ -1,18 +1,18 @@
 installFonts() {
-    dotfiles::update_repo git://github.com/powerline/fonts.git fonts | grep "up to date" >/dev/null
+	dotfiles::update_repo git://github.com/powerline/fonts.git fonts | grep "up to date" >/dev/null
 
-    if [[ $? -ne 0 ]]; then
-        ./install.sh
-        popd >/dev/null
-    fi
+	if [[ $? -ne 0 ]]; then
+		./install.sh
+		popd >/dev/null
+	fi
 }
 
 installArch() {
-    installFonts
+	installFonts
 }
 
 installMac() {
-    installFonts
+	installFonts
 }
 
 dotfiles::install general
