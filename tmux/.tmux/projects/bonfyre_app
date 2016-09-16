@@ -27,6 +27,7 @@ tmux::status h
 tmux resize-pane -t 1 -D 20
 tmux resize-pane -t 2 -L 50
 tmux resize-pane -t 3 -L 30
+tmux select-pane -t 1
 popd >/dev/null
 
 pushd ~ >/dev/null
