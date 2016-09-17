@@ -1,0 +1,17 @@
+#!/bin/bash
+# vim: filetype=sh
+
+if [[ $# != 1 ]]; then
+	less << USAGE_STR
+usage: note [name of note]
+USAGE_STR
+	exit 1
+fi
+
+"${EDITOR}" "${HOME}"/notes/"$1".md &&\
+	pushd "${HOME}"/notes &&\
+	git add $1.md &&\
+	git commit -m "updates $1.md" &&\
+	git pull origin master &&\
+	git push origin master &&\
+	popd >/dev/null

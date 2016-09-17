@@ -1,4 +1,0 @@
-#!/bin/bash
-
-cd $CODE
-vim -O $1 notes/$1.markdown
