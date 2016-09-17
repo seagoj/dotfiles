@@ -10,7 +10,7 @@ fi
 
 "${EDITOR}" "${HOME}"/notes/"$1".md &&\
 	pushd "${HOME}"/notes &&\
-	git add $1.md &&\
+	git add "$1.md" &&\
 	git commit -m "updates $1.md" &&\
 	git pull origin master &&\
 	git push origin master &&\
