@@ -66,10 +66,12 @@ bindkey -M vicmd "q" push-line
 # it's like, space AND completion.	Gnarlbot.
 bindkey -M viins ' ' magic-space
 
-# source application specific settings
-for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
-	source "${file}"
-done
+if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/rc ]]; then
+	# source application specific settings
+	for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
+		source "${file}"
+	done
+fi
 
 # initialize fasd
 if which fasd >/dev/null; then

@@ -102,7 +102,9 @@ if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
 	source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
-# Source env files
-for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
-	source "${file}"
-done
+if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
+	# Source env files
+	for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
+		source "${file}"
+	done
+fi
