@@ -9,6 +9,8 @@
     invisibles: {}
   "exception-reporting":
     userId: "2a334fcc-54b1-2e2e-2381-6b72fa6af3ad"
+  linter:
+    showErrorPanel: false
   metrics:
     userId: "b21a23fb0f4f173cc4c1a235abd45b2b0709037c"
   "release-notes":
