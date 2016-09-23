@@ -1,6 +1,6 @@
 #!/bin/bash
 
 (\
-    (vagrant resume; vagrant ssh) || \
-    (vagrant destroy -f && vagrant up && ssh-copy-id vagrant@127.0.0.1 -p 2222; vagrant ssh) \
+	(vagrant resume; vagrant ssh) || \
+	(ssh-keygen -R \[127.0.0.1\]:2222 && vagrant destroy -f && vagrant up && ssh-copy-id vagrant@127.0.0.1 -p 2222; vagrant ssh) \
 ) && vagrant suspend
