@@ -33,11 +33,14 @@
 	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
 [diff]
 	tool = nvimdiff
+	; tool = icdiff
 	algorithm = patience
 [difftool]
 	prompt = true
 [difftool "nvimdiff"]
 	cmd = nvim -d -u ~/.config/nvim/init.vim \"$LOCAL\" \"$REMOTE\"
+[difftool "icdiff"]
+	cmd = icdiff \"$LOCAL\" \"$REMOTE\"
 [ghi]
 	token = !security find-internet-password -a seagoj -s github.com -l 'ghi token' -w
 [color]
