@@ -16,6 +16,3 @@
 [submodule "tmux/.tmux/plugins/tpm"]
 	path = tmux/.tmux/plugins/tpm
 	url = git://github.com/tmux-plugins/tpm.git
-[submodule "hyperterm/.hyperterm_plugins/local/hypertype"]
-	path = hyperterm/.hyperterm_plugins/local/hypertype
-	url = git://github.com/seagoj/hypertype.git
