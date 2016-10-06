@@ -54,10 +54,11 @@ Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-ai
 Plug 'chase/vim-ansible-yaml'
 " Plug 'neilagabriel/vim-geeknote'
 Plug 'junegunn/vader.vim'
-" Experimental
 Plug 'joonty/vdebug'
+" Experimental
 Plug 'IN3D/vim-raml'
 Plug 'chrisbra/vim-diff-enhanced'
+Plug 'fwip/vim-jira'
 
 call plug#end()
 

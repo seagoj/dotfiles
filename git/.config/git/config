@@ -71,6 +71,7 @@
 	ctags = !.git/hooks/ctags
 	dn = "diff --name-only"
 	hash = "rev-parse HEAD | pbcopy"
+	list-merged = "!. ~/.config/git/helpers && merged_branches"
 	lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
 	st = "status"
 	undo = "!f() { \
