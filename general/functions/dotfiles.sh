@@ -28,13 +28,10 @@ dotfiles::process_packages() {
 }
 
 dotfiles::banner() {
-	less << BANNER
-		_		_		  __ _ _
-	 __| | ___ | |_		 / _(_) | ___  ___
-	/ _\` |/ _ \| __|____| |_| | |/ _ \/ __|
-   | (_| | (_) | ||_____|  _| | |  __/\__ \\
-	\__,_|\___/ \__|	|_| |_|_|\___||___/
-BANNER
+	dotfiles::install figlet
+	dotfiles::install lolcat
+
+	figlet dotfiles | lolcat
 }
 
 dotfiles::set_gpg() {
