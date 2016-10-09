@@ -59,6 +59,7 @@ Plug 'joonty/vdebug'
 Plug 'IN3D/vim-raml'
 Plug 'chrisbra/vim-diff-enhanced'
 Plug 'fwip/vim-jira'
+Plug 'dahu/bisectly'
 
 call plug#end()
 
