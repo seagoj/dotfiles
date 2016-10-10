@@ -28,8 +28,7 @@ dotfiles::process_packages() {
 }
 
 dotfiles::banner() {
-	dotfiles::install figlet
-	dotfiles::install lolcat
+	dotfiles::install figlet lolcat
 
 	figlet dotfiles | lolcat
 }
@@ -139,33 +138,36 @@ dotfiles::clearFunc() {
 }
 
 dotfiles::install() {
-	if ! which $1 &>/dev/null; then
-		case $OS_TYPE in
-		Arch)
-			if type installArch | grep 'function' >/dev/null; then
-				installArch
-			else
+	while [[ $# > 0 ]]; do
+		if ! which $1 &>/dev/null; then
+			case $OS_TYPE in
+			Arch)
+				if type installArch | grep 'function' >/dev/null; then
+					installArch
+				else
+					dotfiles::notYetImplemented $1
+				fi
+				;;
+			Darwin | Mac)
+				if type installMac | grep 'function' >/dev/null; then
+					installMac
+				elif type installDarwin | grep 'function' >/dev/null; then
+					installDarwin
+				else
+					dotfiles::notYetImplemented $1
+				fi
+				;;
+			*)
 				dotfiles::notYetImplemented $1
-			fi
-			;;
-		Darwin | Mac)
-			if type installMac | grep 'function' >/dev/null; then
-				installMac
-			elif type installDarwin | grep 'function' >/dev/null; then
-				installDarwin
-			else
-				dotfiles::notYetImplemented $1
-			fi
-			;;
-		*)
-			dotfiles::notYetImplemented $1
-			;;
-		esac
-	fi
+				;;
+			esac
+		fi
 
-	dotfiles::clearFunc installArch
-	dotfiles::clearFunc installDarwin
-	dotfiles::clearFunc installMac
+		dotfiles::clearFunc installArch
+		dotfiles::clearFunc installDarwin
+		dotfiles::clearFunc installMac
+		shift
+	done
 }
 
 dotfiles::update_repo() {
