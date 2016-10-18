@@ -29,7 +29,7 @@ set ignorecase		"ignore case when searching
 set smartcase		"If a pattern contains an uppercase, then the search is case sensitive
 set hlsearch		"Highlight searches
 set incsearch		"More like webbrowser search
-" set nolazyredraw	  "Don't redraw during macros
+set lazyredraw	  "Don't redraw during macros
 set magic			"For regular expressions
 set showmatch		"Matching braces highlighting
 set matchtime=2		"Blink for 2 tenths of a second when matching
@@ -39,11 +39,17 @@ set timeoutlen=500
 " Indentation
 set autoindent		"Newline uses indentation depth of the previous
 set smartindent		"Newline conditionally uses 1 more indent
+" Fuzzy-ish finding
+set path+=**
+set wildmenu
+" Status bar
+set showcmd			" Show last command in bottom right
 " Code Folding
 set foldmethod=indent
 set foldnestmax=10
-set nofoldenable
+set foldenable
 set foldlevel=1
+set foldlevelstart=10
 set cul
 set splitright
 " Define Invisible Characters
