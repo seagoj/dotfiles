@@ -1,11 +1,11 @@
 {
-  "name": "hyperterm-plugins",
-  "description": "Auto-generated from `~/.hyperterm.js`!",
+  "name": "hyper-plugins",
+  "description": "Auto-generated from `~/.hyper.js`!",
   "private": true,
   "version": "0.0.1",
-  "repository": "zeit/hyperterm",
+  "repository": "zeit/hyper",
   "license": "MIT",
-  "homepage": "https://hyperterm.org",
+  "homepage": "https://hyper.is",
   "dependencies": {
     "hyperclean": "latest",
     "hyperlinks": "latest",
