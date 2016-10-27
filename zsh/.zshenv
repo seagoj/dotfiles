@@ -46,7 +46,7 @@ path::add --prepend /Library/Frameworks/Python.framework/Versions/2.7/bin
 ## Local Bin
 path::add --relative ./bin
 ## Home Bin
-path::add --prepend $HOME/bin
+path::add --prepend $HOME/.local/bin
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then

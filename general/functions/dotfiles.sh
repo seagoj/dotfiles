@@ -187,3 +187,18 @@ dotfiles::update_repo() {
 		pushd $repo && git pull
 	fi
 }
+
+dotfiles::mv_bin() {
+	declare -a BINS=($(ls -d **/bin))
+	for i in "${BINS[@]}"; do
+		package_path=`dirname ${i}`
+		if [[ "." != "${package_path}" ]]; then
+			new_bin_root="${package_path}/.local"
+			if [[ ! -d ${new_bin_root} ]]; then
+				echo ${new_bin_root}
+				mkdir -p ${new_bin_root}
+			fi
+			mv "${i}" "${new_bin_root}/"
+		fi
+	done
+}
