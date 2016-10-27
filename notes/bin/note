@@ -8,10 +8,28 @@ USAGE_STR
 	exit 1
 fi
 
-"${EDITOR}" "${HOME}"/notes/"$1".md &&\
+open_and_append() {
+	file=$1
+	text=$2
+
+	"${EDITOR}" -c "1 s/^/${text}/" "${file}"
+}
+
+commit() {
 	pushd "${HOME}"/notes &&\
-	git add "$1.md" &&\
-	git commit -m "updates $1.md" &&\
-	git pull origin master &&\
-	git push origin master &&\
-	popd >/dev/null
+		git add "${1}.md" &&\
+		git commit -m "updates ${1}.md" &&\
+		git pull origin master &&\
+		git push origin master &&\
+		popd >/dev/null
+}
+
+file="${HOME}"/notes/"${1}".md
+
+if [[ ! -f "${file}" ]]; then
+	open_and_append "${HOME}"/notes/"${1}".md "\# ${1}" &&\
+		commit "${1}"
+else
+	"${EDITOR}" "${1}" &&\
+		commit "${1}"
+fi
