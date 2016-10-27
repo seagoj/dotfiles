@@ -30,7 +30,7 @@
 	cmd = /usr/bin/opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\"
 [mergetool "fugitive"]
 	algorithm = histogram
-	cmd = nvim -f -c \"Gdiff\" \"$MERGED\"
+	cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [diff]
 	tool = nvimdiff
 	; tool = icdiff
