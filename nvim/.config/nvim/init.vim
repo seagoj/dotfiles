@@ -49,9 +49,10 @@ set foldmethod=indent
 set foldnestmax=10
 set foldenable
 set foldlevel=1
-set foldlevelstart=10
+set foldlevelstart=1
 set cul
 set splitright
+set splitbelow
 " Define Invisible Characters
 set listchars=tab:¦\ ,extends:»,precedes:«,nbsp:×,eol:¬,trail:·
 set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
@@ -63,3 +64,5 @@ catch
 endtry
 set pastetoggle=<leader>z
 set relativenumber
+set exrc
+set secure

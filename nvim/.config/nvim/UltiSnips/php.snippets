@@ -8,10 +8,10 @@ snippet filedoc "File Level Doc" b
  *
  * @category ${4:Seago}
  * @package  ${5:`!v toupper(fnamemodify(getcwd(), ':t'))`}
- * @author   ${6:`!v g:snips_author`}
+ * @author	 ${6:`!v g:snips_author`}
  * @license  ${7:http://www.opensource.org/licenses/mit-license.html  MIT License}
  * @version  GIT: `git tag | tail -1`
- * @link     ${8:http://bvbot.net}
+ * @link	 ${8:http://bvbot.net}
  **/
 
 $0
@@ -27,9 +27,9 @@ snippet classdoc "Class Level Doc" b
  *
  * @category ${4:Seago}
  * @package  ${5:`!v toupper(fnamemodify(getcwd(), ':t'))`}
- * @author   ${6:`!v g:snips_author`}
+ * @author	 ${6:`!v g:snips_author`}
  * @license  ${7:http://www.opensource.org/licenses/mit-license.html  MIT License}
- * @link     ${8:http://bvbot.net}
+ * @link	 ${8:http://bvbot.net}
  **/
 
 $0
@@ -142,10 +142,8 @@ snippet class "Class declaration template" b
  * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`}
  * @author ${2:`!v g:snips_author`}
  */
-class $1
-{
-	public function ${3:__construct}(${4:$options})
-	{
+class $1 {
+	public function ${3:__construct}(${4:$options}) {
 		${0:// code}
 	}
 }
@@ -153,4 +151,112 @@ endsnippet
 
 snippet request "Request"
 $_REQUEST['$1']$0
+endsnippet
+
+snippet controller "controller"
+class ${1:`!p snip.rv=snip.fn.split('.')[0]`}_controller extends base_controller {
+	${0}
+}
+endsnippet
+
+snippet getdoc "Document a get endpoint"
+/**
+ * @api {get} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2:${VISUAL}} ${3:DESCRIPTION}
+ * @apiName $2
+ * @apiGroup $1
+ *
+ * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
+ *
+ * @apiUse SuccessResponse
+ * @apiSuccessExample {json} Success-Response:
+ *	 HTTP/1.1 200 OK
+ *	 {
+ *	   "success": 1,
+ *	   "code": 0,
+ *	   "data": [${8}]
+ *	 }
+ *
+ * @apiUse ErrorResponse ${9}
+ */
+${0}
+endsnippet
+
+snippet postdoc "Document a post endpoint"
+/**
+ * @api {post} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2:${VISUAL}} ${3:DESCRIPTION}
+ * @apiName $2
+ * @apiGroup $1
+ *
+ * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
+ *
+ * @apiUse SuccessResponse
+ * @apiSuccessExample {json} Success-Response:
+ *	 HTTP/1.1 200 OK
+ *	 {
+ *	   "success": 1,
+ *	   "code": 0,
+ *	   "data": [${8}]
+ *	 }
+ *
+ * @apiUse ErrorResponse ${9}
+ */
+${0}
+endsnippet
+
+snippet post "post"
+/**
+ * @api {post} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2} ${3:DESCRIPTION}
+ * @apiName $2
+ * @apiGroup $1
+ *
+ * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
+ *
+ * @apiUse SuccessResponse
+ * @apiSuccessExample {json} Success-Response:
+ *	 HTTP/1.1 200 OK
+ *	 {
+ *	   "success": 1,
+ *	   "code": 0,
+ *	   "data": [${8}]
+ *	 }
+ *
+ * @apiUse ErrorResponse ${9}
+ */
+public function $2() {
+	try {
+		$this->require_post([${10}]);
+	} catch(\Exception $e) {
+		return $this->fail($e);
+	}
+	${0}
+}
+endsnippet
+
+snippet get "get"
+/**
+ * @api {get} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2} ${3:DESCRIPTION}
+ * @apiName $2
+ * @apiGroup $1
+ *
+ * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
+ *
+ * @apiUse SuccessResponse
+ * @apiSuccessExample {json} Success-Response:
+ *	 HTTP/1.1 200 OK
+ *	 {
+ *	   "success": 1,
+ *	   "code": 0,
+ *	   "data": [${8}]
+ *	 }
+
+ * @apiUse ErrorResponse ${9}
+ */
+public function ${2}() {
+	try {
+		$this->require_get([${10}]);
+	} catch(\Exception $e) {
+		return $this->fail($e);
+	}
+	${0}
+}
 endsnippet

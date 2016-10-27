@@ -8,6 +8,7 @@ map			<leader>v		"+p
 map			<leader>cd		:cd %:p:h<cr> :pwd<cr>
 " Toggle Invisibles
 map			<leader>l		:set list!<cr>
+nmap		<leader>=		<C-w>=
 nmap		<leader>m		:!markdown %<cr>
 nnoremap	<leader>o		<Esc>:NERDTreeToggle<cr>
 map			<leader>p		<Esc><c-p>
