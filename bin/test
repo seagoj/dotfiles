@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. general/functions/dotfiles.sh
+. general/.local/functions/dotfiles.sh
 
 OS_TYPE=arch
 SHELL=zsh

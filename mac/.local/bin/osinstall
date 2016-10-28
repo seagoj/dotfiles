@@ -1,10 +1,10 @@
 #!/bin/bash
 #vim: filetype=sh
 
-. $HOME/functions/dotfiles.sh
+. $HOME/.local/functions/dotfiles.sh
 
 if ! which brew &>/dev/null; then
-    dotfiles::bootstrap brew
+	dotfiles::bootstrap brew
 fi
 
 brew install ${@}

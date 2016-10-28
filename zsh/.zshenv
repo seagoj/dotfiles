@@ -4,7 +4,7 @@
 # Authors:
 #	Sorin Ionescu <sorin.ionescu@gmail.com>
 
-. $HOME/functions/path.sh
+. $HOME/.local/functions/path.sh
 
 # INPUTRC
 export INPUTRC=${HOME}/.inputrc

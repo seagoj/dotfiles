@@ -1,22 +1,22 @@
 #!/bin/bash
 
-. general/functions/dotfiles.sh
+. general/.local/functions/dotfiles.sh
 
 dotfiles::stow_functions
 
 case $OS_TYPE in
 Arch)
-    OS=arch
-    ;;
+	OS=arch
+	;;
 Debian)
-    OS=debian
-    ;;
+	OS=debian
+	;;
 Linux | FreeBSD)
-    OS=nix
-    ;;
+	OS=nix
+	;;
 Darwin | Mac)
-    OS=mac
-    ;;
+	OS=mac
+	;;
 esac
 
 SHELL=zsh

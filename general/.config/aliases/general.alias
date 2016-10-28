@@ -1,7 +1,7 @@
 ## User not `root`
 if [ $UID -ne 0 ]; then
-    alias reboot='sudo shutdown -r now'
-    alias shutdown='sudo shutdown -h now'
+	alias reboot='sudo shutdown -r now'
+	alias shutdown='sudo shutdown -h now'
 fi
 
 ## General
@@ -10,6 +10,3 @@ alias ping='ping -c 5'
 alias ping1000='ping -c 1000'
 alias fastping='ping -c 100 -i.2'
 alias pingfast='fastping'
-
-### List
-alias ll='ls -al'

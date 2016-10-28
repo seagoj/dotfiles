@@ -1,4 +1,4 @@
-. $HOME/functions/dotfiles.sh
+. $HOME/.local/functions/dotfiles.sh
 
 dotfiles::update_repo gitlab:/seagoj/notes.git notes && popd
 

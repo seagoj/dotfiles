@@ -1,4 +1,4 @@
-. $HOME/functions/general.sh
+. $HOME/.local/functions/general.sh
 
 GPG="gpg"
 
@@ -69,8 +69,8 @@ dotfiles::decrypt() {
 }
 
 dotfiles::stow_functions() {
-	declare -a FUNCTIONS=($(ls **/functions/*.sh))
-	for i in "${FUNCTIONS[@]%/*/*}"; do
+	declare -a FUNCTIONS=($(ls **/.local/functions/*.sh))
+	for i in "${FUNCTIONS[@]%/*/*/*}"; do
 		dotfiles::stow $i
 	done
 	source $HOME/.zshenv &>/dev/null
@@ -189,13 +189,23 @@ dotfiles::update_repo() {
 }
 
 dotfiles::mv_bin() {
-	declare -a BINS=($(ls -d **/bin))
+	dotfiles::mv_all bin .local
+}
+
+dotfiles::mv_all() {
+	if [[ $# == 0 ]]; then
+		general::info "usage: dotfiles::mv_local [directory to move]"
+	fi
+
+	source_dir=${1}
+	parent_dest_dir=${2:-".local"}
+
+	declare -a BINS=($(ls -d **/${source_dir}))
 	for i in "${BINS[@]}"; do
 		package_path=`dirname ${i}`
 		if [[ "." != "${package_path}" ]]; then
-			new_bin_root="${package_path}/.local"
+			new_bin_root="${package_path}/${parent_dest_dir}"
 			if [[ ! -d ${new_bin_root} ]]; then
-				echo ${new_bin_root}
 				mkdir -p ${new_bin_root}
 			fi
 			mv "${i}" "${new_bin_root}/"
