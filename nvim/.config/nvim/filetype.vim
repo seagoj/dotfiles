@@ -7,4 +7,3 @@ au BufNewFile,BufRead *.md  set filetype=markdown
 " Javascript
 au BufNewFile,BufRead *.js  set filetype=javascript
 au BufNewFile,BufRead *.json  set filetype=javascript
-
