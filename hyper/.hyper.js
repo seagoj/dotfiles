@@ -23,7 +23,7 @@ module.exports = {
 
 		// custom css to embed in the main window
 		css: `
-				.hyperterm_main { border: none; }
+				.hyper_main { border: none; }
 		`,
 
 		// custom css to embed in the terminal window
@@ -51,12 +51,13 @@ module.exports = {
 
 	plugins: [
 		'hyperclean',
+		'hyperfontuhd',
 		'hyperlinks',
 		'hyperterm-sourcerer',
-		'hyperterm-themed-scrollbar'
+		'hyperterm-themed-scrollbar',
 	],
 
 	localPlugins: [
-		'hypertype'
-	]
+		'hypertype',
+	],
 };

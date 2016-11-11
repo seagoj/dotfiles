@@ -8,6 +8,7 @@
   "homepage": "https://hyper.is",
   "dependencies": {
     "hyperclean": "latest",
+    "hyperfontuhd": "latest",
     "hyperlinks": "latest",
     "hyperterm-sourcerer": "latest",
     "hyperterm-themed-scrollbar": "latest"
