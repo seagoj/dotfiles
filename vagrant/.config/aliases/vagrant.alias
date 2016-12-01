@@ -1,0 +1,3 @@
+if ! which &>/dev/null; then
+	alias vd='v -d'
+fi
