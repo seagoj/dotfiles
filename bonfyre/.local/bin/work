@@ -1,6 +1,6 @@
 #!/bin/bash
 
-. $HOME/.local/functions/buku.sh
+. $XDG_FUNCTIONS_DIR/buku.sh
 
 if [[ "$1" == "links" ]]; then
 	if ! which buku >/dev/null; then

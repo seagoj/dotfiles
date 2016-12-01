@@ -13,5 +13,5 @@ function ll() {
 	if [[ $(uname) != 'Darwin' ]]; then
 		LS="${LS} -X"
 	fi
-	${LS} -al -G -t "${@}"
+	${LS} -al -G "${@}"
 }
