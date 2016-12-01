@@ -17,6 +17,10 @@ for file in ${XDG_CONFIG_HOME:-$HOME/.config}/aliases/*.alias; do
 	source "${file}"
 done
 
+for file in ${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}/sourced/*.sh; do
+	source "${file}"
+done
+
 # key bindings
 bindkey '[1~' beginning-of-line	# Home
 bindkey '[4~' end-of-line			# End
