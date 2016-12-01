@@ -1,3 +1,7 @@
+MAIN_WIN_FACTOR=40
+BOTTOM_LEFT_WIN_FACTOR=50
+BOTTOM_MID_WIN_FACTOR=30
+
 # Create bot session
 tmux -2 new-session -d -s $PROJECT -n 'vim'
 tmux send-keys 'wego 2' C-m
@@ -9,9 +13,9 @@ tmux send-keys 'vagrant-up' C-m
 tmux::status h
 
 # Resize
-tmux resize-pane -t 1 -D 20
-tmux resize-pane -t 2 -L 50
-tmux resize-pane -t 3 -L 30
+tmux resize-pane -t 1 -D ${MAIN_WIN_FACTOR}
+tmux resize-pane -t 2 -L ${BOTTOM_LEFT_WIN_FACTOR}
+tmux resize-pane -t 3 -L ${BOTTOM_MID_WIN_FACTOR}
 
 pushd ~/dotfiles >/dev/null
 tmux new-window
@@ -24,9 +28,9 @@ tmux::split h
 tmux::status h
 
 # Resize
-tmux resize-pane -t 1 -D 20
-tmux resize-pane -t 2 -L 50
-tmux resize-pane -t 3 -L 30
+tmux resize-pane -t 1 -D ${MAIN_WIN_FACTOR}
+tmux resize-pane -t 2 -L ${BOTTOM_LEFT_WIN_FACTOR}
+tmux resize-pane -t 3 -L ${BOTTOM_MID_WIN_FACTOR}
 tmux select-pane -t 1
 popd >/dev/null
 
