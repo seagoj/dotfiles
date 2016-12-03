@@ -19,7 +19,6 @@ if !v:shell_error && s:uname == "Linux"
 elseif !v:shell_error && s:uname == "Darwin"
 	Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
 endif
-" Plug 'majutsushi/tagbar'
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
 Plug 'edsono/vim-matchit'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' | Plug 'seagoj/gist-config.vim'
@@ -55,6 +54,12 @@ Plug 'chase/vim-ansible-yaml'
 " Plug 'neilagabriel/vim-geeknote'
 Plug 'junegunn/vader.vim'
 Plug 'joonty/vdebug'
+Plug 'ryanoasis/vim-devicons'
+Plug 'seagoj/vagrant.vim'
+Plug 'seagoj/markdown.vim'
+Plug 'seagoj/javascript.vim'
+Plug 'seagoj/c.vim'
+Plug 'seagoj/php.vim'
 " Experimental
 Plug 'IN3D/vim-raml'
 " Plug 'chrisbra/vim-diff-enhanced'
@@ -62,7 +67,6 @@ Plug 'fwip/vim-jira'
 Plug 'dahu/bisectly'
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'rodjek/vim-puppet'
-Plug 'ryanoasis/vim-devicons'
 call plug#end()
 
 if vimPlugInstalled == 0
