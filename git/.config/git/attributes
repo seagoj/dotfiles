@@ -1,3 +1,4 @@
 # *.js filter=co_2_spaces_commit_tabs
 # *.json filter=co_2_spaces_commit_tabs
 # *.php filter=co_4_spaces_commit_tabs
+* text eol=LF
