@@ -22,6 +22,7 @@ dotfiles::process_packages() {
 	dotfiles::banner
 	dotfiles::set_gpg
 	dotfiles::generate_packages
+	dotfiles::validate_encrypted
 	dotfiles::decrypt_secrets
 	dotfiles::bootstrap ${PACKAGES[@]}
 	general::info "Logout and back in for changes to take effect"
@@ -76,6 +77,28 @@ dotfiles::stow_functions() {
 	source $HOME/.zshenv &>/dev/null
 }
 
+dotfiles::validate_encrypted() {
+	if ! which md5 >/dev/null; then
+		echo "unable to verify secrets have been decrypted. install md5"
+		exit 1
+	fi
+
+	local EMAIL="seagoj@keybase.io"
+
+	dotfiles::set_gpg
+	declare -a SECRETS=($(find . -path ./pass/.password-store -prune -o -name "*.gpg" -print0 | xargs -0))
+	for FILE in "${SECRETS[@]%.gpg}"; do
+		if ! echo "$FILE" | grep ".password-store" >/dev/null; then
+			current_md5=`md5 -q $FILE`
+			repo_md5=`$GPG --batch --yes --quiet --use-agent --output - --decrypt $FILE.gpg | md5 -q`
+			if [[ "$current_md5" != "$repo_md5" ]]; then
+				echo "changes not encrypted in ${FILE}. run 'make encrypt' before installation"
+				exit 1
+			fi
+		fi
+	done
+}
+
 dotfiles::decrypt_secrets() {
 	dotfiles::set_gpg
 	declare -a SECRETS=($(find . -path ./pass/.password-store -prune -o -name "*.gpg" -print0 | xargs -0))
@@ -114,9 +137,14 @@ dotfiles::encrypt_secrets() {
 
 	dotfiles::set_gpg
 	declare -a SECRETS=($(find . -path ./pass/.password-store -prune -o -name "*.gpg" -print0 | xargs -0))
+	if [[ ! -d backup-secrets ]]; then
+		mkdir -p backup-secrets
+	fi
+
 	for FILE in "${SECRETS[@]%.gpg}"; do
 		if ! echo "$FILE" | grep ".password-store" >/dev/null; then
 			echo "$FILE"
+			cp "$FILE" backup-secrets/
 			dotfiles::encrypt $EMAIL "$FILE"
 			dotfiles::remove "$FILE"
 			dotfiles::ignore "$FILE"

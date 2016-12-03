@@ -2,6 +2,7 @@ let semibold = 600;
 let blue = '#6688aa';
 let systemDefaultShell = '';
 let fonts = [
+	"SauceCodePro Nerd Font",
 	"Source Code Pro for Powerline",
 	"Sauce Code Powerline",
 	"Anonymous Pro",

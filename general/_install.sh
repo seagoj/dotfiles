@@ -1,10 +1,9 @@
 installFonts() {
-	dotfiles::update_repo git://github.com/powerline/fonts.git fonts | grep "up to date" >/dev/null
+	dotfiles::update_repo git://github.com/ryanoasis/nerd-fonts nerd-fonts
 
-	if [[ $? -ne 0 ]]; then
-		./install.sh
-		popd >/dev/null
-	fi
+	./install.sh "SourceCodePro"
+	./install.sh "Terminus"
+	popd >/dev/null
 }
 
 installArch() {
