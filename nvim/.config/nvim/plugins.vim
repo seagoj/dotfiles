@@ -20,7 +20,8 @@ elseif !v:shell_error && s:uname == "Darwin"
 	Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
 endif
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
-Plug 'edsono/vim-matchit'
+" Plug 'edsono/vim-matchit'
+Plug 'vim-scripts/matchit.zip'
 Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' | Plug 'seagoj/gist-config.vim'
 Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
 Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
@@ -60,13 +61,17 @@ Plug 'seagoj/markdown.vim'
 Plug 'seagoj/javascript.vim'
 Plug 'seagoj/c.vim'
 Plug 'seagoj/php.vim'
+Plug 'seagoj/rust-config.vim'
 " Experimental
+Plug 'rust-lang/rust.vim'
 Plug 'IN3D/vim-raml'
 " Plug 'chrisbra/vim-diff-enhanced'
 Plug 'fwip/vim-jira'
 Plug 'dahu/bisectly'
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'rodjek/vim-puppet'
+Plug 'thalesmello/tabfold'
+Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
 call plug#end()
 
 if vimPlugInstalled == 0
