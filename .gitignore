@@ -60,3 +60,4 @@ hyper/.hyper_plugins/node_modules
 backup-secrets
 bonfyre/.local/bin/work
 vpn/.local/bin/vpn-bellevue
+u2f/.config/u2f/keys
