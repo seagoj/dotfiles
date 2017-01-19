@@ -22,7 +22,7 @@
 [merge]
 	summary = true
 	defaultToUpstream = true
-	algorithm = histogram
+	algorithm = myers ; histogram | minimal | myers | patient
 	tool = fugitive
 	; tool = filemerge
 [mergetool "filemerge"]
@@ -34,7 +34,7 @@
 [diff]
 	tool = nvimdiff
 	; tool = icdiff
-	algorithm = patience
+	algorithm = myers ; histogram | minimal | myers | patient
 [difftool]
 	prompt = true
 [difftool "nvimdiff"]
