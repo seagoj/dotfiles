@@ -3,6 +3,7 @@ set encoding=utf-8
 set guifont=SauceCodePro\ Nerd\ Font\ Semibold:h8
 set ffs=unix,mac,dos
 set nocompatible
+set clipboard=unnamed
 filetype off
 
 source $XDG_CONFIG_HOME/nvim/plugins.vim
