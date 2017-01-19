@@ -65,7 +65,7 @@ Plug 'seagoj/rust-config.vim'
 " Experimental
 Plug 'rust-lang/rust.vim'
 Plug 'IN3D/vim-raml'
-" Plug 'chrisbra/vim-diff-enhanced'
+Plug 'chrisbra/vim-diff-enhanced'
 Plug 'fwip/vim-jira'
 Plug 'dahu/bisectly'
 Plug 'rayburgemeestre/phpfolding.vim'
