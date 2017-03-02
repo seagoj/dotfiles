@@ -1,10 +1,8 @@
 #!/bin/bash
 
-sudo ln -s $(which python2) /usr/local/bin/python
 pushd ${XDG_CONFIG_HOME}/nvim/plugged/YouCompleteMe
-if ! which cmake; then
+if ! which cmake >/dev/null; then
 	osinstall cmake
 fi
 ./install.py --clang-completer
 popd
-sudo rm /usr/local/bin/python

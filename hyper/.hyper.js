@@ -24,7 +24,8 @@ module.exports = {
 
 		// custom css to embed in the main window
 		css: `
-				.hyper_main { border: none; }
+			.main_mmu { border: none; }
+			.terms_terms { margin-top: 0px; }
 		`,
 
 		// custom css to embed in the terminal window
@@ -35,6 +36,7 @@ module.exports = {
 				text-decoration: underline;
 			}
 			x-screen a.hover { text-decoration: none; }
+			x-screen { border: none; }
 		`,
 
 		padding: '0px',
@@ -51,7 +53,7 @@ module.exports = {
 	},
 
 	plugins: [
-		'hyperclean',
+		// 'hyperclean',
 		'hyperfontuhd',
 		'hyperlinks',
 		'hyperterm-sourcerer',

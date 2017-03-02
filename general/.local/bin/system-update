@@ -1,0 +1,3 @@
+#!/bin/bash
+
+brew refresh && zmanage update && e -c PlugUpdate

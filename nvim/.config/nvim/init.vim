@@ -13,7 +13,6 @@ filetype plugin on
 filetype indent on
 set mouse=a						"Enable mouse use
 set scrolloff=5					"When possible, show 5 lines above and below the cursor
-set wildmenu					"Autocomplete and fun stuff
 set number						"Show line numbers
 set cmdheight=2					"shortens cmd height
 set backspace=eol,start,indent	"backspace configuration
@@ -39,9 +38,6 @@ set timeoutlen=500
 " Indentation
 set autoindent		"Newline uses indentation depth of the previous
 set smartindent		"Newline conditionally uses 1 more indent
-" Fuzzy-ish finding
-set path+=**
-set wildmenu
 " Status bar
 set showcmd			" Show last command in bottom right
 " Code Folding

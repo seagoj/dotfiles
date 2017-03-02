@@ -47,6 +47,7 @@ tmux rename-window social
 # Set default window
 tmux select-window -t $PROJECT:1
 tmux select-pane -t 1
+tmux send-keys 'buku -S bonfyre' C-m
 
 # Attach to session
 tmux -2 attach-session -t $PROJECT

@@ -10,7 +10,7 @@
 	whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
 	editor = nvim -f
 	autocrlf = input
-	; safecrlf = true
+	safecrlf = false
 	ignorecase = false
 	excludesfile = /Users/Admin/.gitignore_global
 [web]
