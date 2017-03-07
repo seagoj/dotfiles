@@ -28,7 +28,7 @@ set ignorecase		"ignore case when searching
 set smartcase		"If a pattern contains an uppercase, then the search is case sensitive
 set hlsearch		"Highlight searches
 set incsearch		"More like webbrowser search
-set lazyredraw	  "Don't redraw during macros
+" set lazyredraw	  "Don't redraw during macros
 set magic			"For regular expressions
 set showmatch		"Matching braces highlighting
 set matchtime=2		"Blink for 2 tenths of a second when matching
