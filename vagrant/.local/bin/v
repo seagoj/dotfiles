@@ -1,35 +1,72 @@
 #!/bin/bash
+# vim: filetype=sh:
+# shellcheck disable=SC1090
+source "${XDG_FUNCTIONS_DIR}/cli.sh"
+#/ Usage: v [arguments ...]
+#/
+#/ Arguments:
+#/		--help						Shows this
+#/		--debug
+#/		--destroy | --rebuild | -d	Destroys and rebuilds
 
-OUTPUT='&> /dev/null'
-DESTROY=0
-# V_USER=ubuntu
+cleanup() {
+	EXIT_CODE=$?
+	exit "${EXIT_CODE}"
+}
 
-while [[ $# > 0 ]]; do
-	case $1 in
-	--debug)
-		OUTPUT=""
+v::arguments() {
+	OUTPUT='&> /dev/null'
+
+	while [[ $# -gt 0 ]]; do
+		case "$1" in
+		"--debug")
+			OUTPUT=""
+			;;
+		"--destroy" | "--rebuild" | "-d")
+			v::destroy && v::create_session && v::suspend
+			exit
+			;;
+		esac
 		shift
-		;;
-	--destroy | --rebuild | -d)
-		DESTROY=1
-		shift
-		;;
-	*)
-		shift
-		;;
-	esac
-done
+	done
+}
 
-if [[ 1 == $DESTROY ]]; then
-	eval "vagrant destroy -f ${OUTPUT}"
-fi
+v::connect() {
+	v::resume_session || v::create_session
+}
 
-( \
-	(eval "vagrant resume ${OUTPUT}"; vagrant ssh) || \
-	( \
-		ssh-keygen -R \[127.0.0.1\]:2222 && \
-		vagrant destroy -f && \
+v::create_session() {
+	log::info "no session to resume"
+	log::info "recreating"
+	ssh-keygen -R \[127.0.0.1\]:2222 && \
 		vagrant up && \
-		ssh vagrant \
-	) \
-) && vagrant suspend
+		v::ssh
+}
+
+v::destroy() {
+	log::info "destroying image"
+	eval "vagrant destroy -f ${OUTPUT}"
+}
+
+v::resume_session() {
+	log::info "attempting resume"
+	eval "vagrant resume ${OUTPUT}"
+	v::ssh
+}
+
+v::ssh() {
+	if [[ -z "${HOME_DIR+x}" ]]; then
+		vagrant ssh
+	else
+		vagrant ssh -c "cd $HOME_DIR; exec bash"
+	fi
+}
+
+v::suspend() {
+	log::info "suspending"
+	vagrant suspend
+}
+
+log::timestamp
+v::arguments "$@"
+v::connect && v::suspend

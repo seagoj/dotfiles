@@ -1,3 +1,3 @@
 if ! which keybase &>/dev/null; then
-    osinstall keybase
+	osinstall Caskroom/cask/keybase
 fi

@@ -1,36 +1,35 @@
 #!/bin/bash
+# vim: filetype=sh:
+# shellcheck disable=SC1090
+source "${XDG_FUNCTIONS_DIR}/cli.sh"
+#/ USAGE:
+#/
+#/	 $ e
+#/	 # => opens the current directory in $EDITOR
+#/
+#/	 $ e .
+#/	 $ e /opt
+#/	 # => opens the specified directory in $EDITOR
+#/
+#/	 $ e file.txt [exists in cwd]
+#/	 # => opens file in default editor
+#/
+#/	 $ e file.txt [does not exist in cwd]
+#/	 # => searches for previously opened files with that name through fasd
+#/
+#/	 @todo - waiting for update to fasd exit code
+#/	 $ e file.txt [does not exist in cwd; can't be found with fasd]
+#/	 # => opens new file at passed location
 
-#
-# Aliases e to $EDITOR and provides a default argument of the current directory
-#
-# USAGE:
-#
-#   $ e
-#   # => opens the current directory in $EDITOR
-#
-#   $ e .
-#   $ e /opt
-#   # => opens the specified directory in $EDITOR
-#
-#   $ e file.txt [exists in cwd]
-#   # => opens file in default editor
-#
-#   $ e file.txt [does not exist in cwd]
-#   # => searches for previously opened files with that name through fasd
-#
-#   @todo - waiting for update to fasd exit code
-#   $ e file.txt [does not exist in cwd; can't be found with fasd]
-#   # => opens new file at passed location
+cleanup() {
+	EXIT_CODE=$?
+	exit "${EXIT_CODE}"
+}
 
-if [[ $# -eq 0 ]] ; then
-    exec $EDITOR
-elif [[ $# -eq 1 ]] ; then
-    # if [[ -e $1 ]]; then
-        exec $EDITOR $1
-    # else
-    #     fasd -a -e "$EDITOR" $1 || $EDITOR $1
-    # fi
+if [[ $# -eq 0 ]]; then
+	"$EDITOR" .
+elif [[ $# -eq 1 ]] && [[ "$1" == "diff" ]]; then
+	"$EDITOR" -O $(git diff --name-only origin/master)
 else
-    exec $EDITOR -O "$*"
+	"$EDITOR" -O "$@"
 fi
-

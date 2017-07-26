@@ -13,9 +13,9 @@ installMac() {
 		osinstall pam-u2f
 	fi
 
-	if [[ ! -f /usr/lib/pam/pam_u2f.so ]]; then
-		sudo ln -s $(brew --prefix pam-u2f)/lib/pam/pam_u2f.so /usr/lib/pam/pam_u2f.so
-	fi
+	# if [[ ! -f /usr/lib/pam/pam_u2f.so ]]; then
+	#	sudo ln -s $(brew --prefix pam-u2f)/lib/pam/pam_u2f.so /usr/lib/pam/pam_u2f.so
+	# fi
 
 	if [[ ! -d u2f/.config/u2f ]]; then
 		mkdir -p u2f/.config/u2f

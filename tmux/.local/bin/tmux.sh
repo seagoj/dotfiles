@@ -1,12 +1,13 @@
 #!/bin/bash
 
-. $HOME/.local/functions/tmux.sh
+# shellcheck disable=SC1090
+. "${XDG_FUNCTIONS_DIR}"/tmux.sh
 
 # project settings
-PROJECT=${PWD##*/}
+PROJECT="${PWD##*/}"
 
 if [[ -f ~/.tmux/projects/$PROJECT ]]; then
-	tmux attach -t $PROJECT || source ~/.tmux/projects/$PROJECT
+	tmux attach -t "$PROJECT" || source ~/.tmux/projects/"$PROJECT"
 else
-	tmux attach -t $PROJECT || source ~/.tmux/projects/general
+	tmux attach -t "$PROJECT" || source ~/.tmux/projects/general
 fi

@@ -1,8 +1,33 @@
 #!/bin/bash
+# vim: filetype=sh:
 
-pushd ${XDG_CONFIG_HOME}/nvim/plugged/YouCompleteMe
-if ! which cmake >/dev/null; then
-	osinstall cmake
-fi
-./install.py --clang-completer
-popd
+# shellcheck disable=SC1090
+source "${XDG_FUNCTIONS_DIR}/cli.sh"
+
+#/ installYCM
+
+cleanup() {
+	popd
+}
+
+ycm::update() {
+	pushd "${XDG_CONFIG_HOME}/nvim/plugged/YouCompleteMe" && \
+		log::info "updating submodules" && \
+		git submodule update --init --recursive
+}
+
+ycm::prereqs() {
+	if ! which cmake >/dev/null; then
+		log::info "installing cmake" && \
+		osinstall cmake
+	fi
+}
+
+ycm::install() {
+	log::info "installing YouCompleteMe" && \
+		./install.py --clang-completer
+}
+
+ycm::update
+ycm::prereqs
+ycm::install

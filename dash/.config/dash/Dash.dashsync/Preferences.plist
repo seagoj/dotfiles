@@ -30,7 +30,7 @@
 			<key>neovim/neovim</key>
 			<dict>
 				<key>date</key>
-				<date>2017-03-13T02:40:29Z</date>
+				<date>2017-07-24T15:29:17Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -124,27 +124,27 @@
 			<key>http://kapeli.com/feeds/PHP.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-04-08T18:26:14Z</date>
+				<date>2017-03-15T03:41:27Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/PHPUnit.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-11-15T21:12:13Z</date>
+				<date>2017-03-15T03:40:59Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Puppet.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-11-15T21:12:20Z</date>
+				<date>2017-03-15T03:41:11Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Python_3.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-11-15T21:11:12Z</date>
+				<date>2017-03-15T03:41:14Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Vim.xml</key>
 			<dict>
 				<key>date</key>
-				<date>2016-11-15T21:13:38Z</date>
+				<date>2017-03-15T03:41:03Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>

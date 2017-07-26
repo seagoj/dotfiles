@@ -1,28 +1,38 @@
 if ! which mpd >/dev/null; then
-    osinstall mpd
+	osinstall mpd
 fi
 
 if ! which ncmpcpp >/dev/null; then
-    osinstall ncmpcpp --with-fftw mpc
+	osinstall ncmpcpp --with-fftw mpc
 fi
 
 installArch() {
-    if ! which GMusicProxy &>/dev/null; then
-        osinstall gmusicproxy-git
-    fi
+	if ! which GMusicProxy &>/dev/null; then
+		osinstall gmusicproxy-git
+	fi
 }
 
 installMac() {
-    if ! which GMusicProxy &>/dev/null; then
-        osinstall python3 --with-brewed-openssl
-        git clone https://github.com/diraimondo/gmusicproxy.git $CODE/gmusicproxy &&\
-            cd $CODE/gmusicproxy &&\
-            general::sudo pip3 install -r requirements.txt
-    fi
+	if [[ ! -d ~/.mpd/playlists ]]; then
+		mkdir -p ~/.mpd/playlists
+	fi
+
+	touch ~/.mpd/mpd.conf
+	touch ~/.mpd/mpd.db
+	touch ~/.mpd/mpd.log
+	touch ~/.mpd/mpd.pid
+	touch ~/.mpd/mpdstate
+
+	if ! which GMusicProxy &>/dev/null; then
+		osinstall python3 --with-brewed-openssl
+		git clone https://github.com/diraimondo/gmusicproxy.git $CODE/gmusicproxy &&\
+			cd $CODE/gmusicproxy &&\
+			general::sudo pip3 install -r requirements.txt
+	fi
 }
 
 if ! which gmusic-mpd &>/dev/null; then
-    general::sudo npm -g install gmusic-mpd
+	general::sudo npm -g install gmusic-mpd
 fi
 
 dotfiles::install ncmpcpp

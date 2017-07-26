@@ -1,0 +1,44 @@
+#!/bin/bash
+
+# shellcheck disable=SC1090
+source "${XDG_FUNCTIONS_DIR}/cli.sh"
+
+CONFIG_DIR=/Library/Preferences/SystemConfiguration
+WIFI_PREFS_ARCHIVE=~/wifi-prefs
+
+cleanup() {
+	exit $?
+}
+
+reset_wifi::ensure_archive_dir() {
+	if [[ ! -d "$WIFI_PREFS_ARCHIVE" ]]; then
+		log::info "creating $WIFI_PREFS_ARCHIVE"
+		mkdir -p "$WIFI_PREFS_ARCHIVE"
+	fi
+}
+
+reset_wifi::mv_if_exists() {
+	if [[ -f "$1" ]]; then
+		sudo mv "$1" "$WIFI_PREFS_ARCHIVE/"
+	fi
+}
+
+reset_wifi::archive() {
+	log::info "archiving config"
+	reset_wifi::mv_if_exists "$CONFIG_DIR/NetworkInterfaces.plist"
+	reset_wifi::mv_if_exists "$CONFIG_DIR/com.apple.airport.preferences.plist"
+	reset_wifi::mv_if_exists "$CONFIG_DIR/com.apple.wifi.message-tracer.plist"
+	reset_wifi::mv_if_exists "$CONFIG_DIR/preferences.plist"
+}
+
+reset_wifi::reboot() {
+	log::info "reboot"
+	sudo reboot
+}
+
+reset_wifi::ensure_archive_dir
+reset_wifi::archive
+
+if [[ $# -gt 0 ]] && [[ "$1" == "--reboot" ]]; then
+	reset_wifi::reboot
+fi

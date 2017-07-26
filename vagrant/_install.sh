@@ -1,7 +1,7 @@
 if ! which virtualbox &>/dev/null; then
-    osinstall virtualbox
+	osinstall Caskroom/cask/virtualbox
 fi
 
 if ! which vagrant &>/dev/null; then
-    osinstall vagrant net-tools
+	osinstall Caskroom/cask/vagrant
 fi

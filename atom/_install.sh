@@ -7,6 +7,9 @@ installPackages() {
 }
 
 installMac() {
+	if ! which wget &>/dev/null; then
+		 osinstall wget
+	fi
 	wget https://atom.io/download/mac --output-file=atom-mac.zip &&\
 	unzip atom-mac.zip &&\
 	mv Atom /Applications/ &&\

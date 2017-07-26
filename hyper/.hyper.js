@@ -47,8 +47,6 @@ module.exports = {
 			hideTabs: true
 		},
 
-		hypertype: false,
-
 		// for advanced config flags please refer to https://hyperterm.org/#cfg
 	},
 
@@ -61,6 +59,5 @@ module.exports = {
 	],
 
 	localPlugins: [
-		'hypertype',
 	],
 };

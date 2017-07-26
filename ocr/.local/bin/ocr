@@ -1,4 +1,7 @@
 #!/bin/bash
+# vim: filetype=sh:
+# shellcheck disable=SC1090
+source "$XDG_FUNCTIONS_DIR/cli.sh"
 
 # Take a PDF, OCR it, and add OCR Text as background layer to original PDF to make it searchable.
 # Hacked together using tips from these websites:
@@ -7,6 +10,23 @@
 # Dependencies: pdftk, tesseract, imagemagick, enscript, ps2pdf
 # Would be nice to use hocr2pdf instead so that the text lines up with the PDF image.
 #	   http://www.exactcode.com/site/open_source/exactimage/hocr2pdf/
+
+cleanup() {
+	if [[ -f "$filename.tif" ]]; then
+		log::info "removing $filename.tif"
+		rm "$filename.tif"
+	fi
+}
+
+ocr::requirements() {
+	if ! which convert &>/dev/null; then
+		osinstall imagemagick ghostscript
+	fi
+
+	if ! which tesseract &>/dev/null; then
+		osinstall tesseract
+	fi
+}
 
 ocr::to_pdf() {
 	cp $1 $1.bak
@@ -33,9 +53,8 @@ ocr::pdf_to_tiff() {
 		exit 1
 	fi
 
-	input="${1}"
-	output="${2}"
-
+	local input="${1}"
+	local output="${2}"
 	convert -monochrome -density 600 -depth 8 -alpha off "${input}" "${output}"
 }
 
@@ -47,4 +66,14 @@ ocr::to_text() {
 		rm "${filename}".tiff
 }
 
-ocr::to_text "$@"
+ocr::to_searchable_pdf() {
+	filename=$(basename "${1%%.*}")
+
+	log::info "converting pdf to tif" && \
+		ocr::pdf_to_tiff "${filename}".pdf "${filename}".tif && \
+		log::info "ocr tif" && \
+		tesseract "$filename.tif" "${filename}-test" pdf &>/dev/null
+}
+
+ocr::requirements
+ocr::to_searchable_pdf "$@"

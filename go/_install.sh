@@ -1,3 +1,4 @@
 if ! which go >/dev/null; then
-    osinstall go
+	echo "INSTALLING"
+	osinstall go
 fi

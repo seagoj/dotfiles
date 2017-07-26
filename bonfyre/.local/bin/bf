@@ -35,6 +35,7 @@ pr() {
 		git pull origin &&\
 		git checkout $commit_hash &&\
 		git pull origin master &&\
+		git diff --name-only &&\
 		git diff -w origin/master
 }
 

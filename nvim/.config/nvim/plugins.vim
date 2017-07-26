@@ -3,7 +3,7 @@ function! AutoInstallVimPlug()
 	let vimPlugFile=expand("$XDG_CONFIG_HOME/nvim/autoload/plug.vim")
 	if !filereadable(vimPlugFile)
 		echo "Installing vim-plug..."
-		silent !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+		!curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 		let vimPlugInstalled=0
 	endif
 	return vimPlugInstalled
@@ -15,13 +15,12 @@ let s:uname = system("echo -n \"$(uname)\"")
 call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 Plug 'airblade/vim-gitgutter'
 if !v:shell_error && s:uname == "Linux"
-	Plug 'KabbAmine/zeavim.vim'
+Plug 'KabbAmine/zeavim.vim'
 elseif !v:shell_error && s:uname == "Darwin"
-	Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
+Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
 endif
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
 Plug 'vim-scripts/matchit.zip'
-" Plug 'mattn/webapi-vim' | Plug 'mattn/gist-vim' | Plug 'seagoj/gist-config.vim'
 Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
 Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
 Plug 'kien/ctrlp.vim' "| Plug 'lucidstack/ctrlp-mpc.vim' | Plug 'seagoj/ctrlp-mpc-config.vim'
@@ -31,7 +30,6 @@ Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': 'installYCM'}
-" Plug 'scrooloose/nerdtree'
 " Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
 Plug 'seagoj/autosource-vimrc.vim'
 Plug 'seagoj/buffers.vim'
@@ -44,14 +42,11 @@ Plug 'seagoj/tab-management.vim'
 Plug 'seagoj/whitespace.vim' | Plug 'seagoj/whitespace-config.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'maksimr/vim-jsbeautify'
-" Plug 'vim-scripts/localrc.vim'
 Plug 'craigemery/vim-autotag'
-" Plug 'chriskempson/tomorrow-theme' | Plug 'seagoj/tomorrow-night-config.vim'
-" Plug 'altercation/solarized' | Plug 'seagoj/solarized-config.vim'
 Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
 Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'chase/vim-ansible-yaml'
-" Plug 'junegunn/vader.vim'
+Plug 'junegunn/vader.vim'
 Plug 'joonty/vdebug'
 Plug 'ryanoasis/vim-devicons'
 Plug 'seagoj/vagrant.vim'
@@ -66,14 +61,12 @@ Plug 'thalesmello/tabfold'
 Plug 'rodjek/vim-puppet'
 " Experimental
 Plug 'IN3D/vim-raml'
-" Plug 'chrisbra/vim-diff-enhanced'
 Plug 'dahu/bisectly'
 " Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
-Plug 'seagoj/minimal-fuzzy-finder.vim'
 call plug#end()
 
 if vimPlugInstalled == 0
 	:PlugInstall
 endif
 
-let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/bonfyre/config_management/puppet/bonfyre_app"} }
+let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/config_management/puppet/bonfyre_app"} }

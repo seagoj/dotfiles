@@ -3,7 +3,9 @@ installNeovimMac() {
 
 	brew tap neovim/neovim
 	brew install --HEAD neovim
-	osinstall python3 ctags && general::sudo pip3 install neovim
+	osinstall python3 ctags && \
+		general::sudo pip3 install --user neovim && \
+		general::sudo pip2 install --user neovim
 }
 
 installNeovimDebian() {

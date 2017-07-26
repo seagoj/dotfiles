@@ -22,6 +22,12 @@ fpath=(
 	$fpath
 )
 
+# GPG
+export GPG_TTY=$(tty)
+
+# Gradle
+export GRADLE_USER_HOME=/usr/local/opt/gradle/libexec
+
 # Go
 export GOPATH=${HOME}/go
 
@@ -89,6 +95,9 @@ fi
 # Temporary Files
 export TMPDIR="/tmp/$USER"
 export TMPPREFIX="${TMPDIR%/}/zsh"
+if [[ ! -d ${TMPDIR} ]]; then
+	mkdir -p ${TMPDIR}
+fi
 
 # Ruby
 export RBENV_ROOT=${HOME}/.rbenv

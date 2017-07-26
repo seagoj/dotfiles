@@ -9,7 +9,6 @@ ncmpcpp
 nvim
 ranger
 ssh
-system
 tmux
 vagrant
 npm
@@ -22,13 +21,10 @@ calibre
 keybase
 pass
 buku
-boilr
-bonfyre
 sandboxd
 htop
 rainbowstream
 tag
-wwwtxt
 mysql
 less
 gtypist
