@@ -33,6 +33,15 @@ installESLint() {
 	fi
 }
 
+installVimv() {
+	if ! which vimv &>/dev/null; then
+		general::update_repo git://github.com/thameera/vimv.git vimv
+		popd
+		ln -s "${CODE}/vimv/vimv" "${HOME}/.local/bin/vimv"
+		chmod +x "{HOME}/.local/bin/vimv"
+	fi
+}
+
 if ! which nvim >/dev/null; then
 	case "${OS_TYPE}" in
 	Darwin | Mac)
