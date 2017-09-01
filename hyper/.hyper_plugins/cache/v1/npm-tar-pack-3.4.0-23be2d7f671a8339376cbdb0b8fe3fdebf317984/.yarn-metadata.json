@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/tar-pack/-/tar-pack-3.4.0.tgz#23be2d7f671a8339376cbdb0b8fe3fdebf317984",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/tar-pack/-/tar-pack-3.4.0.tgz",
+    "hash": "23be2d7f671a8339376cbdb0b8fe3fdebf317984",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "23be2d7f671a8339376cbdb0b8fe3fdebf317984"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz#46a6ab7f0aead8deae9ec0565780b7d4efeb9d43",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/oauth-sign/-/oauth-sign-0.8.2.tgz",
+    "hash": "46a6ab7f0aead8deae9ec0565780b7d4efeb9d43",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "46a6ab7f0aead8deae9ec0565780b7d4efeb9d43"
+}

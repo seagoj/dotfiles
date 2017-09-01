@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz#798e689778151c8076b4b360e5edd28cda2bb468",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/chokidar/-/chokidar-1.7.0.tgz",
+    "hash": "798e689778151c8076b4b360e5edd28cda2bb468",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "798e689778151c8076b4b360e5edd28cda2bb468"
+}

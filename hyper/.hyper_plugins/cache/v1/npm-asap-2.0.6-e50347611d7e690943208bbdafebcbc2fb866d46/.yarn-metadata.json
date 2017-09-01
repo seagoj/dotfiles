@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz#e50347611d7e690943208bbdafebcbc2fb866d46",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/asap/-/asap-2.0.6.tgz",
+    "hash": "e50347611d7e690943208bbdafebcbc2fb866d46",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "e50347611d7e690943208bbdafebcbc2fb866d46"
+}

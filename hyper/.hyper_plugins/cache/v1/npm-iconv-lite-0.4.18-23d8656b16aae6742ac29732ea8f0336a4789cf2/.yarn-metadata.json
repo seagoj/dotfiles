@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.18.tgz#23d8656b16aae6742ac29732ea8f0336a4789cf2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/iconv-lite/-/iconv-lite-0.4.18.tgz",
+    "hash": "23d8656b16aae6742ac29732ea8f0336a4789cf2",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "23d8656b16aae6742ac29732ea8f0336a4789cf2"
+}

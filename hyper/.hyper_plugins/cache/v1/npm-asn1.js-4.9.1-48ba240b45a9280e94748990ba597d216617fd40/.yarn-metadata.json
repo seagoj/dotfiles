@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/asn1.js/-/asn1.js-4.9.1.tgz#48ba240b45a9280e94748990ba597d216617fd40",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/asn1.js/-/asn1.js-4.9.1.tgz",
+    "hash": "48ba240b45a9280e94748990ba597d216617fd40",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "48ba240b45a9280e94748990ba597d216617fd40"
+}

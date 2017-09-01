@@ -47,7 +47,7 @@ Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
 Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 Plug 'chase/vim-ansible-yaml'
 Plug 'junegunn/vader.vim'
-Plug 'joonty/vdebug'
+Plug 'joonty/vdebug', {'tag': 'v1.5.1'}
 Plug 'ryanoasis/vim-devicons'
 Plug 'seagoj/vagrant.vim'
 Plug 'seagoj/markdown.vim'
@@ -62,7 +62,8 @@ Plug 'rodjek/vim-puppet'
 " Experimental
 Plug 'IN3D/vim-raml'
 Plug 'dahu/bisectly'
-" Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
+Plug 'adoy/vim-php-refactoring-toolbox'
+Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
 call plug#end()
 
 if vimPlugInstalled == 0

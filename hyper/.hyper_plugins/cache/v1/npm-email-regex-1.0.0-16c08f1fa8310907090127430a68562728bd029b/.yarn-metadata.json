@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/email-regex/-/email-regex-1.0.0.tgz#16c08f1fa8310907090127430a68562728bd029b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/email-regex/-/email-regex-1.0.0.tgz",
+    "hash": "16c08f1fa8310907090127430a68562728bd029b",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "16c08f1fa8310907090127430a68562728bd029b"
+}

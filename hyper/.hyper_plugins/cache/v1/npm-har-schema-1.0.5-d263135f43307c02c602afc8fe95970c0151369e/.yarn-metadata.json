@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/har-schema/-/har-schema-1.0.5.tgz#d263135f43307c02c602afc8fe95970c0151369e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/har-schema/-/har-schema-1.0.5.tgz",
+    "hash": "d263135f43307c02c602afc8fe95970c0151369e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d263135f43307c02c602afc8fe95970c0151369e"
+}

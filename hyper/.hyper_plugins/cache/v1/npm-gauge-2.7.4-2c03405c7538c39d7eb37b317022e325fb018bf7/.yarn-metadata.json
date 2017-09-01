@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz#2c03405c7538c39d7eb37b317022e325fb018bf7",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/gauge/-/gauge-2.7.4.tgz",
+    "hash": "2c03405c7538c39d7eb37b317022e325fb018bf7",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "2c03405c7538c39d7eb37b317022e325fb018bf7"
+}

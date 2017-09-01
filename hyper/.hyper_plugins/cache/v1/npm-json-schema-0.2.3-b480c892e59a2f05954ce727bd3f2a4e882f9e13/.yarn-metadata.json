@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz#b480c892e59a2f05954ce727bd3f2a4e882f9e13",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/json-schema/-/json-schema-0.2.3.tgz",
+    "hash": "b480c892e59a2f05954ce727bd3f2a4e882f9e13",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "b480c892e59a2f05954ce727bd3f2a4e882f9e13"
+}

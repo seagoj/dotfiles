@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz#fea2616dc676b2962686b3af8dbdbe180b244e05",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/css-color-keywords/-/css-color-keywords-1.0.0.tgz",
+    "hash": "fea2616dc676b2962686b3af8dbdbe180b244e05",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "fea2616dc676b2962686b3af8dbdbe180b244e05"
+}

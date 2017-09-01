@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz#313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/jsprim/-/jsprim-1.4.1.tgz",
+    "hash": "313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "313e66bc1e5cc06e438bc1b7499c2e5c56acb6a2"
+}

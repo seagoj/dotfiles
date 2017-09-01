@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/is-primitive/-/is-primitive-2.0.0.tgz#207bab91638499c07b2adf240a41a87210034575",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/is-primitive/-/is-primitive-2.0.0.tgz",
+    "hash": "207bab91638499c07b2adf240a41a87210034575",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "207bab91638499c07b2adf240a41a87210034575"
+}

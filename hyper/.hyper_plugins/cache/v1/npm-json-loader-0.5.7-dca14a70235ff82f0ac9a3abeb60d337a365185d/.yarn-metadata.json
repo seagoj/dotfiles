@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz#dca14a70235ff82f0ac9a3abeb60d337a365185d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/json-loader/-/json-loader-0.5.7.tgz",
+    "hash": "dca14a70235ff82f0ac9a3abeb60d337a365185d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "dca14a70235ff82f0ac9a3abeb60d337a365185d"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/arr-flatten/-/arr-flatten-1.1.0.tgz#36048bbff4e7b47e136644316c99669ea5ae91f1",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/arr-flatten/-/arr-flatten-1.1.0.tgz",
+    "hash": "36048bbff4e7b47e136644316c99669ea5ae91f1",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "36048bbff4e7b47e136644316c99669ea5ae91f1"
+}

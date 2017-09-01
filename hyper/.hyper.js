@@ -24,7 +24,7 @@ module.exports = {
 
 		// custom css to embed in the main window
 		css: `
-			.main_mmu { border: none; }
+			.hyper_main { border: none; }
 			.terms_terms { margin-top: 0px; }
 		`,
 
@@ -51,11 +51,12 @@ module.exports = {
 	},
 
 	plugins: [
-		// 'hyperclean',
+		'hyperclean',
 		'hyperfontuhd',
 		'hyperlinks',
 		'hyperterm-sourcerer',
 		'hyperterm-themed-scrollbar',
+		'gitrocket'
 	],
 
 	localPlugins: [

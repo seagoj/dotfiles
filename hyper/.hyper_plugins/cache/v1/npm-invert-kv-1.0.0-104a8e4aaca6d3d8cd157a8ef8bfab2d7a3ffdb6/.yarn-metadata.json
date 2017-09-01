@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz",
+    "hash": "104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
+}

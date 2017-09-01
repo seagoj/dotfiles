@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/browserify-cipher/-/browserify-cipher-1.0.0.tgz#9988244874bf5ed4e28da95666dcd66ac8fc363a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/browserify-cipher/-/browserify-cipher-1.0.0.tgz",
+    "hash": "9988244874bf5ed4e28da95666dcd66ac8fc363a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9988244874bf5ed4e28da95666dcd66ac8fc363a"
+}

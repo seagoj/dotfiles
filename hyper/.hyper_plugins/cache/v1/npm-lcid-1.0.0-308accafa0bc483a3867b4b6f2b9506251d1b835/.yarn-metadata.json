@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/lcid/-/lcid-1.0.0.tgz#308accafa0bc483a3867b4b6f2b9506251d1b835",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/lcid/-/lcid-1.0.0.tgz",
+    "hash": "308accafa0bc483a3867b4b6f2b9506251d1b835",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "308accafa0bc483a3867b4b6f2b9506251d1b835"
+}

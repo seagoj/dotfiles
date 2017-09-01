@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/ripemd160/-/ripemd160-2.0.1.tgz#0f4584295c53a3628af7e6d79aca21ce57d1c6e7",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/ripemd160/-/ripemd160-2.0.1.tgz",
+    "hash": "0f4584295c53a3628af7e6d79aca21ce57d1c6e7",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "0f4584295c53a3628af7e6d79aca21ce57d1c6e7"
+}

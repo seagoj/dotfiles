@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz#63bc5dcb61331b92bc05fd528953c33462a06f8d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/bcrypt-pbkdf/-/bcrypt-pbkdf-1.0.1.tgz",
+    "hash": "63bc5dcb61331b92bc05fd528953c33462a06f8d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "63bc5dcb61331b92bc05fd528953c33462a06f8d"
+}

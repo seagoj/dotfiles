@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-2.1.0.tgz#d8fc3d284dd05794fe84973caecdd1cf824fdd85",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/wrap-ansi/-/wrap-ansi-2.1.0.tgz",
+    "hash": "d8fc3d284dd05794fe84973caecdd1cf824fdd85",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "d8fc3d284dd05794fe84973caecdd1cf824fdd85"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.2.tgz#b5835739270cfe26acf632099fded2a07f209e5e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/diffie-hellman/-/diffie-hellman-5.0.2.tgz",
+    "hash": "b5835739270cfe26acf632099fded2a07f209e5e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "b5835739270cfe26acf632099fded2a07f209e5e"
+}

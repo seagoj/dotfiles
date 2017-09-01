@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz#33ef30c5c77d4ea21c5a53869d91b56d8f2555e5",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/performance-now/-/performance-now-0.2.0.tgz",
+    "hash": "33ef30c5c77d4ea21c5a53869d91b56d8f2555e5",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "33ef30c5c77d4ea21c5a53869d91b56d8f2555e5"
+}

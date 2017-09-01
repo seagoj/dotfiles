@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz#a157ba402da24e9bf957f9aa69d524eed42901a6",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/tty-browserify/-/tty-browserify-0.0.0.tgz",
+    "hash": "a157ba402da24e9bf957f9aa69d524eed42901a6",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "a157ba402da24e9bf957f9aa69d524eed42901a6"
+}

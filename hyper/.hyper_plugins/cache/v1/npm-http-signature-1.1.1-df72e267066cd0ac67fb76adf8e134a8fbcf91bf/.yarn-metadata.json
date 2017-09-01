@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/http-signature/-/http-signature-1.1.1.tgz#df72e267066cd0ac67fb76adf8e134a8fbcf91bf",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/http-signature/-/http-signature-1.1.1.tgz",
+    "hash": "df72e267066cd0ac67fb76adf8e134a8fbcf91bf",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "df72e267066cd0ac67fb76adf8e134a8fbcf91bf"
+}

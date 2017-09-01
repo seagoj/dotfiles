@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/mime-db/-/mime-db-1.29.0.tgz#48d26d235589651704ac5916ca06001914266878",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/mime-db/-/mime-db-1.29.0.tgz",
+    "hash": "48d26d235589651704ac5916ca06001914266878",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "48d26d235589651704ac5916ca06001914266878"
+}

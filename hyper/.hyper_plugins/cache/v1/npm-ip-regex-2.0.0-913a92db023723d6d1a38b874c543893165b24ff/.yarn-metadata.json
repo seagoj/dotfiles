@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.0.0.tgz#913a92db023723d6d1a38b874c543893165b24ff",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/ip-regex/-/ip-regex-2.0.0.tgz",
+    "hash": "913a92db023723d6d1a38b874c543893165b24ff",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "913a92db023723d6d1a38b874c543893165b24ff"
+}

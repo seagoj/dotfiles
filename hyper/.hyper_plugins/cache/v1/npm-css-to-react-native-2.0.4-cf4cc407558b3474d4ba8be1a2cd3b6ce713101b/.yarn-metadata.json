@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-2.0.4.tgz#cf4cc407558b3474d4ba8be1a2cd3b6ce713101b",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/css-to-react-native/-/css-to-react-native-2.0.4.tgz",
+    "hash": "cf4cc407558b3474d4ba8be1a2cd3b6ce713101b",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "cf4cc407558b3474d4ba8be1a2cd3b6ce713101b"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/object.omit/-/object.omit-2.0.1.tgz#1a9c744829f39dbb858c76ca3579ae2a54ebd1fa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/object.omit/-/object.omit-2.0.1.tgz",
+    "hash": "1a9c744829f39dbb858c76ca3579ae2a54ebd1fa",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1a9c744829f39dbb858c76ca3579ae2a54ebd1fa"
+}

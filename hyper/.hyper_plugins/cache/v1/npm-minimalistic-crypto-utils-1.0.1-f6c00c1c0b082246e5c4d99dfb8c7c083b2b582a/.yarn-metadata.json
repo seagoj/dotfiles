@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz#f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/minimalistic-crypto-utils/-/minimalistic-crypto-utils-1.0.1.tgz",
+    "hash": "f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "f6c00c1c0b082246e5c4d99dfb8c7c083b2b582a"
+}

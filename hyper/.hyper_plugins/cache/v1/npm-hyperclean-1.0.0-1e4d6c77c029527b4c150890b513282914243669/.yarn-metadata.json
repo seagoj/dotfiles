@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/hyperclean/-/hyperclean-1.0.0.tgz#1e4d6c77c029527b4c150890b513282914243669",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/hyperclean/-/hyperclean-1.0.0.tgz",
+    "hash": "1e4d6c77c029527b4c150890b513282914243669",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "1e4d6c77c029527b4c150890b513282914243669"
+}

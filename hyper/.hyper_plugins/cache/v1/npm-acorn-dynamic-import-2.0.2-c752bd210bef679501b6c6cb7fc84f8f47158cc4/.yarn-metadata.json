@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-2.0.2.tgz#c752bd210bef679501b6c6cb7fc84f8f47158cc4",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/acorn-dynamic-import/-/acorn-dynamic-import-2.0.2.tgz",
+    "hash": "c752bd210bef679501b6c6cb7fc84f8f47158cc4",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c752bd210bef679501b6c6cb7fc84f8f47158cc4"
+}

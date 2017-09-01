@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/for-own/-/for-own-0.1.5.tgz#5265c681a4f294dabbf17c9509b6763aa84510ce",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/for-own/-/for-own-0.1.5.tgz",
+    "hash": "5265c681a4f294dabbf17c9509b6763aa84510ce",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "5265c681a4f294dabbf17c9509b6763aa84510ce"
+}

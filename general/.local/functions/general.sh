@@ -61,3 +61,7 @@ general::set_permission() {
 		general::sudo "chmod ${permission} ${path_to_file}"
 	fi
 }
+
+portlistener() {
+	lsof -i tcp:"$1"
+}

@@ -1,0 +1,17 @@
+{
+  "name": "hyperclean",
+  "version": "1.0.0",
+  "description": "Hyper.app plugin to remove traffic lights",
+  "main": "index.js",
+  "repository": "albinekb/hyperclean",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "hyper",
+    "hyperclean",
+    "plugin"
+  ],
+  "author": "Albin Ekblom",
+  "license": "MIT"
+}

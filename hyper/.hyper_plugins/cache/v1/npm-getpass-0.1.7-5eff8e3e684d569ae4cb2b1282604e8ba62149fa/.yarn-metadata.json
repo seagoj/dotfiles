@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz",
+    "hash": "5eff8e3e684d569ae4cb2b1282604e8ba62149fa",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
+}

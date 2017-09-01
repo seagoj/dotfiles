@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-1.0.0.tgz#ef9e31386f031a7f0d643af82fde50c457ef00cb",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/is-fullwidth-code-point/-/is-fullwidth-code-point-1.0.0.tgz",
+    "hash": "ef9e31386f031a7f0d643af82fde50c457ef00cb",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "ef9e31386f031a7f0d643af82fde50c457ef00cb"
+}

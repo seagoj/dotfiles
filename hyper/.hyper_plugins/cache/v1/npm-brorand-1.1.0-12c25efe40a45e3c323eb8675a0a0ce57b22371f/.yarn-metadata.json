@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz#12c25efe40a45e3c323eb8675a0a0ce57b22371f",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/brorand/-/brorand-1.1.0.tgz",
+    "hash": "12c25efe40a45e3c323eb8675a0a0ce57b22371f",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "12c25efe40a45e3c323eb8675a0a0ce57b22371f"
+}

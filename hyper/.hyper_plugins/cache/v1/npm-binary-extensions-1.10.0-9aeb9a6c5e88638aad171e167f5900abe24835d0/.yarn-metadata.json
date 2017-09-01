@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.10.0.tgz#9aeb9a6c5e88638aad171e167f5900abe24835d0",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/binary-extensions/-/binary-extensions-1.10.0.tgz",
+    "hash": "9aeb9a6c5e88638aad171e167f5900abe24835d0",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "9aeb9a6c5e88638aad171e167f5900abe24835d0"
+}

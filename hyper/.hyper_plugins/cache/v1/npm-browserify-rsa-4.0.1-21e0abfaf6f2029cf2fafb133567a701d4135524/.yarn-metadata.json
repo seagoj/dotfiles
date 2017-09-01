@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/browserify-rsa/-/browserify-rsa-4.0.1.tgz#21e0abfaf6f2029cf2fafb133567a701d4135524",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/browserify-rsa/-/browserify-rsa-4.0.1.tgz",
+    "hash": "21e0abfaf6f2029cf2fafb133567a701d4135524",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "21e0abfaf6f2029cf2fafb133567a701d4135524"
+}

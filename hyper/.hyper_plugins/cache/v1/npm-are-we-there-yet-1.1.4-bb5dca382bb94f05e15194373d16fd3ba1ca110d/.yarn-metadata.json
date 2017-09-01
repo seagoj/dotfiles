@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/are-we-there-yet/-/are-we-there-yet-1.1.4.tgz#bb5dca382bb94f05e15194373d16fd3ba1ca110d",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/are-we-there-yet/-/are-we-there-yet-1.1.4.tgz",
+    "hash": "bb5dca382bb94f05e15194373d16fd3ba1ca110d",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "bb5dca382bb94f05e15194373d16fd3ba1ca110d"
+}

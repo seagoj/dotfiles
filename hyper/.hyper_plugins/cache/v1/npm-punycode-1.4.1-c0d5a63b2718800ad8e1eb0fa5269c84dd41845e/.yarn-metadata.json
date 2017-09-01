@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz#c0d5a63b2718800ad8e1eb0fa5269c84dd41845e",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/punycode/-/punycode-1.4.1.tgz",
+    "hash": "c0d5a63b2718800ad8e1eb0fa5269c84dd41845e",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c0d5a63b2718800ad8e1eb0fa5269c84dd41845e"
+}

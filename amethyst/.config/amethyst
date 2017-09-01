@@ -1,0 +1,12 @@
+{
+  "layouts": [
+	"widescreen-tall",
+	"fullscreen"
+  ],
+
+  "ignore-menu-bars": true,
+  "mouse-follows-focused-windows": true,
+  "focus-follows-mouse": false,
+  "enables-layout-hud": true,
+  "enables-layout-hud-on-space-change": true
+}

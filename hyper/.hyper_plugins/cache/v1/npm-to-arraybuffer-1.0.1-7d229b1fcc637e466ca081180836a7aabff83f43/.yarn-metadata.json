@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz#7d229b1fcc637e466ca081180836a7aabff83f43",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/to-arraybuffer/-/to-arraybuffer-1.0.1.tgz",
+    "hash": "7d229b1fcc637e466ca081180836a7aabff83f43",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "7d229b1fcc637e466ca081180836a7aabff83f43"
+}

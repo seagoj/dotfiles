@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz#290cbb232e306942d7d7ea9b83732ab7856f8285",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/setimmediate/-/setimmediate-1.0.5.tgz",
+    "hash": "290cbb232e306942d7d7ea9b83732ab7856f8285",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "290cbb232e306942d7d7ea9b83732ab7856f8285"
+}

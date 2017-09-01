@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz#c24bce2a283adad5bc3f58e0d48249b92379d8ef",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/remove-trailing-separator/-/remove-trailing-separator-1.1.0.tgz",
+    "hash": "c24bce2a283adad5bc3f58e0d48249b92379d8ef",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "c24bce2a283adad5bc3f58e0d48249b92379d8ef"
+}

@@ -1,0 +1,12 @@
+{
+  "artifacts": [],
+  "remote": {
+    "resolved": "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz#045f9782d011ae9a6803ddd382b24392b3d890f7",
+    "type": "tarball",
+    "reference": "https://registry.yarnpkg.com/set-blocking/-/set-blocking-2.0.0.tgz",
+    "hash": "045f9782d011ae9a6803ddd382b24392b3d890f7",
+    "registry": "npm"
+  },
+  "registry": "npm",
+  "hash": "045f9782d011ae9a6803ddd382b24392b3d890f7"
+}
