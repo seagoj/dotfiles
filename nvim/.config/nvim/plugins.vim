@@ -64,6 +64,8 @@ Plug 'IN3D/vim-raml'
 Plug 'dahu/bisectly'
 Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
+Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
+Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
 call plug#end()
 
 if vimPlugInstalled == 0

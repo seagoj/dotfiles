@@ -30,7 +30,7 @@
 			<key>neovim/neovim</key>
 			<dict>
 				<key>date</key>
-				<date>2017-08-30T14:35:59Z</date>
+				<date>2017-09-04T22:25:55Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -112,6 +112,19 @@
 	<true/>
 	<key>annotationsAreShown</key>
 	<true/>
+	<key>bookmarks</key>
+	<array>
+		<dict>
+			<key>path</key>
+			<string>file://~/Library/Application%20Support/Dash/DocSets/PHP/PHP.docset/Contents/Resources/Documents/php.net/manual/en/function.spl-autoload-register.html</string>
+			<key>platformImagePath</key>
+			<string>php</string>
+			<key>title</key>
+			<string>spl_autoload_register</string>
+			<key>typeImagePath</key>
+			<string>Function</string>
+		</dict>
+	</array>
 	<key>docsets</key>
 	<dict>
 		<key>keywords</key>
