@@ -30,7 +30,7 @@
 			<key>neovim/neovim</key>
 			<dict>
 				<key>date</key>
-				<date>2017-09-04T22:25:55Z</date>
+				<date>2017-12-23T19:37:12Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -158,6 +158,11 @@
 			<dict>
 				<key>date</key>
 				<date>2017-03-15T03:41:03Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/VueJS.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2017-11-02T20:17:01Z</date>
 			</dict>
 		</dict>
 		<key>uninstalled</key>
@@ -440,7 +445,16 @@
 	<key>versionedFeeds</key>
 	<dict>
 		<key>installed</key>
-		<dict/>
+		<dict>
+			<key>http://kapeli.com/feeds/VueJS.xml</key>
+			<dict>
+				<key>2.5.2</key>
+				<dict>
+					<key>date</key>
+					<date>2017-11-02T20:16:34Z</date>
+				</dict>
+			</dict>
+		</dict>
 		<key>uninstalled</key>
 		<dict/>
 	</dict>

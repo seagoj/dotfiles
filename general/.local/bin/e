@@ -21,6 +21,8 @@ source "${XDG_FUNCTIONS_DIR}/cli.sh"
 #/	 $ e file.txt [does not exist in cwd; can't be found with fasd]
 #/	 # => opens new file at passed location
 
+PROFILE_LOG=/tmp/e.log
+
 cleanup() {
 	EXIT_CODE=$?
 	exit "${EXIT_CODE}"
@@ -30,6 +32,11 @@ if [[ $# -eq 0 ]]; then
 	"$EDITOR" .
 elif [[ $# -eq 1 ]] && [[ "$1" == "diff" ]]; then
 	"$EDITOR" -O $(git diff --name-only origin/master)
+elif [[ $# -eq 1 ]] && [[ "$1" == "profile" ]]; then
+    if [[ -f $PROFILE_LOG ]]; then
+        rm $PROFILE_LOG
+    fi
+    "$EDITOR" --startuptime $PROFILE_LOG $PROFILE_LOG
 else
 	"$EDITOR" -O "$@"
 fi

@@ -1,0 +1,16 @@
+#!/bin/bash
+
+# shellcheck disable=SC1090
+. "${XDG_FUNCTIONS_DIR}"/buku.sh
+
+if [[ "$1" == "links" ]]; then
+	if ! which buku >/dev/null; then
+		echo "buku is required for the links option. Please install buku.";
+		exit 1
+	fi
+	# shellcheck disable=SC2030
+	cd $API && buku::open_from_search work && (export HOME_DIR=/vagrant/bonfyre_app; tmux.sh)
+else
+	# shellcheck disable=SC2034
+	cd $API && (export HOME_DIR=/vagrant/bonfyre_app; tmux.sh)
+fi

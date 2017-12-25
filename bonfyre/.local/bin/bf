@@ -1,11 +1,13 @@
 #!/bin/bash
 
+root_branch=dev
+
 usage() {
 	less <<USAGE_STR
 usage: bf <command>
 
 commands:
-	ticket	Updates master from origin and creates new branch from master based on the ticket name
+	ticket	Updates ${root_branch} from origin and creates new branch from ${root_branch} based on the ticket name
 USAGE_STR
 	exit 1
 }
@@ -18,9 +20,9 @@ new_ticket() {
 
 	ticket_id=$1
 
-	git checkout master &&\
-		git pull origin master &&\
-		git checkout origin/master -b $ticket_id
+	git checkout ${root_branch} &&\
+		git pull origin ${root_branch} &&\
+		git checkout origin/${root_branch} -b $ticket_id
 }
 
 pr() {
@@ -31,12 +33,12 @@ pr() {
 
 	commit_hash=$1
 
-	git checkout master &&\
+	git checkout ${root_branch} &&\
 		git pull origin &&\
 		git checkout $commit_hash &&\
-		git pull origin master &&\
+		git pull origin ${root_branch} &&\
 		git diff --name-only &&\
-		git diff -w origin/master
+		git diff -w origin/${root_branch}
 }
 
 prepare-deploy() {
@@ -47,10 +49,10 @@ prepare-deploy() {
 
 	commit_hash=$1
 
-	git checkout master &&\
-		git pull origin master &&\
+	git checkout ${root_branch} &&\
+		git pull origin ${root_branch} &&\
 		git merge $commit_hash &&\
-		git diff -w origin/master
+		git diff -w origin/${root_branch}
 }
 
 if [[ $# == 0 ]]; then
@@ -59,7 +61,7 @@ fi
 
 while [[ $# > 0 ]]; do
 	case $1 in
-	start-ticket | ticket)
+	start-ticket|ticket)
 		new_ticket $2
 		shift 2
 		;;

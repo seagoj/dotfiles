@@ -54,6 +54,11 @@ path::add --prepend /Library/Frameworks/Python.framework/Versions/2.7/bin
 path::add --relative ./bin
 ## Home Bin
 path::add --prepend $HOME/.local/bin
+## mos
+path::add $HOME/.mos/bin
+## esp
+export PATH=$PATH:$HOME/.local/share/esp/xtensa-esp32-elf/bin
+# export PATH=$HOME/.toolchains/esp32/bin:$PATH
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
@@ -118,3 +123,9 @@ if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
 		source "${file}"
 	done
 fi
+
+export PROMPT_LEAN_VIMODE=1
+export IDF_PATH=$HOME/code/esp-idf
+export API=$CODE/config_management/puppet/bonfyre_app
+export WEB=$CODE/config_management/puppet/pyweb
+# export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf

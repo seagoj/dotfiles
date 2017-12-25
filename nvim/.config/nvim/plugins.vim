@@ -39,33 +39,35 @@ Plug 'seagoj/last-position.vim'
 Plug 'seagoj/line-wrap-navigation.vim'
 Plug 'seagoj/overlength.vim'
 Plug 'seagoj/tab-management.vim'
-Plug 'seagoj/whitespace.vim' | Plug 'seagoj/whitespace-config.vim'
 Plug 'christoomey/vim-tmux-navigator'
-Plug 'maksimr/vim-jsbeautify'
-Plug 'craigemery/vim-autotag'
+" Plug 'maksimr/vim-jsbeautify'
 Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
-Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-Plug 'chase/vim-ansible-yaml'
-Plug 'junegunn/vader.vim'
-Plug 'joonty/vdebug', {'tag': 'v1.5.1'}
+" Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
+" Plug 'chase/vim-ansible-yaml'
+" Plug 'junegunn/vader.vim'
+Plug 'joonty/vdebug'
 Plug 'ryanoasis/vim-devicons'
-Plug 'seagoj/vagrant.vim'
-Plug 'seagoj/markdown.vim'
-Plug 'seagoj/javascript.vim'
+" Plug 'seagoj/markdown.vim'
 Plug 'seagoj/c.vim'
 Plug 'seagoj/php.vim'
 Plug 'seagoj/rust-config.vim'
-Plug 'rust-lang/rust.vim'
+Plug 'seagoj/netrw-config.vim'
+" Plug 'rust-lang/rust.vim'
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'thalesmello/tabfold'
-Plug 'rodjek/vim-puppet'
+" Plug 'rodjek/vim-puppet'
+Plug 'editorconfig/editorconfig-vim'
+Plug 'tpope/vim-projectionist'
+Plug 'sheerun/vim-polyglot' | Plug 'seagoj/vim-polyglot-config'
 " Experimental
-Plug 'IN3D/vim-raml'
 Plug 'dahu/bisectly'
 Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
 Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
 Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
+" Plug 'itchyny/lightline.vim'
+Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 call plug#end()
 
 if vimPlugInstalled == 0
@@ -73,3 +75,5 @@ if vimPlugInstalled == 0
 endif
 
 let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/config_management/puppet/bonfyre_app"} }
+" let g:vdebug_features['max_depth'] = 2048
+let g:gist_post_private = 1

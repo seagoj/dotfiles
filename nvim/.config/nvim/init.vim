@@ -6,11 +6,13 @@ set nocompatible
 set clipboard=unnamed
 filetype off
 
+let g:python_host_prog = '/usr/local/bin/python2'
 let g:python2_host_prog = '/usr/local/bin/python2'
 let g:python3_host_prog = '/usr/local/bin/python3'
 
 source $XDG_CONFIG_HOME/nvim/plugins.vim
 source $XDG_CONFIG_HOME/nvim/keymap.vim
+source $XDG_CONFIG_HOME/nvim/macros.vim
 
 filetype plugin on
 filetype indent on
@@ -65,3 +67,19 @@ set pastetoggle=<leader>z
 set relativenumber
 set exrc
 set secure
+set ts=4
+set sts=4
+set sw=4
+set expandtab
+set termguicolors
+set noshowmode
+
+function! Strip_trailing_whitespace(...)
+    %s/\s\+$//e
+endfunction
+
+if has("autocmd")
+	" autocmd BufWritePre * :retab!
+	autocmd BufWritePre * call Strip_trailing_whitespace()
+endif
+

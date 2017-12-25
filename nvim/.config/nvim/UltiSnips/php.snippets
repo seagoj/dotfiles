@@ -1,3 +1,9 @@
+snippet <?php "PHP file" b
+<?php declare(strict_types=1);
+
+$0
+endsnippet
+
 snippet filedoc "File Level Doc" b
 /**
  * ${1:`!v expand('%:r')`}
@@ -93,7 +99,7 @@ endsnippet
 snippet class "Class definition" b
 <?php declare(strict_types=1);
 
-namespace ${1:bonfyre}${2:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
+namespace ${1:Bonfyre}${2:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
 
 class ${3:`!p snip.rv=snip.fn.split('.')[0]`}
 {
@@ -252,4 +258,15 @@ public function ${2}() {
 	}
 	${0}
 }
+endsnippet
+
+snippet namespace "namespace" b
+namespace ${1:Bonfyre}${2:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
+
+use $1\Base;
+
+endsnippet
+
+snippet debug "debug" b
+\Bonfyre\Components\Debug::var_dump($0);
 endsnippet

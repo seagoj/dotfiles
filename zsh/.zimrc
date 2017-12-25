@@ -10,7 +10,7 @@
 # The second line of modules may depend on options set by modules in the first line.
 # These dependencies are noted on the respective module's README.md.
 zmodules=(meta archive directory environment ssh history input utility custom spectrum
-	pacman syntax-highlighting history-substring-search prompt git completion)
+	pacman syntax-highlighting history-substring-search git-info prompt git completion)
 
 
 ###################
@@ -22,10 +22,7 @@ zmodules=(meta archive directory environment ssh history input utility custom sp
 #
 
 # Set your desired prompt here
-# zprompt_theme='steeef'
-# zprompt_theme='minimal'
-zprompt_theme='gitster'
-# zprompt_theme='eriner'
+zprompt_theme='lean'
 
 
 #

@@ -11,6 +11,7 @@ set autoselect 1
 set autosellen 40
 set showneartags 1
 set maxrefs 20
+set visiblerefs {"master"}
 set hideremotes 0
 set showlocalchanges 1
 set datetimeformat {%Y-%m-%d %H:%M:%S}
@@ -50,12 +51,12 @@ set indexcirclecolor green
 set circlecolors {white blue gray blue blue}
 set linkfgcolor blue
 set circleoutlinecolor black
-set geometry(main) 1239x628+5+28
-set geometry(state) normal
-set geometry(topwidth) 1239
+set geometry(main) 2555x1413+0+0
+set geometry(state) zoomed
+set geometry(topwidth) 2555
 set geometry(topheight) 165
-set geometry(pwsash0) "320 1"
-set geometry(pwsash1) "480 1"
-set geometry(botwidth) 400
-set geometry(botheight) 458
+set geometry(pwsash0) "664 1"
+set geometry(pwsash1) "996 1"
+set geometry(botwidth) 824
+set geometry(botheight) 1243
 set permviews {}

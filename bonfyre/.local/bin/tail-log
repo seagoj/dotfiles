@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SERVER="${1:-vagrant}"
+LOG="${1:-/var/log/bonfyre/api_error_log}"
+
+ssh ${SERVER} "tail -F ${LOG} | pv -i2 -ltr > /dev/null"

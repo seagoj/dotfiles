@@ -73,12 +73,13 @@
 	hash = "rev-parse HEAD | pbcopy"
 	list-merged = "!. ~/.config/git/helpers && merged_branches"
 	lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
+    recent = "branch --sort=-committerdate"
 	st = "status"
 	undo = "!f() { \
 		git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
 	}; f"
 [branch]
-	autosetuprebase = always
+	; autosetuprebase = always
 [init]
 	templatedir = "~/.config/git/template"
 [filter "hawser"]
@@ -105,3 +106,5 @@
 [filter "co_tabs_commit_2_spaces"]
 	smudge = unexpand -t 2
 	clean = expand -t 2
+[credential]
+	helper = osxkeychain

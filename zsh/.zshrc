@@ -129,3 +129,6 @@ fi
 if [[ ! -d "$TMPPREFIX" ]]; then
 	mkdir -p "$TMPPREFIX"
 fi
+
+# autoload bashcompinit; bashcompinit
+# source /usr/local/etc/bash_completion.d/pass
