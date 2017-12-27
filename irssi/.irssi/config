@@ -274,13 +274,6 @@ statusbar = {
         barend = { priority = "100"; alignment = "right"; };
       };
     };
-    awl_1 = {
-      items = {
-        barstart = { priority = "100"; };
-        awl_1 = { };
-        barend = { priority = "100"; alignment = "right"; };
-      };
-    };
   };
 };
 settings = {
@@ -288,6 +281,7 @@ settings = {
     real_name = "Jeremy Seago";
     user_name = "seagoj/freenode";
     nick = "seagoj";
+    recode_transliterate = "no";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { hilight_nick_matches = "yes"; theme = "xchat"; };

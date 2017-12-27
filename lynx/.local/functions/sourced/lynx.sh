@@ -1,5 +1,8 @@
 #!/bin/bash
 
 lynx() {
-    run-dockerized jess/lynx lynx
+    run-dockerized \
+        --repo jess/lynx \
+        --container lynx \
+        --arguments "${@}"
 }
