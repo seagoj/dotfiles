@@ -59,15 +59,16 @@ Plug 'thalesmello/tabfold'
 Plug 'editorconfig/editorconfig-vim'
 Plug 'tpope/vim-projectionist'
 Plug 'sheerun/vim-polyglot' | Plug 'seagoj/vim-polyglot-config'
+" Plug 'itchyny/lightline.vim'
+Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
+Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 " Experimental
 Plug 'dahu/bisectly'
 Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
 Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
 Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
-" Plug 'itchyny/lightline.vim'
-Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
-Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
+Plug 'luochen1990/rainbow' | Plug 'seagoj/rainbow-config.vim'
 call plug#end()
 
 if vimPlugInstalled == 0
@@ -77,3 +78,4 @@ endif
 let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/config_management/puppet/bonfyre_app"} }
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
+let g:rainbow_active = 1
