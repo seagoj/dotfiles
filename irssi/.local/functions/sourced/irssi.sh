@@ -1,8 +1,16 @@
+#!/bin/bash
+
+unalias irssi 2>/dev/null
+
 irssi() {
-    run-dockerized \
-        --repo jess/irssi \
-        --container irssi \
+    docker run -it \
         -v /etc/localtime:/etc/localtime \
-        -v ${HOME}/.irssi:/home/user/.irssi \
-        --arguments "${@}"
+        -v "${HOME}"/.irssi:/home/user/.irssi \
+        --name irssi \
+        jess/irssi \
+        "${@}" 2>/dev/null
+
+    if [[ $? -ne 0 ]]; then
+        docker start -a -i irssi "${@}"
+    fi
 }
