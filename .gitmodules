@@ -19,3 +19,6 @@
 [submodule "hyper/.hyper_plugins/local/hypertype"]
 	path = hyper/.hyper_plugins/local/hypertype
 	url = github:seagoj/hypertype
+[submodule "boilr/.config/boilr/templates/license"]
+	path = boilr/.config/boilr/templates/license
+	url = git://github.com/seagoj/boilr-license.git
