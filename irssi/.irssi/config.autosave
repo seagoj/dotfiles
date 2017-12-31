@@ -288,6 +288,7 @@ settings = {
     real_name = "Jeremy Seago";
     user_name = "seagoj/freenode";
     nick = "seagoj";
+    recode_transliterate = "no";
   };
   "fe-text" = { actlist_sort = "refnum"; };
   "fe-common/core" = { hilight_nick_matches = "yes"; theme = "xchat"; };
