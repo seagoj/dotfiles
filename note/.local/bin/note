@@ -1,0 +1,23 @@
+#!/bin/bash
+
+notes_dir="${HOME}/notes"
+
+if [[ ! -d "${notes_dir}" ]]; then
+    mkdir -p "${notes_dir}"
+    pushd "${notes_dir}" && \
+        git init && \
+        popd
+fi
+
+title="${1:-$(date +%Y-%m-%d)}"
+file="${notes_dir}"/"${title}".md
+
+if [[ ! -f "${file}" ]]; then
+    echo "# ${title}" > "${file}"
+fi
+
+"${EDITOR}" "${file}" && \
+    pushd "${notes_dir}" && \
+    git add "${title}".md && \
+    git commit -m "Updates ${title}" # && \
+    # git push
