@@ -78,7 +78,7 @@
 	undo = "!f() { \
 		git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
 	}; f"
-    wip = "!git add . && git commit -c 'wip'"
+    wip = "!git add . && git commit -m 'wip'"
 [branch]
 	; autosetuprebase = always
 [init]
