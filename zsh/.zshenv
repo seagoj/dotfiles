@@ -58,7 +58,8 @@ path::add --prepend $HOME/.local/bin
 path::add $HOME/.mos/bin
 ## esp
 export PATH=$PATH:$HOME/.local/share/esp/xtensa-esp32-elf/bin
-# export PATH=$HOME/.toolchains/esp32/bin:$PATH
+export PATH=$HOME/.toolchains/esp32/bin:$PATH
+export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then

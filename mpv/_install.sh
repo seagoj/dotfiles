@@ -1,5 +1,5 @@
 installMac() {
-	osinstall mpv
+	osinstall mpv --with-libcaca
 }
 
 dotfiles::install mpv

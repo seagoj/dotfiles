@@ -1,12 +1,11 @@
 #!/bin/sh
 
-srcDir=$CODE/geeknote/geeknote
+srcDir="${CODE}"/geeknote/geeknote
 notebook=Inbox
 title=$1
 
-if [ -z "$1" ]
-then
-title=$(date +%Y-%m-%d)
+if [[ -z "$1" ]]; then
+    title=$(date +%Y-%m-%d)
 fi
 
 case $title in

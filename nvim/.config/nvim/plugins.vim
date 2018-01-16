@@ -68,7 +68,7 @@ Plug 'adoy/vim-php-refactoring-toolbox'
 Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
 Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
 Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
-Plug 'luochen1990/rainbow' | Plug 'seagoj/rainbow-config.vim'
+Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
 call plug#end()
 
 if vimPlugInstalled == 0
@@ -78,4 +78,3 @@ endif
 let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/config_management/puppet/bonfyre_app"} }
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
-let g:rainbow_active = 1
