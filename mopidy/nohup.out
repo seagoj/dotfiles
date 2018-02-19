@@ -1,0 +1,49 @@
+INFO     Starting Mopidy 2.1.0
+INFO     Loading config from builtin defaults
+INFO     Loading config from /Users/seagoj/.config/mopidy/mopidy.conf
+INFO     Loading config from command line options
+INFO     Enabled extensions: mpd, http, stream, m3u, softwaremixer, file, gmusic
+INFO     Disabled extensions: local
+WARNING  Found local configuration errors, the extension has been automatically disabled:
+WARNING    local/media_dir must be set.
+WARNING  Please fix the extension configuration errors or disable the extensions to silence these messages.
+INFO     Starting Mopidy mixer: SoftwareMixer
+INFO     Starting Mopidy audio
+INFO     Starting Mopidy backends: StreamBackend, M3UBackend, FileBackend, GMusicBackend
+INFO     Audio output set to "autoaudiosink"
+INFO     Logged in to Google Music
+INFO     Start refreshing Google Music library
+INFO     Start refreshing Google Music playlists
+INFO     Starting Mopidy core
+INFO     Starting Mopidy frontends: MpdFrontend, HttpFrontend, GMusicScrobblerFrontend
+ERROR    Frontend (MpdFrontend) initialization error: MPD server startup failed: [Errno 48] Address already in use
+ERROR    Frontend (HttpFrontend) initialization error: HTTP server startup failed: [Errno 48] Address already in use
+INFO     Starting GLib mainloop
+Exception in thread Thread-7:
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/2.7.14_3/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/repeating_timer.py", line 12, in run
+    self._method()
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/backend.py", line 84, in _refresh_library
+    self.library.refresh()
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/library.py", line 317, in refresh
+    mopidy_track = self._to_mopidy_track(track)
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/library.py", line 500, in _to_mopidy_track
+    name=song['title'],
+KeyError: u'title'
+
+Exception in thread Thread-8:
+Traceback (most recent call last):
+  File "/usr/local/Cellar/python/2.7.14_3/Frameworks/Python.framework/Versions/2.7/lib/python2.7/threading.py", line 801, in __bootstrap_inner
+    self.run()
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/repeating_timer.py", line 12, in run
+    self._method()
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/backend.py", line 92, in _refresh_playlists
+    self.playlists.refresh()
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/playlists.py", line 47, in refresh
+    mopidy_track = self.backend.library._to_mopidy_track(track)
+  File "/usr/local/lib/python2.7/site-packages/mopidy_gmusic/library.py", line 500, in _to_mopidy_track
+    name=song['title'],
+KeyError: u'title'
+

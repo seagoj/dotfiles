@@ -10,3 +10,7 @@ if ! which kubectl &>/dev/null; then
         chmod +x kubernetes/.local/bin/kubectl &&
         restow kubernetes
 fi
+
+if ! which minikube &>/dev/null; then
+    brew cask install minikube
+fi

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-root_branch=dev
+root_branch=master
 
 usage() {
 	less <<USAGE_STR

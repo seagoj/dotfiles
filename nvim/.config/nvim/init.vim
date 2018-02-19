@@ -79,7 +79,7 @@ function! Strip_trailing_whitespace(...)
 endfunction
 
 if has("autocmd")
-	" autocmd BufWritePre * :retab!
+	autocmd BufWritePre * :retab!
 	autocmd BufWritePre * call Strip_trailing_whitespace()
 endif
 

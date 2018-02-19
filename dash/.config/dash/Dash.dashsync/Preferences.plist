@@ -30,7 +30,7 @@
 			<key>neovim/neovim</key>
 			<dict>
 				<key>date</key>
-				<date>2018-01-18T15:37:39Z</date>
+				<date>2018-02-19T00:01:55Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -111,7 +111,7 @@
 	<key>DHWebViewIsDark</key>
 	<true/>
 	<key>annotationsAreShown</key>
-	<true/>
+	<false/>
 	<key>bookmarks</key>
 	<array>
 		<dict>
