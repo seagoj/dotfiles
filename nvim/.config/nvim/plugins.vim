@@ -41,7 +41,8 @@ Plug 'seagoj/overlength.vim'
 Plug 'seagoj/tab-management.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
-Plug 'joonty/vdebug'
+" Plug 'joonty/vdebug'
+Plug 'reafle/vdebug'
 Plug 'ryanoasis/vim-devicons'
 Plug 'seagoj/netrw-config.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -51,20 +52,27 @@ Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 " Language Specific
 Plug 'seagoj/c.vim'
-" Probabtion
-Plug 'vim-scripts/matchit.zip'
 Plug 'seagoj/php.vim'
+Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'seagoj/rust-config.vim'
-" Plug 'rayburgemeestre/phpfolding.vim'
-" Plug 'thalesmello/tabfold'
 " Experimental
-Plug 'dahu/bisectly'
-Plug 'adoy/vim-php-refactoring-toolbox'
-Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
-Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
-Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
 Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
+Plug 'noahfrederick/vim-composer' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
+Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim' | Plug 'seagoj/vim-test-config'
+function! BuildComposer(info)
+if a:info.status != 'unchanged' || a:info.force
+  if has('nvim')
+    !cargo build --release
+  else
+    !cargo build --release --no-default-features --features json-rpc
+  endif
+endif
+endfunction
+
+Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+
 " Retired
+" Plug 'vim-scripts/matchit.zip'
 " Plug 'maksimr/vim-jsbeautify'
 " Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
 " Plug 'chase/vim-ansible-yaml'
@@ -73,12 +81,18 @@ Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
 " Plug 'rust-lang/rust.vim'
 " Plug 'rodjek/vim-puppet'
 " Plug 'itchyny/lightline.vim'
+" Plug 'dahu/bisectly'
+" Plug 'adoy/vim-php-refactoring-toolbox'
+" Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
+" Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
+" Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
 call plug#end()
 
 if vimPlugInstalled == 0
     :PlugInstall
 endif
 
-let g:vdebug_options = {'path_maps' : {"/vagrant/bonfyre_app": "/Users/seagoj/code/config_management/puppet/bonfyre_app"} }
+let g:vdebug_options = {}
+let g:vdebug_options['path_maps'] = {"/vagrant/bonfyre_app": "/Volumes/Code/config_management/puppet/bonfyre_app"}
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
