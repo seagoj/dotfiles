@@ -1,12 +1,14 @@
 [submodule "zsh/.zim"]
     path = zsh/.zim
     url = git://github.com/Eriner/zim.git
+    ignore = dirty
 [submodule "pass/.password-store"]
     path = pass/.password-store
     url = github:seagoj/password-store.git
 [submodule "tmux/.tmux/plugins/tpm"]
     path = tmux/.tmux/plugins/tpm
     url = git://github.com/tmux-plugins/tpm.git
+    ignore = dirty
 [submodule "hyper/.hyper_plugins/local/hypertype"]
     path = hyper/.hyper_plugins/local/hypertype
     url = github:seagoj/hypertype
