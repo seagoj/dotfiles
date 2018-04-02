@@ -12,4 +12,10 @@
     url = github:seagoj/hypertype
 [submodule "boilr/.config/boilr/templates/license"]
     path = boilr/.config/boilr/templates/license
-    url = git://github.com/seagoj/boilr-license.git
+    url = git@github.com:seagoj/boilr-license.git
+[submodule "boilr/.config/boilr/templates/vimplugin"]
+    path = boilr/.config/boilr/templates/vimplugin
+    url = git@github.com:seagoj/boilr-vimplugin.git
+[submodule "awesome/.config/awesome"]
+    path = awesome/.config/awesome
+    url = git@github.com:seagoj/awesome-copycats.git
