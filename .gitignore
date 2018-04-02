@@ -63,3 +63,4 @@ vpn/.local/bin/vpn-bellevue
 u2f/.config/u2f/keys
 ssh/.ssh/mykey.sec.asc
 hyper/.hyper_plugins
+nohup.out
