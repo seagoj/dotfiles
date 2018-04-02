@@ -73,13 +73,13 @@ local themes = {
     "vertex",          -- 10
 }
 
-local chosen_theme = themes[7]
+local chosen_theme = themes[5]
 local modkey       = "Mod4"
 local altkey       = "Mod1"
-local terminal     = os.getenv("TERMINAL") or "xterm"
+local terminal     = "xterm"
 local editor       = os.getenv("EDITOR") or "nano"
 local gui_editor   = "gvim"
-local browser      = os.getenv("BROWSER") or "firefox-developer-edition"
+local browser      = "firefox"
 local guieditor    = "atom"
 local scrlocker    = "xlock"
 
@@ -488,16 +488,12 @@ globalkeys = my_table.join(
     awful.key({ modkey }, "x", function ()
         awful.spawn(string.format("dmenu_run -i -fn 'Monospace' -nb '%s' -nf '%s' -sb '%s' -sf '%s'",
         beautiful.bg_normal, beautiful.fg_normal, beautiful.bg_focus, beautiful.fg_focus))
-        end,
+		end,
         {description = "show dmenu", group = "launcher"})
     --]]
     -- Prompt
     awful.key({ modkey }, "r", function () awful.screen.focused().mypromptbox:run() end,
               {description = "run prompt", group = "launcher"}),
-
-    awful.key({ modkey }, "space", function () awful.screen.focused().mypromptbox:run() end,
-            {description = "run prompt", group = "launcher"}),
-
 
     awful.key({ modkey }, "x",
               function ()
@@ -632,7 +628,7 @@ awful.rules.rules = {
 
     -- Titlebars
     { rule_any = { type = { "dialog", "normal" } },
-      properties = { titlebars_enabled = false } },
+      properties = { titlebars_enabled = true } },
 
     -- Set Firefox to always map on the first tag on screen 1.
     { rule = { class = "Firefox" },
