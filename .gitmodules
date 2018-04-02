@@ -3,7 +3,7 @@
     url = git://github.com/cedlemo/blingbling.git
 [submodule "awesome/.config/awesome"]
 	path = awesome/.config/awesome
-	url = git://github.com:seagoj/awesome-copycats.git
+	url = git@github.com:seagoj/awesome-copycats.git
 [submodule "zsh/.zim"]
     path = zsh/.zim
     url = git://github.com/Eriner/zim.git
