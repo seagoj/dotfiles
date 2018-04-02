@@ -1,6 +1,5 @@
 **/.DS_Store
 **/*.log
-anyconnect/.anyconnect
 atom/.local/share/atom/.apm
 atom/.local/share/atom/.node-gyp
 atom/.local/share/atom/blob-store
