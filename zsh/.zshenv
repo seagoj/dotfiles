@@ -2,7 +2,7 @@
 # Defines environment variables.
 #
 # Authors:
-#	Sorin Ionescu <sorin.ionescu@gmail.com>
+#   Sorin Ionescu <sorin.ionescu@gmail.com>
 
 . $HOME/.local/functions/path.sh
 
@@ -18,8 +18,8 @@ export XDG_FUNCTIONS_DIR=${HOME}/.local/functions
 # ZSH Functions
 export FUNCTIONS=${HOME}/functions
 fpath=(
-	$FUNCTIONS
-	$fpath
+    $FUNCTIONS
+    $fpath
 )
 
 # GPG
@@ -63,11 +63,11 @@ export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
-	export OS_TYPE=Arch
+    export OS_TYPE=Arch
 elif [[ -f /etc/redhat-release ]]; then
-	export OS_TYPE=Debian
+    export OS_TYPE=Debian
 elif [[ "$(uname -s)" -eq "Darwin" ]]; then
-	export OS_TYPE=Mac
+    export OS_TYPE=Mac
 fi
 
 # User Directories
@@ -82,7 +82,7 @@ export CODE=${HOME}/code
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Browser
-export BROWSER=$(which open chromium-browser chromium google-chrome google-chrome-stable firefox links2 links lynx | grep -m1 -e '^/')
+export BROWSER=$(which open firefox-developer-edition firefox chromium-browser chromium google-chrome google-chrome-stable links2 links lynx | grep -m1 -e '^/')
 
 # Editor
 export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
@@ -95,14 +95,14 @@ export TERMINAL=$(which termite urxvt xterm | grep -m1 -e '^/')
 
 # Language
 if [[ -z "$lang" ]]; then
-	export LANG='en_US.UTF-8'
+    export LANG='en_US.UTF-8'
 fi
 
 # Temporary Files
 export TMPDIR="/tmp/$USER"
 export TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d ${TMPDIR} ]]; then
-	mkdir -p ${TMPDIR}
+    mkdir -p ${TMPDIR}
 fi
 
 # Ruby
@@ -110,19 +110,19 @@ export RBENV_ROOT=${HOME}/.rbenv
 
 # secrets
 if [[ -f "${HOME}/.secrets" ]]; then
-	source "$HOME/.secrets"
+    source "$HOME/.secrets"
 fi
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-	source "${ZDOTDIR:-$HOME}/.zprofile"
+    source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
 
 if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
-	# Source env files
-	for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
-		source "${file}"
-	done
+    # Source env files
+    for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
+        source "${file}"
+    done
 fi
 
 export PROMPT_LEAN_VIMODE=1
