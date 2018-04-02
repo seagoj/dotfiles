@@ -13,3 +13,6 @@
 [submodule "boilr/.config/boilr/templates/license"]
     path = boilr/.config/boilr/templates/license
     url = git://github.com/seagoj/boilr-license.git
+[submodule "awesome/.config/awesome"]
+	path = awesome/.config/awesome
+	url = git@github.com:seagoj/awesome-copycats.git
