@@ -1,3 +1,3 @@
 osinstall() {
-    sudo pacman -S "${@}"
+    sudo pacman -S --noconfirm "${@}"
 }
