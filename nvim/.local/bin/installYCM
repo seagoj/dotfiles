@@ -7,25 +7,33 @@ source "${XDG_FUNCTIONS_DIR}/cli.sh"
 #/ installYCM
 
 cleanup() {
-	popd
+    popd
 }
 
 ycm::update() {
-	pushd "${XDG_CONFIG_HOME}/nvim/plugged/YouCompleteMe" && \
-		log::info "updating submodules" && \
-		git submodule update --init --recursive
+    pushd "${XDG_CONFIG_HOME}/nvim/plugged/YouCompleteMe" && \
+        log::info "updating submodules" && \
+        git submodule update --init --recursive
 }
 
 ycm::prereqs() {
-	if ! which cmake >/dev/null; then
-		log::info "installing cmake" && \
-		osinstall cmake
-	fi
+    if ! which cmake >/dev/null; then
+        log::info "installing cmake" && \
+        osinstall cmake
+    fi
 }
 
 ycm::install() {
-	log::info "installing YouCompleteMe" && \
-		./install.py --clang-completer
+    case $OS_TYPE in
+    Arch)
+        log::info "installing YouCompleteMe" && \
+            python3 install.py --system-libclang --all
+        ;;
+    *)
+        log::info "installing YouCompleteMe" && \
+            ./install.py --clang-completer
+        ;;
+    esac
 }
 
 ycm::update
