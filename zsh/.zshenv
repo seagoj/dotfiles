@@ -60,6 +60,8 @@ path::add $HOME/.mos/bin
 export PATH=$PATH:$HOME/.local/share/esp/xtensa-esp32-elf/bin
 export PATH=$HOME/.toolchains/esp32/bin:$PATH
 export PATH=$HOME/.toolchains/android/platform-tools:$PATH
+## rust
+path::add --prepend "${HOME}"/.cargo/bin
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then

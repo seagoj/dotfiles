@@ -1,4 +1,5 @@
 . $HOME/.local/functions/general.sh
+. "${HOME}"/.local/functions/sourced/osinstall.sh
 
 GPG="gpg"
 
