@@ -1,8 +1,9 @@
 #!/bin/bash
 
 lynx() {
-    run-dockerized \
-        --repo jess/lynx \
-        --container lynx \
-        --arguments "${@}"
+    docker run -it --rm \
+        -e TZ="$(readlink /etc/localtime | cut -d/ -f6-7)" \
+        --name lynx \
+        jess/lynx \
+        "${@}"
 }

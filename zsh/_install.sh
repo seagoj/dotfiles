@@ -1,6 +1,6 @@
 . $HOME/.local/functions/zsh.sh
 
 if ! which zsh &>/dev/null; then
-	osinstall zsh
-	zsh::use
+    osinstall zsh direnv
+    zsh::use
 fi
