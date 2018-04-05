@@ -1,17 +1,12 @@
 **/.DS_Store
 **/*.log
-anyconnect/.anyconnect
 atom/.local/share/atom/.apm
 atom/.local/share/atom/.node-gyp
 atom/.local/share/atom/blob-store
 atom/.local/share/atom/compile-cache
 atom/.local/share/atom/packages
 buku/.local/share/buku/bookmarks.db
-flamerobin/.flamerobin/fr_databases.conf
-flamerobin/.flamerobin/code-templates
-flamerobin/.flamerobin/history
 geeknote/.geeknote/database.db
-general/.config/feednix/log.txt
 general/.config/configstore/bower-github.yml
 general/.config/configstore/insight-bower.yml
 general/.config/configstore/update-notifier-bower.yml
@@ -63,3 +58,4 @@ vpn/.local/bin/vpn-bellevue
 u2f/.config/u2f/keys
 ssh/.ssh/mykey.sec.asc
 hyper/.hyper_plugins
+nohup.out

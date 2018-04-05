@@ -1,5 +1,0 @@
-#!/bin/bash
-#vim: filetype=sh
-
-update &&\
-    sudo apt-get install -y ${@}

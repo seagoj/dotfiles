@@ -59,6 +59,8 @@ Plug 'seagoj/rust-config.vim'
 Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
 Plug 'noahfrederick/vim-composer' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
 Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim' | Plug 'seagoj/vim-test-config'
+Plug 'vim-scripts/SyntaxAttr.vim'
+
 function! BuildComposer(info)
 if a:info.status != 'unchanged' || a:info.force
   if has('nvim')

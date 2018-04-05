@@ -1,17 +1,13 @@
 unalias ll lr lt 2>/dev/null;
 
 function lt() {
-	ll -t "${@}"
+    ll -t "${@}"
 }
 
 function lr() {
-	ll -r "${@}"
+    ll -r "${@}"
 }
 
 function ll() {
-	local LS=ls
-	if [[ $(uname) != 'Darwin' ]]; then
-		LS="${LS} -X"
-	fi
-	${LS} -al -G "${@}"
+    ls -al -G "${@}"
 }

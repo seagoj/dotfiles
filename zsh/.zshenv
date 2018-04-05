@@ -60,6 +60,8 @@ path::add $HOME/.mos/bin
 export PATH=$PATH:$HOME/.local/share/esp/xtensa-esp32-elf/bin
 export PATH=$HOME/.toolchains/esp32/bin:$PATH
 export PATH=$HOME/.toolchains/android/platform-tools:$PATH
+## rust
+path::add --prepend "${HOME}"/.cargo/bin
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
@@ -82,12 +84,12 @@ export CODE=${HOME}/code
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Browser
-export BROWSER=$(which open chromium-browser chromium google-chrome google-chrome-stable firefox links2 links lynx | grep -m1 -e '^/')
+export BROWSER=$(which firefox-developer-edition firefox chromium-browser chromium google-chrome google-chrome-stable links2 links lynx xdg-open open | grep -m1 -e '^/')
 
 # Editor
 export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
 export EDITORGUI=$(which editor-gui nvim vim nano | grep -m1 -e '^/')
-# export VISUAL=$(which macvim atom subl | grep -m1 -e '^/')
+export VISUAL=$(which nvim macvim atom subl | grep -m1 -e '^/')
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Terminal

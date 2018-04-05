@@ -4,4 +4,8 @@ if [[ -f ~/_install.sh ]]; then
     rm ~/_install.sh
 fi
 
+if [[ -f ~/.packages ]]; then
+    rm ~/.packages
+fi
+
 stow -D "${1}" && stow "${1}"

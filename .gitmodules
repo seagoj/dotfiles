@@ -1,24 +1,20 @@
-[submodule "awesome/.config/awesome/themes"]
-	path = awesome/.config/awesome/themes
-	url = git@github.com:seagoj/awesome-themes.git
-[submodule "awesome/.config/awesome/blingbling"]
-	path = awesome/.config/awesome/blingbling
-	url = git://github.com/cedlemo/blingbling.git
 [submodule "zsh/.zim"]
-	path = zsh/.zim
-	url = git://github.com/Eriner/zim.git
+    path = zsh/.zim
+    url = git://github.com/Eriner/zim.git
+    ignore = dirty
 [submodule "pass/.password-store"]
-	path = pass/.password-store
-	url = github:seagoj/password-store.git
-[submodule "awesome/.config/awesome/sharetags"]
-	path = awesome/.config/awesome/sharetags
-	url = git://github.com/XLegion/sharetags.git
+    path = pass/.password-store
+    url = github:seagoj/password-store.git
 [submodule "tmux/.tmux/plugins/tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = git://github.com/tmux-plugins/tpm.git
+    path = tmux/.tmux/plugins/tpm
+    url = git://github.com/tmux-plugins/tpm.git
+    ignore = dirty
 [submodule "hyper/.hyper_plugins/local/hypertype"]
-	path = hyper/.hyper_plugins/local/hypertype
-	url = github:seagoj/hypertype
+    path = hyper/.hyper_plugins/local/hypertype
+    url = github:seagoj/hypertype
 [submodule "boilr/.config/boilr/templates/license"]
-	path = boilr/.config/boilr/templates/license
-	url = git://github.com/seagoj/boilr-license.git
+    path = boilr/.config/boilr/templates/license
+    url = git@github.com:seagoj/boilr-license.git
+[submodule "boilr/.config/boilr/templates/vimplugin"]
+    path = boilr/.config/boilr/templates/vimplugin
+    url = git@github.com:seagoj/boilr-vimplugin.git
