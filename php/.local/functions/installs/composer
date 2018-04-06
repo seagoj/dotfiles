@@ -1,6 +1,8 @@
-#!/bin/sh
+#/bin/sh
 
-osinstall wget
+. "${HOME}/.local/functions/sourced/osinstall.sh"
+
+osinstall wget php
 
 EXPECTED_SIGNATURE=$(wget -q -O - https://composer.github.io/installer.sig)
 php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
@@ -12,7 +14,8 @@ if [ "$EXPECTED_SIGNATURE" != "$ACTUAL_SIGNATURE" ]; then
     exit 1
 fi
 
-php composer-setup.php --quiet
-RESULT=$?
-rm composer-setup.php
-exit $RESULT
+php composer-setup.php --quiet && \
+    rm composer-setup.php && \
+    sudo mv composer.phar /usr/local/bin/composer && \
+    sudo chmod +x /usr/local/bin/composer && \
+    composer "${@:---version}"

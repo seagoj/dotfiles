@@ -9,21 +9,21 @@ fi
 
 # Source sandboxd
 if [[ -s ${CODE}/sandboxd/sandboxd ]]; then
-	source ${CODE}/sandboxd/sandboxd
+    source ${CODE}/sandboxd/sandboxd
 fi
 
 # Source alias files
 for file in ${XDG_CONFIG_HOME:-$HOME/.config}/aliases/*.alias; do
-	source "${file}"
+    source "${file}"
 done
 
 for file in ${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}/sourced/*.sh; do
-	source "${file}"
+    source "${file}"
 done
 
 # key bindings
-bindkey '[1~' beginning-of-line	# Home
-bindkey '[4~' end-of-line			# End
+bindkey '[1~' beginning-of-line   # Home
+bindkey '[4~' end-of-line         # End
 
 # assume path with no command is a cd command
 setopt AUTO_CD
@@ -67,67 +67,67 @@ bindkey -M vicmd "??" history-beginning-search-forward
 # oh wow!  This is killer...  try it!
 bindkey -M vicmd "q" push-line
 
-# it's like, space AND completion.	Gnarlbot.
+# it's like, space AND completion.  Gnarlbot.
 bindkey -M viins ' ' magic-space
 
 if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/rc ]]; then
-	# source application specific settings
-	for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
-		source "${file}"
-	done
+    # source application specific settings
+    for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
+        source "${file}"
+    done
 fi
 
 # initialize fasd
 if which fasd >/dev/null; then
-	eval "$(fasd --init auto)"
+    eval "$(fasd --init auto)"
 else
-	echo "fasd is not installed.";
+    echo "fasd is not installed.";
 fi
 
 if [[ -s ${HOME}/.iterm2_shell_integration.zsh ]]; then
-	source ${HOME}/.iterm2_shell_integration.zsh
+    source ${HOME}/.iterm2_shell_integration.zsh
 fi
 
 if [[ -s ${HOME}/.xsh ]]; then
-	source ${HOME}/.xsh
+    source ${HOME}/.xsh
 fi
 
 if [[ -s $CODE/sourcerer/sourcerer.sh ]]; then
-	source $CODE/sourcerer/sourcerer.sh
+    source $CODE/sourcerer/sourcerer.sh
 fi
 
 if [[ -s $CODE/pomodoro/pomodoro.sh ]]; then
-	source $CODE/pomodoro/pomodoro.sh
+    source $CODE/pomodoro/pomodoro.sh
 fi
 
 if which dircolors >/dev/null; then
-	eval "$(dircolors ${HOME}/.dircolors)"
+    eval "$(dircolors ${HOME}/.dircolors)"
 fi
 
 if which tag >/dev/null; then
-	alias_file=${TAG_ALIAS_FILE:-/tmp/tag_aliases}
-	tag_alias_dir=$(dirname $alias_file)
-	if [[ ! -d "$tag_alias_dir" ]]; then
-		mkdir -p $tag_alias_dir
-	fi
-	tag() { command tag "$@"; source $alias_file 2>/dev/null; }
+    alias_file=${TAG_ALIAS_FILE:-/tmp/tag_aliases}
+    tag_alias_dir=$(dirname $alias_file)
+    if [[ ! -d "$tag_alias_dir" ]]; then
+        mkdir -p $tag_alias_dir
+    fi
+    tag() { command tag "$@"; source $alias_file 2>/dev/null; }
 fi
 
 if which rbenv >/dev/null; then
-	if which sandbox >/dev/null; then
-		sandbox_hook rbenv ruby
-	else
-		source $HOME/.sandboxrc
-		sandbox_init_rbenv
-	fi
+    if which sandbox >/dev/null; then
+        sandbox_hook rbenv ruby
+    else
+        source $HOME/.sandboxrc
+        sandbox_init_rbenv
+    fi
 fi
 
 # Temporary Directories
 if [[ ! -d "$TMPDIR" ]]; then
-	mkdir -p -m 700 "$TMPDIR"
+    mkdir -p -m 700 "$TMPDIR"
 fi
 if [[ ! -d "$TMPPREFIX" ]]; then
-	mkdir -p "$TMPPREFIX"
+    mkdir -p "$TMPPREFIX"
 fi
 
 # autoload bashcompinit; bashcompinit
