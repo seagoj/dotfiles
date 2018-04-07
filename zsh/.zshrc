@@ -133,4 +133,5 @@ fi
 # autoload bashcompinit; bashcompinit
 # source /usr/local/etc/bash_completion.d/pass
 
+# capslock -> ctrl
 setxkbmap -option caps:ctrl_modifier

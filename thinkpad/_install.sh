@@ -2,14 +2,14 @@ config=/etc/X11/xorg.conf.d/20-thinkpad.conf
 
 if [[ ! -f $config ]]; then
     general::sudo $(tee $config <<< 'Section \"InputClass\"')
-    general::sudo $(tee -a $config <<< '    Identifier 	\"Trackpoint Wheel Emulation\"')
-    general::sudo $(tee -a $config <<< '    MatchProduct 	\"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB TrackPoint pointing device|Composite TouchPad / TrackPoint\"')
+    general::sudo $(tee -a $config <<< '    Identifier  \"Trackpoint Wheel Emulation\"')
+    general::sudo $(tee -a $config <<< '    MatchProduct    \"TPPS/2 IBM TrackPoint|DualPoint Stick|Synaptics Inc. Composite TouchPad / TrackPoint|ThinkPad USB Keyboard with TrackPoint|USB TrackPoint pointing device|Composite TouchPad / TrackPoint\"')
     general::sudo $(tee -a $config <<< '    MatchDevicePath \"/dev/input/event*\"')
-    general::sudo $(tee -a $config <<< '    Option 		\"EmulateWheel\" 		\"true\"')
-    general::sudo $(tee -a $config <<< '    Option 		\"EmulateWheelButton\" 	\"2\"')
-    general::sudo $(tee -a $config <<< '    Option 		\"Emulate3Buttons\" 	\"false\"')
-    general::sudo $(tee -a $config <<< '    Option 		\"XAxismapping\" 		\"6 7\"')
-    general::sudo $(tee -a $config <<< '    Option 		\"YAxisMapping\" 		\"4 5\"')
+    general::sudo $(tee -a $config <<< '    Option      \"EmulateWheel\"        \"true\"')
+    general::sudo $(tee -a $config <<< '    Option      \"EmulateWheelButton\"  \"2\"')
+    general::sudo $(tee -a $config <<< '    Option      \"Emulate3Buttons\"     \"false\"')
+    general::sudo $(tee -a $config <<< '    Option      \"XAxismapping\"        \"6 7\"')
+    general::sudo $(tee -a $config <<< '    Option      \"YAxisMapping\"        \"4 5\"')
     general::sudo $(tee -a $config <<< 'EndSection')
 fi
 
@@ -43,4 +43,8 @@ fi
 
 if ! which unzip &>/dev/null; then
     osinstall unzip
+fi
+
+if ! which setxkbmap &>/dev/null; then
+    osinstall setxkbmap
 fi
