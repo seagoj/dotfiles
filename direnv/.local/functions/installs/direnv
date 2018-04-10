@@ -1,0 +1,16 @@
+#!/usr/bin/zsh
+
+. "${HOME}/.local/functions/sourced/osinstall.sh"
+. "${HOME}/.local/functions/dotfiles.sh"
+
+echo "Installing..."
+
+osinstall make
+
+dotfiles::update_repo "https://github.com/direnv/direnv.git" direnv && \
+	go get github.com/BurntSushi/toml && \
+	go get github.com/direnv/go-dotenv && \
+	sudo make install && \
+	popd
+
+direnv "${@}"

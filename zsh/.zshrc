@@ -23,7 +23,7 @@ done
 
 # key bindings
 bindkey '[1~' beginning-of-line   # Home
-bindkey '[4~' end-of-line         # End
+bindkey '[4~' end-of-line	    # End
 
 # assume path with no command is a cd command
 setopt AUTO_CD
@@ -73,7 +73,7 @@ bindkey -M viins ' ' magic-space
 if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/rc ]]; then
     # source application specific settings
     for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
-        source "${file}"
+	source "${file}"
     done
 fi
 
@@ -108,17 +108,17 @@ if which tag >/dev/null; then
     alias_file=${TAG_ALIAS_FILE:-/tmp/tag_aliases}
     tag_alias_dir=$(dirname $alias_file)
     if [[ ! -d "$tag_alias_dir" ]]; then
-        mkdir -p $tag_alias_dir
+	mkdir -p $tag_alias_dir
     fi
     tag() { command tag "$@"; source $alias_file 2>/dev/null; }
 fi
 
 if which rbenv >/dev/null; then
     if which sandbox >/dev/null; then
-        sandbox_hook rbenv ruby
+	sandbox_hook rbenv ruby
     else
-        source $HOME/.sandboxrc
-        sandbox_init_rbenv
+	source $HOME/.sandboxrc
+	sandbox_init_rbenv
     fi
 fi
 
@@ -136,6 +136,3 @@ fi
 #THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
 export SDKMAN_DIR="/Users/seagoj/.sdkman"
 [[ -s "/Users/seagoj/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/seagoj/.sdkman/bin/sdkman-init.sh"
-
-# direnv
-eval "$(direnv hook zsh)"
