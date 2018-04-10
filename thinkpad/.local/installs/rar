@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced/osinstall.sh
+
+echo "installing..."
+
+osinstall rar

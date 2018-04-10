@@ -1,3 +1,8 @@
+#!/usr/bin/env bash
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced/osinstall.sh
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/dotfiles.sh
+
 installArch() {
 	go get -u github.com/aykamko/tag/...
 	go install github.com/aykamko/tag

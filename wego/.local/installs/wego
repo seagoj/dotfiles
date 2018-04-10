@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if ! which go &>/dev/null; then
+    osinstall go
+fi
+
+go get github.com/schachmat/wego

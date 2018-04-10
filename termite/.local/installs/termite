@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/dotfiles.sh
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced/osinstall.sh
+
+echo "installing..."
+
+installArch() {
+	osinstall termite
+}
+
+dotfiles::install termite

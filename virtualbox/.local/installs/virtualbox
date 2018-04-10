@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+osinstall qt4 Caskroom/cask/virtualbox

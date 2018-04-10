@@ -1,8 +1,11 @@
-. $HOME/.local/functions/ssh.sh
+#!/usr/bin/env bash
 
-if ! which ssh >/dev/null; then
-	osinstall ssh
-fi
+echo "installing..."
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/ssh.sh
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced/osinstall.sh
+
+osinstall ssh
 
 if ! which ssh-copy-id >/dev/null; then
 	osinstall ssh-copy-id

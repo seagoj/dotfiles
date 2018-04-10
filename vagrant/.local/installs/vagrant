@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+. "${HOME}"/.local/functions/dotfiles.sh
+
+installMac() {
+	if ! which virtualbox &>/dev/null; then
+		osinstall Caskroom/cask/virtualbox
+	fi
+
+	osinstall Caskroom/cask/vagrant
+}
+
+installArch() {
+	osinstall virtualbox vagrant
+}
+
+dotfiles::install vagrant

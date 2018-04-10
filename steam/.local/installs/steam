@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}/sourced/osinstall.sh
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}/general.sh
+
+echo "installing..."
+
+general::sudo $(tee -a /etc/pacman.conf <<< '[multilib]')
+general::sudo $(tee -a /etc/pacman.conf <<< 'Include = /etc/pacman.d/mirrorlist')
+osinstall multilib-devel lib32-alsa-plugins xf86-video-intel lib32-mesa-libgl steam

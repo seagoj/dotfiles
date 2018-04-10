@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+osinstall openconnect networkmanager-openconnect &&\
+	general::sudo systemctl restart NetworkManager.service
