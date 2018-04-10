@@ -67,10 +67,10 @@ set pastetoggle=<leader>z
 set relativenumber
 set exrc
 set secure
-set ts=4
-set sts=4
-set sw=4
-set expandtab
+" set ts=4
+" set sts=4
+" set sw=4
+" set expandtab
 set termguicolors
 set noshowmode
 

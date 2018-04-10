@@ -130,6 +130,7 @@ fi
 
 export PROMPT_LEAN_VIMODE=1
 export IDF_PATH=$HOME/code/esp-idf
-export API=$CODE/config_management/puppet/bonfyre_app
-export WEB=$CODE/config_management/puppet/pyweb
+export CONFIG_MANAGEMENT="${CODE}/config_management"
+export API="${CONFIG_MANAGEMENT}"/puppet/bonfyre_app
+export WEB="${CONFIG_MANAGEMENT}"/puppet/pyweb
 # export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf

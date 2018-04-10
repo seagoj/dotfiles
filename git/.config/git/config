@@ -73,10 +73,10 @@
     hash = "rev-parse HEAD | pbcopy"
     list-merged = "!. ~/.config/git/helpers && merged_branches"
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
-    recent = "branch --sort=-committerdate"
+    recent = "! git branch --sort=-committerdate | head -n 10"
     st = "status"
     undo = "!f() { \
-        git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
+	git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
     }; f"
     wip = "!git add . && git commit -m 'wip'"
     submodule-update = "submodule update --recursive --remote --init"

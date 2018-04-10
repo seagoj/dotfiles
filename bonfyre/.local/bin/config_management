@@ -1,0 +1,4 @@
+#!/bin/bash
+
+# shellcheck disable=SC2034
+cd "$CONFIG_MANAGEMENT" && (export HOME_DIR=/vagrant/bonfyre_app; tmux.sh)

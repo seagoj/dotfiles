@@ -4,7 +4,7 @@ unalias irssi 2>/dev/null
 
 irssi() {
     docker run -it \
-        -v /etc/localtime:/etc/localtime \
+        -e TZ="$(readlink /etc/localtime | cut -d/ -f6-7)" \
         -v "${HOME}"/.irssi:/home/user/.irssi \
         --name irssi \
         jess/irssi \

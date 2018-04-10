@@ -132,3 +132,10 @@ fi
 
 # autoload bashcompinit; bashcompinit
 # source /usr/local/etc/bash_completion.d/pass
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/Users/seagoj/.sdkman"
+[[ -s "/Users/seagoj/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/seagoj/.sdkman/bin/sdkman-init.sh"
+
+# direnv
+eval "$(direnv hook zsh)"

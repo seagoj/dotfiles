@@ -2,9 +2,9 @@ function! AutoInstallVimPlug()
     let vimPlugInstalled=1
     let vimPlugFile=expand("$XDG_CONFIG_HOME/nvim/autoload/plug.vim")
     if !filereadable(vimPlugFile)
-        echo "Installing vim-plug..."
-        !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        let vimPlugInstalled=0
+	echo "Installing vim-plug..."
+	!curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+	let vimPlugInstalled=0
     endif
     return vimPlugInstalled
 endfunction
@@ -16,15 +16,15 @@ call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
 " Essential
 Plug 'airblade/vim-gitgutter'
 if !v:shell_error && s:uname == "Linux"
-Plug 'KabbAmine/zeavim.vim'
+    Plug 'KabbAmine/zeavim.vim'
 elseif !v:shell_error && s:uname == "Darwin"
-Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
+    Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
 endif
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
 Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
 Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
-Plug 'kien/ctrlp.vim' "| Plug 'lucidstack/ctrlp-mpc.vim' | Plug 'seagoj/ctrlp-mpc-config.vim'
-Plug 'ervandew/supertab' | Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
+Plug 'kien/ctrlp.vim'
+Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
@@ -41,7 +41,7 @@ Plug 'seagoj/overlength.vim'
 Plug 'seagoj/tab-management.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
-" Plug 'joonty/vdebug'
+" Plug 'joonty/vdebug' " Use once reafle/vdebug is merged in
 Plug 'reafle/vdebug'
 Plug 'ryanoasis/vim-devicons'
 Plug 'seagoj/netrw-config.vim'
@@ -72,7 +72,10 @@ endif
 endfunction
 
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
-
+Plug 'hsanson/vim-android'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'gabeharms/tslime.vim'
+Plug 'tpope/vim-db'
 " Retired
 " Plug 'vim-scripts/matchit.zip'
 " Plug 'maksimr/vim-jsbeautify'

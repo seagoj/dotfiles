@@ -18,6 +18,7 @@ new_ticket() {
 		exit 1
 	fi
 
+	root_branch=master
 	ticket_id=$1
 
 	git checkout ${root_branch} &&\
