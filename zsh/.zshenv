@@ -62,7 +62,7 @@ export PATH=$HOME/.toolchains/esp32/bin:$PATH
 export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 ## rust
 path::add --prepend "${HOME}"/.cargo/bin
-path::add "${XDG_FUNCTIONS_DIR}/installs"
+path::add "${HOME}/.local/installs"
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
