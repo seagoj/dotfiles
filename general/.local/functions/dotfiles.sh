@@ -170,29 +170,27 @@ dotfiles::clearFunc() {
 
 dotfiles::install() {
     while [[ $# > 0 ]]; do
-	if ! which $1 &>/dev/null; then
-	    case $OS_TYPE in
-	    Arch)
-		if type installArch | grep 'function' >/dev/null; then
-		    installArch
-		else
-		    dotfiles::notYetImplemented $1
-		fi
-		;;
-	    Darwin | Mac)
-		if type installMac | grep 'function' >/dev/null; then
-		    installMac
-		elif type installDarwin | grep 'function' >/dev/null; then
-		    installDarwin
-		else
-		    dotfiles::notYetImplemented $1
-		fi
-		;;
-	    *)
-		dotfiles::notYetImplemented $1
-		;;
-	    esac
+    case $OS_TYPE in
+    Arch)
+	if type installArch | grep 'function' >/dev/null; then
+	    installArch
+	else
+	    dotfiles::notYetImplemented $1
 	fi
+	;;
+    Darwin | Mac)
+	if type installMac | grep 'function' >/dev/null; then
+	    installMac
+	elif type installDarwin | grep 'function' >/dev/null; then
+	    installDarwin
+	else
+	    dotfiles::notYetImplemented $1
+	fi
+	;;
+    *)
+	dotfiles::notYetImplemented $1
+	;;
+    esac
 
 	dotfiles::clearFunc installArch
 	dotfiles::clearFunc installDarwin

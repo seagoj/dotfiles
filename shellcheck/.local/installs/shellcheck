@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/dotfiles.sh
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced/osinstall.sh
+
+installMac() {
+	osinstall shellcheck
+}
+
+installArch() {
+	echo "arch"
+	osinstall shellcheck
+}
+
+echo "installing..."
+dotfiles::install shellcheck
+
+shellcheck "${@}"
