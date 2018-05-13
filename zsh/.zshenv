@@ -123,7 +123,7 @@ fi
 if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
     # Source env files
     for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
-        source "${file}"
+	source "${file}"
     done
 fi
 
@@ -133,3 +133,9 @@ export CONFIG_MANAGEMENT="${CODE}/config_management"
 export API="${CONFIG_MANAGEMENT}"/puppet/bonfyre_app
 export WEB="${CONFIG_MANAGEMENT}"/puppet/pyweb
 # export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf
+
+if [[ -d "${HOME}"/Documents/Arduino ]]; then
+	export SKETCHBOOK_DIR="${HOME}"/Documents/Arduino
+else
+	export SKETCHBOOK_DIR="${HOME}"/Arduino
+fi

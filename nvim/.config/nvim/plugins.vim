@@ -101,3 +101,4 @@ let g:vdebug_options = {}
 let g:vdebug_options['path_maps'] = {"/vagrant/bonfyre_app": "/Volumes/Code/config_management/puppet/bonfyre_app"}
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
+let g:tmux_navigator_disable_when_zoomed = 1

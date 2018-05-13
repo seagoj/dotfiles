@@ -30,11 +30,12 @@ cleanup() {
 
 if [[ $# -eq 0 ]]; then
 	"$EDITOR" .
-elif [[ $# -eq 1 ]] && [[ "$1" == "diff" ]]; then
-	"$EDITOR" -O $(git diff --name-only origin/master)
+elif [[ "$1" == "diff" ]]; then
+	CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+	"$EDITOR" -O $(git diff --name-only "${CURRENT_BRANCH}".."${2:-origin/master}")
 elif [[ $# -eq 1 ]] && [[ "$1" == "profile" ]]; then
     if [[ -f $PROFILE_LOG ]]; then
-        rm $PROFILE_LOG
+	rm $PROFILE_LOG
     fi
     "$EDITOR" --startuptime $PROFILE_LOG $PROFILE_LOG
 else

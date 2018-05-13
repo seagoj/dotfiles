@@ -69,6 +69,7 @@
     clean-local-merged = "!. ~/.config/git/helpers && delete_local_merged_branches"
     clean-merged = "!. ~/.config/git/helpers && delete_local_merged_branches"
     ctags = !.git/hooks/ctags
+    current = "rev-parse --abbrev-ref HEAD"
     dn = "diff --name-only"
     hash = "rev-parse HEAD | pbcopy"
     list-merged = "!. ~/.config/git/helpers && merged_branches"
@@ -78,7 +79,7 @@
     undo = "!f() { \
 	git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
     }; f"
-    wip = "!git add . && git commit -m 'wip'"
+    wip = "!git add . && git commit -m 'wip' --no-verify"
     submodule-update = "submodule update --recursive --remote --init"
 [branch]
     ; autosetuprebase = always
