@@ -2,9 +2,9 @@ function! AutoInstallVimPlug()
     let vimPlugInstalled=1
     let vimPlugFile=expand("$XDG_CONFIG_HOME/nvim/autoload/plug.vim")
     if !filereadable(vimPlugFile)
-	echo "Installing vim-plug..."
-	!curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-	let vimPlugInstalled=0
+    echo "Installing vim-plug..."
+    !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+    let vimPlugInstalled=0
     endif
     return vimPlugInstalled
 endfunction
@@ -59,7 +59,7 @@ Plug 'seagoj/rust-config.vim'
 Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
 Plug 'noahfrederick/vim-composer' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
 Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim' | Plug 'seagoj/vim-test-config'
-Plug 'vim-scripts/SyntaxAttr.vim'
+" Plug 'vim-scripts/SyntaxAttr.vim'
 
 function! BuildComposer(info)
 if a:info.status != 'unchanged' || a:info.force
@@ -75,7 +75,8 @@ Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 Plug 'hsanson/vim-android'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'gabeharms/tslime.vim'
-Plug 'tpope/vim-db'
+" Plug 'tpope/vim-db'
+
 " Retired
 " Plug 'vim-scripts/matchit.zip'
 " Plug 'maksimr/vim-jsbeautify'
@@ -91,6 +92,9 @@ Plug 'tpope/vim-db'
 " Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
 " Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
 " Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
+" Plug 'soywod/vim-keepeye'
+" let g:keepeye_autostart = 1
+" let g:keepeye_timer = 60 * 50
 call plug#end()
 
 if vimPlugInstalled == 0
@@ -102,3 +106,4 @@ let g:vdebug_options['path_maps'] = {"/vagrant/bonfyre_app": "/Volumes/Code/conf
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
 let g:tmux_navigator_disable_when_zoomed = 1
+

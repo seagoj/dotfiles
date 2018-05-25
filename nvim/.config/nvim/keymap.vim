@@ -44,6 +44,6 @@ nnoremap    <C-y>	    10<C-y>
 nnoremap    gV		    `[v`]
 inoremap    jk		    <Esc>
 " toggle folding with <Tab>
-nnoremap    <Tab>	    za
+nmap	<Tab>	    za
 " show current filename
 nmap	    <leader>fn	    :echo @%<CR>
