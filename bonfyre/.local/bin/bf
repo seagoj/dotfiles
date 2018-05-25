@@ -18,6 +18,7 @@ new_ticket() {
 		exit 1
 	fi
 
+	root_branch=master
 	ticket_id=$1
 
 	git checkout ${root_branch} &&\
@@ -33,12 +34,10 @@ pr() {
 
 	commit_hash=$1
 
-	git checkout ${root_branch} &&\
+	git checkout ${commit_branch} &&\
 		git pull origin &&\
-		git checkout $commit_hash &&\
-		git pull origin ${root_branch} &&\
-		git diff --name-only &&\
-		git diff -w origin/${root_branch}
+		git diff --name-only origin/${root_branch} ... ${commit_hash} &&\
+		git diff -w origin/${root_branch} ... ${commit_hash}
 }
 
 prepare-deploy() {

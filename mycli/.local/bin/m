@@ -5,7 +5,7 @@ case "$1" in
 	login_path="$1"
 	shift
 	if [[ $# == 0 ]]; then
-		mysql_config_editor print --login-path=$login-path
+		mysql_config_editor print --login-path=$login_path
 	else
 		mysql_config_editor set --login-path=$login_path $@
 	fi

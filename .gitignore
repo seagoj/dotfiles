@@ -32,6 +32,7 @@ ssh/.ssh/id_rsa
 ssh/.ssh/id_rsa_deploy
 ssh/.ssh/nexus6
 ssh/.ssh/known_hosts
+ssh/.ssh/known_hosts.old
 ssh/.ssh/id_rsa_milito
 tmux/.ngrok2/ngrok.yml
 tmux/.tmux/plugins/tmux-resurrect

@@ -5,66 +5,66 @@ source "${XDG_FUNCTIONS_DIR}/cli.sh"
 #/ Usage: v [arguments ...]
 #/
 #/ Arguments:
-#/		--help						Shows this
-#/		--debug
-#/		--destroy | --rebuild | -d	Destroys and rebuilds
+#/      --help                      Shows this
+#/      --debug
+#/      --destroy | --rebuild | -d  Destroys and rebuilds
 
 cleanup() {
-	EXIT_CODE=$?
-	exit "${EXIT_CODE}"
+    EXIT_CODE=$?
+    exit "${EXIT_CODE}"
 }
 
 v::arguments() {
-	OUTPUT='&> /dev/null'
+    OUTPUT='&> /dev/null'
 
-	while [[ $# -gt 0 ]]; do
-		case "$1" in
-		"--debug")
-			OUTPUT=""
-			;;
-		"--destroy" | "--rebuild" | "-d")
-			v::destroy && v::create_session && v::suspend
-			exit
-			;;
-		esac
-		shift
-	done
+    while [[ $# -gt 0 ]]; do
+        case "$1" in
+        "--debug")
+            OUTPUT=""
+            ;;
+        "--destroy" | "--rebuild" | "-d")
+            v::destroy && v::create_session && v::suspend
+            exit
+            ;;
+        esac
+        shift
+    done
 }
 
 v::connect() {
-	v::resume_session || v::create_session
+    v::resume_session || v::create_session
 }
 
 v::create_session() {
-	log::info "no session to resume"
-	log::info "recreating"
-	ssh-keygen -R \[127.0.0.1\]:2222 && \
-		vagrant up && \
-		v::ssh
+    log::info "no session to resume"
+    log::info "recreating"
+    ssh-keygen -R \[127.0.0.1\]:2222 && \
+        vagrant up && \
+        v::ssh
 }
 
 v::destroy() {
-	log::info "destroying image"
-	eval "vagrant destroy -f ${OUTPUT}"
+    log::info "destroying image"
+    eval "vagrant destroy -f ${OUTPUT}"
 }
 
 v::resume_session() {
-	log::info "attempting resume"
-	eval "vagrant resume ${OUTPUT}"
-	v::ssh
+    log::info "attempting resume"
+    eval "vagrant resume ${OUTPUT}"
+    v::ssh
 }
 
 v::ssh() {
-	if [[ -z "${HOME_DIR+x}" ]]; then
-		vagrant ssh
-	else
-		vagrant ssh -c "cd $HOME_DIR; exec bash"
-	fi
+    if [[ -z "${VAGRANT_PROJECT_ROOT+x}" ]]; then
+        vagrant ssh
+    else
+        vagrant ssh -c "cd ${VAGRANT_PROJECT_ROOT}; exec bash"
+    fi
 }
 
 v::suspend() {
-	log::info "suspending"
-	vagrant suspend
+    log::info "suspending"
+    vagrant suspend
 }
 
 log::timestamp

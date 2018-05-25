@@ -1,5 +1,5 @@
 #!/bin/bash
 
-. $HOME/functions/general.sh
+. "${HOME}/.local/functions/general.sh"
 
 general::env_var_to_script "TERMINAL" $@
