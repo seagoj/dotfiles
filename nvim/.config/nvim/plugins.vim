@@ -2,9 +2,9 @@ function! AutoInstallVimPlug()
     let vimPlugInstalled=1
     let vimPlugFile=expand("$XDG_CONFIG_HOME/nvim/autoload/plug.vim")
     if !filereadable(vimPlugFile)
-    echo "Installing vim-plug..."
-    !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-    let vimPlugInstalled=0
+        echo "Installing vim-plug..."
+        !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+        let vimPlugInstalled=0
     endif
     return vimPlugInstalled
 endfunction
@@ -53,6 +53,7 @@ Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 " Language Specific
 Plug 'seagoj/c.vim'
 Plug 'seagoj/php.vim'
+Plug 'shawncplus/phpcomplete.vim'
 Plug 'rayburgemeestre/phpfolding.vim'
 Plug 'seagoj/rust-config.vim'
 " Experimental
@@ -62,20 +63,19 @@ Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispat
 " Plug 'vim-scripts/SyntaxAttr.vim'
 
 function! BuildComposer(info)
-if a:info.status != 'unchanged' || a:info.force
-  if has('nvim')
-    !cargo build --release
-  else
-    !cargo build --release --no-default-features --features json-rpc
-  endif
-endif
+    if a:info.status != 'unchanged' || a:info.force
+        if has('nvim')
+            !cargo build --release
+        else
+            !cargo build --release --no-default-features --features json-rpc
+        endif
+    endif
 endfunction
-
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
+
 Plug 'hsanson/vim-android'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'gabeharms/tslime.vim'
-" Plug 'tpope/vim-db'
 
 " Retired
 " Plug 'vim-scripts/matchit.zip'
