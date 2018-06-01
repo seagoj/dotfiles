@@ -1,64 +1,68 @@
-let semibold = 600;
-let blue = '#6688aa';
-let systemDefaultShell = '';
 let fonts = [
-	"SauceCodePro Nerd Font",
-	"Source Code Pro for Powerline",
-	"Sauce Code Powerline",
-	"Anonymous Pro",
-	"Anonymice Powerline",
-	"Menlo",
-	"DejaVu Sans Mono",
-	"Lucida Console",
-	"monospace"
+    "SauceCodePro Nerd Font",
+    "Source Code Pro for Powerline",
+    "Sauce Code Powerline",
+    "Anonymous Pro",
+    "Anonymice Powerline",
+    "Menlo",
+    "DejaVu Sans Mono",
+    "Lucida Console",
+    "monospace"
 ];
 
 module.exports = {
-	config: {
-		fontSize: 10,
+    config: {
+        fontSize: 10,
 
-		fontFamily: fonts.join(','),
+        fontFamily: fonts.join(', '),
 
-		// `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
-		cursorShape: 'BLOCK',
+        fontWeight: "normal",
 
-		// custom css to embed in the main window
-		css: `
-			.hyper_main { border: none; }
-			.terms_terms { margin-top: 0px; }
-		`,
+        fontWeightBold: 600,
 
-		// custom css to embed in the terminal window
-		termCSS: `
-			x-screen * { font-weight: ` + semibold + `; }
-			x-screen a {
-				color: ` + blue + `;
-				text-decoration: underline;
-			}
-			x-screen a.hover { text-decoration: none; }
-			x-screen { border: none; }
-		`,
+        // `BEAM` for |, `UNDERLINE` for _, `BLOCK` for █
+        cursorShape: 'BLOCK',
 
-		padding: '0px',
+        css: `
+            .hyper_main { border: none; }
+            .terms_terms { margin-top: 0px; }
+        `,
 
-		shell: systemDefaultShell,
+        // custom css to embed in the terminal window
+        termCSS: `
+            x-screen * { font-weight: 600; }
+            x-screen a {
+                text-decoration: underline;
+            }
+            x-screen a.hover { text-decoration: none; }
+            x-screen { border: none; }
+        `,
 
-		hyperclean: {
-			hideTabs: true
-		},
+        padding: '0px',
 
-		// for advanced config flags please refer to https://hyperterm.org/#cfg
-	},
+        shell: 'zsh',
 
-	plugins: [
-		'hyperclean',
-		'hyperfontuhd',
-		'hyperlinks',
-		'hyperterm-sourcerer',
-		'hyperterm-themed-scrollbar',
-		'gitrocket'
-	],
+        hyperclean: {
+            hideTabs: true
+        },
 
-	localPlugins: [
-	],
+        hyperlinks: {
+            defaultBrowser: true
+        },
+
+        // for advanced config flags please refer to https://hyperterm.org/#cfg
+    },
+
+    plugins: [
+        'hyperclean',
+        'hyperfontuhd',
+        'hyperlinks',
+        'hyperterm-sourcerer',
+        'hyperterm-themed-scrollbar',
+        'hyperterm-paste',
+        'gitrocket'
+    ],
+
+    localPlugins: [
+    ],
 };
