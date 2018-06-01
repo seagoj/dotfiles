@@ -31,7 +31,7 @@ Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': 'installYCM'}
 Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
-Plug 'seagoj/autosource-vimrc.vim'
+Plug 'seagoj/autosource-vimrc.vim', {'for': 'vim'}
 Plug 'seagoj/buffers.vim'
 Plug 'seagoj/disable-cursor-keys.vim'
 Plug 'seagoj/git-gutter-feature.vim'
@@ -50,16 +50,16 @@ Plug 'tpope/vim-projectionist'
 Plug 'sheerun/vim-polyglot' | Plug 'seagoj/vim-polyglot-config'
 Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
-" Language Specific
-Plug 'seagoj/c.vim'
-Plug 'seagoj/php.vim'
-Plug 'shawncplus/phpcomplete.vim'
-Plug 'rayburgemeestre/phpfolding.vim'
-Plug 'seagoj/rust-config.vim'
-" Experimental
-Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
-Plug 'noahfrederick/vim-composer' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
 Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim' | Plug 'seagoj/vim-test-config'
+Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
+" Language Specific
+Plug 'seagoj/c.vim', {'for': 'c'}
+Plug 'seagoj/php.vim', {'for': 'php'}
+Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
+Plug 'rayburgemeestre/phpfolding.vim', {'for': 'php'}
+Plug 'seagoj/rust-config.vim', {'for': 'rust'}
+Plug 'noahfrederick/vim-composer', {'for': 'markdown'} | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
+" Experimental
 " Plug 'vim-scripts/SyntaxAttr.vim'
 
 function! BuildComposer(info)
