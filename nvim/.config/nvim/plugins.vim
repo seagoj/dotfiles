@@ -22,7 +22,8 @@ elseif !v:shell_error && s:uname == "Darwin"
 endif
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
 Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
-Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
+" Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
+Plug 'w0rp/ale' | Plug 'maximbaz/lightline-ale'
 Plug 'kien/ctrlp.vim'
 Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -51,7 +52,8 @@ Plug 'sheerun/vim-polyglot' | Plug 'seagoj/vim-polyglot-config'
 Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
 Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim' | Plug 'seagoj/vim-test-config'
-Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
+" Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
+Plug 'luochen1990/rainbow' | Plug 'seagoj/rainbow-config.vim'
 " Language Specific
 Plug 'seagoj/c.vim', {'for': 'c'}
 Plug 'seagoj/php.vim', {'for': 'php'}
@@ -90,7 +92,7 @@ Plug 'gabeharms/tslime.vim'
 " Plug 'dahu/bisectly'
 " Plug 'adoy/vim-php-refactoring-toolbox'
 " Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
-" Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
+Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
 " Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
 " Plug 'soywod/vim-keepeye'
 " let g:keepeye_autostart = 1
@@ -106,4 +108,3 @@ let g:vdebug_options['path_maps'] = {"/vagrant/bonfyre_app": "/Volumes/Code/conf
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
 let g:tmux_navigator_disable_when_zoomed = 1
-
