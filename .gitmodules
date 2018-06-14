@@ -21,3 +21,9 @@
 [submodule "awesome/.config/awesome"]
     path = awesome/.config/awesome
     url = git@github.com:seagoj/awesome-copycats.git
+[submodule "keyboardio/Documents/Arduino/hardware/keyboardio/avr"]
+	path = keyboardio/Documents/Arduino/hardware/keyboardio/avr
+	url = git://github.com/seagoj/Arduino-Boards.git
+[submodule "keyboardio/Documents/Arduino/Model01-Firmware"]
+	path = keyboardio/Documents/Arduino/Model01-Firmware
+	url = git://github.com/Keyboardio/Model01-Firmware.git
