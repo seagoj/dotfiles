@@ -17,8 +17,8 @@ window:
   # Window dimensions in character columns and lines
   # (changes require restart)
   dimensions:
-    columns: 80
-    lines: 24
+    columns: 425
+    lines: 130
 
   # Adds this many blank pixels of padding around the window
   # Units are physical pixels; this is not DPI aware.
@@ -32,7 +32,7 @@ window:
   decorations: true
 
 # Display tabs using this many cells (changes require restart)
-tabspaces: 8
+tabspaces: 4
 
 # When true, bold text is drawn using the bright variant of colors.
 draw_bold_text_with_bright_colors: true
