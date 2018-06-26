@@ -13,6 +13,7 @@
     safecrlf = false
     ignorecase = false
     excludesfile = /Users/Admin/.gitignore_global
+	editor = =
 [web]
     browser = open
 [push]
@@ -83,7 +84,7 @@
     wip = "!git add . && git commit -m 'wip' --no-verify"
     submodule-update = "submodule update --recursive --remote --init"
 [branch]
-    ; autosetuprebase = always
+    autosetuprebase = always
 [init]
     templatedir = "~/.config/git/template"
 [filter "hawser"]
@@ -112,3 +113,5 @@
     clean = expand -t 2
 [credential]
     helper = osxkeychain
+[commit]
+    template = ~/.config/git/commit-msg.txt
