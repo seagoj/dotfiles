@@ -93,7 +93,7 @@ Plug 'gabeharms/tslime.vim'
 " Plug 'adoy/vim-php-refactoring-toolbox'
 " Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
 Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
-" Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
+Plug 'tobyS/vmustache' | Plug 'YaroslavMolchan/pdv' | Plug 'seagoj/pdv-config.vim'
 " Plug 'soywod/vim-keepeye'
 " let g:keepeye_autostart = 1
 " let g:keepeye_timer = 60 * 50
@@ -108,3 +108,9 @@ let g:vdebug_options['path_maps'] = {"/vagrant/bonfyre_app": "/Volumes/Code/conf
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
 let g:tmux_navigator_disable_when_zoomed = 1
+
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0
