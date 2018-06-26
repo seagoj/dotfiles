@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
 grep -Ev "(# Please.*|# with.*|^#$)" $1 > /tmp/msg && cat /tmp/msg > $1
+sed "1a\
+$HOME" $1 > /tmp/msg && cat /tmp/msg > $1
