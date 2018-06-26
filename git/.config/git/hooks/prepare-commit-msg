@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+branch=$(git rev-parse --abbrev-ref HEAD)
 grep -Ev "(# Please.*|# with.*|^#$)" $1 > /tmp/msg && cat /tmp/msg > $1
-sed "1a\
-$HOME" $1 > /tmp/msg && cat /tmp/msg > $1
+sed "1a\\
+$branch" $1 > /tmp/msg && cat /tmp/msg > $1
