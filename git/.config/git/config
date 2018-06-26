@@ -8,12 +8,12 @@
 [core]
     pager = less -FRSX
     whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    editor = nvim -f
+    editor = nvim -f +2
     autocrlf = input
     safecrlf = false
     ignorecase = false
     excludesfile = /Users/Admin/.gitignore_global
-	editor = =
+	hookspath = ~/.config/git/hooks
 [web]
     browser = open
 [push]
