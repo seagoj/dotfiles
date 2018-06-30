@@ -27,7 +27,6 @@ nvim/.config/nvim/colors/sourcerer.vim
 nvim/.config/nvim/.netrwhist
 ranger/.config/ranger/history
 ssh/.ssh/bonfyre
-ssh/.ssh/config
 ssh/.ssh/id_rsa
 ssh/.ssh/id_rsa_deploy
 ssh/.ssh/nexus6
