@@ -11,3 +11,5 @@ text=auto
 *.PDF  diff=astextplain
 *.rtf  diff=astextplain
 *.RTF  diff=astextplain
+
+*.gpg filter=git-crypt diff=git-crypt
