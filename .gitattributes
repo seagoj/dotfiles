@@ -13,7 +13,7 @@ text=auto
 *.RTF  diff=astextplain
 
 ssh/.ssh/config filter=git-crypt diff=git-crypt
-ssh/.ssh/bonfyre filter=git-crypt diff=git-crypt
+ssh/.ssh/bonfyre/* filter=git-crypt diff=git-crypt
 ssh/.ssh/id_rsa filter=git-crypt diff=git-crypt
 ssh/.ssh/id_rsa_deploy filter=git-crypt diff=git-crypt
 ssh/.ssh/nexus6 filter=git-crypt diff=git-crypt
