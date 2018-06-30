@@ -13,7 +13,7 @@
     safecrlf = false
     ignorecase = false
     excludesfile = /Users/Admin/.gitignore_global
-	hookspath = ~/.config/git/hooks
+    hookspath = ~/.config/git/hooks
 [web]
     browser = open
 [push]
@@ -67,22 +67,25 @@
 [alias]
     a = "add"
     amend = commit --amend --no-edit
-    clean-local-merged = "!. ~/.config/git/helpers && delete_local_merged_branches"
-    clean-merged = "!. ~/.config/git/helpers && delete_local_merged_branches"
-    ctags = !.git/hooks/ctags
+    clean-merged = "!git clean-merged"
+    clean-local-merged = "!git branch --merged master | grep -v master | xargs git branch -d"
+    ; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
+    commit-hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | pbcopy"
+    ctags = "!.git/hooks/ctags"
     current = "rev-parse --abbrev-ref HEAD"
     dn = "diff --name-only"
     hash = "rev-parse HEAD | pbcopy"
-    list-merged = "!. ~/.config/git/helpers && merged_branches"
+    list-merged = "branch -r --merged origin/master"
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
     recent = "! git branch --sort=-committerdate | head -n 10"
     search = "! git rev-list --all | xargs git grep "
     st = "status"
+    submodule-update = "submodule update --recursive --remote --init"
     undo = "!f() { \
     git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
     }; f"
+    weekly-summary = "!. ~/.local/functions/git.sh; weekly_summary"
     wip = "!git add . && git commit -m 'wip' --no-verify"
-    submodule-update = "submodule update --recursive --remote --init"
 [branch]
     autosetuprebase = always
 [init]
