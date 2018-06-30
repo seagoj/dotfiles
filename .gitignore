@@ -26,6 +26,7 @@ nvim/.config/nvim/bundle
 nvim/.config/nvim/colors/sourcerer.vim
 nvim/.config/nvim/.netrwhist
 ranger/.config/ranger/history
+ssh/.ssh/bonfyre
 tmux/.ngrok2/ngrok.yml
 tmux/.tmux/plugins/tmux-resurrect
 tmux/.tmux/plugins/tmux-sensible
@@ -49,6 +50,5 @@ backup-secrets
 bonfyre/.local/bin/work
 vpn/.local/bin/vpn-bellevue
 u2f/.config/u2f/keys
-ssh/.ssh/mykey.sec.asc
 hyper/.hyper_plugins
 nohup.out
