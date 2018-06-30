@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+cargo install --git https://github.com/jwilm/alacritty
+cd ~/.cargo/git/alacritty*/ && make app && cp -r target/release/osx/Alacritty.app /Applications/

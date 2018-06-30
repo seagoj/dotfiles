@@ -62,6 +62,7 @@ export PATH=$HOME/.toolchains/esp32/bin:$PATH
 export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 ## rust
 path::add --prepend "${HOME}"/.cargo/bin
+path::add "${XDG_FUNCTIONS_DIR}/installs"
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
@@ -123,7 +124,7 @@ fi
 if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
     # Source env files
     for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
-	source "${file}"
+        source "${file}"
     done
 fi
 
@@ -135,7 +136,7 @@ export WEB="${CONFIG_MANAGEMENT}"/puppet/pyweb
 # export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf
 
 if [[ -d "${HOME}"/Documents/Arduino ]]; then
-	export SKETCHBOOK_DIR="${HOME}"/Documents/Arduino
+    export SKETCHBOOK_DIR="${HOME}"/Documents/Arduino
 else
-	export SKETCHBOOK_DIR="${HOME}"/Arduino
+    export SKETCHBOOK_DIR="${HOME}"/Arduino
 fi

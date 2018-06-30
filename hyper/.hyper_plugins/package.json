@@ -12,6 +12,7 @@
     "hyperlinks": "latest",
     "hyperterm-sourcerer": "latest",
     "hyperterm-themed-scrollbar": "latest",
+    "hyperterm-paste": "latest",
     "gitrocket": "latest"
   }
 }

@@ -22,7 +22,8 @@ elseif !v:shell_error && s:uname == "Darwin"
 endif
 Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
 Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
-Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
+" Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
+Plug 'w0rp/ale' | Plug 'maximbaz/lightline-ale'
 Plug 'kien/ctrlp.vim'
 Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
 Plug 'terryma/vim-multiple-cursors'
@@ -31,7 +32,7 @@ Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
 Plug 'tpope/vim-surround'
 Plug 'Valloric/YouCompleteMe', {'do': 'installYCM'}
 Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
-Plug 'seagoj/autosource-vimrc.vim'
+Plug 'seagoj/autosource-vimrc.vim', {'for': 'vim'}
 Plug 'seagoj/buffers.vim'
 Plug 'seagoj/disable-cursor-keys.vim'
 Plug 'seagoj/git-gutter-feature.vim'
@@ -50,32 +51,37 @@ Plug 'tpope/vim-projectionist'
 Plug 'sheerun/vim-polyglot' | Plug 'seagoj/vim-polyglot-config'
 Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
 Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim'
-" Language Specific
-Plug 'seagoj/c.vim'
-Plug 'seagoj/php.vim'
-Plug 'rayburgemeestre/phpfolding.vim'
-Plug 'seagoj/rust-config.vim'
-" Experimental
-Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
-Plug 'noahfrederick/vim-composer' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
 Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim' | Plug 'seagoj/vim-test-config'
+" Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
+Plug 'luochen1990/rainbow' | Plug 'seagoj/rainbow-config.vim'
+" Language Specific
+Plug 'seagoj/c.vim', {'for': 'c'}
+Plug 'seagoj/php.vim', {'for': 'php'}
+Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
+Plug 'rayburgemeestre/phpfolding.vim', {'for': 'php'}
+Plug 'seagoj/rust-config.vim', {'for': 'rust'}
+Plug 'noahfrederick/vim-composer', {'for': 'markdown'} | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
+" Experimental
 " Plug 'vim-scripts/SyntaxAttr.vim'
 
 function! BuildComposer(info)
-if a:info.status != 'unchanged' || a:info.force
-  if has('nvim')
-    !cargo build --release
-  else
-    !cargo build --release --no-default-features --features json-rpc
-  endif
-endif
+    if a:info.status != 'unchanged' || a:info.force
+        if has('nvim')
+            !cargo build --release
+        else
+            !cargo build --release --no-default-features --features json-rpc
+        endif
+    endif
 endfunction
-
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 Plug 'hsanson/vim-android'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'gabeharms/tslime.vim'
 " Plug 'tpope/vim-db'
+
+Plug 'hsanson/vim-android'
+Plug 'christoomey/vim-tmux-runner'
+Plug 'gabeharms/tslime.vim'
 
 " Retired
 " Plug 'vim-scripts/matchit.zip'
@@ -90,8 +96,8 @@ Plug 'gabeharms/tslime.vim'
 " Plug 'dahu/bisectly'
 " Plug 'adoy/vim-php-refactoring-toolbox'
 " Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
-" Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
-" Plug 'tobyS/vmustache' | Plug 'tobyS/pdv' | Plug 'seagoj/pdv-config.vim'
+Plug 'arnaud-lb/vim-php-namespace' | Plug 'seagoj/vim-php-namespace-config.vim'
+Plug 'tobyS/vmustache' | Plug 'YaroslavMolchan/pdv' | Plug 'seagoj/pdv-config.vim'
 " Plug 'soywod/vim-keepeye'
 " let g:keepeye_autostart = 1
 " let g:keepeye_timer = 60 * 50
@@ -107,3 +113,8 @@ let g:vdebug_options['path_maps'] = {"/vagrant/bonfyre_app": "/Volumes/Code/conf
 let g:gist_post_private = 1
 let g:tmux_navigator_disable_when_zoomed = 1
 
+" Write this in your vimrc file
+let g:ale_lint_on_text_changed = 'never'
+" You can disable this option too
+" if you don't want linters to run on opening a file
+let g:ale_lint_on_enter = 0

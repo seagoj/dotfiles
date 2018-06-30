@@ -18,3 +18,12 @@
 [submodule "boilr/.config/boilr/templates/vimplugin"]
     path = boilr/.config/boilr/templates/vimplugin
     url = git@github.com:seagoj/boilr-vimplugin.git
+[submodule "awesome/.config/awesome"]
+    path = awesome/.config/awesome
+    url = git@github.com:seagoj/awesome-copycats.git
+[submodule "keyboardio/Documents/Arduino/Model01-Firmware"]
+    path = keyboardio/Documents/Arduino/Model01-Firmware
+    url = git://github.com/Keyboardio/Model01-Firmware.git
+[submodule "keyboardio/Documents/Arduino/hardware/keyboardio/avr"]
+    path = keyboardio/Documents/Arduino/hardware/keyboardio/avr
+    url = https://github.com/Keyboardio/Arduino-Boards.git

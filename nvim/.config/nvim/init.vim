@@ -16,13 +16,13 @@ source $XDG_CONFIG_HOME/nvim/macros.vim
 
 filetype plugin on
 filetype indent on
-set mouse=a         "Enable mouse use
-set scrolloff=5         "When possible, show 5 lines above and below the cursor
-set number          "Show line numbers
-set cmdheight=2         "shortens cmd height
+set mouse=a                     "Enable mouse use
+set scrolloff=5                 "When possible, show 5 lines above and below the cursor
+set number                      "Show line numbers
+set cmdheight=2                 "shortens cmd height
 set backspace=eol,start,indent  "backspace configuration
-set autoread            "automatically watch for changes
-set hidden          "hides unsaved files instead of forcing you to save/quit
+set autoread                    "automatically watch for changes
+set hidden                      "hides unsaved files instead of forcing you to save/quit
 set modelines=5
 set laststatus=2
 set tags=.git/tags
@@ -34,7 +34,7 @@ set smartcase       "If a pattern contains an uppercase, then the search is case
 set hlsearch        "Highlight searches
 set incsearch       "More like webbrowser search
 " set lazyredraw      "Don't redraw during macros
-set magic       "For regular expressions
+set magic           "For regular expressions
 set showmatch       "Matching braces highlighting
 set matchtime=2     "Blink for 2 tenths of a second when matching
 " No Sound On Errors
@@ -44,7 +44,7 @@ set timeoutlen=500
 set autoindent      "Newline uses indentation depth of the previous
 set smartindent     "Newline conditionally uses 1 more indent
 " Status bar
-set showcmd     " Show last command in bottom right
+set showcmd         " Show last command in bottom right
 " Code Folding
 set foldmethod=indent
 set foldnestmax=10
@@ -78,7 +78,7 @@ set expandtab
 
 function! Strip_trailing_whitespace(...)
     if &ft =~ 'markdown'
-    return
+        return
     endif
     %s/\s\+$//e
 endfunction

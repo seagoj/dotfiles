@@ -59,4 +59,5 @@ toggleDocked
 xset r rate 200 50
 
 xbindkeys &
+setxkbmap -option caps:ctrl_modifier
 exec awesome
