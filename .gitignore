@@ -40,7 +40,6 @@ bonfyre/.config/aliases/bonfyre.alias
 bonfyre/bin/work
 keybase/.config/keybase/config.json
 Makefile
-mysql/.mylogin.cnf
 rainbowstream/.rainbow_oauth
 tmux/.tmux/plugins
 mutt/.config/mutt/muttrc
