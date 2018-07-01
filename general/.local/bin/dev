@@ -6,18 +6,18 @@ fi
 
 case "$1" in
     "api")
-	cd "${API}" && tmux.sh
-	;;
+    cd "${API}" && tmux.sh
+    ;;
     "config_management")
-	cd "${CONFIG_MANAGEMENT}" && tmux.sh
-	;;
+    cd "${CONFIG_MANAGEMENT}" && tmux.sh
+    ;;
     "dotfiles")
-	cd "${DOTFILES}" && tmux.sh
-	;;
+    cd "${DOTFILES}" && tmux.sh
+    ;;
     "web")
-	cd "${WEB}" && tmux.sh
-	;;
+    cd "${WEB}" && tmux.sh
+    ;;
     *)
-	echo "Project ${1} not found."
-	exit 1
+    echo "Project ${1} not found."
+    exit 1
 esac

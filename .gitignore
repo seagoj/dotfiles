@@ -9,7 +9,6 @@ geeknote/.geeknote/database.db
 general/.config/configstore/bower-github.yml
 general/.config/configstore/insight-bower.yml
 general/.config/configstore/update-notifier-bower.yml
-general/.secrets
 iterm/.iterm/sourcerer.itermcolors
 keybase/.config/keybase/secretkeys.seagoj.mpack
 mutt/.config/mutt/cache

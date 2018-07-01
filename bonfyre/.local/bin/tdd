@@ -1,3 +1,0 @@
-#!/bin/bash
-
-ssh vagrant "cd /vagrant/bonfyre_app && phpunit -c phpunit-tdd.xml --testsuite tdd"

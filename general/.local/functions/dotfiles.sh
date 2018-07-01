@@ -63,7 +63,7 @@ dotfiles::bootstrap() {
 
 dotfiles::stow() {
     stow -D $1
-    stow --ignore=.gpg --ignore=_install.sh --ignore=.packages -vt $HOME $1 &>/dev/null
+    stow --ignore=_install.sh --ignore=.packages -vt $HOME $1 &>/dev/null
 }
 
 dotfiles::decrypt() {
