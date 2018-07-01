@@ -12,6 +12,7 @@ text=auto
 *.rtf  diff=astextplain
 *.RTF  diff=astextplain
 
+bonfyre/.config/aliases/bonfyre.alias filter=git-crypt diff=git-crypt
 buku/.local/share/buku/bookmarks.db filter=git-crypt diff=git-crypt
 mysql/.mylogin.cnf filter=git-crypt diff=git-crypt
 ssh/.ssh/config filter=git-crypt diff=git-crypt
