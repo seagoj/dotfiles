@@ -18,6 +18,7 @@ buku/.local/share/buku/bookmarks.db filter=git-crypt diff=git-crypt
 general/.secrets filter=git-crypt diff=git-crypt
 mysql/.mylogin.cnf filter=git-crypt diff=git-crypt
 .gist-vim filter=git-crypt diff=git-crypt
+rainbowstream/.rainbow_oauth filter=git-crypt diff=git-crypt
 ssh/.ssh/config filter=git-crypt diff=git-crypt
 ssh/.ssh/id_rsa filter=git-crypt diff=git-crypt
 ssh/.ssh/id_rsa_deploy filter=git-crypt diff=git-crypt

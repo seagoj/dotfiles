@@ -36,6 +36,5 @@ hyper/.hyper_plugins
 keybase/.config/keybase/config.json
 Makefile
 mutt/.config/mutt/muttrc
-rainbowstream/.rainbow_oauth
 tmux/.tmux/plugins
 u2f/.config/u2f/keys
