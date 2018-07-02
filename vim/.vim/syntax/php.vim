@@ -1,1 +1,0 @@
-/Users/Admin/code/dotfiles/php.vim/syntax/php.vim

@@ -12,7 +12,7 @@
     autocrlf = input
     safecrlf = false
     ignorecase = false
-    excludesfile = /Users/Admin/.gitignore_global
+    excludesfile = /Users/seagoj/.config/git/ignore
     hookspath = ~/.config/git/hooks
 [web]
     browser = open
