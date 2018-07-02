@@ -32,7 +32,6 @@ backup-secrets
 bonfyre/bin/work
 bonfyre/.local/bin/work
 hyper/.hyper_plugins
-keybase/.config/keybase/config.json
 Makefile
 mutt/.config/mutt/muttrc
 tmux/.tmux/plugins

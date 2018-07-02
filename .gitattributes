@@ -17,6 +17,7 @@ bonfyre/.config/aliases/bonfyre.alias filter=git-crypt diff=git-crypt
 bonfyre/_install.sh filter=git-crypt diff=git-crypt
 buku/.local/share/buku/bookmarks.db filter=git-crypt diff=git-crypt
 general/.secrets filter=git-crypt diff=git-crypt
+keybase/.config/keybase/config.json filter=git-crypt diff=git-crypt
 mysql/.mylogin.cnf filter=git-crypt diff=git-crypt
 ncmpcpp/.config/gmusicproxy.cfg filter=git-crypt diff=git-crypt
 rainbowstream/.rainbow_oauth filter=git-crypt diff=git-crypt
