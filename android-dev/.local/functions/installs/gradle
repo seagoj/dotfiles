@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 devenv() {
     if ! which sdk &>/dev/null; then
