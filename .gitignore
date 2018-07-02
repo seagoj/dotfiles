@@ -23,7 +23,6 @@ nvim/.config/nvim/.netrwhist
 ranger/.config/ranger/history
 ssh/.ssh/bonfyre
 ssh/.ssh/known_hosts*
-tmux/.ngrok2/ngrok.yml
 tmux/.tmux/plugins/tmux-resurrect
 tmux/.tmux/plugins/tmux-sensible
 zsh/.antigen/repos/*
