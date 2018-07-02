@@ -71,6 +71,7 @@
     clean-local-merged = "!git branch --merged master | grep -v master | xargs git branch -d"
     ; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
     commit-hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | pbcopy"
+    crypt = "! git-crypt"
     ctags = "!.git/hooks/ctags"
     current = "rev-parse --abbrev-ref HEAD"
     dn = "diff --name-only"

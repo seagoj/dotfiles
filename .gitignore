@@ -33,4 +33,3 @@ bonfyre/.local/bin/work
 hyper/.hyper_plugins
 Makefile
 tmux/.tmux/plugins
-u2f/.config/u2f/keys

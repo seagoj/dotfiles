@@ -18,6 +18,7 @@ bonfyre/_install.sh filter=git-crypt diff=git-crypt
 buku/.local/share/buku/bookmarks.db filter=git-crypt diff=git-crypt
 general/.secrets filter=git-crypt diff=git-crypt
 keybase/.config/keybase/config.json filter=git-crypt diff=git-crypt
+mutt/.config/mutt/muttrc filter=git-crypt diff=git-crypt
 mysql/.mylogin.cnf filter=git-crypt diff=git-crypt
 ncmpcpp/.config/gmusicproxy.cfg filter=git-crypt diff=git-crypt
 rainbowstream/.rainbow_oauth filter=git-crypt diff=git-crypt
@@ -30,4 +31,4 @@ ssh/.ssh/known_hosts filter=git-crypt diff=git-crypt
 ssh/.ssh/known_hosts.old filter=git-crypt diff=git-crypt
 ssh/.ssh/id_rsa_milito filter=git-crypt diff=git-crypt
 tmux/.ngrok2/ngrok.yml filter=git-crypt diff=git-crypt
-mutt/.config/mutt/muttrc filter=git-crypt diff=git-crypt
+u2f/.config/u2f/keys filter=git-crypt diff=git-crypt
