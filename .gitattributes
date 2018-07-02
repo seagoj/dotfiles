@@ -30,3 +30,4 @@ ssh/.ssh/known_hosts filter=git-crypt diff=git-crypt
 ssh/.ssh/known_hosts.old filter=git-crypt diff=git-crypt
 ssh/.ssh/id_rsa_milito filter=git-crypt diff=git-crypt
 tmux/.ngrok2/ngrok.yml filter=git-crypt diff=git-crypt
+mutt/.config/mutt/muttrc filter=git-crypt diff=git-crypt

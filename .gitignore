@@ -32,6 +32,5 @@ bonfyre/bin/work
 bonfyre/.local/bin/work
 hyper/.hyper_plugins
 Makefile
-mutt/.config/mutt/muttrc
 tmux/.tmux/plugins
 u2f/.config/u2f/keys
