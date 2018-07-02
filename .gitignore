@@ -28,7 +28,6 @@ tmux/.ngrok2/ngrok.yml
 tmux/.tmux/plugins/tmux-resurrect
 tmux/.tmux/plugins/tmux-sensible
 zsh/.antigen/repos/*
-vpn/bin/vpn-bellevue
 
 backup-secrets
 bonfyre/bin/work
@@ -40,4 +39,3 @@ mutt/.config/mutt/muttrc
 rainbowstream/.rainbow_oauth
 tmux/.tmux/plugins
 u2f/.config/u2f/keys
-vpn/.local/bin/vpn-bellevue
