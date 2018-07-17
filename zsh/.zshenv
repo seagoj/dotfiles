@@ -48,8 +48,8 @@ path::add ${HOME}/.chefdk/gem/ruby/latest/bin
 path::add /opt/chefdk/bin
 ## Ruby
 path::add ${HOME}/.gem/ruby/2.0.0/bin
-## Python
-path::add --prepend /Library/Frameworks/Python.framework/Versions/2.7/bin
+# ## Python
+# path::add --prepend /Library/Frameworks/Python.framework/Versions/2.7/bin
 ## Local Bin
 path::add --relative ./bin
 ## Home Bin
@@ -78,7 +78,7 @@ export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=${HOME}/dotfiles
-export CODE=${HOME}/code
+export CODE=/Volumes/Code
 
 # Vagrant
 ## Provider(virtualbox, parallels)
@@ -88,8 +88,8 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 export BROWSER=$(which firefox-developer-edition firefox chromium-browser chromium google-chrome google-chrome-stable links2 links lynx xdg-open open | grep -m1 -e '^/')
 
 # Editor
-export EDITOR=$(which nvim vim nano | grep -m1 -e '^/')
-export EDITORGUI=$(which editor-gui nvim vim nano | grep -m1 -e '^/')
+export EDITOR=$(which nvim vim vi nano | grep -m1 -e '^/')
+export EDITORGUI=$(which editor-gui nvim vim vi nano | grep -m1 -e '^/')
 export VISUAL=$(which nvim macvim atom subl | grep -m1 -e '^/')
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
@@ -107,9 +107,6 @@ export TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d ${TMPDIR} ]]; then
     mkdir -p ${TMPDIR}
 fi
-
-# Ruby
-export RBENV_ROOT=${HOME}/.rbenv
 
 # secrets
 if [[ -f "${HOME}/.secrets" ]]; then

@@ -1,1 +1,0 @@
-cd /var/www/hook && sudo -u http git pull && cd /home/seagoj/code/hook

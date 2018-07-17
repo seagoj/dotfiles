@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+#
+. "${HOME}"/.local/functions/dotfiles.sh
+
+dotfiles::bootstrap brew
+
+brew install readline xz openssl
+
+curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+
+PYTHON2_VERSION='2.7.15'
+PYTHON3_VERSION='3.7.0'
+
+yes | CFLAGS="-I$(brew --prefix openssl)/include" \
+    LDFLAGS="-L$(brew --prefix openssl)/lib" \
+    pyenv install "${PYTHON2_VERSION}"
+
+yes | CFLAGS="-I$(brew --prefix openssl)/include" \
+    LDFLAGS="-L$(brew --prefix openssl)/lib" \
+    pyenv install "${PYTHON3_VERSION}"
+
+CFLAGS="-I$(brew --prefix openssl)/include" \
+    LDFLAGS="-L$(brew --prefix openssl)/lib" \
+    pyenv doctor

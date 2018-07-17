@@ -1,1 +1,0 @@
-curl -u "seagoj" -i https://api.github.com/repos/seagoj/bot/issues\?status\=open\&milestone\=3

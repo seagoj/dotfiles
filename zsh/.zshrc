@@ -139,3 +139,6 @@ export SDKMAN_DIR="/Users/seagoj/.sdkman"
 
 # direnv
 eval "$(direnv hook zsh)"
+
+# pyenv
+eval "$(pyenv virtualenv-init -)"

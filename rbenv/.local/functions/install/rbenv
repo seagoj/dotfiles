@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+brew install rbenv
+
+. "${HOME}"/.config/env/rbenv

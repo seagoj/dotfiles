@@ -87,6 +87,7 @@
     }; f"
     weekly-summary = "!. ~/.local/functions/git.sh; weekly_summary"
     wip = "!git add . && git commit -m 'wip' --no-verify"
+    wtf = "!git-wtf"
 [branch]
     autosetuprebase = always
 [init]

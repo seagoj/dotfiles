@@ -8,7 +8,6 @@ Dir.glob("#{codeDir}/*").each do |d|
         unless output.empty?
             puts "--- #{d[codeDir.length+1, d.length-codeDir.length]} ----------"
             puts output
-            # puts "-------------------"
         end
     end
 end

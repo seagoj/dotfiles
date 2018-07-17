@@ -1,4 +1,0 @@
-#!/bin/sh
-
-chgrp -R deploy .
-chmod -R g+rwxs .

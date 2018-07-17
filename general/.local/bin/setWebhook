@@ -1,4 +1,0 @@
-sudo -u http mkdir $WWW/$1
-cd $WWW/$1
-sudo -u http git init
-sudo -u http git pull -u git@github.com:seagoj/$1.git master

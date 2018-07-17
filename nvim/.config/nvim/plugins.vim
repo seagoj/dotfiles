@@ -42,8 +42,7 @@ Plug 'seagoj/overlength.vim'
 Plug 'seagoj/tab-management.vim'
 Plug 'christoomey/vim-tmux-navigator'
 Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
-" Plug 'joonty/vdebug' " Use once reafle/vdebug is merged in
-Plug 'reafle/vdebug'
+Plug 'vim-vdebug/vdebug'
 Plug 'ryanoasis/vim-devicons'
 Plug 'seagoj/netrw-config.vim'
 Plug 'editorconfig/editorconfig-vim'
@@ -78,11 +77,7 @@ Plug 'hsanson/vim-android'
 Plug 'christoomey/vim-tmux-runner'
 Plug 'gabeharms/tslime.vim'
 " Plug 'tpope/vim-db'
-
-Plug 'hsanson/vim-android'
-Plug 'christoomey/vim-tmux-runner'
-Plug 'gabeharms/tslime.vim'
-
+"
 " Retired
 " Plug 'vim-scripts/matchit.zip'
 " Plug 'maksimr/vim-jsbeautify'
@@ -108,7 +103,6 @@ if vimPlugInstalled == 0
 endif
 
 let g:vdebug_options = {}
-let g:vdebug_options['path_maps'] = {"/vagrant/bonfyre_app": "/Volumes/Code/config_management/puppet/bonfyre_app"}
 " let g:vdebug_features['max_depth'] = 2048
 let g:gist_post_private = 1
 let g:tmux_navigator_disable_when_zoomed = 1
@@ -118,3 +112,4 @@ let g:ale_lint_on_text_changed = 'never'
 " You can disable this option too
 " if you don't want linters to run on opening a file
 let g:ale_lint_on_enter = 0
+let g:vdebug_options['path_maps'] = {$VAGRANT_PROJECT_ROOT: $HOST_PROJECT_ROOT}

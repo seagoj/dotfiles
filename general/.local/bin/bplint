@@ -1,5 +1,0 @@
-#!/bin/bash
-
-ag 'style' .
-ag 'debugLog' .
-ag 'console.log' .

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if which vagrant 2>/dev/null; then
+    vagrant ssh -c "cd ${VAGRANT_PROJECT_ROOT:-/vagrant} && ${1}"
+else
+    eval "cd ${VAGRANT_PROJECT_ROOT:-/vagrant} && ${1}"
+fi
