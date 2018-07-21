@@ -85,6 +85,7 @@
     undo = "!f() { \
     git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
     }; f"
+    ticket = "!open https://bonfyreapp.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD)"
     weekly-summary = "!. ~/.local/functions/git.sh; weekly_summary"
     wip = "!git add . && git commit -m 'wip' --no-verify"
     wtf = "!git-wtf"
