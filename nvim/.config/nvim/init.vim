@@ -88,3 +88,8 @@ if has("autocmd")
     autocmd BufWritePre * call Strip_trailing_whitespace()
 endif
 
+let g:vdebug_options = {}
+let g:vdebug_options['path_maps'] = {$VAGRANT_PROJECT_ROOT: $HOST_PROJECT_ROOT}
+
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
