@@ -1,24 +1,29 @@
 #!/usr/bin/env bash
 #
+# https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14
 . "${HOME}"/.local/functions/dotfiles.sh
+. "${HOME}"/.config/env/pyenv.env
 
 dotfiles::bootstrap brew
 
-brew install readline xz openssl
+brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
 
-curl -L https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer | bash
+pyenv install "${PYTHON3_VERSION}"
+pyenv install "${PYTHON2_VERSION}"
 
-PYTHON2_VERSION='2.7.15'
-PYTHON3_VERSION='3.7.0'
+pyenv virtualenv "${PYTHON3_VERSION}" python3
+pyenv virtualenv "${PYTHON3_VERSION}" python2
+pyenv virtualenv python3 jupyter3
+pyenv virtualenv python2 ipython2
 
-yes | CFLAGS="-I$(brew --prefix openssl)/include" \
-    LDFLAGS="-L$(brew --prefix openssl)/lib" \
-    pyenv install "${PYTHON2_VERSION}"
+pyenv activate jupyter3
+pip install jupyter
+python -m ipykernel install --user
+pyenv deactivate
 
-yes | CFLAGS="-I$(brew --prefix openssl)/include" \
-    LDFLAGS="-L$(brew --prefix openssl)/lib" \
-    pyenv install "${PYTHON3_VERSION}"
+pyenv activate ipython2
+pip install ipykernel
+python -m ipykernel install --user
+pyenv deactivate
 
-CFLAGS="-I$(brew --prefix openssl)/include" \
-    LDFLAGS="-L$(brew --prefix openssl)/lib" \
-    pyenv doctor
+pyenv global python3 python2 jupyter3 ipython2
