@@ -1,0 +1,19 @@
+#!/usr/bin/env bash
+
+. "${HOME}"/.local/functions/dotfiles.sh
+
+dotfiles::bootstrap pyenv
+
+. "${HOME}"/.config/env/pyenv.env
+
+if ! pyenv versions | grep mycli; then
+    pyenv virtualenv python2 mycli
+
+    pyenv activate mycli &>/dev/null
+    pip install --user mycli
+    pyenv deactivate
+fi
+
+pyenv activate mycli &>/dev/null &&
+    mycli ${@} &&
+    pyenv deactivate

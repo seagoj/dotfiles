@@ -85,8 +85,7 @@ export CODE=/Volumes/Code
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Browser
-export BROWSER=$(which firefox-developer-edition firefox chromium-browser chromium google-chrome google-chrome-stable links2 links lynx xdg-open open | grep -m1 -e '^/')
-
+export BROWSER=$(which chromium-browser chromium google-chrome google-chrome-stable chrome firefox-developer-edition firefox browsh links2 links lynx xdg-open open | grep -m1 -e '^/')
 # Editor
 export EDITOR=$(which nvim vim vi nano | grep -m1 -e '^/')
 export EDITORGUI=$(which editor-gui nvim vim vi nano | grep -m1 -e '^/')
