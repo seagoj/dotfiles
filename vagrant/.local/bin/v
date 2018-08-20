@@ -45,7 +45,7 @@ v::create_session() {
 
 v::destroy() {
     log::info "destroying image"
-    eval "vagrant destroy -f ${OUTPUT}"
+    eval "vagrant destroy -f ${OUTPUT} && vagrant box remove bonfyre/vagrant"
 }
 
 v::resume_session() {
