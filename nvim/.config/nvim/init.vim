@@ -91,5 +91,7 @@ endif
 let g:vdebug_options = {}
 let g:vdebug_options['path_maps'] = {$VAGRANT_PROJECT_ROOT: $HOST_PROJECT_ROOT}
 
-let g:ale_lint_on_text_changed = 'never'
-let g:ale_lint_on_enter = 0
+" let g:ale_lint_on_text_changed = 'never'
+" let g:ale_lint_on_enter = 0
+" let g:ale_cache_executable_check_failures = 1
+" let g:ale_lint_delay = 1000

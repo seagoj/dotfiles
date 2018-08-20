@@ -7,26 +7,21 @@ installNeovimMac() {
 
     brew install neovim
 
-    PYTHON2_VERSION='2.7.15'
-    PYTHON3_VERSION='3.7.0'
+    . "${HOME}"/.config/env/pyenv.env
 
-    pyenv virtualenv "${PYTHON2_VERSION}" neovim2
-    pyenv virtualenv "${PYTHON3_VERSION}" neovim3
+    pyenv virtualenv python2 neovim2
+    pyenv virtualenv python3 neovim3
 
-    eval "$(pyenv init -)"; \
-        eval "$(pyenv virtualenv-init -)"; \
-        pyenv activate neovim2 &>/dev/null \
-        pip install neovim
+    pyenv activate neovim2 &>/dev/null \
+    pip install neovim
+    pyenv deactivate
 
-    eval "$(pyenv init -)"; \
-        eval "$(pyenv virtualenv-init -)"; \
-        pyenv activate neovim3 &>/dev/null \
-        pip install neovim \
-        pip install flake8
-
+    pyenv activate neovim3 &>/dev/null
+    pip install neovim flake8
     if [[ ! -f  ~/.local/bin/flake8 ]]; then
         ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
     fi
+    pyenv deactivate
 }
 
 installNeovimDebian() {
