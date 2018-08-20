@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+cleanMergeFiles() {
+    git clean -fx **/*.orig
+}
+
+cleanMergeFiles

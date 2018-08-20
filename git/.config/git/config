@@ -70,6 +70,7 @@
     clean-merged = "!git clean-local-merged"
     clean-local-merged = "!git branch --merged master | grep -v master | xargs git branch -d"
     ; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
+    cr = "!. ~/.local/functions/sourced/b.sh; bm reviews"
     h = "!git hash"
     hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | pbcopy"
     crypt = "! git-crypt"
