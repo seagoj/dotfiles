@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+. $HOME/.local/functions/dotfiles.sh
+
+REPO=https://github.com/seagoj/vimclip
+
+dotfiles::update_repo "$REPO" vimclip
+if [[ ! -L "$HOME/.local/bin/vimclip" ]]; then
+    ln -s "$PWD"/vimclip $HOME/.local/bin/vimclip
+fi
