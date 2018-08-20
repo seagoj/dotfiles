@@ -1,7 +1,11 @@
 ## User not `root`
 if [ $UID -ne 0 ]; then
-    alias reboot='sudo shutdown -r now'
-    alias shutdown='sudo shutdown -h now'
+    function shutdown() {
+        sudo shutdown ${@:--h now}
+    }
+    function reboot() {
+        sudo shutdown -r ${@:-now}
+    }
 fi
 
 ## General
