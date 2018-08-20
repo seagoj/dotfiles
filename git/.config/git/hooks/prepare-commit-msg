@@ -7,6 +7,6 @@ grep -Ev "(# Please.*|# with.*|^#$)" $1 > /tmp/msg && cat /tmp/msg > $1
 # ${branch}:
 # " $1 > /tmp/msg && cat /tmp/msg > $1
 
-sed "6a\\
+sed "5a\\
 ${branch}
 " $1 > /tmp/msg && cat /tmp/msg > $1
