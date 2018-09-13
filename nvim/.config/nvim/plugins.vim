@@ -74,11 +74,13 @@ function! BuildComposer(info)
 endfunction
 Plug 'euclio/vim-markdown-composer', { 'do': function('BuildComposer') }
 Plug 'hsanson/vim-android'
+Plug 'seagoj/smarty.vim'
 
 " Experimental
 " Plug 'vim-scripts/SyntaxAttr.vim'
 " Plug 'tpope/vim-db'
 Plug 'vim-scripts/auto-pairs-gentle'
+Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
 
 " Retired
 " Plug 'vim-scripts/matchit.zip'
@@ -100,8 +102,9 @@ Plug 'tobyS/vmustache' | Plug 'YaroslavMolchan/pdv' | Plug 'seagoj/pdv-config.vi
 " let g:keepeye_timer = 60 * 50
 call plug#end()
 
-" let g:ale_lint_on_text_changed = 'never'
-" let g:ale_lint_on_enter = 0
+let g:ale_lint_on_text_changed = 'never'
+let g:ale_lint_on_enter = 0
+autocmd FileType php setlocal omnifunc=phpactor#Complete
 
 if vimPlugInstalled == 0
     :PlugInstall
