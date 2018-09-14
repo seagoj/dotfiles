@@ -10,9 +10,7 @@ let g:python_host_prog = $HOME . "/.pyenv/versions/neovim2/bin/python"
 let g:python2_host_prog = $HOME . "/.pyenv/versions/neovim2/bin/python"
 let g:python3_host_prog = $HOME . "/.pyenv/versions/neovim3/bin/python"
 
-source $XDG_CONFIG_HOME/nvim/plugins.vim
-source $XDG_CONFIG_HOME/nvim/keymap.vim
-source $XDG_CONFIG_HOME/nvim/macros.vim
+call plugin#init()
 
 filetype plugin on
 filetype indent on
