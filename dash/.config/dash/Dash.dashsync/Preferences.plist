@@ -30,7 +30,7 @@
 			<key>neovim/neovim</key>
 			<dict>
 				<key>date</key>
-				<date>2018-09-15T02:12:05Z</date>
+				<date>2018-09-19T17:39:01Z</date>
 				<key>entry</key>
 				<dict>
 					<key>name</key>
@@ -69,7 +69,22 @@
 	<key>DHJavaRepo</key>
 	<dict>
 		<key>installed</key>
-		<dict/>
+		<dict>
+			<key>junit:junit</key>
+			<dict>
+				<key>date</key>
+				<date>2018-09-17T17:40:01Z</date>
+				<key>entry</key>
+				<dict>
+					<key>name</key>
+					<string>junit:junit</string>
+					<key>platform</key>
+					<string>javadoc</string>
+					<key>uniqueIdentifier</key>
+					<string>junit:junit</string>
+				</dict>
+			</dict>
+		</dict>
 		<key>uninstalled</key>
 		<dict/>
 	</dict>
@@ -134,10 +149,30 @@
 	<dict>
 		<key>installed</key>
 		<dict>
+			<key>http://kapeli.com/feeds/Android.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-09-17T17:47:16Z</date>
+			</dict>
 			<key>http://kapeli.com/feeds/Docker.xml</key>
 			<dict>
 				<key>date</key>
 				<date>2017-12-31T02:46:24Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Gradle_Java_API.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-09-17T17:38:02Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Java_EE8.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-09-17T17:37:39Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Java_SE9.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-09-17T17:39:11Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/PHP.xml</key>
 			<dict>
@@ -158,6 +193,11 @@
 			<dict>
 				<key>date</key>
 				<date>2017-03-15T03:41:14Z</date>
+			</dict>
+			<key>http://kapeli.com/feeds/Spring_Framework.xml</key>
+			<dict>
+				<key>date</key>
+				<date>2018-09-17T17:44:05Z</date>
 			</dict>
 			<key>http://kapeli.com/feeds/Vim.xml</key>
 			<dict>
