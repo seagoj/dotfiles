@@ -63,6 +63,10 @@ Darwin | Mac)
     installNeovimMac
     installSourcerer
     installPlugins
+    brew tap neovim/neovim
+    brew tap rogual/neovim-dot-app
+    brew install neovim-dot-app
+    ln -s /usr/local/opt/neovim-dot-app /Applications
     ;;
 Arch)
     osinstall neovim python2-neovim python-neovim xsel

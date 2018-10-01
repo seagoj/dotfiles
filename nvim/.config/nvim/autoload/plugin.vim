@@ -41,6 +41,8 @@ function! plugin#init()
         " Buffer navigation
         Plug 'seagoj/buffers.vim'
         Plug 'christoomey/vim-tmux-navigator' | Plug 'seagoj/vim-tmux-navigator-config'
+        " Find/Replace
+        Plug 'skwp/greplace.vim'
 
         call plugin#development()
     call plug#end()
@@ -48,6 +50,7 @@ function! plugin#init()
     if plugin#vimPlugWasInstalled() == 0
         :PlugInstall
     endif
+    call neomake#configure#automake('w')
 endfunction
 
 function! plugin#development()
@@ -87,9 +90,10 @@ function! plugin#development()
     " Overlength highlighter
     Plug 'seagoj/overlength.vim'
     " Debugger
-    Plug 'vim-vdebug/vdebug' | Plug 'seagoj/vdebug-config'
+    Plug 'vim-vdebug/vdebug', { 'for': ['php'] } | Plug 'seagoj/vdebug-config'
 
     call plugin#php()
+    call plugin#java()
 
     " Language Specific
     Plug 'seagoj/c.vim', {'for': 'c'}
@@ -119,6 +123,11 @@ function! plugin#development()
     " Plug 'tpope/vim-db'
 endfunction
 
+function plugin#java()
+    " Plug 'neomake/neomake'
+    Plug 'artur-shaik/vim-javacomplete2'
+endfunction
+
 function! plugin#php()
     Plug 'seagoj/php.vim', {'for': 'php'}
     Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
@@ -140,4 +149,3 @@ function! plugin#buildComposer(info)
         endif
     endif
 endfunction
-
