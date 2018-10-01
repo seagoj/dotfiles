@@ -10,13 +10,13 @@ function! plugin#vimPlugWasInstalled()
 endfunction
 
 function! plugin#init()
-    call plug#begin("$XDG_CONFIG_HOME/nvim/plugged")
+    call plug#begin("$XDG_CONFIG_HOME/nvim/pack/plugged/start")
         " undo
         Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
         " search
         Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
         " file fuzzyfinding
-        Plug 'kien/ctrlp.vim'
+        Plug 'kien/ctrlp.vim' | Plug 'seagoj/ctrlp-config.vim'
         " visual find and replace
         Plug 'terryma/vim-multiple-cursors'
         " Disable arrow keys
