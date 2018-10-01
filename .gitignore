@@ -17,9 +17,10 @@ ncmpcpp/.mpd/sticker.sql
 ncmpcpp/.mpd/mpd.db
 ncmpcpp/.mpd/mpd.pid
 ncmpcpp/.mpd/mpdstate
-nvim/.config/nvim/plugged
-nvim/.config/nvim/colors/sourcerer.vim
 nvim/.config/nvim/.netrwhist
+nvim/.config/nvim/colors/sourcerer.vim
+nvim/.config/nvim/pack
+nvim/.config/nvim/plugged
 ranger/.config/ranger/history
 ssh/.ssh/bonfyre
 ssh/.ssh/known_hosts*
