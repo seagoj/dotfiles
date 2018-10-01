@@ -50,7 +50,7 @@ function! plugin#init()
     if plugin#vimPlugWasInstalled() == 0
         :PlugInstall
     endif
-    call neomake#configure#automake('w')
+    " call neomake#configure#automake('w')
 endfunction
 
 function! plugin#development()
