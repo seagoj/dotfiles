@@ -1,151 +1,148 @@
-function! plugin#vimPlugWasInstalled()
-    let vimPlugInstalled=1
-    let vimPlugFile=expand("$XDG_CONFIG_HOME/nvim/autoload/plug.vim")
-    if !filereadable(vimPlugFile)
-        echo "Installing vim-plug..."
-        !curl -fLo $XDG_CONFIG_HOME/nvim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
-        let vimPlugInstalled=0
-    endif
-    return vimPlugInstalled
+function! plugin#installMinpac() abort
+    echo "Installing minpac..."
+    !mkdir -p $XDG_CONFIG_HOME/nvim/pack/minpac/opt/
+    !git clone https://github.com/k-takata/minpac.git $XDG_CONFIG_HOME/nvim/pack/minpac/opt/minpac
 endfunction
 
-function! plugin#init()
-    call plug#begin("$XDG_CONFIG_HOME/nvim/pack/plugged/start")
-        " undo
-        Plug 'sjl/gundo.vim' | Plug 'seagoj/gundo-config.vim'
-        " search
-        Plug 'rking/ag.vim' | Plug 'seagoj/ag-config.vim'
-        " file fuzzyfinding
-        Plug 'kien/ctrlp.vim' | Plug 'seagoj/ctrlp-config.vim'
-        " visual find and replace
-        Plug 'terryma/vim-multiple-cursors'
-        " Disable arrow keys
-        Plug 'seagoj/disable-cursor-keys.vim'
-        " Handle paired characters
-        Plug 'tpope/vim-surround'
-        Plug 'vim-scripts/auto-pairs-gentle'
-        " Plug 'seagoj/rainbow' | Plug 'seagoj/rainbow-config.vim'
-        Plug 'luochen1990/rainbow' | Plug 'seagoj/rainbow-config.vim'
-        " Open to last postiion in the file
-        Plug 'seagoj/last-position.vim'
-        " Navigate wrapped lines with hjkl
-        Plug 'seagoj/line-wrap-navigation.vim'
-        " Navigate tabs
-        Plug 'seagoj/tab-management.vim'
-        " Colorscheme
-        Plug 'xero/sourcerer.vim' | Plug 'seagoj/sourcerer-config.vim'
-        " Netrw config
-        Plug 'seagoj/netrw-config.vim'
-        " Statsubar
-        Plug 'seagoj/lightline.vim' | Plug 'seagoj/lightline-config.vim'
-        " Buffer navigation
-        Plug 'seagoj/buffers.vim'
-        Plug 'christoomey/vim-tmux-navigator' | Plug 'seagoj/vim-tmux-navigator-config'
-        " Find/Replace
-        Plug 'skwp/greplace.vim'
-
-        call plugin#development()
-    call plug#end()
-
-    if plugin#vimPlugWasInstalled() == 0
-        :PlugInstall
+function! plugin#init() abort
+    if &compatible
+        set nocompatible
     endif
-    " call neomake#configure#automake('w')
-endfunction
 
-function! plugin#development()
+    let minpacWasInstalled=1
+    silent! packadd minpac
+    if !exists('*minpac#init')
+        call plugin#installMinpac()
+        let minpacWasInstalled=0
+        packadd minpac
+    endif
+
+    command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
+    command! PackInstall PackUpdate
+    command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
+    command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+
+    call minpac#init()
+    " colorscheme
+    call minpac#add('xero/sourcerer.vim') | call minpac#add('seagoj/sourcerer-config.vim')
+    " undo
+    call minpac#add('sjl/gundo.vim') | call minpac#add('seagoj/gundo-config.vim')
+    " search
+    call minpac#add('rking/ag.vim') | call minpac#add('seagoj/ag-config.vim')
+    " file fuzzyfinding
+    call minpac#add('ctrlpvim/ctrlp.vim') | call minpac#add('seagoj/ctrlp-config.vim')
+    " visual find and replace
+    call minpac#add('terryma/vim-multiple-cursors')
+    " Disable arrow keys
+    call minpac#add('seagoj/disable-cursor-keys.vim')
+    " Handle paired characters
+    call minpac#add('tpope/vim-surround')
+    call minpac#add('vim-scripts/auto-pairs-gentle')
+    " call minpac#add('seagoj/rainbow') | call minpac#add('seagoj/rainbow-config.vim')
+    call minpac#add('luochen1990/rainbow') | call minpac#add('seagoj/rainbow-config.vim')
+    " Open to last postiion in the file
+    call minpac#add('seagoj/last-position.vim')
+    " Navigate wrapped lines with hjkl
+    call minpac#add('seagoj/line-wrap-navigation.vim')
+    " Navigate tabs
+    call minpac#add('seagoj/tab-management.vim')
+    " Netrw config
+    call minpac#add('seagoj/netrw-config.vim')
+    " Statsubar
+    call minpac#add('seagoj/lightline.vim') | call minpac#add('seagoj/lightline-config.vim')
+    " Buffer navigation
+    call minpac#add('seagoj/buffers.vim')
+    call minpac#add('christoomey/vim-tmux-navigator') | call minpac#add('seagoj/vim-tmux-navigator-config')
+    " Find/Replace
+    call minpac#add('skwp/greplace.vim')
+
     " Git
-    Plug 'airblade/vim-gitgutter'
-    Plug 'tpope/vim-fugitive' | Plug 'seagoj/fugitive-config.vim'
-    Plug 'seagoj/git-gutter-feature.vim'
-    Plug 'mattn/gist-vim' | Plug 'mattn/webapi-vim' | Plug 'seagoj/gist-vim-config'
+    call minpac#add('airblade/vim-gitgutter')
+    call minpac#add('tpope/vim-fugitive') | call minpac#add('seagoj/fugitive-config.vim')
+    call minpac#add('seagoj/git-gutter-feature.vim')
+    call minpac#add('mattn/gist-vim') | call minpac#add('mattn/webapi-vim') | call minpac#add('seagoj/gist-vim-config')
     " Documentation browser
     let s:uname = system("echo -n \"$(uname)\"")
     if !v:shell_error && s:uname == "Linux"
-        Plug 'KabbAmine/zeavim.vim'
+        call minpac#add('KabbAmine/zeavim.vim')
     elseif !v:shell_error && s:uname == "Darwin"
-        Plug 'rizzatti/funcoo.vim' | Plug 'rizzatti/dash.vim' | Plug 'seagoj/dash-config.vim'
+        call minpac#add('rizzatti/funcoo.vim') | call minpac#add('rizzatti/dash.vim') | call minpac#add('seagoj/dash-config.vim')
     endif
     " Syntax linter/autocompletion
-    " Plug 'scrooloose/syntastic' | Plug 'seagoj/syntastic-config.vim'
-    Plug 'w0rp/ale' | Plug 'maximbaz/lightline-ale' | Plug 'seagoj/ale-config'
-    Plug 'Valloric/YouCompleteMe', {'do': 'installYCM'}
+    " call minpac#add('scrooloose/syntastic') | call minpac#add('seagoj/syntastic-config.vim')
+    call minpac#add('w0rp/ale') | call minpac#add('maximbaz/lightline-ale') | call minpac#add('seagoj/ale-config')
+    call minpac#add('Valloric/YouCompleteMe', {'do': function('ycm#build')})
     " Snippet manager
-    Plug 'SirVer/ultisnips' | Plug 'seagoj/ultisnips-config.vim'
+    call minpac#add('SirVer/ultisnips') | call minpac#add('seagoj/ultisnips-config.vim')
     " Comments
-    Plug 'tpope/vim-commentary'
+    call minpac#add('tpope/vim-commentary')
     " visual indentation
-    Plug 'yggdroot/indentline' | Plug 'seagoj/indentline-config.vim'
+    call minpac#add('yggdroot/indentline') | call minpac#add('seagoj/indentline-config.vim')
     " Icon set
-    Plug 'ryanoasis/vim-devicons'
+    call minpac#add('ryanoasis/vim-devicons')
     " Project formatting
-    Plug 'editorconfig/editorconfig-vim'
+    call minpac#add('editorconfig/editorconfig-vim')
     " Project navigation
-    Plug 'tpope/vim-projectionist'
+    call minpac#add('tpope/vim-projectionist')
     " Syntax highlighting
-    Plug 'sheerun/vim-polyglot' | Plug 'seagoj/vim-polyglot-config'
+    call minpac#add('sheerun/vim-polyglot') | call minpac#add('seagoj/vim-polyglot-config')
     " Test runner
-    Plug 'janko-m/vim-test' | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim' | Plug 'seagoj/vim-test-config'
-    Plug 'christoomey/vim-tmux-runner' | Plug 'gabeharms/tslime.vim'
+    call minpac#add('janko-m/vim-test') | call minpac#add('tpope/vim-dispatch') | call minpac#add('radenling/vim-dispatch-neovim') | call minpac#add('seagoj/vim-test-config')
+    call minpac#add('christoomey/vim-tmux-runner') | call minpac#add('gabeharms/tslime.vim')
     " Overlength highlighter
-    Plug 'seagoj/overlength.vim'
+    call minpac#add('seagoj/overlength.vim')
     " Debugger
-    Plug 'vim-vdebug/vdebug', { 'for': ['php'] } | Plug 'seagoj/vdebug-config'
-
-    call plugin#php()
-    call plugin#java()
+    call minpac#add('vim-vdebug/vdebug', { 'type': 'opt' }) | call minpac#add('seagoj/vdebug-config')
 
     " Language Specific
-    Plug 'seagoj/c.vim', {'for': 'c'}
-    Plug 'seagoj/rust-config.vim', {'for': 'rust'}
-    Plug 'noahfrederick/vim-composer', {'for': 'markdown'} | Plug 'tpope/vim-dispatch' | Plug 'radenling/vim-dispatch-neovim'
-    Plug 'euclio/vim-markdown-composer', { 'for': 'markdown', 'do': function('plugin#buildComposer') }
-    Plug 'hsanson/vim-android', { 'for': 'java' }
-    Plug 'seagoj/smarty.vim', { 'for': 'smarty' }
+
+    "" C
+    call minpac#add('seagoj/c.vim', {'type': 'opt'})
+
+    "" Java
+    call minpac#add('hsanson/vim-android', {'type': 'opt'})
+    call minpac#add('artur-shaik/vim-javacomplete2', {'type': 'opt'})
+
+    "" Markdown
+    call minpac#add('noahfrederick/vim-composer', {'type': 'opt'}) | call minpac#add('tpope/vim-dispatch', {'type': 'opt'}) | call minpac#add('radenling/vim-dispatch-neovim', {'type': 'opt'})
+    call minpac#add('euclio/vim-markdown-composer', {'type': 'opt', 'do': function('composer#build') })
+
+    "" PHP
+    call minpac#add('seagoj/php.vim', {'type': 'opt'})
+    call minpac#add('shawncplus/phpcomplete.vim', {'type': 'opt'})
+    call minpac#add('rayburgemeestre/phpfolding.vim', {'type': 'opt'})
+    "" PHP-Expermimental
+    call minpac#add('phpactor/phpactor', {'do': '!composer install', 'type': 'opt'})
+    " call minpac#add('adoy/vim-php-refactoring-toolbox', {'type': 'opt'})
+    call minpac#add('arnaud-lb/vim-php-namespace', {'type': 'opt'}) | call minpac#add('seagoj/vim-php-namespace-config.vim', {'type': 'opt'})
+    call minpac#add('tobyS/vmustache', {'type': 'opt'}) | call minpac#add('YaroslavMolchan/pdv', {'type': 'opt'}) | call minpac#add('seagoj/pdv-config.vim', {'type': 'opt'})
+
+    "" Rust
+    call minpac#add('seagoj/rust-config.vim', {'type': 'opt'})
+
+    "" Smarty
+    call minpac#add('seagoj/smarty.vim', { 'type': 'opt' })
 
     " Experimental
     " Retired
-    " Plug 'vim-scripts/matchit.zip'
-    " Plug 'maksimr/vim-jsbeautify'
-    " Plug 'seagoj/airline-config.vim' | Plug 'vim-airline/vim-airline' | Plug 'vim-airline/vim-airline-themes'
-    " Plug 'chase/vim-ansible-yaml'
-    " Plug 'junegunn/vader.vim'
-    " Plug 'seagoj/markdown.vim'
-    " Plug 'rust-lang/rust.vim'
-    " Plug 'rodjek/vim-puppet'
-    " Plug 'itchyny/lightline.vim'
-    " Plug 'dahu/bisectly'
-    " Plug 'google/vim-coverage' | Plug 'google/vim-maktaba' | Plug 'google/vim-glaive' | Plug 'seagoj/vim-coverage-config.vim'
-    " Plug 'soywod/vim-keepeye'
+    " call minpac#add('vim-scripts/matchit.zip')
+    " call minpac#add('maksimr/vim-jsbeautify')
+    " call minpac#add('seagoj/airline-config.vim') | call minpac#add('vim-airline/vim-airline') | call minpac#add('vim-airline/vim-airline-themes')
+    " call minpac#add('chase/vim-ansible-yaml')
+    " call minpac#add('junegunn/vader.vim')
+    " call minpac#add('seagoj/markdown.vim')
+    " call minpac#add('rust-lang/rust.vim')
+    " call minpac#add('rodjek/vim-puppet')
+    " call minpac#add('itchyny/lightline.vim')
+    " call minpac#add('dahu/bisectly')
+    " call minpac#add('google/vim-coverage') | call minpac#add('google/vim-maktaba') | call minpac#add('google/vim-glaive') | call minpac#add('seagoj/vim-coverage-config.vim')
+    " call minpac#add('soywod/vim-keepeye')
     " let g:keepeye_autostart = 1
     " let g:keepeye_timer = 60 * 50
-    " Plug 'vim-scripts/SyntaxAttr.vim'
-    " Plug 'tpope/vim-db'
-endfunction
+    " call minpac#add('vim-scripts/SyntaxAttr.vim')
+    " call minpac#add('tpope/vim-db')
 
-function plugin#java()
-    " Plug 'neomake/neomake'
-    Plug 'artur-shaik/vim-javacomplete2'
-endfunction
-
-function! plugin#php()
-    Plug 'seagoj/php.vim', {'for': 'php'}
-    Plug 'shawncplus/phpcomplete.vim', {'for': 'php'}
-    Plug 'rayburgemeestre/phpfolding.vim', {'for': 'php'}
-
-    " Expermimental
-    Plug 'phpactor/phpactor', {'for': 'php', 'do': 'composer install'}
-    " Plug 'adoy/vim-php-refactoring-toolbox'
-    Plug 'arnaud-lb/vim-php-namespace', {'for': 'php'} | Plug 'seagoj/vim-php-namespace-config.vim'
-    Plug 'tobyS/vmustache', {'for': 'php'} | Plug 'YaroslavMolchan/pdv', {'for': 'php'} | Plug 'seagoj/pdv-config.vim'
-endfunction
-
-function! plugin#buildComposer(info)
-    if a:info.status != 'unchanged' || a:info.force
-        if has('nvim')
-            !cargo build --release
-        else
-            !cargo build --release --no-default-features --features json-rpc
-        endif
+    if minpacWasInstalled == 0
+        call minpac#update()
     endif
 endfunction
