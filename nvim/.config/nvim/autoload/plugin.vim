@@ -54,7 +54,7 @@ function! plugin#init() abort
     call minpac#add('seagoj/buffers.vim')
     call minpac#add('christoomey/vim-tmux-navigator') | call minpac#add('seagoj/vim-tmux-navigator-config')
     " Find/Replace
-    call minpac#add('skwp/greplace.vim')
+    call minpac#add('skwp/greplace.vim') | call minpac#add('seagoj/greplace-config.vim')
 
     " Git
     call minpac#add('airblade/vim-gitgutter')
