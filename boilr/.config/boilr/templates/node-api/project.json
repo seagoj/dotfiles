@@ -1,0 +1,35 @@
+{
+    "TemplateName": "boilr-node-api",
+    "Authors": "Jeremy Seago <seagoj@gmail.com>",
+    "License": "MIT",
+    "Year": "2018",
+    "GithubReference": "seagoj/boilr-node-api",
+    "ProjectGoal": "",
+    "SimilarWork": "",
+    "Justification": "",
+    "PluginName": "plugin-node-api",
+    "TestRunner": [
+        "jest"
+    ],
+    "DeploymentTool": [
+        "shipit"
+    ],
+    "ApiClient": [
+        "axios"
+    ],
+    "Orm": [
+        "sequelize"
+    ],
+    "ProcessManager": [
+        "pm2"
+    ],
+    "Datastore": [
+        "mysql",
+        "postgres",
+        "mssql",
+        "sqlite"
+    ],
+    "WebFramework": [
+        "express"
+    ]
+}

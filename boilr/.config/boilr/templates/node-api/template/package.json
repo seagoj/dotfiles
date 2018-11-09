@@ -1,0 +1,27 @@
+{
+  "name": "{{TemplateName}}",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "directories": {
+    "test": "tests"
+  },
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "{{Authors}}",
+  "license": "{{License}}",
+  "devDependencies": {
+{{if eq TestRunner "jest"}}   "jest": "^23.6.0", "babel-jest": "^23.6.0",{{end}}
+{{if eq DeploymentTool "shipit"}}   "shipit-cli": "^4.1.2", "shipit-deploy": "^4.1.2", {{end}}
+    "babel-core": "^6.26.3", "regenerator-runtime": "^0.12.1"
+  },
+  "dependencies": {
+{{if eq ApiClient "axios"}}    "axios": "^0.18.0", {{end}}
+{{if eq Orm "sequelize"}}    "sequelize": "^4.41.0",
+    {{if eq Datastore "mysql"}}    "mysql2": "^1.6.2", {{else if eq Datastore "postgres"}}    "pg": "^7.6.0",    "pg-hstore": "^2.3.2", {{else if eq Datastore "sqlite"}}    "sqlite3": "^4.0.3", {{else if eq Datastore "mssql"}}    "tedious": "^3.0.1", {{end}}
+{{end}}
+{{if eq ProcessManager "pm2"}}    "pm2": "^3.2.2", {{end}}
+{{ if eq WebFramework "express" }}    "express": "^4.16.4", {{end}}
+  }
+}
