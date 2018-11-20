@@ -1,3 +1,0 @@
-#!/bin/bash
-
-pass bellevue/vpn | sudo openconnect --authgroup=BPS -ud016301\\jseago secure.bellevuerx.com

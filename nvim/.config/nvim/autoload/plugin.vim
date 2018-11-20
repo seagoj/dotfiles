@@ -1,6 +1,6 @@
 function! plugin#installMinpac() abort
     echo "Installing minpac..."
-    !mkdir -p $XDG_CONFIG_HOME/nvim/pack/minpac/opt/
+    !mkdir -p $XDG_CONFIG_HOME/nvim/pack/minpac/opt/minpac
     !git clone https://github.com/k-takata/minpac.git $XDG_CONFIG_HOME/nvim/pack/minpac/opt/minpac
 endfunction
 
