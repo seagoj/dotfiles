@@ -3,12 +3,9 @@
 #
 # Authors:
 #   Sorin Ionescu <sorin.ionescu@gmail.com>
-
 . $HOME/.local/functions/path.sh
-
 # INPUTRC
 export INPUTRC=${HOME}/.inputrc
-
 # XDG
 export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_DATA_HOME=${HOME}/.local/share
@@ -78,7 +75,7 @@ export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=${HOME}/dotfiles
-export CODE=/Volumes/Code
+export CODE=${HOME}/code
 
 # Vagrant
 ## Provider(virtualbox, parallels)
@@ -116,7 +113,6 @@ fi
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
-
 if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
     # Source env files
     for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do

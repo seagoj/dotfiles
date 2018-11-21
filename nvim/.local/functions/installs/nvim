@@ -69,7 +69,7 @@ Darwin | Mac)
     ln -s /usr/local/opt/neovim-dot-app /Applications
     ;;
 Arch)
-    osinstall neovim python2-neovim python-neovim xsel
+    pacman -S neovim python2-neovim python-neovim xsel
     installSourcerer
     installPlugins
     ;;
