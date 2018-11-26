@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+app="$(basename ${0})"
+
+docker run -it --rm \
+    -v `pwd`:/home/"${app}" \
+    -v "${HOME}"/.config/"${app}":/home/"${app}"/.config/"${app}" \
+    -v /var/cache/pacman:/var/cache/pacman \
+    --name "${app}" \
+    seagoj/docker-"${app}" \
+    "${@}"

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# app="$(basename "$(test -L "$0" && readlink "$0" || echo "$0")")"
+app="$(basename ${0})"
+
+docker run -it --rm \
+    -v `pwd`:/home/"${app}" \
+    -v "${HOME}"/.config/"${app}":/home/"${app}"/.config/"${app}" \
+    --name "${app}" \
+    seagoj/docker-"${app}" \
+    "${@}"
