@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 unalias docker 2>/dev/null;
 
@@ -11,6 +11,10 @@ if [[ ! -f "${HOME}"/.local/share/timezone ]]; then
 fi
 
 function docker() {
+    # if ! command docker; then
+    #     osinstall docker
+    # fi
+
     case "$1" in
     "destroy")
         command docker stop $(docker ps -a -q); \

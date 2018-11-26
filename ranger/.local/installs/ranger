@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+case $OS_TYPE in
+Darwin | Mac)
+    brew tap homebrew/x11
+    osinstall w3m lynx highlight atool Caskroom/cask/xquartz mediainfo xpdf libcaca --with-imlib2 ranger
+    ;;
+*)
+    osinstall ranger
+    ;;
+esac

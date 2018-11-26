@@ -44,7 +44,7 @@ path::add $HOME/.rbenv/bin
 path::add ${HOME}/.chefdk/gem/ruby/latest/bin
 path::add /opt/chefdk/bin
 ## Ruby
-path::add ${HOME}/.gem/ruby/2.0.0/bin
+path::add ${HOME}/.gem/ruby/2.5.0/bin
 # ## Python
 # path::add --prepend /Library/Frameworks/Python.framework/Versions/2.7/bin
 ## Local Bin
@@ -60,6 +60,7 @@ export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 ## rust
 path::add --prepend "${HOME}"/.cargo/bin
 path::add "${XDG_FUNCTIONS_DIR}/installs"
+path::add "${HOME}/.local/installs"
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
@@ -93,7 +94,7 @@ export VISUAL=$(which nvim macvim atom subl | grep -m1 -e '^/')
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Terminal
-export TERMINAL=$(which termite urxvt xterm | grep -m1 -e '^/')
+export TERMINAL=$(which alacritty termite urxvt xterm | grep -m1 -e '^/')
 
 # Language
 if [[ -z "$lang" ]]; then

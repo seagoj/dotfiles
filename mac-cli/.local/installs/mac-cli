@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+updateRepoAndCd https://github.com/guarinogabriel/mac-cli  mac-cli && \
+    sh "mac install" && \
+    popd && \
+    mac $@

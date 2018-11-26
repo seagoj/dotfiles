@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+
+case $OS_TYPE in
+Darwin | Mac)
+    if [[ ! -f ~/bin/Dash ]]; then
+        ln -s /Applications/Dash.app/Contents/MacOS/Dash ~/bin/Dash
+    fi
+    ;;
+esac

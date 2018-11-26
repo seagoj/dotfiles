@@ -1,1 +1,0 @@
-osinstall qcachegrind --with-graphviz

@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+case $OS_TYPE in
+Darwin | Mac)
+    brew tap mopidy/mopidy
+    brew install mopidy
+    sudo pip install mopidy-gmusic
+    ;;
+*)
+    osinstall mopidy
+    ;;
+esac

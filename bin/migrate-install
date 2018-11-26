@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+mkdir -p ${1}/.local/installs
+mv ${1}/_install.sh ${1}/.local/installs/${1}
+chmod +x ${1}/.local/installs/${1}
+e ${1}/.local/installs/${1}

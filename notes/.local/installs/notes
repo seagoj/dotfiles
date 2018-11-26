@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+updateRepoAndCd gitlab:/seagoj/notes.git notes && popd
+
+if [[ ! -L "${HOME}"/notes ]]; then
+    ln -s "${CODE:-${HOME}/code}"/notes "${HOME}"/notes
+fi

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+case $OS_TYPE in
+Darwin | Mac)
+    osinstall mpv --with-libcaca
+    brew reinstall ffmpeg --with-libssh
+    ;;
+*)
+    osinstall *
+    ;;
+esac

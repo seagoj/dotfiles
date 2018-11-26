@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+
+sudo pip3 install --upgrade pip >/dev/null
+sudo pip3 install pycrypto >/dev/null
+
+updateRepoAndCd https://github.com/jarun/Buku buku >/dev/null
+sudo make install >/dev/null
+popd >/dev/null

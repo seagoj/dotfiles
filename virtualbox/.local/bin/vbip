@@ -1,3 +1,0 @@
-#!/bin/sh
-
-VBoxManage guestproperty enumerate "$1" | grep IP

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+if [[ $OS_TYPE = "mac" ]]; then
+    brew tap aykamko/tag-ag
+    osinstall tag-ag
+else
+    go get -u github.com/aykamko/tag/...
+    go install github.com/aykamko/tag
+fi
+
+tag $@

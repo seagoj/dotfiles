@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+updateRepoAndCd git://github.com/Gary00/macInfo macinfo && \
+    ./install.sh
