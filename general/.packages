@@ -1,6 +1,3 @@
-atom
-bot
-geeknote
 general
 git
 go
@@ -22,10 +19,18 @@ pass
 buku
 sandboxd
 htop
-rainbowstream
 tag
 mysql
 less
 gtypist
 rg
-openvpn
+direnv
+wwwtxt
+alacritty
+git-crypt
+steam
+shellcheck
+rust
+joplin
+boilr
+docker

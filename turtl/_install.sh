@@ -1,5 +1,0 @@
-installMac() {
-
-}
-
-dotfiles::install turtl

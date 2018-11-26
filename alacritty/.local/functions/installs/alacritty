@@ -1,4 +1,8 @@
 #!/usr/bin/env bash
 
-cargo install --git https://github.com/jwilm/alacritty
-cd ~/.cargo/git/alacritty*/ && make app && cp -r target/release/osx/Alacritty.app /Applications/
+if [[ $OS_TYPE = "mac" ]]; then
+    cargo install --git https://github.com/jwilm/alacritty
+    cd ~/.cargo/git/alacritty*/ && make app && cp -r target/release/osx/Alacritty.app /Applications/
+else
+    osinstall alacritty
+fi

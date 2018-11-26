@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ $OS_TYPE = "mac" ]]; then
+    osinstall https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb reattach-to-user-namespace
+else
+    osinstall tmux
+fi

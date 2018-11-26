@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ $OS_TYPE = "mac" ]];
+    osinstall Caskroom/cask/vagrant
+else
+    osinstall vagrant
+fi

@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+repo="${1}"
+project="${2}"
+
+if [[ ! -d "${BUILD_DIR:-$HOME/tmp}"/"${project}" ]]; then
+    git clone "${repo}" "${BUILD_DIR:-$HOME/tmp}"/"${project}" >/dev/null &&
+        cd "${BUILD_DIR:-$HOME/tmp}"/"${project}"
+else
+    cd "${BUILD_DIR:-$HOME/tmp}"/"${project}" && git pull >/dev/null
+fi

@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [[ $OS_TYPE = "mac" ]]; then
+    osinstall qt4 Caskroom/cask/virtualbox
+else
+    osinstall qt4 virtualbox
+fi

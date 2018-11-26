@@ -1,0 +1,4 @@
+#!/usr/bin/env bash
+
+osinstall zsh
+chsh -s $(which zsh)

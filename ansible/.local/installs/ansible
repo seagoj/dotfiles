@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+case $OS_TYPE in
+Arch)
+    osinsstall ansible
+    ;;
+Darwin | Mac)
+    dotfiles::bootstrap python &&\
+        general::sudo 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible'
+    ;;
+esac
+
+if [[ ! -f "${HOME}/.vault_pass_doomsday" ]]; then
+    echo "$(pass ansible/vault/doomsday | head -n1)" > "${HOME}/.vault_pass_doomsday"
+fi

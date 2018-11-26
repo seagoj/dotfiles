@@ -1,3 +1,11 @@
 #!/usr/bin/env bash
 
-brew install joplin
+case $OS_TYPE in
+Darwin | Mac)
+    brew install joplin && joplin $@
+    ;;
+Arch)
+    npm update && yaourt --aur joplin && joplin $@
+    ;;
+esac
+

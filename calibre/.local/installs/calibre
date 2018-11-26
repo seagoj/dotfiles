@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+case $OS_TYPE in
+Darwin | Mac)
+    brew cask install calibre
+    ;;
+*)
+    osinstall calibre
+    ;;
+esac
