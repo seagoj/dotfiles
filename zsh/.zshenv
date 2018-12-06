@@ -78,8 +78,11 @@ export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=${HOME}/dotfiles
-export CODE=/Volumes/Code
-
+if [[ -d /Volumes ]]; then
+    export CODE=/Volumes/Code
+else
+    export CODE="${HOME}"/code
+fi
 # Vagrant
 ## Provider(virtualbox, parallels)
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
@@ -116,14 +119,12 @@ fi
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
     source "${ZDOTDIR:-$HOME}/.zprofile"
 fi
-
 if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
     # Source env files
     for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
         source "${file}"
     done
 fi
-
 export PROMPT_LEAN_VIMODE=1
 export IDF_PATH=$HOME/code/esp-idf
 export CONFIG_MANAGEMENT="${CODE}/config_management"

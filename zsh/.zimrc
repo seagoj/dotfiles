@@ -10,7 +10,8 @@
 # The second line of modules may depend on options set by modules in the first line.
 # These dependencies are noted on the respective module's README.md.
 zmodules=(archive directory environment ssh history input utility custom
-    pacman syntax-highlighting history-substring-search git-info prompt git completion)
+    pacman history-substring-search git-info prompt git completion)
+# removed syntax-highlighting
 
 
 ###################

@@ -2,28 +2,40 @@
 #
 # https://medium.com/@henriquebastos/the-definitive-guide-to-setup-my-python-workspace-628d68552e14
 . "${HOME}"/.local/functions/dotfiles.sh
-. "${HOME}"/.config/env/pyenv.env
 
-dotfiles::bootstrap brew
+case $(uname -s) in
+Darwin|Mac)
+    dotfiles::bootstrap brew
 
-brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
+    brew install pyenv pyenv-virtualenv pyenv-virtualenvwrapper
+    ;;
+Linux)
+    if [[ ! -f ~/.pyenv/bin/pyenv ]]; then
+        git clone https://github.com/pyenv/pyenv.git ~/.pyenv
+        . "${HOME}"/.config/env/pyenv.env
+    fi
+    sudo apt-get install build-essential zlib1g-dev libffi-dev libssl-dev libbz2-dev readline sqlite3 python-pip python-dev build-essential
+    sudo pip install --upgrade pip 
+    sudo pip install --upgrade virtualenv
+    git clone https://github.com/pyenv/pyenv-virtualenv.git $(pyenv root)/plugins/pyenv-virtualenv
+esac
 
 pyenv install "${PYTHON3_VERSION}"
 pyenv install "${PYTHON2_VERSION}"
 
 pyenv virtualenv "${PYTHON3_VERSION}" python3
 pyenv virtualenv "${PYTHON2_VERSION}" python2
-pyenv virtualenv python3 jupyter3
-pyenv virtualenv python2 ipython2
+# pyenv virtualenv python3 jupyter3
+# pyenv virtualenv python2 ipython2
 
-pyenv activate jupyter3
-pip install jupyter
-python -m ipykernel install --user
-pyenv deactivate
+# pyenv activate jupyter3
+# pip install jupyter
+# python -m ipykernel install --user
+# pyenv deactivate
 
-pyenv activate ipython2
-pip install ipykernel
-python -m ipykernel install --user
-pyenv deactivate
+# pyenv activate ipython2
+# pip install ipykernel
+# python -m ipykernel install --user
+# pyenv deactivate
 
-pyenv global python3 python2 jupyter3 ipython2
+pyenv global python3 python2 # jupyter3 ipython20
