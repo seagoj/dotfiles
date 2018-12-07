@@ -21,3 +21,6 @@
 [submodule "keyboardio/Documents/Arduino/hardware/keyboardio"]
     path = keyboardio/Documents/Arduino/hardware/keyboardio
     url = git://github.com/keyboardio/Kaleidoscope-Bundle-Keyboardio
+[submodule "boilr/.config/boilr/templates/license"]
+    path = boilr/.config/boilr/templates/license
+    url = github-personal:seagoj/boilr-license.git
