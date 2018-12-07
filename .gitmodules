@@ -10,3 +10,6 @@
 [submodule "hyper/.hyper_plugins/local/hypertype"]
     path = hyper/.hyper_plugins/local/hypertype
     url = github-personal:seagoj/hypertype.git
+[submodule "keyboardio/Documents/Arduino/hardware/keyboardio"]
+	path = keyboardio/Documents/Arduino/hardware/keyboardio
+	url = git://github.com/keyboardio/Kaleidoscope-Bundle-Keyboardio.git
