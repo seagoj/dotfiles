@@ -16,3 +16,6 @@
 [submodule "keyboardio/Documents/Arduino/hardware/keyboardio"]
 	path = keyboardio/Documents/Arduino/hardware/keyboardio
 	url = git://github.com/keyboardio/Kaleidoscope-Bundle-Keyboardio.git
+[submodule "keyboardio/Documents/Arduino/Model01-Firmware"]
+	path = keyboardio/Documents/Arduino/Model01-Firmware
+	url = git://github.com/keyboardio/Model01-Firmware.git
