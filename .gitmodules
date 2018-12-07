@@ -1,3 +1,6 @@
 [submodule "zsh/.zim"]
 	path = zsh/.zim
 	url = git://github.com/Eriner/zim.git
+[submodule "awesome/.config/awesome"]
+	path = awesome/.config/awesome
+	url = github-personal:seagoj/awesome-copycats.git
