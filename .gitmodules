@@ -1,6 +1,3 @@
-[submodule "boilr/.config/boilr/templates/vimplugin"]
-	path = boilr/.config/boilr/templates/vimplugin
-	url = github-personal:seagoj/boilr-vimplugin.git
 [submodule "hyper/.hyper_plugins/local/hypertype"]
 	path = hyper/.hyper_plugins/local/hypertype
 	url = github-personal:seagoj/hypertype.git
@@ -22,3 +19,6 @@
 [submodule "awesome/.config/awesome"]
 	path = awesome/.config/awesome
 	url = github-personal:seagoj/awesome-copycats.git
+[submodule "boilr/.config/boilr/templates/license"]
+	path = boilr/.config/boilr/templates/license
+	url = github-personal:seagoj/boilr-license.git
