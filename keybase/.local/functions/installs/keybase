@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+case "$(uname -s)" in
+    Linux)
+        curl -O https://prerelease.keybase.io/keybase_amd64.deb && \
+        (sudo dpkg -i keybase_amd64.deb; sudo apt-get --assume-yes install -f) && \
+        run_keybase && \
+        keybase "${@}"
+        ;;
+esac

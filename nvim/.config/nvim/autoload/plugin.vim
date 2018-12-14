@@ -123,6 +123,9 @@ function! plugin#init() abort
     "" Smarty
     call minpac#add('seagoj/smarty.vim', { 'type': 'opt' })
 
+    " Typescript
+    call minpac#add('Quramy/tsuquyomi', { 'type': 'opt' })
+
     " Experimental
     " Retired
     " call minpac#add('vim-scripts/matchit.zip')

@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+
+if [[ -f /usr/bin/xclip ]]; then
+    /usr/bin/xclip "${@}"
+    exit
+fi
+
+if command -v clip.exe &>/dev/null; then
+    echo "${@}" | clip.exe < $(cat)
+fi

@@ -34,3 +34,4 @@ bonfyre/.local/bin/work
 hyper/.hyper_plugins
 Makefile
 tmux/.tmux/plugins
+**/.local/share

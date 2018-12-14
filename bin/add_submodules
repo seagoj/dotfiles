@@ -1,0 +1,50 @@
+#!/usr/bin/env bash
+
+function submodule::find_in_file_or_fail() {
+    needle="${1}"
+    haystack="${2}"
+    if [[ -z $(cat "${haystack}" | grep "${needle}") ]]; then
+        echo "Add entry for ${needle} in ${haystack}"
+        exit 1
+    fi
+}
+
+function submodule::remove() {
+    submodule_path="${1}"
+    git config -f .gitmodules --remove-section submodule."${submodule_path}" &>/dev/null
+    git add .gitmodules
+    git submodule deinit -f "${submodule_path}" &>/dev/null
+    git rm -r --cached "${submodule_path}" &>/dev/null
+    rm -rf .git/modules/"${submodules_path}" &>/dev/null
+    git commit -m "Removed ${submodule_path}"
+    rm -rf "${submodule_path}" &>/dev/null
+}
+
+function submodule::add() {
+    repo="${1}"
+    location="${2}"
+    git submodule add "${repo}" "${location}"
+}
+
+function submodule::replace() {
+    repo="${1}"
+    location="${2}"
+
+    submodule::remove "${location}"
+    submodule::add "${repo}" "${location}"
+}
+
+ssh_host=github-personal
+public_host=git://github.com
+submodule::find_in_file_or_fail "${ssh_host}" "${HOME}"/.ssh/config
+# submodule::replace "${ssh_host}":seagoj/awesome-copycats.git awesome/.config/awesome
+# submodule::replace "${ssh_host}":seagoj/boilr-license.git boilr/.config/boilr/templates/license
+# submodule::replace "${ssh_host}":seagoj/boilr-vimplugin.git boilr/.config/boilr/templates/vimplugin
+# submodule::replace "${ssh_host}":seagoj/hypertype.git hyper/.hyper_plugins/local/hypertype
+# submodule::replace "${public_host}"/keyboardio/Kaleidoscope-Bundle-Keyboardio.git keyboardio/Documents/Arduino/hardware/keyboardio
+# submodule::replace "${public_host}"/keyboardio/Model01-Firmware.git keyboardio/Documents/Arduino/Model01-Firmware
+# submodule::replace "${ssh_host}":seagoj/password-store.git pass/.password-store
+# submodule::replace "${public_host}"/tmux-plugins/tpm.git tmux/.tmux/plugins/tpm
+# submodule::replace "${public_host}"/Eriner/zim.git zsh/.zim
+# git submodule-update
+git submodule update --init --remote --recursive

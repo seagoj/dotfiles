@@ -1,3 +1,7 @@
-if [[ ! -f $TAG_ALIAS_FILE ]]; then
-	mkdir -p $(dirname $TAG_ALIAS_FILE)
+if (( $+commands[tag]  )); then
+    if [[ ! -f $TAG_ALIAS_FILE ]]; then
+        mkdir -p $(dirname $TAG_ALIAS_FILE)
+    fi
+    tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null  }
+    alias rg=tag  # replace with rg for ripgrep
 fi

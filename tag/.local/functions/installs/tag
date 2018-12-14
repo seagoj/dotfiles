@@ -1,0 +1,10 @@
+case "$(uname -s)" in
+    Arch|Linux|Debian)
+        go get -u github.com/aykamko/tag/...
+        go install github.com/aykamko/tag
+        ;;
+    Mac|Darwin)
+        brew tap aykamko/tag-ag
+        osinstall tag-ag
+        ;;
+esac

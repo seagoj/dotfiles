@@ -104,14 +104,14 @@ if which dircolors >/dev/null && [[ -f "${HOME}/.dircolors" ]]; then
     eval "$(dircolors ${HOME}/.dircolors)"
 fi
 
-if which tag >/dev/null; then
-    alias_file=${TAG_ALIAS_FILE:-/tmp/tag_aliases}
-    tag_alias_dir=$(dirname $alias_file)
-    if [[ ! -d "$tag_alias_dir" ]]; then
-        mkdir -p $tag_alias_dir
-    fi
-    tag() { command tag "$@"; source $alias_file 2>/dev/null; }
-fi
+# if which tag >/dev/null; then
+#     alias_file=${TAG_ALIAS_FILE:-/tmp/tag_aliases}
+#     tag_alias_dir=$(dirname $alias_file)
+#     if [[ ! -d "$tag_alias_dir" ]]; then
+#         mkdir -p $tag_alias_dir
+#     fi
+#     tag() { command tag "$@"; source $alias_file 2>/dev/null; }
+# fi
 
 if which rbenv >/dev/null; then
     if which sandbox >/dev/null; then
