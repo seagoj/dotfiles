@@ -35,3 +35,4 @@ hyper/.hyper_plugins
 Makefile
 tmux/.tmux/plugins
 **/.local/share
+node/.npm-packages/*
