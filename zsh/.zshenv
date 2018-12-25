@@ -137,3 +137,5 @@ if [[ -d "${HOME}"/Documents/Arduino ]]; then
 else
     export SKETCHBOOK_DIR="${HOME}"/Arduino
 fi
+
+export WINHOME=/mnt/c/Users/jseago
