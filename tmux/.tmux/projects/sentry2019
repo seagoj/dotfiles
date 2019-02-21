@@ -9,8 +9,13 @@ tmux::split v
 if [[ -f package.json ]]; then
     tmux send-keys 'npm test' C-m
 fi
-tmux::split h
 tmux::status h
+tmux::split h
+if [[ -f package.json ]]; then
+    tmux send-keys 'npm run start:web'
+    tmux::split v
+    tmux send-keys 'npm run start:server:mock'
+fi
 
 # Resize
 tmux resize-pane -t 1 -D 20

@@ -89,6 +89,12 @@ endif
 let g:vdebug_options = {}
 let g:vdebug_options['path_maps'] = {$VAGRANT_PROJECT_ROOT: $HOST_PROJECT_ROOT}
 
+if exists('+termguicolors')
+    let &t_8f="\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b="\<Esc>[48;2;%lu;%lu;%lum"
+    set termguicolors
+endif
+
 " let g:ale_lint_on_text_changed = 'never'
 " let g:ale_lint_on_enter = 0
 " let g:ale_cache_executable_check_failures = 1

@@ -103,6 +103,8 @@ function! plugin#init() abort
     call minpac#add('hsanson/vim-android', {'type': 'opt'})
     call minpac#add('artur-shaik/vim-javacomplete2', {'type': 'opt'})
 
+    "" JavaScript
+
     "" Markdown
     call minpac#add('noahfrederick/vim-composer', {'type': 'opt'}) | call minpac#add('tpope/vim-dispatch', {'type': 'opt'}) | call minpac#add('radenling/vim-dispatch-neovim', {'type': 'opt'})
     call minpac#add('euclio/vim-markdown-composer', {'type': 'opt', 'do': function('composer#build') })
