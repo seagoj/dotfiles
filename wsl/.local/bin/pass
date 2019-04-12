@@ -1,0 +1,26 @@
+#!/usr/bin/env bash
+
+args=()
+copy=0
+
+if command -v clip.exe &>/dev/null; then
+    while [[ $# -gt 0 ]]; do
+        case "${1}" in
+            "-c")
+                copy=1
+                shift
+                ;;
+            *)
+                args+=("${1}")
+                shift
+        esac
+    done
+    set -- "${args[@]}"
+
+    if [[ copy -eq 1 ]]; then
+        command -p pass "${@}" | head -n 1 | clip.exe
+        exit $?
+    fi
+fi
+
+command -p pass "${@}"

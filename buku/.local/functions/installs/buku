@@ -1,0 +1,18 @@
+case "$(uname -s)" in
+Debian|Linux)
+    sudo apt-get install buku
+    ;;
+*)
+    sudo pip3 install --upgrade pip >/dev/null
+
+    if ! pip3 freeze | grep pycrypto >/dev/null; then
+        sudo pip3 install pycrypto >/dev/null
+    fi
+
+    dotfiles::update_repo https://github.com/jarun/Buku buku >/dev/null
+    general::sudo 'make install' >/dev/null
+    popd >/dev/null
+    ;;
+esac
+
+buku "$@"

@@ -16,7 +16,7 @@ case "$1" in
             sudo touch /var/log/mycli-$1.log
             sudo chmod a+rw /var/log/mycli-$1.log
         fi
-        mycli --login-path $1 --database bonfyre --logfile /var/log/mycli-$1.log
+        mycli --login-path $1 --database SAMP_DEV --logfile /var/log/mycli-$1.log
     else
         echo "should not be called"
         mycli "$@"

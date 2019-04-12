@@ -7,14 +7,12 @@ fi
 # Bottom Bar
 tmux::split v
 if [[ -f package.json ]]; then
-    tmux send-keys 'npm test' C-m
+    tmux send-keys 'npm test'
 fi
 tmux::status h
 tmux::split h
 if [[ -f package.json ]]; then
-    tmux send-keys 'npm run start:web'
-    tmux::split v
-    tmux send-keys 'npm run start:server:mock'
+    tmux send-keys 'npm start'
 fi
 
 # Resize

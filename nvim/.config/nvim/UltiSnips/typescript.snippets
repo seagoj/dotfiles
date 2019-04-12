@@ -1,0 +1,71 @@
+# vim: ts=2 sw=2 expandtab:
+snippet componenent "React Component" b
+import * as React from 'react';
+import {
+  createStyles,
+  Theme,
+  WithStyles,
+  withStyles
+} from '@material-ui/core';
+
+// @ts-ignore 6133
+const styles = (theme: Theme) => createStyles({
+
+});
+
+interface Props {
+
+}
+
+interface State {
+
+}
+
+class ${1:`!p snip.rv = snip.basename.title()`} extends React.PureComponent<
+  Props
+  & WithStyles<typeof styles>,
+  State
+> {
+  state = {
+
+  }
+
+  render = (): React.ReactNode => {
+    return (
+      <React.Fragment>
+        ${0}
+      </React.Fragment>
+    );
+  }
+}
+
+export default withStyles(styles)($1);
+endsnippet
+
+snippet test-component "React Component Test" b
+import * as React from 'react';
+
+describe("${1:`!p snip.rv = snip.basename.title()`}", () => {
+  if("${2: does a thing}", () => {
+    ${0}
+  });
+});
+endsnippet
+
+snippet resolver "GraphQL resolver" b
+import { ResolverMap } from "../../types/graphql-utils"
+import { getManager } from 'typeorm';
+
+export const resolvers: ResolverMap = {
+  Query: {
+    ${1: queryName}: async (): Promise<any> => {
+      const result = await getManager()
+        ${0}
+
+      return {
+
+      };
+    }
+  }
+}
+endsnippet
