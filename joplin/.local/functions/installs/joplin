@@ -5,7 +5,7 @@ Darwin | Mac)
     brew install joplin && joplin $@
     ;;
 Arch)
-    npm update && yaourt --aur joplin && joplin $@
+    osinstall joplin && joplin $@
     ;;
 esac
 
