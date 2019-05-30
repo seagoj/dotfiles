@@ -15,18 +15,17 @@ tmux::archey() {
 
 tmux::status() {
     tmux::split "$1"
-    if which archey3 &>/dev/null; then
-        tmux send-keys "archey3" C-m
-    elif which macInfo &>/dev/null; then
-        tmux send-keys "macInfo -c" C-m
-    elif
-        which neofetch &>/dev/null; then
-        tmux send-keys "neofetch" C-m
-    fi
-
-    if which wwwtxt &>/dev/null; then
-        tmux send-keys "wwwtxt" C-m
-    fi
+    case $OS_TYPE in
+    Arch)
+        tmux send-keys "neofetch && wwwtxt" C-m
+        ;;
+    Darwin | Mac)
+        tmux send-keys "macInfo -c && wwwtxt" C-m
+        ;;
+    *)
+        echo "$OS_TYPE"
+        ;;
+    esac
 }
 
 tmux::irssi() {
