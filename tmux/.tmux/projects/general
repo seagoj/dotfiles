@@ -3,7 +3,7 @@ tmux -2 new-session -d -s $PROJECT -n 'vim'
 tmux send-keys 'wego 2' C-m
 
 # Bottom Bar
-tmux::gulp v
+tmux::split v
 tmux::split h
 tmux::status h
 

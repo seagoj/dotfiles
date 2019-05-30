@@ -1,3 +1,3 @@
 if [[ ! -f $TAG_ALIAS_FILE ]]; then
-	mkdir -p $(dirname $TAG_ALIAS_FILE)
+    mkdir -p $(dirname $TAG_ALIAS_FILE)
 fi
