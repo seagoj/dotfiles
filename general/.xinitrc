@@ -60,4 +60,11 @@ xset r rate 200 50
 
 xbindkeys &
 setxkbmap -option caps:ctrl_modifier
-exec awesome
+
+session=${1:-awesome}
+
+case $session in
+    awesome) exec awesome;;
+    xfce) exec xfce;;
+    *) exec $1;;
+esac

@@ -1,5 +1,8 @@
 #!/bin/bash
 
+NAT_RES=1600x900
+EXT_RES=1920x1080
+
 if ( xrandr | grep "LVDS1 connected" ); then
     IN="LVDS1"
 fi
@@ -16,12 +19,14 @@ if ( xrandr | grep "HDMI-2 connected" ); then
     EXT="HDMI-2"
 fi
 
-echo "$IN"
+if ( xrandr | grep "DP1 connected" ); then
+    EXT="DP1"
+fi
 
-xrandr --output $IN --mode 1600x900
+xrandr --output $IN --mode "${NAT_RES}"
 
 if (! xrandr | grep "$EXT disconnected"); then
-    xrandr --output $EXT --mode 1920x1080 --left-of $IN
+    xrandr --output $EXT --mode "${EXT_RES}" --right-of $IN
 else
     xrandr --output $EXT --off
 fi
