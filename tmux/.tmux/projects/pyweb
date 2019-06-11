@@ -1,0 +1,24 @@
+# Create bot session
+tmux -2 new-session -d -s $PROJECT -n 'vim'
+tmux send-keys 'wego 2' C-m
+
+# Bottom Bar
+tmux::split v
+tmux::status h
+tmux::split h
+tmux send-keys 'cd $CODE/bonfyre/bonfyre_app && vagrant destroy -f && vagrant up && vagrant ssh -c "sudo service node_express restart" && tnl bonfyre-local' C-m
+tmux::split v
+tmux send-keys 'npm run build-full' C-m
+
+
+# Resize
+tmux resize-pane -t 1 -D 20
+tmux resize-pane -t 2 -L 40
+tmux resize-pane -t 3 -L 20
+
+# Set default window
+tmux select-window -t $PROJECT:1
+tmux select-pane -t 1
+
+# Attach to session
+tmux -2 attach-session -t $PROJECT

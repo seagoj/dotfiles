@@ -4,4 +4,6 @@
 ## Ensure path arrays do not contain duplicates.
 typeset -gU cdpath fpath mailpath path
 
-export PATH="$HOME/.cargo/bin:$PATH"
+if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
+    exec startx
+fi

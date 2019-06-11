@@ -75,6 +75,6 @@ if which archey3 > /dev/null; then
     archey3
 fi
 
-if [[ ! -z "$XDG_CURRENT_DESKTOP" ]] && [[ "$(uname -s)" != "Darwin" ]] && which startx >/dev/null; then
-    startx
-fi
+# if [[ ! -z "$XDG_CURRENT_DESKTOP" ]] && [[ "$(uname -s)" != "Darwin" ]] && which startx >/dev/null; then
+#     startx
+# fi
