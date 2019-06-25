@@ -65,7 +65,23 @@ Darwin | Mac)
     ln -s /usr/local/opt/neovim-dot-app /Applications
     ;;
 Arch)
-    pacman -S neovim python2-neovim python-neovim xsel
+    osinstall neovim python2-neovim python-neovim xsel
+    . "${HOME}"/.config/env/pyenv.env
+
+    pyenv virtualenv python2 neovim2
+    pyenv virtualenv python3 neovim3
+
+    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv activate neovim2 &>/dev/null
+    pip install neovim
+    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv deactivate
+
+    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv activate neovim3 &>/dev/null
+    pip install neovim flake8
+    if [[ ! -f  ~/.local/bin/flake8 ]]; then
+        ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
+    fi
+    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv deactivate
+
     installSourcerer
     installPlugins
     ;;
