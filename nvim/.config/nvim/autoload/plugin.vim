@@ -10,6 +10,8 @@ function! plugin#init() abort
     endif
 
     let minpacWasInstalled=1
+    let php=0
+
     silent! packadd minpac
     if !exists('*minpac#init')
         call plugin#installMinpac()
@@ -64,6 +66,7 @@ function! plugin#init() abort
     " Documentation browser
     let s:uname = system("echo -n \"$(uname)\"")
     if !v:shell_error && s:uname == "Linux"
+        let g:zv_zeal_executable="/mnt/c/Users/jseago/scoop/appseal/current/zeal.exe"
         call minpac#add('KabbAmine/zeavim.vim')
     elseif !v:shell_error && s:uname == "Darwin"
         call minpac#add('rizzatti/funcoo.vim') | call minpac#add('rizzatti/dash.vim') | call minpac#add('seagoj/dash-config.vim')
@@ -106,18 +109,21 @@ function! plugin#init() abort
     "" JavaScript
 
     "" Markdown
-    call minpac#add('noahfrederick/vim-composer', {'type': 'opt'}) | call minpac#add('tpope/vim-dispatch', {'type': 'opt'}) | call minpac#add('radenling/vim-dispatch-neovim', {'type': 'opt'})
-    call minpac#add('euclio/vim-markdown-composer', {'type': 'opt', 'do': function('composer#build') })
+    " call minpac#add('noahfrederick/vim-composer', {'type': 'opt'}) | call minpac#add('tpope/vim-dispatch', {'type': 'opt'}) | call minpac#add('radenling/vim-dispatch-neovim', {'type': 'opt'})
+    " call minpac#add('euclio/vim-markdown-composer', {'type': 'opt', 'do': function('composer#build') })
+    call minpac#add('gabrielelana/vim-markdown', {'type': 'opt'})
 
-    "" PHP
-    call minpac#add('seagoj/php.vim', {'type': 'opt'})
-    call minpac#add('shawncplus/phpcomplete.vim', {'type': 'opt'})
-    call minpac#add('rayburgemeestre/phpfolding.vim', {'type': 'opt'})
-    "" PHP-Expermimental
-    call minpac#add('phpactor/phpactor', {'do': '!composer install', 'type': 'opt'})
-    " call minpac#add('adoy/vim-php-refactoring-toolbox', {'type': 'opt'})
-    call minpac#add('arnaud-lb/vim-php-namespace', {'type': 'opt'}) | call minpac#add('seagoj/vim-php-namespace-config.vim', {'type': 'opt'})
-    call minpac#add('tobyS/vmustache', {'type': 'opt'}) | call minpac#add('YaroslavMolchan/pdv', {'type': 'opt'}) | call minpac#add('seagoj/pdv-config.vim', {'type': 'opt'})
+    if php
+        "" PHP
+        call minpac#add('seagoj/php.vim', {'type': 'opt'})
+        call minpac#add('shawncplus/phpcomplete.vim', {'type': 'opt'})
+        call minpac#add('rayburgemeestre/phpfolding.vim', {'type': 'opt'})
+        "" PHP-Expermimental
+        call minpac#add('phpactor/phpactor', {'do': '!composer install', 'type': 'opt'})
+        " call minpac#add('adoy/vim-php-refactoring-toolbox', {'type': 'opt'})
+        call minpac#add('arnaud-lb/vim-php-namespace', {'type': 'opt'}) | call minpac#add('seagoj/vim-php-namespace-config.vim', {'type': 'opt'})
+        call minpac#add('tobyS/vmustache', {'type': 'opt'}) | call minpac#add('YaroslavMolchan/pdv', {'type': 'opt'}) | call minpac#add('seagoj/pdv-config.vim', {'type': 'opt'})
+    endif
 
     "" Rust
     call minpac#add('seagoj/rust-config.vim', {'type': 'opt'})

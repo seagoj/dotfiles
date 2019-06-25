@@ -6,14 +6,22 @@ fi
 
 # Bottom Bar
 tmux::split v
-if [[ -f package.json ]]; then
-    tmux send-keys 'npm test'
+if [[ -f ../Sentry/package.json ]]; then
+    tmux send-keys 'cd ../Sentry && npm run dev_memcached_server'
 fi
+
 tmux::status h
 tmux::split h
 if [[ -f package.json ]]; then
     tmux send-keys 'npm start'
 fi
+
+tmux select-pane -t 2
+tmux::split v
+tmux send-keys 'cd ../Sentry && npm run dev_backend_server'
+tmux select-pane -t 5
+tmux::split v
+tmux send-keys 'npm run start:server:test'
 
 # Resize
 tmux resize-pane -t 1 -D 20

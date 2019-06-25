@@ -26,7 +26,7 @@ map     <leader>ap      =ip
 " Clone paragraph
 map     <leader>cp      yap<S-}>p
 imap        jj          <Esc>
-imap        kk          <Esc>
+" imap        kk          <Esc>
 vmap        <           <gv
 vmap        >           >gv
 nnoremap    ;           :
