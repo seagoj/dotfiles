@@ -1,32 +1,73 @@
 #!/bin/bash
 
-NAT_RES=1600x900
-EXT_RES=1920x1080
+IN_RES=1600x900
+EXT_RES=1920x1200
 
-if ( xrandr | grep "LVDS1 connected" ); then
-    IN="LVDS1"
+int_ports=( LVDS1 LVDS-1 )
+ext_ports=( HDMI2 HDMI-2 DP1 DP2 )
+
+findPort() {
+    local ports=("$@")
+
+    for i in "${ports[@]}"; do
+        if xrandr | grep "${i} connected" >/dev/null; then
+            echo "${i}"
+            exit
+        fi
+    done
+}
+
+IN=$(findPort "${int_ports[@]}")
+EXT=$(findPort "${ext_ports[@]}")
+
+echo "IN: $IN"
+echo "EXT: $EXT"
+
+if [[ -z "$IN" ]]; then
+    echo "No internal port found."
+    exit 1
 fi
 
-if ( xrandr | grep "LVDS-1 connected" ); then
-    IN="LVDS-1"
-fi
+xrandr --output $IN --mode $IN_RES
 
-if ( xrandr | grep "HDMI2 connected" ); then
-    EXT="HDMI2"
-fi
-
-if ( xrandr | grep "HDMI-2 connected" ); then
-    EXT="HDMI-2"
-fi
-
-if ( xrandr | grep "DP1 connected" ); then
-    EXT="DP1"
-fi
-
-xrandr --output $IN --mode "${NAT_RES}"
-
-if (! xrandr | grep "$EXT disconnected"); then
-    xrandr --output $EXT --mode "${EXT_RES}" --right-of $IN
+if [[ -z "$EXT" ]]; then
+    for i in "${ext_ports[@]}"; do
+        xrandr --output $EXT --off
+    done
+    sudo dockd --config undocked
 else
-    xrandr --output $EXT --off
+    xrandr --output $EXT --mode $EXT_RES --right-of $IN
+    sudo dockd --config docked
 fi
+
+# if ( xrandr | grep "LVDS1 connected" ); then
+#     IN="LVDS1"
+# fi
+
+# if ( xrandr | grep "LVDS-1 connected" ); then
+#     IN="LVDS-1"
+# fi
+
+# if ( xrandr | grep "HDMI2 connected" ); then
+#     EXT="HDMI2"
+# fi
+
+# if ( xrandr | grep "HDMI-2 connected" ); then
+#     EXT="HDMI-2"
+# fi
+
+# if ( xrandr | grep "DP1 connected" ); then
+#     EXT="DP1"
+# fi
+
+# if ( xrandr | grep "DP2 connected" ); then
+#     EXT="DP2"
+# fi
+
+# xrandr --output $IN --mode "${NAT_RES}"
+
+# if (! xrandr | grep "$EXT disconnected"); then
+#     xrandr --output $EXT --mode "${EXT_RES}" --right-of $IN
+# else
+#     xrandr --output $EXT --off
+# fi

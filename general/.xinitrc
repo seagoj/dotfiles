@@ -46,7 +46,7 @@ fi
 # xterm -geometry 80x20+494-0 &
 # exec xterm -geometry 80x66+0+0 -name login
 
-toggleDocked
+# toggleDocked
 
 # # configure trackpoint scroll
 # xprop() { xinput set-prop "TPPS/2 IBM Trackpoint" "$@"; }
@@ -64,7 +64,10 @@ setxkbmap -option caps:ctrl_modifier
 session=${1:-awesome}
 
 case $session in
-    awesome) exec awesome;;
+    awesome)
+        exec dockd --daemon&
+        exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
+        ;;
     xfce) exec xfce;;
     *) exec $1;;
 esac

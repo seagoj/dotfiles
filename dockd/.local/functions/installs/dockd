@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+osinstall dockd
+
+if [[ ! -L /etc/dockd/docked.conf ]]; then
+    sudo ln -s "$XDG_CONFIG_HOME"/dockd/docked.conf /etc/dockd/docked.conf
+fi
+
+if [[ ! -L /etc/dockd/undocked.conf ]]; then
+    sudo ln -s "$XDG_CONFIG_HOME"/dockd/undocked.conf /etc/dockd/undocked.conf
+fi
+
