@@ -1,3 +1,7 @@
 #!/usr/bin/env bash
 
-go get github.com/schachmat/wego
+if [[ ! -d "$GOPATH"/src/github.com/schachmat/wego ]]; then
+    go get github.com/schachmat/wego
+else
+    go get -u github.com/schachmat/wego
+fi
