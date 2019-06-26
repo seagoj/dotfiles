@@ -1,16 +1,16 @@
 [submodule "awesome/.config/awesome"]
     path = awesome/.config/awesome
-    url = github-personal:seagoj/awesome-copycats.git
+    url = gitlab:seagoj/awesome-copycats.git
     ignore = dirty
 [submodule "boilr/.config/boilr/templates/license"]
     path = boilr/.config/boilr/templates/license
-    url = github-personal:seagoj/boilr-license.git
+    url = gitlab:seagoj/boilr-license.git
 [submodule "boilr/.config/boilr/templates/vimplugin"]
     path = boilr/.config/boilr/templates/vimplugin
-    url = github-personal:seagoj/boilr-vimplugin.git
+    url = gitlab:seagoj/boilr-vimplugin.git
 [submodule "hyper/.hyper_plugins/local/hypertype"]
     path = hyper/.hyper_plugins/local/hypertype
-    url = github-personal:seagoj/hypertype.git
+    url = gitlab:seagoj/hypertype.git
 [submodule "keyboardio/Documents/Arduino/hardware/keyboardio"]
     path = keyboardio/Documents/Arduino/hardware/keyboardio
     url = git://github.com/keyboardio/Kaleidoscope-Bundle-Keyboardio.git
@@ -19,7 +19,7 @@
     url = git://github.com/keyboardio/Model01-Firmware.git
 [submodule "pass/.password-store"]
     path = pass/.password-store
-    url = github-personal:seagoj/password-store.git
+    url = gitlab:seagoj/password-store.git
 [submodule "tmux/.tmux/plugins/tpm"]
     path = tmux/.tmux/plugins/tpm
     url = git://github.com/tmux-plugins/tpm.git
@@ -34,5 +34,5 @@
     path = emacs/.emacs.d/evil
     url = https://github.com/emacs-evil/evil
 [submodule "zsh/.zim"]
-	path = zsh/.zim
-	url = https://github.com/zimfw/zimfw.git
+    path = zsh/.zim
+    url = https://github.com/zimfw/zimfw.git
