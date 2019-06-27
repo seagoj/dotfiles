@@ -9,7 +9,7 @@ tmux
 vagrant
 npm
 wego
-rbenv
+ruby
 fasd
 mycli
 calibre
@@ -39,7 +39,6 @@ checkstyle
 ctags
 emacs
 figlet
-rbenv
 gem
 irssi
 keyboardio

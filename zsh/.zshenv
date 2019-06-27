@@ -44,7 +44,7 @@ path::add $HOME/.rbenv/bin
 path::add ${HOME}/.chefdk/gem/ruby/latest/bin
 path::add /opt/chefdk/bin
 ## Ruby
-path::add ${HOME}/.gem/ruby/2.5.0/bin
+path::add ${HOME}/.gem/ruby/2.6.0/bin
 # ## Python
 # path::add --prepend /Library/Frameworks/Python.framework/Versions/2.7/bin
 ## Local Bin
