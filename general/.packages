@@ -1,4 +1,3 @@
-general
 git
 go
 irssi
@@ -27,6 +26,7 @@ rg
 direnv
 wwwtxt
 alacritty
+git
 git-crypt
 steam
 shellcheck
@@ -34,3 +34,19 @@ rust
 joplin
 boilr
 docker
+dokku
+checkstyle
+ctags
+emacs
+figlet
+rbenv
+gem
+irssi
+keyboardio
+lolcat
+lynx
+mpv
+mutt
+mycli
+neofetch
+pass

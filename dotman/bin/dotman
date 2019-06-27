@@ -1,0 +1,39 @@
+#!/usr/bin/env bash
+
+. general/.local/functions/log.sh
+
+dotman::install() {
+    packages=("${@}")
+    for i in "${packages[@]}"; do
+        if [[ -n "${i}" ]]; then
+            dotman::stow "${i}"
+            if [[ -f "$i"/.packages ]]; then
+                readarray -t sub_packages < "$i"/.packages
+                dotman::install "${sub_packages[@]}"
+            fi
+        fi
+    done
+}
+
+dotman::platform() {
+    if [[ -n "$(uname -r | grep ARCH)" ]]; then
+        echo "arch"
+    fi
+}
+
+dotman::stow() {
+    path="${DOTFILES}/${1}"
+
+    if [[ ! -d "${path}" ]]; then
+        echo "${1} not found."
+        exit 1
+    fi
+
+    log::info "${1}"
+    cd "${DOTFILES}"
+    stow --ignore=.packages -R -vt "${HOME}" "${1}" &>/dev/null
+}
+
+cat banner # figlet dotman | lolcat
+initial_packages=(general "$(dotman::platform)")
+dotman::install "${initial_packages[@]}"
