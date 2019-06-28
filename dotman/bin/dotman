@@ -1,6 +1,51 @@
 #!/usr/bin/env bash
 
 . general/.local/functions/log.sh
+. "$XDG_CONFIG_HOME"/dotman/config
+
+PACKAGES_FILE="$XDG_CONFIG_HOME"/dotman/packages
+
+# set flags
+INIT=
+
+while [[ "${1}" ]]; do
+    case "${1}" in
+    "--init"|"-i")
+        INIT=1
+        shift
+        ;;
+    esac
+done
+
+if [[ -z "${LOCAL}" ]]; then
+    LOCAL="${DOTFILES:-$HOME/dotfiles}"
+fi
+
+dotman::banner() {
+    # figlet dotman | lolcat
+    if command -v lolcat &>/dev/null; then
+        cat banner | lolcat
+    else
+        cat banner
+    fi
+}
+
+dotman::clone() {
+    git clone --recurse-submodules "${ORIGIN}" "${LOCAL}"
+}
+
+dotman::config() {
+    if [[ "1" == "$INIT" ]]; then
+        echo common > "$PACKAGES_FILE"
+        dotman::platform >> "$PACKAGES_FILE"
+    fi
+
+    if [[ ! -f "$PACKAGES_FILE" ]]; then
+        echo 'Config file not found.'
+        echo 'run `dotman --init` to initialize'
+        exit 1
+    fi
+}
 
 dotman::install() {
     packages=("${@}")
@@ -8,7 +53,7 @@ dotman::install() {
         if [[ -n "${i}" ]]; then
             dotman::stow "${i}"
             if [[ -f "$i"/.packages ]]; then
-                readarray -t sub_packages < "$i"/.packages
+                sub_packages=( $(<"$i"/.packages) )
                 dotman::install "${sub_packages[@]}"
             fi
         fi
@@ -22,7 +67,7 @@ dotman::platform() {
 }
 
 dotman::stow() {
-    path="${DOTFILES}/${1}"
+    path="${LOCAL}/${1}"
 
     if [[ ! -d "${path}" ]]; then
         echo "${1} not found."
@@ -30,10 +75,14 @@ dotman::stow() {
     fi
 
     log::info "${1}"
-    cd "${DOTFILES}"
+    cd "${LOCAL}"
     stow --ignore=.packages -R -vt "${HOME}" "${1}" &>/dev/null
 }
 
-cat banner # figlet dotman | lolcat
-initial_packages=(general "$(dotman::platform)")
-dotman::install "${initial_packages[@]}"
+dotman::banner
+if [[ ! -d "${LOCAL}"/.git ]]; then
+    dotman::clone
+fi
+dotman::config
+packages=( $(<"$XDG_CONFIG_HOME"/dotman/packages) )
+dotman::install "${packages[@]}"
