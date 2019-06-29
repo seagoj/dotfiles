@@ -1,28 +1,53 @@
 #!/usr/bin/env bash
 
-. general/.local/functions/log.sh
-. "$XDG_CONFIG_HOME"/dotman/config
+CONFIG_DIR="${XDG_CONFIG_DIR}"/dotman
+CONFIG_FILE="${CONFIG_DIR}"/config
+PACKAGES_FILE="${CONFIG_DIR}"/packages
 
-PACKAGES_FILE="$XDG_CONFIG_HOME"/dotman/packages
+log::set_interactive() {
+    INTERACTIVE=0
+    if test -t 1 && tput colors >/dev/null; then
+        INTERACTIVE=1
+    fi
+}
 
-# set flags
-INIT=
+log::set_log_file() {
+    if [[ -z "${LOG_FILE+x}" ]]; then
+        readonly LOG_FILE="/tmp/$(basename "$0").log"
+    fi
 
-while [[ "${1}" ]]; do
-    case "${1}" in
-    "--init"|"-i")
-        INIT=1
-        shift
-        ;;
-    esac
-done
+    if [[ ! -d "$(dirname "${LOG_FILE}")" ]]; then
+        mkdir -p "$(dirname "${LOG_FILE}")"
+    fi
+}
 
-if [[ -z "${LOCAL}" ]]; then
-    LOCAL="${DOTFILES:-$HOME/dotfiles}"
-fi
+log::info() {
+    if [[ "${INTERACTIVE}" == "1" ]]; then
+        printf "  [ \033[00;34mINFO\033[0m ] %s\n" "$*"
+    fi
+
+    printf "  [ INFO ] %s\n" "$*" | tee -a "${LOG_FILE}" >&2 >/dev/null
+}
+
+dotman::store() {
+    if [[ "2" != "$#" ]]; then
+        echo "Invalid call"
+        exit 1
+    fi
+
+    touch "${2}"
+    echo "${1}" >> "${2}"
+}
+
+dotman::store_config() {
+    dotman::store "${1}" "${CONFIG_FILE}"
+}
+
+dotman::store_package() {
+    dotman::store "${1}" "${PACKAGES_FILE}"
+}
 
 dotman::banner() {
-    # figlet dotman | lolcat
     if command -v lolcat &>/dev/null; then
         cat banner | lolcat
     else
@@ -34,17 +59,35 @@ dotman::clone() {
     git clone --recurse-submodules "${ORIGIN}" "${LOCAL}"
 }
 
-dotman::config() {
-    if [[ "1" == "$INIT" ]]; then
-        echo common > "$PACKAGES_FILE"
-        dotman::platform >> "$PACKAGES_FILE"
+dotman::init_config() {
+    if [[ -z "${LOCAL}" ]]; then
+        echo "What is your local repo? [${DOTFILES:-$HOME/dotfiles}]"
+        read -r LOCAL
+        if [[ -z "${LOCAL}" ]]; then
+            LOCAL="${DOTFILES:-$HOME/dotfiles}"
+        fi
+        dotman::store_config "LOCAL=${LOCAL}"
     fi
 
-    if [[ ! -f "$PACKAGES_FILE" ]]; then
-        echo 'Config file not found.'
-        echo 'run `dotman --init` to initialize'
-        exit 1
+    if [[ -z "${ORIGIN}" ]]; then
+        echo "What is your remote repo?"
+        read -r ORIGIN
+        dotman::store_config "ORIGIN=${ORIGIN}"
     fi
+
+    if [[ -z "${PLATFORM}" ]]; then
+        dotman::store_config "PLATFORM=$(dotman::platform)"
+    fi
+
+    echo "config created: ${CONFIG_FILE}"
+    echo ''
+}
+
+dotman::init_packages() {
+    dotman::store_package "common"
+    dotman::store_package "${PLATFORM}"
+    echo "package file created: ${PACKAGES_FILE}"
+    echo ''
 }
 
 dotman::install() {
@@ -79,10 +122,39 @@ dotman::stow() {
     stow --ignore=.packages -R -vt "${HOME}" "${1}" &>/dev/null
 }
 
+log::set_interactive
+log::set_log_file
+
+if [[ ! -d "${CONFIG_DIR}" ]]; then
+    mkdir -p "${CONFIG_DIR}"
+fi
+
+if [[ ! -f "${CONFIG_FILE}" ]]; then
+    dotman::init_config
+fi
+
+if [[ ! -f "${PACKAGES_FILE}" ]]; then
+    dotman::init_packages
+fi
+
+. "${CONFIG_FILE}"
+
 dotman::banner
+
+# set flags
+if [[ "0" != "${#}" ]]; then
+    while [[ "${1}" ]]; do
+        case "${1}" in
+        *)
+            echo "'${1}' is not a valid argument."
+            exit 1
+            ;;
+        esac
+    done
+fi
+
 if [[ ! -d "${LOCAL}"/.git ]]; then
     dotman::clone
 fi
-dotman::config
-packages=( $(<"$XDG_CONFIG_HOME"/dotman/packages) )
+packages=( $(<"$XDG_CONFIG_DIR"/dotman/packages) )
 dotman::install "${packages[@]}"
