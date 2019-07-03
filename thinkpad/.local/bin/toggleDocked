@@ -1,6 +1,6 @@
 #!/bin/bash
 
-IN_RES=1600x900
+IN_RES=1920x1080
 EXT_RES=1920x1200
 
 int_ports=( LVDS1 LVDS-1 )

@@ -76,11 +76,9 @@ export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=${HOME}/dotfiles
-if [[ -d /Volumes ]]; then
-    export CODE=/Volumes/Code
-else
-    export CODE="${HOME}"/code
-fi
+export CODE="${HOME}"/code
+[ -d /Volumes ] && export CODE=/Volumes/Code
+
 # Vagrant
 ## Provider(virtualbox, parallels)
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
@@ -114,20 +112,17 @@ if [[ -f "${HOME}/.secrets" ]]; then
 fi
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
-if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}/.zprofile" ]]; then
-    source "${ZDOTDIR:-$HOME}/.zprofile"
+if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}"/.zprofile ]]; then
+    source "${ZDOTDIR:-$HOME}"/.zprofile
 fi
-if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/env ]]; then
+if [[ -d "${XDG_CONFIG_HOME:-$HOME/.config}"/env ]]; then
     # Source env files
-    for file in ${XDG_CONFIG_HOME:-$HOME/.config}/env/*.env; do
+    for file in "${XDG_CONFIG_HOME:-$HOME/.config}"/env/*.env; do
         source "${file}"
     done
 fi
 export PROMPT_LEAN_VIMODE=1
 export IDF_PATH=$HOME/code/esp-idf
-export CONFIG_MANAGEMENT="${CODE}/config_management"
-export API="${CONFIG_MANAGEMENT}"/puppet/bonfyre_app
-export WEB="${CONFIG_MANAGEMENT}"/puppet/pyweb
 # export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf
 
 if [[ -d "${HOME}"/Documents/Arduino ]]; then

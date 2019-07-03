@@ -6,9 +6,9 @@ tmux -2 new-session -d -s $PROJECT -n 'vim'
 tmux::split v
 tmux::status h
 tmux::split h
-tmux send-keys 'cd $CODE/bonfyre/bonfyre_app && vagrant up && vagrant ssh -c "sudo service node_express restart" && tnl bonfyre-local' C-m
+tmux send-keys 'cd "${BONFYRE_APP_DIR}" && vagrant up && vagrant ssh -c "webpack && sudo service node_express restart" && tnl bonfyre-local' C-m
 tmux::split v
-tmux send-keys 'npm run build-full' C-m
+tmux send-keys 'npm run build-full'
 
 
 # Resize
