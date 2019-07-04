@@ -57,6 +57,7 @@ function! plugin#init() abort
     call minpac#add('christoomey/vim-tmux-navigator') | call minpac#add('seagoj/vim-tmux-navigator-config')
     " Find/Replace
     call minpac#add('skwp/greplace.vim') | call minpac#add('seagoj/greplace-config.vim')
+    call minpac#add('vimwiki/vimwiki')
 
     " Git
     call minpac#add('airblade/vim-gitgutter')
@@ -111,7 +112,7 @@ function! plugin#init() abort
     "" Markdown
     " call minpac#add('noahfrederick/vim-composer', {'type': 'opt'}) | call minpac#add('tpope/vim-dispatch', {'type': 'opt'}) | call minpac#add('radenling/vim-dispatch-neovim', {'type': 'opt'})
     " call minpac#add('euclio/vim-markdown-composer', {'type': 'opt', 'do': function('composer#build') })
-    call minpac#add('gabrielelana/vim-markdown', {'type': 'opt'})
+    " call minpac#add('gabrielelana/vim-markdown', {'type': 'opt'})
 
     if php
         "" PHP

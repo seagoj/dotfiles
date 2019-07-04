@@ -1,3 +1,4 @@
 ## Nvim
 alias vimdiff='nvim -d'
 alias vim='nvim'
+alias vimwiki='nvim +VimWikiIndex'

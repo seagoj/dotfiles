@@ -2,4 +2,4 @@
 " packadd vim-markdown-composer
 " let g:markdown_composer_browser="/home/jseago/.local/bin/firefox"
 " echo g:markdown_composer_browser
-packadd vim-markdown
+" packadd vim-markdown

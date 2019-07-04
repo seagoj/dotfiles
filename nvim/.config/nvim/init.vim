@@ -99,3 +99,6 @@ endif
 " let g:ale_lint_on_enter = 0
 " let g:ale_cache_executable_check_failures = 1
 " let g:ale_lint_delay = 1000
+"
+let g:vimwiki_list = [{'path': '~/vimwiki/',
+                      \ 'syntax': 'markdown', 'ext': '.md'}]
