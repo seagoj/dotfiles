@@ -1,2 +1,5 @@
 LOCAL=/home/seagoj/dotfiles
 ORIGIN=gitlab:seagoj/dotfiles.git
+EMAIL=seagoj@gmail.com
+ACCESS_TOKEN=5abc261936f265cd1ce56379d8fccf3ed6a7aaa1
+PLATFORM=arch
