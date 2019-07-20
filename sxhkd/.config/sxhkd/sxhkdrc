@@ -2,11 +2,13 @@
 # wm independent hotkeys
 #
 
-ctrl + Return
-    alacritty
-
+# browser
 super + b
     $BROWSER
+
+# logout
+super + alt + Escape
+    bspc quit
 
 # terminal emulator
 super + Return
