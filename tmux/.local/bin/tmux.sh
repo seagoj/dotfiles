@@ -5,7 +5,6 @@
 
 # project settings
 PROJECT="${PWD##*/}"
-echo "$PROJECT"
 
 if [[ -f ~/.tmux/projects/$PROJECT ]]; then
     tmux attach -d -t "$PROJECT" || source ~/.tmux/projects/"$PROJECT"
