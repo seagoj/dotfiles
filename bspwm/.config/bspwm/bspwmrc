@@ -1,10 +1,14 @@
-#! /bin/sh
+#!/usr/bin/env bash
 
 sxhkd &
 
 bspc monitor -d I II III IV V VI VII VIII IX X
 
+# set wallpaper
 feh --bg-scale $XDG_CONFIG_HOME/bspwm/wall.png
+
+# launch bar
+$XDG_CONFIG_HOME/polybar/launch.sh
 
 bspc config border_width         2
 bspc config window_gap          12

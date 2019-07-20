@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 
-osinstall bspwm sxhkd feh
+pyenv global system &&
+    osinstall bspwm sxhkd feh cairo libxcb python2 xcb-proto xcb-util-image xcb-util-wm polybar-git
