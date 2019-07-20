@@ -78,9 +78,6 @@ font:
   # false.
   use_thin_strokes: true
 
-# Should display the render timer
-render_timer: false
-
 # Use custom cursor colors. If true, display the cursor in the cursor.foreground
 # and cursor.background colors, otherwise invert the colors of the cursor.
 # custom_cursor_colors: true
@@ -348,3 +345,8 @@ key_bindings:
   - { key: F10,      mods: Command, chars: "\x1b[21;3~"                  }
   - { key: F11,      mods: Command, chars: "\x1b[23;3~"                  }
   - { key: F12,      mods: Command, chars: "\x1b[24;3~"                  }
+
+debug:
+
+  # Should display the render timer
+  render_timer: false
