@@ -61,7 +61,7 @@ xset r rate 200 50
 xbindkeys &
 setxkbmap -option caps:ctrl_modifier
 
-session=${1:-awesome}
+session=${1:-bspwm}
 
 case $session in
     awesome)
@@ -69,5 +69,8 @@ case $session in
         exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
         ;;
     xfce) exec xfce;;
+    bspwm)
+        exec bspwm 2>~/.bspwm.err
+        ;;
     *) exec $1;;
 esac
