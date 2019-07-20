@@ -17,15 +17,29 @@
 ;==========================================================
 
 [colors]
-;background = ${xrdb:color0:#222}
-background = #222
-background-alt = #444
-;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
-foreground-alt = #555
-primary = #ffb52a
-secondary = #e60053
-alert = #bd2c40
+background = ${xrdb:color0:#222}
+background-alt = ${xrdb:color8:#222}
+foreground = ${xrdb:color7:#222}
+foreground-alt = ${xrdb:color15:#222}
+primary = ${xrdb:color1:#222}
+secondary = ${xrdb:color2:#222}
+alert = ${xrdb:color3:#222}
+black = ${xrdb:color0:#222}
+black-bright = ${xrdb:color8:#222}
+red = ${xrdb:color1:#222}
+red-bright = ${xrdb:color9:#222}
+green = ${xrdb:color2:#222}
+green-bright = ${xrdb:color10:#222}
+yellow = ${xrdb:color3:#222}
+yellow-bright = ${xrdb:color11:#222}
+blue = ${xrdb:color4:#222}
+blue-bright = ${xrdb:color12:#222}
+magenta = ${xrdb:color5:#222}
+magenta-bright = ${xrdb:color13:#222}
+cyan = ${xrdb:color6:#222}
+cyan-bright = ${xrdb:color14:#222}
+white = ${xrdb:color7:#222}
+white-bright = ${xrdb:color15:#222}
 
 [bar/top]
 ;monitor = ${env:MONITOR:HDMI-1}
@@ -33,17 +47,17 @@ width = 100%
 height = 27
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
+; radius = 6.0
 fixed-center = false
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
 line-size = 3
-line-color = #f00
+line-color = ${colors.red}
 
 border-size = 4
-border-color = #00000000
+border-color = ${colors.black}
 
 padding-left = 0
 padding-right = 2
@@ -106,7 +120,8 @@ interval = 25
 mount-0 = /
 mount-1 = /mnt/store
 
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+; colors.blue
+label-mounted = %{F#6688aa}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
@@ -142,7 +157,7 @@ wrapping-scroll = false
 ;pin-workspaces = true
 
 label-mode-padding = 2
-label-mode-foreground = #000
+label-mode-foreground = ${colors.black}
 label-mode-background = ${colors.primary}
 
 ; focused = Active workspace on focused monitor
@@ -191,11 +206,11 @@ label = BL
 
 bar-width = 10
 bar-indicator = |
-bar-indicator-foreground = #fff
+bar-indicator-foreground = ${colors.white}
 bar-indicator-font = 3
 bar-fill = ─
 bar-fill-font = 3
-bar-fill-foreground = #9f78e1
+bar-fill-foreground = ${colors.blue}
 bar-empty = ─
 bar-empty-font = 3
 bar-empty-foreground = ${colors.foreground-alt}
@@ -210,7 +225,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #f90000
+format-underline = ${colors.blue-bright}
 label = %percentage:2%%
 
 [module/memory]
@@ -218,7 +233,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #4bffdc
+format-underline = ${colors.green-bright}
 label = %percentage_used%%
 
 [module/wlan]
@@ -227,7 +242,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = #9f78e1
+format-connected-underline = ${colors.magenta-bright}
 label-connected = %essid%
 
 format-disconnected =
@@ -248,7 +263,7 @@ type = internal/network
 interface = enp0s25
 interval = 3.0
 
-format-connected-underline = #55aa55
+format-connected-underline = ${colors.magenta-bright}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -271,7 +286,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #0a6cf5
+format-underline = ${colors.cyan-bright}
 
 label = %date% %time%
 
@@ -283,16 +298,16 @@ label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
-label-muted-foreground = #666
+label-muted-foreground = ${colors.white-bright}
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 3
@@ -314,13 +329,13 @@ format-muted-foreground = ${colors.foreground-alt}
 label-muted = sound muted
 
 bar-volume-width = 10
-bar-volume-foreground-0 = #55aa55
-bar-volume-foreground-1 = #55aa55
-bar-volume-foreground-2 = #55aa55
-bar-volume-foreground-3 = #55aa55
-bar-volume-foreground-4 = #55aa55
-bar-volume-foreground-5 = #f5a70a
-bar-volume-foreground-6 = #ff5555
+bar-volume-foreground-0 = ${colors.green}
+bar-volume-foreground-1 = ${colors.green}
+bar-volume-foreground-2 = ${colors.green}
+bar-volume-foreground-3 = ${colors.green}
+bar-volume-foreground-4 = ${colors.green}
+bar-volume-foreground-5 = ${colors.yellow}
+bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
 bar-volume-indicator-font = 3
@@ -337,7 +352,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging-underline = ${colors.yellow-bright}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -369,7 +384,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = #f50a4d
+format-underline = ${colors.red-bright}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 
