@@ -36,3 +36,4 @@ Makefile
 tmux/.tmux/plugins
 **/.local/share
 node/.npm-packages/*
+common/.config/configstore
