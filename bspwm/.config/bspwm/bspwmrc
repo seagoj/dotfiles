@@ -2,7 +2,7 @@
 
 sxhkd &
 
-bspc monitor -d I II III IV V VI VII VIII IX X
+bspc monitor -d I II III IV V
 
 # set wallpaper
 feh --bg-scale $XDG_CONFIG_HOME/bspwm/wall.png
