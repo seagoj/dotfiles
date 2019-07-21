@@ -65,11 +65,12 @@ session=${1:-bspwm}
 
 case $session in
     awesome)
-        exec dockd --daemon&
+        dockd --daemon&
         exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
         ;;
     xfce) exec xfce;;
     bspwm)
+        dockd --daemon&
         exec bspwm 2>~/.bspwm.err
         ;;
     *) exec $1;;

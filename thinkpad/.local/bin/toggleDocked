@@ -39,35 +39,3 @@ else
     xrandr --output $EXT --mode $EXT_RES --right-of $IN
     sudo dockd --config docked
 fi
-
-# if ( xrandr | grep "LVDS1 connected" ); then
-#     IN="LVDS1"
-# fi
-
-# if ( xrandr | grep "LVDS-1 connected" ); then
-#     IN="LVDS-1"
-# fi
-
-# if ( xrandr | grep "HDMI2 connected" ); then
-#     EXT="HDMI2"
-# fi
-
-# if ( xrandr | grep "HDMI-2 connected" ); then
-#     EXT="HDMI-2"
-# fi
-
-# if ( xrandr | grep "DP1 connected" ); then
-#     EXT="DP1"
-# fi
-
-# if ( xrandr | grep "DP2 connected" ); then
-#     EXT="DP2"
-# fi
-
-# xrandr --output $IN --mode "${NAT_RES}"
-
-# if (! xrandr | grep "$EXT disconnected"); then
-#     xrandr --output $EXT --mode "${EXT_RES}" --right-of $IN
-# else
-#     xrandr --output $EXT --off
-# fi
