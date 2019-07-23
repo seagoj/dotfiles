@@ -5,5 +5,7 @@ URxvt*scrollBar:        false
 !URxvt*url-launcher: /opt/chromium
 !URxvt*matcher.button: 1
 !URxvt*colorUL: #4682B4
-!URxvt*iso14755: true
 !URxvt*urgentOnBell: true
+URxvt.keysym.Shift-Control-V: perl:clipboard:paste
+URxvt.iso14755: False
+URxvt.perl-ext-common: default,clipboard
