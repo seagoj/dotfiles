@@ -6,6 +6,9 @@
 super + b
     $BROWSER
 
+@XF86Display
+    toggleDocked
+
 # logout
 super + alt + Escape
     bspc quit
@@ -18,9 +21,9 @@ super + Return
 super + @space
     rofi -show drun
 
-# make sxhkd reload its configuration files:
+# reload config for bspwm, sxhkd, polybar and dunst:
 super + Escape
-    pkill -USR1 -x sxhkd
+    pkill -USR1 -x sxhkd && "$XDG_CONFIG_HOME"/bspwm/bspwmrc no-launch
 
 #
 # bspwm hotkeys
@@ -73,6 +76,10 @@ super + {p,b,comma,period}
 # focus the next/previous node in the current desktop
 super + {_,shift + }c
     bspc node -f {next,prev}.local
+
+alt + {_,shift + }Tab
+    bspc node -f {next,prev}.local
+
 
 # focus the next/previous desktop in the current monitor
 super + bracket{left,right}

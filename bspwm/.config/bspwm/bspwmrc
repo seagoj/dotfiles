@@ -22,4 +22,6 @@ bspc config gapless_monocle      true
 bspc config top_monocle_padding  -35
 
 # run launch script
-$XDG_CONFIG_HOME/bspwm/launch
+if [ "${1}" != "no-launch" ]; then
+    $XDG_CONFIG_HOME/bspwm/launch
+fi
