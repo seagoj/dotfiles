@@ -39,3 +39,4 @@ node/.npm-packages/*
 common/.config/configstore
 log.txt
 log-database.txt
+grv/.config/grv/command_history
