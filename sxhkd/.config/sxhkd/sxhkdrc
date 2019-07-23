@@ -36,7 +36,7 @@ super + {_,shift + }w
 
 # alternate between the tiled and monocle layout
 super + m
-    bspc desktop -l next
+    bspc desktop -l next && polybar-msg cmd toggle
 
 # send the newest marked node to the newest preselected node
 super + y
