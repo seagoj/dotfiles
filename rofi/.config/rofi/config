@@ -1,0 +1,2 @@
+rofi.theme:         themes/jmenu
+rofi.modi:          drun,ssh

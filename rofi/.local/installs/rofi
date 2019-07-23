@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+osinstall rofi rofi-dmenu && rofi $@

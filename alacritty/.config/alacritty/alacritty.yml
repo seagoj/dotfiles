@@ -3,7 +3,7 @@
 # Any items in the `env` entry below will be added as
 # environment variables. Some entries may override variables
 # set by alacritty it self.
-env:
+# env:
   # TERM env customization.
   #
   # If this property is not set, alacritty will set it to xterm-256color.
@@ -11,7 +11,7 @@ env:
   # Note that some xterm terminfo databases don't declare support for italics.
   # You can verify this by checking for the presence of `smso` and `sitm` in
   # `infocmp xterm-256color`.
-  TERM: xterm-256color
+  # TERM: xterm-256color
 
 window:
   # Window dimensions in character columns and lines
@@ -82,36 +82,36 @@ font:
 # and cursor.background colors, otherwise invert the colors of the cursor.
 # custom_cursor_colors: true
 
-# scorcerer colors
-colors:
-  primary:
-    background: '0x222222'
-    foreground: '0xc2c2b0'
+# # scorcerer colors
+# colors:
+#   primary:
+#     background: '0x222222'
+#     foreground: '0xc2c2b0'
 
-  cursor:
-    text:   '0xc2c2b0'
-    cursor: '0xc2c2b0'
-    style: Block
+#   cursor:
+#     text:   '0xc2c2b0'
+#     cursor: '0xc2c2b0'
+#     style: Block
 
-  normal:
-    black:   '0x111111'
-    red:     '0xaa4450'
-    green:   '0x719611'
-    yellow:  '0xcc8800'
-    blue:    '0x6688aa'
-    magenta: '0x8f6f8f'
-    cyan:    '0x528b8b'
-    white:   '0xd3d3d3'
+#   normal:
+#     black:   '0x111111'
+#     red:     '0xaa4450'
+#     green:   '0x719611'
+#     yellow:  '0xcc8800'
+#     blue:    '0x6688aa'
+#     magenta: '0x8f6f8f'
+#     cyan:    '0x528b8b'
+#     white:   '0xd3d3d3'
 
-  bright:
-    black:   '0x181818'
-    red:     '0xff6a6a'
-    green:   '0xb1d631'
-    yellow:  '0xff9800'
-    blue:    '0x90b0d1'
-    magenta: '0x8181a6'
-    cyan:    '0x87ceeb'
-    white:   '0xc1cdc1'
+#   bright:
+#     black:   '0x181818'
+#     red:     '0xff6a6a'
+#     green:   '0xb1d631'
+#     yellow:  '0xff9800'
+#     blue:    '0x90b0d1'
+#     magenta: '0x8181a6'
+#     cyan:    '0x87ceeb'
+#     white:   '0xc1cdc1'
 
 # Visual Bell
 #

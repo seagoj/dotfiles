@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+osinstall firefox-developer-edition firefox && firefox-developer-edition $@

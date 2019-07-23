@@ -1,0 +1,36 @@
+!
+!   ██████  ██████  ██   ██ ██████  █████   █████  ██████  █████  ██████
+!  ██░░░░  ██░░░░██░██  ░██░░██░░████░░░██ ██░░░██░░██░░████░░░██░░██░░██
+! ░░█████ ░██   ░██░██  ░██ ░██ ░░░██  ░░ ░███████ ░██ ░░░███████ ░██ ░░
+!  ░░░░░██░██   ░██░██  ░██ ░██   ░██   ██░██░░░░  ░██   ░██░░░░  ░██
+!  ██████ ░░██████ ░░██████░███   ░░█████ ░░██████░███   ░░██████░███
+! ░░░░░░   ░░░░░░   ░░░░░░ ░░░     ░░░░░   ░░░░░░ ░░░     ░░░░░░ ░░░
+!  r  e  a  d     c  o  d  e     l  i  k  e     a     w  i  z  a  r  d
+!
+! sourcerer by xero harrison (http://sourcerer.xero.nu)
+!  ├─ based on sorcerer by Jeet Sukumaran (http://jeetworks.org)
+!  └─ based on mustang by Henrique C. Alves (hcarvalhoalves@gmail.com)
+
+! █▓▒░ scorcerer colors
+#define fg          #c2c2b0
+#define bg          #222222
+#define cursor      #c2c2b0
+#define black       #111111
+#define blackBold   #181818
+#define red         #aa4450
+#define redBold     #ff6a6a
+#define green       #719611
+#define greenBold   #b1d631
+#define yellow      #cc8800
+#define yellowBold  #ff9800
+#define blue        #6688aa
+#define blueBold    #90b0d1
+#define magenta     #8f6f8f
+#define magentaBold #8181a6
+#define cyan        #528b8b
+#define cyanBold    #87ceeb
+#define white       #d3d3d3
+#define whiteBold   #c1cdc1
+#define italic      #719611
+#define bold        #d3d3d3
+#define underline   #528b8b

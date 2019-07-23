@@ -25,21 +25,21 @@ primary = ${xrdb:color1:#222}
 secondary = ${xrdb:color2:#222}
 alert = ${xrdb:color3:#222}
 black = ${xrdb:color0:#222}
-black-bright = ${xrdb:color8:#222}
+black-bold = ${xrdb:color8:#222}
 red = ${xrdb:color1:#222}
-red-bright = ${xrdb:color9:#222}
+red-bold = ${xrdb:color9:#222}
 green = ${xrdb:color2:#222}
-green-bright = ${xrdb:color10:#222}
+green-bold = ${xrdb:color10:#222}
 yellow = ${xrdb:color3:#222}
-yellow-bright = ${xrdb:color11:#222}
+yellow-bold = ${xrdb:color11:#222}
 blue = ${xrdb:color4:#222}
-blue-bright = ${xrdb:color12:#222}
+blue-bold = ${xrdb:color12:#222}
 magenta = ${xrdb:color5:#222}
-magenta-bright = ${xrdb:color13:#222}
+magenta-bold = ${xrdb:color13:#222}
 cyan = ${xrdb:color6:#222}
-cyan-bright = ${xrdb:color14:#222}
+cyan-bold = ${xrdb:color14:#222}
 white = ${xrdb:color7:#222}
-white-bright = ${xrdb:color15:#222}
+white-bold = ${xrdb:color15:#222}
 
 [bar/top]
 monitor = ${env:MONITOR:LVDS-1}
@@ -65,10 +65,11 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = misc fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
-font-3 = SauceCodePro Nerd Font:size=8;1
+font-0 = SauceCodePro Nerd Font:size=8:style=semibold;1
+; font-0 = misc fixed:pixelsize=10;1
+; font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+; font-2 = siji:pixelsize=10;1
+; font-3 = SauceCodePro Nerd Font:size=8:style=semibold;1
 
 modules-left = bspwm xwindow
 modules-center = mpd
@@ -207,12 +208,12 @@ label = BL
 bar-width = 10
 bar-indicator = |
 bar-indicator-foreground = ${colors.white}
-bar-indicator-font = 3
+bar-indicator-font = 0
 bar-fill = ─
-bar-fill-font = 3
+bar-fill-font = 0
 bar-fill-foreground = ${colors.blue}
 bar-empty = ─
-bar-empty-font = 3
+bar-empty-font = 0
 bar-empty-foreground = ${colors.foreground-alt}
 
 [module/backlight-acpi]
@@ -225,7 +226,7 @@ type = internal/cpu
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.blue-bright}
+format-underline = ${colors.blue-bold}
 label = %percentage:2%%
 
 [module/memory]
@@ -233,7 +234,7 @@ type = internal/memory
 interval = 2
 format-prefix = " "
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.green-bright}
+format-underline = ${colors.green-bold}
 label = %percentage_used%%
 
 [module/wlan]
@@ -242,7 +243,7 @@ interface = wlp3s0
 interval = 3.0
 
 format-connected = <ramp-signal> <label-connected>
-format-connected-underline = ${colors.magenta-bright}
+format-connected-underline = ${colors.magenta-bold}
 label-connected = %essid%
 
 format-disconnected =
@@ -263,7 +264,7 @@ type = internal/network
 interface = enp0s25
 interval = 3.0
 
-format-connected-underline = ${colors.magenta-bright}
+format-connected-underline = ${colors.magenta-bold}
 format-connected-prefix = " "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
@@ -286,7 +287,7 @@ time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${colors.cyan-bright}
+format-underline = ${colors.cyan-bold}
 
 label = %date% %time%
 
@@ -298,7 +299,7 @@ label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 🔇 muted
-label-muted-foreground = ${colors.white-bright}
+label-muted-foreground = ${colors.white-bold}
 
 bar-volume-width = 10
 bar-volume-foreground-0 = ${colors.green}
@@ -310,11 +311,11 @@ bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 3
+bar-volume-indicator-font = 0
 bar-volume-fill = ─
-bar-volume-fill-font = 3
+bar-volume-fill-font = 0
 bar-volume-empty = ─
-bar-volume-empty-font = 3
+bar-volume-empty-font = 0
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/alsa]
@@ -338,11 +339,11 @@ bar-volume-foreground-5 = ${colors.yellow}
 bar-volume-foreground-6 = ${colors.red}
 bar-volume-gradient = false
 bar-volume-indicator = |
-bar-volume-indicator-font = 3
+bar-volume-indicator-font = 0
 bar-volume-fill = ─
-bar-volume-fill-font = 3
+bar-volume-fill-font = 0
 bar-volume-empty = ─
-bar-volume-empty-font = 3
+bar-volume-empty-font = 0
 bar-volume-empty-foreground = ${colors.foreground-alt}
 
 [module/battery]
@@ -352,7 +353,7 @@ adapter = AC
 full-at = 98
 
 format-charging = <animation-charging> <label-charging>
-format-charging-underline = ${colors.yellow-bright}
+format-charging-underline = ${colors.yellow-bold}
 
 format-discharging = <animation-discharging> <label-discharging>
 format-discharging-underline = ${self.format-charging-underline}
@@ -384,7 +385,7 @@ thermal-zone = 0
 warn-temperature = 60
 
 format = <ramp> <label>
-format-underline = ${colors.red-bright}
+format-underline = ${colors.red-bold}
 format-warn = <ramp> <label-warn>
 format-warn-underline = ${self.format-underline}
 

@@ -1,0 +1,11 @@
+/**
+ * ROFI theme global options
+ */
+
+* {
+    bg: #222222;
+    bgBorder: #181818;
+    text: #c2c2b0;
+    font: "xft:SauceCodePro Nerd Font Mono 20";
+    highlight: #aa4450;
+}

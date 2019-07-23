@@ -92,7 +92,7 @@ export VISUAL=$(which nvim macvim atom subl | grep -m1 -e '^/')
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Terminal
-export TERMINAL=$(which alacritty termite urxvt xterm | grep -m1 -e '^/')
+export TERMINAL=$(which urxvt alacritty termite xterm | grep -m1 -e '^/')
 
 # Language
 if [[ -z "$lang" ]]; then
@@ -125,8 +125,8 @@ export PROMPT_LEAN_VIMODE=1
 export IDF_PATH=$HOME/code/esp-idf
 # export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf
 
-if [[ -d "${HOME}"/Documents/Arduino ]]; then
-    export SKETCHBOOK_DIR="${HOME}"/Documents/Arduino
+if [[ -d "${HOME}"/documents/Arduino ]]; then
+    export SKETCHBOOK_DIR="${HOME}"/documents/Arduino
 else
     export SKETCHBOOK_DIR="${HOME}"/Arduino
 fi

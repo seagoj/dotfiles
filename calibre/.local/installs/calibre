@@ -5,6 +5,7 @@ Darwin | Mac)
     brew cask install calibre
     ;;
 *)
-    osinstall calibre
+    # osinstall calibre python2-beautifulsoup4 python2-html5lib
+    sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
     ;;
 esac

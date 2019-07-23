@@ -6,6 +6,8 @@ Darwin | Mac)
     osinstall w3m lynx highlight atool Caskroom/cask/xquartz mediainfo xpdf libcaca --with-imlib2 ranger
     ;;
 *)
-    osinstall ranger
+    pip install --upgrade ranger-fm
     ;;
 esac
+
+ranger $@
