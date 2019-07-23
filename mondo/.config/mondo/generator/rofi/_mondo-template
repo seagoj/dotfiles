@@ -1,0 +1,11 @@
+/**
+ * ROFI theme global options
+ */
+
+* {
+    bg: %%bg%%;
+    bgBorder: %%bg2%%;
+    text: %%fg%%;
+    font: "xft:%%font%% %%fontSize%%";
+    highlight: %%red%%;
+}

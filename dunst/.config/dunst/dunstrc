@@ -14,7 +14,7 @@
     background = "#aa4450"
     foreground = "#c2c2b0"
     timeout = 0
-#icon = /path/to/icon
+    #icon = /path/to/icon
 
 [global]
     frame_color = "#222222"
