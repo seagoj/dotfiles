@@ -6,6 +6,6 @@
     bg: %%bg%%;
     bgBorder: %%bg2%%;
     text: %%fg%%;
-    font: "xft:%%font%% %%fontSize%%";
+    font: "%%font%% %%fontSize%%";
     highlight: %%red%%;
 }

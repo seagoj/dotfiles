@@ -1,0 +1,32 @@
+#define fontsPango xft:%%font%% %%fontSize%%
+#define fonts xft:%%font%%%%fontAttr%%
+
+*.font: fonts
+rofi.font: fontsPango
+
+#define fg          %%fg%%
+#define bg          %%bg%%
+#define cursor      %%cursor%%
+#define black       %%black%%
+#define blackBold   %%blackBold%%
+#define red         %%red%%
+#define redBold     %%redBold%%
+#define green       %%green%%
+#define greenBold   %%greenBold%%
+#define yellow      %%yellow%%
+#define yellowBold  %%yellowBold%%
+#define blue        %%blue%%
+#define blueBold    %%blueBold%%
+#define magenta     %%magenta%%
+#define magentaBold %%magentaBold%%
+#define cyan        %%cyan%%
+#define cyanBold    %%cyanBold%%
+#define white       %%white%%
+#define whiteBold   %%whiteBold%%
+#define italic      %%italic%%
+#define bold        %%bold%%
+#define underline   %%underline%%
+
+#include ".config/xfiles/colors"
+
+#include ".config/xfiles/urxvt"

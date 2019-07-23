@@ -40,7 +40,7 @@ fontface1           monospace
 fontface2           monospace
 comment             #c1cdc1
 dark                #111111
-fontAttr            :style=semibold:size=fontSize
+fontAttr            :style=semibold:size=10
 green               #719611
 cyanBold            #87ceeb
 white               #d3d3d3

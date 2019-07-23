@@ -6,6 +6,6 @@
     bg: #222222;
     bgBorder: #181818;
     text: #c2c2b0;
-    font: "xft:SauceCodePro Nerd Font Mono 10";
+    font: "SauceCodePro Nerd Font Mono 10";
     highlight: #aa4450;
 }

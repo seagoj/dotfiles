@@ -1,7 +1,21 @@
 !! Theme:    sourcerer
-!! Author:   seagoj
+!! Author:   xero
 !! Created:  2019-07-23
 
+!
+!   ██████  ██████  ██   ██ ██████  █████   █████  ██████  █████  ██████
+!  ██░░░░  ██░░░░██░██  ░██░░██░░████░░░██ ██░░░██░░██░░████░░░██░░██░░██
+! ░░█████ ░██   ░██░██  ░██ ░██ ░░░██  ░░ ░███████ ░██ ░░░███████ ░██ ░░
+!  ░░░░░██░██   ░██░██  ░██ ░██   ░██   ██░██░░░░  ░██   ░██░░░░  ░██
+!  ██████ ░░██████ ░░██████░███   ░░█████ ░░██████░███   ░░██████░███
+! ░░░░░░   ░░░░░░   ░░░░░░ ░░░     ░░░░░   ░░░░░░ ░░░     ░░░░░░ ░░░
+!  r  e  a  d     c  o  d  e     l  i  k  e     a     w  i  z  a  r  d
+!
+! sourcerer by xero harrison (http://sourcerer.xero.nu)
+!  ├─ based on sorcerer by Jeet Sukumaran (http://jeetworks.org)
+!  └─ based on mustang by Henrique C. Alves (hcarvalhoalves@gmail.com)
+
+! █▓▒░ scorcerer colors
 bg           #222222
 bg2          #181818
 
@@ -45,4 +59,4 @@ selectedfg   light
 
 font        SauceCodePro Nerd Font Mono
 fontSize    10
-fontAttr    :style=semibold:size=fontSize
+fontAttr    :style=semibold:size=10
