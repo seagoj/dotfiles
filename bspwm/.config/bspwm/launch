@@ -2,4 +2,4 @@
 
 $TERMINAL&
 $BROWSER&
-$TERMINAL -e "cmatrix" &
+# $TERMINAL -e "cmatrix" &
