@@ -1,0 +1,24 @@
+[urgency_low]
+    background = "#222222"
+    foreground = "#c2c2b0"
+    timeout = 2
+    #icon = /path/to/icon
+
+[urgency_normal]
+    background = "#6688aa"
+    foreground = "#c2c2b0"
+    timeout = 10
+    #icon = /path/to/icon
+
+[urgency_critical]
+    background = "#aa4450"
+    foreground = "#c2c2b0"
+    timeout = 0
+#icon = /path/to/icon
+
+[global]
+    frame_color = "#222222"
+    separator_color = frame
+    font = SauceCodePro Nerd Font Mono 10
+
+# vim: ft=cfg

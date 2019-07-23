@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+configDir="$XDG_CONFIG_HOME"/dunst
+outputFile="${configDir}"/dunstrc
+
+merge "${outputFile}" "${configDir}"/theme "${configDir}"/settings

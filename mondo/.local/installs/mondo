@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+git clone https://github.com/budlabs/mondo.git /tmp/mondo && \
+    cd /tmp/mondo && \
+    sudo make install && \
+    rm -rf /tmp/mondo && \
+    mondo

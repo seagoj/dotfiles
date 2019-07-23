@@ -1,0 +1,24 @@
+[urgency_low]
+    background = "%%bg%%"
+    foreground = "%%fg%%"
+    timeout = 2
+    #icon = /path/to/icon
+
+[urgency_normal]
+    background = "%%blue%%"
+    foreground = "%%fg%%"
+    timeout = 10
+    #icon = /path/to/icon
+
+[urgency_critical]
+    background = "%%red%%"
+    foreground = "%%fg%%"
+    timeout = 0
+    #icon = /path/to/icon
+
+[global]
+    frame_color = "%%bg%%"
+    separator_color = frame
+    font = %%font%% %%fontSize%%
+
+# vim: ft=cfg

@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+if [ "$#" -le "2" ]; then
+    echo "usage: merge [output file] [input files...]"
+    exit 1
+fi
+
+output_file="${1}"
+shift
+input_files="${@}"
+
+if [ -f "${output_file}" ]; then
+    rm "${output_file}"
+fi
+
+cat ${input_files} > "${output_file}"

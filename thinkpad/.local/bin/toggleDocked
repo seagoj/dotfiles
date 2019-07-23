@@ -35,9 +35,9 @@ if [[ -z "$EXT" ]]; then
         xrandr --output $EXT --off 2>/dev/null
     done
     # sudo dockd --config undocked
-    notify-send "Undocked"
+    notify-send -u low "Undocked"
 else
     xrandr --output $EXT --mode $EXT_RES --right-of $IN
     # sudo dockd --config docked
-    notify-send "Docked"
+    notify-send -u low "Docked"
 fi

@@ -1,0 +1,48 @@
+!! Theme:    sourcerer
+!! Author:   seagoj
+!! Created:  2019-07-23
+
+bg           #222222
+bg2          #181818
+
+fg           #c2c2b0
+comment      #c1cdc1
+
+red          #aa4450
+green        #719611
+blue         #6688aa
+yellow       #cc8800
+cyan         #528b8b
+magenta      #8f6f8f
+
+cursor      #c2c2b0
+black       #111111
+blackBold   #181818
+redBold     #ff6a6a
+greenBold   #b1d631
+yellowBold  #ff9800
+blueBold    #90b0d1
+magentaBold #8181a6
+cyanBold    #87ceeb
+white       #d3d3d3
+whiteBold   #c1cdc1
+italic      #719611
+bold        #d3d3d3
+underline   #528b8b
+
+dark         #111111
+light        #d3d3d3
+
+activebg     cyan
+activefg     light
+activehl     dark
+
+inactivebg   blue
+inactivefg   fg
+
+selectedbg   magenta
+selectedfg   light
+
+font        SauceCodePro Nerd Font Mono
+fontSize    10
+fontAttr    :style=semibold:size=fontSize

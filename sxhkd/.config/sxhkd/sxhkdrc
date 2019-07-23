@@ -23,7 +23,9 @@ super + @space
 
 # reload config for bspwm, sxhkd, polybar and dunst:
 super + Escape
-    pkill -USR1 -x sxhkd && "$XDG_CONFIG_HOME"/bspwm/bspwmrc no-launch
+    pkill -USR1 -x sxhkd && \
+    "$XDG_CONFIG_HOME"/bspwm/bspwmrc no-launch && \
+    notify-send -u low "Config Reloaded"
 
 #
 # bspwm hotkeys
