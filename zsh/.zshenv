@@ -121,7 +121,15 @@ if [[ -d "${XDG_CONFIG_HOME:-$HOME/.config}"/env ]]; then
         source "${file}"
     done
 fi
+
+. "$XDG_FUNCTIONS_DIR"/x.sh
+export PROMPT_LEAN_COLOR1="$(xColor color7)"
+export PROMPT_LEAN_COLOR2="$(xColor color4)"
+export PROMPT_LEAN_COLOR3="$(xColor color3)"
+export PROMPT_LEAN_TMUX="侀 "
 export PROMPT_LEAN_VIMODE=1
+export PROMPT_LEAN_ABBR_METHOD="shrink"
+
 export IDF_PATH=$HOME/code/esp-idf
 # export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf
 
