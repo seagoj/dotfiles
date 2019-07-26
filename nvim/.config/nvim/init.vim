@@ -6,9 +6,9 @@ set nocompatible
 set clipboard=unnamed
 filetype off
 
-let g:python_host_prog = $HOME . "/.pyenv/versions/neovim2/bin/python"
-let g:python2_host_prog = $HOME . "/.pyenv/versions/neovim2/bin/python"
-let g:python3_host_prog = $HOME . "/.pyenv/versions/neovim3/bin/python"
+let g:python_host_prog = "python2"
+let g:python2_host_prog = "python2"
+let g:python3_host_prog = "python3"
 
 call plugin#init()
 

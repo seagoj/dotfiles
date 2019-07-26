@@ -7,11 +7,6 @@ if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
   source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
 fi
 
-# Source sandboxd
-if [[ -s ${CODE}/sandboxd/sandboxd ]]; then
-    source ${CODE}/sandboxd/sandboxd
-fi
-
 # Source alias files
 for file in ${XDG_CONFIG_HOME:-$HOME/.config}/aliases/*.alias; do
     source "${file}"
@@ -113,15 +108,6 @@ fi
 #     tag() { command tag "$@"; source $alias_file 2>/dev/null; }
 # fi
 
-if which rbenv >/dev/null; then
-    if which sandbox >/dev/null; then
-        sandbox_hook rbenv ruby
-    else
-        source $HOME/.sandboxrc
-        sandbox_init_rbenv
-    fi
-fi
-
 # Temporary Directories
 if [[ ! -d "$TMPDIR" ]]; then
     mkdir -p -m 700 "$TMPDIR"
@@ -146,7 +132,3 @@ eval "$(direnv hook zsh)"
 # PERL_LOCAL_LIB_ROOT="/home/jseago/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 # PERL_MB_OPT="--install_base \"/home/jseago/perl5\""; export PERL_MB_OPT;
 # PERL_MM_OPT="INSTALL_BASE=/home/jseago/perl5"; export PERL_MM_OPT;
-
-# pyenv
-eval "$(pyenv init -)"
-eval "$(pyenv virtualenv-init -)"

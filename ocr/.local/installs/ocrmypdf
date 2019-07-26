@@ -1,6 +1,4 @@
 #!/usr/bin/env bash
 
 osinstall leptonica tesseract tesseract-data-eng pdfgrep
-eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv activate python3
-pip install ocrmypdf && ocrmypdf $@
-eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv deactivate
+pip3 install ocrmypdf && ocrmypdf $@

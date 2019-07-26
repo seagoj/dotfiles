@@ -1,3 +1,12 @@
 #!/usr/bin/env bash
 
-osinstall python python2 && python $@
+export PYTHON_CONFIGURE_OPTS="--enable-shared"
+export PYTHON2_VERSION="2.7.13"
+export PYTHON3_VERSION="3.6.2"
+
+asdf plugin-add python
+asdf install python "${PYTHON2_VERSION}" && \
+asdf install python "${PYTHON3_VERSION}" && \
+asdf global python "${PYTHON3_VERSION}" "${PYTHON2_VERSION}"
+
+python $@

@@ -3,25 +3,12 @@
 . "${HOME}"/.local/functions/dotfiles.sh
 
 installNeovimMac() {
-    dotfiles::bootstrap pyenv
-
     brew install neovim
-
-    . "${HOME}"/.config/env/pyenv.env
-
-    pyenv virtualenv python2 neovim2
-    pyenv virtualenv python3 neovim3
-
-    pyenv activate neovim2 &>/dev/null \
-    pip install neovim
-    pyenv deactivate
-
-    pyenv activate neovim3 &>/dev/null
-    pip install neovim flake8
+    pip2 install --upgrade pip neovim
+    pip3 install --install pip neovim flake8
     if [[ ! -f  ~/.local/bin/flake8 ]]; then
-        ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
+        # ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
     fi
-    pyenv deactivate
 }
 
 installNeovimDebian() {
@@ -36,7 +23,7 @@ installSourcerer() {
 }
 
 installPlugins() {
-    nvim -c :PlugInstall
+    nvim -c :PackInstall
 }
 
 installESLint() {
@@ -64,28 +51,18 @@ Darwin | Mac)
     brew install neovim-dot-app
     ln -s /usr/local/opt/neovim-dot-app /Applications
     ;;
-Arch)
+Linux)
     osinstall neovim python2-neovim python-neovim xsel
-    . "${HOME}"/.config/env/pyenv.env
-
-    pyenv virtualenv python2 neovim2
-    pyenv virtualenv python3 neovim3
-
-    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv activate neovim2 &>/dev/null
-    pip install neovim
-    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv deactivate
-
-    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv activate neovim3 &>/dev/null
-    pip install neovim flake8
-    if [[ ! -f  ~/.local/bin/flake8 ]]; then
-        ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
-    fi
-    eval "$(pyenv init -)"; eval "$(pyenv virtualenv-init -)"; pyenv deactivate
+    pip2 install --upgrade pip neovim
+    pip3 install --upgrade pip neovim flake8
+    # if [[ ! -f  ~/.local/bin/flake8 ]]; then
+    #     ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
+    # fi
 
     installSourcerer
     installPlugins
     ;;
-Debian|Linux)
+Debian)
     installNeovimDebian
     installSourcerer
     ;;

@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+
+version="${ASDF_VERSION:-0.7.3}"
+
+git clone https://github.com/asdf-vm/asdf.git "$XDG_CONFIG_HOME"/asdf --branch v"${version}"

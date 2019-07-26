@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
 
-pyenv global system &&
+cd ~ &&
+    asdf global python system &&
     osinstall cairo libxcb python2 xcb-proto xcb-util-image xcb-util-wm polybar-git
