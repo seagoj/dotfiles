@@ -7,7 +7,7 @@
 PROJECT="${PWD##*/}"
 
 if [[ -f ~/.tmux/projects/$PROJECT ]]; then
-    tmux attach -d -t "$PROJECT" || source ~/.tmux/projects/"$PROJECT"
+    tmux -u attach -d -t "$PROJECT" || source ~/.tmux/projects/"$PROJECT"
 else
-    tmux attach -d -t "$PROJECT" || source ~/.tmux/projects/general
+    tmux -u attach -d -t "$PROJECT" || source ~/.tmux/projects/general
 fi
