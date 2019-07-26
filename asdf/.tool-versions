@@ -3,3 +3,4 @@ python 3.6.2 2.7.13 system
 ruby 2.6.3
 rust 1.36.0
 nodejs 12.7.0
+golang 1.12.7

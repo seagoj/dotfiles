@@ -1,3 +1,10 @@
 #!/usr/bin/env bash
 
-osinstall go && go $@
+GO_VERSION=1.12.7
+
+asdf plugin-add golang
+cd $HOME && \
+    asdf install golang "${GO_VERSION}" && \
+    asdf global golang "${GO_VERSION}"
+
+go ${@}
