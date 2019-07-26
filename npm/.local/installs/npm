@@ -1,5 +1,10 @@
 #!/usr/bin/env bash
 
-osinstall nodejs
+NODEJS_VERSION=12.7.0
+
+asdf plugin-add nodejs
+cd $HOME && \
+    asdf install nodejs "${NODEJS_VERSION}" && \
+    asdf global nodejs "${NODEJS_VERSION}"
 
 npm $@
