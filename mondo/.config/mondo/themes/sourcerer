@@ -16,18 +16,18 @@
 !  └─ based on mustang by Henrique C. Alves (hcarvalhoalves@gmail.com)
 
 ! █▓▒░ scorcerer colors
-bg           #222222
-bg2          #181818
+bg          #222222
+bg2         #181818
 
-fg           #c2c2b0
-comment      #c1cdc1
+fg          #c2c2b0
+comment     #c1cdc1
 
-red          #aa4450
-green        #719611
-blue         #6688aa
-yellow       #cc8800
-cyan         #528b8b
-magenta      #8f6f8f
+red         #aa4450
+green       #719611
+blue        #6688aa
+yellow      #cc8800
+cyan        #528b8b
+magenta     #8f6f8f
 
 cursor      #c2c2b0
 black       #111111
@@ -44,19 +44,35 @@ italic      #719611
 bold        #d3d3d3
 underline   #528b8b
 
-dark         #111111
-light        #d3d3d3
+dark        #111111
+light       #d3d3d3
 
-activebg     cyan
-activefg     light
-activehl     dark
+activebg    cyan
+activefg    light
+activehl    dark
 
-inactivebg   blue
-inactivefg   fg
+inactivebg  blue
+inactivefg  fg
 
-selectedbg   magenta
-selectedfg   light
+selectedbg  magenta
+selectedfg  light
 
-font        SauceCodePro Nerd Font Mono
-fontSize    10
-fontAttr    :style=semibold:size=10
+font1       FiraCode Nerd Font Mono
+fontAttr1   :style=regular
+fontSize1   10
+
+font2       SauceCodePro Nerd Font Mono
+fontAttr2   :style=regular
+fontSize2   10
+
+font3       unifont
+fontAttr3   :fontformat=truetype:antialias=false
+fontSize3   8
+
+font4       siji
+fontAttr4
+fontSize4   10
+
+! fonts       xft:FiraCode Nerd Font Mono:style=regular:size=10, xft:SauceCodePro Nerd Font Mono:style=regular:size=10, unifont:fontformat=truetype:size=8:antialias=false, siji:pixelsize=10
+
+! fontsPango  FiraCode Nerd Font Mono 10, SauceCodePro Nerd Font Mono 10, unifont 8, siji 10

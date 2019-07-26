@@ -10,15 +10,21 @@ red                 #aa4450
 fg2                 #c1cdc1
 activehl            #111111
 redBold             #ff6a6a
-fontSize            10
 inactivefg          #c2c2b0
 cyan                #528b8b
 bg2                 #181818
 cyanb               #528b8b
 magentab            #8f6f8f
 greenb              #719611
+fontAttr1           :style=regular
+fontAttr2           :style=regular
 whiteBold           #c1cdc1
+fontAttr3           :fontformat=truetype:antialias=false
 greenBold           #b1d631
+fontSize1           10
+fontSize2           10
+fontSize3           8
+fontSize4           10
 fontsize1           16
 bg                  #222222
 fontsize2           16
@@ -27,10 +33,13 @@ underline           #528b8b
 blueBold            #90b0d1
 redb                #aa4450
 selectedbg          #8f6f8f
+font1               FiraCode Nerd Font Mono
 fg                  #c2c2b0
+font2               SauceCodePro Nerd Font Mono
+font3               unifont
+font4               siji
 italic              #719611
 yellowBold          #ff9800
-font                SauceCodePro Nerd Font Mono
 selectedfg          #d3d3d3
 cursor              #c2c2b0
 magenta             #8f6f8f
@@ -40,7 +49,6 @@ fontface1           monospace
 fontface2           monospace
 comment             #c1cdc1
 dark                #111111
-fontAttr            :style=semibold:size=10
 green               #719611
 cyanBold            #87ceeb
 white               #d3d3d3
