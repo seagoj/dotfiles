@@ -365,11 +365,11 @@ expand-right = false
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.blue}
 label-open-background = ${colors.background-alt}
 label-open-font = 2
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.blue}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
