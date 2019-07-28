@@ -60,6 +60,7 @@ xset r rate 200 50
 
 xbindkeys &
 setxkbmap -option caps:ctrl_modifier
+syncthing &
 
 session=${1:-bspwm}
 

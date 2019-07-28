@@ -54,8 +54,8 @@ activehl    dark
 inactivebg  blue
 inactivefg  fg
 
-selectedbg  magenta
-selectedfg  light
+selectedbg  yellow
+selectedfg  black
 
 font1       FiraCode Nerd Font Mono
 fontAttr1   :style=regular

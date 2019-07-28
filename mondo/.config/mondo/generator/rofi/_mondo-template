@@ -8,5 +8,6 @@
     bgBorder: %%bg2%%;
     text: %%fg%%;
     font: "%%font1%% %%fontSize1%%";
-    highlight: %%red%%;
+    highlight-background-color: %%selectedbg%%;
+    highlight-text-color: %%selectedfg%%;
 }

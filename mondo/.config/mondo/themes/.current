@@ -32,7 +32,7 @@ blueb               #6688aa
 underline           #528b8b
 blueBold            #90b0d1
 redb                #aa4450
-selectedbg          #8f6f8f
+selectedbg          #cc8800
 font1               FiraCode Nerd Font Mono
 fg                  #c2c2b0
 font2               SauceCodePro Nerd Font Mono
@@ -40,7 +40,7 @@ font3               unifont
 font4               siji
 italic              #719611
 yellowBold          #ff9800
-selectedfg          #d3d3d3
+selectedfg          #111111
 cursor              #c2c2b0
 magenta             #8f6f8f
 blackBold           #181818

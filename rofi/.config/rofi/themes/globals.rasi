@@ -8,5 +8,6 @@
     bgBorder: #181818;
     text: #c2c2b0;
     font: "FiraCode Nerd Font Mono 10";
-    highlight: #aa4450;
+    highlight-background-color: #cc8800;
+    highlight-text-color: #111111;
 }

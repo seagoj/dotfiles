@@ -42,5 +42,6 @@
     padding: 0px 2px;
 }
 #element selected {
-    background-color: @highlight;
+    background-color:   @highlight-background-color;
+    text-color:         @highlight-text-color;
 }
