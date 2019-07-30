@@ -24,7 +24,7 @@
 
 #horibox {
     orientation: horizontal;
-    children:   [ prompt, entry, listview ];
+    children:   [ entry, listview ];
 }
 
 #listview {

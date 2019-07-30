@@ -1,2 +1,3 @@
-rofi.theme:         themes/jmenu
-rofi.modi:          drun,ssh
+rofi.theme:                 themes/jmenu
+rofi.modi:                  drun,ssh
+rofi.prompt.enabled:        false
