@@ -137,13 +137,16 @@ label-focused-underline= ${colors.primary}
 label-focused-padding = 2
 
 label-occupied = %name%
+label-occupied-font = 3
 label-occupied-padding = 2
 
 label-urgent = %name%!
+label-urgent-font = 3
 label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
 
 label-empty = %name%
+label-empty-font = 3
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 

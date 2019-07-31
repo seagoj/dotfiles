@@ -1,5 +1,5 @@
 # configure LCD panel
-bspc monitor LVDS1 -d  II III IV V
+bspc monitor LVDS1 -d     
 
 # configure external monitor
 if xrandr -q | grep -q "DP2 connected"; then
