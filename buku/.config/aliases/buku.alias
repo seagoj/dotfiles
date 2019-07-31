@@ -1,1 +1,1 @@
-alias buku="buku --suggest"
+alias buku="buku -S"
