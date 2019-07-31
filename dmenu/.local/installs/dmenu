@@ -1,0 +1,17 @@
+#!/usr/bin/env bash
+
+localRepo="${CODE:-HOME/code}"/suckless/dmenu
+remoteRepo="git://git.suckless.org/dmenu"
+patchesRoot="https://tools.suckless.org/dmenu/patches"
+version="${DMENU_VERSION:-4.9}"
+patches=( "$patchesRoot/line-height/dmenu-lineheight-$version.diff" )
+
+. "$XDG_FUNCTIONS_DIR"/git.sh
+. "$XDG_FUNCTIONS_DIR"/suckless.sh
+
+git::clone "${remoteRepo}" "${localRepo}" 2>/dev/null
+cd "$localRepo" && \
+    suckless::applyPatches "${patches[@]}" && \
+    suckless::install
+
+dmenu ${@}

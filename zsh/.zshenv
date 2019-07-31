@@ -86,7 +86,7 @@ export VISUAL=$(which nvim macvim atom subl | grep -m1 -e '^/')
 export NVIM_TUI_ENABLE_TRUE_COLOR=1
 
 # Terminal
-export TERMINAL=$(which urxvt alacritty termite xterm | grep -m1 -e '^/')
+export TERMINAL=$(which st urxvt alacritty termite xterm | grep -m1 -e '^/')
 
 # Language
 if [[ -z "$lang" ]]; then

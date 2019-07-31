@@ -41,3 +41,10 @@ function weekly_summary() {
     echo "-------------"
     echo "$FEATURES"
 }
+
+git::clone() {
+    remoteRepo="${1}"
+    localRepo="${2}"
+
+    git clone "${remoteRepo}" "${localRepo}"
+}

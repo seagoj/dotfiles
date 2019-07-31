@@ -15,11 +15,11 @@ super + alt + Escape
 
 # terminal emulator
 super + Return
-    $TERMINAL
+    $TERMINAL -e zsh -c "exec tmux"
 
 # program launcher
 super + @space
-    rofi -show drun
+    dmenu_run -h 35
 
 # reload config for bspwm, sxhkd, polybar and dunst:
 super + Escape
