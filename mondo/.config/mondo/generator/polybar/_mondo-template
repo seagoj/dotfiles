@@ -74,9 +74,10 @@ module-margin-right = 2
 
 font-0 = "%%font1%%%%fontAttr1%%:pixelsize=%%fontSize1%%;1"
 font-1 = "%%font1%%%%fontAttr1%%:pixelsize=30;1"
-font-2 = "%%font2%%%%fontAttr2%%:pixelsize=%%fontSize2%%;1"
-font-3 = "%%font3%%%%fontAttr3%%:size=%%fontSize3%%;0"
-font-4 = "%%font4%%%%fontAttr4%%:pixelsize=%%fontSize4%%;1"
+font-2 = "%%font1%%%%fontAttr1%%:pixelsize=20;1"
+font-3 = "%%font2%%%%fontAttr2%%:pixelsize=%%fontSize2%%;1"
+font-4 = "%%font3%%%%fontAttr3%%:size=%%fontSize3%%;0"
+font-5 = "%%font4%%%%fontAttr4%%:pixelsize=%%fontSize4%%;1"
 
 modules-left = bspwm xwindow
 modules-center = mpd
@@ -130,6 +131,7 @@ label-unmounted-foreground = ${colors.foreground-alt}
 type = internal/bspwm
 
 label-focused = %name%
+label-focused-font = 3
 label-focused-background = ${colors.background-alt}
 label-focused-underline= ${colors.primary}
 label-focused-padding = 2
@@ -255,6 +257,7 @@ type = internal/pulseaudio
 
 format-volume = <label-volume> <bar-volume>
 label-volume = 奔 %percentage% %
+label-volume-font = 1
 label-volume-foreground = ${root.foreground}
 
 label-muted = 
@@ -365,11 +368,11 @@ expand-right = false
 format-spacing = 1
 
 label-open = 
-label-open-foreground = ${colors.secondary}
+label-open-foreground = ${colors.blue}
 label-open-background = ${colors.background-alt}
 label-open-font = 2
 label-close =  cancel
-label-close-foreground = ${colors.secondary}
+label-close-foreground = ${colors.blue}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
