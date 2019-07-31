@@ -4,7 +4,10 @@ localRepo="${CODE:-HOME/code}"/suckless/st
 remoteRepo="git://git.suckless.org/st"
 patchesRoot="https://st.suckless.org/patches"
 version="${ST_VERSION:-0.8.2}"
-patches=( "${patchesRoot}/alpha/st-alpha-${version}.diff" "${patchesRoot}/clipboard/st-clipboard-${version}.diff" )
+patches=(
+    "${patchesRoot}/alpha/st-alpha-${version}.diff"
+    "${patchesRoot}/clipboard/st-clipboard-${version}.diff"
+)
 
 . "$XDG_FUNCTIONS_DIR"/git.sh
 . "$XDG_FUNCTIONS_DIR"/suckless.sh
