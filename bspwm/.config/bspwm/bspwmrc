@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 
 # includes
-includes=($(ls "$XDG_CONFIG_HOME"/bspwm/*.sh))
+includes=($(ls "$XDG_CONFIG_HOME"/bspwm/modules/*.sh))
 for include in "${includes[@]}"; do
     source "$include"
 done
