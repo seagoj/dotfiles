@@ -1,0 +1,34 @@
+#!/usr/bin/env bash
+
+diskspace() {
+    local percentRemainingRoot="$(df -h | awk '{ if ( $6 == "/" ) print $5 }')"
+    local percentRemainingStore="$(df -h | awk '{ if ( $6 == "/mnt/store" ) print $5 }')"
+    echo " /: ${percentRemainingRoot} /mnt/store: ${percentRemainingStore}"
+}
+
+memory() {
+    percentUsed=$(free -h | awk '(NR==2){ print $3 }' | sed 's/Gi$/G/')
+    echo " ${percentUsed}"
+}
+
+battery() {
+    local local percentRemaining=$(cat /sys/class/power_supply/BAT0/capacity)
+    echo " ${percentRemaining}%"
+}
+
+temperature() {
+    local temp=$(sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp)
+    echo " ${temp}"
+}
+
+timestamp() {
+    echo " $(date +'%R %D')"
+}
+
+delimiter=" "
+
+while :; do
+    xsetroot -name "$(temperature) ${delimiter} $(diskspace) ${delimiter} $(memory) ${delimiter} $(battery) ${delimiter} $(timestamp)"
+
+    sleep 1m
+done

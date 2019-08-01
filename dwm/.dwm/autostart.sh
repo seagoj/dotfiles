@@ -1,1 +1,2 @@
 compton &
+"${HOME}"/.dwm/bar
