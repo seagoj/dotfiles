@@ -1,13 +1,12 @@
 #!/usr/bin/env bash
 
-package=st
+package=surf
 localRepo="${CODE:-HOME/code}"/suckless/${package}
 remoteRepo="git://git.suckless.org/${package}"
-patchesRoot="https://${package}.suckless.org/patches"
-version="${ST_VERSION:-0.8.2}"
+version="${SURF_VERSION:-2.0}"
+
 patches=(
-    "alpha"
-    "clipboard"
+    "homepage"
 )
 
 . "$XDG_FUNCTIONS_DIR"/git.sh
@@ -15,7 +14,7 @@ patches=(
 
 git::clone "${remoteRepo}" "${localRepo}" 2>/dev/null
 cd "$localRepo" && \
-    suckless::applyPatchesInvert "${patches[@]}" && \
+    suckless::applyPatches "${patches[@]}" && \
     suckless::install
 
 "${package}" ${@}
