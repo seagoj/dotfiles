@@ -3,10 +3,8 @@
 package=dmenu
 localRepo="${CODE:-HOME/code}"/suckless/"${package}"
 remoteRepo=git://git.suckless.org/"${package}"
-version="${DMENU_VERSION:-4.9}"
 patches=(
-    "line-height"
-    "fuzzymatch"
+    http://tools.suckless.org/dmenu/patches/fuzzymatch/dmenu-fuzzymatch-4.9.diff
 )
 
 . "$XDG_FUNCTIONS_DIR"/git.sh
@@ -14,7 +12,7 @@ patches=(
 
 git::clone "${remoteRepo}" "${localRepo}" 2>/dev/null
 cd "$localRepo" && \
-    suckless::applyToolPatches "${patches[@]}" && \
+    suckless::applyPatches "${patches[@]}" && \
     suckless::install
 
 "${package}" ${@}

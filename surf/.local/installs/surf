@@ -1,12 +1,13 @@
 #!/usr/bin/env bash
 
+osinstall gstreamer
+
 package=surf
 localRepo="${CODE:-HOME/code}"/suckless/${package}
 remoteRepo="git://git.suckless.org/${package}"
-version="${SURF_VERSION:-2.0}"
 
 patches=(
-    "homepage"
+    http://surf.suckless.org/patches/homepage/surf-2.0-homepage.diff
 )
 
 . "$XDG_FUNCTIONS_DIR"/git.sh

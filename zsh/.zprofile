@@ -5,5 +5,5 @@
 typeset -gU cdpath fpath mailpath path
 
 if [[ ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
-    exec startx
+    exec startx ~/.xinitrc dwm
 fi

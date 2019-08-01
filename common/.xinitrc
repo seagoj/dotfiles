@@ -69,6 +69,9 @@ case $session in
         dockd --daemon&
         exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
         ;;
+    dwm)
+        exec dwm >> ~/.cache/dwm/stdout 2>> ~/.cache/dwm/stderr
+        ;;
     xfce) exec xfce;;
     bspwm)
         dockd --daemon&

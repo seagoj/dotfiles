@@ -1,11 +1,13 @@
 #!/usr/bin/env bash
 
-package=st
+package=dwm
 localRepo="${CODE:-HOME/code}"/suckless/${package}
 remoteRepo="git://git.suckless.org/${package}"
 patches=(
-    http://st.suckless.org/patches/alpha/st-alpha-0.8.2.diff
-    http://st.suckless.org/patches/clipboard/st-clipboard-0.8.2.diff
+    http://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff
+    http://dwm.suckless.org/patches/fibonacci/dwm-fibonacci-5.8.2.diff
+    # http://dwm.suckless.org/patches/ru_gaps/dwm-ru_gaps-6.2.diff
+    http://dwm.suckless.org/patches/uselessgap/dwm-uselessgap-6.2.diff
 )
 
 . "$XDG_FUNCTIONS_DIR"/git.sh
