@@ -102,3 +102,4 @@ endif
 "
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
+let g:vifm_replace_netrw = 1

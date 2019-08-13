@@ -8,6 +8,7 @@ patches=(
     http://dwm.suckless.org/patches/fibonacci/dwm-fibonacci-5.8.2.diff
     # http://dwm.suckless.org/patches/ru_gaps/dwm-ru_gaps-6.2.diff
     http://dwm.suckless.org/patches/uselessgap/dwm-uselessgap-6.2.diff
+    https://dwm.suckless.org/patches/fakefullscreen/dwm-fakefullscreen-20170508-ceac8c9.diff
 )
 
 . "$XDG_FUNCTIONS_DIR"/git.sh

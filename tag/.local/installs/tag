@@ -5,7 +5,7 @@ if [[ $OS_TYPE = "mac" ]]; then
     osinstall tag-ag
 else
     go get -u github.com/aykamko/tag/...
-    go install github.com/aykamko/tag
+    go install -i github.com/aykamko/tag
 fi
 
 tag $@

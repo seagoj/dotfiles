@@ -19,4 +19,6 @@ alias cputemp="sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp"
 alias battery="echo $(cat /sys/class/power_supply/BAT0/capacity)%"
 alias memoryfree="free -h | awk '(NR==2){ print $3 }' | sed 's/Gi$/G/'"
 
+alias dots="cd ${DOTFILES}"
+
 alias script_dir="$( cd "$( dirname "${BASH_SOURCE[0]}"  )" >/dev/null 2>&1 && pwd  )"

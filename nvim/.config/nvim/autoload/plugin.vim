@@ -58,6 +58,8 @@ function! plugin#init() abort
     " Find/Replace
     call minpac#add('skwp/greplace.vim') | call minpac#add('seagoj/greplace-config.vim')
     call minpac#add('vimwiki/vimwiki')
+    " file picker
+    call minpac#add('vifm/vifm.vim')
 
     " Git
     call minpac#add('airblade/vim-gitgutter')

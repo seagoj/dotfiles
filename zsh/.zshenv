@@ -52,7 +52,7 @@ export PATH=$PATH:$HOME/.local/share/esp/xtensa-esp32-elf/bin
 export PATH=$HOME/.toolchains/esp32/bin:$PATH
 export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 ## rust
-# path::add --prepend "${HOME}"/.cargo/bin
+path::add --prepend "${HOME}"/.cargo/bin
 path::add "${XDG_FUNCTIONS_DIR}/installs"
 path::add "${HOME}/.local/installs"
 
@@ -80,6 +80,7 @@ export VAGRANT_DEFAULT_PROVIDER=virtualbox
 # Browser
 export BROWSER=$(which firefox-developer-edition firefox chromium-browser chromium google-chrome google-chrome-stable chrome browsh links2 links lynx xdg-open open | grep -m1 -e '^/')
 # Editor
+export EXPLORER=$(which vifm nnn ranger thunar | grep -m1 -e '^/')
 export EDITOR=$(which nvim vim vi nano | grep -m1 -e '^/')
 export EDITORGUI=$(which editor-gui nvim vim vi nano | grep -m1 -e '^/')
 export VISUAL=$(which nvim macvim atom subl | grep -m1 -e '^/')

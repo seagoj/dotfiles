@@ -1,7 +1,12 @@
 if (( $+commands[tag]  )); then
-    if [[ ! -f $TAG_ALIAS_FILE ]]; then
-        mkdir -p $(dirname $TAG_ALIAS_FILE)
+    which ag &>/dev/null && export TAG_SEARCH_PROG=ag
+    which rg &>/dev/null && export TAG_SEARCH_PROG=rg
+    alias_file="${TAG_ALIAS_FILE:-~/tmp/tag_aliases}"
+
+    if [[ ! -f "${alias_file}" ]]; then
+        mkdir -p $(dirname "${alias_file}")
     fi
-    tag() { command tag "$@"; source ${TAG_ALIAS_FILE:-/tmp/tag_aliases} 2>/dev/null  }
-    alias rg=tag  # replace with rg for ripgrep
+    tag() { command tag "$@"; source "${alias_file}" 2>/dev/null }
+    # alias rg=tag
+    # alias ag=tag
 fi

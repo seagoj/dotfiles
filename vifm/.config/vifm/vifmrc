@@ -11,7 +11,7 @@
 " If you would like to use another vi clone such as Elvis or Vile
 " you will need to change this setting.
 
-set vicmd=vim
+set vicmd=$EDITOR
 " set vicmd=elvis\ -G\ termcap
 " set vicmd=vile
 
@@ -116,7 +116,8 @@ set statusline="  Hint: %z%= %A %10u:%-7g %15s %20d  "
 
 " :mark mark /full/directory/path [filename]
 
-mark b ~/bin/
+mark b ~/.local/bin/
+mark d ~/dotfiles/
 mark h ~/
 
 " ------------------------------------------------------------------------------
@@ -449,6 +450,8 @@ nnoremap ,C :!gvim --remote-tab-silent $MYVIFMRC &<cr>
 " Toggle wrap setting on ,w key
 nnoremap ,w :set wrap!<cr>
 
+nnoremap ,/ :grep<space>
+
 " Example of standard two-panel file managers mappings
 nnoremap <f3> :!less %f<cr>
 nnoremap <f4> :edit<cr>
@@ -463,7 +466,7 @@ nnoremap <f8> :delete<cr>
 
 " Use ag (the silver searcher) instead of grep
 "
-" set grepprg='ag --line-numbers %i %a %s'
+set grepprg='rg --column %i %a %s'
 
 " Add additional place to look for executables
 "
@@ -471,7 +474,10 @@ nnoremap <f8> :delete<cr>
 
 " Block particular shortcut
 "
-" nnoremap <left> <nop>
+nnoremap <left> <nop>
+nnoremap <up> <nop>
+nnoremap <down> <nop>
+nnoremap <right> <nop>
 
 " Export IPC name of current instance as environment variable and use it to
 " communicate with the instance later.
@@ -481,3 +487,6 @@ nnoremap <f8> :delete<cr>
 "     vifm --server-name "$VIFM_SERVER_NAME" --remote +"cd '$PWD'"
 "
 " let $VIFM_SERVER_NAME = v:servername
+
+" start with only one splt
+only
