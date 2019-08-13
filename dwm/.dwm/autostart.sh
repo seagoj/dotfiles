@@ -1,2 +1,2 @@
-compton &
-"${HOME}"/.dwm/bar
+compton # &
+# "${HOME}"/.dwm/bar

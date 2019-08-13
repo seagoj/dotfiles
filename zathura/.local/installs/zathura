@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+osinstall zathura zathura-pdf-mupdf zathura-cb && zathura ${@}
