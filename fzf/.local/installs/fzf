@@ -4,6 +4,6 @@ REMOTE=https://github.com/junegunn/fzf.git
 LOCAL="${HOME}"/.fzf
 
 git clone --depth 1 "${REMOTE}" "${LOCAL}"
-"${LOCAL}"/install
+"${LOCAL}"/install --all
 
 fzf $@

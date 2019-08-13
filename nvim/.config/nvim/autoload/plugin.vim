@@ -33,6 +33,7 @@ function! plugin#init() abort
     call minpac#add('rking/ag.vim') | call minpac#add('seagoj/ag-config.vim')
     " file fuzzyfinding
     call minpac#add('ctrlpvim/ctrlp.vim') | call minpac#add('seagoj/ctrlp-config.vim')
+    call minpac#add('junegunn/fzf.vim')
     " visual find and replace
     call minpac#add('terryma/vim-multiple-cursors')
     " Disable arrow keys

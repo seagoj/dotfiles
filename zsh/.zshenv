@@ -55,6 +55,8 @@ export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 path::add --prepend "${HOME}"/.cargo/bin
 path::add "${XDG_FUNCTIONS_DIR}/installs"
 path::add "${HOME}/.local/installs"
+## fzf
+path::add --prepend "${HOME}"/.fzf/bin
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
