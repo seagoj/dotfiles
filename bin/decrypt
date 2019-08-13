@@ -1,5 +1,0 @@
-#!/bin/bash
-
-. general/.local/functions/dotfiles.sh
-
-dotfiles::decrypt_secrets

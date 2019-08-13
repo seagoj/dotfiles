@@ -1,9 +1,0 @@
-#!/bin/bash
-
-. general/.local/functions/dotfiles.sh
-
-OS_TYPE=arch
-SHELL=zsh
-
-. buku/_install.sh
-. bonfyre/_install.sh
