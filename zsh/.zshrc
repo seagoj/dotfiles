@@ -45,6 +45,9 @@ setopt EXTENDED_GLOB
 # arrays are used as expected in zsh scripts
 setopt RC_EXPAND_PARAM
 
+# enable vim mode
+bindkey -v
+
 # Long running history
 HISTSIZE=100000
 SAVEHIST=100000
