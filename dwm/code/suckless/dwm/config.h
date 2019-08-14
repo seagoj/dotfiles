@@ -37,7 +37,7 @@ static const char col_cyan[]        = "#aa4450";
 static const char *colors[][3]      = {
     /*               fg         bg         border   */
     [SchemeNorm] = { fg, bg, bg },
-    [SchemeSel]  = { yellow, blackBold,  blackBold  },
+    [SchemeSel]  = { yellow, blackBold, blackBold },
 };
 
 /* tagging */
