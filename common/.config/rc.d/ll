@@ -9,5 +9,5 @@ function lr() {
 }
 
 function ll() {
-    ls -al -G "${@}"
+    ls -alh -G "${@}"
 }

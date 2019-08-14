@@ -5,7 +5,7 @@
 . "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
 
 # init zim
-source::file "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d/zim"
+source::file "${ZDOTDIR:-${HOME}}"/.zim/init.zsh
 
 # source application specific settings
 source::all "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d"
