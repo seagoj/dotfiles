@@ -1,0 +1,6 @@
+#vim: filetype=bash:
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
+
+source::file "${XDG_CONFIG_HOME}"/asdf/asdf.sh
+source::file "${XDG_CONFIG_HOME}"/asdf/completions/asdf.bash

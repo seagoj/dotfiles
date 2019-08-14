@@ -1,2 +1,0 @@
-. "$XDG_CONFIG_HOME"/asdf/asdf.sh
-. "$XDG_CONFIG_HOME"/asdf/completions/asdf.bash

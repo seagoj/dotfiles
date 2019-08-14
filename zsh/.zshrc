@@ -1,20 +1,14 @@
 #vim: filetype=bash:
-#
+
 # User configuration sourced by interactive shells
 
-# Source zim
-if [[ -s ${ZDOTDIR:-${HOME}}/.zim/init.zsh ]]; then
-  source ${ZDOTDIR:-${HOME}}/.zim/init.zsh
-fi
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
 
-# Source alias files
-for file in ${XDG_CONFIG_HOME:-$HOME/.config}/aliases/*.alias; do
-    source "${file}"
-done
+# init zim
+source::file "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d/zim"
 
-for file in ${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}/sourced/*.sh; do
-    source "${file}"
-done
+# source application specific settings
+source::all "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d"
 
 # key bindings
 bindkey '[1~' beginning-of-line   # Home
@@ -68,66 +62,17 @@ bindkey -M vicmd "q" push-line
 # it's like, space AND completion.  Gnarlbot.
 bindkey -M viins ' ' magic-space
 
-if [[ -d ${XDG_CONFIG_HOME:-$HOME/.config}/rc ]]; then
-    # source application specific settings
-    for file in ${XDG_CONFIG_HOME:-$HOME/.config}/rc/*rc; do
-        source "${file}"
-    done
-fi
-
-# initialize fasd
-if which fasd >/dev/null; then
-    eval "$(fasd --init auto)"
-else
-    echo "fasd is not installed.";
-fi
-
-if [[ -s ${HOME}/.iterm2_shell_integration.zsh ]]; then
-    source ${HOME}/.iterm2_shell_integration.zsh
-fi
-
-if [[ -s ${HOME}/.xsh ]]; then
-    source ${HOME}/.xsh
-fi
-
-if [[ -s $CODE/sourcerer/sourcerer.sh ]]; then
-    source $CODE/sourcerer/sourcerer.sh
-fi
-
-if [[ -s $CODE/pomodoro/pomodoro.sh ]]; then
-    source $CODE/pomodoro/pomodoro.sh
-fi
-
 if which dircolors >/dev/null && [[ -f "${HOME}/.dircolors" ]]; then
     eval "$(dircolors ${HOME}/.dircolors)"
 fi
 
-# if which tag >/dev/null; then
-#     alias_file=${TAG_ALIAS_FILE:-/tmp/tag_aliases}
-#     tag_alias_dir=$(dirname $alias_file)
-#     if [[ ! -d "$tag_alias_dir" ]]; then
-#         mkdir -p $tag_alias_dir
-#     fi
-#     tag() { command tag "$@"; source $alias_file 2>/dev/null; }
-# fi
-
 # Temporary Directories
-if [[ ! -d "$TMPDIR" ]]; then
-    mkdir -p -m 700 "$TMPDIR"
+if [[ ! -d "${TMPDIR}" ]]; then
+    mkdir -p -m 700 "${TMPDIR}"
 fi
-if [[ ! -d "$TMPPREFIX" ]]; then
-    mkdir -p "$TMPPREFIX"
+if [[ ! -d "${TMPPREFIX}" ]]; then
+    mkdir -p "${TMPPREFIX}"
 fi
-
-# autoload bashcompinit; bashcompinit
-# source /usr/local/etc/bash_completion.d/pass
-
-#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
-export SDKMAN_DIR="/Users/seagoj/.sdkman"
-[[ -s "/Users/seagoj/.sdkman/bin/sdkman-init.sh" ]] && source "/Users/seagoj/.sdkman/bin/sdkman-init.sh"
-
-# direnv
-eval "$(direnv hook zsh)"
 
 # # perl
 # PATH="/home/jseago/perl5/bin${PATH:+:${PATH}}"; export PATH;
@@ -135,5 +80,3 @@ eval "$(direnv hook zsh)"
 # PERL_LOCAL_LIB_ROOT="/home/jseago/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 # PERL_MB_OPT="--install_base \"/home/jseago/perl5\""; export PERL_MB_OPT;
 # PERL_MM_OPT="INSTALL_BASE=/home/jseago/perl5"; export PERL_MM_OPT;
-
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh

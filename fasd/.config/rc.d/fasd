@@ -1,0 +1,5 @@
+if which fasd >/dev/null; then
+    eval "$(fasd --init auto)"
+else
+    echo "fasd is not installed.";
+fi

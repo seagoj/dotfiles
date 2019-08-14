@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+unalias brew 2>/dev/null;
+
+function brew() {
+    case "$1" in
+        "refresh")
+            command brew update && \
+                brew upgrade && \
+                brew cleanup && \
+                brew prune && \
+                brew doctor
+            ;;
+        *)
+            command brew "$@"
+            ;;
+    esac
+}

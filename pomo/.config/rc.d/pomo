@@ -1,0 +1,5 @@
+#vim: filetype=bash:
+
+. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
+
+source::file "${CODE}"/pomodoro/pomodoro.sh

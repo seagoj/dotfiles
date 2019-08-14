@@ -1,0 +1,7 @@
+alias cdbonfyre_app="cd ${BONFYRE_APP_DIR}"
+alias cdconfig_management="cd ${CONFIG_MANAGEMENT_DIR}"
+alias cdpyweb="cd ${PYWEB_DIR}"
+
+alias bonfyre_app="cdbonfyre_app && tmux.sh"
+alias config_management="cdconfig_management && tmux.sh"
+alias pyweb="cdpyweb && tmux.sh"

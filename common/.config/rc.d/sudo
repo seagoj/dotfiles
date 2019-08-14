@@ -1,0 +1,5 @@
+## power management
+if [ $UID -ne 0 ]; then
+    function reboot() { sudo shutdown -r ${@:-now} }
+    function shutdown() { sudo shutdown ${@:--h now} }
+fi
