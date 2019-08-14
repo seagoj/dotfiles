@@ -1,7 +1,6 @@
 source::all() {
     if [ -d "${1}" ]; then
         for file in "${1}"/*; do
-            echo "${file}"
             source "${file}"
         done
     fi
