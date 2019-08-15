@@ -43,8 +43,12 @@ function weekly_summary() {
 }
 
 git::clone() {
-    remoteRepo="${1}"
-    localRepo="${2}"
+    echo dirname $!
+    local remoteRepo="${1}"
+    local localRepo="${2:-/tmp/}"
 
-    git clone "${remoteRepo}" "${localRepo}"
+    if [ ! -d "${localRepo}" ]; then
+        mkdir -p "${localRepo}"
+    fi
+    git clone --recurse-submodules "${remoteRepo}" "${localRepo}"
 }

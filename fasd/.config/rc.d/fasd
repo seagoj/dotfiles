@@ -3,3 +3,31 @@ if which fasd >/dev/null; then
 else
     echo "fasd is not installed.";
 fi
+
+frecent() {
+    fasd -a -l -r $1 | \
+    fzf --query "$1 " --select-1 --exit-0 \
+        --height=25% --reverse --tac --no-sort --cycle
+}
+
+frecentDirectory() {
+    fasd -d -l -r $1 | \
+    fzf --query "$1 " --select-1 --exit-0 \
+        --height=25% --reverse --tac --no-sort --cycle
+}
+
+frecentFile() {
+    fasd -f -l -r $1 | \
+    fzf --query "$1 " --select-1 --exit-0 \
+        --height=25% --reverse --tac --no-sort --cycle
+}
+
+unalias d o &>/dev/null;
+
+d() {
+    cd "$(frecentDirectory $1)"
+}
+
+o() {
+    xdg-open "$(frecent $1)"
+}
