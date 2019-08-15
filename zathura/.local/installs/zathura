@@ -1,3 +1,5 @@
 #!/usr/bin/env bash
 
-osinstall zathura zathura-pdf-mupdf zathura-cb && zathura ${@}
+osinstall zathura zathura-pdf-mupdf zathura-cb && \
+    xdg-mime default zathura.desktop application/pdf && \
+    zathura ${@}

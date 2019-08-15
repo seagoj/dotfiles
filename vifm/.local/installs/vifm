@@ -14,4 +14,6 @@ scripts/fix-timestamps && \
 make && \
 sudo make install
 
+xdg-mime default vifm.desktop inode/directory
+
 vifm ${@}
