@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+destinationDir="${HOME}"/video/screenCapture
+
+if [ ! -d "${destinationDir}" ]; then
+    mkdir -p "${destinationDir}"
+fi
+
+ffmpeg -f x11grab -an -s hd1080 -r 25 \
+-v:b 23000 -i :0.0 -g 1 -q:v 0.1 \
+-vcodec libxvid "${destinationDir}"/"${1:-screenCapture}.mp4"
