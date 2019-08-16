@@ -2,9 +2,6 @@
     path = zsh/.zim
     url = git://github.com/Eriner/zim.git
     url = git://github.com/Keyboardio/Model01-Firmware.git
-[submodule "emacs/.emacs.d/evil"]
-    path = emacs/.emacs.d/evil
-    url = https://github.com/emacs-evil/evil
 [submodule "zsh/.zim"]
     path = zsh/.zim
     url = https://github.com/zimfw/zimfw.git
