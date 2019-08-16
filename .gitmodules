@@ -16,3 +16,6 @@
 [submodule "pass/.password-store"]
 	path = pass/.password-store
 	url = git@git.seago.io:seagoj/password-store.git
+[submodule "nvim/vimwiki"]
+	path = nvim/vimwiki
+	url = git@git.seago.io:seagoj/wiki.git
