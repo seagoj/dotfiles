@@ -36,7 +36,7 @@ function submodule::replace() {
 
 ssh_host=git@git.seago.io
 public_host=git://github.com
-submodule::find_in_file_or_fail "${ssh_host}" "${HOME}"/.ssh/config
+# submodule::find_in_file_or_fail "${ssh_host}" "${HOME}"/.ssh/config
 submodule::replace "${ssh_host}":seagoj/awesome-copycats.git awesome/.config/awesome
 submodule::replace "${ssh_host}":seagoj/boilr-license.git boilr/.config/boilr/templates/license
 submodule::replace "${ssh_host}":seagoj/boilr-vimplugin.git boilr/.config/boilr/templates/vimplugin
@@ -48,6 +48,7 @@ submodule::replace "${public_host}"/tmux-plugins/tpm.git tmux/.tmux/plugins/tpm
 submodule::replace "${ssh_host}":seagoj/wiki.git nvim/vimwiki
 submodule::replace "${public_host}"/emacs-evil/evil emacs/.emacs.d/evil
 submodule::replace "${public_host}"/asdf-vm/asdf.git asdf/.config/asdf
+submodule::replace "${public_host}"/zimfw/zimfw.git zsh/.zim
 # git submodule-update
 git submodule update --init --remote --recursive
 
