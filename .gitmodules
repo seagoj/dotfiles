@@ -1,3 +1,0 @@
-[submodule "zsh/.zim"]
-	path = zsh/.zim
-	url = git://github.com/zimfw/zimfw.git
