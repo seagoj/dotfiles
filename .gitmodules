@@ -1,6 +1,3 @@
-[submodule "boilr/.config/boilr/templates/vimplugin"]
-    path = boilr/.config/boilr/templates/vimplugin
-    url = git@git.seago.io:seagoj/boilr-vimplugin.git
 [submodule "keyboardio/Documents/Arduino/hardware/keyboardio"]
     path = keyboardio/Documents/Arduino/hardware/keyboardio
     url = git://github.com/keyboardio/Kaleidoscope-Bundle-Keyboardio.git
