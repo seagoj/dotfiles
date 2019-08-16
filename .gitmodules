@@ -1,6 +1,3 @@
-[submodule "boilr/.config/boilr/templates/license"]
-    path = boilr/.config/boilr/templates/license
-    url = gitlab:seagoj/boilr-license.git
 [submodule "boilr/.config/boilr/templates/vimplugin"]
     path = boilr/.config/boilr/templates/vimplugin
     url = gitlab:seagoj/boilr-vimplugin.git
