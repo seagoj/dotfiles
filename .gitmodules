@@ -37,5 +37,5 @@
     path = zsh/.zim
     url = https://github.com/zimfw/zimfw.git
 [submodule "vimwiki"]
-	path = nvim/vimwiki
-	url = gitlab:seagoj/wiki.git
+    path = nvim/vimwiki
+    url = gitlab:seagoj/wiki.git

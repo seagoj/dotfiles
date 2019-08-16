@@ -42,9 +42,13 @@ setopt RC_EXPAND_PARAM
 # enable vim mode
 bindkey -v
 
-# Long running history
-HISTSIZE=100000
-SAVEHIST=100000
+# Disable pause/resume
+stty -ixon
+
+# infinite history
+HISTSIZE=
+HISTFILESIZE=
+SAVEHIST=
 setopt hist_ignore_all_dups
 setopt inc_append_history extendedglob share_history
 
