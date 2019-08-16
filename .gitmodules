@@ -1,6 +1,3 @@
-[submodule "boilr/.config/boilr/templates/vimplugin"]
-    path = boilr/.config/boilr/templates/vimplugin
-    url = gitlab:seagoj/boilr-vimplugin.git
 [submodule "hyper/.hyper_plugins/local/hypertype"]
     path = hyper/.hyper_plugins/local/hypertype
     url = gitlab:seagoj/hypertype.git
