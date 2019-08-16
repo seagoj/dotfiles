@@ -34,17 +34,19 @@ function submodule::replace() {
     submodule::add "${repo}" "${location}"
 }
 
-ssh_host=github-personal
+ssh_host=git@git.seago.io
 public_host=git://github.com
 submodule::find_in_file_or_fail "${ssh_host}" "${HOME}"/.ssh/config
-# submodule::replace "${ssh_host}":seagoj/awesome-copycats.git awesome/.config/awesome
-# submodule::replace "${ssh_host}":seagoj/boilr-license.git boilr/.config/boilr/templates/license
-# submodule::replace "${ssh_host}":seagoj/boilr-vimplugin.git boilr/.config/boilr/templates/vimplugin
-# submodule::replace "${ssh_host}":seagoj/hypertype.git hyper/.hyper_plugins/local/hypertype
-# submodule::replace "${public_host}"/keyboardio/Kaleidoscope-Bundle-Keyboardio.git keyboardio/Documents/Arduino/hardware/keyboardio
-# submodule::replace "${public_host}"/keyboardio/Model01-Firmware.git keyboardio/Documents/Arduino/Model01-Firmware
-# submodule::replace "${ssh_host}":seagoj/password-store.git pass/.password-store
-# submodule::replace "${public_host}"/tmux-plugins/tpm.git tmux/.tmux/plugins/tpm
-# submodule::replace "${public_host}"/Eriner/zim.git zsh/.zim
+submodule::replace "${ssh_host}":seagoj/awesome-copycats.git awesome/.config/awesome
+submodule::replace "${ssh_host}":seagoj/boilr-license.git boilr/.config/boilr/templates/license
+submodule::replace "${ssh_host}":seagoj/boilr-vimplugin.git boilr/.config/boilr/templates/vimplugin
+submodule::replace "${ssh_host}":seagoj/hypertype.git hyper/.hyper_plugins/local/hypertype
+submodule::replace "${public_host}"/keyboardio/Kaleidoscope-Bundle-Keyboardio.git keyboardio/Documents/Arduino/hardware/keyboardio
+submodule::replace "${public_host}"/keyboardio/Model01-Firmware.git keyboardio/Documents/Arduino/Model01-Firmware
+submodule::replace "${ssh_host}":seagoj/password-store.git pass/.password-store
+submodule::replace "${public_host}"/tmux-plugins/tpm.git tmux/.tmux/plugins/tpm
+submodule::replace "${ssh_host}":seagoj/wiki.git nvim/vimwiki
+submodule::replace "${public_host}"/emacs-evil/evil emacs/.emacs.d/evil
 # git submodule-update
 git submodule update --init --remote --recursive
+
