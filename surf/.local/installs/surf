@@ -17,5 +17,4 @@ git::clone "${remoteRepo}" "${localRepo}" 2>/dev/null
 cd "$localRepo" && \
     suckless::applyPatches "${patches[@]}" && \
     suckless::install
-
-"${package}" ${@}
+# "${package}" ${@}

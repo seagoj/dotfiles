@@ -46,9 +46,9 @@ bindkey -v
 stty -ixon
 
 # infinite history
-HISTSIZE=
-HISTFILESIZE=
-SAVEHIST=
+HISTSIZE=10000
+HISTFILESIZE=10000
+SAVEHIST=10000
 setopt hist_ignore_all_dups
 setopt inc_append_history extendedglob share_history
 
