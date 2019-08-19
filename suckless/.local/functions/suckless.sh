@@ -1,5 +1,6 @@
 suckless::applyPatches() {
     patches="${1}"
+    echo "${@}"
     for p in "${patches[@]}"; do
         diffFile=$(basename "${p}")
         wget "${p}" -O "${diffFile}" && \

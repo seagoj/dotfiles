@@ -6,9 +6,6 @@ installNeovimMac() {
     brew install neovim
     pip2 install --upgrade pip neovim
     pip3 install --install pip neovim flake8
-    if [[ ! -f  ~/.local/bin/flake8 ]]; then
-        # ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
-    fi
 }
 
 installNeovimDebian() {

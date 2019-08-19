@@ -1,60 +1,21 @@
 #!/bin/sh
 
-userresources=$HOME/.Xresources
-usermodmap=$HOME/.Xmodmap
+userresources="${HOME}"/.Xresources
+usermodmap="${HOME}"/.Xmodmap
 sysresources=/etc/X11/xinit/.Xresources
 sysmodmap=/etc/X11/xinit/.Xmodmap
 
-# merge in defaults and keymaps
-
-if [ -f $sysresources ]; then
-
-
-
-
-
-
-
-    xrdb -merge $sysresources
-
-fi
-
-if [ -f $sysmodmap ]; then
-    xmodmap $sysmodmap
-fi
-
-if [ -f "$userresources" ]; then
-    xrdb -merge "$userresources"
-fi
-
-if [ -f "$usermodmap" ]; then
-    xmodmap "$usermodmap"
-fi
-
-# start some nice programs
+[ -f $sysresources ] && xrdb -merge $sysresources
+[ -f $sysmodmap ] && xmodmap $sysmodmap
+[ -f "$userresources" ] && xrdb -merge "$userresources"
+[ -f "$usermodmap" ] && xmodmap "$usermodmap"
 
 if [ -d /etc/X11/xinit/xinitrc.d ] ; then
- for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
-  [ -x "$f" ] && . "$f"
- done
- unset f
+    for f in /etc/X11/xinit/xinitrc.d/?*.sh ; do
+        [ -x "$f" ] && . "$f"
+    done
+    unset f
 fi
-
-# twm &
-# xclock -geometry 50x50-1+1 &
-# xterm -geometry 80x50+494+51 &
-# xterm -geometry 80x20+494-0 &
-# exec xterm -geometry 80x66+0+0 -name login
-
-# toggleDocked
-
-# # configure trackpoint scroll
-# xprop() { xinput set-prop "TPPS/2 IBM Trackpoint" "$@"; }
-# xprop "Evdev Wheel Emulation" 1
-# xprop "Evdev Wheel Emulation Button" 2
-# xprop "Evdev Wheel Emulation Timeout" 200
-# xprop "Evdev Wheel Emulation Axes" 6 7 4 5
-# xprop "Device Accel Constant Deceleration" 0.95
 
 xset r rate 200 50
 
@@ -62,20 +23,27 @@ xbindkeys &
 setxkbmap -option caps:ctrl_modifier
 syncthing &
 
-session=${1:-bspwm}
+if [ -n "$(xrandr | grep Virtual-1)" ]; then
+    xrandr --output Virtual-1 --mode 2560x1600
+    # xrandr --output Virtual-1 --mode 1920x1440
+fi
+
+session=${1:-dwm}
 
 case $session in
-    awesome)
-        dockd --daemon&
-        exec awesome >> ~/.cache/awesome/stdout 2>> ~/.cache/awesome/stderr
-        ;;
     dwm)
-        exec dwm >> ~/.cache/dwm/stdout 2>> ~/.cache/dwm/stderr
-        ;;
-    xfce) exec xfce;;
-    bspwm)
-        dockd --daemon&
-        exec bspwm 2>~/.bspwm.err
-        ;;
+    if [ ! -d ~/.cache/dwm ]; then
+        mkdir -p ~/.cache/dwm
+    fi
+    if [ ! -f ~/.cache/dwm/stdout ]; then
+        touch ~/.cache/dwm/stdout
+    fi
+    if [ ! -f ~/.cache/dwm/stderr ]; then
+        touch ~/.cachedwm/stderr
+    fi
+    feh --bg-scale ~/.dwm/wallpapers/wall.png
+    compton &
+    exec dwm >> ~/.cache/dwm/stdout 2>> ~/.cache/dwm/stderr
+    ;;
     *) exec $1;;
 esac

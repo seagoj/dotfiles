@@ -1,1 +1,1 @@
-feh --bg-scale ~/.config/bspwm/wallpaper/steamburn.png
+feh --bg-scale ~/.dwm/wallpapers/wall.png
