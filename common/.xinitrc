@@ -25,7 +25,7 @@ syncthing &
 
 if [ -n "$(xrandr | grep Virtual-1)" ]; then
     xrandr --output Virtual-1 --mode 2560x1600
-    # xrandr --output Virtual-1 --mode 1920x1440
+    # xrandr --output Virtual-1 --mode 4096x2160
 fi
 
 session=${1:-dwm}
@@ -43,6 +43,7 @@ case $session in
     fi
     feh --bg-scale ~/.dwm/wallpapers/wall.png
     compton &
+    dunst&
     exec dwm >> ~/.cache/dwm/stdout 2>> ~/.cache/dwm/stderr
     ;;
     *) exec $1;;

@@ -15,4 +15,7 @@ cd "$localRepo" && \
     suckless::applyPatches "${patches[@]}" && \
     suckless::install
 
-"${package}" ${@}
+wget "https://tools.suckless.org/dmenu/scripts/run-recent" -O "${HOME}"/.local/bin/run-recent && \
+    chmod 0700 "${HOME}"/.local/bin/run-recent
+
+run-recent ${@}

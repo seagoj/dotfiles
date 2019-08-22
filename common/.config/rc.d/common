@@ -7,6 +7,8 @@ alias cputemp="sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp"
 alias battery="echo $(cat /sys/class/power_supply/BAT0/capacity)%"
 alias memoryfree="free -h | awk '(NR==2){ print $3 }' | sed 's/Gi$/G/'"
 
+alias o="xdg-open"
+
 # ping
 alias ping='ping -c 5'
 alias ping1000='ping -c 1000'

@@ -48,3 +48,5 @@ pass
 urxvt
 vifm
 zsh
+fasd
+fzf

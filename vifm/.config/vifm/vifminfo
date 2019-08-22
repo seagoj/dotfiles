@@ -13,6 +13,10 @@
 	/home/seagoj/
 	..
 1566189916
+'p
+	/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+1566486282
 
 # Bookmarks:
 
@@ -32,6 +36,270 @@ d/home/seagoj
 d/home/seagoj/code/bonfyre/config_management/puppet/bonfyre_app
 	..
 0
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static/js/elements/pages/activity_feed
+	activity_feed.template.html
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static/js/elements/pages/company_detail
+	company_detail.template.html
+1
+d/home/seagoj/dotfiles/common
+	..
+0
+d/home/seagoj/dotfiles
+	common
+20
+d/home/seagoj/dotfiles/common
+	.packages
+6
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static
+	js
+10
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static/js
+	controllers
+2
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static/js/controllers
+	base.js
+4
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static
+	js
+10
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static/js
+	elements
+3
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static/js/elements
+	pages
+4
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb/static/js/elements/pages
+	faux_idp
+11
+d/home/seagoj/code/bonfyre/config_management/puppet/bonfyre_app
+	systemd
+29
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ag-config.vim/plugin
+	ag-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim/plugin
+	ctrlp-config.vim
+1
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim/plugin
+	ctrlp-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim/plugin
+	ctrlp-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim
+	plugin
+2
+d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim/plugin
+	ctrlp-config.vim
+1
+d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
+	static
+10
 d
 
 # Right window history (oldest to newest):
@@ -42,11 +310,16 @@ D
 
 # Command line history (oldest to newest):
 :qqq
+:wq
+:e
 :q
+:qa
 
 # Search history (oldest to newest):
 
 # Prompt history (oldest to newest):
+pcompany_detail.template.html
+pcompany_detail.view.js
 
 # Local filter history (oldest to newest):
 
@@ -59,7 +332,7 @@ D
 # State:
 f
 i1
-[.1
+[.0
 [F
 F
 I1

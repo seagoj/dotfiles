@@ -1,0 +1,3 @@
+. "${XDG_FUNCTIONS_DIR}"/path.sh
+
+path::add --prepend "${HOME}"/.cargo/bin
