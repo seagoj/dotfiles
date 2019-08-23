@@ -298,8 +298,8 @@ d/home/seagoj/dotfiles/nvim/.config/nvim/pack/minpac/start/ctrlp-config.vim/plug
 	ctrlp-config.vim
 1
 d/home/seagoj/code/bonfyre/config_management/puppet/pyweb
-	static
-10
+	node_modules
+8
 d
 
 # Right window history (oldest to newest):
@@ -312,8 +312,8 @@ D
 :qqq
 :wq
 :e
-:q
 :qa
+:q
 
 # Search history (oldest to newest):
 
