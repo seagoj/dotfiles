@@ -39,7 +39,7 @@ tmux new-window
 # tmux send-keys 'rainbowstream' C-m
 # tmux::split h
 tmux send-keys 'irssi' C-m
-tmux select-window -t 3
+tmux select-window -t 2
 tmux rename-window social
 
 # tmux source-file /Users/seagoj/.tmux/projects/general
@@ -47,7 +47,7 @@ tmux rename-window social
 # Set default window
 tmux select-window -t $PROJECT:1
 tmux select-pane -t 1
-tmux send-keys 'buku -S bonfyre' C-m
+# tmux send-keys 'buku -S bonfyre' C-m
 
 # Attach to session
 tmux -2 attach-session -t $PROJECT

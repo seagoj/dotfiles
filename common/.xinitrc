@@ -24,7 +24,7 @@ setxkbmap -option caps:ctrl_modifier
 syncthing &
 
 if [ -n "$(xrandr | grep Virtual-1)" ]; then
-    xrandr --output Virtual-1 --mode 2560x1600
+    xrandr --output Virtual-1 --mode 3480x1600
     # xrandr --output Virtual-1 --mode 4096x2160
 fi
 

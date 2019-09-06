@@ -72,7 +72,7 @@
     ; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
     cr = "!. ~/.local/functions/sourced/b.sh; bm reviews"
     h = "!git hash"
-    hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | pbcopy"
+    hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | xclip"
     crypt = "! git-crypt"
     ctags = "!.git/hooks/ctags"
     current = "rev-parse --abbrev-ref HEAD"
@@ -91,7 +91,7 @@
     wip = "!git add . && git commit -m 'wip' --no-verify"
     wtf = "!git-wtf"
 [branch]
-    autosetuprebase = always
+    autosetupmerge = always
 [init]
     templatedir = "~/.config/git/template"
 [filter "hawser"]

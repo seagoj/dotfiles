@@ -1,6 +1,6 @@
 scriptencoding utf-8
 set encoding=utf-8
-set guifont=SauceCodePro\ Nerd\ Font\ Semibold:h8
+set guifont=FiraCode\ Nerd\ Font\ Mono\ Regular:h8
 set ffs=unix,mac,dos
 set nocompatible
 set clipboard=unnamed

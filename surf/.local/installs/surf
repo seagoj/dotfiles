@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 
-osinstall gstreamer
+osinstall gstreamer webkit2gtk
 
 package=surf
 localRepo="${CODE:-HOME/code}"/suckless/${package}
