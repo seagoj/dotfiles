@@ -8,6 +8,11 @@ Darwin | Mac)
     brew unlink php56
     brew install php70
     ;;
+Arch)
+    asdf plugin-add php
+    asdf install php 7.3.9
+    asdf global php 7.3.9
+    ;;
 *)
     osinstall php
     ;;
