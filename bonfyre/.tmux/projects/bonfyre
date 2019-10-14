@@ -1,0 +1,79 @@
+# # Create bot session
+# tmux -2 new-session -d -s $PROJECT -n 'vim'
+# if which wego &>/dev/null; then
+#     tmux send-keys 'wego 2' C-m
+# fi
+
+# # Bottom Bar
+# tmux::split v
+# if [[ -f package.json ]]; then
+#     tmux send-keys 'npm test' C-m
+# fi
+# tmux::split h
+# tmux::status h
+
+# # Resize
+# tmux resize-pane -t 1 -D 20
+# tmux resize-pane -t 2 -L 40
+# tmux resize-pane -t 3 -L 20
+
+# # Set default window
+# tmux select-window -t $PROJECT:1
+# tmux select-pane -t 1
+
+# # Attach to session
+# tmux -2 attach-session -t $PROJECT
+
+MAIN_WIN_FACTOR=40
+BOTTOM_LEFT_WIN_FACTOR=50
+BOTTOM_MID_WIN_FACTOR=30
+
+# Create bot session
+pushd ~/code/bonfyre/bonfyre_app >/dev/null
+tmux -2 new-session -d -s $PROJECT -n 'bonfyre_app'
+tmux send-keys 'wego 2' C-m
+
+# Bottom Bar
+tmux::split v
+tmux::split h
+tmux send-keys 'vagrant-up' C-m
+tmux::status h
+
+# Resize
+tmux resize-pane -t 1 -D ${MAIN_WIN_FACTOR}
+tmux resize-pane -t 2 -L ${BOTTOM_LEFT_WIN_FACTOR}
+tmux resize-pane -t 3 -L ${BOTTOM_MID_WIN_FACTOR}
+
+pushd ~/code/bonfyre/pyweb >/dev/null
+tmux new-window
+tmux select-window -t 2
+tmux rename-window pyweb
+
+# Bottom Bar
+tmux::split v
+tmux::split h
+tmux send-keys 'vagrant-up' C-m
+tmux::status h
+tmux send-keys 'npm run watch-js' C-m
+
+# Resize
+tmux resize-pane -t 1 -D ${MAIN_WIN_FACTOR}
+tmux resize-pane -t 2 -L ${BOTTOM_LEFT_WIN_FACTOR}
+tmux resize-pane -t 3 -L ${BOTTOM_MID_WIN_FACTOR}
+tmux select-pane -t 1
+popd >/dev/null
+
+pushd ~ >/dev/null
+tmux new-window
+tmux send-keys 'irssi' C-m
+tmux select-window -t 3
+tmux rename-window social
+
+# tmux source-file /Users/seagoj/.tmux/projects/general
+
+# Set default window
+tmux select-window -t $PROJECT:1
+tmux select-pane -t 1
+
+# Attach to session
+tmux -2 attach-session -t $PROJECT

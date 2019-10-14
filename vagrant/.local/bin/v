@@ -69,4 +69,4 @@ v::suspend() {
 
 log::timestamp
 v::arguments "$@"
-v::connect && v::suspend
+v::connect # && v::suspend

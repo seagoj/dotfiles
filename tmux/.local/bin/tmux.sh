@@ -4,7 +4,7 @@
 . "${XDG_FUNCTIONS_DIR}"/tmux.sh
 
 # project settings
-PROJECT="${PWD##*/}"
+PROJECT="${1:-${PWD##*/}}"
 
 if [[ -f ~/.tmux/projects/$PROJECT ]]; then
     tmux -u attach -d -t "$PROJECT" || source ~/.tmux/projects/"$PROJECT"
