@@ -11,7 +11,7 @@ function! plugin#init() abort
             " undo
             packadd! gundo.vim | packadd! gundo-config.vim
             " search/file fuzzyfinding
-            packadd fzf | packadd! fzf.vim | packadd! rg.vim | packadd! fzf-config.vim
+            packadd fzf | packadd! fzf.vim | packadd! rg.vim
             " - visual find and replace
             packadd! vim-multiple-cursors
             " Disable arrow keys

@@ -72,7 +72,7 @@
     ; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
     cr = "!. ~/.local/functions/sourced/b.sh; bm reviews"
     h = "!git hash"
-    hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | xclip"
+    hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | xclip -selection clipboard"
     crypt = "! git-crypt"
     ctags = "!.git/hooks/ctags"
     current = "rev-parse --abbrev-ref HEAD"
