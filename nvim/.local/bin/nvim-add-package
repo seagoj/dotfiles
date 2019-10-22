@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+
+repo="${1}"
+
+IFS='/'
+read -ra ADDR <<< "$repo"
+vendor="${ADDR[0]}"
+package="${ADDR[1]}"
+
+prefix=https://github.com/
+if [ 'seagoj' == "${vendro}" ]; then
+    prefix=git@github.com:
+fi
+
+git submodule add --name "${package}" "${prefix}${repo}" nvim/.config/nvim/pack/bundle/opt/"${package}"

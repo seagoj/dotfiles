@@ -49,3 +49,5 @@ nmap    <Tab>       za
 nmap        <leader>fn      :echo @%<CR>
 " autoformt entire file
 noremap! <leader><tab> <esc>gg=G<C-o><C-o>zz
+nnoremap <leader>p  :Files<cr>
+nnoremap <leader>/  :Find<space>
