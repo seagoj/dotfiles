@@ -23,7 +23,7 @@
 [merge]
     summary = true
     defaultToUpstream = true
-    algorithm = myers ; histogram | minimal | myers | patient
+    ; algorithm = myers ; histogram | minimal | myers | patient
     tool = fugitive
     ; tool = filemerge
 [mergetool "filemerge"]
@@ -81,6 +81,8 @@
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
     recent = "! git branch --sort=-committerdate | head -n 10"
     search = "! git rev-list --all | xargs git grep "
+    sql-create-deploy = "! cat $(git sql-diff) > sql/deploy.sql"
+    sql-diff = "! git dn origin/master -- sql | grep -v schema.sql | grep -v data.sql"
     st = "status"
     submodule-add = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -f ${1}; }; f"
     submodule-rm = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -f ${1}; }; f"

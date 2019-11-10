@@ -199,3 +199,6 @@
 [submodule "rg.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/rg.vim
 	url = https://github.com/seagoj/rg.vim
+[submodule "fzf-config.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
+	url = git@github.com:seagoj/fzf-config.vim
