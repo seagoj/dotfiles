@@ -1,0 +1,4 @@
+unalias mutt 2>/dev/null
+if [ "$(which mutt)" != "${HOME}/.local/installs/mutt" ]; then
+    alias mutt="mutt -F \"$XDG_CONFIG_HOME\"/mutt/muttrc"
+fi

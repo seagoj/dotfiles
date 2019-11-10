@@ -1,8 +1,6 @@
 #!/usr/bin/env bash
 
-if ! which mutt >/dev/null; then
-    brew install mutt
-fi
+osinstall mutt
 
 if [[ ! -d "$XDG_CACHE_HOME/mutt/headers" ]]; then
     mkdir -p "$XDG_CACHE_HOME/mutt/headers"
@@ -19,3 +17,5 @@ fi
 if [[ ! -f "$XDG_CONFIG_HOME/mutt/certificates" ]]; then
     touch "$XDG_CONFIG_HOME/mutt/certificates"
 fi
+
+. "${XDG_CONFIG_HOME}"/rc.d/mutt
