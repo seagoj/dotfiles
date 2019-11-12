@@ -1,0 +1,25 @@
+
+IMAPStore personal-remote
+Host imap.gmail.com
+Port  993
+User seagoj@gmail.com
+PassCmd "pass social/jeremy/google/mutt | head -n 1"
+SSLType IMAPS
+CertificateFile /etc/ssl/certs/ca-certificates.crt
+
+MaildirStore personal-local
+Subfolders Verbatim
+Path ~/.config/mutt/com.gmail.seagoj/mail/
+Inbox ~/.config/mutt/com.gmail.seagoj/mail/INBOX
+Flatten .
+
+Channel personal
+Expunge Both
+Master :personal-remote:
+Slave :personal-local:
+Patterns * !"[Gmail]/All Mail"
+Create Both
+SyncState *
+MaxMessages 0
+# End profile
+
