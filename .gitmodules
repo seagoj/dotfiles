@@ -29,176 +29,176 @@
     path = zsh/.zim
     url = git://github.com/zimfw/zimfw.git
 [submodule "gundo.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/gundo.vim
-	url = https://github.com/sjl/gundo.vim
+    path = nvim/.config/nvim/pack/bundle/opt/gundo.vim
+    url = https://github.com/sjl/gundo.vim
 [submodule "gundo-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/gundo-config.vim
-	url = git@github.com:seagoj/gundo-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/gundo-config.vim
+    url = git@github.com:seagoj/gundo-config.vim
 [submodule "fzf.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/fzf.vim
-	url = https://github.com/junegunn/fzf.vim
+    path = nvim/.config/nvim/pack/bundle/opt/fzf.vim
+    url = https://github.com/junegunn/fzf.vim
 [submodule "vim-multiple-cursors"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-multiple-cursors
-	url = https://github.com/terryma/vim-multiple-cursors
+    path = nvim/.config/nvim/pack/bundle/opt/vim-multiple-cursors
+    url = https://github.com/terryma/vim-multiple-cursors
 [submodule "disable-cursor-keys.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/disable-cursor-keys.vim
-	url = https://github.com/seagoj/disable-cursor-keys.vim
+    path = nvim/.config/nvim/pack/bundle/opt/disable-cursor-keys.vim
+    url = https://github.com/seagoj/disable-cursor-keys.vim
 [submodule "vim-surround"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-surround
-	url = https://github.com/tpope/vim-surround
+    path = nvim/.config/nvim/pack/bundle/opt/vim-surround
+    url = https://github.com/tpope/vim-surround
 [submodule "auto-pairs-gentle"]
-	path = nvim/.config/nvim/pack/bundle/opt/auto-pairs-gentle
-	url = https://github.com/vim-scripts/auto-pairs-gentle
+    path = nvim/.config/nvim/pack/bundle/opt/auto-pairs-gentle
+    url = https://github.com/vim-scripts/auto-pairs-gentle
 [submodule "last-position.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/last-position.vim
-	url = https://github.com/seagoj/last-position.vim
+    path = nvim/.config/nvim/pack/bundle/opt/last-position.vim
+    url = https://github.com/seagoj/last-position.vim
 [submodule "line-wrap-navigation.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/line-wrap-navigation.vim
-	url = https://github.com/seagoj/line-wrap-navigation.vim
+    path = nvim/.config/nvim/pack/bundle/opt/line-wrap-navigation.vim
+    url = https://github.com/seagoj/line-wrap-navigation.vim
 [submodule "tab-management.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/tab-management.vim
-	url = https://github.com/seagoj/tab-management.vim
+    path = nvim/.config/nvim/pack/bundle/opt/tab-management.vim
+    url = https://github.com/seagoj/tab-management.vim
 [submodule "netrw-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/netrw-config.vim
-	url = https://github.com/seagoj/netrw-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/netrw-config.vim
+    url = https://github.com/seagoj/netrw-config.vim
 [submodule "lightline.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/lightline.vim
-	url = https://github.com/seagoj/lightline.vim
+    path = nvim/.config/nvim/pack/bundle/opt/lightline.vim
+    url = https://github.com/seagoj/lightline.vim
 [submodule "lightline-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/lightline-config.vim
-	url = https://github.com/seagoj/lightline-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/lightline-config.vim
+    url = https://github.com/seagoj/lightline-config.vim
 [submodule "buffers.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/buffers.vim
-	url = https://github.com/seagoj/buffers.vim
+    path = nvim/.config/nvim/pack/bundle/opt/buffers.vim
+    url = https://github.com/seagoj/buffers.vim
 [submodule "vim-tmux-navigator"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-tmux-navigator
-	url = https://github.com/christoomey/vim-tmux-navigator
+    path = nvim/.config/nvim/pack/bundle/opt/vim-tmux-navigator
+    url = https://github.com/christoomey/vim-tmux-navigator
 [submodule "vim-tmux-navigator-config"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-tmux-navigator-config
-	url = https://github.com/seagoj/vim-tmux-navigator-config
+    path = nvim/.config/nvim/pack/bundle/opt/vim-tmux-navigator-config
+    url = https://github.com/seagoj/vim-tmux-navigator-config
 [submodule "greplace.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/greplace.vim
-	url = https://github.com/skwp/greplace.vim
+    path = nvim/.config/nvim/pack/bundle/opt/greplace.vim
+    url = https://github.com/skwp/greplace.vim
 [submodule "vimwiki"]
-	path = nvim/.config/nvim/pack/bundle/opt/vimwiki
-	url = https://github.com/vimwiki/vimwiki
+    path = nvim/.config/nvim/pack/bundle/opt/vimwiki
+    url = https://github.com/vimwiki/vimwiki
 [submodule "vifm.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/vifm.vim
-	url = https://github.com/vifm/vifm.vim
+    path = nvim/.config/nvim/pack/bundle/opt/vifm.vim
+    url = https://github.com/vifm/vifm.vim
 [submodule "vim-devicons"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-devicons
-	url = https://github.com/ryanoasis/vim-devicons
+    path = nvim/.config/nvim/pack/bundle/opt/vim-devicons
+    url = https://github.com/ryanoasis/vim-devicons
 [submodule "vim-gitgutter"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-gitgutter
-	url = https://github.com/airblade/vim-gitgutter
+    path = nvim/.config/nvim/pack/bundle/opt/vim-gitgutter
+    url = https://github.com/airblade/vim-gitgutter
 [submodule "vim-fugitive"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-fugitive
-	url = https://github.com/tpope/vim-fugitive
+    path = nvim/.config/nvim/pack/bundle/opt/vim-fugitive
+    url = https://github.com/tpope/vim-fugitive
 [submodule "fugitive-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/fugitive-config.vim
-	url = https://github.com/seagoj/fugitive-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/fugitive-config.vim
+    url = https://github.com/seagoj/fugitive-config.vim
 [submodule "git-gutter-feature.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/git-gutter-feature.vim
-	url = https://github.com/seagoj/git-gutter-feature.vim
+    path = nvim/.config/nvim/pack/bundle/opt/git-gutter-feature.vim
+    url = https://github.com/seagoj/git-gutter-feature.vim
 [submodule "zeavim.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/zeavim.vim
-	url = https://github.com/KabbAmine/zeavim.vim
+    path = nvim/.config/nvim/pack/bundle/opt/zeavim.vim
+    url = https://github.com/KabbAmine/zeavim.vim
 [submodule "editorconfig-vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/editorconfig-vim
-	url = https://github.com/editorconfig/editorconfig-vim
+    path = nvim/.config/nvim/pack/bundle/opt/editorconfig-vim
+    url = https://github.com/editorconfig/editorconfig-vim
 [submodule "ale"]
-	path = nvim/.config/nvim/pack/bundle/opt/ale
-	url = https://github.com/w0rp/ale
+    path = nvim/.config/nvim/pack/bundle/opt/ale
+    url = https://github.com/w0rp/ale
 [submodule "lightline-ale"]
-	path = nvim/.config/nvim/pack/bundle/opt/lightline-ale
-	url = https://github.com/maximbaz/lightline-ale
+    path = nvim/.config/nvim/pack/bundle/opt/lightline-ale
+    url = https://github.com/maximbaz/lightline-ale
 [submodule "ale-config"]
-	path = nvim/.config/nvim/pack/bundle/opt/ale-config
-	url = https://github.com/seagoj/ale-config
+    path = nvim/.config/nvim/pack/bundle/opt/ale-config
+    url = https://github.com/seagoj/ale-config
 [submodule "ultisnips"]
-	path = nvim/.config/nvim/pack/bundle/opt/ultisnips
-	url = https://github.com/SirVer/ultisnips
+    path = nvim/.config/nvim/pack/bundle/opt/ultisnips
+    url = https://github.com/SirVer/ultisnips
 [submodule "ultisnips-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/ultisnips-config.vim
-	url = https://github.com/seagoj/ultisnips-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/ultisnips-config.vim
+    url = https://github.com/seagoj/ultisnips-config.vim
 [submodule "indentline"]
-	path = nvim/.config/nvim/pack/bundle/opt/indentline
-	url = https://github.com/yggdroot/indentline
+    path = nvim/.config/nvim/pack/bundle/opt/indentline
+    url = https://github.com/yggdroot/indentline
 [submodule "indentline-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/indentline-config.vim
-	url = https://github.com/seagoj/indentline-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/indentline-config.vim
+    url = https://github.com/seagoj/indentline-config.vim
 [submodule "vim-polyglot"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-polyglot
-	url = https://github.com/sheerun/vim-polyglot
+    path = nvim/.config/nvim/pack/bundle/opt/vim-polyglot
+    url = https://github.com/sheerun/vim-polyglot
 [submodule "vim-polyglot-config"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-polyglot-config
-	url = https://github.com/seagoj/vim-polyglot-config
+    path = nvim/.config/nvim/pack/bundle/opt/vim-polyglot-config
+    url = https://github.com/seagoj/vim-polyglot-config
 [submodule "vim-test"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-test
-	url = https://github.com/janko-m/vim-test
+    path = nvim/.config/nvim/pack/bundle/opt/vim-test
+    url = https://github.com/janko-m/vim-test
 [submodule "vim-dispatch"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-dispatch
-	url = https://github.com/tpope/vim-dispatch
+    path = nvim/.config/nvim/pack/bundle/opt/vim-dispatch
+    url = https://github.com/tpope/vim-dispatch
 [submodule "vim-dispatch-neovim"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-dispatch-neovim
-	url = https://github.com/radenling/vim-dispatch-neovim
+    path = nvim/.config/nvim/pack/bundle/opt/vim-dispatch-neovim
+    url = https://github.com/radenling/vim-dispatch-neovim
 [submodule "vim-test-config"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-test-config
-	url = https://github.com/seagoj/vim-test-config
+    path = nvim/.config/nvim/pack/bundle/opt/vim-test-config
+    url = https://github.com/seagoj/vim-test-config
 [submodule "vim-tmux-runner"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-tmux-runner
-	url = https://github.com/christoomey/vim-tmux-runner
+    path = nvim/.config/nvim/pack/bundle/opt/vim-tmux-runner
+    url = https://github.com/christoomey/vim-tmux-runner
 [submodule "tslime.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/tslime.vim
-	url = https://github.com/gabeharms/tslime.vim
+    path = nvim/.config/nvim/pack/bundle/opt/tslime.vim
+    url = https://github.com/gabeharms/tslime.vim
 [submodule "overlength.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/overlength.vim
-	url = https://github.com/seagoj/overlength.vim
+    path = nvim/.config/nvim/pack/bundle/opt/overlength.vim
+    url = https://github.com/seagoj/overlength.vim
 [submodule "vdebug"]
-	path = nvim/.config/nvim/pack/bundle/opt/vdebug
-	url = https://github.com/vim-vdebug/vdebug
+    path = nvim/.config/nvim/pack/bundle/opt/vdebug
+    url = https://github.com/vim-vdebug/vdebug
 [submodule "vdebug-config"]
-	path = nvim/.config/nvim/pack/bundle/opt/vdebug-config
-	url = https://github.com/seagoj/vdebug-config
+    path = nvim/.config/nvim/pack/bundle/opt/vdebug-config
+    url = https://github.com/seagoj/vdebug-config
 [submodule "c.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/c.vim
-	url = https://github.com/seagoj/c.vim
+    path = nvim/.config/nvim/pack/bundle/opt/c.vim
+    url = https://github.com/seagoj/c.vim
 [submodule "php.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/php.vim
-	url = https://github.com/seagoj/php.vim
+    path = nvim/.config/nvim/pack/bundle/opt/php.vim
+    url = https://github.com/seagoj/php.vim
 [submodule "phpcomplete.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/phpcomplete.vim
-	url = https://github.com/shawncplus/phpcomplete.vim
+    path = nvim/.config/nvim/pack/bundle/opt/phpcomplete.vim
+    url = https://github.com/shawncplus/phpcomplete.vim
 [submodule "phpfolding.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/phpfolding.vim
-	url = https://github.com/rayburgemeestre/phpfolding.vim
+    path = nvim/.config/nvim/pack/bundle/opt/phpfolding.vim
+    url = https://github.com/rayburgemeestre/phpfolding.vim
 [submodule "phpactor"]
-	path = nvim/.config/nvim/pack/bundle/opt/phpactor
-	url = https://github.com/phpactor/phpactor
+    path = nvim/.config/nvim/pack/bundle/opt/phpactor
+    url = https://github.com/phpactor/phpactor
 [submodule "vim-php-namespace"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-php-namespace
-	url = https://github.com/arnaud-lb/vim-php-namespace
+    path = nvim/.config/nvim/pack/bundle/opt/vim-php-namespace
+    url = https://github.com/arnaud-lb/vim-php-namespace
 [submodule "vim-php-namespace-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-php-namespace-config.vim
-	url = https://github.com/seagoj/vim-php-namespace-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/vim-php-namespace-config.vim
+    url = https://github.com/seagoj/vim-php-namespace-config.vim
 [submodule "vmustache"]
-	path = nvim/.config/nvim/pack/bundle/opt/vmustache
-	url = https://github.com/tobyS/vmustache
+    path = nvim/.config/nvim/pack/bundle/opt/vmustache
+    url = https://github.com/tobyS/vmustache
 [submodule "pdv"]
-	path = nvim/.config/nvim/pack/bundle/opt/pdv
-	url = https://github.com/YaroslavMolchan/pdv
+    path = nvim/.config/nvim/pack/bundle/opt/pdv
+    url = https://github.com/YaroslavMolchan/pdv
 [submodule "pdv-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/pdv-config.vim
-	url = https://github.com/seagoj/pdv-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/pdv-config.vim
+    url = https://github.com/seagoj/pdv-config.vim
 [submodule "vim-php-refactoring-toolbox"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-php-refactoring-toolbox
-	url = https://github.com/adoy/vim-php-refactoring-toolbox
+    path = nvim/.config/nvim/pack/bundle/opt/vim-php-refactoring-toolbox
+    url = https://github.com/adoy/vim-php-refactoring-toolbox
 [submodule "fzf"]
-	path = nvim/.config/nvim/pack/bundle/opt/fzf
-	url = https://github.com/junegunn/fzf
+    path = nvim/.config/nvim/pack/bundle/opt/fzf
+    url = https://github.com/junegunn/fzf
 [submodule "rg.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/rg.vim
-	url = https://github.com/seagoj/rg.vim
+    path = nvim/.config/nvim/pack/bundle/opt/rg.vim
+    url = https://github.com/seagoj/rg.vim
 [submodule "fzf-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
-	url = git@github.com:seagoj/fzf-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
+    url = git@github.com:seagoj/fzf-config.vim

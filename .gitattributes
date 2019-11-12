@@ -39,3 +39,4 @@ ssh/.ssh/id_rsa_milito filter=git-crypt diff=git-crypt
 tmux/.ngrok2/ngrok.yml filter=git-crypt diff=git-crypt
 u2f/.config/u2f/keys filter=git-crypt diff=git-crypt
 findme/.findme filter=git-crypt diff=git-crypt
+mutt/.config/mutt/account* filter=git-crypt diff=git-crypt

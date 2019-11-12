@@ -1,4 +1,7 @@
 unalias mutt 2>/dev/null
-if [ "$(which mutt)" != "${HOME}/.local/installs/mutt" ]; then
-    alias mutt="mutt -F \"$XDG_CONFIG_HOME\"/mutt/muttrc"
+unalias neomutt 2>/dev/null
+
+if [ "$(which neomutt)" != "${HOME}/.local/installs/mutt" ]; then
+    alias neomutt="neomutt -F \"$XDG_CONFIG_HOME\"/mutt/muttrc"
+    alias mutt="neomutt -F \"$XDG_CONFIG_HOME\"/mutt/muttrc"
 fi
