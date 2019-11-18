@@ -1,3 +1,27 @@
+# vim: filetype=sh:
+
+tmux::newWindow() {
+    local window="${1:-window}"
+    local layout="${2:-default}"
+    if [ -z "$(tmux list-windows)" ]; then
+        tmux -2 new-session -d -s $PROJECT -n "${window}"
+    else
+        tmux new-window -n "${window}"
+    fi
+    if [ "${2}" != "--no-layout" ]; then
+        . "${HOME}"/.tmux/layouts/"${layout}"
+    fi
+}
+
+tmux::startSession() {
+    # Select first window.first pane
+    tmux select-window -t $PROJECT:1
+    tmux select-pane -t 1
+
+    # Attach to session
+    tmux -2 attach-session -t $PROJECT
+}
+
 tmux::split() {
     if [[ "$1" == "v" ]]; then
         tmux split-window -v

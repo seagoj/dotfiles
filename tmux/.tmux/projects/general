@@ -1,25 +1,9 @@
-# Create bot session
-tmux -2 new-session -d -s $PROJECT -n 'vim'
+# vim: filetype=sh:
+
+. "$XDG_FUNCTIONS_DIR"/tmux.sh
+
+tmux::newWindow 'vim'
 if which wego &>/dev/null; then
-    tmux send-keys 'wego 2' C-m
+    tmux send-keys -t 1 'wego 2' C-m
 fi
-
-# Bottom Bar
-tmux::split v
-if [[ -f package.json ]]; then
-    tmux send-keys 'npm test' C-m
-fi
-tmux::split h
-tmux::status h
-
-# Resize
-tmux resize-pane -t 1 -D 20
-tmux resize-pane -t 2 -L 40
-tmux resize-pane -t 3 -L 20
-
-# Set default window
-tmux select-window -t $PROJECT:1
-tmux select-pane -t 1
-
-# Attach to session
-tmux -2 attach-session -t $PROJECT
+tmux::startSession
