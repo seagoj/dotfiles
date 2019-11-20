@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+
+if [ ! -z "$(systemctl | grep ntpd)" ]; then
+    sudo systemctl stop ntpd
+fi
+sudo ntpd -gq
+sudo systemctl start ntpd
