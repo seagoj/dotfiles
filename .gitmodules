@@ -202,3 +202,6 @@
 [submodule "fzf-config.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
     url = git@github.com:seagoj/fzf-config.vim
+[submodule "context.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/context.vim
+	url = git://github.com/wellle/context.vim.git

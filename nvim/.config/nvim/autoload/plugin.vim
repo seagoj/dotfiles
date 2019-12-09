@@ -79,6 +79,8 @@ function! plugin#init() abort
             " Debugger
             packadd! vdebug | packadd! vdebug-config
 
+            " packadd! context.vim
+
             " Language Specific
             call plugin#c()
             call plugin#javascript()
