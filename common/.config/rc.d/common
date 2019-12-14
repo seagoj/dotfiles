@@ -22,3 +22,6 @@ portuse() {
 
     sudo lsof -i :"${1}"
 }
+
+alias open='xdg-open'
+alias o='open'
