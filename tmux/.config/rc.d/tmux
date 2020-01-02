@@ -1,0 +1,2 @@
+PROJECT_DIR="${HOME}"/.tmux/projects
+PROJECT_DEFAULT=general

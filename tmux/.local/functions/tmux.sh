@@ -3,9 +3,11 @@
 tmux::newWindow() {
     local window="${1:-window}"
     local layout="${2:-default}"
-    if [ -z "$(tmux list-windows)" ]; then
+    if [ -z "$(tmux list-windows | grep $PROJECT)" ]; then
+        echo "creating new session..."
         tmux -2 new-session -d -s $PROJECT -n "${window}"
     else
+        echo "creating new window in session..."
         tmux new-window -n "${window}"
     fi
     if [ "${2}" != "--no-layout" ]; then
