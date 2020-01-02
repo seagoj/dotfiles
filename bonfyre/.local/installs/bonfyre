@@ -1,7 +1,5 @@
-if ! cat /etc/hosts | grep local.api.bonfyreapp.com >/dev/null; then
-    general::sudo "tee -a /etc/hosts <<< '127.0.0.1    local.api.bonfyreapp.com'" >/dev/null
-fi
+#/usr/bin/env bash
 
-if ! cat /etc/hosts | grep "local.beta.bonfyreapp.com" >/dev/null; then
-    general::sudo 'tee -a /etc/hosts <<< 127.0.0.1\ \ \ \ local.beta.bonfyreapp.com' #>/dev/null
+if ! cat /etc/hosts | grep "fyreapp" >/dev/null; then
+    general::sudo 'tee -a /etc/hosts <<< 127.0.0.1  bonfyre.liquino.com local.beta.bonfyreapp.com local.beta.fyreapp.com local.api.bonfyreapp.com graylog local.api.fyreapp.com' #>/dev/null
 fi

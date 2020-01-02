@@ -14,6 +14,7 @@ text=auto
 
 .gist-vim filter=git-crypt diff=git-crypt
 bonfyre/.config/aliases/bonfyre.alias filter=git-crypt diff=git-crypt
+bonfyre/.config/rc.d/bonfyre filter=git-crypt diff=git-crypt
 bonfyre/_install.sh filter=git-crypt diff=git-crypt
 buku/.local/share/buku/bookmarks.db filter=git-crypt diff=git-crypt
 dotman/.config/dotman/config filter=git-crypt diff=git-crypt
