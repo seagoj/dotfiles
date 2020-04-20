@@ -1,3 +1,12 @@
+# Start configuration added by Zim install {{{
+#
+# User configuration sourced by all invocations of the shell
+#
+
+# Define Zim location
+: ${ZIM_HOME=${ZDOTDIR:-${HOME}}/.zim}
+# }}} End configuration added by Zim install
+
 #
 # Defines environment variables.
 #
@@ -18,6 +27,8 @@ fpath=(
     $FUNCTIONS
     $fpath
 )
+
+. "${HOME}"/.zim-install/src/templates/zshenv
 
 # GPG
 export GPG_TTY=$(tty)

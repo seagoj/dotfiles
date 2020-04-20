@@ -33,6 +33,7 @@ function! plugin#init() abort
             packadd! greplace.vim
             " note taking
             packadd! vimwiki
+            " packadd! vim-waikiki
             " file picker
             packadd! vifm.vim
 

@@ -1,262 +1,95 @@
-snippet <?php "PHP file" b
-<?php declare(strict_types=1);
-
-$0
-endsnippet
-
-snippet filedoc "File Level Doc" b
-/**
- * ${1:`!v expand('%:r')`}
- *
- * ${2:Long Description}
- *
- * PHP version ${3:5.3}
- *
- * @category ${4:Seago}
- * @package  ${5:`!v toupper(fnamemodify(getcwd(), ':t'))`}
- * @author	 ${6:`!v g:snips_author`}
- * @license  ${7:http://www.opensource.org/licenses/mit-license.html	MIT License}
- * @version  GIT: `git tag | tail -1`
- * @link	 ${8:http://bvbot.net}
- */
-
-$0
-endsnippet
-
-snippet classdoc "Class Level Doc" b
-/**
- * ${1:`!v expand('%:r')`}
- *
- * ${2:Long Description}
- *
- * PHP version ${3:5.3}
- *
- * @category ${4:Seago}
- * @package  ${5:`!v toupper(fnamemodify(getcwd(), ':t'))`}
- * @author	 ${6:`!v g:snips_author`}
- * @license  ${7:http://www.opensource.org/licenses/mit-license.html	MIT License}
- * @link	 ${8:http://bvbot.net}
- */
-
-$0
-endsnippet
-
-snippet botservice
-<?php namespace Bot\Service;
-
-use Devtools\Response;
-use Bot\Repository\GeneralRepository;
-use Bot\BotNew as App;
-use Exception;
-
-class ${1:`!v expand('%:t:r')`} extends Response
-{
-	public function __construct(
-		${2:GeneralRepository} $${3:repository}
-	) {
-		parent::__construct();
-		$this->$3 = $$3;
-		$this->processRequest();
-	}
-
-	public function ${4:get}()
-	{
-		$this->loadRequest(
-			array(
-				$5
-			)
-		);
-		$0
-	}
-
-	public static function register()
-	{
-		return new $1(
-			App::make('$2')
-		);
-	}
-}
-
-App::startService('Bot\Service\\$1');
-endsnippet
+# General
 
 snippet testclass "PHPUnit Test Class" b
-<?php declare(strict_types=1);
-
-use PHPUnit\Framework\TestCase;
+<?php
 
 /**
- * Class ${1:`!p snip.rv=snip.fn.split('.')[0]`_test}
+ * File: ${1:`!v expand('%:r')`}
+ *
+ * ${2:Unit tests for `!p snip.rv=snip.fn.split('Test.')[0]`}
+ *
+ * PHP version ${3:`composer config platform.php`}
+ *
+ * @package  ${5:`composer config project.name`}
+ * @author	 ${6:`git config user.name` <`git config user.email`>}
+ * @version  GIT: `git tag | tail -1`
  */
-class $1 extends ${2:TestCase}
+
+declare(strict_types=1);
+
+namespace $5${6:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
+
+class ${7:`!p snip.rv=snip.fn.split('.')[0]`} extends ${8:TestCase}
 {
-	public function test${4:_feature}() {
-		${0:// code}
-	}
-}
-endsnippet
-
-snippet class "Class definition" b
-<?php declare(strict_types=1);
-
-namespace ${1:Bonfyre}${2:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
-
-class ${3:`!p snip.rv=snip.fn.split('.')[0]`}
-{
-	public function ${4:__construct}(${5}) {
+	/**
+	 * test${9:Feature}
+	 *
+	 * @return void
+	 */
+	public function test$9() : void
+	{
 		${0}
 	}
 }
 endsnippet
 
-snippet funcdoc "Function level documentation" b
-/**
- * ${1:${VISUAL:function name}}
- *
- * ${2:Description}
- *
- * @param ${5:void}
- *
- * @return ${3:void}
- * @author ${4:`!v g:snips_author`}
- */
-$0
-endsnippet
+snippet class "Class definition" b
+<?php
 
-snippet function "Default function formatting"
-${1:public }function ${2:someFunc}(${3}) : ${4:void}
+/**
+ * File: ${1:`!v expand('%:r')`}
+ *
+ * ${2:Long Decription}
+ *
+ * PHP version ${3:`composer config platform.php`}
+ *
+ * @package  ${5:`composer config project.name`}
+ * @author	 ${6:`git config user.name` <`git config user.email`>}
+ * @version  GIT: `git tag | tail -1`
+ */
+
+declare(strict_types=1);
+
+namespace $5${6:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
+
+class ${7:`!p snip.rv=snip.fn.split('.')[0]`}
 {
-	${0}
+	public function ${8:__construct}(${9})
+	{
+		${0}
+	}
 }
 endsnippet
 
-snippet '(^|\s)\[' "Array format conversion" r
-array($1);
-$0
-endsnippet
-
-snippet '=\[' "Array assignment format conversion" r
-= array($1);
-$0
-endsnippet
-
-snippet request "Request"
-$_REQUEST['$1']$0
-endsnippet
-
+# Bonfyre
 snippet controller "controller"
-class ${1:`!p snip.rv=snip.fn.split('.')[0]`}_controller extends base_controller {
-	${0}
-}
-endsnippet
+<?php
 
-snippet getdoc "Document a get endpoint"
 /**
- * @api {get} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2:${VISUAL}} ${3:DESCRIPTION}
- * @apiName $2
- * @apiGroup $1
+ * File: ${1:`!v expand('%:r')`}
  *
- * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
+ * ${2:Long Decription}
  *
- * @apiUse SuccessResponse
- * @apiSuccessExample {json} Success-Response:
- *	 HTTP/1.1 200 OK
- *	 {
- *		 "success": 1,
- *		 "code": 0,
- *		 "data": [${8}]
- *	 }
+ * PHP version ${3:`composer config platform.php`}
  *
- * @apiUse ErrorResponse ${9}
+ * @package  ${5:`composer config project.name`}
+ * @author	 ${6:`git config user.name` <`git config user.email`>}
+ * @version  GIT: `git tag | tail -1`
  */
-${0}
-endsnippet
 
-snippet postdoc "Document a post endpoint"
-/**
- * @api {post} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2:${VISUAL}} ${3:DESCRIPTION}
- * @apiName $2
- * @apiGroup $1
- *
- * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
- *
- * @apiUse SuccessResponse
- * @apiSuccessExample {json} Success-Response:
- *	 HTTP/1.1 200 OK
- *	 {
- *		 "success": 1,
- *		 "code": 0,
- *		 "data": [${8}]
- *	 }
- *
- * @apiUse ErrorResponse ${9}
- */
-${0}
-endsnippet
+declare(strict_types=1);
 
-snippet post "post"
-/**
- * @api {post} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2} ${3:DESCRIPTION}
- * @apiName $2
- * @apiGroup $1
- *
- * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
- *
- * @apiUse SuccessResponse
- * @apiSuccessExample {json} Success-Response:
- *	 HTTP/1.1 200 OK
- *	 {
- *		 "success": 1,
- *		 "code": 0,
- *		 "data": [${8}]
- *	 }
- *
- * @apiUse ErrorResponse ${9}
- */
-public function $2() {
-	try {
-		$this->require_post([${10}]);
-	} catch(\Exception $e) {
-		return $this->fail($e);
+namespace $5${6:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
+
+use Bonfyre\Base;
+
+class ${7:`!p snip.rv=snip.fn.split('.')[0]`} extends Base\Controller
+{
+	public function ${8:action}(${9}) : void
+	{
+		${0}
 	}
-	${0}
 }
-endsnippet
-
-snippet get "get"
-/**
- * @api {get} /${1:`!p snip.rv=snip.fn.split('.')[0]`}/${2} ${3:DESCRIPTION}
- * @apiName $2
- * @apiGroup $1
- *
- * @apiParam {${4:TYPE}} ${5:NAME} ${6:DESCRIPTION} ${7}
- *
- * @apiUse SuccessResponse
- * @apiSuccessExample {json} Success-Response:
- *	 HTTP/1.1 200 OK
- *	 {
- *		 "success": 1,
- *		 "code": 0,
- *		 "data": [${8}]
- *	 }
-
- * @apiUse ErrorResponse ${9}
- */
-public function ${2}() {
-	try {
-		$this->require_get([${10}]);
-	} catch(\Exception $e) {
-		return $this->fail($e);
-	}
-	${0}
-}
-endsnippet
-
-snippet namespace "namespace" b
-namespace ${1:Bonfyre}${2:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
-
-use $1\Base;
-
 endsnippet
 
 snippet debug "debug" b

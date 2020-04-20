@@ -205,3 +205,6 @@
 [submodule "context.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/context.vim
 	url = git://github.com/wellle/context.vim.git
+[submodule "zimfw-install"]
+	path = zsh/.zim-install
+	url = https://github.com/zimfw/install
