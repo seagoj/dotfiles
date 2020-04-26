@@ -208,3 +208,6 @@
 [submodule "zimfw-install"]
 	path = zsh/.zim-install
 	url = https://github.com/zimfw/install
+[submodule "coc.nvim"]
+	path = nvim/.config/nvim/pack/bundle/opt/coc.nvim
+	url = https://github.com/neoclide/coc.nvim

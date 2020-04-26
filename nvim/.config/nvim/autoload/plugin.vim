@@ -33,7 +33,6 @@ function! plugin#init() abort
             packadd! greplace.vim
             " note taking
             packadd! vimwiki
-            " packadd! vim-waikiki
             " file picker
             packadd! vifm.vim
 
@@ -47,13 +46,10 @@ function! plugin#init() abort
             " Handle paired characters
             packadd! vim-surround
             packadd! auto-pairs-gentle
-            " " packadd! seagoj/rainbow') | packadd! seagoj/rainbow-config.vim
-            " " packadd! luochen1990/rainbow') | packadd! seagoj/rainbow-config.vim
             " - git
             packadd! vim-gitgutter
             packadd! vim-fugitive | packadd! fugitive-config.vim
             packadd! git-gutter-feature.vim
-            " packadd! mattn/gist-vim') | packadd! mattn/webapi-vim') | packadd! seagoj/gist-vim-config')
             " Documentation browser
             let s:uname = system("echo -n \"$(uname)\"")
             if !v:shell_error && s:uname == "Linux"
@@ -65,6 +61,7 @@ function! plugin#init() abort
             " Syntax linter/autocompletion
             " packadd! scrooloose/syntastic') | packadd! seagoj/syntastic-config.vim')
             packadd! ale | packadd! lightline-ale | packadd! ale-config
+            packadd! coc.nvim
             " packadd! Valloric/YouCompleteMe', {'do': function('ycm#build')})
             " Snippet manager
             packadd! ultisnips | packadd! ultisnips-config.vim
@@ -80,12 +77,10 @@ function! plugin#init() abort
             " Debugger
             packadd! vdebug | packadd! vdebug-config
 
-            " packadd! context.vim
-
             " Language Specific
             call plugin#c()
             call plugin#javascript()
-            " call plugin#markdown()
+            call plugin#markdown()
             call plugin#php()
         endif
     endif
@@ -121,8 +116,8 @@ function plugin#php() abort
     packadd! phpfolding.vim
     "" PHP-Expermimental
     packadd! phpactor
-    " " Auto generate `use` statements
-    " packadd! vim-php-namespace | packadd! vim-php-namespace-config.vim
+    " Auto generate `use` statements
+    packadd! vim-php-namespace | packadd! vim-php-namespace-config.vim
     " documentor
     packadd! vmustache | packadd! pdv | packadd! pdv-config.vim
     " refactor
