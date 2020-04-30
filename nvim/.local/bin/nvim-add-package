@@ -8,8 +8,8 @@ vendor="${ADDR[0]}"
 package="${ADDR[1]}"
 
 prefix=https://github.com/
-if [ 'seagoj' == "${vendro}" ]; then
-    prefix=git@github.com:
+if [ 'seagoj' == "${vendor}" ]; then
+    prefix=git@git.seago.io:
 fi
 
-git submodule add --name "${package}" "${prefix}${repo}" nvim/.config/nvim/pack/bundle/opt/"${package}"
+cd "${DOTFILES}" && git submodule add --name "${package}" "${prefix}${repo}" nvim/.config/nvim/pack/bundle/opt/"${package}"

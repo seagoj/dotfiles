@@ -110,7 +110,6 @@ endif
 "
 let g:vimwiki_list = [{'path': '~/vimwiki/',
                       \ 'syntax': 'markdown', 'ext': '.md'}]
-let g:vifm_replace_netrw = 1
 set wildignore+=*/.git/*,*/tmp/*,*.swp
 
 nnoremap "<leader>r" :Gsearch

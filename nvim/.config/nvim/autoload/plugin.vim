@@ -20,11 +20,9 @@ endfunction
 function plugin#base() abort
     "colorscheme
     packadd! sourcerer.vim | packadd! sourcerer-config.vim
-    " Disable arrow keys
-    packadd! disable-cursor-keys.vim
-    " Open to last postiion in the file
+    " open to last postiion in the file
     packadd! last-position.vim
-    " Statsubar
+    " statsubar
     packadd! lightline.vim | packadd! lightline-config.vim | packadd! vim-devicons
     " undo
     packadd! undotree | packadd! undotree-config.vim
@@ -54,8 +52,6 @@ function plugin#search() abort
     packadd! greplace.vim
     " search/file fuzzyfinding
     packadd fzf | packadd! fzf.vim | packadd! fzf-config.vim | packadd! rg.vim
-    "visual find and replace
-    packadd! vim-multiple-cursors
 endfunction
 
 function plugin#development() abort
@@ -63,7 +59,7 @@ function plugin#development() abort
     packadd! vim-commentary
     " project navigation
     packadd! netrw-config.vim
-    packadd! vifm.vim
+    packadd! vifm.vim | packadd! vifm-config.vim
     packadd! vim-projectionist
     " formatting
     packadd! editorconfig-vim
