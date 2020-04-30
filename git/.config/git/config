@@ -76,11 +76,13 @@
     crypt = "! git-crypt"
     ctags = "!.git/hooks/ctags"
     current = "rev-parse --abbrev-ref HEAD"
+    current-base = "!git rev-parse --abbrev-ref HEAD | sed 's#feature/##g'| sed 's#hotfix/##g'"
     dn = "diff --name-only"
     list-merged = "branch -r --merged origin/master"
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
     recent = "! git branch --sort=-committerdate | head -n 10"
     search = "! git rev-list --all | xargs git grep "
+    sql ="!$EDITOR sql/$(git current-base).sql"
     sql-create-deploy = "! cat $(git sql-diff) > sql/deploy.sql"
     sql-diff = "! git dn origin/master -- sql | grep -v schema.sql | grep -v data.sql"
     st = "status"
