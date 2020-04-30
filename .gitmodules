@@ -82,18 +82,12 @@
 [submodule "vim-devicons"]
     path = nvim/.config/nvim/pack/bundle/opt/vim-devicons
     url = https://github.com/ryanoasis/vim-devicons
-[submodule "vim-gitgutter"]
-    path = nvim/.config/nvim/pack/bundle/opt/vim-gitgutter
-    url = https://github.com/airblade/vim-gitgutter
 [submodule "vim-fugitive"]
     path = nvim/.config/nvim/pack/bundle/opt/vim-fugitive
     url = https://github.com/tpope/vim-fugitive
 [submodule "fugitive-config.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fugitive-config.vim
     url = https://github.com/seagoj/fugitive-config.vim
-[submodule "git-gutter-feature.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/git-gutter-feature.vim
-    url = https://github.com/seagoj/git-gutter-feature.vim
 [submodule "zeavim.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/zeavim.vim
     url = https://github.com/KabbAmine/zeavim.vim
@@ -193,9 +187,6 @@
 [submodule "fzf-config.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
     url = git@github.com:seagoj/fzf-config.vim
-[submodule "context.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/context.vim
-    url = git://github.com/wellle/context.vim.git
 [submodule "zimfw-install"]
     path = zsh/.zim-install
     url = https://github.com/zimfw/install
