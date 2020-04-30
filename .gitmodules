@@ -28,12 +28,6 @@
 [submodule "zsh/.zim"]
     path = zsh/.zim
     url = git://github.com/zimfw/zimfw.git
-[submodule "gundo.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/gundo.vim
-    url = https://github.com/sjl/gundo.vim
-[submodule "gundo-config.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/gundo-config.vim
-    url = git@github.com:seagoj/gundo-config.vim
 [submodule "fzf.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fzf.vim
     url = https://github.com/junegunn/fzf.vim
