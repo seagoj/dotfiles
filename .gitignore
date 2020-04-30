@@ -43,3 +43,4 @@ cache
 cookies.txt
 vifminfo
 mutt/.config/mutt/com.bonfyreapp.seago.jeremy mutt/.config/mutt/com.gmail.seagoj
+nvim/.local/share/nvim/undo

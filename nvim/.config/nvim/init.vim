@@ -36,7 +36,8 @@ set magic           "For regular expressions
 set showmatch       "Matching braces highlighting
 set matchtime=2     "Blink for 2 tenths of a second when matching
 " No Sound On Errors
-set visualbell
+" set visualbell
+set noerrorbells
 set timeoutlen=500
 " Indentation
 set autoindent      "Newline uses indentation depth of the previous
@@ -67,12 +68,19 @@ set exrc
 set secure
 set termguicolors
 set noshowmode
+" undo
+set nobackup
+set undodir=~/.local/share/nvim/undo
+set undofile
 
 " set default whitespace
 set ts=4
 set sts=4
 set sw=4
 set expandtab
+
+" indicate long lines
+set colorcolumn=120
 
 function! Strip_trailing_whitespace(...)
     if &ft =~ 'markdown'
@@ -165,7 +173,7 @@ nmap <silent> ]g <Plug>(coc-diagnostic-next)
 " GoTo code navigation.
 nmap <silent> gd <Plug>(coc-definition)
 nmap <silent> gy <Plug>(coc-type-definition)
-nmap <silent> gi <Plug>(coc-implementation)
+" nmap <silent> gi <Plug>(coc-implementation)
 nmap <silent> gr <Plug>(coc-references)
 
 " Use K to show documentation in preview window.

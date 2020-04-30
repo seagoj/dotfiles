@@ -151,9 +151,6 @@
 [submodule "tslime.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/tslime.vim
     url = https://github.com/gabeharms/tslime.vim
-[submodule "overlength.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/overlength.vim
-    url = https://github.com/seagoj/overlength.vim
 [submodule "vdebug"]
     path = nvim/.config/nvim/pack/bundle/opt/vdebug
     url = https://github.com/vim-vdebug/vdebug
@@ -203,11 +200,14 @@
     path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
     url = git@github.com:seagoj/fzf-config.vim
 [submodule "context.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/context.vim
-	url = git://github.com/wellle/context.vim.git
+    path = nvim/.config/nvim/pack/bundle/opt/context.vim
+    url = git://github.com/wellle/context.vim.git
 [submodule "zimfw-install"]
-	path = zsh/.zim-install
-	url = https://github.com/zimfw/install
+    path = zsh/.zim-install
+    url = https://github.com/zimfw/install
 [submodule "coc.nvim"]
-	path = nvim/.config/nvim/pack/bundle/opt/coc.nvim
-	url = https://github.com/neoclide/coc.nvim
+    path = nvim/.config/nvim/pack/bundle/opt/coc.nvim
+    url = https://github.com/neoclide/coc.nvim
+[submodule "undotree"]
+    path = nvim/.config/nvim/pack/bundle/opt/undotree
+    url = https://github.com/mbbill/undotree

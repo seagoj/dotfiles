@@ -5,77 +5,8 @@ function! plugin#init() abort
 
     if &loadplugins
         if has('packages')
-            " GENERAL
-            " - themes
-            packadd! sourcerer.vim | packadd! sourcerer-config.vim
-            " undo
-            packadd! gundo.vim | packadd! gundo-config.vim
-            " search/file fuzzyfinding
-            packadd fzf | packadd! fzf.vim | packadd! fzf-config.vim | packadd! rg.vim
-            " - visual find and replace
-            packadd! vim-multiple-cursors
-            " Disable arrow keys
-            packadd! disable-cursor-keys.vim
-            " Open to last postiion in the file
-            packadd! last-position.vim
-            " Navigate wrapped lines with hjkl
-            packadd! line-wrap-navigation.vim
-            " Navigate tabs
-            packadd! tab-management.vim
-            " Netrw config
-            packadd! netrw-config.vim
-            " Statsubar
-            packadd! lightline.vim | packadd! lightline-config.vim | packadd! vim-devicons
-            " Buffer navigation
-            packadd! buffers.vim
-            packadd! vim-tmux-navigator | packadd! vim-tmux-navigator-config
-            " Find/Replace
-            packadd! greplace.vim
-            " note taking
-            packadd! vimwiki
-            " file picker
-            packadd! vifm.vim
-
-            " DEVELOPMENT
-            " - comments
-            packadd! vim-commentary
-            " - project
-            packadd! vim-projectionist
-            " - - formatting
-            packadd! editorconfig-vim
-            " Handle paired characters
-            packadd! vim-surround
-            packadd! auto-pairs-gentle
-            " - git
-            packadd! vim-gitgutter
-            packadd! vim-fugitive | packadd! fugitive-config.vim
-            packadd! git-gutter-feature.vim
-            " Documentation browser
-            let s:uname = system("echo -n \"$(uname)\"")
-            if !v:shell_error && s:uname == "Linux"
-                let g:zv_zeal_executable="/usr/bin/zeal"
-                packadd! zeavim.vim
-            elseif !v:shell_error && s:uname == "Darwin"
-                packadd! rizzatti/funcoo.vim | packadd! rizzatti/dash.vim | packadd! seagoj/dash-config.vim
-            endif
-            " Syntax linter/autocompletion
-            " packadd! scrooloose/syntastic') | packadd! seagoj/syntastic-config.vim')
-            packadd! ale | packadd! lightline-ale | packadd! ale-config
-            packadd! coc.nvim
-            " packadd! Valloric/YouCompleteMe', {'do': function('ycm#build')})
-            " Snippet manager
-            packadd! ultisnips | packadd! ultisnips-config.vim
-            " visual indentation
-            packadd! indentline | packadd! indentline-config.vim
-            " Syntax highlighting
-            packadd! vim-polyglot | packadd! vim-polyglot-config
-            " Test runner
-            packadd! vim-test | packadd! vim-dispatch | packadd! vim-dispatch-neovim | packadd! vim-test-config
-            packadd! vim-tmux-runner | packadd! tslime.vim
-            " Overlength highlighter
-            packadd! overlength.vim
-            " Debugger
-            packadd! vdebug | packadd! vdebug-config
+            call plugin#base()
+            call plugin#development()
 
             " Language Specific
             call plugin#c()
@@ -84,13 +15,86 @@ function! plugin#init() abort
             call plugin#php()
         endif
     endif
+endfunction
 
-    " TODO: rewrite these commands for the submodule package scheme
-    " command! PackUpdate packadd minpac | source $MYVIMRC | call minpac#update('', {'do': 'call minpac#status()'})
-    " command! PackInstall PackUpdate
-    " command! PackClean  packadd minpac | source $MYVIMRC | call minpac#clean()
-    " command! PackStatus packadd minpac | source $MYVIMRC | call minpac#status()
+function plugin#base() abort
+    "colorscheme
+    packadd! sourcerer.vim | packadd! sourcerer-config.vim
+    " Disable arrow keys
+    packadd! disable-cursor-keys.vim
+    " Open to last postiion in the file
+    packadd! last-position.vim
+    " Statsubar
+    packadd! lightline.vim | packadd! lightline-config.vim | packadd! vim-devicons
+    " undo
+    packadd! undotree | packadd! undotree-config.vim
 
+    call plugin#navigation()
+    call plugin#notes()
+    call plugin#search()
+endfunction
+
+function plugin#navigation() abort
+    " Buffers
+    packadd! buffers.vim
+    packadd! vim-tmux-navigator | packadd! vim-tmux-navigator-config
+    " wrapped lines
+    packadd! line-wrap-navigation.vim
+    " Navigate tabs
+    packadd! tab-management.vim
+endfunction
+
+function plugin#notes() abort
+    " note taking
+    packadd! vimwiki
+endfunction
+
+function plugin#search() abort
+    " Find/Replace
+    packadd! greplace.vim
+    " search/file fuzzyfinding
+    packadd fzf | packadd! fzf.vim | packadd! fzf-config.vim | packadd! rg.vim
+    "visual find and replace
+    packadd! vim-multiple-cursors
+endfunction
+
+function plugin#development() abort
+    " comments
+    packadd! vim-commentary
+    " project navigation
+    packadd! netrw-config.vim
+    packadd! vifm.vim
+    packadd! vim-projectionist
+    " formatting
+    packadd! editorconfig-vim
+    " Handle paired characters
+    packadd! vim-surround
+    packadd! auto-pairs-gentle
+    " git
+    packadd! vim-fugitive | packadd! fugitive-config.vim
+    " Documentation browser
+    if executable('zeal')
+        packadd! zeavim.vim
+    elseif executable('dash')
+        packadd! rizzatti/funcoo.vim | packadd! rizzatti/dash.vim | packadd! seagoj/dash-config.vim
+    endif
+    " Syntax linter/autocompletion
+    packadd! ale | packadd! lightline-ale | packadd! ale-config
+    packadd! coc.nvim
+    " packadd! Valloric/YouCompleteMe', {'do': function('ycm#build')})
+    " Snippet manager
+    packadd! ultisnips | packadd! ultisnips-config.vim
+    " visual indentation
+    packadd! indentline | packadd! indentline-config.vim
+    " Syntax highlighting
+    packadd! vim-polyglot | packadd! vim-polyglot-config
+    " Test runner
+    packadd! vim-test | packadd! vim-dispatch | packadd! vim-dispatch-neovim | packadd! vim-test-config
+    packadd! vim-tmux-runner | packadd! tslime.vim
+    " Debugger
+    packadd! vdebug | packadd! vdebug-config
+    " todo finder
+    packadd! qf-todo.vim
 endfunction
 
 function plugin#c() abort
