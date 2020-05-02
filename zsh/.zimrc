@@ -19,11 +19,13 @@ zmodule utility
 #
 # Exposes git repository status information to prompts.
 zmodule git-info
-# A customizable version of steeef's prompt theme.
-# zmodule gitster
+
+# theme
+## zmodule gitster
 zmodule miekg/lean
 # zmodule s1ck94
 # zmodule magicmace
+
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
