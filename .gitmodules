@@ -70,9 +70,6 @@
 [submodule "vimwiki"]
     path = nvim/.config/nvim/pack/bundle/opt/vimwiki
     url = https://github.com/vimwiki/vimwiki
-[submodule "vifm.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/vifm.vim
-    url = https://github.com/vifm/vifm.vim
 [submodule "vim-devicons"]
     path = nvim/.config/nvim/pack/bundle/opt/vim-devicons
     url = https://github.com/ryanoasis/vim-devicons
@@ -190,6 +187,6 @@
 [submodule "undotree"]
     path = nvim/.config/nvim/pack/bundle/opt/undotree
     url = https://github.com/mbbill/undotree
-[submodule "vifm-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/vifm-config.vim
-	url = git@git.seago.io:seagoj/vifm-config.vim
+[submodule "vim-vinegar"]
+	path = nvim/.config/nvim/pack/bundle/opt/vim-vinegar
+	url = https://github.com/tpope/vim-vinegar
