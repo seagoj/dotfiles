@@ -77,7 +77,7 @@ function plugin#development() abort
     endif
     " Syntax linter/autocompletion
     packadd! ale | packadd! lightline-ale | packadd! ale-config
-    packadd! coc.nvim
+    packadd! coc.nvim | packadd! coc-config.vim
     " packadd! Valloric/YouCompleteMe', {'do': function('ycm#build')})
     " Snippet manager
     packadd! ultisnips | packadd! ultisnips-config.vim
