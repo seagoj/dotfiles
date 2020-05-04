@@ -68,7 +68,7 @@
     a = "add"
     amend = commit --amend --no-edit
     clean-merged = "!git clean-local-merged"
-    clean-local-merged = "!git branch --merged master | grep -v master | xargs git branch -d"
+    clean-local-merged = "!git branch --merged master | grep -v master | grep -v develop | xargs git branch -d"
     ; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
     cr = "!. ~/.local/functions/sourced/b.sh; bm reviews"
     h = "!git hash"
