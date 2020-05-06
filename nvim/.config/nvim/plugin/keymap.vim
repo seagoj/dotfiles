@@ -7,7 +7,7 @@ map         <leader>v       "+p
 " Change CWD to directory of selected buffer
 map         <leader>cd      :cd %:p:h<CR> :pwd<CR>
 " Make directory for file in current buffer
-map         <leader>md      :mkdir! %:p:h<CR>
+map         <leader>md      :!mkdir -p %:p:h<CR>
 " Toggle Invisible Whitespace Characters
 map         <leader>l       :set list!<CR>
 " Make buffers equal size
