@@ -5,19 +5,21 @@ let g:mapleader = ","
 map         <leader>c       "+y
 map         <leader>v       "+p
 " Change CWD to directory of selected buffer
-map         <leader>cd      :cd %:p:h<cr> :pwd<cr>
+map         <leader>cd      :cd %:p:h<CR> :pwd<CR>
+" Make directory for file in current buffer
+map         <leader>md      :mkdir! %:p:h<CR>
 " Toggle Invisible Whitespace Characters
-map         <leader>l       :set list!<cr>
+map         <leader>l       :set list!<CR>
 " Make buffers equal size
 nmap        <leader>=       <C-w>=
-nmap        <leader>w       :retab!<cr> :update!<cr>
-map         <leader>ev      :tabnew $MYVIMRC<cr>
-map         <leader>k       0y$:! open <C-r>"<cr>j<leader>k
-map         <leader>tdd     :vsplit tests/%<cr>
-nmap        <leader><space> :nohlsearch<cr>
+nmap        <leader>w       :retab!<CR> :update!<CR>
+map         <leader>ev      :tabnew $MYVIMRC<CR>
+map         <leader>k       0y$:! open <C-r>"<CR>j<leader>k
+map         <leader>tdd     :vsplit tests/%<CR>
+nmap        <leader><space> :nohlsearch<CR>
 " Moves current line up/down
-nnoremap    <leader><Up>    :m-2<cr>
-nnoremap    <leader><Down>  :m+1<cr>
+nnoremap    <leader><Up>    :m-2<CR>
+nnoremap    <leader><Down>  :m+1<CR>
 " Align paragraph
 map         <leader>ap      =ip
 " Clone paragraph
@@ -40,7 +42,7 @@ cmap        w!!             w !sudo tee % >/dev/null
 " snake_case to camel case
 nnoremap    <leader>cc      EF_x~
 " camelCase to snake_case
-nnoremap    <leader>_       :s#\(\<\u\l\+\|\l\+\)\(\u\)#\l\1_\l\2#g<cr>
+nnoremap    <leader>_       :s#\(\<\u\l\+\|\l\+\)\(\u\)#\l\1_\l\2#g<CR>
 " scroll 10 times faster
 nnoremap    <C-e>           10<C-e>
 nnoremap    <C-y>           10<C-y>
@@ -50,24 +52,4 @@ nmap        <Tab>           za
 " show current filename
 nmap        <leader>fn      :echo @%<CR>
 " autoformt entire file
-nnoremap    <leader><Tab>   <esc>gg=G<C-o>zz
-
-" plugin
-" - fzf.vim
-nnoremap    <leader>p       :GitFiles --exclude-standard<cr>
-nnoremap    <leader>/       :Find<space>
-nnoremap    <leader>h       :BCommits<cr>
-" - fugitive
-nnoremap    <F3>            <Esc>:Git push<cr>
-" - dash
-nnoremap    <F12>           <Esc>:!Dash<cr>
-" - nerdtree
-nnoremap    <leader>o       <Esc>:NERDTreeToggle<cr>
-" " - ctrl-p
-" map         <leader>p       <Esc><c-p>
-" - rainbow parenthesis
-nnoremap    <leader>r       :RainbowParenthesesToggle<cr>
-
-" file type
-" render markdown
-nmap        <leader>m       :!markdown %<cr>
+nnoremap    <leader><Tab>   <ESC>gg=G<C-o>zz
