@@ -5,7 +5,7 @@
  *
  * font: see http://freedesktop.org/software/fontconfig/fontconfig-user.html
  */
-static char *font = "FiraCode Nerd Font Mono:style=regular:size=20";
+static char *font = "FiraCode Nerd Font Mono:style=regular:size=10";
 static int borderpx = 0;
 
 /*
@@ -117,10 +117,10 @@ static const char *colorname[] = {
  */
 unsigned int defaultfg = 145;
 /* non-transparent */
-/* unsigned int defaultbg = 236; */
-unsigned int defaultbg = 0;
+unsigned int defaultbg = 235;
+/* unsigned int defaultbg = 0; */
 static unsigned int defaultcs = 145;
-static unsigned int defaultrcs = 236;
+static unsigned int defaultrcs = 235;
 
 /*
  * Default shape of cursor
