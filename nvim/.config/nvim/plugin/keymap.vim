@@ -56,3 +56,8 @@ nnoremap    <leader><Tab>   <ESC>gg=G<C-o>zz
 " navigate wrapped lines
 map j gj
 map k gk
+" tab management
+map <leader>tn  :tabnew<cr><c-p>
+map <leader>to  :tabonly<cr>
+map <leader>tc  :tabclose<cr>
+map <leader>tm  :tabmove<space>

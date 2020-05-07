@@ -37,9 +37,6 @@
 [submodule "last-position.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/last-position.vim
     url = https://github.com/seagoj/last-position.vim
-[submodule "tab-management.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/tab-management.vim
-    url = https://github.com/seagoj/tab-management.vim
 [submodule "netrw-config.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/netrw-config.vim
     url = https://github.com/seagoj/netrw-config.vim
