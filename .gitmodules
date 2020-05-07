@@ -28,9 +28,6 @@
 [submodule "fzf.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fzf.vim
     url = https://github.com/junegunn/fzf.vim
-[submodule "vim-multiple-cursors"]
-    path = nvim/.config/nvim/pack/bundle/opt/vim-multiple-cursors
-    url = https://github.com/terryma/vim-multiple-cursors
 [submodule "vim-surround"]
     path = nvim/.config/nvim/pack/bundle/opt/vim-surround
     url = https://github.com/tpope/vim-surround
@@ -188,5 +185,17 @@
     path = nvim/.config/nvim/pack/bundle/opt/undotree
     url = https://github.com/mbbill/undotree
 [submodule "vim-vinegar"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-vinegar
-	url = https://github.com/tpope/vim-vinegar
+    path = nvim/.config/nvim/pack/bundle/opt/vim-vinegar
+    url = https://github.com/tpope/vim-vinegar
+[submodule "coc-config.vim"]
+    path = nvim/.config/nvim/pack/bundle/opt/coc-config.vim
+    url = git@git.seago.io:seagoj/coc-config.vim
+[submodule "dash-config.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/dash-config.vim
+	url = git@git.seago.io:seagoj/dash-config.vim
+[submodule "qf-todo.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/qf-todo.vim
+	url = git@git.seago.io:seagoj/qf-todo.vim
+[submodule "sourcerer-config.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/sourcerer-config.vim
+	url = git@git.seago.io:seagoj/sourcerer-config.vim
