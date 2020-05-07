@@ -199,3 +199,18 @@
 [submodule "sourcerer-config.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/sourcerer-config.vim
 	url = git@git.seago.io:seagoj/sourcerer-config.vim
+[submodule "sourcerer.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/sourcerer.vim
+	url = https://github.com/xero/sourcerer.vim
+[submodule "vifm-config.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/vifm-config.vim
+	url = git@git.seago.io:seagoj/vifm-config.vim
+[submodule "vim-commentary"]
+	path = nvim/.config/nvim/pack/bundle/opt/vim-commentary
+	url = https://github.com/tpope/vim-commentary
+[submodule "vim-projectionist"]
+	path = nvim/.config/nvim/pack/bundle/opt/vim-projectionist
+	url = https://github.com/tpope/vim-projectionist
+[submodule "vimwiki-config"]
+	path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config
+	url = git@git.seago.io:seagoj/vimwiki-config
