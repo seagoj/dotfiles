@@ -12,4 +12,4 @@ if [ 'seagoj' == "${vendor}" ]; then
     prefix=git@git.seago.io:
 fi
 
-cd "${DOTFILES}" && git submodule add --name "${package}" "${prefix}${repo}" nvim/.config/nvim/pack/bundle/opt/"${package}"
+cd "${DOTFILES}" && git submodule add --force --name "${package}" "${prefix}${repo}" nvim/.config/nvim/pack/bundle/opt/"${package}"

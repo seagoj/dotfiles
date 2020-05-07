@@ -1,4 +1,5 @@
 function! plugin#init() abort
+    filetype off
     if &compatible
         set nocompatible
     endif
@@ -15,6 +16,9 @@ function! plugin#init() abort
             call plugin#php()
         endif
     endif
+    " enable filetype detection after plugins
+    filetype plugin on
+    filetype indent on
 endfunction
 
 function plugin#base() abort
@@ -44,7 +48,7 @@ endfunction
 
 function plugin#notes() abort
     " note taking
-    packadd! vimwiki
+    packadd! vimwiki | packadd! vimwiki-config
 endfunction
 
 function plugin#search() abort
