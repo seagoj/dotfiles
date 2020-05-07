@@ -53,3 +53,6 @@ nmap        <Tab>           za
 nmap        <leader>fn      :echo @%<CR>
 " autoformt entire file
 nnoremap    <leader><Tab>   <ESC>gg=G<C-o>zz
+" navigate wrapped lines
+map j gj
+map k gk

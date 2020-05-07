@@ -37,9 +37,6 @@
 [submodule "last-position.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/last-position.vim
     url = https://github.com/seagoj/last-position.vim
-[submodule "line-wrap-navigation.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/line-wrap-navigation.vim
-    url = https://github.com/seagoj/line-wrap-navigation.vim
 [submodule "tab-management.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/tab-management.vim
     url = https://github.com/seagoj/tab-management.vim

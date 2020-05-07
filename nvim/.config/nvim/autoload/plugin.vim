@@ -40,8 +40,6 @@ function plugin#navigation() abort
     " Buffers
     packadd! buffers.vim
     packadd! vim-tmux-navigator | packadd! vim-tmux-navigator-config
-    " wrapped lines
-    packadd! line-wrap-navigation.vim
     " Navigate tabs
     packadd! tab-management.vim
 endfunction
