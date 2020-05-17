@@ -1,0 +1,14 @@
+#!/usr/bin/env sh
+
+cd ~/code/bonfyre/config_management
+rm -rf puppet/bonfyre_sockets && \
+git checkout -b access_control && \
+git add . && git commit -m "commit" && \
+git checkout master && \
+git pull origin && \
+vagrant destroy -f
+
+cd ../bonfyre_app && \
+vagrant box rm && \
+vagrant destroy -f && \
+vagrant up
