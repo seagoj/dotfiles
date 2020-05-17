@@ -51,6 +51,7 @@ nnoremap    gV              `[v`]
 nmap        <Tab>           za
 " show current filename
 nmap        <leader>fn      :echo @%<CR>
+nmap        <leader>fp      :let @" = expand("%:p")
 " autoformt entire file
 nnoremap    <leader><Tab>   <ESC>gg=G<C-o>zz
 " navigate wrapped lines
