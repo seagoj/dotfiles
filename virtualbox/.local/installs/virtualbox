@@ -3,5 +3,7 @@
 if [[ $OS_TYPE = "mac" ]]; then
     osinstall qt4 Caskroom/cask/virtualbox
 else
-    osinstall qt4 virtualbox
+    # Require virtualbox 5.* for Bonfyre
+    yay -S qt4 virtualbox-5
+    # osinstall qt4 virtualbox
 fi
