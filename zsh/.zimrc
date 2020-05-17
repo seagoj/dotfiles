@@ -22,9 +22,9 @@ zmodule utility
 zmodule git-info
 
 # theme
-zmodule gitster
+# zmodule gitster
 # zmodule PatTheMav/minimal2
-# zmodule miekg/lean
+zmodule miekg/lean
 # zmodule seagoj/lean
 # zmodule s1ck94
 # zmodule magicmace
