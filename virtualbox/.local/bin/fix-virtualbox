@@ -423,5 +423,7 @@
 
 # yay -S virtualbox-bin-5
 
-cd ~/code/bonfyre/bonfyre_app && \
-vagrant up
+# cd ~/code/bonfyre/bonfyre_app && \
+# vagrant up
+
+sudo pacman -Rdd libdmx libxxf86dga && sudo pacman -Syu
