@@ -1,0 +1,4 @@
+alias ex='exa --icons -a --group-directories-first'
+alias ls='ex'
+alias ll='ex -l'
+alias lt='ll --sort=modified'
