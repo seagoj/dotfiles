@@ -7,6 +7,7 @@
 zmodule environment
 # Provides handy git aliases and functions.
 zmodule git
+zmodule git-info
 # Applies correct bindkeys for input events.
 zmodule input
 # Sets a custom terminal title.
@@ -21,11 +22,13 @@ zmodule utility
 zmodule git-info
 
 # theme
-## zmodule gitster
-zmodule miekg/lean
+zmodule gitster
+# zmodule PatTheMav/minimal2
+# zmodule miekg/lean
+# zmodule seagoj/lean
 # zmodule s1ck94
 # zmodule magicmace
-
+# zmodule denysdovhan/spaceship-prompt --name spaceship
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
@@ -50,6 +53,9 @@ zstyle ':zim:git' aliases-prefix 'g'
 
 zmodule archive
 zmodule pacman
+
+# alias suggester
+zmodule MichaelAquilina/zsh-you-should-use
 
 # Load these ssh identities with the ssh module
 zssh_ids=(id_rsa)
