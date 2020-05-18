@@ -6,7 +6,7 @@ if (( $+commands[tag]  )); then
     if [[ ! -f "${alias_file}" ]]; then
         mkdir -p $(dirname "${alias_file}")
     fi
-    tag() { command tag "$@"; source "${alias_file}" 2>/dev/null }
+    tag() { command tag --hidden "$@"; source "${alias_file}" 2>/dev/null }
     # alias rg=tag
     # alias ag=tag
 fi
