@@ -1,0 +1,2 @@
+export FETCHER="pfetch"
+export PF_INFO="ascii title os host kernel uptime pkgs cpu memory de wm shell editor palette"

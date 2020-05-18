@@ -43,7 +43,7 @@ tmux::status() {
     tmux::split "$1"
     case $OS_TYPE in
     Arch)
-        tmux send-keys "neofetch && wwwtxt" C-m
+        tmux send-keys "${FETCHER} && wwwtxt" C-m
         ;;
     Darwin | Mac)
         tmux send-keys "macInfo -c && wwwtxt" C-m

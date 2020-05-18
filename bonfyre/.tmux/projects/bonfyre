@@ -9,7 +9,7 @@ bonfyre::apiWindow() {
         tmux send-keys -t 1 'wego 2' C-m
     fi
     tmux send-keys -t 3 'vagrant-up' C-m
-    tmux send-keys -t 4 'neofetch && wwwtxt' C-m
+    tmux send-keys -t 4 "${FETCHER} && wwwtxt" C-m
     popd >/dev/null
 }
 
@@ -17,7 +17,7 @@ bonfyre::webWindow() {
     pushd ~/code/bonfyre/pyweb >/dev/null
     tmux::newWindow "pyweb"
     tmux send-keys -t 3 'vagrant-up'
-    tmux send-keys -t 4 'neofetch && wwwtxt' C-m
+    tmux send-keys -t 4 '${FETCHER} && wwwtxt' C-m
     popd >/dev/null
 }
 
