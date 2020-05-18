@@ -4,40 +4,40 @@
 source "${XDG_FUNCTIONS_DIR}/cli.sh"
 #/ USAGE:
 #/
-#/	 $ e
-#/	 # => opens the current directory in $EDITOR
+#/   $ e
+#/   # => opens the current directory in $EDITOR
 #/
-#/	 $ e .
-#/	 $ e /opt
-#/	 # => opens the specified directory in $EDITOR
+#/   $ e .
+#/   $ e /opt
+#/   # => opens the specified directory in $EDITOR
 #/
-#/	 $ e file.txt [exists in cwd]
-#/	 # => opens file in default editor
+#/   $ e file.txt [exists in cwd]
+#/   # => opens file in default editor
 #/
-#/	 $ e file.txt [does not exist in cwd]
-#/	 # => searches for previously opened files with that name through fasd
+#/   $ e file.txt [does not exist in cwd]
+#/   # => searches for previously opened files with that name through fasd
 #/
-#/	 @todo - waiting for update to fasd exit code
-#/	 $ e file.txt [does not exist in cwd; can't be found with fasd]
-#/	 # => opens new file at passed location
+#/   @todo - waiting for update to fasd exit code
+#/   $ e file.txt [does not exist in cwd; can't be found with fasd]
+#/   # => opens new file at passed location
 
 PROFILE_LOG=/tmp/e.log
 
 cleanup() {
-	EXIT_CODE=$?
-	exit "${EXIT_CODE}"
+    EXIT_CODE=$?
+    exit "${EXIT_CODE}"
 }
 
 if [[ $# -eq 0 ]]; then
-	"$EDITOR" .
+    "$EDITOR"
 elif [[ "$1" == "diff" ]]; then
-	CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
-	"$EDITOR" -O $(git diff --name-only "${CURRENT_BRANCH}".."${2:-origin/master}")
+    CURRENT_BRANCH="$(git rev-parse --abbrev-ref HEAD)"
+    "$EDITOR" -O $(git diff --name-only "${CURRENT_BRANCH}".."${2:-origin/master}")
 elif [[ $# -eq 1 ]] && [[ "$1" == "profile" ]]; then
     if [[ -f $PROFILE_LOG ]]; then
-	rm $PROFILE_LOG
+    rm $PROFILE_LOG
     fi
     "$EDITOR" --startuptime $PROFILE_LOG $PROFILE_LOG
 else
-	"$EDITOR" -O "$@"
+    "$EDITOR" -O "$@"
 fi

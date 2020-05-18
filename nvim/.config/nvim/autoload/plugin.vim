@@ -58,9 +58,7 @@ function plugin#development() abort
     " comments
     packadd! vim-commentary
     " project navigation
-    packadd! vim-vinegar
-    packadd! netrw-config.vim
-    " packadd! vifm.vim | packadd! vifm-config.vim
+    packadd! fff.vim | packadd! fff-config.vim
     packadd! vim-projectionist
     " formatting
     packadd! editorconfig-vim

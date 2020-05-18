@@ -1,0 +1,3 @@
+#!/bin/sh
+
+osinstall w3m xdotool fff-git && fff "${@}"

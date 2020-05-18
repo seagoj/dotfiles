@@ -1,0 +1,5 @@
+alias f="fff"
+export FFF_LS_COLORS=1
+export FFF_HIDDEN=1
+export FFF_OPENER="xdg-open"
+export FFF_CD_ON_EXIT=0
