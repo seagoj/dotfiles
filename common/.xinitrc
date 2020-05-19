@@ -42,7 +42,7 @@ case $session in
     if [ ! -f ~/.cache/dwm/stderr ]; then
         touch ~/.cachedwm/stderr
     fi
-    feh --bg-scale ~/.dwm/wallpapers/wall.png
+    feh --bg-scale ~/.local/share/wallpapers/wall.png
     compton &
     dunst&
     exec dwm >> ~/.cache/dwm/stdout 2>> ~/.cache/dwm/stderr

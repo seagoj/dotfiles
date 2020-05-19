@@ -1,1 +1,1 @@
-feh --bg-scale ~/.dwm/wallpapers/wall.png
+feh --bg-scale ~/.local/share/wallpapers/wall.png
