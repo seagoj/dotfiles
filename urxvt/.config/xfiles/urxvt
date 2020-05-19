@@ -1,8 +1,0 @@
-URxvt*termName:         screen-256color
-URxvt*font:             fonts
-URxvt*imLocale:         en_US.UTF-8
-URxvt*scrollBar:        false
-URxvt*depth:            32
-URxvt*background:       [80]#111111
-URxvt.perl-ext-common:  default,matcher,keyboard-select
-URxvt.colorUL:          blue
