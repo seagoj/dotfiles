@@ -4,7 +4,6 @@ atom/.local/share/atom/.node-gyp
 atom/.local/share/atom/blob-store
 atom/.local/share/atom/compile-cache
 atom/.local/share/atom/packages
-geeknote/.geeknote/database.db
 general/.config/configstore/bower-github.yml
 general/.config/configstore/insight-bower.yml
 general/.config/configstore/update-notifier-bower.yml
