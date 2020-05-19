@@ -1,4 +1,0 @@
-osinstall() {
-    osupdate &&\
-        sudo apt-get install -y "${@}"
-}
