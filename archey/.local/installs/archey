@@ -1,8 +1,0 @@
-#!/usr/bin/env bash
-
-case $OS_TYPE in
-Arch)
-    osinstall archey3-git
-    archey3 $@
-    ;;
-esac
