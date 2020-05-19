@@ -32,7 +32,6 @@ docker
 dokku
 checkstyle
 ctags
-emacs
 figlet
 gem
 irssi

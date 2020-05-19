@@ -16,9 +16,6 @@
 [submodule "nvim/vimwiki"]
     path = nvim/vimwiki
     url = git@git.seago.io:seagoj/wiki.git
-[submodule "emacs/.emacs.d/evil"]
-    path = emacs/.emacs.d/evil
-    url = git://github.com/emacs-evil/evil
 [submodule "asdf/.config/asdf"]
     path = asdf/.config/asdf
     url = git://github.com/asdf-vm/asdf.git
