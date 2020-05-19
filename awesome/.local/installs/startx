@@ -1,3 +1,0 @@
-!/usr/bin/env bash
-
-osinstall xorg-server xorg-server-utils xorg-xinit && startx $@
