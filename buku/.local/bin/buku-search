@@ -1,5 +1,0 @@
-#!/bin/bash
-
-. "${HOME}"/functions/buku.sh
-
-buku::open_from_search "$@"
