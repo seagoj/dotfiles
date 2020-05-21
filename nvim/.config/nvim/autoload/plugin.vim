@@ -90,6 +90,8 @@ function plugin#development() abort
     packadd! vdebug | packadd! vdebug-config
     " todo finder
     packadd! qf-todo.vim
+    " preview colors
+    packadd! vim-hexokinase
 endfunction
 
 function plugin#c() abort
