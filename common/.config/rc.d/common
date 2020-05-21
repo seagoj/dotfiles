@@ -1,13 +1,19 @@
+. "$XDG_CONFIG_HOME/rc.d/fzf"
+
 # bookmarks
-alias code="cd ${CODE}"
-alias dots="cd ${DOTFILES}"
+alias z='cd `fzf::dirSearchAt $HOME`'
+alias code='cd `fzf::dirSearchAt $CODE` && tmux.sh'
+alias dots="cd $DOTFILES"
+alias config='e `fzf::searchAt $XDG_CONFIG_HOME`'
+function o() {
+    echo "$1"
+    xdg-open ${1:-`fzf`}
+}
 
 # diagnostics
 alias cputemp="sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp"
 alias battery="echo $(cat /sys/class/power_supply/BAT0/capacity)%"
 alias memoryfree="free -h | awk '(NR==2){ print $3 }' | sed 's/Gi$/G/'"
-
-alias o="xdg-open"
 
 # ping
 alias ping='ping -c 5'
@@ -24,4 +30,4 @@ portuse() {
 }
 
 alias open='xdg-open'
-alias o='open'
+# alias o='open'

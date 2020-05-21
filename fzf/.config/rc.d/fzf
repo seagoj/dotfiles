@@ -3,3 +3,16 @@
 . "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
 
 source::file "${HOME}"/.fzf.zsh
+
+export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
+export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+export FZF_DIR_SEARCH='fd -t d .'
+export FZF_ALT_C_COMMAND="$FZF_DIR_SEARCH $HOME"
+
+fzf::dirSearchAt() {
+    eval "$FZF_DIR_SEARCH ${1:-HOME} | fzf"
+}
+
+fzf::searchAt() {
+    eval "fd . ${1:-HOME} | fzf"
+}
