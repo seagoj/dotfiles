@@ -2,7 +2,7 @@
 
 case $OS_TYPE in
 Arch)
-    osinsstall ansible
+    osinstall ansible
     ;;
 Darwin | Mac)
     dotfiles::bootstrap python &&\
