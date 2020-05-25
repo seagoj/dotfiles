@@ -208,3 +208,6 @@
 [submodule "vim-hexokinase"]
 	path = nvim/.config/nvim/pack/bundle/opt/vim-hexokinase
 	url = https://github.com/RRethy/vim-hexokinase
+[submodule "nvim/src"]
+	path = nvim/code/neovim
+	url = https://github.com/neovim/neovim

@@ -19,10 +19,6 @@ installSourcerer() {
     fi
 }
 
-installPlugins() {
-    nvim -c :PackInstall
-}
-
 installESLint() {
     if ! which eslint &>/dev/null; then
         general::sudo npm install -g eslint
@@ -38,26 +34,27 @@ installVimv() {
     fi
 }
 
+fromSource() {
+    cd "${CODE}"/neovim && \
+        make CMAKE_BUILD_TYPE=RelWithDebInfo && \
+        sudo make install
+    pip2 install --upgrade pip neovim
+    pip3 install --upgrade pip neovim
+    osinstall xsel
+}
+
 case "$(uname -s)" in
 Darwin | Mac)
     installNeovimMac
     installSourcerer
-    installPlugins
     brew tap neovim/neovim
     brew tap rogual/neovim-dot-app
     brew install neovim-dot-app
     ln -s /usr/local/opt/neovim-dot-app /Applications
     ;;
 Linux)
-    osinstall neovim python2-neovim python-neovim xsel
-    pip2 install --upgrade pip neovim
-    pip3 install --upgrade pip neovim flake8
-    # if [[ ! -f  ~/.local/bin/flake8 ]]; then
-    #     ln -s `pyenv which flake8` ~/.local/bin/flake8  # Assumes that $HOME/bin is in $PATH
-    # fi
-
+    fromSource
     installSourcerer
-    installPlugins
     ;;
 Debian)
     installNeovimDebian

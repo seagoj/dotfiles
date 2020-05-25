@@ -92,6 +92,9 @@ endfunction
 if has("autocmd")
     autocmd BufWritePre * :retab! " auto convert whitespace
     autocmd BufWritePre * call Strip_trailing_whitespace()
+    if exists('##TextYankPost')
+        autocmd TextYankPost * silent! lua require'vim.highlight'.on_yank('IncSearch', 200)
+    endif
 endif
 
 nnoremap <leader>r :Gsearch
