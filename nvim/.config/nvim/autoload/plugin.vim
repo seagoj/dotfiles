@@ -44,7 +44,7 @@ endfunction
 
 function plugin#notes() abort
     " note taking
-    packadd! vimwiki | packadd! vimwiki-config
+    packadd! vimwiki | packadd! vimwiki-config.vim
 endfunction
 
 function plugin#search() abort

@@ -196,9 +196,6 @@
 [submodule "vim-projectionist"]
 	path = nvim/.config/nvim/pack/bundle/opt/vim-projectionist
 	url = https://github.com/tpope/vim-projectionist
-[submodule "vimwiki-config"]
-	path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config
-	url = git@git.seago.io:seagoj/vimwiki-config
 [submodule "fff.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/fff.vim
 	url = https://github.com/dylanaraps/fff.vim
@@ -211,3 +208,6 @@
 [submodule "nvim/src"]
 	path = nvim/code/neovim
 	url = https://github.com/neovim/neovim
+[submodule "vimwiki-config.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config.vim
+	url = git@git.seago.io:seagoj/vimwiki-config.vim
