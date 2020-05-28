@@ -1,0 +1,4 @@
+#!/bin/sh
+
+cd "${DOTFILES}"/dotman/code/dotman && \
+    bin/install

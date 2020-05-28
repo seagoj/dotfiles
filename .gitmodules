@@ -205,3 +205,6 @@
 [submodule "vimwiki-config.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config.vim
 	url = git@git.seago.io:seagoj/vimwiki-config.vim
+[submodule "dotman"]
+	path = dotman/code/dotman
+	url = git@git.seago.io:seagoj/dotman.git
