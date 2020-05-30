@@ -16,3 +16,9 @@ fzf::dirSearchAt() {
 fzf::searchAt() {
     eval "fd . ${1:-HOME} | fzf"
 }
+
+fbr() {
+    git fetch && \
+    local branch=$(git branch -a | fzf +s +m -e) && \
+    git checkout $(echo "$branch" | sed"s:.* remotes/origin/::" | sed "s:.* ::")
+}
