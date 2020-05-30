@@ -208,3 +208,6 @@
 [submodule "dotman"]
 	path = dotman/code/dotman
 	url = git@git.seago.io:seagoj/dotman.git
+[submodule "vimb"]
+	path = vimb/code/vimb
+	url = git@github.com:fanglingsu/vimb.git

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+LOCAL="$CODE"/vimb
+
+c_install() {
+    cd "$LOCAL" && \
+    make && \
+    sudo make install && \
+    make clean
+}
+
+c_install && \
+vimb "${@}"
