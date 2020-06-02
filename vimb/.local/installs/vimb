@@ -9,5 +9,6 @@ c_install() {
     make clean
 }
 
+osinstall gstreamer-vaapi && \
 c_install && \
 vimb "${@}"

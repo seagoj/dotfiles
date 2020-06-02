@@ -6,7 +6,7 @@ static const unsigned int gappx     = 0;        /* gaps between windows */
 static const unsigned int snap      = 32;       /* snap pixel */
 static const int showbar            = 0;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
-static const char *fonts[]          = { "FiraCode Nerd Font Mono:style=regular:size=8" };
+static const char *fonts[]          = { "FiraCode Nerd Font Mono:style=regular:size=10" };
 static const char dmenufont[]       = "FiraCode Nerd Font Mono:style=regular:size=8";
 
 static const char fg[]          = "#c2c2b0";
@@ -82,7 +82,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-F", "-m", dmenumon, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "firefox-developer-edition", NULL };
+static const char *browsercmd[]  = { "tabbed", "-c", "vimb", "-e", NULL };
 
 static Key keys[] = {
     /* modifier                     key        function        argument */

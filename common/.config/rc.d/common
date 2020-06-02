@@ -3,11 +3,17 @@
 # bookmarks
 alias z='cd `fzf::dirSearchAt $HOME`'
 alias code='cd `fzf::dirSearchAt $CODE` && tmux.sh'
-alias dots="cd $DOTFILES"
 alias config='e `fzf::searchAt $XDG_CONFIG_HOME`'
 function o() {
     echo "$1"
     xdg-open ${1:-`fzf`}
+}
+
+dots() {
+    cd "$DOTFILES"
+    if [ "0" = "$?" ] && [ "-t" = "$1" ]; then
+        tmux.sh
+    fi
 }
 
 # diagnostics

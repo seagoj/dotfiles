@@ -1,0 +1,3 @@
+# vim: filetype=sh:
+
+export BROWSERS="firefox-developer-edition firefox $BROWSERS"
