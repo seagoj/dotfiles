@@ -45,6 +45,7 @@ case $session in
     feh --bg-scale ~/.local/share/wallpapers/wall.png
     compton &
     dunst&
+    xscreensaver&
     exec dwm >> ~/.cache/dwm/stdout 2>> ~/.cache/dwm/stderr
     ;;
     *) exec $1;;
