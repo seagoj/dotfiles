@@ -170,47 +170,53 @@
     path = nvim/.config/nvim/pack/bundle/opt/coc-config.vim
     url = git@git.seago.io:seagoj/coc-config.vim
 [submodule "dash-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/dash-config.vim
-	url = git@git.seago.io:seagoj/dash-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/dash-config.vim
+    url = git@git.seago.io:seagoj/dash-config.vim
 [submodule "qf-todo.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/qf-todo.vim
-	url = git@git.seago.io:seagoj/qf-todo.vim
+    path = nvim/.config/nvim/pack/bundle/opt/qf-todo.vim
+    url = git@git.seago.io:seagoj/qf-todo.vim
 [submodule "sourcerer-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/sourcerer-config.vim
-	url = git@git.seago.io:seagoj/sourcerer-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/sourcerer-config.vim
+    url = git@git.seago.io:seagoj/sourcerer-config.vim
 [submodule "sourcerer.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/sourcerer.vim
-	url = https://github.com/xero/sourcerer.vim
+    path = nvim/.config/nvim/pack/bundle/opt/sourcerer.vim
+    url = https://github.com/xero/sourcerer.vim
 [submodule "vifm-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/vifm-config.vim
-	url = git@git.seago.io:seagoj/vifm-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/vifm-config.vim
+    url = git@git.seago.io:seagoj/vifm-config.vim
 [submodule "vim-commentary"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-commentary
-	url = https://github.com/tpope/vim-commentary
+    path = nvim/.config/nvim/pack/bundle/opt/vim-commentary
+    url = https://github.com/tpope/vim-commentary
 [submodule "vim-projectionist"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-projectionist
-	url = https://github.com/tpope/vim-projectionist
+    path = nvim/.config/nvim/pack/bundle/opt/vim-projectionist
+    url = https://github.com/tpope/vim-projectionist
 [submodule "fff.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/fff.vim
-	url = https://github.com/dylanaraps/fff.vim
+    path = nvim/.config/nvim/pack/bundle/opt/fff.vim
+    url = https://github.com/dylanaraps/fff.vim
 [submodule "fff-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/fff-config.vim
-	url = git@git.seago.io:seagoj/fff-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/fff-config.vim
+    url = git@git.seago.io:seagoj/fff-config.vim
 [submodule "vim-hexokinase"]
-	path = nvim/.config/nvim/pack/bundle/opt/vim-hexokinase
-	url = https://github.com/RRethy/vim-hexokinase
+    path = nvim/.config/nvim/pack/bundle/opt/vim-hexokinase
+    url = https://github.com/RRethy/vim-hexokinase
 [submodule "nvim/src"]
-	path = nvim/code/neovim
-	url = https://github.com/neovim/neovim
+    path = nvim/code/neovim
+    url = https://github.com/neovim/neovim
 [submodule "vimwiki-config.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config.vim
-	url = git@git.seago.io:seagoj/vimwiki-config.vim
+    path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config.vim
+    url = git@git.seago.io:seagoj/vimwiki-config.vim
 [submodule "dotman"]
-	path = dotman/code/dotman
-	url = git@git.seago.io:seagoj/dotman.git
+    path = dotman/code/dotman
+    url = git@git.seago.io:seagoj/dotman.git
 [submodule "vimb"]
-	path = vimb/code/vimb
-	url = git@github.com:fanglingsu/vimb.git
+    path = vimb/code/vimb
+    url = git@github.com:fanglingsu/vimb.git
 [submodule "mosh/.local/src/mosh"]
-	path = mosh/.local/src/mosh
-	url = https://github.com/mobile-shell/mosh.git
+    path = mosh/.local/src/mosh
+    url = https://github.com/mobile-shell/mosh.git
+[submodule "dwm"]
+    path = dwm/.local/src/suckless/dwm
+    url = git://git.suckless.org/dwm
+[submodule "st"]
+	path = st/.local/src/suckless/st
+	url = git://git.suckless.org/st

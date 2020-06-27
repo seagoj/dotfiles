@@ -1,21 +1,24 @@
 #!/bin/sh
 
-package=dwm
-localRepo="${CODE:-HOME/code}"/suckless/${package}
-remoteRepo="git://git.suckless.org/${package}"
-patches=(
-    # http://dwm.suckless.org/patches/fibonacci/dwm-fibonacci-5.8.2.diff
-    http://dwm.suckless.org/patches/autostart/dwm-autostart-20161205-bb3bd6f.diff
-    # http://dwm.suckless.org/patches/uselessgap/dwm-uselessgap-6.2.diff
-    https://dwm.suckless.org/patches/fakefullscreen/dwm-fakefullscreen-20170508-ceac8c9.diff
-)
+local_repo="$HOME"/.local/src/suckless/dwm
 
-. "$XDG_FUNCTIONS_DIR"/git.sh
-. "$XDG_FUNCTIONS_DIR"/suckless.sh
+getPatch() {
+    diff_file=$(basename "$1")
+    if [ ! -f "$local_repo"-patches/"$diff_file" ]; then
+        if ! which wget &>/dev/null; then
+            osinstall wget
+        fi
+        wget "$1" -O "$local_repo"-patches/"$diff_file"
+    fi
+}
 
-git::clone "${remoteRepo}" "${localRepo}" # 2>/dev/null
-cd "$localRepo" && \
-    suckless::applyPatches "${patches[@]}" && \
-    suckless::install
+getPatch https://dwm.suckless.org/patches/fakefullscreen/dwm-fakefullscreen-20170508-ceac8c9.diff
 
-"${package}" ${@}
+cd "$local_repo" && \
+    git reset HEAD --hard && git clean -f
+    if [ ! -f "$local_repo"/config.h ]; then
+        ln -s "$XDG_CONFIG_HOME"/dwm/config.h "$local_repo"/config.h
+    fi
+    patch -Np1 -i "$local_repo"-patches/dwm-fakefullscreen-20170508-ceac8c9.diff && sudo make && \
+    nvim -d config.def.h config.h && \
+    make clean && make && sudo make install
