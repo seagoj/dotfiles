@@ -1,0 +1,18 @@
+#!/bin/sh
+
+. ~/.config/rc.d/ssh.alias
+
+ssh_id=bonfyre-mysql-prod
+mysql_id=bonfyre-prod
+
+command='SELECT `token` FROM `user_token` `ut` JOIN `user_role` `ur` ON `ut`.`user_id` = `ur`.`user_id` AND `ur`.`rel_type` = "global" AND `ur`.`rel_id` = 0 JOIN `role` `r` ON `r`.`role_id` = `ur`.`role_id` WHERE `ut`.`user_id` = 224629 OR `r`.`name` = "dev" ORDER BY `added` DESC LIMIT 1';
+
+tnl "$ssh_id" &
+token=$(mycli "$mysql_id" -e "$command" --csv | tail -n 1 | sed 's/"//g')
+
+if [ 'token' == "$token" ]; then
+    echo "no token found for user"
+    exit 1;
+fi
+
+export DEV_USER_TOKEN=$token && echo $DEV_USER_TOKEN

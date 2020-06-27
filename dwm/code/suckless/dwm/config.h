@@ -83,6 +83,7 @@ static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() 
 static const char *dmenucmd[] = { "dmenu_run", "-F", "-m", dmenumon, NULL };
 static const char *termcmd[]  = { "st", NULL };
 static const char *browsercmd[]  = { "tabbed", "-c", "vimb", "-e", NULL };
+static const char *notescmd[]  = { "st", "-e", "scratchpad", NULL };
 
 static Key keys[] = {
     /* modifier                     key        function        argument */
@@ -97,6 +98,7 @@ static Key keys[] = {
     { MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
     { MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
     { MODKEY,                       XK_m,      zoom,           {0} },
+    { MODKEY,                       XK_n,      spawn,          {.v = notescmd } },
     { MODKEY,                       XK_Tab,    view,           {0} },
     { MODKEY,                       XK_w,      killclient,     {0} },
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },

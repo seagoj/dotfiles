@@ -1,2 +1,18 @@
-alias tunnel='ssh -N'
-alias tnl='ssh -N'
+alias tunnel='tnl'
+
+tnl() {
+    case "$1" in
+        "bonfyre-local")
+            search=127.0.0.1:mysql
+            ;;
+        "bonfyre-mysql-qa")
+            search=127.0.0.1:opsession-prxy
+            ;;
+        "bonfyre-mysql-prod")
+            search=127.0.0.1:opsession-prxy
+            ;;
+    esac
+    list_tunnels=$(lsof -i -n | egrep "ssh.*$search")
+
+    [ -z "$list_tunnels" ] && ssh -N $@
+}

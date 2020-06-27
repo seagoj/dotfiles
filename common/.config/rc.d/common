@@ -37,3 +37,6 @@ portuse() {
 
 alias open='xdg-open'
 # alias o='open'
+
+alias weather='curl "wttr.in"'
+alias parrot='curl "parrot.live"'

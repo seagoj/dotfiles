@@ -4,6 +4,6 @@
 
 tmux::newWindow 'vim'
 if which wego &>/dev/null; then
-    tmux send-keys -t 1 'wego 2' C-m
+    tmux send-keys -t 1 'curl wttr.in' C-m
 fi
 tmux::startSession
