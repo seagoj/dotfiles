@@ -211,3 +211,6 @@
 [submodule "vimb"]
 	path = vimb/code/vimb
 	url = git@github.com:fanglingsu/vimb.git
+[submodule "mosh/.local/src/mosh"]
+	path = mosh/.local/src/mosh
+	url = https://github.com/mobile-shell/mosh.git

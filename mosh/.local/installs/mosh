@@ -1,0 +1,7 @@
+#!/bin/sh
+
+cd ~/.local/src/mosh && \
+    ./autogen.sh && \
+    ./configure && \
+    make && \
+    sudo make install
