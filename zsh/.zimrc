@@ -22,8 +22,8 @@ zmodule utility
 zmodule git-info
 
 # theme
-zmodule gitster
-# zmodule PatTheMav/minimal2
+# zmodule gitster
+zmodule PatTheMav/minimal2
 # zmodule miekg/lean
 # zmodule seagoj/lean
 # zmodule s1ck94
@@ -54,8 +54,8 @@ zstyle ':zim:git' aliases-prefix 'g'
 zmodule archive
 zmodule pacman
 
-# alias suggester
-zmodule MichaelAquilina/zsh-you-should-use
+# # alias suggester
+# zmodule MichaelAquilina/zsh-you-should-use
 
 # Load these ssh identities with the ssh module
 zssh_ids=(id_rsa)

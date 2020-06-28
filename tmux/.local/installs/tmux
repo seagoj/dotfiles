@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 if [[ $OS_TYPE = "mac" ]]; then
     osinstall https://raw.githubusercontent.com/choppsv1/homebrew-term24/master/tmux.rb reattach-to-user-namespace
