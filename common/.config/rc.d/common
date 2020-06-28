@@ -18,7 +18,7 @@ dots() {
 
 # diagnostics
 alias cputemp="sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp"
-alias battery="echo $(cat /sys/class/power_supply/BAT0/capacity)%"
+alias battery="echo $([ -f  /sys/class/power_supply/BAT0/capacity ] && cat /sys/class/power_supply/BAT0/capacity)%"
 alias memoryfree="free -h | awk '(NR==2){ print $3 }' | sed 's/Gi$/G/'"
 
 # ping

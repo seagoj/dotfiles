@@ -1,6 +1,6 @@
 #!/bin/sh
 
-LOCAL="$CODE"/vimb
+LOCAL="$HOME"/.local/src/vimb
 
 c_install() {
     cd "$LOCAL" && \
@@ -9,6 +9,6 @@ c_install() {
     make clean
 }
 
-osinstall gstreamer-vaapi && \
+osinstall gstreamer-vaapi webkit2gtk && \
 c_install && \
 vimb "${@}"

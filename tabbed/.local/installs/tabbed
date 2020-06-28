@@ -1,12 +1,8 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-REMOTE=https://git.suckless.org/tabbed
-LOCAL="${CODE}"/suckless/tabbed
+patches=""
 
-. "${XDG_FUNCTIONS_DIR}"/git.sh
+. "$XDG_FUNCTIONS_HOME"/suckless.sh
 
-git::clone "${REMOTE}" "${LOCAL}"
-cd "${LOCAL}" && \
-    make && \
-    sudo make install && \
-    tabbed ${@}
+suckless_build $(basename "${0}") && \
+$(basename "${0}") ${@}

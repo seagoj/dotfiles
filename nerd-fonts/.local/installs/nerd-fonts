@@ -1,0 +1,3 @@
+#!/bin/sh
+
+~/.local/src/nerd-fonts/install.sh FiraCode

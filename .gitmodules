@@ -208,9 +208,6 @@
 [submodule "dotman"]
     path = dotman/code/dotman
     url = git@git.seago.io:seagoj/dotman.git
-[submodule "vimb"]
-    path = vimb/code/vimb
-    url = git@github.com:fanglingsu/vimb.git
 [submodule "mosh/.local/src/mosh"]
     path = mosh/.local/src/mosh
     url = https://github.com/mobile-shell/mosh.git
@@ -226,3 +223,12 @@
 [submodule "sourcerer"]
 	path = sourcerer/.local/src/sourcerer
 	url = https://github.com/xero/sourcerer.git
+[submodule "vimb"]
+	path = vimb/.local/src/vimb
+	url = https://github.com/fanglingsu/vimb.git
+[submodule "tabbed"]
+	path = tabbed/.local/src/tabbed
+	url = https://git.suckless.org/tabbed
+[submodule "nerd-fonts"]
+	path = nerd-fonts/.local/src/nerd-fonts
+	url = https://github.com/ryanoasis/nerd-fonts.git
