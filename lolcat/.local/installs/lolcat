@@ -1,4 +1,3 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-gem install lolcat 2>/dev/null
-command lolcat ${*}
+gem install lolcat && command lolcat ${@}
