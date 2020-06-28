@@ -220,3 +220,6 @@
 [submodule "st"]
 	path = st/.local/src/suckless/st
 	url = git://git.suckless.org/st
+[submodule "dmenu"]
+	path = dmenu/.local/src/suckless/dmenu
+	url = https://git.suckless.org/dmenu

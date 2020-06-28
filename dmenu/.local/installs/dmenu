@@ -1,19 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-package=dmenu
-localRepo="${CODE:-HOME/code}"/suckless/"${package}"
-remoteRepo=git://git.suckless.org/"${package}"
-patches=(
-    http://tools.suckless.org/dmenu/patches/fuzzymatch/dmenu-fuzzymatch-4.9.diff
-)
+patches=" \
+    http://tools.suckless.org/dmenu/patches/fuzzymatch/dmenu-fuzzymatch-4.9.diff \
+"
 
-. "$XDG_FUNCTIONS_DIR"/git.sh
 . "$XDG_FUNCTIONS_DIR"/suckless.sh
 
-git::clone "${remoteRepo}" "${localRepo}" 2>/dev/null
-cd "$localRepo" && \
-    suckless::applyPatches "${patches[@]}" && \
-    suckless::install
+project=$(basename "${0}")
+suckless_build "$project" && \
+"$project" ${@}
 
 wget "https://tools.suckless.org/dmenu/scripts/run-recent" -O "${HOME}"/.local/bin/run-recent && \
     chmod 0700 "${HOME}"/.local/bin/run-recent
