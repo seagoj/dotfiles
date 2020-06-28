@@ -1,6 +1,4 @@
-#!/usr/bin/env bash
-
-. "${HOME}"/.local/functions/dotfiles.sh
+#!/bin/sh
 
 installNeovimMac() {
     brew install neovim
@@ -12,30 +10,8 @@ installNeovimDebian() {
     sudo apt-get install neovim python-neovim python3-neovim
 }
 
-installSourcerer() {
-    if [[ ! -f ${XDG_CONFIG_HOME}/nvim/colors/sourcerer.vim ]]; then
-        git clone git://github.com/xero/sourcerer.git $CODE/sourcerer
-        ln -s ${CODE}/sourcerer/sourcerer.vim $XDG_CONFIG_HOME/nvim/colors/sourcerer.vim
-    fi
-}
-
-installESLint() {
-    if ! which eslint &>/dev/null; then
-        general::sudo npm install -g eslint
-    fi
-}
-
-installVimv() {
-    if ! which vimv &>/dev/null; then
-        general::update_repo git://github.com/thameera/vimv.git vimv
-        popd
-        ln -s "${CODE}/vimv/vimv" "${HOME}/.local/bin/vimv"
-        chmod +x "{HOME}/.local/bin/vimv"
-    fi
-}
-
 fromSource() {
-    cd "${CODE}"/neovim && \
+    cd "$HOME"/.local/src/neovim && \
         make CMAKE_BUILD_TYPE=RelWithDebInfo && \
         sudo make install
     pip2 install --upgrade pip neovim
@@ -46,7 +22,6 @@ fromSource() {
 case "$(uname -s)" in
 Darwin | Mac)
     installNeovimMac
-    installSourcerer
     brew tap neovim/neovim
     brew tap rogual/neovim-dot-app
     brew install neovim-dot-app
@@ -54,11 +29,9 @@ Darwin | Mac)
     ;;
 Linux)
     fromSource
-    installSourcerer
     ;;
 Debian)
     installNeovimDebian
-    installSourcerer
     ;;
 *)
     DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )

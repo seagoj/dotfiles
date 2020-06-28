@@ -223,3 +223,6 @@
 [submodule "dmenu"]
 	path = dmenu/.local/src/suckless/dmenu
 	url = https://git.suckless.org/dmenu
+[submodule "sourcerer"]
+	path = sourcerer/.local/src/sourcerer
+	url = https://github.com/xero/sourcerer.git

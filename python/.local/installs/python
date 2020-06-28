@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 export PYTHON2_VERSION="2.7.13"
