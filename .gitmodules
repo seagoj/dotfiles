@@ -232,3 +232,6 @@
 [submodule "nerd-fonts"]
 	path = nerd-fonts/.local/src/nerd-fonts
 	url = https://github.com/ryanoasis/nerd-fonts.git
+[submodule "vimclip"]
+	path = vimclip/.local/src/vimclip
+	url = https://github.com/hrantzsch/vimclip.git
