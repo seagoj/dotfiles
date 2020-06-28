@@ -1,19 +1,9 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-package=st
-localRepo="${CODE:-HOME/code}"/suckless/${package}
-remoteRepo="git://git.suckless.org/${package}"
-patches=(
-    http://st.suckless.org/patches/alpha/st-alpha-0.8.2.diff
-    http://st.suckless.org/patches/clipboard/st-clipboard-0.8.2.diff
-)
+patches=""
 
-. "$XDG_FUNCTIONS_DIR"/git.sh
-. "$XDG_FUNCTIONS_DIR"/suckless.sh
+. "$XDG_FUNCTIONS_HOME"/suckless.sh
 
-git::clone "${remoteRepo}" "${localRepo}" 2>/dev/null
-cd "$localRepo" && \
-    suckless::applyPatches "${patches[@]}" && \
-    suckless::install
-
-"${package}" ${@}
+project=$(basename "${0}")
+suckless_build "$project" && \
+"$project" ${@}

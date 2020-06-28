@@ -1,24 +1,10 @@
 #!/bin/sh
 
-local_repo="$HOME"/.local/src/suckless/dwm
+patches=" \
+    https://dwm.suckless.org/patches/fakefullscreen/dwm-fakefullscreen-20170508-ceac8c9.diff \
+"
 
-getPatch() {
-    diff_file=$(basename "$1")
-    if [ ! -f "$local_repo"-patches/"$diff_file" ]; then
-        if ! which wget &>/dev/null; then
-            osinstall wget
-        fi
-        wget "$1" -O "$local_repo"-patches/"$diff_file"
-    fi
-}
+. "$XDG_FUNCTIONS_HOME"/suckless.sh
 
-getPatch https://dwm.suckless.org/patches/fakefullscreen/dwm-fakefullscreen-20170508-ceac8c9.diff
-
-cd "$local_repo" && \
-    git reset HEAD --hard && git clean -f
-    if [ ! -f "$local_repo"/config.h ]; then
-        ln -s "$XDG_CONFIG_HOME"/dwm/config.h "$local_repo"/config.h
-    fi
-    patch -Np1 -i "$local_repo"-patches/dwm-fakefullscreen-20170508-ceac8c9.diff && sudo make && \
-    nvim -d config.def.h config.h && \
-    make clean && make && sudo make install
+suckless_build $(basename "${0}") && \
+$(basename "${0}") ${@}
