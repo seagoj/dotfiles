@@ -1,7 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-case $OS_TYPE in
-Darwin | Mac)
-    ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"
-    ;;
-esac
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)" && \
+    brew ${@}

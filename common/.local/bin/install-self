@@ -1,0 +1,4 @@
+#!/bin/sh
+
+package="$(basename ${0})"
+osinstall "$package" && [ "$HOME"/.local/installs != "$(dirname $(which $package))" ] && "$package" ${@}

@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 # vim: filetype=sh:
+
 # shellcheck disable=SC1090
-source "${XDG_FUNCTIONS_DIR}/cli.sh"
+source "${XDG_FUNCTIONS_HOME}/cli.sh"
 #/ Usage: v [arguments ...]
 #/
 #/ Arguments:
@@ -14,7 +15,7 @@ cleanup() {
     exit "${EXIT_CODE}"
 }
 
-v::arguments() {
+v_arguments() {
     OUTPUT='&> /dev/null'
 
     while [[ $# -gt 0 ]]; do
@@ -23,7 +24,7 @@ v::arguments() {
             OUTPUT=""
             ;;
         "--destroy" | "--rebuild" | "-d")
-            v::destroy && v::create_session && v::suspend
+            v_destroy && v_create_session && v_suspend
             exit
             ;;
         esac
@@ -31,30 +32,30 @@ v::arguments() {
     done
 }
 
-v::connect() {
-    v::resume_session || v::create_session
+v_connect() {
+    v_resume_session || v_create_session
 }
 
-v::create_session() {
-    log::info "no session to resume"
-    log::info "recreating"
+v_create_session() {
+    log_info "no session to resume"
+    log_info "recreating"
     ssh-keygen -R \[127.0.0.1\]:2222 && \
         vagrant up && \
-        v::ssh
+        v_ssh
 }
 
-v::destroy() {
-    log::info "destroying image"
+v_destroy() {
+    log_info "destroying image"
     eval "vagrant destroy -f ${OUTPUT} && vagrant box remove bonfyre/vagrant"
 }
 
-v::resume_session() {
-    log::info "attempting resume"
+v_resume_session() {
+    log_info "attempting resume"
     eval "vagrant resume ${OUTPUT}"
-    v::ssh
+    v_ssh
 }
 
-v::ssh() {
+v_ssh() {
     if [[ -z "${VAGRANT_PROJECT_ROOT+x}" ]]; then
         vagrant ssh
     else
@@ -62,11 +63,11 @@ v::ssh() {
     fi
 }
 
-v::suspend() {
-    log::info "suspending"
+v_suspend() {
+    log_info "suspending"
     vagrant suspend
 }
 
-log::timestamp
-v::arguments "$@"
-v::connect # && v::suspend
+log_timestamp
+v_arguments "$@"
+v_connect # && v_suspend

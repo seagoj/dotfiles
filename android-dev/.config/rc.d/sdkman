@@ -1,5 +1,5 @@
-#vim: filetype=bash:
+# vim: filetype=sh:
 
-. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
+. "${XDG_FUNCTIONS_HOME}"/sourced.sh
 
-source::file "${SDKMAN_DIR}"/.sdkman/bin/sdkman-init.sh
+source_file "${SDKMAN_DIR}"/.sdkman/bin/sdkman-init.sh

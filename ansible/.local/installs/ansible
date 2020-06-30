@@ -1,15 +1,14 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 case $OS_TYPE in
 Arch)
     osinstall ansible
     ;;
 Darwin | Mac)
-    dotfiles::bootstrap python &&\
-        general::sudo 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible'
+    sudo 'CFLAGS=-Qunused-arguments CPPFLAGS=-Qunused-arguments pip install ansible'
     ;;
 esac
 
-if [[ ! -f "${HOME}/.vault_pass_doomsday" ]]; then
+if [! -f "${HOME}/.vault_pass_doomsday"]; then
     echo "$(pass ansible/vault/doomsday | head -n1)" > "${HOME}/.vault_pass_doomsday"
 fi

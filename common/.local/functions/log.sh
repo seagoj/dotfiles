@@ -1,11 +1,11 @@
-#!/bin/bash
+#!/bin/sh
 # vim: filetype=sh:
 
-log::clear() {
+log_clear() {
     printf "%s" "" | tee "$LOG_FILE" >&2 >/dev/null
 }
 
-log::error() {
+log_error() {
     if [[ "${INTERACTIVE}" == "1" ]]; then
         printf "\r\033[2K  [\033[0;31mERROR\033[0m] %s\n" "$*"
     fi
@@ -13,7 +13,7 @@ log::error() {
     printf "[ ERROR ] %s\n" "$*" | tee -a "$LOG_FILE" >&2 >/dev/null
 }
 
-log::fatal() {
+log_fatal() {
     if [[ "${INTERACTIVE}" == "1" ]]; then
         printf "\r\033[2K  [\033[0;31mFATAL\033[0m] %s\n" "$*"
     fi
@@ -22,7 +22,7 @@ log::fatal() {
     exit 1
 }
 
-log::info() {
+log_info() {
     if [[ "${INTERACTIVE}" == "1" ]]; then
         printf "  [ \033[00;34mINFO\033[0m ] %s\n" "$*"
     fi
@@ -30,14 +30,14 @@ log::info() {
     printf "  [ INFO ] %s\n" "$*" | tee -a "${LOG_FILE}" >&2 >/dev/null
 }
 
-log::set_interactive() {
+log_set_interactive() {
     INTERACTIVE=0
     if test -t 1 && tput colors >/dev/null; then
         INTERACTIVE=1
     fi
 }
 
-log::set_log_file() {
+log_set_log_file() {
     if [[ -z "${LOG_FILE+x}" ]]; then
         readonly LOG_FILE="/tmp/$(basename "$0").log"
     fi
@@ -47,11 +47,11 @@ log::set_log_file() {
     fi
 }
 
-log::show() {
+log_show() {
     less "${LOG_FILE}"
 }
 
-log::success() {
+log_success() {
     if [[ "${INTERACTIVE}" == "1" ]]; then
         printf "\r\033[2K  [ \033[00;32mOK\033[0m ] %s\n" "$*"
     fi
@@ -59,7 +59,7 @@ log::success() {
     printf "  [ SUCCESS ] %s\n" "$*" | tee -a "${LOG_FILE}" >&2 >/dev/null
 }
 
-log::timestamp() {
+log_timestamp() {
     TIME=$(date)
     if [[ "${INTERACTIVE}" == "1" ]]; then
         printf "  [ \033[00;34mTIME\033[0m ] %s\n" "$TIME"
@@ -68,7 +68,7 @@ log::timestamp() {
     printf "  [ TIME ] %s\n" "$TIME" | tee -a "${LOG_FILE}" >&2 >/dev/null
 }
 
-log::warning() {
+log_warning() {
     if [[ "${INTERACTIVE}" == "1" ]]; then
         printf "  [ \033[00;34mWARNING\033[0m ] %s\n" "$*"
     fi
@@ -76,5 +76,5 @@ log::warning() {
     printf "[ WARNING ] %s\n" "$*" | tee -a "$LOG_FILE" >&2 >/dev/null
 }
 
-log::set_log_file
-log::set_interactive
+log_set_log_file
+log_set_interactive

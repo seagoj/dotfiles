@@ -1,7 +1,8 @@
-#!/bin/bash
+#!/bin/sh
 # vim: filetype=sh:
+
 # shellcheck disable=SC1090
-source "${XDG_FUNCTIONS_DIR}/cli.sh"
+source "${XDG_FUNCTIONS_HOME}/cli.sh"
 #/ USAGE:
 #/
 #/   $ e

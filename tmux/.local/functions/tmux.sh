@@ -1,6 +1,6 @@
 # vim: filetype=sh:
 
-tmux::newWindow() {
+tmux_newWindow() {
     local window="${1:-window}"
     local layout="${2:-default}"
     if [ -z "$(tmux list-windows | grep $PROJECT)" ]; then
@@ -15,7 +15,7 @@ tmux::newWindow() {
     fi
 }
 
-tmux::startSession() {
+tmux_startSession() {
     # Select first window.first pane
     tmux select-window -t $PROJECT:1
     tmux select-pane -t 1
@@ -24,7 +24,7 @@ tmux::startSession() {
     tmux -2 attach-session -t $PROJECT
 }
 
-tmux::split() {
+tmux_split() {
     if [[ "$1" == "v" ]]; then
         tmux split-window -v
     elif [[ "$1" == "h" ]]; then
@@ -34,13 +34,13 @@ tmux::split() {
     fi
 }
 
-tmux::archey() {
-    tmux::split "$1"
+tmux_archey() {
+    tmux_split "$1"
     tmux send-keys "archey3" C-m
 }
 
-tmux::status() {
-    tmux::split "$1"
+tmux_status() {
+    tmux_split "$1"
     case $OS_TYPE in
     Arch)
         tmux send-keys "${FETCHER} && wwwtxt" C-m
@@ -54,28 +54,28 @@ tmux::status() {
     esac
 }
 
-tmux::irssi() {
-    tmux::split "$1"
+tmux_irssi() {
+    tmux_split "$1"
     tmux send-keys 'irssi' C-m
 }
 
-tmux::karma() {
-    tmux::split "$1"
+tmux_karma() {
+    tmux_split "$1"
     tmux send-keys "karma start" C-m
 }
 
-tmux::ncmpcpp() {
-    tmux::split "$1"
+tmux_ncmpcpp() {
+    tmux_split "$1"
     # tmux resize-pane -L 20
     tmux send-keys "mpd; ncmpcpp" C-m
 }
 
-tmux::gulp() {
-    tmux::split "$1"
+tmux_gulp() {
+    tmux_split "$1"
     tmux send-keys "gulp" C-m
 }
 
-tmux::tail_logs() {
+tmux_tail_logs() {
     if [[ "$1" == "vagrant" ]]; then
         SSHCOMMAND='vagrant ssh -c';
     else
@@ -90,6 +90,6 @@ tmux::tail_logs() {
 
     tmux new-window -t $PROJECT -n "$DESC"
     tmux send-keys "$SSHCOMMAND 'tail -f $ERRORLOG'" C-m
-    tmux::split v
+    tmux_split v
     tmux send-keys "$SSHCOMMAND 'tail -f $DEBUGLOG'" C-m
 }

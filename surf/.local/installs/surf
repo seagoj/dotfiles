@@ -1,20 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 osinstall gstreamer webkit2gtk
 
-package=surf
-localRepo="${CODE:-HOME/code}"/suckless/${package}
-remoteRepo="git://git.suckless.org/${package}"
+patches=" \
+    http://surf.suckless.org/patches/homepage/surf-2.0-homepage.diff \
+"
 
-patches=(
-    http://surf.suckless.org/patches/homepage/surf-2.0-homepage.diff
-)
+. "$XDG_FUNCTIONS_HOME"/suckless.sh
 
-. "$XDG_FUNCTIONS_DIR"/git.sh
-. "$XDG_FUNCTIONS_DIR"/suckless.sh
-
-git::clone "${remoteRepo}" "${localRepo}" 2>/dev/null
-cd "$localRepo" && \
-    suckless::applyPatches "${patches[@]}" && \
-    suckless::install
-# "${package}" ${@}
+suckless_build $(basename "${0}") && \
+$(basename "${0}") ${@}

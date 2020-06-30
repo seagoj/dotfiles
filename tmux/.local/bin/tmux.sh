@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 # shellcheck disable=SC1090
-. "${XDG_FUNCTIONS_DIR}"/tmux.sh
+. "${XDG_FUNCTIONS_HOME}"/tmux.sh
 
 # project settings
 PROJECT="${1:-${PWD##*/}}"
 
-tmux::createFromProject() {
+tmux_createFromProject() {
     project_dir="${PROJECT_DIR:-${HOME}/.tmux/projects}"
     project_default="${PROJECT_DEFAULT:-general}"
     project_file="${project_dir}"/"${project_default}"
@@ -18,4 +18,4 @@ tmux::createFromProject() {
     source "${project_file}"
 }
 
-tmux -u attach -d -t "${PROJECT}" || tmux::createFromProject
+tmux -u attach -d -t "${PROJECT}" || tmux_createFromProject

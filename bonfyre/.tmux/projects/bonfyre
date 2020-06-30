@@ -1,10 +1,10 @@
 # vim: filetype=sh:
 
-. "$XDG_FUNCTIONS_DIR"/tmux.sh
+. "$XDG_FUNCTIONS_HOME"/tmux.sh
 
-bonfyre::apiWindow() {
-    pushd ~/code/bonfyre/bonfyre_app >/dev/null
-    tmux::newWindow "bonfyre"
+bonfyre_apiWindow() {
+    pushd "$XDG_SOURCE_HOME"/bonfyre/bonfyre_app >/dev/null
+    tmux_newWindow "bonfyre"
     if which wego &>/dev/null; then
         tmux send-keys -t 1 'wego 2' C-m
     fi
@@ -13,22 +13,22 @@ bonfyre::apiWindow() {
     popd >/dev/null
 }
 
-bonfyre::webWindow() {
+bonfyre_webWindow() {
     pushd ~/code/bonfyre/pyweb >/dev/null
-    tmux::newWindow "pyweb"
+    tmux_newWindow "pyweb"
     tmux send-keys -t 3 'vagrant-up'
     tmux send-keys -t 4 '${FETCHER} && wwwtxt' C-m
     popd >/dev/null
 }
 
-bonfyre::socialWindow() {
+bonfyre_socialWindow() {
     pushd ~ >/dev/null
-    tmux::newWindow "social" --no-layout
+    tmux_newWindow "social" --no-layout
     tmux send-keys -t 1 'mutt' C-m
     popd >/dev/null
 }
 
-bonfyre::apiWindow
-bonfyre::webWindow
-bonfyre::socialWindow
-tmux::startSession
+bonfyre_apiWindow
+bonfyre_webWindow
+bonfyre_socialWindow
+tmux_startSession

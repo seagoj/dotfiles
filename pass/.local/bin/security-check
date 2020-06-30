@@ -1,12 +1,12 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-. $XDG_FUNCTIONS_DIR/log.sh
+. "${XDG_FUNCTIONS_HOME}"/log.sh
 
 declare -A USAGE
 USAGE=()
 
 decrypt() {
-    log::info "decrypting..."
+    log_info "decrypting..."
     for d in ~/.password-store/**/*.gpg; do
         d="${d%.gpg}"
         d="${d##*.password-store/}"
@@ -20,19 +20,19 @@ decrypt() {
 }
 
 check() {
-    log::info "checking..."
+    log_info "checking..."
     found=0
     for c in "${USAGE[@]}"; do
         if [[ "$(echo $c | wc -w)" != "1" ]]; then
             found=1
-            log::warning "DUPLICATE FOUND:"
+            log_warning "DUPLICATE FOUND:"
             for d in $c; do
-                log::warning "- $d"
+                log_warning "- $d"
             done
         fi
     done
     if [[ found = 0 ]]; then
-        log::info "No duplicates found."
+        log_info "No duplicates found."
     fi
 }
 
@@ -41,12 +41,12 @@ find() {
     for f in ${USAGE[$1]}; do
         if [[ $found = 0 ]]; then
             found=1
-            log::info "found:"
+            log_info "found:"
         fi
-        log::info "- $f"
+        log_info "- $f"
     done
     if [[ $found = 0 ]]; then
-        log::info "$1 not found in passwords."
+        log_info "$1 not found in passwords."
     fi
 }
 
@@ -55,5 +55,5 @@ decrypt || exit $?
 case $# in
     0) check;;
     1) find "$1";;
-    *) log::error "Unknown arguments.";;
+    *) log_error "Unknown arguments.";;
 esac

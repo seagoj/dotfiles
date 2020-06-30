@@ -1,5 +1,5 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-general::sudo $(tee -a /etc/pacman.conf <<< '[multilib]')
-general::sudo $(tee -a /etc/pacman.conf <<< 'Include = /etc/pacman.d/mirrorlist')
+sudo $(tee -a /etc/pacman.conf <<< '[multilib]')
+sudo $(tee -a /etc/pacman.conf <<< 'Include = /etc/pacman.d/mirrorlist')
 osinstall multilib-devel lib32-alsa-plugins xf86-video-intel lib32-mesa-libgl steam

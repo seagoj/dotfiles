@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 case $OS_TYPE in
 Darwin | Mac)
@@ -6,6 +6,10 @@ Darwin | Mac)
     ;;
 *)
     # osinstall calibre python2-beautifulsoup4 python2-html5lib
-    sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+    # sudo -v && wget -nv -O- https://download.calibre-ebook.com/linux-installer.sh | sudo sh /dev/stdin
+    # pip3 install pyqt5 && \
+    pip2 install dbus-python PyQt5
+    pip3 install PyQt5
+    osinstall calibre
     ;;
 esac

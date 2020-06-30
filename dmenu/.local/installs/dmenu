@@ -4,7 +4,7 @@ patches=" \
     http://tools.suckless.org/dmenu/patches/fuzzymatch/dmenu-fuzzymatch-4.9.diff \
 "
 
-. "$XDG_FUNCTIONS_DIR"/suckless.sh
+. "$XDG_FUNCTIONS_HOME"/suckless.sh
 
 project=$(basename "${0}")
 suckless_build "$project" && \

@@ -1,19 +1,19 @@
-#vim: filetype=bash:
+# vim: filetype=sh:
 
-. "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
+. "${XDG_FUNCTIONS_HOME}"/sourced.sh
 
-source::file "${HOME}"/.fzf.zsh
+source_file "${HOME}"/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 export FZF_DIR_SEARCH='fd -t d .'
 export FZF_ALT_C_COMMAND="$FZF_DIR_SEARCH $HOME"
 
-fzf::dirSearchAt() {
+fzf_dirSearchAt() {
     eval "$FZF_DIR_SEARCH ${1:-HOME} | fzf"
 }
 
-fzf::searchAt() {
+fzf_searchAt() {
     eval "fd . ${1:-HOME} | fzf"
 }
 

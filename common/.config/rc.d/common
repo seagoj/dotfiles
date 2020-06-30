@@ -1,9 +1,11 @@
+# vim: filetype=sh:
+
 . "$XDG_CONFIG_HOME/rc.d/fzf"
 
 # bookmarks
-alias z='cd `fzf::dirSearchAt $HOME`'
-alias code='cd `fzf::dirSearchAt $CODE` && tmux.sh'
-alias config='e `fzf::searchAt $XDG_CONFIG_HOME`'
+alias z='cd `fzf_dirSearchAt $HOME`'
+alias code='cd `fzf_dirSearchAt $CODE` && tmux.sh'
+alias config='e `fzf_searchAt $XDG_CONFIG_HOME`'
 function o() {
     echo "$1"
     xdg-open ${1:-`fzf`}
@@ -40,3 +42,11 @@ alias open='xdg-open'
 
 alias weather='curl "wttr.in"'
 alias parrot='curl "parrot.live"'
+
+cd() {
+    if [[ $# != 0 ]]; then
+        pushd "$@"
+    else
+        popd
+    fi
+}

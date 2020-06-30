@@ -1,6 +1,6 @@
 # vim: filetype=sh:
 
-. "$XDG_FUNCTIONS_DIR"/tmux.sh
+. "$XDG_FUNCTIONS_HOME"/tmux.sh
 
 tmux::newWindow 'vim'
 if which wego &>/dev/null; then

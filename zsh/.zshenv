@@ -19,9 +19,8 @@ export INPUTRC=${HOME}/.inputrc
 export XDG_CONFIG_HOME=${HOME}/.config
 export XDG_DATA_HOME=${HOME}/.local/share
 export XDG_CACHE_HOME=${HOME}/.cache
-# TODO replace DIR with HOME
-export XDG_FUNCTIONS_DIR=${HOME}/.local/functions
 export XDG_FUNCTIONS_HOME=${HOME}/.local/functions
+export XDG_SOURCE_HOME="$HOME"/.local/src
 
 # ZSH Functions
 export FUNCTIONS=${HOME}/functions
@@ -66,7 +65,7 @@ export PATH=$HOME/.toolchains/esp32/bin:$PATH
 export PATH=$HOME/.toolchains/android/platform-tools:$PATH
 ## rust
 path::add --prepend "${HOME}"/.cargo/bin
-path::add "${XDG_FUNCTIONS_DIR}/installs"
+path::add "${XDG_FUNCTIONS_HOME}/installs"
 path::add "${HOME}/.local/installs"
 ## fzf
 path::add --prepend "${HOME}"/.fzf/bin
@@ -132,7 +131,7 @@ if [[ -d "${XDG_CONFIG_HOME:-$HOME/.config}"/env ]]; then
     done
 fi
 
-. "$XDG_FUNCTIONS_DIR"/x.sh
+. "$XDG_FUNCTIONS_HOME"/x.sh
 export PROMPT_LEAN_COLOR1="$(xColor color7)"
 export PROMPT_LEAN_COLOR2="$(xColor color4)"
 export PROMPT_LEAN_COLOR3="$(xColor color3)"

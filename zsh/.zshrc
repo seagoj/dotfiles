@@ -1,13 +1,13 @@
-#vim: filetype=bash:
+# vim: filetype=sh:
 
 # User configuration sourced by interactive shells
 
 # zim template
 source "${HOME}"/.zim-install/src/templates/zshrc
 # source userland functions
-source "${XDG_FUNCTIONS_DIR:-$HOME/.local/functions}"/sourced.sh
+source "${XDG_FUNCTIONS_HOME}"/sourced.sh
 # source application specific settings
-source::all "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d"
+source_all "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d"
 
 # key bindings
 bindkey '[1~' beginning-of-line   # Home
@@ -84,4 +84,4 @@ fi
 # PERL_MB_OPT="--install_base \"/home/jseago/perl5\""; export PERL_MB_OPT;
 # PERL_MM_OPT="INSTALL_BASE=/home/jseago/perl5"; export PERL_MM_OPT;
 
-[ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
+source_file ~/.fzf.zsh
