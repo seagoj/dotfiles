@@ -1,0 +1,2 @@
+alias orphans="pacman -Qtdq"
+alias orphans-rm="sudo pacman -R $(orphans)"

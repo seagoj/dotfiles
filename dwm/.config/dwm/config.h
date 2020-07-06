@@ -63,7 +63,9 @@ static const Layout layouts[] = {
 };
 
 /* key definitions */
+/* Meta as MODKEY */
 /* #define MODKEY Mod4Mask */
+/* Alt as MODKEY */
 #define MODKEY Mod1Mask
 #define TAGKEYS(KEY,TAG) \
     { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
@@ -88,12 +90,14 @@ static Key keys[] = {
     { MODKEY,                       XK_b,      spawn,          {.v = browsercmd } },
     { MODKEY,                       XK_j,      focusstack,     {.i = +1 } },
     { MODKEY,                       XK_k,      focusstack,     {.i = -1 } },
+    { MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
+    { MODKEY,                       XK_d,      incnmaster,     {.i = -1 } },
     { MODKEY|ShiftMask,             XK_h,      setmfact,       {.f = -0.05} },
     { MODKEY|ShiftMask,             XK_l,      setmfact,       {.f = +0.05} },
     { MODKEY,                       XK_m,      zoom,           {0} },
     { MODKEY,                       XK_n,      spawn,          {.v = notescmd } },
     { MODKEY,                       XK_Tab,    view,           {0} },
-    { MODKEY,                       XK_w,      killclient,     {0} },
+    { MODKEY,                       XK_c,      killclient,     {0} },
     { MODKEY,                       XK_t,      setlayout,      {.v = &layouts[0]} },
     { MODKEY,                       XK_m,      setlayout,      {0} },
     { MODKEY,                       XK_0,      view,           {.ui = ~0 } },
@@ -111,7 +115,7 @@ static Key keys[] = {
     TAGKEYS(                        XK_7,                      6)
     TAGKEYS(                        XK_8,                      7)
     TAGKEYS(                        XK_9,                      8)
-    { MODKEY,                       XK_q,      quit,      {0} },
+    { MODKEY|ShiftMask,              XK_q,      quit,      {0} },
 };
 
 /* button definitions */

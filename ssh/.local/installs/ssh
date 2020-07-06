@@ -1,15 +1,17 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-osinstall ssh ssh-copy-id
-SSH_CONFIG=${HOME}/.ssh
-declare -a KEYS=($(find ${SSH_CONFIG}/ -name "*.pub"))
-for i in "${KEYS[@]%.pub}"; do
-    chmod 600 ${i}
-    chmod 600 ${i}.pub
-done
-chmod 644 ${SSH_CONFIG}/known_hosts
-chmod 755 "${SSH_CONFIG}"
+. "$XDG_FUNCTIONS_HOME"/ssh.sh
+. "$XDG_FUNCTIONS_HOME"/dotfiles.sh
 
-git remote rm origin &&\
-    git remote add origin git@github.com:seagoj/dotfiles.git &&\
+dotfiles_repo=git@git.seago.io:seagoj/dotfiles.git
+
+set_origin() {
+    git remote rm origin && \
+    git remote add origin "$dotfiles_repo" && \
     git submodule update --recursive --init
+}
+
+osinstall ssh ssh-copy-id && \
+ssh_reset_permissions && \
+dotfiles_reset_origin "$dotfiles_repo" && \
+ssh ${@}

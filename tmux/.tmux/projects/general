@@ -2,8 +2,8 @@
 
 . "$XDG_FUNCTIONS_HOME"/tmux.sh
 
-tmux::newWindow 'vim'
+tmux_newWindow 'vim'
 if which wego &>/dev/null; then
     tmux send-keys -t 1 'curl wttr.in' C-m
 fi
-tmux::startSession
+tmux_startSession

@@ -132,9 +132,9 @@ if [[ -d "${XDG_CONFIG_HOME:-$HOME/.config}"/env ]]; then
 fi
 
 . "$XDG_FUNCTIONS_HOME"/x.sh
-export PROMPT_LEAN_COLOR1="$(xColor color7)"
-export PROMPT_LEAN_COLOR2="$(xColor color4)"
-export PROMPT_LEAN_COLOR3="$(xColor color3)"
+# export PROMPT_LEAN_COLOR1="$(xColor color7)"
+# export PROMPT_LEAN_COLOR2="$(xColor color4)"
+# export PROMPT_LEAN_COLOR3="$(xColor color3)"
 export PROMPT_LEAN_TMUX="侀 "
 export PROMPT_LEAN_VIMODE=1
 export PROMPT_LEAN_ABBR_METHOD="shrink"

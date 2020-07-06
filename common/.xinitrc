@@ -46,6 +46,7 @@ case $session in
     compton &
     dunst&
     xscreensaver&
+    syncthing&
     x11vnc -display :0 -noxrecord -noxfixes -noxdamage -forever -passwd 123456 &
     exec dwm >> ~/.cache/dwm/stdout 2>> ~/.cache/dwm/stderr
     ;;

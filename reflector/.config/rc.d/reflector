@@ -1,0 +1,3 @@
+reflect() {
+    su  - -c "reflector --country United\ States --country Canada --country Germany --sort rate --number 200 --save /etc/pacman.d/mirrorlist"
+}

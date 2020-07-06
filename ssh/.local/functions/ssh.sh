@@ -1,15 +1,12 @@
-. $HOME/.local/functions/general.sh
+# vim: filetype=sh:
 
-SSH_CONFIG=${HOME}/.ssh
-
-ssh::reset_permissions() {
-	declare -a KEYS=($(find ${SSH_CONFIG}/ -name "*.pub"))
-	for i in "${KEYS[@]%.pub}"; do
-		general::set_permission 600 ${i}
-		general::set_permission 600 ${i}.pub
-	done
-
-	general::set_permission 644 ${SSH_CONFIG}/known_hosts
-
-	general::set_permission 755 "${SSH_CONFIG}"
+ssh_reset_permissions() {
+    local ssh_config="${HOME}"/.ssh
+    declare -a keys=($(find ${ssh_config}/ -name "*.pub"))
+    for i in "${keys[@]%.pub}"; do
+        chmod 600 ${i}
+        chmod 600 ${i}.pub
+    done
+    chmod 644 ${ssh_config}/known_hosts
+    chmod 755 "${ssh_config}"
 }
