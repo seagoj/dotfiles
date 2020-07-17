@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 if which vagrant 2>/dev/null; then
     vagrant ssh -c "cd ${VAGRANT_PROJECT_ROOT:-/vagrant} && ${1}"

@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 configDir="$XDG_CONFIG_HOME"/dunst
 outputFile="${configDir}"/dunstrc

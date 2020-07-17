@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 function submodule::find_in_file_or_fail() {
     needle="${1}"

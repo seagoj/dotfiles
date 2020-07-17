@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 docker rm -f my-running-irssi
 # docker rmi -f irssi

@@ -3,4 +3,4 @@
 FINDME="$1"
 REPLACEMENT="$2"
 
-ag "$FINDME" --nogroup | awk '{print substr($1,1,index($1,":")-1);}' | xargs -I {} sed -i .bak -e "s|$FINDME|$REPLACEMENT|g" {}
+rg "$FINDME"| awk '{print substr($1,1,index($1,":")-1);}' | xargs -I {} sed -i .bak -e "s|$FINDME|$REPLACEMENT|g" {}

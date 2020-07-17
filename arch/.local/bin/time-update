@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 if [ ! -z "$(systemctl | grep ntpd)" ]; then
     sudo systemctl stop ntpd

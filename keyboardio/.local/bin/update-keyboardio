@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
 pushd "${HOME}"/dotfiles && git pull --recurse-submodules && popd
 pushd "${HOME}"/Documents/Arduino/Model01-Firmware/ && make && popd
