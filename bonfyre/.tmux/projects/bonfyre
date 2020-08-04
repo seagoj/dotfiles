@@ -1,34 +1,34 @@
 # vim: filetype=sh:
 
+# shellcheck disable=SC1090
 . "$XDG_FUNCTIONS_HOME"/tmux.sh
 
-bonfyre_apiWindow() {
-    pushd "$XDG_SOURCE_HOME"/bonfyre/bonfyre_app >/dev/null
-    tmux_newWindow "bonfyre"
-    if which wego &>/dev/null; then
-        tmux send-keys -t 1 'wego 2' C-m
-    fi
-    tmux send-keys -t 3 'vagrant-up' C-m
-    tmux send-keys -t 4 "${FETCHER} && wwwtxt" C-m
+PROJECT_ROOT="$XDG_SOURCE_HOME"/"$PROJECT"
+
+bonfyre_general() {
+    pushd "$1" >/dev/null
+    tmux_window "$2"
+    tmux_layout
+    tmux send-keys -t 1 "$tmux_commandWeather" C-m
+    tmux send-keys -t 4 "$tmux_commandMotd" C-m
+    tmux send-keys -t 3 "vagrant-up" C-m
     popd >/dev/null
 }
 
-bonfyre_webWindow() {
-    pushd ~/code/bonfyre/pyweb >/dev/null
-    tmux_newWindow "pyweb"
-    tmux send-keys -t 3 'vagrant-up'
-    tmux send-keys -t 4 '${FETCHER} && wwwtxt' C-m
-    popd >/dev/null
+bonfyre_api() {
+    bonfyre_general "$PROJECT_ROOT"/bonfyre_app api
 }
 
-bonfyre_socialWindow() {
-    pushd ~ >/dev/null
-    tmux_newWindow "social" --no-layout
-    tmux send-keys -t 1 'mutt' C-m
-    popd >/dev/null
+bonfyre_web() {
+    bonfyre_general "$PROJECT_ROOT"/bonfyre_web web
 }
 
-bonfyre_apiWindow
-bonfyre_webWindow
-bonfyre_socialWindow
-tmux_startSession
+bonfyre_social() {
+    tmux_window social
+    tmux send-keys -t 1 "mutt" C-m
+}
+
+bonfyre_api
+bonfyre_web
+bonfyre_social
+tmux_attachSession
