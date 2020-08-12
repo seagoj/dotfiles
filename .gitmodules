@@ -235,3 +235,15 @@
 [submodule "vimclip"]
 	path = vimclip/.local/src/vimclip
 	url = https://github.com/hrantzsch/vimclip.git
+[submodule "tpm"]
+	path = tmux/.tmux/plugins/tpm
+	url = https://github.com/tmux-plugins/tpm
+[submodule "plantuml-syntax"]
+	path = nvim/.config/nvim/pack/bundle/opt/plantuml-syntax
+	url = https://github.com/aklt/plantuml-syntax
+[submodule "open-browser.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/open-browser.vim
+	url = https://github.com/tyru/open-browser.vim
+[submodule "plantuml-previewer.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/plantuml-previewer.vim
+	url = https://github.com/weirongxu/plantuml-previewer.vim

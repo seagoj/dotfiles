@@ -34,6 +34,8 @@ function plugin#base() abort
     call plugin#navigation()
     call plugin#notes()
     call plugin#search()
+
+    packadd! plantuml-previewer.vim | packadd! plantuml-syntax | packadd! open-browser.vim
 endfunction
 
 function plugin#navigation() abort
