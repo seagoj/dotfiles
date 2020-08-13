@@ -1,0 +1,6 @@
+tmux select-layout main-horizontal
+
+# Bottom Bar
+tmux split-window -v
+tmux split-window -h
+tmux split-window -h

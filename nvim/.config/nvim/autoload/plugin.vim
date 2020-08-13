@@ -34,6 +34,8 @@ function plugin#base() abort
     call plugin#navigation()
     call plugin#notes()
     call plugin#search()
+
+    packadd! plantuml-previewer.vim | packadd! plantuml-syntax | packadd! open-browser.vim
 endfunction
 
 function plugin#navigation() abort
@@ -75,7 +77,7 @@ function plugin#development() abort
     endif
     " Syntax linter/autocompletion
     packadd! ale | packadd! lightline-ale | packadd! ale-config
-    packadd! coc.nvim | packadd! coc-config.vim
+    packadd! coc.nvim | packadd! coc-config.vim " :CocInstall coc-phpls
     " packadd! Valloric/YouCompleteMe', {'do': function('ycm#build')})
     " Snippet manager
     packadd! ultisnips | packadd! ultisnips-config.vim

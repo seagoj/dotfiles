@@ -1,0 +1,11 @@
+#!/bin/sh
+
+tags="nocommit TODO todo FIXME fixme console\.log"
+for t in $tags; do
+    search=$(git diff -w HEAD -G "$t")
+    if [ ! -z "$search" ]; then
+        git diff -w HEAD -G "$t"
+        echo "$t found. please remove or commit again with --no-verify"
+        exit 1
+    fi
+done
