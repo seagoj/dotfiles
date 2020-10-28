@@ -199,15 +199,9 @@
 [submodule "vim-hexokinase"]
     path = nvim/.config/nvim/pack/bundle/opt/vim-hexokinase
     url = https://github.com/RRethy/vim-hexokinase
-[submodule "nvim/src"]
-    path = nvim/code/neovim
-    url = https://github.com/neovim/neovim
 [submodule "vimwiki-config.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config.vim
     url = git@git.seago.io:seagoj/vimwiki-config.vim
-[submodule "dotman"]
-    path = dotman/code/dotman
-    url = git@git.seago.io:seagoj/dotman.git
 [submodule "mosh/.local/src/mosh"]
     path = mosh/.local/src/mosh
     url = https://github.com/mobile-shell/mosh.git
@@ -215,35 +209,41 @@
     path = dwm/.local/src/suckless/dwm
     url = git://git.suckless.org/dwm
 [submodule "st"]
-	path = st/.local/src/suckless/st
-	url = git://git.suckless.org/st
+    path = st/.local/src/suckless/st
+    url = git://git.suckless.org/st
 [submodule "dmenu"]
-	path = dmenu/.local/src/suckless/dmenu
-	url = https://git.suckless.org/dmenu
+    path = dmenu/.local/src/suckless/dmenu
+    url = https://git.suckless.org/dmenu
 [submodule "sourcerer"]
-	path = sourcerer/.local/src/sourcerer
-	url = https://github.com/xero/sourcerer.git
+    path = sourcerer/.local/src/sourcerer
+    url = https://github.com/xero/sourcerer.git
 [submodule "vimb"]
-	path = vimb/.local/src/vimb
-	url = https://github.com/fanglingsu/vimb.git
+    path = vimb/.local/src/vimb
+    url = https://github.com/fanglingsu/vimb.git
 [submodule "tabbed"]
-	path = tabbed/.local/src/tabbed
-	url = https://git.suckless.org/tabbed
+    path = tabbed/.local/src/tabbed
+    url = https://git.suckless.org/tabbed
 [submodule "nerd-fonts"]
-	path = nerd-fonts/.local/src/nerd-fonts
-	url = https://github.com/ryanoasis/nerd-fonts.git
+    path = nerd-fonts/.local/src/nerd-fonts
+    url = https://github.com/ryanoasis/nerd-fonts.git
 [submodule "vimclip"]
-	path = vimclip/.local/src/vimclip
-	url = https://github.com/hrantzsch/vimclip.git
+    path = vimclip/.local/src/vimclip
+    url = https://github.com/hrantzsch/vimclip.git
 [submodule "tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+    path = tmux/.tmux/plugins/tpm
+    url = https://github.com/tmux-plugins/tpm
 [submodule "plantuml-syntax"]
-	path = nvim/.config/nvim/pack/bundle/opt/plantuml-syntax
-	url = https://github.com/aklt/plantuml-syntax
+    path = nvim/.config/nvim/pack/bundle/opt/plantuml-syntax
+    url = https://github.com/aklt/plantuml-syntax
 [submodule "open-browser.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/open-browser.vim
-	url = https://github.com/tyru/open-browser.vim
+    path = nvim/.config/nvim/pack/bundle/opt/open-browser.vim
+    url = https://github.com/tyru/open-browser.vim
 [submodule "plantuml-previewer.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/plantuml-previewer.vim
-	url = https://github.com/weirongxu/plantuml-previewer.vim
+    path = nvim/.config/nvim/pack/bundle/opt/plantuml-previewer.vim
+    url = https://github.com/weirongxu/plantuml-previewer.vim
+[submodule "neovim"]
+	path = nvim/.local/src/neovim
+	url = https://github.com/neovim/neovim.git
+[submodule "dotman"]
+	path = dotman/.local/src/dotman
+	url = git@git.seago.io:seagoj/dotman.git

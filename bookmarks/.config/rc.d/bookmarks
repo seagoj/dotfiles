@@ -1,4 +1,4 @@
-alias jira="open https://bonfyreapp.atlassian.net &"
-alias jirav="vimb https://bonfyreapp.atlassian.net &"
+# alias jira="open https://bonfyreapp.atlassian.net &"
+# alias jirav="vimb https://bonfyreapp.atlassian.net &"
 alias slack="open https://app.slack.com/client/T047YU7BF/GP2H5U27K &"
 alias slackv="vimb https://app.slack.com/client/T047YU7BF/GP2H5U27K &"

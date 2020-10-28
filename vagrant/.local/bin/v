@@ -2,7 +2,7 @@
 # vim: filetype=sh:
 
 # shellcheck disable=SC1090
-source "${XDG_FUNCTIONS_HOME}/cli.sh"
+source "${XDG_FUNCTIONS_HOME}"/cli.sh
 #/ Usage: v [arguments ...]
 #/
 #/ Arguments:
@@ -18,14 +18,18 @@ cleanup() {
 v_arguments() {
     OUTPUT='&> /dev/null'
 
-    while [[ $# -gt 0 ]]; do
+    while [ $# -gt 0 ]; do
         case "$1" in
         "--debug")
             OUTPUT=""
             ;;
         "--destroy" | "--rebuild" | "-d")
-            v_destroy && v_create_session && v_suspend
+            v_destroy && v_create_session
             exit
+            ;;
+        *)
+            echo "Unknown argument: $1"
+            exit 1
             ;;
         esac
         shift
@@ -63,11 +67,6 @@ v_ssh() {
     fi
 }
 
-v_suspend() {
-    log_info "suspending"
-    vagrant suspend
-}
-
 log_timestamp
 v_arguments "$@"
-v_connect # && v_suspend
+v_connect

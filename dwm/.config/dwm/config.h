@@ -64,9 +64,9 @@ static const Layout layouts[] = {
 
 /* key definitions */
 /* Meta as MODKEY */
-/* #define MODKEY Mod4Mask */
+#define MODKEY Mod4Mask
 /* Alt as MODKEY */
-#define MODKEY Mod1Mask
+/* #define MODKEY Mod1Mask */
 #define TAGKEYS(KEY,TAG) \
     { MODKEY,                       KEY,      view,           {.ui = 1 << TAG} }, \
     { MODKEY|ControlMask,           KEY,      toggleview,     {.ui = 1 << TAG} }, \
@@ -80,7 +80,7 @@ static const Layout layouts[] = {
 static char dmenumon[2] = "0"; /* component of dmenucmd, manipulated in spawn() */
 static const char *dmenucmd[] = { "dmenu_run", "-F", "-m", dmenumon, NULL };
 static const char *termcmd[]  = { "st", NULL };
-static const char *browsercmd[]  = { "tabbed", "-c", "vimb", "-e", NULL };
+static const char *browsercmd[]  = { "firefox-developer-edition", NULL };
 static const char *notescmd[]  = { "st", "-e", "scratchpad", NULL };
 
 static Key keys[] = {
