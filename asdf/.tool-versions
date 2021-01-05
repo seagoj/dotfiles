@@ -4,3 +4,4 @@ ruby 2.6.3
 rust 1.36.0
 nodejs 12.7.0
 golang 1.12.7
+php 7.3.24
