@@ -1,0 +1,3 @@
+#/bin/sh
+
+ethminer -P stratum2+tcp://3MiZP3Zb2wUq3PYcwR6Q1Kb9eUzxfs4wUF.workstation-arch@daggerhashimoto.usa.nicehash.com:3353

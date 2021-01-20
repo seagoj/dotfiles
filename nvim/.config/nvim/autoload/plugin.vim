@@ -77,14 +77,15 @@ function plugin#development() abort
     endif
     " Syntax linter/autocompletion
     packadd! ale | packadd! lightline-ale | packadd! ale-config
-    packadd! coc.nvim | packadd! coc-config.vim " :CocInstall coc-phpls
+    " packadd! coc.nvim | packadd! coc-config.vim " :CocInstall coc-phpls
     " packadd! Valloric/YouCompleteMe', {'do': function('ycm#build')})
     " Snippet manager
     packadd! ultisnips | packadd! ultisnips-config.vim
     " visual indentation
     packadd! indentline | packadd! indentline-config.vim
     " Syntax highlighting
-    packadd! vim-polyglot | packadd! vim-polyglot-config
+    " packadd! vim-polyglot | packadd! vim-polyglot-config
+    packadd! nvim-treesitter "| packadd! nvim-treesitter-config
     " Test runner
     packadd! vim-test | packadd! vim-dispatch | packadd! vim-dispatch-neovim | packadd! vim-test-config
     packadd! vim-tmux-runner | packadd! tslime.vim

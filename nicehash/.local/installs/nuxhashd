@@ -1,0 +1,6 @@
+#!/bin/sh
+
+osinstall nvidia curl ocl-icd cuda opencl-amd opencl ethminer && \
+pip install wxpython && \
+pip install git+https://github.com/YoRyan/nuxhash && \
+nuxhashd --show-mining
