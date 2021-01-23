@@ -247,3 +247,18 @@
 [submodule "dotman"]
 	path = dotman/.local/src/dotman
 	url = git@git.seago.io:seagoj/dotman.git
+[submodule "nvim-treesitter"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "nvim-treesitter-config"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-treesitter-config
+	url = git@git.seago.io:seagoj/nvim-treesitter-config
+[submodule "sourcerer-nvim"]
+	path = nvim/.config/nvim/pack/bundle/opt/sourcerer-nvim
+	url = git@git.seago.io:seagoj/sourcerer-nvim
+[submodule "playground"]
+	path = nvim/.config/nvim/pack/bundle/opt/playground
+	url = https://github.com/nvim-treesitter/playground
+[submodule "nvcode-color-schemes.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvcode-color-schemes.vim
+	url = https://github.com/christianchiarulli/nvcode-color-schemes.vim

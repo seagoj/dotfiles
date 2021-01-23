@@ -12,11 +12,11 @@ installNeovimDebian() {
 
 fromSource() {
     cd "$HOME"/.local/src/neovim && \
-        make CMAKE_BUILD_TYPE=RelWithDebInfo && \
+        osinstall base-devel cmake unzip ninja tree-sitter xsel && \
+        make CMAKE_BUILD_TYPE=Release && \
         sudo make install
     pip2 install --upgrade pip neovim
     pip3 install --upgrade pip neovim
-    osinstall xsel
 }
 
 case "$(uname -s)" in
