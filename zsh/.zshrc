@@ -85,3 +85,7 @@ fi
 # PERL_MM_OPT="INSTALL_BASE=/home/jseago/perl5"; export PERL_MM_OPT;
 
 source_file ~/.fzf.zsh
+
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
