@@ -12,8 +12,8 @@ api.nvim_set_option('listchars', 'tab:¦ ,extends:»,precedes:«,nbsp:×,eol:¬,
 -- indentation
 api.nvim_set_option('autoindent', true)
 api.nvim_set_option('smartindent', true)
-vim.cmd [[set autoindent]]
-vim.cmd [[set smartindent]]
+vim.cmd [[ set autoindent ]]
+vim.cmd [[ set smartindent ]]
 
 -- TODO: figure out how to strip trailing whitespace
 

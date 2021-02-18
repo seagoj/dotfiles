@@ -1,12 +1,13 @@
 local api = vim.api
 
 -- - line numbers
-api.nvim_set_option('number', true)
-api.nvim_set_option('relativenumber', true)
+vim.cmd [[set number relativenumber]]
+-- api.nvim_set_option('number', true)
+-- api.nvim_set_option('relativenumber', true)
 -- - max line length guide
-api.nvim_set_option('colorcolumn', tostring(line_length_max))
+vim.cmd('set colorcolumn='..tostring(line_length_max))
 -- - syntax highlighting
-api.nvim_set_option('syntax', 'off')
+vim.cmd [[ syntax off ]]
 -- - folding
 -- -- use treesitter for code folding
 api.nvim_set_option('foldmethod', 'expr')

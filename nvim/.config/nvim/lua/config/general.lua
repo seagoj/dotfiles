@@ -15,7 +15,7 @@ api.nvim_set_option('modelines', 5)
 -- ctags location
 api.nvim_set_option('tags', '.git/tags')
 -- swap file locations
-api.nvim_set_option('directory', '~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp')
+vim.cmd [[ set directory=~/.vim-tmp,~/.tmp,~/tmp,/var/tmp,/tmp ]]
 -- keymap timeout
 api.nvim_set_option('timeoutlen', 500)
 -- highlight cursor
@@ -38,9 +38,11 @@ api.nvim_set_option('backspace', 'eol,start,indent')
 api.nvim_set_option('pastetoggle', '<leader>z')
 -- undo
 api.nvim_set_option('backup', false)
-api.nvim_set_option('undodir', "~/.local/share/nvim/undo")
+vim.cmd [[ set undodir=~/.local/share/nvim/undo ]]
 api.nvim_set_option('undofile', true)
 -- use system clipboard
 api.nvim_set_option('clipboard', 'unnamedplus')
 -- autocompletion
 api.nvim_set_option('wildmode', 'longest,list,full')
+
+

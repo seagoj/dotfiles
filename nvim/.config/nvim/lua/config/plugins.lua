@@ -77,6 +77,7 @@ function developmentPackages()
 	vim.cmd('packadd! vim-tmux-runner | packadd! tslime.vim')
 	-- Debugger
 	vim.cmd('packadd! vdebug | packadd! vdebug-config')
+	-- vim.cmd('packadd! nvim-dap')
 	-- todo finder
 	vim.cmd('packadd! qf-todo.vim')
 	-- preview colors

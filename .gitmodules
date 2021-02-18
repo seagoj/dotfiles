@@ -268,3 +268,6 @@
 [submodule "completion-nvim"]
 	path = nvim/.config/nvim/pack/bundle/opt/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim
+[submodule "nvim-dap"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap

@@ -2,7 +2,6 @@ local api = vim.api
 
 line_length_max = 120
 tab_width = 2
-vim.cmd [[set autoindent]]
 
 require 'config.general'
 require 'config.coding'
