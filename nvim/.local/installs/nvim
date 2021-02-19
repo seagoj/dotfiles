@@ -11,8 +11,9 @@ installNeovimDebian() {
 }
 
 fromSource() {
+    osinstall cmake unzip
     cd "$HOME"/.local/src/neovim && \
-        make CMAKE_BUILD_TYPE=RelWithDebInfo && \
+        make CMAKE_BUILD_TYPE=Release && \
         sudo make install
     pip2 install --upgrade pip neovim
     pip3 install --upgrade pip neovim

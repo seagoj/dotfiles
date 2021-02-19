@@ -85,3 +85,5 @@ fi
 # PERL_MM_OPT="INSTALL_BASE=/home/jseago/perl5"; export PERL_MM_OPT;
 
 source_file ~/.fzf.zsh
+eval `ssh-agent`
+ssh-add
