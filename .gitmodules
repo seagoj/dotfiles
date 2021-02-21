@@ -221,7 +221,7 @@
     path = vimb/.local/src/vimb
     url = https://github.com/fanglingsu/vimb.git
 [submodule "tabbed"]
-    path = tabbed/.local/src/tabbed
+	path = tabbed/.local/src/suckless/tabbed
     url = https://git.suckless.org/tabbed
 [submodule "nerd-fonts"]
     path = nerd-fonts/.local/src/nerd-fonts
