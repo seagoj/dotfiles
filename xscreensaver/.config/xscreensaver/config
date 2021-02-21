@@ -2,7 +2,7 @@
 # Written by xscreensaver-demo 5.44 for seagoj on Thu Jun 11 11:14:46 2020.
 # https://www.jwz.org/xscreensaver/
 
-timeout:    0:02:00
+timeout:    0:10:00
 cycle:      0:00:00
 lock:       True
 lockTimeout:    0:00:00
@@ -293,5 +293,5 @@ GetViewPortIsFullOfLies:False
 procInterrupts: True
 xinputExtensionDev: False
 overlayStderr:  True
-authWarningSlack:   20
+authWarningSlack:   0
 

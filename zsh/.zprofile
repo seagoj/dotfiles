@@ -14,9 +14,13 @@ export NVIM_TUI_ENABLE_TRUE_COLOR=1
 export TERMINAL=$(which st urxvt alacritty termite xterm | grep -m1 -e '^/')
 export READER=$(which zathura | grep -m1 -e '^/')
 
+eval `ssh-agent`
+ssh-add
+
 # StartX
 if [[ "$(tty)" = "/dev/tty1" && ! $DISPLAY && $XDG_VTNR -eq 1 ]]; then
     pgrep -x dwm || exec startx ~/.xinitrc dwm
 fi
+
 
 # below only executes in TTY

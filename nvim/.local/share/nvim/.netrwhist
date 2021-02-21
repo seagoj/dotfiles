@@ -1,0 +1,8 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =6
+let g:netrw_dirhist_6='/boot/EFI/refind'
+let g:netrw_dirhist_5='/boot/EFI'
+let g:netrw_dirhist_4='/home/seagoj/.zim-install/src/templates'
+let g:netrw_dirhist_3='/home/seagoj/.zim-install/src'
+let g:netrw_dirhist_2='/home/seagoj/.zim-install'
+let g:netrw_dirhist_1='/home/seagoj/.local/src/suckless/dwm'
