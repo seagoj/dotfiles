@@ -37,6 +37,7 @@ ssh/.ssh/nexus6 filter=git-crypt diff=git-crypt
 ssh/.ssh/known_hosts filter=git-crypt diff=git-crypt
 ssh/.ssh/known_hosts.old filter=git-crypt diff=git-crypt
 ssh/.ssh/id_rsa_milito filter=git-crypt diff=git-crypt
+ssh/.ssh/id_rsa.windows filter=git-crypt diff=git-crypt
 tmux/.ngrok2/ngrok.yml filter=git-crypt diff=git-crypt
 u2f/.config/u2f/keys filter=git-crypt diff=git-crypt
 mutt/.config/mutt/account* filter=git-crypt diff=git-crypt
