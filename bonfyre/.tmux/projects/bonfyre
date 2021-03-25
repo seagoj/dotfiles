@@ -23,12 +23,11 @@ bonfyre_web() {
 		bonfyre_general "$PROJECT_ROOT"/bonfyre_web web
 }
 
-bonfyre_social() {
-		tmux_window social
-		tmux send-keys -t 1 "mutt" C-m
+bonfyre_daemons() {
+		bonfyre_general "$PROJECT_ROOT"/bonfyre_daemons daemons
 }
 
 bonfyre_api
 bonfyre_web
-bonfyre_social
+bonfyre_daemons
 tmux_attachSession

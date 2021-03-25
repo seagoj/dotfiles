@@ -17,4 +17,3 @@ api.nvim_set_keymap('n', t'<leader>r', ':Gsearch', { noremap = true })
 -- php lsp
 require 'lspconfig'.intelephense.setup{ on_attach=require'completion'.on_attach }
 require 'lspconfig'.vuels.setup{}
-

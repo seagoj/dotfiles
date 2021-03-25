@@ -21,7 +21,8 @@ function basePackages()
 	vim.cmd('packadd! buffers.vim')
 	vim.cmd('packadd! vim-tmux-navigator | packadd! vim-tmux-navigator-config')
 	-- # Notes
-	vim.cmd('packadd! vimwiki | packadd! vimwiki-config.vim')
+	vim.cmd [[ packadd! vimwiki ]] 
+	vim.cmd [[ packadd! vimwiki-config.vim ]]
 
 	-- # Search
 	-- - Find/Replace
@@ -69,9 +70,9 @@ function developmentPackages()
 	-- vim.cmd('packadd! sourcerer-nvim')
 	-- require 'sourcerer'
 	vim.cmd('packadd! nvcode-color-schemes.vim')
-	vim.cmd('packadd! nvim-treesitter')
-	vim.cmd('packadd! nvim-treesitter-config')
-	vim.cmd('packadd! playground')
+	vim.cmd [[ packadd! nvim-treesitter ]]
+	vim.cmd [[ packadd! nvim-treesitter-config ]]
+	vim.cmd [[ packadd! playground ]]
 	-- Test runner
 	vim.cmd('packadd! vim-test | packadd! vim-dispatch | packadd! vim-dispatch-neovim | packadd! vim-test-config')
 	vim.cmd('packadd! vim-tmux-runner | packadd! tslime.vim')
