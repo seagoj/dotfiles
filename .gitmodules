@@ -221,7 +221,7 @@
     path = vimb/.local/src/vimb
     url = https://github.com/fanglingsu/vimb.git
 [submodule "tabbed"]
-	path = tabbed/.local/src/suckless/tabbed
+    path = tabbed/.local/src/suckless/tabbed
     url = https://git.suckless.org/tabbed
 [submodule "nerd-fonts"]
     path = nerd-fonts/.local/src/nerd-fonts
@@ -242,11 +242,11 @@
     path = nvim/.config/nvim/pack/bundle/opt/plantuml-previewer.vim
     url = https://github.com/weirongxu/plantuml-previewer.vim
 [submodule "neovim"]
-	path = nvim/.local/src/neovim
-	url = https://github.com/neovim/neovim.git
+    path = nvim/.local/src/neovim
+    url = https://github.com/neovim/neovim.git
 [submodule "dotman"]
-	path = dotman/.local/src/dotman
-	url = git@git.seago.io:seagoj/dotman.git
+    path = dotman/.local/src/dotman
+    url = git@git.seago.io:seagoj/dotman.git
 [submodule "nvim-treesitter"]
 	path = nvim/.config/nvim/pack/bundle/opt/nvim-treesitter
 	url = https://github.com/nvim-treesitter/nvim-treesitter
@@ -254,20 +254,20 @@
 	path = nvim/.config/nvim/pack/bundle/opt/nvim-treesitter-config
 	url = git@git.seago.io:seagoj/nvim-treesitter-config
 [submodule "sourcerer-nvim"]
-	path = nvim/.config/nvim/pack/bundle/opt/sourcerer-nvim
-	url = git@git.seago.io:seagoj/sourcerer-nvim
+    path = nvim/.config/nvim/pack/bundle/opt/sourcerer-nvim
+    url = git@git.seago.io:seagoj/sourcerer-nvim
 [submodule "playground"]
 	path = nvim/.config/nvim/pack/bundle/opt/playground
 	url = https://github.com/nvim-treesitter/playground
 [submodule "nvcode-color-schemes.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/nvcode-color-schemes.vim
-	url = https://github.com/christianchiarulli/nvcode-color-schemes.vim
-[submodule "nvim-lsp"]
-	path = nvim/.config/nvim/pack/bundle/opt/nvim-lsp
-	url = https://github.com/neovim/nvim-lsp
+	url = https://github.com/ChristianChiarulli/nvcode-color-schemes.vim
 [submodule "completion-nvim"]
 	path = nvim/.config/nvim/pack/bundle/opt/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim
 [submodule "nvim-dap"]
-	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap
-	url = https://github.com/mfussenegger/nvim-dap
+    path = nvim/.config/nvim/pack/bundle/opt/nvim-dap
+    url = https://github.com/mfussenegger/nvim-dap
+[submodule "nvim-lspconfig"]
+    path = nvim/.config/nvim/pack/bundle/opt/nvim-lspconfig
+    url = https://github.com/neovim/nvim-lspconfig

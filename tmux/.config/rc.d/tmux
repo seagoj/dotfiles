@@ -1,4 +1,4 @@
-export TMUX_SCRIPT_HOME="${HOME}"/.tmux/scripts
+export TMUX_SCRIPT_HOME="${HOME}"/.tmux/projects
 export TMUX_SCRIPT_DEFAULT=general
 export TMUX_LAYOUT_HOME="$HOME"/.tmux/layouts
 export TMUX_LAYOUT_DEFAULT=default

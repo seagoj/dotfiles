@@ -2,6 +2,14 @@
 
 # User configuration sourced by interactive shells
 
+export FUNCTIONS=${HOME}/functions
+# ZSH Functions
+export FUNCTIONS=${HOME}/functions
+fpath=(
+    $FUNCTIONS
+    $fpath
+)
+
 # zim template
 source "${HOME}"/.zim-install/src/templates/zshrc
 # source userland functions

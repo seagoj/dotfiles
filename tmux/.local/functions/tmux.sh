@@ -12,7 +12,7 @@ tmux_attachOrCreate() {
 }
 
 tmux_createFromScript() {
-    local script_dir="${TMUX_SCRIPT_HOME:-$HOME/.tmux/scripts}"
+    local script_dir="${TMUX_SCRIPT_HOME:-$HOME/.tmux/projects}"
     local script_default="${TMUX_SCRIPT_DEFAULT:-general}"
     local script="${PROJECT:-$script_default}"
 

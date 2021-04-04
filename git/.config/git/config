@@ -138,4 +138,4 @@
 [commit]
     template = ~/.config/git/commit-msg.txt
 [pull]
-	rebase = true
+    rebase = false

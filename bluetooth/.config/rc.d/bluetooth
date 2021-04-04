@@ -5,7 +5,7 @@ SONY_HEADPHONES_MAC="38:18:4C:24:79:CC"
 JABRA_HEADPHONES_MAC="74:5C:4B:D7:78:8B"
 
 ## turn bluetooth on
-bluetoothctl -- power on # &>/dev/null
+# bluetoothctl -- power on # &>/dev/null
 
 ## aliases
 alias bt-pair="bluetoothctl -- scan on && bluetootctl -- pair"

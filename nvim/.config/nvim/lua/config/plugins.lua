@@ -32,7 +32,7 @@ end
 
 function developmentPackages()
 	-- lsp
-	vim.cmd('packadd! nvim-lsp')
+	vim.cmd('packadd! nvim-lspconfig')
 	vim.cmd [[ set completeopt=menuone,noinsert,noselect ]]
 	vim.cmd [[ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy'] ]]
 	vim.cmd('packadd! completion-nvim')

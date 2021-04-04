@@ -23,12 +23,12 @@ zmodule git-info
 
 # theme
 zmodule gitster
-# zmodule PatTheMav/minimal2
-# zmodule miekg/lean
-# zmodule seagoj/lean
-# zmodule s1ck94
-# zmodule magicmace
-# zmodule denysdovhan/spaceship-prompt --name spaceship
+## zmodule PatTheMav/minimal2
+## zmodule miekg/lean
+## zmodule seagoj/lean
+## zmodule s1ck94
+## zmodule magicmace
+## zmodule denysdovhan/spaceship-prompt --name spaceship
 
 # Additional completion definitions for Zsh.
 zmodule zsh-users/zsh-completions
@@ -45,7 +45,7 @@ zmodule zsh-users/zsh-syntax-highlighting
 zmodule zsh-users/zsh-history-substring-search
 # }}} End configuration added by Zim install
 
-# SSH
+## SSH
 zmodule ssh
 
 # Git

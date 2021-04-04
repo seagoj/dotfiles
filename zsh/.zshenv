@@ -22,12 +22,12 @@ export XDG_CACHE_HOME=${HOME}/.cache
 export XDG_FUNCTIONS_HOME=${HOME}/.local/functions
 export XDG_SOURCE_HOME="$HOME"/.local/src
 
-# ZSH Functions
-export FUNCTIONS=${HOME}/functions
-fpath=(
-    $FUNCTIONS
-    $fpath
-)
+# # ZSH Functions
+# export FUNCTIONS=${HOME}/functions
+# fpath=(
+#     $FUNCTIONS
+#     $fpath
+# )
 
 . "${HOME}"/.zim-install/src/templates/zshenv
 
