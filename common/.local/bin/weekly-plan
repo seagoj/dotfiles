@@ -1,0 +1,10 @@
+#!/bin/sh
+# vim: sw=4 ts=4 sts=4 noexpandtab
+
+if [ "$1" = "--next" ]; then
+	doc_name=`date --date="next week" "+%V"`
+else
+	doc_name=`date "+%V"`
+fi
+
+anthology "Weekly Plan" "$HOME"/vimwiki/weekly-plan "$doc_name"
