@@ -13,12 +13,9 @@ installNeovimDebian() {
 fromSource() {
     osinstall cmake unzip
     cd "$HOME"/.local/src/neovim && \
-<<<<<<< HEAD
-=======
-        osinstall base-devel cmake unzip ninja tree-sitter xsel && \
->>>>>>> b47619694134627472974b4d25edc6f1bdac7500
-        make CMAKE_BUILD_TYPE=Release && \
-        sudo make install
+	osinstall base-devel cmake unzip ninja tree-sitter xsel && \
+	make CMAKE_BUILD_TYPE=Release && \
+	sudo make install
     pip2 install --upgrade pip neovim
     pip3 install --upgrade pip neovim
 }

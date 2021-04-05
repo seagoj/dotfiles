@@ -7,7 +7,9 @@ vim.cmd [[set number relativenumber]]
 -- - max line length guide
 vim.cmd('set colorcolumn='..tostring(line_length_max))
 -- - syntax highlighting
-vim.cmd [[ syntax off ]]
+-- TODO turn syntax off once treesitter can markdown
+vim.cmd [[ filetype plugin on ]]
+vim.cmd [[ syntax on ]]
 -- - folding
 -- -- use treesitter for code folding
 api.nvim_set_option('foldmethod', 'expr')

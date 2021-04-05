@@ -33,6 +33,7 @@ end
 function developmentPackages()
 	-- lsp
 	vim.cmd('packadd! nvim-lspconfig')
+	vim.cmd('packadd! nvim-lsp')
 	vim.cmd [[ set completeopt=menuone,noinsert,noselect ]]
 	vim.cmd [[ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy'] ]]
 	vim.cmd('packadd! completion-nvim')
@@ -69,9 +70,9 @@ function developmentPackages()
 	-- vim.cmd('packadd! sourcerer-nvim')
 	-- require 'sourcerer'
 	vim.cmd('packadd! nvcode-color-schemes.vim')
-	vim.cmd('packadd! nvim-treesitter')
-	vim.cmd('packadd! nvim-treesitter-config')
-	vim.cmd('packadd! playground')
+	vim.cmd [[ packadd! nvim-treesitter ]]
+	vim.cmd [[ packadd! nvim-treesitter-config ]]
+	vim.cmd [[ packadd! playground ]]
 	-- Test runner
 	vim.cmd('packadd! vim-test | packadd! vim-dispatch | packadd! vim-dispatch-neovim | packadd! vim-test-config')
 	vim.cmd('packadd! vim-tmux-runner | packadd! tslime.vim')
