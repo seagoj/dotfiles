@@ -19,7 +19,7 @@ source_all "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d"
 
 # key bindings
 bindkey '[1~' beginning-of-line   # Home
-bindkey '[4~' end-of-line         # End
+bindkey '[4~' end-of-line	    # End
 
 # assume path with no command is a cd command
 setopt AUTO_CD

@@ -261,7 +261,10 @@
 	url = https://github.com/nvim-treesitter/playground
 [submodule "nvcode-color-schemes.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/nvcode-color-schemes.vim
-	url = https://github.com/ChristianChiarulli/nvcode-color-schemes.vim
+	url = https://github.com/christianchiarulli/nvcode-color-schemes.vim
+[submodule "nvim-lsp"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-lsp
+	url = https://github.com/neovim/nvim-lsp
 [submodule "completion-nvim"]
 	path = nvim/.config/nvim/pack/bundle/opt/completion-nvim
 	url = https://github.com/nvim-lua/completion-nvim

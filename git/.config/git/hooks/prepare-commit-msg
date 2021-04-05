@@ -8,13 +8,11 @@ if [ -n "$IS_AMEND" ]; then
 fi
 
 branch=$(git rev-parse --abbrev-ref HEAD)
-ticket_url="https://bonfyreapp.atlassian.net/browse/${branch#*/}"
 grep -Ev "(# Please.*|# with.*|^#$)" $1 > /tmp/msg && cat /tmp/msg > $1
 
-sed "1a\\
-$branch:
-" $1 > /tmp/msg && cat /tmp/msg > $1
+sed "1a\\$branch:" $1 > /tmp/msg && cat /tmp/msg > $1
 
-sed "5a\\
-$branch: $ticket_url
-" $1 > /tmp/msg && cat /tmp/msg > $1
+if [ ! -z "$USES_JIRA" ]; then
+	ticket_url="https://bonfyreapp.atlassian.net/browse/${branch#*/}"
+	sed "6a\\$branch: $ticket_url" $1 > /tmp/msg && cat /tmp/msg > $1
+fi
