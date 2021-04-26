@@ -6,9 +6,9 @@ source "${XDG_FUNCTIONS_HOME}"/cli.sh
 #/ Usage: v [arguments ...]
 #/
 #/ Arguments:
-#/      --help                      Shows this
-#/      --debug
-#/      --destroy | --rebuild | -d  Destroys and rebuilds
+#/	--help			    Shows this
+#/	--debug
+#/	--destroy | --rebuild | -d  Destroys and rebuilds
 
 cleanup() {
     EXIT_CODE=$?
@@ -19,20 +19,20 @@ v_arguments() {
     OUTPUT='&> /dev/null'
 
     while [ $# -gt 0 ]; do
-        case "$1" in
-        "--debug")
-            OUTPUT=""
-            ;;
-        "--destroy" | "--rebuild" | "-d")
-            v_destroy && v_create_session
-            exit
-            ;;
-        *)
-            echo "Unknown argument: $1"
-            exit 1
-            ;;
-        esac
-        shift
+	case "$1" in
+	"--debug")
+	    OUTPUT=""
+	    ;;
+	"--destroy" | "--rebuild" | "-d")
+	    v_destroy && v_create_session
+	    exit
+	    ;;
+	*)
+	    echo "Unknown argument: $1"
+	    exit 1
+	    ;;
+	esac
+	shift
     done
 }
 
@@ -44,13 +44,13 @@ v_create_session() {
     log_info "no session to resume"
     log_info "recreating"
     ssh-keygen -R \[127.0.0.1\]:2222 && \
-        vagrant up && \
-        v_ssh
+	vagrant up && \
+	v_ssh
 }
 
 v_destroy() {
     log_info "destroying image"
-    eval "vagrant destroy -f ${OUTPUT} && vagrant box remove bonfyre/vagrant"
+    eval "vagrant destroy -f ${OUTPUT} && vagrant box remove bonfyre/vagrant --all"
 }
 
 v_resume_session() {
@@ -61,9 +61,9 @@ v_resume_session() {
 
 v_ssh() {
     if [[ -z "${VAGRANT_PROJECT_ROOT+x}" ]]; then
-        vagrant ssh
+	vagrant ssh
     else
-        vagrant ssh -c "cd ${VAGRANT_PROJECT_ROOT}; exec bash"
+	vagrant ssh -c "cd ${VAGRANT_PROJECT_ROOT}; exec bash"
     fi
 }
 
