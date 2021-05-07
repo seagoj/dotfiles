@@ -32,10 +32,7 @@ end
 
 function developmentPackages()
 	-- lsp
-<<<<<<< HEAD
 	vim.cmd('packadd! nvim-lspconfig')
-=======
->>>>>>> c1ce466a9854176236127c0f4622a75f25a35a40
 	vim.cmd('packadd! nvim-lsp')
 	vim.cmd [[ set completeopt=menuone,noinsert,noselect ]]
 	vim.cmd [[ let g:completion_matching_strategy_list = ['exact', 'substring', 'fuzzy'] ]]
@@ -81,7 +78,7 @@ function developmentPackages()
 	vim.cmd('packadd! vim-tmux-runner | packadd! tslime.vim')
 	-- Debugger
 	vim.cmd('packadd! vdebug | packadd! vdebug-config')
-	-- vim.cmd('packadd! nvim-dap')
+	vim.cmd('packadd! nvim-dap | packadd! nvim-dap-python | packadd! nvim-dap-config')
 	-- todo finder
 	vim.cmd('packadd! qf-todo.vim')
 	-- preview colors
