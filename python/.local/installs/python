@@ -7,6 +7,7 @@ export PYTHON3_VERSION="3.6.2"
 asdf plugin-add python
 asdf install python "${PYTHON2_VERSION}" && \
 asdf install python "${PYTHON3_VERSION}" && \
-asdf global python "${PYTHON3_VERSION}" "${PYTHON2_VERSION}"
+asdf global python "${PYTHON3_VERSION}" "${PYTHON2_VERSION}" && \
+pip install debugpy
 
 python $@

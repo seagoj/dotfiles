@@ -109,12 +109,6 @@
 [submodule "tslime.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/tslime.vim
     url = https://github.com/gabeharms/tslime.vim
-[submodule "vdebug"]
-    path = nvim/.config/nvim/pack/bundle/opt/vdebug
-    url = https://github.com/vim-vdebug/vdebug
-[submodule "vdebug-config"]
-    path = nvim/.config/nvim/pack/bundle/opt/vdebug-config
-    url = https://github.com/seagoj/vdebug-config
 [submodule "c.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/c.vim
     url = https://github.com/seagoj/c.vim
@@ -277,3 +271,12 @@
 [submodule "nvim-dap-python"]
 	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap-python
 	url = https://github.com/mfussenegger/nvim-dap-python
+[submodule "astronauta.nvim"]
+	path = nvim/.config/nvim/pack/bundle/opt/astronauta.nvim
+	url = https://github.com/tjdevries/astronauta.nvim
+[submodule "nvim-dap-ui"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap-ui
+	url = https://github.com/rcarriga/nvim-dap-ui
+[submodule "nvim-dap-virtual-text"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap-virtual-text
+	url = https://github.com/theHamsta/nvim-dap-virtual-text
