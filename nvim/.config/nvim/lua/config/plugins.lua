@@ -1,4 +1,5 @@
 local api = vim.api
+local t = require('config.t')
 
 require 'config.language-providers'
 
@@ -7,8 +8,8 @@ require 'config.language-providers'
 api.nvim_set_option('filetype', 'off')
 
 function basePackages()
-	-- vim.cmd('packadd! zephyr-nvim')
-	-- require 'zephyr'
+	-- brings back some vim niceties
+	vim.cmd [[ packadd! astronauta.nvim ]]
 	-- vim.cmd('packadd! sourcerer-nvim | packadd! sourcerer-config.vim')
 	-- open to last postiion in the file
 	vim.cmd('packadd! last-position.vim')
@@ -31,6 +32,24 @@ function basePackages()
 end
 
 function developmentPackages()
+	-- dap
+	vim.cmd [[ packadd! nvim-dap ]]
+	vim.cmd [[ packadd! nvim-dap-ui ]]
+	vim.cmd [[ packadd! nvim-dap-virtual-text ]]
+
+	vim.cmd [[ nnoremap <F2> :lua require('dap').step_into()<CR> ]]
+	vim.cmd [[ nnoremap <F3> :lua require('dap').step_over()<CR> ]]
+	vim.cmd [[ nnoremap <F5> :lua require('dap').continue()<CR> ]]
+	vim.cmd [[ nnoremap <F6> :lua require('dap').step_out()<CR> ]]
+	vim.cmd [[ nnoremap <F10> :lua require('dap').toggle_breakpoint()<CR> ]]
+	vim.cmd [[ nnoremap <F12> :lua require('dap').step_out()<CR> ]]
+	vim.cmd [[ nnoremap <leader>db :lua require('dap').toggle_breakpoint()<CR> ]]
+	vim.cmd [[ nnoremap <leader>dr :lua require('dap').repl.toggle()<CR> ]]
+	vim.cmd [[ nnoremap <leader>dl :lua require('dap').run_last()<CR> ]]
+	-- require('dapui').setup()
+	vim.g.dap_virtual_text = true
+
+
 	-- lsp
 	vim.cmd('packadd! nvim-lspconfig')
 	vim.cmd('packadd! nvim-lsp')
@@ -77,8 +96,6 @@ function developmentPackages()
 	vim.cmd('packadd! vim-test | packadd! vim-dispatch | packadd! vim-dispatch-neovim | packadd! vim-test-config')
 	vim.cmd('packadd! vim-tmux-runner | packadd! tslime.vim')
 	-- Debugger
-	vim.cmd('packadd! vdebug | packadd! vdebug-config')
-	-- vim.cmd('packadd! nvim-dap')
 	-- todo finder
 	vim.cmd('packadd! qf-todo.vim')
 	-- preview colors
