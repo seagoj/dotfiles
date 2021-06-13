@@ -1,0 +1,102 @@
+snippet view "Vue view" b
+"use strict"
+import Vue from 'vue';
+import template from 'text!elements/pages/${1}/${2:`!p snip.rv=snip.fn.split('.')[0]`}.template.html';
+import store from './$1.store.js';
+
+export default function () {
+	return new Vue({
+		components: {
+
+		},
+		computed: {
+
+		},
+		created() {
+			store.dispatch('initialize');
+		},
+		data() {
+			return {
+
+			};
+		},
+		el: '#content',
+		methods: {
+
+		},
+		store,
+		template,
+		watch: {
+
+		}
+	});
+};
+endsnippet
+
+snippet store "Vue store" b
+/**
+ * Store for ${1:`!p snip.rv=snip.fn.split('.')[0]`}.
+ */
+
+import Vuex from 'vuex';
+const Bapi = require('lib/bapi');
+
+/**
+ * API call wrapper to handle errors
+ *
+ * @param request Bapi request object
+ *
+ * @return Object
+ */
+const callApi = async (request) => {
+	const response = await Bapi(request).call();
+	if (response.success !== 1) {
+		throw new Error('Call to Api failed.');
+	}
+
+	return response;
+};
+
+export default new Vuex.Store({
+	state: {
+
+	},
+
+	/**
+	 * State Changes (sync)
+	 */
+	mutations: {
+		/**
+		 * Initialize state from payload
+		 *
+		 * @param state
+		 * @param payload
+		 *
+		 * @return void
+		 */
+		initialize(state, payload) {
+			state = payload;
+		},
+	},
+
+	/**
+	 *	Api Calls (potentially async)
+	 */
+	actions: {
+		 /**
+		  * load data into view
+		  *
+		  * @param store
+		  * @param payload
+		  *
+		  * @return void
+		  */
+		initialize: async ({ commit }, payload = []) => {
+			if (0 === payload.length) {
+				// set payload from cache or api
+			}
+			commit('initialize', payload);
+		},
+	 }
+});
+endsnippet

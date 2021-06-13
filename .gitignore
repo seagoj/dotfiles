@@ -44,3 +44,4 @@ mutt/.config/mutt/com.bonfyreapp.seago.jeremy mutt/.config/mutt/com.gmail.seagoj
 nvim/.local/share/nvim/undo
 .vagrant
 zeal/.local/share/Zeal/Zeal/docsets/*
+nvim/.local/share/nvim/shada/main.shada

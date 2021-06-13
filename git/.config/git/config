@@ -83,8 +83,10 @@
     jira = "! jira open $(git current-base)"
     list-merged = "branch -r --merged origin/master"
     lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
+    pull-request-create = "!prc() { xdg-open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/new?source=$(git current)&t=1\"; }; prc"
+    pull-request-view = "!prv() { xdg-open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/?state=OPEN&query=${1}\"; }; prv"
     recent = "! git branch --sort=-committerdate | head -n 10"
-    review = "!r() { [ 0 == $# ] && jira jql review; [ 0 != $# ] && jira review ${1} && open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/?state=OPEN&query=${1}\"; }; r"
+    review = "!r() { [ 0 == $# ] && jira jql review; [ 0 != $# ] && jira review ${1} && git pull-request-view $1; }; r"
     search = "! git rev-list --all | xargs git grep "
     sql ="!$EDITOR sql/$(git current-base).sql"
     sql-create-deploy = "! cat $(git sql-diff) > sql/deploy.sql"
@@ -96,13 +98,13 @@
     undo = "!f() { \
     git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
     }; f"
-    ticket = "!open https://bonfyreapp.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD)"
+    ticket = "!xdg-open https://bonfyreapp.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD)"
     weekly-summary = "!. ~/.local/functions/git.sh; weekly_summary"
     wip = "!git add . && git commit -m 'wip' --no-verify"
     wtf = "!git-wtf"
     hotfix = "!h() { git checkout origin/master -b hotfix/$1; which jira &>/dev/null && jira start $1 && jira open $1; }; h"
     feature = "!f() { git checkout origin/develop -b feature/$1; which jira &>/dev/null && jira start $1 && jira open $1; }; f"
-    submit = "!s() { open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/new?source=$(git current)&t=1\"; which jira &>/dev/null && echo 71 | jira mark $(git current-base) >/dev/null; }; s"
+    submit = "!s() { git pull-request-create $1; which jira &>/dev/null && echo 71 | jira mark $(git current-base) >/dev/null; }; s"
 [branch]
     autosetupmerge = always
 [init]
@@ -135,3 +137,5 @@
     helper = osxkeychain
 [commit]
     template = ~/.config/git/commit-msg.txt
+[pull]
+    rebase = false

@@ -1,0 +1,36 @@
+# vim: filetype=sh:
+
+## devices
+SONY_HEADPHONES_MAC="38:18:4C:24:79:CC"
+JABRA_HEADPHONES_MAC="74:5C:4B:D7:78:8B"
+
+## turn bluetooth on
+# bluetoothctl -- power on # &>/dev/null
+
+## aliases
+alias bt-pair="bluetoothctl -- scan on && bluetootctl -- pair"
+alias bt-connect="bluetoothctl -- connect"
+alias bt-disconnect="bluetoothctl -- disconnect"
+
+function deviceAliases() {
+    alias connect-"${1}"="bt-connect ${2}"
+    alias disconnect-"${1}"="bt-disconnect ${2}"
+}
+
+deviceAliases sony "$SONY_HEADPHONES_MAC"
+deviceAliases jabra "$JABRA_HEADPHONES_MAC"
+
+# unalias connect;
+function connect() {
+    systemctl restart bluetooth && \
+    echo "power on\nagent on\ndefault-agent\nscan on\n cancel-pair $1\npair $1\nconnect $1\ntrust $1\nscan off" | bluetoothctl
+    # bluetoothctl -- power on && \
+    # bluetoothctl -- agent on && \
+    # bluetoothctl -- default-agent && \
+    # bluetoothctl -- scan on && \
+    # bluetoothctl -- cancel-pair $1 && \
+    # bluetoothctl -- pair $1 && \
+    # bluetoothctl -- connect $1 && \
+    # bluetoothctl -- trust $1 && \
+    # bluetoothctl -- scan off
+}

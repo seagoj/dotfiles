@@ -2,6 +2,8 @@
 
 patches=" \
     https://dwm.suckless.org/patches/fakefullscreen/dwm-fakefullscreen-20170508-ceac8c9.diff \
+    https://dwm.suckless.org/patches/warp/dwm-warp-6.2.diff \
+    https://dwm.suckless.org/patches/movestack/dwm-movestack-6.1.diff \
 "
 
 . "$XDG_FUNCTIONS_HOME"/suckless.sh

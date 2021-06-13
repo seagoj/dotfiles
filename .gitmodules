@@ -109,12 +109,6 @@
 [submodule "tslime.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/tslime.vim
     url = https://github.com/gabeharms/tslime.vim
-[submodule "vdebug"]
-    path = nvim/.config/nvim/pack/bundle/opt/vdebug
-    url = https://github.com/vim-vdebug/vdebug
-[submodule "vdebug-config"]
-    path = nvim/.config/nvim/pack/bundle/opt/vdebug-config
-    url = https://github.com/seagoj/vdebug-config
 [submodule "c.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/c.vim
     url = https://github.com/seagoj/c.vim
@@ -199,15 +193,9 @@
 [submodule "vim-hexokinase"]
     path = nvim/.config/nvim/pack/bundle/opt/vim-hexokinase
     url = https://github.com/RRethy/vim-hexokinase
-[submodule "nvim/src"]
-    path = nvim/code/neovim
-    url = https://github.com/neovim/neovim
 [submodule "vimwiki-config.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/vimwiki-config.vim
     url = git@git.seago.io:seagoj/vimwiki-config.vim
-[submodule "dotman"]
-    path = dotman/code/dotman
-    url = git@git.seago.io:seagoj/dotman.git
 [submodule "mosh/.local/src/mosh"]
     path = mosh/.local/src/mosh
     url = https://github.com/mobile-shell/mosh.git
@@ -215,35 +203,80 @@
     path = dwm/.local/src/suckless/dwm
     url = git://git.suckless.org/dwm
 [submodule "st"]
-	path = st/.local/src/suckless/st
-	url = git://git.suckless.org/st
+    path = st/.local/src/suckless/st
+    url = git://git.suckless.org/st
 [submodule "dmenu"]
-	path = dmenu/.local/src/suckless/dmenu
-	url = https://git.suckless.org/dmenu
+    path = dmenu/.local/src/suckless/dmenu
+    url = https://git.suckless.org/dmenu
 [submodule "sourcerer"]
-	path = sourcerer/.local/src/sourcerer
-	url = https://github.com/xero/sourcerer.git
+    path = sourcerer/.local/src/sourcerer
+    url = https://github.com/xero/sourcerer.git
 [submodule "vimb"]
-	path = vimb/.local/src/vimb
-	url = https://github.com/fanglingsu/vimb.git
+    path = vimb/.local/src/vimb
+    url = https://github.com/fanglingsu/vimb.git
 [submodule "tabbed"]
-	path = tabbed/.local/src/tabbed
-	url = https://git.suckless.org/tabbed
+    path = tabbed/.local/src/suckless/tabbed
+    url = https://git.suckless.org/tabbed
 [submodule "nerd-fonts"]
-	path = nerd-fonts/.local/src/nerd-fonts
-	url = https://github.com/ryanoasis/nerd-fonts.git
+    path = nerd-fonts/.local/src/nerd-fonts
+    url = https://github.com/ryanoasis/nerd-fonts.git
 [submodule "vimclip"]
-	path = vimclip/.local/src/vimclip
-	url = https://github.com/hrantzsch/vimclip.git
+    path = vimclip/.local/src/vimclip
+    url = https://github.com/hrantzsch/vimclip.git
 [submodule "tpm"]
-	path = tmux/.tmux/plugins/tpm
-	url = https://github.com/tmux-plugins/tpm
+    path = tmux/.tmux/plugins/tpm
+    url = https://github.com/tmux-plugins/tpm
 [submodule "plantuml-syntax"]
-	path = nvim/.config/nvim/pack/bundle/opt/plantuml-syntax
-	url = https://github.com/aklt/plantuml-syntax
+    path = nvim/.config/nvim/pack/bundle/opt/plantuml-syntax
+    url = https://github.com/aklt/plantuml-syntax
 [submodule "open-browser.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/open-browser.vim
-	url = https://github.com/tyru/open-browser.vim
+    path = nvim/.config/nvim/pack/bundle/opt/open-browser.vim
+    url = https://github.com/tyru/open-browser.vim
 [submodule "plantuml-previewer.vim"]
-	path = nvim/.config/nvim/pack/bundle/opt/plantuml-previewer.vim
-	url = https://github.com/weirongxu/plantuml-previewer.vim
+    path = nvim/.config/nvim/pack/bundle/opt/plantuml-previewer.vim
+    url = https://github.com/weirongxu/plantuml-previewer.vim
+[submodule "neovim"]
+    path = nvim/.local/src/neovim
+    url = https://github.com/neovim/neovim.git
+[submodule "dotman"]
+    path = dotman/.local/src/dotman
+    url = git@git.seago.io:seagoj/dotman.git
+[submodule "nvim-treesitter"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-treesitter
+	url = https://github.com/nvim-treesitter/nvim-treesitter
+[submodule "nvim-treesitter-config"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-treesitter-config
+	url = git@git.seago.io:seagoj/nvim-treesitter-config
+[submodule "sourcerer-nvim"]
+    path = nvim/.config/nvim/pack/bundle/opt/sourcerer-nvim
+    url = git@git.seago.io:seagoj/sourcerer-nvim
+[submodule "playground"]
+	path = nvim/.config/nvim/pack/bundle/opt/playground
+	url = https://github.com/nvim-treesitter/playground
+[submodule "nvcode-color-schemes.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvcode-color-schemes.vim
+	url = https://github.com/christianchiarulli/nvcode-color-schemes.vim
+[submodule "nvim-lsp"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-lsp
+	url = https://github.com/neovim/nvim-lsp
+[submodule "completion-nvim"]
+	path = nvim/.config/nvim/pack/bundle/opt/completion-nvim
+	url = https://github.com/nvim-lua/completion-nvim
+[submodule "nvim-dap"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap
+	url = https://github.com/mfussenegger/nvim-dap
+[submodule "nvim-lspconfig"]
+    path = nvim/.config/nvim/pack/bundle/opt/nvim-lspconfig
+    url = https://github.com/neovim/nvim-lspconfig
+[submodule "nvim-dap-python"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap-python
+	url = https://github.com/mfussenegger/nvim-dap-python
+[submodule "astronauta.nvim"]
+	path = nvim/.config/nvim/pack/bundle/opt/astronauta.nvim
+	url = https://github.com/tjdevries/astronauta.nvim
+[submodule "nvim-dap-ui"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap-ui
+	url = https://github.com/rcarriga/nvim-dap-ui
+[submodule "nvim-dap-virtual-text"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap-virtual-text
+	url = https://github.com/theHamsta/nvim-dap-virtual-text

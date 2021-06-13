@@ -1,7 +1,7 @@
-php 7.3.9
 python 3.8.5 2.7.13 system
 ruby 2.6.3
 rust 1.36.0
 nodejs 12.7.0
 golang 1.12.7
 lua 5.3.6
+php 7.3.24

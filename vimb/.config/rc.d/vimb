@@ -1,12 +1,4 @@
 # vim: filetype=sh:
 
-export BROWSERS="vimb-tabbed vimb $BROWSERS"
-export BROWSER=vimb-tabbed
-
-vimb-tabbed() {
-    if which tabbed &>/dev/null; then
-        tabbed -c vimb "$1" -e
-    else
-        command vimb "$@"
-    fi
-}
+export BROWSERS="$BROWSERS vimb-tabbed vimb"
+# export BROWSER=vimb-tabbed

@@ -1,0 +1,36 @@
+#!/bin/sh
+# vim: sw=4 ts=4 sts=4 noexpandtab
+
+journal_loc="$HOME"/vimwiki/journal
+date=`date "+%Y-%m-%d"`
+entry="$journal_loc"/"$date".md
+
+indexEntry() {
+	if [[ ! -f "$journal_loc"/index.md ]]; then
+		cat << INDEX > "$journal_loc/index.md"
+# Journal
+
+
+INDEX
+	fi
+	echo "- [$date]($date.md)" >> "$journal_loc"/index.md
+}
+
+initEntry() {
+	cat << EOF > "$entry"
+# $date
+
+
+EOF
+}
+
+if [[ ! -d "$journal_loc" ]]; then
+	mkdir -p "$journal_loc"
+fi
+
+if [[ ! -f "$entry" ]]; then
+	indexEntry
+	initEntry
+fi
+
+nvim +3 "$entry"

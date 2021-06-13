@@ -6,29 +6,28 @@
 PROJECT_ROOT="$XDG_SOURCE_HOME"/"$PROJECT"
 
 bonfyre_general() {
-    pushd "$1" >/dev/null
-    tmux_window "$2"
-    tmux_layout
-    tmux send-keys -t 1 "$tmux_commandWeather" C-m
-    tmux send-keys -t 4 "$tmux_commandMotd" C-m
-    tmux send-keys -t 3 "vagrant-up" C-m
-    popd >/dev/null
+		pushd "$1" >/dev/null
+		tmux_window "$2"
+		tmux_layout
+		tmux send-keys -t 1 "$tmux_commandWeather" C-m
+		tmux send-keys -t 4 "$tmux_commandMotd" C-m
+		tmux send-keys -t 3 "vagrant-up" C-m
+		# popd >/dev/null
 }
 
 bonfyre_api() {
-    bonfyre_general "$PROJECT_ROOT"/bonfyre_app api
+		bonfyre_general "$PROJECT_ROOT"/bonfyre_app api
 }
 
 bonfyre_web() {
-    bonfyre_general "$PROJECT_ROOT"/bonfyre_web web
+		bonfyre_general "$PROJECT_ROOT"/bonfyre_web web
 }
 
-bonfyre_social() {
-    tmux_window social
-    tmux send-keys -t 1 "mutt" C-m
+bonfyre_daemons() {
+		bonfyre_general "$PROJECT_ROOT"/bonfyre_daemons daemons
 }
 
 bonfyre_api
 bonfyre_web
-bonfyre_social
+bonfyre_daemons
 tmux_attachSession

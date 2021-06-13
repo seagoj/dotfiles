@@ -50,3 +50,5 @@ cd() {
         popd
     fi
 }
+
+alias wifi-menu="nmtui"

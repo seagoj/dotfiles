@@ -1,4 +1,4 @@
-#/binsh
+#!/bin/sh
 
 if ! cat /etc/hosts | grep "fyreapp" >/dev/null; then
     sudo tee -a /etc/hosts <<< '127.0.0.1  bonfyre.liquino.com local.beta.bonfyreapp.com local.beta.fyreapp.com local.api.bonfyreapp.com graylog local.api.fyreapp.com' #>/dev/null

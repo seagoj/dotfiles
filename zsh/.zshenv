@@ -22,12 +22,12 @@ export XDG_CACHE_HOME=${HOME}/.cache
 export XDG_FUNCTIONS_HOME=${HOME}/.local/functions
 export XDG_SOURCE_HOME="$HOME"/.local/src
 
-# ZSH Functions
-export FUNCTIONS=${HOME}/functions
-fpath=(
-    $FUNCTIONS
-    $fpath
-)
+# # ZSH Functions
+# export FUNCTIONS=${HOME}/functions
+# fpath=(
+#     $FUNCTIONS
+#     $fpath
+# )
 
 . "${HOME}"/.zim-install/src/templates/zshenv
 
@@ -84,15 +84,14 @@ export MEDIA=/mnt/media
 export WWW=/var/www
 export DOCROOT=/var/www
 export DOTFILES=${HOME}/dotfiles
-export CODE="${HOME}"/code
-[ -d /Volumes ] && export CODE=/Volumes/Code
+export CODE="${HOME}"/.local/src
 
 # Vagrant
 ## Provider(virtualbox, parallels)
 export VAGRANT_DEFAULT_PROVIDER=virtualbox
 
 # Browser
-export BROWSER=$(which vimb-tabbed vimb firefox-developer-edition firefox surf chromium-browser chromium google-chrome google-chrome-stable chrome browsh links2 links lynx xdg-open open | grep -m1 -e '^/')
+export BROWSER=$(which w3m firefox-developer-edition vimb-tabbed vimb firefox surf chromium-browser chromium google-chrome google-chrome-stable chrome browsh links2 links lynx xdg-open open | grep -m1 -e '^/')
 # Editor
 export EXPLORER=$(which fff vifm nnn ranger thunar | grep -m1 -e '^/')
 export EDITOR=$(which nvim vim vi nano | grep -m1 -e '^/')

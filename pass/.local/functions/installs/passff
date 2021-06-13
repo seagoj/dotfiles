@@ -1,5 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-VERSION=1.2.1
-curl -sSL https://github.com/passff/passff-host/releases/download/${VERSION}/install_host_app.sh | bash -s -- firefox
+# VERSION=1.2.1
+# curl -sSL https://github.com/passff/passff-host/releases/download/${VERSION}/install_host_app.sh | bash -s -- firefox
+curl -sSL github.com/passff/passff-host/releases/latest/download/install_host_app.sh | bash -s -- firefox
 

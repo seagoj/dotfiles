@@ -2,6 +2,14 @@
 
 # User configuration sourced by interactive shells
 
+export FUNCTIONS=${HOME}/functions
+# ZSH Functions
+export FUNCTIONS=${HOME}/functions
+fpath=(
+    $FUNCTIONS
+    $fpath
+)
+
 # zim template
 source "${HOME}"/.zim-install/src/templates/zshrc
 # source userland functions
@@ -11,7 +19,7 @@ source_all "${XDG_CONFIG_HOME:-$HOME/.config}/rc.d"
 
 # key bindings
 bindkey '[1~' beginning-of-line   # Home
-bindkey '[4~' end-of-line         # End
+bindkey '[4~' end-of-line	    # End
 
 # assume path with no command is a cd command
 setopt AUTO_CD
@@ -85,3 +93,6 @@ fi
 # PERL_MM_OPT="INSTALL_BASE=/home/jseago/perl5"; export PERL_MM_OPT;
 
 source_file ~/.fzf.zsh
+# tabtab source for packages
+# uninstall by removing these lines
+[[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
