@@ -187,9 +187,6 @@
 [submodule "fff.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fff.vim
     url = https://github.com/dylanaraps/fff.vim
-[submodule "fff-config.vim"]
-    path = nvim/.config/nvim/pack/bundle/opt/fff-config.vim
-    url = git@git.seago.io:seagoj/fff-config.vim
 [submodule "vim-hexokinase"]
     path = nvim/.config/nvim/pack/bundle/opt/vim-hexokinase
     url = https://github.com/RRethy/vim-hexokinase
