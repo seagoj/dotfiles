@@ -32,23 +32,27 @@ function basePackages()
 end
 
 function developmentPackages()
-	-- dap
-	vim.cmd [[ packadd! nvim-dap ]]
-	vim.cmd [[ packadd! nvim-dap-ui ]]
-	vim.cmd [[ packadd! nvim-dap-virtual-text ]]
+	-- -- dap
+	-- vim.cmd [[ packadd! nvim-dap ]]
+	-- vim.cmd [[ packadd! nvim-dap-ui ]]
+	-- vim.cmd [[ packadd! nvim-dap-virtual-text ]]
 
-	vim.cmd [[ nnoremap <F2> :lua require('dap').step_into()<CR> ]]
-	vim.cmd [[ nnoremap <F3> :lua require('dap').step_over()<CR> ]]
-	vim.cmd [[ nnoremap <F5> :lua require('dap').continue()<CR> ]]
-	vim.cmd [[ nnoremap <F6> :lua require('dap').step_out()<CR> ]]
-	vim.cmd [[ nnoremap <F10> :lua require('dap').toggle_breakpoint()<CR> ]]
-	vim.cmd [[ nnoremap <F12> :lua require('dap').step_out()<CR> ]]
-	vim.cmd [[ nnoremap <leader>db :lua require('dap').toggle_breakpoint()<CR> ]]
-	vim.cmd [[ nnoremap <leader>dr :lua require('dap').repl.toggle()<CR> ]]
-	vim.cmd [[ nnoremap <leader>dl :lua require('dap').run_last()<CR> ]]
-	-- require('dapui').setup()
-	vim.g.dap_virtual_text = true
+	-- vim.cmd [[ nnoremap <F2> :lua require('dap').step_into()<CR> ]]
+	-- vim.cmd [[ nnoremap <F3> :lua require('dap').step_over()<CR> ]]
+	-- vim.cmd [[ nnoremap <F5> :lua require('dap').continue()<CR> ]]
+	-- vim.cmd [[ nnoremap <F6> :lua require('dap').step_out()<CR> ]]
+	-- vim.cmd [[ nnoremap <F10> :lua require('dap').toggle_breakpoint()<CR> ]]
+	-- vim.cmd [[ nnoremap <F12> :lua require('dap').step_out()<CR> ]]
+	-- vim.cmd [[ nnoremap <leader>db :lua require('dap').toggle_breakpoint()<CR> ]]
+	-- vim.cmd [[ nnoremap <leader>dr :lua require('dap').repl.toggle()<CR> ]]
+	-- vim.cmd [[ nnoremap <leader>dl :lua require('dap').run_last()<CR> ]]
+	-- -- require('dapui').setup()
+	-- vim.g.dap_virtual_text = true
 
+	vim.cmd [[ packadd vdebug ]]
+	vim.g.vdebug_options = { port = 9000, path_maps =  [[ {"/vagrant/bonfyre_app": "~/.local/src/bonfyre/config_management/puppet/bonfyre_app"} ]] }
+	-- vim.g.vdebug_features.max_depth = 2048
+	-- vim.g.vdebug_options.path_maps = [[ {"/vagrant/bonfyre_app": "~/.local/src/bonfyre/config_management/puppet/bonfyre_app"} ]]
 
 	-- lsp
 	vim.cmd('packadd! nvim-lspconfig')

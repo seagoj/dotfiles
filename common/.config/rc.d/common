@@ -4,23 +4,23 @@
 
 # bookmarks
 alias z='cd `fzf_dirSearchAt $HOME`'
-alias code='cd `fzf_dirSearchAt $CODE` && tmux.sh'
+alias code-start='cd `fzf_dirSearchAt $CODE` && tmux.sh'
 alias config='e `fzf_searchAt $XDG_CONFIG_HOME`'
 function o() {
-    echo "$1"
-    xdg-open ${1:-`fzf`}
+		echo "$1"
+		xdg-open ${1:-`fzf`}
 }
 
 dots() {
-    cd "$DOTFILES"
-    if [ "0" = "$?" ] && [ "-t" = "$1" ]; then
-        tmux.sh
-    fi
+		cd "$DOTFILES"
+		if [ "0" = "$?" ] && [ "-t" = "$1" ]; then
+				tmux.sh
+		fi
 }
 
 # diagnostics
 alias cputemp="sed 's/000$/°C/' /sys/class/thermal/thermal_zone0/temp"
-alias battery="echo $([ -f  /sys/class/power_supply/BAT0/capacity ] && cat /sys/class/power_supply/BAT0/capacity)%"
+alias battery="echo $([ -f	/sys/class/power_supply/BAT0/capacity ] && cat /sys/class/power_supply/BAT0/capacity)%"
 alias memoryfree="free -h | awk '(NR==2){ print $3 }' | sed 's/Gi$/G/'"
 
 # ping
@@ -30,11 +30,11 @@ alias fastping='ping -c 100 -i.2'
 alias pingfast='fastping'
 
 portuse() {
-    if ! which lsof; then
-        osinstall lsof
-    fi
+		if ! which lsof; then
+				osinstall lsof
+		fi
 
-    sudo lsof -i :"${1}"
+		sudo lsof -i :"${1}"
 }
 
 alias open='xdg-open'
@@ -44,11 +44,11 @@ alias weather='curl "wttr.in"'
 alias parrot='curl "parrot.live"'
 
 cd() {
-    if [[ $# != 0 ]]; then
-        pushd "$@"
-    else
-        popd
-    fi
+		if [[ $# != 0 ]]; then
+				pushd "$@"
+		else
+				popd
+		fi
 }
 
 alias wifi-menu="nmtui"
