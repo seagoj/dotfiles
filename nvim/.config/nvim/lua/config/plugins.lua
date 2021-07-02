@@ -49,7 +49,7 @@ function developmentPackages()
 	-- -- require('dapui').setup()
 	-- vim.g.dap_virtual_text = true
 
-	vim.cmd [[ packadd vdebug ]]
+	-- vim.cmd [[ packadd vdebug ]]
 	vim.g.vdebug_options = { port = 9000, path_maps =  [[ {"/vagrant/bonfyre_app": "~/.local/src/bonfyre/config_management/puppet/bonfyre_app"} ]] }
 	-- vim.g.vdebug_features.max_depth = 2048
 	-- vim.g.vdebug_options.path_maps = [[ {"/vagrant/bonfyre_app": "~/.local/src/bonfyre/config_management/puppet/bonfyre_app"} ]]
