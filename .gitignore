@@ -45,3 +45,4 @@ nvim/.local/share/nvim/undo
 .vagrant
 zeal/.local/share/Zeal/Zeal/docsets/*
 nvim/.local/share/nvim/shada/main.shada
+nvim/.local/share/nvim/.netrwhist
