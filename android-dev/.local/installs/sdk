@@ -1,0 +1,19 @@
+#!/bin/sh
+
+# rm -rf ~/.sdkman
+
+ if [[ -f ~/.sdkman ]]; then
+		mv ~/.sdkman ~/.sdkman.custom
+ fi
+
+curl -s "https://get.sdkman.io" | bash
+
+ if [[ -f ~/.sdkman.custom ]]; then
+		mv ~/.sdkman.custom ~/.sdkman
+ fi
+
+if [[ "${0}" != `which sdk` ]]; then
+	echo "${0}"
+	which sdk
+	sdk ${@}
+fi

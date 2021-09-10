@@ -96,3 +96,7 @@ source_file ~/.fzf.zsh
 # tabtab source for packages
 # uninstall by removing these lines
 [[ -f ~/.config/tabtab/__tabtab.zsh ]] && . ~/.config/tabtab/__tabtab.zsh || true
+
+#THIS MUST BE AT THE END OF THE FILE FOR SDKMAN TO WORK!!!
+export SDKMAN_DIR="/home/seagoj/.sdkman"
+[[ -s "/home/seagoj/.sdkman/bin/sdkman-init.sh" ]] && source "/home/seagoj/.sdkman/bin/sdkman-init.sh"

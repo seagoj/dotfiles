@@ -1,21 +1,25 @@
 -- dap
+local user_source_path = os.getenv("XDG_SOURCE_HOME") or os.getenv("HOME") .. "/.local/src"
+local service_source_root = os.getenv("VAGRANT_PROJECT_ROOT") or "/vagarant"
+local local_source_root = os.getenv("HOST_PROJECT_ROOT") or os.getenv("PWD")
+
 local dap = require('dap')
 dap.adapters.php = {
 	type = 'executable',
 	command = 'node',
-	args = {"/home/seagoj/.local/src/vscode-php-debug/out/phpDebug.js"}
+	args = { user_source_path .. "/vscode-php-debug/out/phpDebug.js" }
 }
-
 dap.configurations.php = {
 	{
 		type = 'php',
 		request = 'launch',
-		name = 'Listen for xdebug',
-		port = '9000',
+		name = 'Listen for Xdebug',
+		port = 9000,
 		log = true,
-		serviceSourceRoot = '/vagrant/bonfyre_app',
-		localSourceRoot = '/home/seagoj/.local/src/bonfyre/config_management/bonfyre_app'
+		serviceSourceRoot = service_source_root,
+		localSourceRoot = local_source_root
 	}
 }
+
 -- lsp
 require 'lspconfig'.intelephense.setup{ on_attach=require'completion'.on_attach }

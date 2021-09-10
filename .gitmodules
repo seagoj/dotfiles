@@ -280,3 +280,6 @@
 [submodule "nvim-dap-virtual-text"]
 	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap-virtual-text
 	url = https://github.com/theHamsta/nvim-dap-virtual-text
+[submodule "nvim/.local/src/vscode-php-debug"]
+	path = nvim/.local/src/vscode-php-debug
+	url = https://github.com/xdebug/vscode-php-debug.git

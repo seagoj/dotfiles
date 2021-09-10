@@ -27,7 +27,12 @@ bonfyre_daemons() {
 		bonfyre_general "$PROJECT_ROOT"/bonfyre_daemons daemons
 }
 
+bonfyre_teams_bot() {
+	bonfyre_general "$PROJECT_ROOT"/teams-bot teams-bot
+}
+
 bonfyre_api
 bonfyre_web
 bonfyre_daemons
+bonfyre_teams_bot
 tmux_attachSession

@@ -1,141 +1,141 @@
 [user]
-    name = Jeremy Seago
-    email = seagoj@gmail.com
+		name = Jeremy Seago
+		email = seagoj@gmail.com
 [url "git@github.com:"]
-    insteadof = https://github.com
+		insteadof = https://github.com
 [github]
-    user = seagoj
+		user = seagoj
 [core]
-    pager = less -FRSX
-    whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
-    editor = nvim -f +2
-    autocrlf = input
-    safecrlf = false
-    ignorecase = false
-    excludesfile = /Users/seagoj/.config/git/ignore
-    hookspath = ~/.config/git/hooks
+		pager = less -FRSX
+		whitespace = fix,-indent-with-non-tab,trailing-space,cr-at-eol
+		editor = nvim -f +2
+		autocrlf = input
+		safecrlf = false
+		ignorecase = false
+		excludesfile = /Users/seagoj/.config/git/ignore
+		hookspath = ~/.config/git/hooks
 [web]
-    browser = open
+		browser = open
 [push]
-    default = current
+		default = current
 [rebase]
-    autosquash = true
+		autosquash = true
 [merge]
-    summary = true
-    defaultToUpstream = true
-    ; algorithm = myers ; histogram | minimal | myers | patient
-    tool = fugitive
-    ; tool = filemerge
+		summary = true
+		defaultToUpstream = true
+		; algorithm = myers ; histogram | minimal | myers | patient
+		tool = fugitive
+		; tool = filemerge
 [mergetool "filemerge"]
-    algorithm = histogram
-    cmd = /usr/bin/opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\"
+		algorithm = histogram
+		cmd = /usr/bin/opendiff \"$LOCAL\" \"$REMOTE\" -merge \"$MERGED\"
 [mergetool "fugitive"]
-    algorithm = histogram
-    cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
+		algorithm = histogram
+		cmd = nvim -f -c \"Gvdiff\" \"$MERGED\"
 [diff]
-    tool = nvimdiff
-    ; tool = icdiff
-    algorithm = myers ; histogram | minimal | myers | patient
+		tool = nvimdiff
+		; tool = icdiff
+		algorithm = myers ; histogram | minimal | myers | patient
 [difftool]
-    prompt = true
+		prompt = true
 [difftool "nvimdiff"]
-    cmd = nvim -d -u ~/.config/nvim/init.vim \"$LOCAL\" \"$REMOTE\"
+		cmd = nvim -d -u ~/.config/nvim/init.vim \"$LOCAL\" \"$REMOTE\"
 [difftool "icdiff"]
-    cmd = icdiff \"$LOCAL\" \"$REMOTE\"
+		cmd = icdiff \"$LOCAL\" \"$REMOTE\"
 [ghi]
-    token = !security find-internet-password -a seagoj -s github.com -l 'ghi token' -w
+		token = !security find-internet-password -a seagoj -s github.com -l 'ghi token' -w
 [color]
-    diff = auto
-    status = auto
-    branch = auto
-    interactive  = auto
-    ui = true
-    pager =  true
+		diff = auto
+		status = auto
+		branch = auto
+		interactive  = auto
+		ui = true
+		pager =  true
 [color "branch"]
-    current = yellow reverse
-    local   = yellow
-    remote  = green
+		current = yellow reverse
+		local		= yellow
+		remote	= green
 [color "diff"]
-    ; meta = blue
-    frag = magenta
-    old  = red
-    new  = green
+		; meta = blue
+		frag = magenta
+		old  = red
+		new  = green
 [color "status"]
-    added = yellow
-    changed = green
-    untracked = blue
+		added = yellow
+		changed = green
+		untracked = blue
 [alias]
-    a = "add"
-    amend = commit --amend --no-edit
-    board = "!jira jql board"
-    clean-merged = "!git clean-local-merged"
-    clean-local-merged = "!git branch --merged master | grep -v master | grep -v develop | xargs git branch -D"
-    ; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
-    cr = "!. ~/.local/functions/sourced/b.sh; bm reviews"
-    deploy = "!jira jql deploy"
-    h = "!git hash"
-    hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | xclip -selection clipboard"
-    crypt = "! git-crypt"
-    ctags = "!.git/hooks/ctags"
-    current = "rev-parse --abbrev-ref HEAD"
-    current-base = "!git rev-parse --abbrev-ref HEAD | sed 's#feature/##g'| sed 's#hotfix/##g'"
-    dn = "diff --name-only"
-    jira = "! jira open $(git current-base)"
-    list-merged = "branch -r --merged origin/master"
-    lg = log --color --graph  --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
-    pull-request-create = "!prc() { xdg-open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/new?source=$(git current)&t=1\"; }; prc"
-    pull-request-view = "!prv() { xdg-open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/?state=OPEN&query=${1}\"; }; prv"
-    recent = "! git branch --sort=-committerdate | head -n 10"
-    review = "!r() { [ 0 == $# ] && jira jql review; [ 0 != $# ] && jira review ${1} && git pull-request-view $1; }; r"
-    search = "! git rev-list --all | xargs git grep "
-    sql ="!$EDITOR sql/$(git current-base).sql"
-    sql-create-deploy = "! cat $(git sql-diff) > sql/deploy.sql"
-    sql-diff = "! git dn origin/master -- sql | grep -v schema.sql | grep -v data.sql"
-    st = "status"
-    submodule-add = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -f ${1}; }; f"
-    submodule-rm = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -rf ${1}; }; f"
-    submodule-update = "submodule update --recursive --remote --init"
-    undo = "!f() { \
-    git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
-    }; f"
-    ticket = "!xdg-open https://bonfyreapp.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD)"
-    weekly-summary = "!. ~/.local/functions/git.sh; weekly_summary"
-    wip = "!git add . && git commit -m 'wip' --no-verify"
-    wtf = "!git-wtf"
-    hotfix = "!h() { git checkout origin/master -b hotfix/$1; which jira &>/dev/null && jira start $1 && jira open $1; }; h"
-    feature = "!f() { git checkout origin/develop -b feature/$1; which jira &>/dev/null && jira start $1 && jira open $1; }; f"
-    submit = "!s() { git pull-request-create $1; which jira &>/dev/null && echo 71 | jira mark $(git current-base) >/dev/null; }; s"
+		a = "add"
+		amend = commit --amend --no-edit
+		board = "!jira jql board"
+		clean-merged = "!git clean-local-merged"
+		clean-local-merged = "!git branch --merged main | grep -v main | grep -v master | grep -v develop | xargs git branch -D"
+		; clean-remote-merged = "!. ~/.local/functions/git.sh; delete_remote_merged_branches"
+		cr = "!. ~/.local/functions/sourced/b.sh; bm reviews"
+		deploy = "!jira jql deploy"
+		h = "!git hash"
+		hash = "! hash=$(git rev-parse HEAD); echo $hash; echo $hash | xclip -selection clipboard"
+		crypt = "! git-crypt"
+		ctags = "!.git/hooks/ctags"
+		current = "rev-parse --abbrev-ref HEAD"
+		current-base = "!git rev-parse --abbrev-ref HEAD | sed 's#feature/##g'| sed 's#hotfix/##g'"
+		dn = "diff --name-only"
+		jira = "! jira open $(git current-base)"
+		list-merged = "branch -r --merged origin/master"
+		lg = log --color --graph	--pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr)%C(bold blue)%Creset' --abbrev-commit
+		pull-request-create = "!prc() { xdg-open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/new?source=$(git current)&t=1\"; }; prc"
+		pull-request-view = "!prv() { xdg-open \"https://bitbucket.org/bonfyreapp/${PWD##*/}/pull-requests/?state=OPEN&query=${1}\"; }; prv"
+		recent = "! git branch --sort=-committerdate | head -n 10"
+		review = "!r() { [ 0 == $# ] && jira jql review; [ 0 != $# ] && jira review ${1} && git pull-request-view $1; }; r"
+		search = "! git rev-list --all | xargs git grep "
+		sql ="!$EDITOR sql/$(git current-base).sql"
+		sql-create-deploy = "! cat $(git sql-diff) > sql/deploy.sql"
+		sql-diff = "! git dn origin/master -- sql | grep -v schema.sql | grep -v data.sql"
+		st = "status"
+		submodule-add = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -f ${1}; }; f"
+		submodule-rm = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -rf ${1}; }; f"
+		submodule-update = "submodule update --recursive --remote --init"
+		undo = "!f() { \
+		git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
+		}; f"
+		ticket = "!xdg-open https://bonfyreapp.atlassian.net/browse/$(git rev-parse --abbrev-ref HEAD)"
+		weekly-summary = "!. ~/.local/functions/git.sh; weekly_summary"
+		wip = "!git add . && git commit -m 'wip' --no-verify"
+		wtf = "!git-wtf"
+		hotfix = "!h() { git checkout origin/master -b hotfix/$1; which jira &>/dev/null && jira start $1 && jira open $1; }; h"
+		feature = "!f() { git checkout origin/develop -b feature/$1; which jira &>/dev/null && jira start $1 && jira open $1; }; f"
+		submit = "!s() { git pull-request-create $1; which jira &>/dev/null && echo 71 | jira mark $(git current-base) >/dev/null; }; s"
 [branch]
-    autosetupmerge = always
+		autosetupmerge = always
 [init]
-    templatedir = "~/.config/git/template"
+		templatedir = "~/.config/git/template"
 [filter "hawser"]
-    clean = git hawser clean %f
-    smudge = git hawser smudge %f
-    required = true
+		clean = git hawser clean %f
+		smudge = git hawser smudge %f
+		required = true
 [filter "lfs"]
-    clean = git-lfs clean %f
-    smudge = git-lfs smudge %f
-    required = true
+		clean = git-lfs clean %f
+		smudge = git-lfs smudge %f
+		required = true
 [filter "tabify"]
-    clean = unexpand -t 4
+		clean = unexpand -t 4
 [filter "spacify"]
-    clean = expand -t 4
+		clean = expand -t 4
 [filter "co_4_spaces_commit_tabs"]
-    smudge = expand -t 4
-    clean = unexpand -t 4
+		smudge = expand -t 4
+		clean = unexpand -t 4
 [filter "co_tabs_commit_4_spaces"]
-    smudge = unexpand -t 4
-    clean = expand -t 4
+		smudge = unexpand -t 4
+		clean = expand -t 4
 [filter "co_2_spaces_commit_tabs"]
-    smudge = expand -t 2
-    clean = unexpand -t 2
+		smudge = expand -t 2
+		clean = unexpand -t 2
 [filter "co_tabs_commit_2_spaces"]
-    smudge = unexpand -t 2
-    clean = expand -t 2
+		smudge = unexpand -t 2
+		clean = expand -t 2
 [credential]
-    helper = osxkeychain
+		helper = osxkeychain
 [commit]
-    template = ~/.config/git/commit-msg.txt
+		template = ~/.config/git/commit-msg.txt
 [pull]
-    rebase = false
+		rebase = false
