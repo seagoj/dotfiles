@@ -1,4 +1,10 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-osinstall libffi6 && \
-pip3 install --upgrade --user mycli && mycli ${@}
+if [ "Mac" = "$OS_TYPE" ]; then
+    osinstall mycli && mycli ${@}
+else
+    osinstall libffi6 && \
+    pip3 install --upgrade --user mycli && mycli ${@}
+fi
+
+

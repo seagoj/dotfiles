@@ -1,0 +1,4 @@
+#!/bin/sh
+
+brew install koekeishiya/formulae/skhd
+brew services restart skhd

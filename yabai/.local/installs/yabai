@@ -1,0 +1,5 @@
+#!/bin/sh
+
+brew install koekeishiya/formulae/yabai
+sudo yabai --install-sa
+brew services restart yabai && killall Dock
