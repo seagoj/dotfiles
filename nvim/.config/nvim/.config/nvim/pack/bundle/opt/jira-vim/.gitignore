@@ -1,9 +1,0 @@
-plugin/credentials.vim
-
-# Python byte-compiled, DLL files
-__pycache__/
-*.py[cod]
-
-# Tags for documentation
-doc/tags
-
