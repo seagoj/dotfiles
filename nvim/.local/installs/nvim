@@ -1,9 +1,10 @@
 #!/bin/sh
 
 installNeovimMac() {
-    brew install neovim
-    pip2 install --upgrade pip neovim
-    pip3 install --install pip neovim flake8
+    brew install --HEAD luajit
+    brew install --HEAD neovim
+#     pip2 install --upgrade pip neovim
+#     pip3 install --install pip neovim flake8
 }
 
 installNeovimDebian() {
@@ -23,10 +24,6 @@ fromSource() {
 case "$(uname -s)" in
 Darwin | Mac)
     installNeovimMac
-    brew tap neovim/neovim
-    brew tap rogual/neovim-dot-app
-    brew install neovim-dot-app
-    ln -s /usr/local/opt/neovim-dot-app /Applications
     ;;
 Linux)
     fromSource

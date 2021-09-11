@@ -94,7 +94,8 @@
 		st = "status"
 		submodule-add = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -f ${1}; }; f"
 		submodule-rm = "!f() { git submodule deinit -f -- ${1}; rm -rf .git/modules/${1}; git rm -rf ${1}; }; f"
-		submodule-update = "submodule update --recursive --remote --init"
+		# submodule-update = "submodule update --recursive --remote --init"
+		submodule-update = "pull --recurse-submodules"
 		undo = "!f() { \
 		git reset --hard $(git rev-parse --abbrev-ref HEAD)@{${1-1}};\
 		}; f"

@@ -274,3 +274,6 @@
 [submodule "nvim/.local/src/vscode-php-debug"]
 	path = nvim/.local/src/vscode-php-debug
 	url = https://github.com/xdebug/vscode-php-debug.git
+[submodule "nvim/.config/nvim/pack/bundle/opt/fff-config.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/fff-config.vim
+	url = git@git.seago.io:seagoj/fff-config.vim
