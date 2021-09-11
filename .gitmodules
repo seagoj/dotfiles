@@ -13,9 +13,6 @@
 [submodule "asdf/.config/asdf"]
     path = asdf/.config/asdf
     url = git://github.com/asdf-vm/asdf.git
-[submodule "zsh/.zim"]
-    path = zsh/.zim
-    url = git://github.com/zimfw/zimfw.git
 [submodule "fzf.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fzf.vim
     url = https://github.com/junegunn/fzf.vim
@@ -151,9 +148,6 @@
 [submodule "fzf-config.vim"]
     path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
     url = git@github.com:seagoj/fzf-config.vim
-[submodule "zimfw-install"]
-    path = zsh/.zim-install
-    url = https://github.com/zimfw/install
 [submodule "coc.nvim"]
     path = nvim/.config/nvim/pack/bundle/opt/coc.nvim
     url = https://github.com/neoclide/coc.nvim

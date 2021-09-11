@@ -1,10 +1,17 @@
+# Start configuration added by Zim install {{{
+#
+# User configuration sourced by login shells
+#
+
+# Initialize Zim
+source ${ZIM_HOME}/login_init.zsh -q &!
+# }}} End configuration added by Zim install
+
 # startup file read in interactive login shells
 #
 # The following code helps us by optimizing the existing framework.
 # This includes zcompile, zcompdump, etc.
 #
-
-. "${HOME}"/.zim-install/src/templates/zlogin
 
 # Executes commands at login post-zshrc.
 #
