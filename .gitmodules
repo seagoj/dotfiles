@@ -277,3 +277,12 @@
 [submodule "nvim/.config/nvim/pack/bundle/opt/fff-config.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/fff-config.vim
 	url = git@git.seago.io:seagoj/fff-config.vim
+[submodule "vim-roam"]
+	path = nvim/.config/nvim/pack/bundle/opt/vim-roam
+	url = https://github.com/samgriesemer/vim-roam
+[submodule "wiki.vim"]
+	path = nvim/.config/nvim/pack/bundle/opt/wiki.vim
+	url = https://github.com/samgriesemer/wiki.vim
+[submodule "nvim/.local/src/panja"]
+	path = nvim/.local/src/panja
+	url = https://github.com/samgriesemer/panja.git

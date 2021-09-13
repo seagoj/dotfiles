@@ -1,9 +1,5 @@
 #!/bin/sh
 
-RUBY_VERSION=2.6.3
-
-cd $HOME && \
-    asdf plugin-add ruby && \
-    asdf install ruby "${RUBY_VERSION}" && \
-    asdf global ruby "${RUBY_VERSION}" && \
-    "$(basename ${0})" ${@}
+asdf plugin-add ruby && \
+	asdf install && \
+	"$(basename ${0})" ${@}

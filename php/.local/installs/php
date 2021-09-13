@@ -1,22 +1,12 @@
 #!/bin/sh
 
-case $OS_TYPE in
-Darwin | Mac)
-    brew tap homebrew/dupes
-    brew tap homebrew/versions
-    brew tap homebrew/homebrew-php
-    brew unlink php56
-    brew install php70
-    ;;
-Arch)
-    asdf plugin-add php
-    asdf install php 7.3.9
-    asdf global php 7.3.9
-    ;;
-*)
-    osinstall php
-    ;;
-esac
+. "${XDG_FUNCTIONS_HOME}"/sourced.sh
+source_file "${XDG_FUNCTIONS_HOME}"/asdf.sh
 
 # install dap
-cd ~/.local/src && curl "https://codeload.github.com/xdebug/vscode-php-debug/tar.gz/refs/tags/v1.15.0" | tar xz && ln -sf vscode-php-debug-1.15.0 vscode-php-debug && cd vscode-php-debug && npm install && npm run build
+cd "${XDG_SOURCE_HOME}"/vscode-php-debug && \
+	npm install && \
+	npm run build
+
+brew install libsodium re2c bison zlib && \
+	plugin=php asdf_wrapper ${@}

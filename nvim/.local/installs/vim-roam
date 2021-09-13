@@ -1,0 +1,5 @@
+#!/bin/sh
+
+cd "${XDG_SOURCE_HOME}" && \
+	pip install -e panja && \
+	pip install dill pandocfilters misaka

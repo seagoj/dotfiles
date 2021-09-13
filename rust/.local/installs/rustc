@@ -1,10 +1,6 @@
-#!/usr/bin/env bash
+#!/bin/sh
 
-RUST_VERSION=1.36.0
+. "${XDG_FUNCTIONS_HOME}"/sourced.sh
+source_file "${XDG_FUNCTIONS_HOME}"/asdf.sh
 
-asdf plugin-add rust
-cd $HOME &&
-    asdf install rust "${RUST_VERSION}" && \
-    asdf global rust "${RUST_VERSION}"
-
-rust ${@}
+plugin=rust asdf_wrapper ${@}
