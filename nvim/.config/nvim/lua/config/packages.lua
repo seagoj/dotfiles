@@ -18,7 +18,10 @@ pack 'buffers.vim'
 pack { 'vim-tmux-navigator', 'vim-tmux-navigator-config' }
 -- # Notes
 -- pack	{ 'vimwiki', 'vimwiki-config.vim' }
-pack	{ 'vim-roam', 'wiki.vim' }
+pack	{
+	-- 'vim-roam',
+	'wiki.vim'
+}
 g.wiki_root = '~/vimwiki'
 g.wiki_filetypes = { 'md' }
 g.wiki_link_extension = '.md'
