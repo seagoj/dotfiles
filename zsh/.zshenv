@@ -29,8 +29,6 @@ export XDG_SOURCE_HOME="$HOME"/.local/src
 #     $fpath
 # )
 
-. "${HOME}"/.zim-install/src/templates/zshenv
-
 # GPG
 export GPG_TTY=$(tty)
 
