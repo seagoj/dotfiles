@@ -4,22 +4,18 @@ snippet testclass "PHPUnit Test Class" b
 <?php
 
 /**
- * File: ${1:`!v expand('%:r')`}
+ * File: `!v expand('%:r')`
  *
- * ${2:Unit tests for `!p snip.rv=snip.fn.split('Test.')[0]`}
- *
- * PHP version ${3:`composer config platform.php`}
- *
- * @package  ${5:`composer config project.name`}
- * @author	 ${6:`git config user.name` <`git config user.email`>}
- * @version  GIT: `git tag | tail -1`
+ * Unit tests for `!p snip.rv=snip.fn.split('Test.')[0]`
  */
 
 declare(strict_types=1);
 
-namespace $5${6:\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\')`};
+namespace `composer config project.name`\\`!p snip.rv=path.replace('/' + snip.fn, '').replace('/', '\\').title()`;
 
-class ${7:`!p snip.rv=snip.fn.split('.')[0]`} extends ${8:TestCase}
+use Bonfyre\Tests\Unit\\`!v 1 < len(split(expand('%:r'),"Controllers")) ? "Controllers\\" : ""`TestCase;
+
+class `!p snip.rv=snip.fn.split('.')[0]` extends TestCase
 {
 	/**
 	 * test${9:Feature}
