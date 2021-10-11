@@ -11,7 +11,7 @@
 # Defines environment variables.
 #
 # Authors:
-#   Sorin Ionescu <sorin.ionescu@gmail.com>
+#		Sorin Ionescu <sorin.ionescu@gmail.com>
 . $HOME/.local/functions/path.sh
 # INPUTRC
 export INPUTRC=${HOME}/.inputrc
@@ -25,8 +25,8 @@ export XDG_SOURCE_HOME="$HOME"/.local/src
 # # ZSH Functions
 # export FUNCTIONS=${HOME}/functions
 # fpath=(
-#     $FUNCTIONS
-#     $fpath
+#			$FUNCTIONS
+#			$fpath
 # )
 
 # GPG
@@ -70,11 +70,11 @@ path::add --prepend "${HOME}"/.fzf/bin
 
 # Set OS_TYPE
 if [[ -f /etc/arch-release ]]; then
-    export OS_TYPE=Arch
+		export OS_TYPE=Arch
 elif [[ -f /etc/redhat-release ]]; then
-    export OS_TYPE=Debian
+		export OS_TYPE=Debian
 elif [[ "$(uname -s)" -eq "Darwin" ]]; then
-    export OS_TYPE=Mac
+		export OS_TYPE=Mac
 fi
 
 # User Directories
@@ -102,30 +102,30 @@ export TERMINAL=$(which st urxvt alacritty termite xterm | grep -m1 -e '^/')
 
 # Language
 if [[ -z "$lang" ]]; then
-    export LANG='en_US.UTF-8'
+		export LANG='en_US.UTF-8'
 fi
 
 # Temporary Files
 export TMPDIR="/tmp/$USER"
 export TMPPREFIX="${TMPDIR%/}/zsh"
 if [[ ! -d ${TMPDIR} ]]; then
-    mkdir -p ${TMPDIR}
+		mkdir -p ${TMPDIR}
 fi
 
 # secrets
 if [[ -f "${HOME}/.secrets" ]]; then
-    source "$HOME/.secrets"
+		source "$HOME/.secrets"
 fi
 
 # Ensure that a non-login, non-interactive shell has a defined environment.
 if [[ "$SHLVL" -eq 1 && ! -o LOGIN && -s "${ZDOTDIR:-$HOME}"/.zprofile ]]; then
-    source "${ZDOTDIR:-$HOME}"/.zprofile
+		source "${ZDOTDIR:-$HOME}"/.zprofile
 fi
 if [[ -d "${XDG_CONFIG_HOME:-$HOME/.config}"/env ]]; then
-    # Source env files
-    for file in "${XDG_CONFIG_HOME:-$HOME/.config}"/env/*.env; do
-        source "${file}"
-    done
+		# Source env files
+		for file in "${XDG_CONFIG_HOME:-$HOME/.config}"/env/*.env; do
+				source "${file}"
+		done
 fi
 
 . "$XDG_FUNCTIONS_HOME"/x.sh
@@ -140,9 +140,9 @@ export IDF_PATH=$HOME/code/esp-idf
 # export IDF_PATH=$HOME/code/LuaNode/LuaNode_Esp32/esp-idf
 
 if [[ -d "${HOME}"/documents/Arduino ]]; then
-    export SKETCHBOOK_DIR="${HOME}"/documents/Arduino
+		export SKETCHBOOK_DIR="${HOME}"/documents/Arduino
 else
-    export SKETCHBOOK_DIR="${HOME}"/Arduino
+		export SKETCHBOOK_DIR="${HOME}"/Arduino
 fi
 
 export WINHOME=/mnt/c/Users/jseago
