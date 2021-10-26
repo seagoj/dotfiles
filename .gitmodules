@@ -58,15 +58,6 @@
 [submodule "editorconfig-vim"]
 		path = nvim/.config/nvim/pack/bundle/opt/editorconfig-vim
 		url = https://github.com/editorconfig/editorconfig-vim
-[submodule "ale"]
-		path = nvim/.config/nvim/pack/bundle/opt/ale
-		url = https://github.com/w0rp/ale
-[submodule "lightline-ale"]
-		path = nvim/.config/nvim/pack/bundle/opt/lightline-ale
-		url = https://github.com/maximbaz/lightline-ale
-[submodule "ale-config"]
-		path = nvim/.config/nvim/pack/bundle/opt/ale-config
-		url = https://github.com/seagoj/ale-config
 [submodule "ultisnips"]
 		path = nvim/.config/nvim/pack/bundle/opt/ultisnips
 		url = https://github.com/SirVer/ultisnips
@@ -235,12 +226,6 @@
 [submodule "nvcode-color-schemes.vim"]
 	path = nvim/.config/nvim/pack/bundle/opt/nvcode-color-schemes.vim
 	url = https://github.com/christianchiarulli/nvcode-color-schemes.vim
-[submodule "nvim-lsp"]
-	path = nvim/.config/nvim/pack/bundle/opt/nvim-lsp
-	url = https://github.com/neovim/nvim-lsp
-[submodule "completion-nvim"]
-	path = nvim/.config/nvim/pack/bundle/opt/completion-nvim
-	url = https://github.com/nvim-lua/completion-nvim
 [submodule "nvim-dap"]
 	path = nvim/.config/nvim/pack/bundle/opt/nvim-dap
 	url = https://github.com/mfussenegger/nvim-dap
@@ -280,3 +265,15 @@
 [submodule "plenary.nvim"]
 	path = nvim/.config/nvim/pack/bundle/opt/plenary.nvim
 	url = https://github.com/nvim-lua/plenary.nvim
+[submodule "cmp-nvim-lsp"]
+	path = nvim/.config/nvim/pack/bundle/opt/cmp-nvim-lsp
+	url = https://github.com/hrsh7th/cmp-nvim-lsp
+[submodule "cmp-buffer"]
+	path = nvim/.config/nvim/pack/bundle/opt/cmp-buffer
+	url = https://github.com/hrsh7th/cmp-buffer
+[submodule "nvim-cmp"]
+	path = nvim/.config/nvim/pack/bundle/opt/nvim-cmp
+	url = https://github.com/hrsh7th/nvim-cmp
+[submodule "cmp-nvim-ultisnips"]
+	path = nvim/.config/nvim/pack/bundle/opt/cmp-nvim-ultisnips
+	url = https://github.com/quangnguyen30192/cmp-nvim-ultisnips

@@ -6,6 +6,8 @@ fn = vim.fn
 g = vim.g
 opt = vim.opt
 
+g.mapleader = ','
+
 -- # LANGUAGE PROGRAMS
 g.python_host_prog = 'python2'
 g.python2_host_prog = 'python2'

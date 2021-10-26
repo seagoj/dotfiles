@@ -29,11 +29,11 @@ g.wiki_link_extension = '.md'
 -- # Search
 -- - Find/Replace
 pack 'greplace.vim'
-nmap([[,r]], [[:Gsearch<CR>]])
+nmap([[<Leader>r]], [[:Gsearch<CR>]])
 -- - search/file fuzzyfinding
 pack {'plenary.nvim', 'telescope.nvim'}
-nmap([[,p]], [[:lua require'telescope.builtin'.git_files{}<CR>]])
-nmap([[,/]], [[:lua require'telescope.builtin'.live_grep{}<CR>]])
+nmap([[<Leader>p]], [[:lua require'telescope.builtin'.git_files{}<CR>]])
+nmap([[<Leader>/]], [[:lua require'telescope.builtin'.live_grep{}<CR>]])
 
 -- DEVELOPMENT
 -- -- dap
@@ -52,10 +52,10 @@ g.dap_virtual_text = true
 
 -- lsp
 pack 'nvim-lspconfig'
-pack 'nvim-lsp'
-opt.completeopt = 'menuone,noinsert,noselect'
-g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
-pack 'completion-nvim'
+-- pack 'nvim-lsp'
+-- opt.completeopt = 'menuone,noinsert,noselect'
+-- g.completion_matching_strategy_list = {'exact', 'substring', 'fuzzy'}
+-- pack 'completion-nvim'
 
 -- comments
 pack 'vim-commentary'
@@ -76,9 +76,43 @@ elseif fn.executable('dash') then
 	pack {'rizzatti/funcoo.vim', 'rizzatti/dash.vim', 'seagoj/dash-config.vim'}
 end
 -- Syntax linter/autocompletion
-pack {'ale', 'lightline-ale', 'ale-config'}
+pack {'cmp-nvim-lsp', 'cmp-buffer', 'nvim-cmp' }
 -- Snippet manager
-pack {'ultisnips', 'ultisnips-config.vim'}
+pack {'ultisnips', 'ultisnips-config.vim', 'cmp-nvim-ultisnips'}
+
+
+opt.completeopt = 'menu,menuone,noselect'
+-- Setup nvim-cmp.
+local cmp = require'cmp'
+
+cmp.setup({
+	snippet = {
+		expand = function(args)
+			-- vim.fn["vsnip#anonymous"](args.body) -- For `vsnip` users.
+			-- require('luasnip').lsp_expand(args.body) -- For `luasnip` users.
+			vim.fn["UltiSnips#Anon"](args.body) -- For `ultisnips` users.
+			-- require'snippy'.expand_snippet(args.body) -- For `snippy` users.
+		end,
+	},
+	mapping = {
+		['<C-d>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-Space>'] = cmp.mapping.complete(),
+		['<C-e>'] = cmp.mapping.close(),
+		['<C-y>'] = cmp.config.disable, -- If you want to remove the default `<C-y>` mapping, You can specify `cmp.config.disable` value.
+		['<CR>'] = cmp.mapping.confirm({ select = true }),
+	},
+	sources = cmp.config.sources({
+		{ name = 'nvim_lsp' },
+		-- { name = 'vsnip' }, -- For vsnip users.
+		-- { name = 'luasnip' }, -- For luasnip users.
+		{ name = 'ultisnips' }, -- For ultisnips users.
+		-- { name = 'snippy' }, -- For snippy users.
+	}, {
+		{ name = 'buffer' },
+	})
+})
+
 -- visual indentation
 pack {'indentline', 'indentline-config.vim'}
 -- Syntax highlighting
