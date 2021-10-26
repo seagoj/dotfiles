@@ -1,3 +1,6 @@
+-- lsp
+require'lspconfig'.pyright.setup{}
+
 -- dap-python
 if (vim.api.nvim_get_option('loadplugins')) then
 	if (vim.fn.has('packages')) then

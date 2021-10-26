@@ -1,3 +1,1 @@
-local pack = require('config.pack').pack
-
-pack 'rust-config.vim'
+require'lspconfig'.rust_analyzer.setup{}

@@ -1,0 +1,3 @@
+#!/bin/sh
+
+osinstall rust-analyzer && rust-analyzer ${@}
