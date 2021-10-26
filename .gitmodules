@@ -127,15 +127,9 @@
 [submodule "vim-php-refactoring-toolbox"]
 		path = nvim/.config/nvim/pack/bundle/opt/vim-php-refactoring-toolbox
 		url = https://github.com/adoy/vim-php-refactoring-toolbox
-[submodule "coc.nvim"]
-		path = nvim/.config/nvim/pack/bundle/opt/coc.nvim
-		url = https://github.com/neoclide/coc.nvim
 [submodule "undotree"]
 		path = nvim/.config/nvim/pack/bundle/opt/undotree
 		url = https://github.com/mbbill/undotree
-[submodule "coc-config.vim"]
-		path = nvim/.config/nvim/pack/bundle/opt/coc-config.vim
-		url = git@git.seago.io:seagoj/coc-config.vim
 [submodule "dash-config.vim"]
 		path = nvim/.config/nvim/pack/bundle/opt/dash-config.vim
 		url = git@git.seago.io:seagoj/dash-config.vim

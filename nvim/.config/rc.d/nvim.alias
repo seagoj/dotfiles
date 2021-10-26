@@ -1,4 +1,5 @@
 ## Nvim
 alias vimdiff='nvim -d'
 alias vimwiki='nvim +VimWikiIndex'
-alias Gstatus='nvim +Gstatus'
+alias Gstatus='Git'
+alias Git='nvim +Git'

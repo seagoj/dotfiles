@@ -2,7 +2,7 @@
 
 . "${XDG_FUNCTIONS_HOME}"/sourced.sh
 
-source_file "${HOME}"/.fzf.zsh
+# source_file "${HOME}"/.fzf.zsh
 
 export FZF_DEFAULT_COMMAND='rg --files --no-ignore --hidden --follow --glob "!.git/*"'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
@@ -10,15 +10,15 @@ export FZF_DIR_SEARCH='fd -t d .'
 export FZF_ALT_C_COMMAND="$FZF_DIR_SEARCH $HOME"
 
 fzf_dirSearchAt() {
-    eval "$FZF_DIR_SEARCH ${1:-HOME} | fzf"
+		eval "$FZF_DIR_SEARCH ${1:-HOME} | fzf"
 }
 
 fzf_searchAt() {
-    eval "fd . ${1:-HOME} | fzf"
+		eval "fd . ${1:-HOME} | fzf"
 }
 
 fbr() {
-    git fetch && \
-    local branch=$(git branch -a | fzf +s +m -e) && \
-    git checkout $(echo "$branch" | sed"s:.* remotes/origin/::" | sed "s:.* ::")
+		git fetch && \
+		local branch=$(git branch -a | fzf +s +m -e) && \
+		git checkout $(echo "$branch" | sed"s:.* remotes/origin/::" | sed "s:.* ::")
 }
