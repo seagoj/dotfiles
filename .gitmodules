@@ -13,9 +13,6 @@
 [submodule "asdf/.config/asdf"]
 		path = asdf/.config/asdf
 		url = git://github.com/asdf-vm/asdf.git
-[submodule "fzf.vim"]
-		path = nvim/.config/nvim/pack/bundle/opt/fzf.vim
-		url = https://github.com/junegunn/fzf.vim
 [submodule "vim-surround"]
 		path = nvim/.config/nvim/pack/bundle/opt/vim-surround
 		url = https://github.com/tpope/vim-surround
@@ -139,15 +136,6 @@
 [submodule "vim-php-refactoring-toolbox"]
 		path = nvim/.config/nvim/pack/bundle/opt/vim-php-refactoring-toolbox
 		url = https://github.com/adoy/vim-php-refactoring-toolbox
-[submodule "fzf"]
-		path = nvim/.config/nvim/pack/bundle/opt/fzf
-		url = https://github.com/junegunn/fzf
-[submodule "rg.vim"]
-		path = nvim/.config/nvim/pack/bundle/opt/rg.vim
-		url = https://github.com/seagoj/rg.vim
-[submodule "fzf-config.vim"]
-		path = nvim/.config/nvim/pack/bundle/opt/fzf-config.vim
-		url = git@github.com:seagoj/fzf-config.vim
 [submodule "coc.nvim"]
 		path = nvim/.config/nvim/pack/bundle/opt/coc.nvim
 		url = https://github.com/neoclide/coc.nvim
@@ -286,3 +274,9 @@
 [submodule "nvim/.local/src/panja"]
 	path = nvim/.local/src/panja
 	url = https://github.com/samgriesemer/panja.git
+[submodule "telescope.nvim"]
+	path = nvim/.config/nvim/pack/bundle/opt/telescope.nvim
+	url = https://github.com/nvim-telescope/telescope.nvim
+[submodule "plenary.nvim"]
+	path = nvim/.config/nvim/pack/bundle/opt/plenary.nvim
+	url = https://github.com/nvim-lua/plenary.nvim

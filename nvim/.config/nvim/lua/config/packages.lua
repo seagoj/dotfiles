@@ -29,9 +29,11 @@ g.wiki_link_extension = '.md'
 -- # Search
 -- - Find/Replace
 pack 'greplace.vim'
-nmap([[<Leader>r]], [[:Gsearch]])
+nmap([[,r]], [[:Gsearch<CR>]])
 -- - search/file fuzzyfinding
-pack {'fzf', 'fzf.vim', 'fzf-config.vim', 'rg.vim'}
+pack {'plenary.nvim', 'telescope.nvim'}
+nmap([[,p]], [[:lua require'telescope.builtin'.git_files{}<CR>]])
+nmap([[,/]], [[:lua require'telescope.builtin'.live_grep{}<CR>]])
 
 -- DEVELOPMENT
 -- -- dap
